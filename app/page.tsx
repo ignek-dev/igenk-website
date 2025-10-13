@@ -1,7 +1,7 @@
 import { Metadata } from "next"
 import Image from "next/image"
 import { BlogSection } from "../components/Common"
-import { Accordion } from "../components/Common/Accordion"
+import AccordionItem from "components/Common/AccordionItem"
 import IntermediateFrame from "components/IntermediateFrame"
 import OurCapabilities from "components/OurCapabilities/OurCapabilities"
 import FlexiblePlatforms from "components/FlexiblePlatforms/FlexiblePlatforms"
@@ -85,7 +85,7 @@ export default function HomePage() {
             <span>With IGNEK Today</span>
           </h1>
           <div className="mt-10 grid items-start gap-8 md:grid-cols-2">
-            <p className="max-w-xl text-lg text-white/80 sm:text-base">
+            <p className="max-w-xl text-xl text-white/80 sm:text-base">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.
               Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris.
             </p>
@@ -93,30 +93,12 @@ export default function HomePage() {
             <div className="md:self-end md:justify-self-end pb-3">
               <a
                 href="#discover"
-                className="group flex items-center justify-center gap-2 rounded-full border border-white/20 bg-black/30 px-3 py-3 text-sm text-white transition-colors hover:border-white/40"
+                className="group flex items-center justify-center gap-2 rounded-full bg-black/30 px-3 py-3 text-sm text-white transition-colors"
               >
-                <svg
-                  className="h-5 w-5 rotate-90 transition-transform group-hover:rotate-[135deg]"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M8 12H16"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M12.5 8.5L16 12L12.5 15.5"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-                <span className="pr-2">Discover More</span>
+                <div className="w-8 h-8 flex items-center justify-center rounded-full bg-black/30 border border-[#00979E]"> 
+                  <img src="/images/icon/discover-arrow.png" alt="discover-now" />
+                </div>
+                <span className="pr-2 text-xl">Discover More</span>
               </a>
             </div>
           </div>
@@ -147,11 +129,11 @@ export default function HomePage() {
         <div className="mx-auto w-full px-4 py-20 md:px-8 md:py-24 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px]">
           <div className="grid gap-10 md:grid-cols-2 md:gap-12 lg:gap-16">
             <div>
-              <h2 className="text-3xl font-semibold sm:text-4xl md:text-5xl">
+              <h2 className="text-5xl font-semibold sm:text-4xl md:text-5xl">
                 Your End-to-End Digital Transformation Partner
               </h2>
             </div>
-            <p className="max-w-xl text-white/80">
+            <p className="max-w-xl text-white/80 text-lg">
               We help businesses craft a clear and actionable digital roadmap that aligns with both short-term
               objectives and long-term vision
             </p>
@@ -160,75 +142,52 @@ export default function HomePage() {
           {/* Digital Experience + Accordions */}
           <div className="mt-20 grid gap-12 md:mt-24 md:grid-cols-2 md:gap-14 lg:gap-16">
             <div>
-              <h3 className="text-2xl font-semibold md:text-3xl">Digital Experience</h3>
-              <p className="mt-3 max-w-xl text-white/80">
+              <h3 className="text-2xl font-semibold md:text-4xl">Digital Experience</h3>
+              <p className="mt-3 max-w-xl text-white/80 text-lg">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.
               </p>
             </div>
             <div className="grid gap-10 md:grid-cols-2 md:gap-12">
-              <Accordion
-                items={[
-                  {
-                    title: "DX Strategy",
-                    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi.",
-                  },
-                  {
-                    title: "DX Design",
-                    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi.",
-                  },
-                  {
-                    title: "DX Engineering",
-                    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi.",
-                  },
-                ]}
-                defaultOpenIndex={0}
-              />
-              <Accordion
-                items={[
-                  {
-                    title: "DX Intelligence",
-                    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi.",
-                  },
-                  {
-                    title: "DX Marketing",
-                    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi.",
-                  },
-                  {
-                    title: "DX Infrastructure",
-                    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi.",
-                  },
-                ]}
-                defaultOpenIndex={null}
-              />
+            <div>
+                {[
+                  { title: "DX Strategy", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi." },
+                  { title: "DX Design", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi." },
+                  { title: "DX Engineering", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi." },
+                ].map((item, index) => (
+                  <AccordionItem key={index} title={item.title} content={item.content} />
+                ))}
+              </div>
+              {/* Second Column */}
+              <div>
+                {[
+                  { title: "DX Intelligence", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi." },
+                  { title: "DX Marketing", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi." },
+                  { title: "DX Infrastructure", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi." },
+                ].map((item, index) => (
+                  <AccordionItem key={index} title={item.title} content={item.content} />
+                ))}
+              </div>
             </div>
           </div>
 
           {/* Staff Augmentation + Accordions */}
           <div className="mt-28 grid gap-12 md:grid-cols-2 md:gap-14 lg:mt-32 lg:gap-16">
             <div>
-              <h3 className="text-2xl font-semibold md:text-3xl">Staff augmentation</h3>
-              <p className="mt-3 max-w-xl text-white/80">
+              <h3 className="text-2xl font-semibold md:text-4xl">Staff augmentation</h3>
+              <p className="mt-3 max-w-xl text-white/80 text-lg">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.
               </p>
             </div>
             <div className="grid gap-10 md:gap-12">
-              <Accordion
-                items={[
-                  {
-                    title: "Technical Excellence",
-                    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi.",
-                  },
-                  {
-                    title: "Value-Based Pricing",
-                    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi.",
-                  },
-                  {
-                    title: "Training",
-                    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi.",
-                  },
-                ]}
-                defaultOpenIndex={null}
-              />
+              <div>
+                {[
+                  { title: "Technical Excellence", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi." },
+                  { title: "Value-Based Pricing", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi." },
+                  { title: "Training", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi." },
+                ].map((item, index) => (
+                  <AccordionItem key={index} title={item.title} content={item.content} />
+                ))}
+              </div>
             </div>
           </div>
         </div>

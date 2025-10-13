@@ -77,7 +77,7 @@ const FAQSection: React.FC = () => {
         </div>
 
         {/* Right Column: Expert Card */}
-        <div className="sticky "> {/* Added sticky for a nice effect on scroll */}
+        <div className="sticky top-24"> 
           <ExpertCard />
         </div>
       </div>

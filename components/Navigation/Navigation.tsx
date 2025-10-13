@@ -63,7 +63,7 @@ export default function Navigation() {
           <button
             type="button"
             aria-label="Calendar"
-            className="rounded-full border border-[#00979E] p-2 text-white/80 hover:text-white hover:border-white transition-colors"
+            className="rounded-full border border-[#00979E] p-2 text-white/80 hover:text-white hover:border-[#00979E] transition-colors"
           >
             <div className="w-7 h-7 flex items-center justify-center">
               <img src="/images/icon/calendar.png" alt="calendar" className="max-w-full max-h-full" />
@@ -72,7 +72,7 @@ export default function Navigation() {
           <button
             type="button"
             aria-label="Go"
-            className="rounded-full border border-[#00979E] p-2 text-white/80 hover:text-white hover:border-white transition-colors"
+            className="rounded-full border border-[#00979E] p-2 text-white/80 hover:text-white hover:border-[#00979E] transition-colors"
           >
             <div className="w-7 h-7 flex items-center justify-center">
               <img src="/images/icon/arrow-tr.png" alt="arrow-top-right" className="max-w-full max-h-full" />
