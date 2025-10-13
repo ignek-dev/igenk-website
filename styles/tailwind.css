@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 /*
   The default border color has changed to `currentColor` in Tailwind CSS v4,
@@ -9,10 +9,8 @@
   color utility to any element that depends on these defaults.
 */
 
-
-
 @layer base {
-   html {
+  html {
     font-family: var(--font-poppins), sans-serif;
   }
 
@@ -25,26 +23,51 @@
   }
 }
 
-
 @layer utilities {
   /* Define the animation keyframes */
   @keyframes marquee {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
   }
 
   /* Create a utility class to apply the animation */
   .animate-marquee-custom {
     animation: marquee 35s linear infinite;
   }
-  .animate-marquee-medium { animation: marquee 20s linear infinite; }
-  .animate-marquee-fast { animation: marquee 10s linear infinite; }
+  .animate-marquee-medium {
+    animation: marquee 20s linear infinite;
+  }
+  .animate-marquee-fast {
+    animation: marquee 10s linear infinite;
+  }
 }
 
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
 .scrollbar-hide {
-  -ms-overflow-style: none; 
-  scrollbar-width: none; 
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Custom grid in Career page */
+.career-card {
+  border: 1px solid #1f2937;
+}
+.career-card:nth-child(-n + 5) {
+  border-top: none;
+}
+.career-card:nth-last-child(-n + 5) {
+  border-bottom: none;
+}
+
+.career-card:nth-child(5n + 1){
+  border-left: none;
+}
+.career-card:nth-child(5n + 5) {
+  border-right: none;
 }
