@@ -1,3 +1,4 @@
+import ImageCardCollage from "components/life-at-ignek/ImageCardCollage";
 import Image from "next/image"
 
 export default function LifeAtIgnekPage() {
@@ -26,6 +27,14 @@ export default function LifeAtIgnekPage() {
         "We work together, support each other, and celebrate our collective achievements as one cohesive unit.",
     },
   ]
+
+  const collageImages = [
+    "/images/life-at-ignek/collage-images/image1.png",
+    "/images/life-at-ignek/collage-images/image2.png",
+    "/images/life-at-ignek/collage-images/image3.png",
+    "/images/life-at-ignek/collage-images/image4.png",
+    "/images/life-at-ignek/collage-images/image5.png",
+  ];
 
   return (
     <main className="">
@@ -68,6 +77,14 @@ export default function LifeAtIgnekPage() {
           </div>
         </div>
       </section>
+
+        {/* START: NEW Image Collage Section */}
+      <section>
+        <ImageCardCollage images={collageImages} />
+      </section>
+      {/* END: NEW Image Collage Section */}
+
+
       {/* Our Culture & Values Section */}
       <section className="bg-black text-white">
         <div className="mx-auto w-full px-4 py-24 md:px-8 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px]">
