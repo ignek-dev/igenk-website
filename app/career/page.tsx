@@ -100,27 +100,26 @@ export default function CareerPage() {
                 Career
               </div>
               
-              {/* Container for the text mask effect */}
-              <div className="relative mt-6 bg-white mix-blend-multiply">
-                {/* Layer 1: The text acts as the base mask layer. It is rendered first. */}
-                <h1 className="relative text-black text-[98px] leading-tight font-extrabold sm:text-5xl md:text-6xl">
+             {/* UPDATED: Container for the text mask effect */}
+              <div className="text-mask-container mt-6">
+                <h1 className="text-mask-heading">
                   Grow With Us,
                   <br />
                   Shine With Us
                 </h1>
                 
-                {/* Layer 2: The video is absolutely positioned to cover the h1 and blended into it. */}
                 <video
                   autoPlay
                   loop
                   muted
                   playsInline
-                  className="absolute top-0 left-0 h-full w-full object-cover mix-blend-screen"
-                   style={{ filter: 'brightness(1.5) contrast(1.2)' }}
+                  className="text-mask-video"
                 >
+                  {/* The video path from your original code */}
                   <source src="/images/career/multi-color-bg.mp4" type="video/mp4" />
                 </video>
               </div>
+
             </div>
             <p className="max-w-xl text-xl text-white/80 md:justify-self-end">
               We’re a growth culture that values creativity, collaboration, and grit. Join us to build products and
