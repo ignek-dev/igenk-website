@@ -45,41 +45,32 @@
     animation: marquee 10s linear infinite;
   }
 
-  /* START: Custom CSS for Video-in-Text Mask Effect */
-  .text-mask-container {
-    position: relative;
-    /* This white background is essential for the multiply blend mode to work correctly */
-    background-color: white; 
-    /* This blends the white container with your hero's background image, making white disappear */
-    mix-blend-mode: multiply;
-  }
+ .text-mask-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px; /* Adjust this to fit your design */
+  aspect-ratio: 1200 / 400; /* Use the same aspect ratio as your PNG image */
+}
 
-  .text-mask-heading {
-    position: relative;
-    /* The text must be black to create the "mask" for the video */
-    color: black;
-    font-size: 98px;
-    line-height: 1.1;
-    font-weight: 800; /* extrabold */
-  }
+.masked-hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 
-  .text-mask-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    /* This makes the video "fill in" the black text from the layer below */
-    mix-blend-mode: screen; 
-    /* This filter from your original code helps make the video colors pop */
-    filter: contrast(1.2);
-  }
+  /* The key part: using the new image as a stencil */
+ mask-image: var(--mask-image);  
+ mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+}
 
   /* Responsive adjustments for the heading font size */
   @media (max-width: 768px) {
     .text-mask-heading {
-      font-size: 4rem; /* equivalent to md:text-6xl */
+      font-size: 4rem; 
     }
   }
 
@@ -88,7 +79,6 @@
       font-size: 3rem; /* equivalent to sm:text-5xl */
     }
   }
-  /* END: Custom CSS for Video-in-Text Mask Effect */
 }
 
 .scrollbar-hide::-webkit-scrollbar {

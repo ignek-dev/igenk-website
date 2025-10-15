@@ -21,7 +21,7 @@ const menu = [
 export default function Navigation() {
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const pathname = usePathname(); // Get the current path
-  const isCareerPage = pathname === '/career'; // Check if it's the career page
+  const isCareerPage = pathname === '/career' || pathname === '/life-at-ignek'; // Check if it's the career page
    console.log("Current activeMenu:", activeMenu);
 
    const [isHeaderHovered, setIsHeaderHovered] = useState(false);

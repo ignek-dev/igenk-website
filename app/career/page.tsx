@@ -87,7 +87,7 @@ export default function CareerPage() {
   return (
     <main className="">
       {/* Hero */}
-       <section className="relative flex h-screen flex-col justify-end text-white overflow-hidden">
+      <section className="relative flex h-screen flex-col justify-end overflow-hidden text-white">
         <div className="absolute inset-0 -z-10 bg-[url('/images/career_bg.jpg')] bg-cover bg-center" />
         <div className="absolute inset-0 -z-10 bg-black/60" />
 
@@ -99,27 +99,22 @@ export default function CareerPage() {
               <div className="inline-flex items-center rounded-full border border-white/30 px-4 py-2 text-lg text-sm text-white/80">
                 Career
               </div>
-              
-             {/* UPDATED: Container for the text mask effect */}
-              <div className="text-mask-container mt-6">
-                <h1 className="text-mask-heading">
-                  Grow With Us,
-                  <br />
-                  Shine With Us
-                </h1>
-                
+
+              <div className="text-mask-container mt-3">
                 <video
                   autoPlay
                   loop
                   muted
                   playsInline
-                  className="text-mask-video"
+                  className="masked-hero-video"
+                  style={{
+                    maskImage: "url(/images/career/tex.svg)",
+                    WebkitMaskImage: "url(/images/career/tex.svg)",
+                  }}
                 >
-                  {/* The video path from your original code */}
                   <source src="/images/career/multi-color-bg.mp4" type="video/mp4" />
                 </video>
               </div>
-
             </div>
             <p className="max-w-xl text-xl text-white/80 md:justify-self-end">
               We’re a growth culture that values creativity, collaboration, and grit. Join us to build products and
