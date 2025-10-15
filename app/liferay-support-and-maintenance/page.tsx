@@ -1,6 +1,9 @@
 import Image from "next/image"
 import Link from "next/link"
-import { BlogSection, HeroCTA } from "../../components/Common"
+import { BlogSection } from "../../components/Common"
+import HeroCTASection from "components/Common/HeroCTASection"
+
+
 
 export default function LiferaySupportMaintenancePage() {
   const featureTabs = [
@@ -190,7 +193,7 @@ export default function LiferaySupportMaintenancePage() {
       <BlogSection />
 
       {/* CTA */}
-      <HeroCTA />
+      <HeroCTASection />
     </main>
   )
 }

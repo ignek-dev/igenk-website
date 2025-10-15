@@ -1,7 +1,10 @@
 import { Metadata } from "next"
 import Image from "next/image"
-import { BlogSection, HeroCTA } from "../../components/Common"
+import { BlogSection } from "../../components/Common"
 import { Button } from "../../components/Button/Button"
+import HeroCTASection from "components/Common/HeroCTASection"
+
+
 
 export const metadata: Metadata = {
   title: "Liferay Performance Tuning | IGNEK",
@@ -263,7 +266,7 @@ export default function LiferayPerformanceTuningPage() {
         </div>
       </section>
 
-      <HeroCTA />
+      <HeroCTASection />
       <BlogSection />
     </main>
   )

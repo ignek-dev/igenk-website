@@ -8,7 +8,7 @@ import FlexiblePlatforms from "components/FlexiblePlatforms/FlexiblePlatforms"
 import WhatWeBring from "components/WhatWeBring/WhatWeBring"
 import Achievements from "components/Achievements/Achievements"
 import SuccessStories from "components/success-stories/SuccessStories"
-import FAQSection from "components/Common/FAQSection"
+import HeroCTASection from "components/Common/HeroCTASection"
 import RatingsSection from "components/Ratings/RatingsSection"
 export const metadata: Metadata = {
   title: "Ignek - Transform Your Digital Experience",
@@ -201,7 +201,7 @@ export default function HomePage() {
       <Achievements />
 
       <BlogSection />
-      <FAQSection />
+      <HeroCTASection />
       <RatingsSection />
     </main>
   )

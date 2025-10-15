@@ -1,5 +1,3 @@
-// components/FAQSection.tsx
-
 import React from 'react';
 import AccordionItem from './AccordionItem';
 import ExpertCard from './ExpertCard';
@@ -53,7 +51,7 @@ const faqItems = [
   },
 ];
 
-const FAQSection: React.FC = () => {
+const HeroCTASection: React.FC = () => {
   return (
     <section className="bg-black text-white py-20 lg:py-24">
       <div className="mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px] grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
@@ -85,4 +83,4 @@ const FAQSection: React.FC = () => {
   );
 };
 
-export default FAQSection;
+export default HeroCTASection;
