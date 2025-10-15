@@ -87,7 +87,7 @@ export default function CareerPage() {
   return (
     <main className="">
       {/* Hero */}
-      <section className="relative flex h-screen flex-col justify-end text-white">
+       <section className="relative flex h-screen flex-col justify-end text-white overflow-hidden">
         <div className="absolute inset-0 -z-10 bg-[url('/images/career_bg.jpg')] bg-cover bg-center" />
         <div className="absolute inset-0 -z-10 bg-black/60" />
 
@@ -99,13 +99,28 @@ export default function CareerPage() {
               <div className="inline-flex items-center rounded-full border border-white/30 px-4 py-2 text-lg text-sm text-white/80">
                 Career
               </div>
-              <h1 className="mt-6 text-[98px] leading-tight font-semibold sm:text-5xl md:text-6xl">
-                <span className="bg-gradient-to-r from-[#0E7BF8] via-white to-[#00979E] bg-clip-text text-transparent">
+              
+              {/* Container for the text mask effect */}
+              <div className="relative mt-6 bg-white mix-blend-multiply">
+                {/* Layer 1: The text acts as the base mask layer. It is rendered first. */}
+                <h1 className="relative text-black text-[98px] leading-tight font-extrabold sm:text-5xl md:text-6xl">
                   Grow With Us,
                   <br />
                   Shine With Us
-                </span>
-              </h1>
+                </h1>
+                
+                {/* Layer 2: The video is absolutely positioned to cover the h1 and blended into it. */}
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="absolute top-0 left-0 h-full w-full object-cover mix-blend-screen"
+                   style={{ filter: 'brightness(1.5) contrast(1.2)' }}
+                >
+                  <source src="/images/career/multi-color-bg.mp4" type="video/mp4" />
+                </video>
+              </div>
             </div>
             <p className="max-w-xl text-xl text-white/80 md:justify-self-end">
               We’re a growth culture that values creativity, collaboration, and grit. Join us to build products and
