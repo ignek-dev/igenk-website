@@ -1,9 +1,10 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight, ChevronDown, ChevronsDownUp, ChevronsUpDown } from 'lucide-react';
+import CalendarPopup from './CalendarPopup';
 
 const lifeAtIgnekData = {
   'office-trip': [
@@ -93,6 +94,9 @@ const upcomingEvents = [
 export default function CalendarSection() {
   const [selectedCategory, setSelectedCategory] = useState('office-trip');
   const [activeImageIndex, setActiveImageIndex] = useState(0);
+  const [selectedDate, setSelectedDate] = useState(new Date('2025-05-01'));
+  const [isCalendarOpen, setIsCalendarOpen] = useState(false);
+  const calendarRef = useRef(null);
 
   const activeEvents = lifeAtIgnekData[selectedCategory] || [];
   const activeEvent = activeEvents.length > 0 ? activeEvents[0] : null;
@@ -109,12 +113,30 @@ export default function CalendarSection() {
   return () => clearInterval(interval); 
 }, [activeEvent]);
 
+// Effect to close calendar when clicking outside of it
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (calendarRef.current && !(calendarRef.current as any).contains(event.target)) {
+        setIsCalendarOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [calendarRef]);
 
-  const handleCategoryClick = (slug) => {
+
+  const handleCategoryClick = (slug: string) => {
     setSelectedCategory(slug);
     setActiveImageIndex(0);
   };
   
+  const formatDisplayDate = (date: Date) => {
+    const options: Intl.DateTimeFormatOptions = { month: 'long', year: 'numeric' };
+    return new Intl.DateTimeFormat('en-US', options).format(date);
+  };
+
   return (
     <section className="overflow-x-none bg-white text-black">
       <div className="flex flex-col items-start px-4 sm:px-6 lg:flex-row lg:justify-center lg:gap-8 lg:px-8">
@@ -123,17 +145,33 @@ export default function CalendarSection() {
           <div className="sticky">
             <div className="max-h-[70vh] overflow-y-auto rounded-3xl bg-[#F7F8F9] p-6 lg:h-[875px] lg:max-h-full">
               <div className="flex items-center">
-                <h2 className="letter-spacing-[-0.64px] line-height-[50px] mb-4 text-4xl font-medium">May 2025</h2>
+                <h2 className="letter-spacing-[-0.64px] line-height-[50px] mb-4 text-4xl font-medium">
+                  {formatDisplayDate(selectedDate)}
+                </h2>
               </div>
               <h3 className="letter-spacing-[-1.01px] line-height-[32px] mb-4 text-3xl font-medium">Filters</h3>
-              <div className="mt-4">
+              <div className="relative mt-4" ref={calendarRef}>
                 <span className="line-height-[27px] text-lg font-medium text-black/50">By month</span>
-                <button className="mt-3 flex w-full cursor-pointer items-center justify-between">
+                <div className="mt-3 flex w-full items-center justify-between">
                   <h2 className="text-2xl font-semibold">All time</h2>
-                  <div className="rounded-full border border-black/30 p-2">
-                    <ChevronsUpDown className="h-6 w-6 text-black" />
-                  </div>
-                </button>
+                  <button
+                    onClick={() => setIsCalendarOpen(!isCalendarOpen)}
+                    className="rounded-full border border-black/30 p-2"
+                  >
+                    <ChevronsUpDown
+                      className={`h-6 w-6 text-black transition-transform duration-300 ${
+                        isCalendarOpen ? "rotate-180" : ""
+                      }`}
+                    />
+                  </button>
+                </div>
+                {isCalendarOpen && (
+                  <CalendarPopup
+                    selectedDate={selectedDate}
+                    onDateSelect={setSelectedDate}
+                    onClose={() => setIsCalendarOpen(false)}
+                  />
+                )}
               </div>
 
               <div className="mt-7">
@@ -167,7 +205,7 @@ export default function CalendarSection() {
         </aside>
 
         {/* Center Column */}
-        <main className="mt-8 w-full pt-[47px] lg:mt-0 lg:h-[875px] lg:max-w-[1028px] relative">
+        <main className="relative mt-8 w-full pt-[47px] lg:mt-0 lg:h-[875px] lg:max-w-[1028px]">
           {activeEvent ? (
             <>
               {/* Card 1: Event Details */}
@@ -194,19 +232,19 @@ export default function CalendarSection() {
                     className="object-cover transition-opacity duration-700 ease-in-out"
                     sizes="(max-width: 1024px) 90vw, 50vw"
                   />
-                {activeEvent.images.length > 1 && (
-                    <div className="flex justify-center space-x-2 py-4 absolute top-[90%] left-1/2 -translate-x-1/2">
-                    {activeEvent.images.map((_, index) => (
+                  {activeEvent.images.length > 1 && (
+                    <div className="absolute top-[90%] left-1/2 flex -translate-x-1/2 justify-center space-x-2 py-4">
+                      {activeEvent.images.map((_, index) => (
                         <button
-                        key={index}
-                        onClick={() => setActiveImageIndex(index)}
-                        className={`h-2.5 w-2.5 rounded-full transition-colors ${
+                          key={index}
+                          onClick={() => setActiveImageIndex(index)}
+                          className={`h-2.5 w-2.5 rounded-full transition-colors ${
                             activeImageIndex === index ? "bg-black" : "bg-gray-300"
-                        }`}
+                          }`}
                         />
-                    ))}
-                  </div>
-                )}
+                      ))}
+                    </div>
+                  )}
                 </div>
               </div>
             </>
@@ -225,12 +263,12 @@ export default function CalendarSection() {
                 <div className="mt-2 gap-2">
                   {/* <span className="h-2 w-2 rounded-full bg-blue-500"></span> */}
                   <p className="text-5xl font-bold">18</p>
-                  <span className="font-normal text-lg text-black/60">August</span>
+                  <span className="text-lg font-normal text-black/60">August</span>
                 </div>
                 <div className="flex-1">
                   <div className="flex items-center gap-2">
                     <span className="h-2 w-2 rounded-full bg-blue-500"></span>
-                    <p className="font-normal text-lg text-black/50">Today</p>
+                    <p className="text-lg font-normal text-black/50">Today</p>
                   </div>
                   <div className="mt-2 space-y-3">
                     {upcomingEvents.map((event) => (
@@ -255,35 +293,35 @@ export default function CalendarSection() {
                     alt="User 1"
                     width={45}
                     height={45}
-                    className="rounded-full border-2 border-[#F7F8F9] z-[5]"
+                    className="z-[5] rounded-full border-2 border-[#F7F8F9]"
                   />
                   <Image
                     src="/images/life-at-ignek/calander-images/reach-out-2.png"
                     alt="User 2"
                     width={45}
                     height={45}
-                    className="rounded-full border-2 border-[#F7F8F9] z-[4]"
+                    className="z-[4] rounded-full border-2 border-[#F7F8F9]"
                   />
                   <Image
                     src="/images/life-at-ignek/calander-images/reach-out-2.png"
                     alt="User 3"
                     width={45}
                     height={45}
-                    className="rounded-full border-2 border-[#F7F8F9] z-[3]"
+                    className="z-[3] rounded-full border-2 border-[#F7F8F9]"
                   />
                   <Image
                     src="/images/life-at-ignek/calander-images/reach-out-2.png"
                     alt="User 4"
                     width={45}
                     height={45}
-                    className="rounded-full border-2 border-[#F7F8F9] z-[2]"
+                    className="z-[2] rounded-full border-2 border-[#F7F8F9]"
                   />
                   <Image
                     src="/images/life-at-ignek/calander-images/reach-out-2.png"
                     alt="User 4"
                     width={45}
                     height={45}
-                    className="rounded-full border-2 border-[#F7F8F9] z-[1]"
+                    className="z-[1] rounded-full border-2 border-[#F7F8F9]"
                   />
                 </div>
                 <Link
