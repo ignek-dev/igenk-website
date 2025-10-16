@@ -8,24 +8,24 @@ export default function LifeAtIgnekPage() {
       icon: "/images/life-at-ignek/growth.png",
       title: "Growth",
       description:
-        "We are life-long learners, fostering an environment where everyone can thrive and advance their skills.",
+        "At IGNEK, growth is more than a goal—it’s part of IGNEK, where employees thrive, learn, and advance in a supportive work culture & team environment.",
     },
     {
       icon: "/images/life-at-ignek/transparency.png",
       title: "Transparency",
-      description: "Open communication and honesty are the cornerstones of our collaborative success.",
+      description: "We are very transparent in terms of work, culture, and communication to build trust and strong bonding among employees, teams, and managers.",
     },
     {
       icon: "/images/life-at-ignek/people-first.png",
       title: "People First",
       description:
-        "We prioritize the well-being and development of our team, knowing our people are our greatest asset.",
+        "Our success is all about our people. We prioritize well-being, diversity, and inclusion to create an exceptional Employee Experience at IGNEK.",
     },
     {
       icon: "/images/life-at-ignek/be-a-team.png",
       title: "Be a Team",
       description:
-        "We work together, support each other, and celebrate our collective achievements as one cohesive unit.",
+        "Teamwork drives Life at IGNEK. Embrace a “Be a Team” mindset, valuing collective success over individual triumphs to achieve more together.",
     },
   ]
 
@@ -50,7 +50,7 @@ export default function LifeAtIgnekPage() {
           <div className="grid items-end gap-10 lg:grid-cols-2">
             <div>
               <div className="inline-flex items-center rounded-full border border-white/30 px-4 py-2 text-lg text-sm text-white/80">
-                Life at Ignek
+                Life at IGNEK Means More Than Just Work
               </div>
 
               <div className="text-mask-container mt-3">
@@ -72,8 +72,7 @@ export default function LifeAtIgnekPage() {
               </div>
             </div>
             <p className="pb-4 text-xl text-white/80 md:justify-self-center">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.
-              Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris.
+             Discover Life at IGNEK, where Employee Experience thrives, and Work Culture & Team spirit define every step of your journey.
             </p>
           </div>
         </div>
@@ -95,7 +94,7 @@ export default function LifeAtIgnekPage() {
               <div className="absolute top-0 left-0 pt-4">
                 <h2 className="text-5xl font-extrabold tracking-tight sm:text-5xl md:text-6xl">Culture & Values</h2>
                 <p className="max-w-xl text-xl text-white/70 mt-4">
-                  Our Culture & values guide our actions and define our principles.
+                 Our Culture & Values guide our actions and define our principles, shaping the Employee Experience at IGNEK.
                 </p>
               </div>
             </div>
