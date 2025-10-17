@@ -64,7 +64,8 @@ const socialLinks = [
 
 export default function CompanyMegaMenu() {
   return (
-    <div className="absolute inset-x-0 top-full bg-black text-white border-t border-white/10 z-50">
+    <>
+ {/* <div className="inset-x-0 top-full bg-black text-white border-t border-white/10 z-50"> */}
       {/* Background Gradient */}
       {/* <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_14%_0%,#00979E_0%,#0E7BF800_60%)] opacity-40" /> */}
 
@@ -145,7 +146,9 @@ export default function CompanyMegaMenu() {
           </div>
         </div>
       </div>
-    </div>
+    {/* </div> */}
+        </>
+   
   );
 }
 

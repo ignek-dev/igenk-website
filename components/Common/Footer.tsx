@@ -175,7 +175,6 @@ export default function Footer() {
             animate={{ width: "100%" }}
             transition={{ duration: 0.4, ease: "easeIn" }}
           />
-          {/* <div className="absolute top-0 left-0 h-[100%] w-[100%] rounded-tl-full border-t-2 border-l-2 border-white" /> */}
         </div>
       </div>
     </footer>

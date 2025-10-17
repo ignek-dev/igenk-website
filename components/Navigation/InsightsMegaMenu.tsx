@@ -1,4 +1,5 @@
 // InsightsMegaMenu.tsx
+
 // --- Icon Components ---
 const IconArrowRight = ({ className }: { className?: string }) => (
   <svg className={className} width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -83,7 +84,7 @@ const featuredEvent = {
 // --- Main InsightsMegaMenu Component ---
 export default function InsightsMegaMenu() {
   return (
-    <div className="absolute inset-x-0 top-full bg-black text-white border-t border-white/10 z-50">
+    <>
       {/* Background Gradient */}
       {/* <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_14%_0%,#00979E_0%,#0E7BF800_60%)] opacity-40" /> */}
 
@@ -124,7 +125,7 @@ export default function InsightsMegaMenu() {
 
         </div>
       </div>
-    </div>
+    </>
   );
 }
 
