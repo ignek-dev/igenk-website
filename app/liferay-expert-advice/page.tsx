@@ -106,7 +106,7 @@ export default function LiferayExpertAdvicePage() {
             <section className="bg-black text-white py-[64px] lg:py-[64px]">
                 <div className="grid grid-cols-12 gap-[100px] mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px]  items-start">
                     {/* Left Column */}
-                    <div className="col-span-12 md:col-span-6 flex flex-col justify-center space-y-6">
+                    <div className="col-span-12 md:col-span-6 flex flex-col justify-center space-y-6 sticky top-10">
                         <h1 className="text-5xl font-bold text-white leading-tight leading-[60px]">
                             Solutions For Production, Performance, Development And Architecture
                         </h1>
