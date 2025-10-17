@@ -1,0 +1,36 @@
+.gradient-box {
+  position: relative;
+  height: 21rem;
+  overflow: hidden;
+  padding-top: 8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gradient-box::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 2), transparent);
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+/* Remove gradient overlay on hover */
+.gradient-box:hover::after {
+  opacity: 0;
+}
+
+/* @keyframes drawLine {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 100%;
+  }
+}
+
+.animate-drawLine {
+  animation: drawLine 1s ease forwards;
+} */

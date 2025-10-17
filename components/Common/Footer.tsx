@@ -1,7 +1,12 @@
-import Link from "next/link"
-import Image from "next/image"
+"use client"
+import { useState  } from "react";
+import Link from "next/link";
+import { motion} from "framer-motion";
+import "./Footer.css"
 
 export default function Footer() {
+  const [hover, setHover] = useState(false)
+
   const menus: { title: string; items: { label: string; href: string }[] }[] = [
     {
       title: "Company",
@@ -56,39 +61,39 @@ export default function Footer() {
   return (
     <footer className="relative bg-black text-white">
       {/* Top section: menus with right decorative lines and partial width */}
-      <div className="relative mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px] pt-20 pb-16 md:pt-24 md:pb-20 border-b border-white/100 ">
-        {/* Decorative grid lines */}
-        <div className="pointer-events-none absolute right-0 top-0 h-full w-[20%] border-l border-white/100">
+      <div className="mx-auto flex w-full border-b border-white/100 pl-4 md:pl-8 [@media(min-width:1440px)]:pl-[150px] [@media(min-width:1920px)]:pl-[192px]">
+        <div className="relative w-[80%] pt-12 pr-4 pb-20 md:pt-16 md:pr-8 md:pb-24 [@media(min-width:1440px)]:pr-[150px] [@media(min-width:1920px)]:pr-[192px]">
+          <motion.div
+            className="absolute right-0 bottom-0 h-full w-full rounded-br-[19rem] border-r-2 border-b-2 border-white/100"
+            initial={{ width: 0 }}
+            animate={{ width: "100%" }}
+            transition={{ duration: 0.4, ease: "easeIn" }}
+          />
+          <div className="grid grid-cols-2 gap-10 md:grid-cols-3 lg:grid-cols-5">
+            <>
+              {menus.map((menu) => (
+                <div key={menu.title}>
+                  <h4 className="text-2xl font-semibold text-white/90">{menu.title}</h4>
+                  <ul className="mt-5 space-y-3 text-xl text-white/80">
+                    {menu.items.map((it) => (
+                      <li key={it.label}>
+                        <Link href={it.href} className="hover:text-white">
+                          {it.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </>
+          </div>
         </div>
-
-        <div className="w-[80%] grid grid-cols-2 gap-10 md:grid-cols-3 lg:grid-cols-5">
-          {menus.map((menu) => (
-            <div key={menu.title}>
-              <h4 className="text-2xl font-semibold text-white/90">{menu.title}</h4>
-              <ul className="mt-5 space-y-3 text-xl text-white/80">
-                {menu.items.map((it) => (
-                  <li key={it.label}>
-                    <Link href={it.href} className="hover:text-white">
-                      {it.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
+        <div className="animate-drawLine w-[20%] border-l"></div>
       </div>
 
       {/* Bottom section: contacts + big logo + motto + bottom bar */}
-      <div className="relative mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px] pt-12 pb-20 md:pt-16 md:pb-24">
-        {/* Horizontal divider across 80% width */}
-        <div className="pointer-events-none absolute left-0 right-[20%] top-0 h-px bg-white/20" />
-        {/* Right decorative curve */}
-        <div className="pointer-events-none absolute right-0 top-0 h-full w-[20%] border-l border-white/100">
-        </div>
-        
-
-        <div className="w-[80%]">
+      <div className="mx-auto flex w-full pl-4 md:pl-8 [@media(min-width:1440px)]:pl-[150px] [@media(min-width:1920px)]:pl-[192px]">
+        <div className="w-[80%] pt-12 pr-4 pb-20 md:pt-16 md:pr-8 md:pb-24 [@media(min-width:1440px)]:pr-[150px] [@media(min-width:1920px)]:pr-[192px]">
           <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-3">
             <div>
               <h5 className="text-2xl font-semibold">Emails</h5>
@@ -131,12 +136,46 @@ export default function Footer() {
               </p>
             </div>
           </div>
-
           {/* Big brand logo */}
-          <div className="mt-12 flex justify-center">
-            <Image src="/images/footer_logo.svg" alt="IGNEK" width={1350} height={355} className="h-auto w-full max-w-5xl" />
+          <div className="gradient-box" onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
+            <svg width="1350" height="500">
+              <defs>
+                <linearGradient id="textGradient" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stopColor="#FFFFFF" />
+                  <stop offset="100%" stopColor="#00979E" />
+                </linearGradient>
+              </defs>
+
+              <text
+                x="50%"
+                y="50%"
+                textAnchor="middle"
+                dominantBaseline="middle"
+                fontFamily="Poppins"
+                fontWeight={600}
+                fontStyle="normal"
+                fontSize="350px"
+                // lineHeight="123.67px"
+                letterSpacing="0%"
+                fill={hover ? "white" : "url(#textGradient)"} // hover changes to solid white
+                style={{ cursor: "pointer", transition: "fill 0.3s ease" }}
+              >
+                IGNEK
+              </text>
+            </svg>
           </div>
-          <p className="mt-6 text-2xl text-center tracking-[0.3em] text-white/80 spacing-7">DRIVING DIGITAL SOLUTIONS</p>
+          <p className="spacing-7 mt-4 text-center text-2xl tracking-[0.3em] text-white/80">
+            DRIVING DIGITAL SOLUTIONS
+          </p>
+        </div>
+        <div className="relative w-[20%] border-l border-white">
+          <motion.div
+            className="absolute top-0 left-0 h-[100%] w-[100%] rounded-tl-full border-t-2 border-l-2 border-white"
+            initial={{ width: 0 }}
+            animate={{ width: "100%" }}
+            transition={{ duration: 0.4, ease: "easeIn" }}
+          />
+          {/* <div className="absolute top-0 left-0 h-[100%] w-[100%] rounded-tl-full border-t-2 border-l-2 border-white" /> */}
         </div>
       </div>
     </footer>
