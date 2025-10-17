@@ -6,11 +6,21 @@ interface StatCardProps {
   number: string;
   title: string;
   description: string;
+  isInView: boolean;
+  index: number;
 }
 
-const StatCard: React.FC<StatCardProps> = ({ number, title, description }) => {
+const StatCard: React.FC<StatCardProps> = ({ number, title, description, isInView, index }) => {
+
+  // Determine animation direction based on the card's index
+  const animationDirection = index < 2 ? 'animate-slide-top' : 'animate-slide-bottom';
+  
+  // Add a staggered delay for a nicer effect
+
   return (
-    <div className="flex flex-col">
+    <div className={`flex flex-col ${
+      isInView ? `animate-when-visible ${animationDirection} animation-delay-200` : 'opacity-0'
+    }`}>
       <div className="text-white text-7xl font-bold mb-4">
         {number}
       </div>

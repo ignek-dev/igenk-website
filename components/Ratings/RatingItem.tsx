@@ -13,11 +13,16 @@ interface RatingItemProps {
   logoSrc: string;
   logoAlt: string;
   ratingValue: string;
+  isInView: boolean;
 }
 
-const RatingItem: React.FC<RatingItemProps> = ({ logoSrc, logoAlt, ratingValue }) => {
+const RatingItem: React.FC<RatingItemProps> = ({ logoSrc, logoAlt, ratingValue, isInView }) => {
+
+
   return (
-    <div className="flex flex-col items-center justify-center p-8 w-full">
+    <div className={`flex flex-col items-center justify-center p-8 w-full ${
+      isInView ? 'animate-when-visible animate-fade-in animate-delay-100' : 'opacity-0'
+    }`}>
       <div className="h-12 flex items-center mb-4">
         <Image src={logoSrc} alt={logoAlt} width={220} height={62} className="object-contain" />
       </div>
