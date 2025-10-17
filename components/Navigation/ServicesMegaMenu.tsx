@@ -21,17 +21,17 @@ const digitalExperienceLinks = [
 
 // Data for the "Liferay Services" section
 const liferayServicesLinks = [
-  { text: "Development & Customization", href: "#" },
-  { text: "Theme Development", href: "#" },
-  { text: "Expert Advice", href: "#" },
-  { text: "Proof Of Concept", href: "#" },
-  { text: "Ecommerce Development", href: "#" },
+  { text: "Development & Customization", href: "/liferay-development-and-customization" },
+  { text: "Theme Development", href: "/liferay-theme-development" },
+  { text: "Expert Advice", href: "/liferay-expert-advice" },
+  { text: "Proof Of Concept", href: "/liferay-proof-of-concept" },
+  { text: "Ecommerce Development", href: "/liferay-ecommerce-development" },
   { text: "Migration", href: "/liferay-migration" },
   { text: "Support & Maintenance", href: "/liferay-support-and-maintenance" },
   { text: "Performance Tuning", href: "/liferay-performance-tuning" },
-  { text: "Upgrade", href: "#" },
-  { text: "Architecture Service", href: "#" },
-  { text: "Consulting Page", href: "#" },
+  { text: "Upgrade", href: "/liferay-upgrade" },
+  { text: "Architecture Service", href: "/liferay-architecture-design" },
+  { text: "Consulting Page", href: "/liferay-consulting-and-implementation-services" },
 ]
 
 // --- Main ServicesMegaMenu Component ---
