@@ -20,7 +20,7 @@ export default function BlogSection() {
 
   return (
     <section className="bg-white text-black">
-      <div className="mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px] py-20 md:py-24 lg:py-28">
+      <div className="mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px] py-[64px] md:py-[64px] lg:py-[64px]">
         <div className="grid items-center gap-10 md:grid-cols-2">
           <h2 className="text-5xl sm:text-4xl md:text-5xl font-semibold leading-tight">Explore What's Shaping <br /> Digital Today</h2>
           <p className="max-w-[500px] text-lg text-gray-700 justify-self-center text-[#101012] leading-relaxed">
@@ -41,19 +41,21 @@ export default function BlogSection() {
           </div>
 
           {/* Right: three small cards */}
-          <div ref={cardsRef} className={`space-y-6 transition-all duration-[1500ms] ease-out ${
-              isInView ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-20'
+          <div ref={cardsRef} className={`space-y-6 transition-all duration-[1500ms] ease-out ${isInView ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-20'
             }`}>
-            {side.map((item) => (
-              <div key={item.id} className="grid grid-cols-[140px_1fr] items-center gap-6">
+            {side.map((item,index) => (
+              <div key={item.id}
+                className={`grid grid-cols-[260px_1fr] items-center gap-6 ${index !== 0 && index !== side.length - 1 ? "mb-7" : ""
+                  }`}
+              >
                 <div className="overflow-hidden rounded-lg bg-gray-100">
-                  <Image src={item.image} alt={item.title} width={140} height={80} className="h-full w-full object-cover" />
+                  <Image src={item.image} alt={item.title} width={240} height={140} className="h-full w-full object-cover" />
                 </div>
                 <div className="pb-6">
                   <h4 className="text-xl md:text-xl font-semibold">{item.title}</h4>
                   <p className="mt-1 text-base text-gray-700 line-clamp-2">{item.excerpt}</p>
                 </div>
-                  <div className="col-span-2 border-t border-gray-300 w-full -mt-2" />
+                <div className="col-span-2 border-t border-gray-300 w-full mt-1" />
               </div>
             ))}
           </div>

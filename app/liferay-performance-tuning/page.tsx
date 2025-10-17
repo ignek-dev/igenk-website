@@ -5,6 +5,7 @@ import { Button } from "../../components/Button/Button"
 import HeroCTASection from "components/Common/HeroCTASection"
 import CaseStudy from "components/Common/CaseStudy"
 import WhatMake from "components/Common/WhatMake"
+import TalkToExpert from "components/Common/TalkToExpert"
 
 
 
@@ -97,8 +98,8 @@ export default function LiferayPerformanceTuningPage() {
       <section className="relative bg-black text-white">
         <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_10%_0%,#0E7BF8_0%,#00979E_40%,transparent_65%)] opacity-25" />
         <div className="mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px] pt-12 pb-16 md:pt-20 md:pb-28">
-          <div className="grid items-start gap-10 md:grid-cols-2">
-            <div>
+          <div className="grid items-start gap-10 md:grid-cols-2 relative">
+            <div className="">
               <div className="inline-flex items-center rounded-full border border-white/30 px-4 py-2 text-sm text-white/80">Liferay Services</div>
               <h1 className="mt-6 text-4xl leading-tight font-semibold sm:text-5xl md:text-6xl">
                 Liferay
@@ -107,15 +108,15 @@ export default function LiferayPerformanceTuningPage() {
                   Performance Tuning</span>
               </h1>
             </div>
-            <p className="max-w-xl text-sm text-white/80 sm:text-base md:mt-16 md:justify-self-end">
+            <p className="max-w-xl text-lg  text-white  sm:text-lg md:mt-16 md:justify-self-end absolute bottom-0">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus.
             </p>
           </div>
 
           {/* Feature tabs */}
-          <div className="mt-10 flex flex-wrap gap-5">
-            {featureTabs.map((label,index) => (
-              <span key={index} className="inline-flex items-center rounded-full border border-white/30 px-4 py-2 text-sm text-white/80 hover:text-white hover:border-white transition-colors">
+          <div className="mt-15 flex flex-wrap gap-5">
+            {featureTabs.map((label, index) => (
+              <span key={index} className="inline-flex items-center rounded-full border border-white/30 px-7 py-5 text-lg text-white hover:text-white hover:border-white transition-colors">
                 {label}
               </span>
             ))}
@@ -278,8 +279,8 @@ export default function LiferayPerformanceTuningPage() {
       <CaseStudy
         caseStudies={caseStudies}
       />
-      <WhatMake/>
-      <HeroCTASection />
+      <WhatMake />
+      <TalkToExpert />
       <BlogSection />
     </main>
   )

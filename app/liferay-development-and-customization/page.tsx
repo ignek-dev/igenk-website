@@ -1,5 +1,7 @@
 import { BlogSection } from "components/Common";
 import HeroCTASection from "components/Common/HeroCTASection";
+import TalkToExpert from "components/Common/TalkToExpert";
+import WhatMake from "components/Common/WhatMake";
 
 export default function LiferayDevelopmentAndCustomizationPage() {
     const featureTabs = [
@@ -61,7 +63,7 @@ export default function LiferayDevelopmentAndCustomizationPage() {
             <section className="relative bg-black text-white">
                 <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_10%_0%,#0E7BF8_0%,#00979E_40%,transparent_65%)] opacity-25" />
                 <div className="mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px] pt-12 pb-16 md:pt-20 md:pb-28">
-                    <div className="grid items-start gap-10 md:grid-cols-2">
+                    <div className="grid items-start gap-10 md:grid-cols-2 relative">
                         <div>
                             <div className="inline-flex items-center rounded-full border border-white/30 px-4 py-2 text-sm text-white/80">Liferay Services</div>
                             <h1 className="mt-6 text-4xl leading-tight font-semibold sm:text-5xl md:text-6xl">
@@ -71,15 +73,15 @@ export default function LiferayDevelopmentAndCustomizationPage() {
                                 <span className="block">Customization</span>
                             </h1>
                         </div>
-                        <p className="max-w-xl text-sm text-white/80 sm:text-base md:mt-16 md:justify-self-end">
+                        <p className="max-w-xl text-lg  text-white  sm:text-lg md:mt-16 md:justify-self-end absolute bottom-0">
                             Transform your Liferay Portal with our expert Liferay Theme Development Services. We specialize in converting UX designs into visually captivating HTML and implementing responsive Liferay Theme. Our approach ensures
                         </p>
                     </div>
 
                     {/* Feature tabs */}
-                    <div className="mt-10 flex flex-wrap gap-5">
+                    <div className="mt-15 flex flex-wrap gap-5">
                         {featureTabs.map((label) => (
-                            <span key={label} className="inline-flex items-center rounded-full border border-white/30 px-4 py-2 text-sm text-white/80 hover:text-white hover:border-white transition-colors">
+                            <span key={label} className="inline-flex items-center rounded-full border border-white/30 px-7 py-5 text-lg text-white hover:text-white hover:border-white transition-colors">
                                 {label}
                             </span>
                         ))}
@@ -91,7 +93,7 @@ export default function LiferayDevelopmentAndCustomizationPage() {
                 <div className="mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px] py-20 md:py-[64px] lg:py-[64px]">
                     <div className="grid items-start gap-10 md:grid-cols-2">
                         <div>
-                            <h2 className="text-5xl sm:text-3xl md:text-5xl font-semibold">Our Liferay Development Services</h2>
+                            <h2 className="text-5xl sm:text-3xl md:text-5xl font-semibold leading-[60px]">Our Liferay Development Services</h2>
                             <p className="mt-4 max-w-xl text-sm text-gray-700 text-[20px]">
                                 As a leading Liferay Development Company, we provide comprehensive Liferay Development Services including custom portlets, Rest API integration, portal customization,
                             </p>
@@ -120,7 +122,7 @@ export default function LiferayDevelopmentAndCustomizationPage() {
             <section className="bg-black text-white py-[64px] lg:py-[64px]">
                 <div className=" mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px]  items-start">
                     <div className="grid items-start gap-10 md:grid-cols-2 relative">
-                        <h2 className="text-3xl font-semibold sm:text-4xl md:text-5xl">Our Liferay Custom Module/ Portlet Development Services</h2>
+                        <h2 className="text-3xl font-semibold sm:text-4xl md:text-5xl leading-[60px]">Our Liferay Custom Module/ Portlet Development Services</h2>
                         <p className="max-w-xl text-xl text-white md:justify-self-end absolute bottom-0 text-white text-right">
                             Our approach blends prevention and rapid response to keep your platform stable, secure, and performing.
                         </p>
@@ -151,7 +153,7 @@ export default function LiferayDevelopmentAndCustomizationPage() {
 
             <section className="bg-white text-black">
                 <div className="mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px] py-[64px] md:py-[64px] lg:py-[64px]">
-                    <h2 className="text-5xl sm:text-4xl md:text-5xl font-semibold leading-tight">Liferay Integration Services</h2>
+                    <h2 className="text-5xl sm:text-4xl md:text-5xl font-semibold leading-tight leading-[60px]">Liferay Integration Services</h2>
                     <p className="text-lg text-gray-700 justify-self-center text-[#101012] leading-relaxed mt-4">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus.
                     </p>
@@ -183,50 +185,52 @@ export default function LiferayDevelopmentAndCustomizationPage() {
             <section className="bg-black text-white py-[64px] lg:py-[64px]">
                 <div className=" mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px]  items-start">
                     <div className="grid items-start gap-10 md:grid-cols-2 relative">
-                        <h2 className="text-3xl font-semibold sm:text-4xl md:text-5xl">Liferay Portal Customization Services</h2>
+                        <h2 className="text-3xl font-semibold sm:text-4xl md:text-5xl leading-[60px]">Liferay Portal Customization Services</h2>
                         <p className="max-w-xl text-xl text-white md:justify-self-end absolute bottom-0 text-white text-right">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla,
                         </p>
                     </div>
                     <div className="pt-12">
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-x-[166px] gap-y-10">
-                           {customizationServices.map((item, index) => {
-    const isLastRow =
-      index >= customizationServices.length - (customizationServices.length % 3 || 3);
+                            {customizationServices.map((item, index) => {
+                                const isLastRow =
+                                    index >= customizationServices.length - (customizationServices.length % 3 || 3);
 
-    return (
-      <div
-        key={index}
-        className={`flex flex-col ${isLastRow ? "pb-0" : "pb-8"}`}
-      >
-        {/* Number */}
-        <div className="border-b border-gray-300 last:border-b-0">
-          <span className="text-[20px] font-bold mb-3">
-            ({index + 1 < 10 ? `0${index + 1}` : index + 1})
-          </span>
+                                return (
+                                    <div
+                                        key={index}
+                                        className={`flex flex-col ${isLastRow ? "pb-0" : "pb-8"}`}
+                                    >
+                                        {/* Number */}
+                                        <div className="border-b border-gray-300 last:border-b-0">
+                                            <span className="text-[20px] font-bold mb-3">
+                                                ({index + 1 < 10 ? `0${index + 1}` : index + 1})
+                                            </span>
 
-          {/* Title */}
-          <h3
-            className="text-[30px] font-semibold mb-3 pt-4"
-            dangerouslySetInnerHTML={{ __html: item.text }}
-          />
-        </div>
+                                            {/* Title */}
+                                            <h3
+                                                className="text-[30px] font-semibold mb-3 pt-4"
+                                                dangerouslySetInnerHTML={{ __html: item.text }}
+                                            />
+                                        </div>
 
-        {/* Description */}
-        <p className="text-[16px] leading-relaxed text-white pt-4">
-          {item.description}
-        </p>
-      </div>
-    );
-  })}
+                                        {/* Description */}
+                                        <p className="text-[16px] leading-relaxed text-white pt-4">
+                                            {item.description}
+                                        </p>
+                                    </div>
+                                );
+                            })}
                         </div>
                     </div>
                 </div>
             </section>
+            <WhatMake />
+            <TalkToExpert />
             <BlogSection />
 
             {/* CTA */}
-            <HeroCTASection />
+            {/* <HeroCTASection /> */}
         </main>
     )
 }
