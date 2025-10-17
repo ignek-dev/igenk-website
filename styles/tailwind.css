@@ -86,7 +86,7 @@
     border-radius: 50px;
     position: relative;
     height: 60px;
-    width:max-content;
+    /* width:max-content; */
     /* max-width: auto; */
     overflow: hidden;
 }

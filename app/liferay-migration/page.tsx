@@ -177,7 +177,10 @@ export default function LiferayMigrationPage() {
               <p className="mt-4 max-w-xl text-lg text-white mb-8">
                 Understand objectives, plan dependencies, and execute migrations with predictable outcomes.
               </p>
-              <ScheduleMeetingButton />
+              <ScheduleMeetingButton
+                isFullWidth={false}
+                btnName="Schedule Meeting"
+              />
             </div>
 
             <div>

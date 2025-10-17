@@ -114,7 +114,10 @@ export default function LiferayExpertAdvicePage() {
                             Our Liferay Expert Advice Services are designed to provide comprehensive support and innovative solutions to enhance your Liferay experience.
                         </p>
                         <div>
-                            <ScheduleMeetingButton />
+                            <ScheduleMeetingButton
+                                isFullWidth={false}
+                                btnName="Schedule Meeting"
+                            />
                         </div>
                     </div>
 

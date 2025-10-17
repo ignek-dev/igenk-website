@@ -25,7 +25,10 @@ const Achievements = () => {
           <p className="text-gray-300 text-lg max-w-md mb-10">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit.
           </p>
-          <ScheduleMeetingButton />
+          <ScheduleMeetingButton
+            isFullWidth={false}
+            btnName="Schedule Meeting"
+          />
         </div>
 
         {/* Right Column: Stats Grid */}
