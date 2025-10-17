@@ -85,8 +85,8 @@ export default function LiferayArchitectureDesignPage() {
                 <div className="mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px] pt-12 pb-16 md:pt-20 md:pb-28">
                     <div className="grid items-start gap-10 md:grid-cols-2 relative">
                         <div>
-                            <div className="inline-flex items-center rounded-full border border-white/30 px-4 py-2 text-sm text-white/80">Liferay Services</div>
-                            <h1 className="mt-6 text-4xl leading-tight font-semibold sm:text-5xl md:text-6xl">
+                            <div className="inline-flex items-center rounded-full border border-white/30 px-4 py-2 text-lg text-white">Liferay Services</div>
+                            <h1 className="mt-9 text-4xl leading-tight font-semibold sm:text-5xl md:text-6xl">
                                 Liferay
                                 <br />
                                 <span className="block">Architecture</span>
@@ -138,7 +138,7 @@ export default function LiferayArchitectureDesignPage() {
             <section className="bg-black text-white">
                 <div className="mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px] py-[64px] md:py-[64px] lg:py-[64px]">
                     <div className="grid items-start gap-10 md:grid-cols-2 relative">
-                        <h2 className="text-3xl font-semibold sm:text-4xl md:text-5xl">Key Activities Under Our Liferay Architecture Design Services</h2>
+                        <h2 className="text-3xl font-semibold sm:text-4xl md:text-5xl leading-[60px]">Key Activities Under Our Liferay Architecture Design Services</h2>
                         <p className="max-w-xl text-xl text-white md:justify-self-end absolute bottom-0 text-white text-right">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.
                         </p>

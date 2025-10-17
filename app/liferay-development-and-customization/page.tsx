@@ -65,8 +65,8 @@ export default function LiferayDevelopmentAndCustomizationPage() {
                 <div className="mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px] pt-12 pb-16 md:pt-20 md:pb-28">
                     <div className="grid items-start gap-10 md:grid-cols-2 relative">
                         <div>
-                            <div className="inline-flex items-center rounded-full border border-white/30 px-4 py-2 text-sm text-white/80">Liferay Services</div>
-                            <h1 className="mt-6 text-4xl leading-tight font-semibold sm:text-5xl md:text-6xl">
+                            <div className="inline-flex items-center rounded-full border border-white/30 px-4 py-2 text-lg text-white">Liferay Services</div>
+                            <h1 className="mt-9 text-4xl leading-tight font-semibold sm:text-5xl md:text-6xl">
                                 Liferay
                                 <br />
                                 <span className="block">Development &</span>

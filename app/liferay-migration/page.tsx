@@ -4,6 +4,7 @@ import { BlogSection } from "../../components/Common"
 import HeroCTASection from "components/Common/HeroCTASection"
 import WhatMake from "components/Common/WhatMake"
 import TalkToExpert from "components/Common/TalkToExpert"
+import ScheduleMeetingButton from "components/Button/ScheduleMeetingButton"
 
 export default function LiferayMigrationPage() {
   const featureTabs = [
@@ -93,8 +94,8 @@ export default function LiferayMigrationPage() {
         <div className="mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px] pt-12 pb-16 md:pt-20 md:pb-28">
           <div className="grid items-start gap-10 md:grid-cols-2 relative">
             <div>
-              <div className="inline-flex items-center rounded-full border border-white/30 px-4 py-2 text-sm text-white/80">Liferay Services</div>
-              <h1 className="mt-6 text-4xl leading-tight font-semibold sm:text-5xl md:text-6xl">
+              <div className="inline-flex items-center rounded-full border border-white/30 px-4 py-2 text-lg text-white">Liferay Services</div>
+              <h1 className="mt-9 text-4xl leading-tight font-semibold sm:text-5xl md:text-6xl">
                 Liferay
                 <br />
                 <span className="block">Migration</span>
@@ -172,16 +173,11 @@ export default function LiferayMigrationPage() {
         <div className="mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px] py-[64px] md:py-[64px] lg:py-[64px]">
           <div className="grid items-start gap-10 lg:grid-cols-[0.9fr_1.1fr]">
             <div className="w-[80%] sticky top-0">
-              <h2 className="text-3xl font-semibold sm:text-4xl md:text-5xl">Our Liferay Migration Process</h2>
-              <p className="mt-4 max-w-xl text-sm text-white/80">
+              <h2 className="text-3xl font-semibold sm:text-4xl md:text-5xl leading-[60px]">Our Liferay Migration Process</h2>
+              <p className="mt-4 max-w-xl text-lg text-white mb-8">
                 Understand objectives, plan dependencies, and execute migrations with predictable outcomes.
               </p>
-              <Link
-                href="mailto:sales@ignek.com"
-                className="mt-8 inline-block rounded-full p-[2px] bg-gradient-to-r from-black via-black to-[#00979E]"
-              >
-                <span className="block rounded-full bg-black px-5 py-2 text-sm text-white">Schedule Meeting</span>
-              </Link>
+              <ScheduleMeetingButton />
             </div>
 
             <div>

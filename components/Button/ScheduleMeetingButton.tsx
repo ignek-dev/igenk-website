@@ -10,18 +10,10 @@ interface ScheduleMeetingButtonProps {
 
 const ScheduleMeetingButton: React.FC<ScheduleMeetingButtonProps> = ({ className }) => {
   return (
-    <button
-     className={cn(
-        "relative inline-flex items-center justify-center p-[2px] rounded-full overflow-hidden",
-        // CORRECTED: Removed `border border-white` and added the gradient background
-        "bg-gradient-to-br from-[#00979E] to-blue-600",
-        "group hover:scale-105 transition-transform duration-200",
-        className
-      )}
-    >
-      <span className="relative flex items-center gap-3 px-8 py-3 bg-black rounded-full text-white text-lg font-medium">
+    <button className="relative inline-flex items-center justify-center rounded-full overflow-hidden group hover:scale-105 transition-transform duration-200 fancy">
+      <span className="relative flex items-center gap-3 px-8 py-3 bg-black rounded-full text-white text-lg font-medium z-10">
         Schedule Meeting
-       <Image
+        <Image
           src="/images/calendar.png"
           alt="Calendar icon"
           width={20}

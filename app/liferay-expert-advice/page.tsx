@@ -50,8 +50,8 @@ export default function LiferayExpertAdvicePage() {
                 <div className="mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px] pt-12 pb-16 md:pt-20 md:pb-28">
                     <div className="grid items-start gap-10 md:grid-cols-2 relative">
                         <div>
-                            <div className="inline-flex items-center rounded-full border border-white/30 px-4 py-2 text-sm text-white/80">Liferay Services</div>
-                            <h1 className="mt-6 text-4xl leading-tight font-semibold sm:text-5xl md:text-6xl">
+                            <div className="inline-flex items-center rounded-full border border-white/30 px-4 py-2 text-lg text-white">Liferay Services</div>
+                            <h1 className="mt-9 text-4xl leading-tight font-semibold sm:text-5xl md:text-6xl">
                                 Liferay
                                 <br />
                                 <span className="block">Expert Advice</span>
@@ -77,7 +77,7 @@ export default function LiferayExpertAdvicePage() {
                 <div className="mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px] py-[64px] md:py-[64px] lg:py-[64px]">
                     <div className="grid items-start gap-10 md:grid-cols-2">
                         <div>
-                            <h2 className="text-5xl sm:text-3xl md:text-5xl font-semibold w-[60%]">Liferay Expert Advice Service</h2>
+                            <h2 className="text-5xl sm:text-3xl md:text-5xl font-semibold w-[60%] leading-[60px]">Liferay Expert Advice Service</h2>
                             <p className="mt-4 max-w-xl text-sm text-gray-700 text-[20px]">
                                 As a leading Liferay Development Company, we provide comprehensive Liferay Development Services including custom portlets, Rest API integration, portal customization,
                             </p>
@@ -107,7 +107,7 @@ export default function LiferayExpertAdvicePage() {
                 <div className="grid grid-cols-12 gap-[100px] mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px]  items-start">
                     {/* Left Column */}
                     <div className="col-span-12 md:col-span-6 flex flex-col justify-center space-y-6">
-                        <h1 className="text-5xl font-bold text-white leading-tight">
+                        <h1 className="text-5xl font-bold text-white leading-tight leading-[60px]">
                             Solutions For Production, Performance, Development And Architecture
                         </h1>
                         <p className="text-lg text-white leading-relaxed">
