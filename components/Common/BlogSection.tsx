@@ -16,11 +16,11 @@ export default function BlogSection() {
   const main = list[0]
   const side = list.slice(1, 4)
 
-  const [cardsRef, isInView] = useInView({ threshold: 0.5 });
+  const [cardsRef, isInView] = useInView({ threshold: 0.2, triggerOnce: true });
 
   return (
     <section className="bg-white text-black">
-      <div className="mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px] py-20 md:py-24 lg:py-28">
+      <div className="mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px] py-20 md:py-24">
         <div className="grid items-center gap-10 md:grid-cols-2">
           <h2 className="text-5xl sm:text-4xl md:text-5xl font-semibold leading-tight">Explore What's Shaping <br /> Digital Today</h2>
           <p className="max-w-[500px] text-lg text-gray-700 justify-self-center text-[#101012] leading-relaxed">
