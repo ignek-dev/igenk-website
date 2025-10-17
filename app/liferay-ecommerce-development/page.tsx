@@ -1,7 +1,9 @@
+"use client"
 import { BlogSection } from "components/Common"
 import CaseStudy from "components/Common/CaseStudy"
 import HeroCTASection from "components/Common/HeroCTASection"
 import WhatMake from "components/Common/WhatMake"
+import { useEffect, useRef, useState } from "react"
 
 export default function LiferayEcommerceDevelopmentPage() {
     const featureTabs = [
@@ -47,13 +49,23 @@ export default function LiferayEcommerceDevelopmentPage() {
         },
         {
             number: 4,
-            title: "Testing & QA",
-            description: "Ensure everything works perfectly and meets quality standards."
+            title: "Store Development",
+            description: "We build your e-commerce infrastructure, customize features, and integrate both customers and products, using sprints with regular progress updates."
         },
         {
             number: 5,
-            title: "Launch",
-            description: "Deploy the product and monitor its performance."
+            title: "Extensions and Integrations",
+            description: "Your store integrates with extensions and third-party systems as needed. Unsure which system fits? We guide you in choosing and integrating the best solution."
+        },
+        {
+            number: 6,
+            title: "Quality Control",
+            description: "Thorough testing of features and integrations is conducted meticulously, ensuring any bugs are swiftly addressed to mitigate security risks and safeguard against potential data loss."
+        },
+        {
+            number: 7,
+            title: "Project Release",
+            description: "Your store is live and functional! After project completion, you can continue working with us for ongoing e-commerce consultation and comprehensive post-release support."
         }
     ];
 
@@ -91,6 +103,52 @@ export default function LiferayEcommerceDevelopmentPage() {
                 "Curabitur at lacus ac velit ornare lobortis. Vestibulum suscipit nulla quis orci. Donec posuere vulputate arcu.",
         },
     ];
+
+    const containerRef = useRef<HTMLDivElement | null>(null);
+    const [isDragging, setIsDragging] = useState(false);
+    const [startX, setStartX] = useState(0);
+    const [scrollStart, setScrollStart] = useState(0);
+    const [targetScroll, setTargetScroll] = useState<number | null>(null);
+
+    // Custom smooth scroll logic (2-second easing)
+    useEffect(() => {
+        if (targetScroll === null || !containerRef.current) return;
+
+        const start = containerRef.current.scrollLeft;
+        const distance = targetScroll - start;
+        const duration = 1200; // 2 seconds
+        const startTime = performance.now();
+
+        const smoothScroll = (currentTime: number) => {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            const ease = 1 - Math.pow(1 - progress, 3); // easeOutCubic
+            containerRef.current!.scrollLeft = start + distance * ease;
+
+            if (progress < 1) requestAnimationFrame(smoothScroll);
+        };
+
+        requestAnimationFrame(smoothScroll);
+    }, [targetScroll]);
+
+    const handleMouseDown = (e: React.MouseEvent) => {
+        if (!containerRef.current) return;
+        setIsDragging(true);
+        setStartX(e.pageX - containerRef.current.offsetLeft);
+        setScrollStart(containerRef.current.scrollLeft);
+    };
+
+    const handleMouseUp = () => setIsDragging(false);
+    const handleMouseLeave = () => setIsDragging(false);
+
+    const handleMouseMove = (e: React.MouseEvent) => {
+        if (!isDragging || !containerRef.current) return;
+        e.preventDefault();
+        const x = e.pageX - containerRef.current.offsetLeft;
+        const walk = (x - startX) * 2.8; // reduced scroll speed
+        setTargetScroll(scrollStart - walk);
+    };
+
     return (
         <main className="pb-16">
             {/* Hero */}
@@ -123,8 +181,8 @@ export default function LiferayEcommerceDevelopmentPage() {
                 </div>
             </section>
 
-            <section className="bg-white text-black">
-                <div className="mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px] py-20 md:py-24 lg:py-28">
+            <section className="bg-[#f7f7f7] text-black">
+                <div className="mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px] py-[64px] md:py-[64px] lg:py-[64px]">
                     <h2 className="text-5xl sm:text-4xl md:text-5xl font-semibold leading-tight">Liferay Ecommerce Development</h2>
                     <p className="text-lg text-gray-700 justify-self-center text-[#101012] leading-relaxed mt-4">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue.
@@ -157,7 +215,7 @@ export default function LiferayEcommerceDevelopmentPage() {
                 </div>
             </section>
 
-            <section className="bg-black text-white py-20 lg:py-24">
+            <section className="bg-black text-white py-[64px] lg:py-[64px]">
                 <div className=" mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px]  items-start">
                     <h2 className="text-5xl sm:text-4xl md:text-5xl font-semibold leading-tight">Ecommerce Development Using Liferay</h2>
                     <p className="text-lg text-white justify-self-center text-[#101012] leading-relaxed mt-4">
@@ -185,21 +243,34 @@ export default function LiferayEcommerceDevelopmentPage() {
                 </div>
             </section>
 
-            <section className="bg-white text-black">
-                <div className="mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px] py-20 md:py-24 lg:py-28">
+            <section className="bg-[#f7f7f7] text-black">
+                <div className="mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px] py-[64px] md:py-[64px] lg:py-[64px]">
                     <div className="grid items-center gap-10 md:grid-cols-2">
-                        <h2 className="text-5xl sm:text-4xl md:text-5xl font-semibold leading-tight">Our Liferay Ecommerce Development Process</h2>
-                        <p className="text-lg text-gray-700 justify-self-center text-[#101012] leading-relaxed">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla,
-                        </p>
+                        <div>
+                            <h2 className="text-5xl sm:text-4xl md:text-5xl font-semibold leading-tight">Our Liferay Ecommerce Development Process</h2>
+
+                        </div>
+                        <div className="relative">
+                            <p className="text-lg text-gray-700 justify-self-center text-[#101012] leading-relaxed absolute">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla,
+
+                            </p>
+                        </div>
                     </div>
-                    <div className="pt-8">
-                        <div className="max-w-full overflow-x-auto">
-                            <div className="flex relative min-w-max ml-[-25%]">
+                    <div className="pt-16 select-none">
+                        <div
+                            ref={containerRef}
+                            className="max-w-full overflow-x-hidden cursor-grab active:cursor-grabbing"
+                            onMouseDown={handleMouseDown}
+                            onMouseLeave={handleMouseLeave}
+                            onMouseUp={handleMouseUp}
+                            onMouseMove={handleMouseMove}
+                        >
+                            <div className="flex relative min-w-max ml-[-23%] [@media(min-width:1440px)]:ml-[-17%]">
                                 {steps.map((step, index) => (
                                     <div
                                         key={index}
-                                        className="flex flex-col items-center relative w-1/5 flex-shrink-0"
+                                        className="flex flex-col items-center relative w-1/10 flex-shrink-0"
                                     >
                                         {/* Connecting line */}
                                         {index < steps.length - 1 && (

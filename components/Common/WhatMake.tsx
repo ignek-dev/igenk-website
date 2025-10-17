@@ -31,9 +31,9 @@ const WhatMake = () => {
 
   return (
     <>
-      <div className="mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px] py-20 md:py-24 lg:py-28">
+      <div className="mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px] py-[64px] md:py-[64px] lg:py-[64px]">
         <div className="grid items-start gap-10 md:grid-cols-2 relative">
-          <h2 className="text-3xl font-semibold sm:text-4xl md:text-5xl w-[60%]">What Makes IGNEK the Right Choice</h2>
+          <h2 className="text-3xl font-semibold sm:text-4xl md:text-5xl w-[60%] leading-[60px]">What Makes IGNEK the Right Choice</h2>
           <p className="max-w-xl text-xl  md:justify-self-end absolute bottom-0 text-gray/500 text-right">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla,
           </p>

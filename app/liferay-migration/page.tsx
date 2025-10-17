@@ -116,9 +116,9 @@ export default function LiferayMigrationPage() {
       </section>
 
       {/* Circular reasons section */}
-      <section className="bg-white text-black">
-        <div className="mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px] py-20 md:py-24 lg:py-28">
-          <div className="relative flex flex-col items-center justify-center min-h-screen text-center px-6">
+      <section className="bg-[#f7f7f7] text-black">
+        <div className="mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px] py-[64px] md:py-[64px] lg:py-[64px]">
+          <div className="relative flex flex-col items-center justify-center  text-center px-6">
             {/* Outer Dotted Circle */}
             <div className="relative w-[700px] h-[700px] rounded-full border-2 border-dotted border-gray-300 flex items-center justify-center">
               {/* Inner Dotted Circle */}
@@ -168,9 +168,9 @@ export default function LiferayMigrationPage() {
 
       {/* Migration Process timeline */}
       <section className="bg-black text-white">
-        <div className="mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px] py-20 md:py-24 lg:py-28">
+        <div className="mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px] py-[64px] md:py-[64px] lg:py-[64px]">
           <div className="grid items-start gap-10 lg:grid-cols-[0.9fr_1.1fr]">
-            <div className="w-[80%]">
+            <div className="w-[80%] sticky top-0">
               <h2 className="text-3xl font-semibold sm:text-4xl md:text-5xl">Our Liferay Migration Process</h2>
               <p className="mt-4 max-w-xl text-sm text-white/80">
                 Understand objectives, plan dependencies, and execute migrations with predictable outcomes.

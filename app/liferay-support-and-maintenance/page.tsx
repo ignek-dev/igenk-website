@@ -113,16 +113,16 @@ export default function LiferaySupportMaintenancePage() {
       </section>
 
       {/* Support & Maintenance core with checklist */}
-      <section className="bg-white text-black">
-        <div className="mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px] py-20 md:py-24 lg:py-28">
+      <section className="bg-[#f7f7f7] text-black">
+        <div className="mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px] py-[64px] md:py-[64px] lg:py-[64px]">
           <div className="grid items-start gap-10 md:grid-cols-2">
             <div>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold">Liferay Support And Maintenance</h2>
+              <h2 className="text-5xl sm:text-3xl md:text-5xl font-semibold w-[70%] leading-[60px]">Liferay Support And Maintenance</h2>
               <p className="mt-4 max-w-xl text-sm text-gray-700 text-[20px]">
                 We keep your Liferay environment resilient through proactive monitoring, thorough diagnostics, and planned upgrades—backed by clear SLAs.
               </p>
             </div>
-            <div className="space-y-4 md:justify-self-end w-full">
+            <div className="space-y-4 md:justify-self-end w-full flex flex-col gap-8">
               {supportChecklist.map((txt) => (
                 <div key={txt} className="flex items-center gap-3 rounded-lg bg-white border border-gray-200 p-0">
 
@@ -141,9 +141,9 @@ export default function LiferaySupportMaintenancePage() {
 
       {/* Key Activities */}
       <section className="bg-black text-white">
-        <div className="mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px] py-20 md:py-24 lg:py-28">
+        <div className="mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px] py-[64px] md:py-[64px] lg:py-[64px]">
           <div className="grid items-start gap-10 md:grid-cols-2 relative">
-            <h2 className="text-3xl font-semibold sm:text-4xl md:text-5xl">Key Activities Under Our Liferay Support And Maintenance Service</h2>
+            <h2 className="text-3xl font-semibold sm:text-4xl md:text-5xl leading-[60px]">Key Activities Under Our Liferay Support And Maintenance Service</h2>
             <p className="max-w-xl text-xl text-white md:justify-self-end absolute bottom-0 text-white text-right">
               Our approach blends prevention and rapid response to keep your platform stable, secure, and performing.
             </p>

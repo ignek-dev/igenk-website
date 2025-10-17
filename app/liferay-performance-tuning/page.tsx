@@ -4,6 +4,7 @@ import { BlogSection } from "../../components/Common"
 import { Button } from "../../components/Button/Button"
 import HeroCTASection from "components/Common/HeroCTASection"
 import CaseStudy from "components/Common/CaseStudy"
+import WhatMake from "components/Common/WhatMake"
 
 
 
@@ -123,8 +124,8 @@ export default function LiferayPerformanceTuningPage() {
       </section>
 
       {/* Liferay Performance Tuning - Features Grid */}
-      <section className="bg-white text-black">
-        <div className="mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px] py-20 md:py-24 lg:py-28">
+      <section className="bg-[#f7f7f7] text-black">
+        <div className="mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px] py-[64px] md:py-[64px] lg:py-[64px]">
           <h2 className="text-5xl sm:text-4xl md:text-5xl font-semibold leading-tight">Liferay Performance Tuning</h2>
           <p className="text-lg text-gray-700 justify-self-center text-[#101012] leading-relaxed mt-4">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.
@@ -168,7 +169,7 @@ export default function LiferayPerformanceTuningPage() {
 
       {/* Outcome Of Our Liferay Performance Tuning Services */}
       <section className="bg-black text-white">
-        <div className="mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px] py-20 md:py-24 lg:py-28">
+        <div className="mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px] py-[64px] md:py-[64px] lg:py-[64px]">
           <div className="grid items-start gap-10 md:grid-cols-2 relative">
             <h2 className="text-3xl font-semibold sm:text-4xl md:text-5xl">
               Outcome Of Our Liferay
@@ -201,10 +202,10 @@ export default function LiferayPerformanceTuningPage() {
       </section>
 
       {/* What We Do With Our Liferay DXP Performance Tuning Services */}
-      <section className="bg-white text-black">
-        <div className="mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px] py-20 md:py-24 lg:py-28">
+      <section className="bg-[#f7f7f7] text-black">
+        <div className="mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px] py-[64px] md:py-[64px] lg:py-[64px]">
           <div className="grid items-start gap-10 md:grid-cols-2 relative">
-            <h2 className="text-3xl font-semibold sm:text-4xl md:text-5xl">
+            <h2 className="text-3xl font-semibold sm:text-4xl md:text-5xl leading-[60px]">
               What We Do With Our Liferay DXP Performance Tuning Services
             </h2>
             <p className="max-w-xl text-xl text-gray-700 md:justify-self-end absolute bottom-0 text-right">
@@ -277,6 +278,7 @@ export default function LiferayPerformanceTuningPage() {
       <CaseStudy
         caseStudies={caseStudies}
       />
+      <WhatMake/>
       <HeroCTASection />
       <BlogSection />
     </main>

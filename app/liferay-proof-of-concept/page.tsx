@@ -1,6 +1,7 @@
 import { BlogSection } from "components/Common";
 import CaseStudy from "components/Common/CaseStudy";
 import HeroCTASection from "components/Common/HeroCTASection";
+import WhatMake from "components/Common/WhatMake";
 
 export default function LiferayProofOfConceptPage() {
     const featureTabs = [
@@ -76,7 +77,7 @@ export default function LiferayProofOfConceptPage() {
 
                     {/* Feature tabs */}
                     <div className="mt-10 flex flex-wrap gap-5">
-                        {featureTabs.map((label,index) => (
+                        {featureTabs.map((label, index) => (
                             <span key={index} className="inline-flex items-center rounded-full border border-white/30 px-4 py-2 text-sm text-white/80 hover:text-white hover:border-white transition-colors">
                                 {label}
                             </span>
@@ -85,8 +86,8 @@ export default function LiferayProofOfConceptPage() {
                 </div>
             </section>
 
-            <section className="bg-white text-black">
-                <div className="mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px] py-20 md:py-24 lg:py-28">
+            <section className="bg-[#f7f7f7] text-black">
+                <div className="mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px] py-[64px] md:py-[64px] lg:py-[64px]">
                     <h2 className="text-5xl sm:text-4xl md:text-5xl font-semibold leading-tight">What We Do With Liferay POC Services</h2>
                     <p className="text-lg text-gray-700 justify-self-center text-[#101012] leading-relaxed mt-4">
                         Our Liferay PoC services align your needs with Liferay’s out-of-the-box capabilities. We provide a functional prototype to gauge if Liferay Proof of Concept meets your objectives, document feature comparisons, highlight time-to-market reductions, and assess future project risks.
@@ -113,10 +114,11 @@ export default function LiferayProofOfConceptPage() {
             <CaseStudy
                 caseStudies={caseStudies}
             />
+            <WhatMake />
+            <HeroCTASection />
             <BlogSection />
 
             {/* CTA */}
-            <HeroCTASection />
         </main>
     )
 }

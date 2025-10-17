@@ -1,5 +1,8 @@
+"use client"
 import { BlogSection } from "components/Common";
 import HeroCTASection from "components/Common/HeroCTASection";
+import WhatMake from "components/Common/WhatMake";
+import { useEffect, useRef, useState } from "react";
 
 export default function LiferayArchitectureDesignPage() {
     const featureTabs = [
@@ -29,6 +32,50 @@ export default function LiferayArchitectureDesignPage() {
         { text: "Monitoring and Analytics", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris." },
         { text: "Custom Development & Customization", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris." }
     ]
+    const containerRef = useRef<HTMLDivElement | null>(null);
+    const [isDragging, setIsDragging] = useState(false);
+    const [startX, setStartX] = useState(0);
+    const [scrollStart, setScrollStart] = useState(0);
+    const [targetScroll, setTargetScroll] = useState<number | null>(null);
+
+    // Custom smooth scroll logic (2-second easing)
+    useEffect(() => {
+        if (targetScroll === null || !containerRef.current) return;
+
+        const start = containerRef.current.scrollLeft;
+        const distance = targetScroll - start;
+        const duration = 1200; // 2 seconds
+        const startTime = performance.now();
+
+        const smoothScroll = (currentTime: number) => {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            const ease = 1 - Math.pow(1 - progress, 3); // easeOutCubic
+            containerRef.current!.scrollLeft = start + distance * ease;
+
+            if (progress < 1) requestAnimationFrame(smoothScroll);
+        };
+
+        requestAnimationFrame(smoothScroll);
+    }, [targetScroll]);
+
+    const handleMouseDown = (e: React.MouseEvent) => {
+        if (!containerRef.current) return;
+        setIsDragging(true);
+        setStartX(e.pageX - containerRef.current.offsetLeft);
+        setScrollStart(containerRef.current.scrollLeft);
+    };
+
+    const handleMouseUp = () => setIsDragging(false);
+    const handleMouseLeave = () => setIsDragging(false);
+
+    const handleMouseMove = (e: React.MouseEvent) => {
+        if (!isDragging || !containerRef.current) return;
+        e.preventDefault();
+        const x = e.pageX - containerRef.current.offsetLeft;
+        const walk = (x - startX) * 2.8; // reduced scroll speed
+        setTargetScroll(scrollStart - walk);
+    };
     return (
         <main className="pb-16">
             {/* Hero */}
@@ -61,8 +108,14 @@ export default function LiferayArchitectureDesignPage() {
                 </div>
             </section>
             <section>
-                <div className="py-[0px] px-[100px]">
-                    <div className="flex overflow-x-hidden scroll-smooth gap-10">
+                <div className="py-[0px] [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px]">
+                    <div className="flex overflow-x-hidden  gap-10"
+                        onMouseDown={handleMouseDown}
+                        onMouseLeave={handleMouseLeave}
+                        onMouseUp={handleMouseUp}
+                        onMouseMove={handleMouseMove}
+                        ref={containerRef}
+                    >
                         {systemArchitecure.map((item, index) => (
                             <div
                                 key={index}
@@ -82,7 +135,7 @@ export default function LiferayArchitectureDesignPage() {
             </section>
 
             <section className="bg-black text-white">
-                <div className="mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px] py-20 md:py-24 lg:py-28">
+                <div className="mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px] py-[64px] md:py-[64px] lg:py-[64px]">
                     <div className="grid items-start gap-10 md:grid-cols-2 relative">
                         <h2 className="text-3xl font-semibold sm:text-4xl md:text-5xl">Key Activities Under Our Liferay Architecture Design Services</h2>
                         <p className="max-w-xl text-xl text-white md:justify-self-end absolute bottom-0 text-white text-right">
@@ -100,10 +153,9 @@ export default function LiferayArchitectureDesignPage() {
                 </div>
             </section>
 
-            <BlogSection />
-
-            {/* CTA */}
+            <WhatMake />
             <HeroCTASection />
+            <BlogSection />
         </main>
     )
 }
