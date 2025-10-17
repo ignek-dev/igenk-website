@@ -22,15 +22,3 @@
   opacity: 0;
 }
 
-/* @keyframes drawLine {
-  0% {
-    height: 0;
-  }
-  100% {
-    height: 100%;
-  }
-}
-
-.animate-drawLine {
-  animation: drawLine 1s ease forwards;
-} */

@@ -37,7 +37,7 @@ const liferayServicesLinks = [
 // --- Main ServicesMegaMenu Component ---
 export default function ServicesMegaMenu() {
   return (
-    <div className="absolute inset-x-0 top-full z-50 border-t border-white/10 bg-black text-white">
+    <>
       <div className="mx-auto w-full px-4 py-12 md:px-8 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px]">
         <div className="flex items-start gap-16">
           {/* Left Side: Image Card */}
@@ -113,6 +113,6 @@ export default function ServicesMegaMenu() {
           </div>
         </div>
       </div>
-    </div>
+    </>
   )
 }
