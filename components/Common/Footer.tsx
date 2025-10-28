@@ -56,7 +56,7 @@ export default function Footer() {
   return (
     <footer className="relative bg-black text-white">
       {/* Top section: menus with right decorative lines and partial width */}
-      <div className="relative mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px] pt-20 pb-16 md:pt-24 md:pb-20 border-b border-white/100 ">
+      <div className="relative mx-auto w-full px-4 md:px-6 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px] pt-20 pb-16 md:pt-24 md:pb-20 border-b border-white/100 ">
         {/* Decorative grid lines */}
         <div className="pointer-events-none absolute right-0 top-0 h-full w-[20%] border-l border-white/100">
         </div>
@@ -80,7 +80,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom section: contacts + big logo + motto + bottom bar */}
-      <div className="relative mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px] pt-12 pb-20 md:pt-16 md:pb-24">
+      <div className="relative mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px] pt-12 pb-20 md:pt-16 md:pb-24">
         {/* Horizontal divider across 80% width */}
         <div className="pointer-events-none absolute left-0 right-[20%] top-0 h-px bg-white/20" />
         {/* Right decorative curve */}

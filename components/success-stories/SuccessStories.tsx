@@ -1,8 +1,9 @@
 // components/SuccessStories.tsx
-
+'use client';
 import React from 'react';
 import SuccessStoryCard, { Story } from './SuccessStoryCard';
 import motion from 'framer-motion';
+import { useInView } from 'hooks/useInView';
 
 // CHANGED: Consolidated Provided Services data
 const commonProvidedServices = [
@@ -38,13 +39,18 @@ const stories: Story[] = [
 
 
 const SuccessStories: React.FC = () => {
+   const [ref, isInView] = useInView({ triggerOnce: true })
   return (
-    <section className="bg-gray-50 py-20">
+    <section ref={ref}  className={`relative bg-white text-black py-12 transition-all mt-[-80px] rounded-t-[5rem] shadow-xl z-10 ${
+        isInView ? 'animate-slide-top opacity-100' : 'opacity-0 translate-y-10'
+      }`}>
       <div className="mx-auto w-full px-4 md:px-8 max-w-7xl">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900">Success Stories</h2>
-          <p className="mt-4 text-lg text-gray-600">
+          <h2  className={`text-center text-4xl md:text-5xl font-semibold mb-6 transition-all duration-700 ${
+            isInView ? 'animate-slide-top opacity-100' : 'opacity-0'
+          }`}>Success Stories</h2>
+          <p className="mt-2 text-lg text-gray-600">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla.
           </p>
         </div>

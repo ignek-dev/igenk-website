@@ -13,7 +13,7 @@ const frameContent = [
 const IntermediateFrame = () => {
     const marqueeContent = [...frameContent, ...frameContent];
   return (
-    <section className="w-full h-[79px] bg-[#FFFFFF] flex items-center justify-around overflow-hidden">
+    <section className="w-full h-[83px] bg-[#FFFFFF] flex items-center justify-around overflow-hidden">
       <div className="flex animate-marquee-custom gap-x-24">
         {marqueeContent.map((text, index) => (
           <p

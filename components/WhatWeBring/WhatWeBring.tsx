@@ -80,9 +80,9 @@ const WhatWeBring = () => {
   }
 
   return (
-    <section ref={sectionRef} className="overflow-hidden bg-black py-20 text-white">
+    <section ref={sectionRef} className="overflow-hidden bg-black py-16 text-white">
       {/* Container for the header, matching your site's padding */}
-      <div className="mx-auto mb-16 w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px]">
+      <div className="mx-auto mb-16 w-full px-4 md:px-6 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
         <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
           <h2 className={`text-5xl font-bold leading-tight ${
               isInView ? "animate-when-visible animate-slide-top" : "opacity-0"

@@ -16,7 +16,7 @@ export interface Story {
 const SuccessStoryCard: React.FC<{story: Story}> = ({ story }) => {
  return (
     // The main card container
-    <div className="bg-white rounded-2xl shadow-lg p-6 md:p-8">
+    <div className="bg-white rounded-2xl border border-[#E5E7EB]  p-6 md:p-8">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
         {/* Left Column: Image */}
         <div className="w-full h-auto aspect-[4/3] rounded-lg overflow-hidden">

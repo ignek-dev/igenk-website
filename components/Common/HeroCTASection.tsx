@@ -62,8 +62,8 @@ const HeroCTASection: React.FC = () => {
   });
 
   return (
-    <section ref={sectionRef} className="bg-black text-white py-20 lg:py-24">
-      <div className="mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px] grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+    <section ref={sectionRef} className="bg-black text-white py-16 lg:py-16">
+      <div className="mx-auto w-full px-4 md:px-6 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px] grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
         {/* Left Column: FAQ Section */}
         <div className={isInView ? 'animate-when-visible animate-slide-left' : 'opacity-0'}>
           {/* Main Title and Description */}

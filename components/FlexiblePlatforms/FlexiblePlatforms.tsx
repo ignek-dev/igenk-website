@@ -17,8 +17,8 @@ const platformsData = [
 
 const FlexiblePlatforms = () => {
   return (
-    <section className="bg-[#F9FAF7] text-black py-20 lg:py-24 overflow-hidden">
-      <div className="mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px] grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+    <section className="bg-[#F9FAF7] text-black py-20 lg:py-16 overflow-hidden">
+      <div className="mx-auto w-full px-4 md:px-6 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px] grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
         {/* Left Column: Title and Description */}
         <div>
           <h2 className="text-5xl sm:text-5xl font-bold leading-tight">
@@ -30,7 +30,7 @@ const FlexiblePlatforms = () => {
           </p>
         </div>
 
-        <div className="relative group rounded-[20px] overflow-hidden w-[355px] h-[253px] sm:w-[480px] sm:h-[320px] md:min-w-[908px] md:h-[646px] mx-auto md:right-[90px]">
+        <div className="relative group rounded-[20px] overflow-hidden w-[680px] h-[496px]  ">
           {/* 1. Background Image */}
           <Image
             src="/images/liferay-details.jpg"

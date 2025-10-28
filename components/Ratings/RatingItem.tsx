@@ -20,7 +20,7 @@ const RatingItem: React.FC<RatingItemProps> = ({ logoSrc, logoAlt, ratingValue, 
 
 
   return (
-    <div className={`flex flex-col items-center justify-center p-8 w-full ${
+    <div className={`flex flex-col items-center justify-center p-12 w-full ${
       isInView ? 'animate-when-visible animate-fade-in animate-delay-100' : 'opacity-0'
     }`}>
       <div className="h-12 flex items-center mb-4">

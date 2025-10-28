@@ -77,7 +77,7 @@ export default function HomePage() {
           <div className="absolute right-[-150px] bottom-[-150px] h-[500px] w-[500px] rounded-full bg-[#0E7BF8] opacity-15 blur-[100px]" />
         </div>
 
-        <div className="mx-auto w-full px-4 pt-20 pb-12 md:px-8 md:pb-24 lg:pb-28 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px]">
+        <div className="mx-auto w-full px-4 pt-20 pb-12 md:px-6 md:pb-16 lg:pb-20 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
           <h1 className="text-6xl leading-none font-extrabold md:text-7xl lg:text-8xl xl:text-9xl 2xl:text-[8.25rem]">
             Transform Your
             <br />
@@ -85,7 +85,7 @@ export default function HomePage() {
             <br />
             <span>With IGNEK Today</span>
           </h1>
-          <div className="mt-10 grid items-start gap-8 md:grid-cols-2">
+          <div className="mt-18 grid items-start gap-8 md:grid-cols-2">
             <p className="max-w-xl text-xl text-white/80 sm:text-base">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.
               Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris.
@@ -105,7 +105,7 @@ export default function HomePage() {
           </div>
 
           {/* Divider line matching text color */}
-          <div className="mt-14 border-t border-white/30" />
+          <div className="mt-16.5 border-t border-white/30" />
 
           {/* Logos row: 7 items with spacing and responsive wrap */}
           <div className="mt-10 overflow-hidden">
@@ -117,7 +117,7 @@ export default function HomePage() {
                   key={idx}
                   className="flex w-44 flex-shrink-0 items-center justify-center opacity-80 transition hover:opacity-100"
                 >
-                  <Image src={partner.image} alt={partner.name} width={140} height={40} className="object-contain" />
+                  <Image src={partner.image} alt={partner.name} width={203} height={54} className="object-contain" />
                 </div>
               ))}
             </div>
