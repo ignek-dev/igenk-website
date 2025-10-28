@@ -1,6 +1,9 @@
+'use client';
+
 import React from 'react';
 import AccordionItem from './AccordionItem';
 import ExpertCard from './ExpertCard';
+import { useInView } from 'hooks/useInView';
 
 const faqItems = [
   {
@@ -52,11 +55,17 @@ const faqItems = [
 ];
 
 const HeroCTASection: React.FC = () => {
+
+  const [sectionRef, isInView] = useInView({
+    triggerOnce: true,
+    threshold: 0.2,
+  });
+
   return (
-    <section className="bg-black text-white py-20 lg:py-24">
-      <div className="mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px] grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+    <section ref={sectionRef} className="bg-black text-white py-16 lg:py-16">
+      <div className="mx-auto w-full px-4 md:px-6 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px] grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
         {/* Left Column: FAQ Section */}
-        <div>
+        <div className={isInView ? 'animate-when-visible animate-slide-left' : 'opacity-0'}>
           {/* Main Title and Description */}
           <h2 className="text-5xl font-bold leading-tight mb-8">
             Flexible Platforms.
@@ -75,7 +84,9 @@ const HeroCTASection: React.FC = () => {
         </div>
 
         {/* Right Column: Expert Card */}
-        <div className="sticky top-24"> 
+        <div className={`sticky top-24 ${
+          isInView ? 'animate-when-visible animate-slide-right animation-delay-200' : 'opacity-0'
+        }`}> 
           <ExpertCard />
         </div>
       </div>

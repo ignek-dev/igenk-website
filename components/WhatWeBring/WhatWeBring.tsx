@@ -2,6 +2,7 @@
 
 import React, { useRef, useState } from "react"
 import WhatWeBringCard from "./WhatWeBringCard"
+import { useInView } from "hooks/useInView"
 
 // Dummy data for the six cards
 const cardData = [
@@ -49,6 +50,12 @@ const WhatWeBring = () => {
   const [startX, setStartX] = useState(0)
   const [scrollLeft, setScrollLeft] = useState(0)
 
+    // 2. Instantiate the useInView hook for the section animations
+  const [sectionRef, isInView] = useInView({
+    triggerOnce: true,
+    threshold: 0.2, // Start when 20% of the section is visible
+  })
+
   const handleMouseDown = (e: React.MouseEvent) => {
     if (!scrollRef.current) return
     setIsDragging(true)
@@ -73,16 +80,20 @@ const WhatWeBring = () => {
   }
 
   return (
-    <section className="overflow-hidden bg-black py-20 text-white">
+    <section ref={sectionRef} className="overflow-hidden bg-black py-16 text-white">
       {/* Container for the header, matching your site's padding */}
-      <div className="mx-auto mb-16 w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px]">
+      <div className="mx-auto mb-16 w-full px-4 md:px-6 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
         <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
-          <h2 className="text-5xl leading-tight font-bold">
+          <h2 className={`text-5xl font-bold leading-tight ${
+              isInView ? "animate-when-visible animate-slide-top" : "opacity-0"
+            }`}>
             What We Bring To Your
             <br />
             Digital Experience
           </h2>
-          <p className="max-w-xl pt-2 text-lg text-gray-300">
+          <p  className={`max-w-xl pt-2 text-lg text-gray-300 ${
+              isInView ? "animate-when-visible animate-slide-top" : "opacity-0"
+            }`}>
             We help businesses craft a clear and actionable digital roadmap that aligns with both short-term objectives
             and long-term vision.
           </p>
@@ -92,7 +103,9 @@ const WhatWeBring = () => {
       {/* Horizontally scrolling container for the cards */}
       <div
         ref={scrollRef}
-        className="flex overflow-x-auto space-x-8 pb-8 cursor-grab active:cursor-grabbing select-none scrollbar-hide px-4 md:px-8 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px]"
+        className={`flex cursor-grab select-none space-x-8 overflow-x-auto pb-8 active:cursor-grabbing scrollbar-hide px-4 md:px-8 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px] ${
+          isInView ? "animate-when-visible animate-slide-right animation-delay-400" : "opacity-0"
+        }`}
         onMouseDown={handleMouseDown}
         onMouseLeave={handleMouseLeave}
         onMouseUp={handleMouseUp}

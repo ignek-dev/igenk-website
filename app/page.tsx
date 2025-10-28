@@ -10,6 +10,7 @@ import Achievements from "components/Achievements/Achievements"
 import SuccessStories from "components/success-stories/SuccessStories"
 import HeroCTASection from "components/Common/HeroCTASection"
 import RatingsSection from "components/Ratings/RatingsSection"
+import EndToEndSection from "components/EndToEndSection/EndToEndSection"
 export const metadata: Metadata = {
   title: "Ignek - Transform Your Digital Experience",
   description:
@@ -76,7 +77,7 @@ export default function HomePage() {
           <div className="absolute right-[-150px] bottom-[-150px] h-[500px] w-[500px] rounded-full bg-[#0E7BF8] opacity-15 blur-[100px]" />
         </div>
 
-        <div className="mx-auto w-full px-4 pt-20 pb-12 md:px-8 md:pb-24 lg:pb-28 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px]">
+        <div className="mx-auto w-full px-4 pt-20 pb-12 md:px-6 md:pb-16 lg:pb-20 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
           <h1 className="text-6xl leading-none font-extrabold md:text-7xl lg:text-8xl xl:text-9xl 2xl:text-[8.25rem]">
             Transform Your
             <br />
@@ -84,7 +85,7 @@ export default function HomePage() {
             <br />
             <span>With IGNEK Today</span>
           </h1>
-          <div className="mt-10 grid items-start gap-8 md:grid-cols-2">
+          <div className="mt-18 grid items-start gap-8 md:grid-cols-2">
             <p className="max-w-xl text-xl text-white/80 sm:text-base">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.
               Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris.
@@ -104,7 +105,7 @@ export default function HomePage() {
           </div>
 
           {/* Divider line matching text color */}
-          <div className="mt-14 border-t border-white/30" />
+          <div className="mt-16.5 border-t border-white/30" />
 
           {/* Logos row: 7 items with spacing and responsive wrap */}
           <div className="mt-10 overflow-hidden">
@@ -116,7 +117,7 @@ export default function HomePage() {
                   key={idx}
                   className="flex w-44 flex-shrink-0 items-center justify-center opacity-80 transition hover:opacity-100"
                 >
-                  <Image src={partner.image} alt={partner.name} width={140} height={40} className="object-contain" />
+                  <Image src={partner.image} alt={partner.name} width={203} height={54} className="object-contain" />
                 </div>
               ))}
             </div>
@@ -124,74 +125,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* End-to-End Digital Transformation Partner */}
-      <section className="relative bg-black text-white">
-        <div className="mx-auto w-full px-4 py-20 md:px-8 md:py-24 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px]">
-          <div className="grid gap-10 md:grid-cols-2 md:gap-12 lg:gap-16">
-            <div>
-              <h2 className="text-5xl font-semibold sm:text-4xl md:text-5xl">
-                Your End-to-End Digital Transformation Partner
-              </h2>
-            </div>
-            <p className="max-w-xl text-white/80 text-lg">
-              We help businesses craft a clear and actionable digital roadmap that aligns with both short-term
-              objectives and long-term vision
-            </p>
-          </div>
-
-          {/* Digital Experience + Accordions */}
-          <div className="mt-20 grid gap-12 md:mt-24 md:grid-cols-2 md:gap-14 lg:gap-16">
-            <div>
-              <h3 className="text-2xl font-semibold md:text-4xl">Digital Experience</h3>
-              <p className="mt-3 max-w-xl text-white/80 text-lg">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.
-              </p>
-            </div>
-            <div className="grid gap-10 md:grid-cols-2 md:gap-12">
-            <div>
-                {[
-                  { title: "DX Strategy", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi." },
-                  { title: "DX Design", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi." },
-                  { title: "DX Engineering", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi." },
-                ].map((item, index) => (
-                  <AccordionItem key={index} title={item.title} content={item.content} />
-                ))}
-              </div>
-              {/* Second Column */}
-              <div>
-                {[
-                  { title: "DX Intelligence", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi." },
-                  { title: "DX Marketing", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi." },
-                  { title: "DX Infrastructure", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi." },
-                ].map((item, index) => (
-                  <AccordionItem key={index} title={item.title} content={item.content} />
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Staff Augmentation + Accordions */}
-          <div className="mt-28 grid gap-12 md:grid-cols-2 md:gap-14 lg:mt-32 lg:gap-16">
-            <div>
-              <h3 className="text-2xl font-semibold md:text-4xl">Staff augmentation</h3>
-              <p className="mt-3 max-w-xl text-white/80 text-lg">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.
-              </p>
-            </div>
-            <div className="grid gap-10 md:gap-12">
-              <div>
-                {[
-                  { title: "Technical Excellence", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi." },
-                  { title: "Value-Based Pricing", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi." },
-                  { title: "Training", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi." },
-                ].map((item, index) => (
-                  <AccordionItem key={index} title={item.title} content={item.content} />
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* MODIFICATION: Replace the entire section with our new component */}
+      <EndToEndSection />
 
       <IntermediateFrame />
       <OurCapabilities />

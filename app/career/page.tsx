@@ -87,7 +87,7 @@ export default function CareerPage() {
   return (
     <main className="">
       {/* Hero */}
-       <section className="relative flex h-screen flex-col justify-end text-white overflow-hidden">
+      <section className="relative flex h-screen flex-col justify-end overflow-hidden text-white">
         <div className="absolute inset-0 -z-10 bg-[url('/images/career_bg.jpg')] bg-cover bg-center" />
         <div className="absolute inset-0 -z-10 bg-black/60" />
 
@@ -97,34 +97,27 @@ export default function CareerPage() {
           <div className="grid items-end gap-10 lg:grid-cols-2">
             <div>
               <div className="inline-flex items-center rounded-full border border-white/30 px-4 py-2 text-lg text-sm text-white/80">
-                Career
+                Career at IGNEK
               </div>
-              
-              {/* Container for the text mask effect */}
-              <div className="relative mt-6 bg-white mix-blend-multiply">
-                {/* Layer 1: The text acts as the base mask layer. It is rendered first. */}
-                <h1 className="relative text-black text-[98px] leading-tight font-extrabold sm:text-5xl md:text-6xl">
-                  Grow With Us,
-                  <br />
-                  Shine With Us
-                </h1>
-                
-                {/* Layer 2: The video is absolutely positioned to cover the h1 and blended into it. */}
+
+              <div className="text-mask-container mt-3">
                 <video
                   autoPlay
                   loop
                   muted
                   playsInline
-                  className="absolute top-0 left-0 h-full w-full object-cover mix-blend-screen"
-                   style={{ filter: 'brightness(1.5) contrast(1.2)' }}
+                  className="masked-hero-video"
+                  style={{
+                    maskImage: "url(/images/career/tex.svg)",
+                    WebkitMaskImage: "url(/images/career/tex.svg)",
+                  }}
                 >
                   <source src="/images/career/multi-color-bg.mp4" type="video/mp4" />
                 </video>
               </div>
             </div>
-            <p className="max-w-xl text-xl text-white/80 md:justify-self-end">
-              We’re a growth culture that values creativity, collaboration, and grit. Join us to build products and
-              experiences that make a real impact.
+             <p className="max-w-xl pb-12 text-right text-[20px] leading-[30px] font-normal tracking-[0] text-white/80 sm:text-[18px] sm:leading-[28px] md:justify-self-end">
+              At IGNEK we value people and it include their growth, learning, and perks that help you succeed personally and professionally.
             </p>
           </div>
         </div>
@@ -135,11 +128,11 @@ export default function CareerPage() {
         <div className="mx-auto w-full px-4 py-16 md:px-8 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px]">
           <div className="grid items-start gap-10 md:grid-cols-2">
             <h2 className="text-2xl font-semibold sm:text-3xl md:text-5xl">
-              Perks & Benefits That Go <br /> Beyond The Paycheck
+              More Than Just a Job
+
             </h2>
-            <p className="max-w-xl text-xl text-white/80 md:justify-self-end">
-              We invest in experiences, opportunities, and support systems that help you thrive professionally and
-              personally.
+             <p className="max-w-xl pb-12 text-right text-[20px] leading-[30px] font-normal tracking-[0] text-white/80 sm:text-[18px] sm:leading-[28px] md:justify-self-end">
+              At IGNEK to enjoy perks that inspire—learning, flexibility, and a workplace that values your well-being.
             </p>
           </div>
 
@@ -173,13 +166,10 @@ export default function CareerPage() {
         <div className="mx-auto w-full px-4 py-16 md:px-8 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px]">
           <div className="grid items-start gap-10 md:grid-cols-2">
             <h2 className="text-4xl leading-tight font-semibold tracking-[-0.02em] text-balance sm:text-3xl md:text-5xl">
-              <span className="block">Your Next</span>
-              <span className="block">Opportunity Awaits</span>
+              <span className="block">Apply at IGNEK</span>
             </h2>
             <p className="max-w-xl self-center text-right text-[20px] leading-[30px] font-normal tracking-[0] text-gray-700 sm:text-[18px] sm:leading-[28px] md:justify-self-end">
-              Be part of a culture that values creativity,
-              <br />
-              <span className="mt-1 block text-gray-700">collaboration, and growth.</span>
+              Explore careers at IGNEK, find your perfect role, and join our team to make an impact that matters.
             </p>
           </div>
 
