@@ -1,5 +1,4 @@
 // components/SolutionsMegaMenu.tsx
-
 // --- Data for the Mega Menu ---
 // const iconUrl = "/images/mega-menu/solution-e1.png"
 
@@ -39,7 +38,7 @@ const aiLinks = [
 // --- Main SolutionsMegaMenu Component ---
 export default function SolutionsMegaMenu() {
   return (
-    <div className="absolute inset-x-0 top-full z-50 border-t border-white/10 bg-black text-white">
+    <>
       <div className="mx-auto w-full px-4 py-12 md:px-8 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px]">
         <div className="flex w-full justify-between gap-24">
           {/* Left Group (Solutions & Integrations) */}
@@ -115,6 +114,6 @@ export default function SolutionsMegaMenu() {
           </div>
         </div>
       </div>
-    </div>
+    </>
   )
 }

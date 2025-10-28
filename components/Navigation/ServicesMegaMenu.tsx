@@ -21,23 +21,23 @@ const digitalExperienceLinks = [
 
 // Data for the "Liferay Services" section
 const liferayServicesLinks = [
-  { text: "Development & Customization", href: "#" },
-  { text: "Theme Development", href: "#" },
-  { text: "Expert Advice", href: "#" },
-  { text: "Proof Of Concept", href: "#" },
-  { text: "Ecommerce Development", href: "#" },
+  { text: "Development & Customization", href: "/liferay-development-and-customization" },
+  { text: "Theme Development", href: "/liferay-theme-development" },
+  { text: "Expert Advice", href: "/liferay-expert-advice" },
+  { text: "Proof Of Concept", href: "/liferay-proof-of-concept" },
+  { text: "Ecommerce Development", href: "/liferay-ecommerce-development" },
   { text: "Migration", href: "/liferay-migration" },
   { text: "Support & Maintenance", href: "/liferay-support-and-maintenance" },
   { text: "Performance Tuning", href: "/liferay-performance-tuning" },
-  { text: "Upgrade", href: "#" },
-  { text: "Architecture Service", href: "#" },
-  { text: "Consulting Page", href: "#" },
+  { text: "Upgrade", href: "/liferay-upgrade" },
+  { text: "Architecture Service", href: "/liferay-architecture-design" },
+  { text: "Consulting Page", href: "/liferay-consulting-and-implementation-services" },
 ]
 
 // --- Main ServicesMegaMenu Component ---
 export default function ServicesMegaMenu() {
   return (
-    <div className="absolute inset-x-0 top-full z-50 border-t border-white/10 bg-black text-white">
+    <>
       <div className="mx-auto w-full px-4 py-12 md:px-8 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px]">
         <div className="flex items-start gap-16">
           {/* Left Side: Image Card */}
@@ -113,6 +113,6 @@ export default function ServicesMegaMenu() {
           </div>
         </div>
       </div>
-    </div>
+    </>
   )
 }

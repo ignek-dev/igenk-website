@@ -30,7 +30,10 @@ const ExpertCard: React.FC = () => {
 
       {/* Schedule Meeting Button */}
       <div>
-        <ScheduleMeetingButton  />
+        <ScheduleMeetingButton
+          isFullWidth={true}
+          btnName="Schedule Meeting"
+        />
       </div>
 
       {/* Prefer Email */}
@@ -42,7 +45,11 @@ const ExpertCard: React.FC = () => {
         >
           sales@ignek.com
           <div className="flex items-center justify-between mt-4">
-            <p className="text-white text-lg font-semibold border border-white px-2 rounded-full">&#8594;</p>
+            <p className="text-white text-lg font-semibold border border-white p-2 rounded-full mt-[-30px]">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" viewBox="0 0 14 12" fill="none">
+                <path d="M1.66683 5.99984L12.3335 5.99984M12.3335 5.99984L7.66683 1.33317M12.3335 5.99984L7.66683 10.6665" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </p>
           </div>
         </a>
       </div>
