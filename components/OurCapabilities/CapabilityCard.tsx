@@ -9,7 +9,7 @@ interface CapabilityCardProps {
 
 const CapabilityCard: React.FC<CapabilityCardProps> = ({ iconSrc, title, description }) => {
   return (
-    <div className="flex flex-col p-6">
+    <div className="flex flex-col p-6 pl-0">
       {/* Icon and Title */}
       <div className="mb-2 flex items-center space-x-3">
         <Image src={iconSrc} alt={`${title} icon`} width={48} height={48} className="object-contain" />

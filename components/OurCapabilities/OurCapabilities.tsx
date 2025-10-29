@@ -79,10 +79,10 @@ const OurCapabilities: React.FC = () => {
 
   return (
     <section ref={sectionRef} className="bg-black py-16 text-white">
-      <div className="mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[194px] [@media(min-width:1920px)]:px-[194px]">
+      <div className="mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
         {/* Header Section */}
         <div className="flex flex-col lg:flex-row lg:justify-between lg:items-end mb-12 lg:mb-20">
-          <h2  className={`text-4xl sm:text-5xl font-bold mb-4 lg:mb-0 ml-5 ${
+          <h2  className={`text-4xl sm:text-5xl font-bold mb-4 lg:mb-0 ${
               isInView ? "animate-when-visible animate-slide-top" : "opacity-0"
             }`}>Our Capabilities</h2>
           <p className={`max-w-xl text-lg text-gray-300 text-right ${
@@ -94,7 +94,7 @@ const OurCapabilities: React.FC = () => {
         </div>
 
         {/* Capabilities Grid */}
-        <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ${
+        <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10  ${
             isInView ? "animate-when-visible animate-fade-in animation-delay-200" : "opacity-0"
           }`}>
           {capabilitiesData.map((capability, index) => (
