@@ -48,46 +48,40 @@ const stories: Story[] = [
 ]
 
 const SuccessStories: React.FC = () => {
-  const [ref, isInView] = useInView({ triggerOnce: true })
+  const [ref, isInView] = useInView({ triggerOnce: true, threshold: 0.1 });
+
   return (
+    // The key is z-index and the negative margin to create the overlay effect
     <section
       ref={ref}
       id="success-stories"
-      className={`relative z-10 mt-[-80px] rounded-t-[5rem] bg-white py-12 text-black shadow-xl transition-all ${
-        isInView ? "animate-slide-top opacity-100" : "translate-y-10 opacity-0"
-      }`}
+      className="relative z-10 mt-[-80px] rounded-t-[5rem] bg-white py-12 text-black shadow-xl"
     >
-      <div className="mx-auto w-full overflow-x-hidden px-4 py-12 md:px-6 md:py-13.5 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
-        <div className="mx-auto w-full max-w-7xl px-4 md:px-8">
-          {/* Section Header */}
-          <div className="mx-auto mb-16 max-w-3xl text-center">
-            <h2
-              className={`mb-6 text-center text-4xl font-semibold transition-all duration-700 md:text-5xl ${
-                isInView ? "animate-slide-top opacity-100" : "opacity-0"
-              }`}
-            >
-              Success Stories
-            </h2>
-            <p className="mt-2 text-lg text-gray-600">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.
-              Pellentesque sit amet sapien fringilla.
-            </p>
-          </div>
+      <div
+        className={`transition-all duration-1000 ease-out ${
+          isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'
+        }`}
+      >
+        <div className="mx-auto w-full overflow-x-hidden px-4 py-12 md:px-6 md:py-4 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
+          <div className="mx-auto w-full max-w-7xl px-4 md:px-8">
+            {/* Section Header */}
+            <div className="mx-auto mb-8 max-w-3xl text-center">
+              <h2 className="mb-4 text-center text-4xl font-semibold md:text-5xl">
+                Success Stories
+              </h2>
+              <p className="mt-1 text-lg text-gray-600">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.
+              </p>
+            </div>
 
-          {/* Cards Container - uses space-y to add margin between cards */}
-          <div className="space-y-8">
-            {stories.map((story, index) => (
-              <div
-                key={index}
-                className={`animate-when-visible animate-slide-bottom transition-all duration-700 ${
-                  isInView ? `translate-y-0 opacity-100 animation-delay-${index * 200}` : "translate-y-10 opacity-0"
-                }`}
-                // The style attribute creates the stacking offset for each card
-                // style={{ top: `calc(6rem + ${index * 2}rem)` }}
-              >
-                <SuccessStoryCard story={story} />
-              </div>
-            ))}
+            {/* Cards Container */}
+            <div className="space-y-8">
+              {stories.map((story, index) => (
+                <div key={index}>
+                  <SuccessStoryCard story={story} />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
@@ -95,4 +89,4 @@ const SuccessStories: React.FC = () => {
   )
 }
 
-export default SuccessStories
+export default SuccessStories;
