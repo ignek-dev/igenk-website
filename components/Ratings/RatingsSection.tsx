@@ -23,9 +23,8 @@ const RatingsSection: React.FC = () => {
     <section ref={sectionRef} className="bg-white">
             <div className="mx-auto w-full overflow-x-hidden px-4 py-12 md:px-6 md:py-13.5 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
 
-      <div className="mx-auto w-full max-w-7xl">
         <div className="
-          flex flex-col md:flex-row md:h-[240px] items-center justify-evenly
+          flex flex-col md:flex-row md:h-[192px] items-center justify-between
           divide-y divide-gray-200 md:divide-y-0 md:divide-x
           ">
           {ratingsData.map((rating, index) => (
@@ -38,7 +37,6 @@ const RatingsSection: React.FC = () => {
               />
           ))}
         </div>
-      </div>
       </div>
     </section>
   );

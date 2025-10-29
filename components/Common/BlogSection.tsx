@@ -20,7 +20,7 @@ export default function BlogSection() {
 
   return (
     <section className="bg-white text-black">
-      <div className="mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px] py-[64px] md:py-[64px] lg:py-[64px]">
+      <div className="mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px] py-[64px] md:py-[64px] lg:py-[64px]">
         <div className="grid items-center gap-10 md:grid-cols-2">
           <h2 className={`text-5xl sm:text-4xl md:text-5xl font-semibold leading-tight ${
               isInView ? 'animate-when-visible animate-slide-left animation-delay-200' : 'opacity-0'
@@ -35,23 +35,23 @@ export default function BlogSection() {
         </div>
 
         <div className="mt-16 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-[1fr_0.8fr] gap-12 lg:gap-16 xl:gap-20">
-          <div className={`flex flex-col ${
+          <div className={`flex flex-col space-y-2 ${
               isInView ? 'animate-when-visible animate-slide-left animation-delay-200' : 'opacity-0'
             }`}>
-            <div className="overflow-hidden rounded-xl bg-gray-100 mt-3">
+            <div className="overflow-hidden rounded-xl bg-gray-100">
               <Image src={main?.image || "/images/blog.svg"} alt={main?.title || "Blog Post"} width={856} height={459} className="h-auto w-full object-cover" />
             </div>
             <h3 className="text-4xl md:text-3xl font-semibold line-height-[44px] text-[#101012] pt-2">{main?.title || "Blog Post"}</h3>
             <p className="mt-2 text-lg text-gray-700 text-[#101012]">{main?.excerpt || "Lorem ipsum dolor sit amet, consectetur adipiscing elit."}</p>
-            <div className="mt-8 border-t border-gray-300 w-full" />
+            <div className="mt-6 border-t border-gray-300 w-full" />
           </div>
 
           {/* Right: three small cards */}
-          <div ref={cardsRef} className={`space-y-6 transition-all duration-[1500ms] ease-out ${isInView ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-20'
+          <div ref={sectionRef} className={`space-y-4 transition-all duration-[1500ms] ease-out ${isInView ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-20'
             }`}>
             {side.map((item,index) => (
               <div key={item.id}
-                className={`grid grid-cols-[260px_1fr] items-center gap-6 ${index !== 0 && index !== side.length - 1 ? "mb-7" : ""
+                className={`grid grid-cols-[260px_1fr] items-center gap-5 ${index !== 0 && index !== side.length - 1 ? "mb-7" : ""
                   }`}
               >
                 <div className="overflow-hidden rounded-lg bg-gray-100">

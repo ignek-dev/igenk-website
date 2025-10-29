@@ -45,7 +45,7 @@ export default function Navigation() {
           {!isCareerPage && (
             <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_14%_0%,#00979E_0%,#0E7BF800_60%)] opacity-20" />
           )}{" "}
-          <nav className="mx-auto flex w-full items-center px-4 py-6 md:px-8 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px]">
+          <nav className="mx-auto flex w-full items-center px-4 py-6.5 md:px-8 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
             <Link href="/" className="flex items-center gap-3" aria-label="Home">
               <Image src="/images/logo.svg" alt="Ignek logo" width={182} height={86} priority />
             </Link>

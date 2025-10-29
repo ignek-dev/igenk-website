@@ -61,8 +61,8 @@ export default function Footer() {
   return (
     <footer className="relative bg-black text-white">
       {/* Top section: menus with right decorative lines and partial width */}
-      <div className="mx-auto flex w-full border-b border-white/100 pl-4 md:pl-8 [@media(min-width:1440px)]:pl-[150px] [@media(min-width:1920px)]:pl-[192px]">
-        <div className="relative w-[80%] pt-12 pr-4 pb-20 md:pt-16 md:pr-8 md:pb-24 [@media(min-width:1440px)]:pr-[150px] [@media(min-width:1920px)]:pr-[192px]">
+      <div className="mx-auto flex w-full border-b border-white/100 pl-4 md:pl-8 [@media(min-width:1440px)]:pl-[192px] [@media(min-width:1920px)]:pl-[192px]">
+        <div className="relative w-[80%] pt-12 pr-4 pb-20 md:pt-16 md:pr-8 md:pb-24 [@media(min-width:1440px)]:pr-[192px] [@media(min-width:1920px)]:pr-[192px]">
           <motion.div
             className="absolute right-0 bottom-0 h-full w-full rounded-br-[19rem] border-r-2 border-b-2 border-white/100"
             initial={{ width: 0 }}
@@ -92,8 +92,8 @@ export default function Footer() {
       </div>
 
       {/* Bottom section: contacts + big logo + motto + bottom bar */}
-      <div className="mx-auto flex w-full pl-4 md:pl-8 [@media(min-width:1440px)]:pl-[150px] [@media(min-width:1920px)]:pl-[192px]">
-        <div className="w-[80%] pt-12 pr-4 pb-20 md:pt-16 md:pr-8 md:pb-24 [@media(min-width:1440px)]:pr-[150px] [@media(min-width:1920px)]:pr-[192px]">
+      <div className="mx-auto flex w-full pl-4 md:pl-8 [@media(min-width:1440px)]:pl-[192px] [@media(min-width:1920px)]:pl-[192px]">
+        <div className="w-[80%] pt-12 pr-4 pb-20 md:pt-16 md:pr-8 md:pb-24 [@media(min-width:1440px)]:pr-[192px] [@media(min-width:1920px)]:pr-[192px]">
           <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-3">
             <div>
               <h5 className="text-2xl font-semibold">Emails</h5>

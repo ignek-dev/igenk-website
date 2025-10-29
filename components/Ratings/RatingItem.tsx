@@ -20,14 +20,14 @@ const RatingItem: React.FC<RatingItemProps> = ({ logoSrc, logoAlt, ratingValue, 
 
 
   return (
-    <div className={`flex flex-col items-center justify-center p-12 w-full ${
+    <div className={`flex flex-1 flex-col items-center justify-center p-8 ${
       isInView ? 'animate-when-visible animate-fade-in animate-delay-100' : 'opacity-0'
     }`}>
       <div className="h-12 flex items-center mb-4">
         <Image src={logoSrc} alt={logoAlt} width={220} height={62} className="object-contain" />
       </div>
       <div className="flex items-center gap-2 pt-1">
-        <div className="flex">
+        <div className="flex align-center">
           {Array.from({ length: 5 }).map((_, index) => (
             <StarIcon key={index} />
           ))}
