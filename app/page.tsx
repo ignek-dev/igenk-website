@@ -11,6 +11,8 @@ import SuccessStories from "components/success-stories/SuccessStories"
 import HeroCTASection from "components/Common/HeroCTASection"
 import RatingsSection from "components/Ratings/RatingsSection"
 import EndToEndSection from "components/EndToEndSection/EndToEndSection"
+import { ScrollContextProvider } from "components/Common/ScrollContextProvider"
+
 export const metadata: Metadata = {
   title: "Ignek - Transform Your Digital Experience",
   description:
@@ -131,10 +133,13 @@ export default function HomePage() {
       <IntermediateFrame />
       <OurCapabilities />
       <FlexiblePlatforms />
-      <WhatWeBring />
-      <SuccessStories />
-      <Achievements />
 
+      <ScrollContextProvider>
+        <WhatWeBring />
+        <SuccessStories />
+      </ScrollContextProvider>
+
+      <Achievements />
       <BlogSection />
       <HeroCTASection />
       <RatingsSection />

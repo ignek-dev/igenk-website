@@ -1,8 +1,9 @@
 // components/FlexiblePlatforms.tsx
-
+'use client';
 import React from 'react';
 // import PlatformCard from './PlatformCard';
 import Image from 'next/image';
+import { useInView } from 'hooks/useInView';
 
 const platformsData = [
   {
@@ -16,11 +17,17 @@ const platformsData = [
 ];
 
 const FlexiblePlatforms = () => {
+  const [sectionRef, isInView] = useInView({ threshold: 0.2, triggerOnce: true })
   return (
-    <section className="bg-[#F9FAF7] text-black py-20 lg:py-16 overflow-hidden">
+    <section ref={sectionRef} className="bg-[#F9FAF7] text-black py-20 lg:py-16 overflow-hidden"> 
       <div className="mx-auto w-full px-4 md:px-6 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px] grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
         {/* Left Column: Title and Description */}
-        <div>
+        <div className={`transition-all duration-[1500ms] ease-out ${
+            isInView
+              ? 'opacity-100 translate-x-0 animate-when-visible animate-slide-left animation-delay-200'
+              : 'opacity-0 -translate-x-20'
+          }`}
+        >
           <h2 className="text-5xl sm:text-5xl font-bold leading-tight">
             Flexible Platforms.
             <span className="block">Scalable Experiences.</span>
@@ -30,7 +37,12 @@ const FlexiblePlatforms = () => {
           </p>
         </div>
 
-        <div className="relative group rounded-[20px] overflow-hidden w-[680px] h-[496px]  ">
+        <div  className={`relative group rounded-[20px] overflow-hidden w-[680px] h-[496px] transition-all duration-[1500ms] ease-out ${
+            isInView
+              ? 'opacity-100 translate-x-0 animate-when-visible animate-slide-right animation-delay-200'
+              : 'opacity-0 translate-x-20'
+          }`}
+        >
           {/* 1. Background Image */}
           <Image
             src="/images/liferay-details.jpg"

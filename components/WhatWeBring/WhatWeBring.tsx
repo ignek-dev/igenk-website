@@ -3,6 +3,8 @@
 import React, { useRef, useState } from "react"
 import WhatWeBringCard from "./WhatWeBringCard"
 import { useInView } from "hooks/useInView"
+import { motion, useTransform } from "framer-motion"
+import { useSharedScroll } from "components/Common/ScrollContextProvider"
 
 // Dummy data for the six cards
 const cardData = [
@@ -44,82 +46,43 @@ const cardData = [
   },
 ]
 
-const WhatWeBring = () => {
-  const scrollRef = useRef<HTMLDivElement>(null)
-  const [isDragging, setIsDragging] = useState(false)
-  const [startX, setStartX] = useState(0)
-  const [scrollLeft, setScrollLeft] = useState(0)
+const WhatWeBring: React.FC = () => {
+  // 👇 Use the context hook to get the scroll progress
+  const scrollYProgress = useSharedScroll();
 
-    // 2. Instantiate the useInView hook for the section animations
-  const [sectionRef, isInView] = useInView({
-    triggerOnce: true,
-    threshold: 0.2, // Start when 20% of the section is visible
-  })
-
-  const handleMouseDown = (e: React.MouseEvent) => {
-    if (!scrollRef.current) return
-    setIsDragging(true)
-    setStartX(e.pageX - scrollRef.current.offsetLeft)
-    setScrollLeft(scrollRef.current.scrollLeft)
-  }
-
-  const handleMouseLeave = () => {
-    setIsDragging(false)
-  }
-
-  const handleMouseUp = () => {
-    setIsDragging(false)
-  }
-
-  const handleMouseMove = (e: React.MouseEvent) => {
-    if (!isDragging || !scrollRef.current) return
-    e.preventDefault() 
-    const x = e.pageX - scrollRef.current.offsetLeft
-    const walk = (x - startX) * 1.5 
-    scrollRef.current.scrollLeft = scrollLeft - walk
-  }
+  // The rest of the animation logic is the same
+  const x = useTransform(scrollYProgress, [0, 0.75], ["0%", "-82%"]);
 
   return (
-    <section ref={sectionRef} className="overflow-hidden bg-black py-16 text-white">
-      {/* Container for the header, matching your site's padding */}
-      <div className="mx-auto mb-15 w-full px-4 md:px-6 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
+    // This section is "sticky" and stays on screen while the parent scrolls
+    <section className="sticky top-0 z-10 py-16 flex h-screen items-center overflow-hidden bg-black text-white">
+      <div className="mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
+        {/* Header content (your styling is preserved) */}
         <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
-          <h2 className={`text-5xl font-bold leading-tight line-height-[60px] ${
-              isInView ? "animate-when-visible animate-slide-top" : "opacity-0"
-            }`}>
+          <h2 className="text-5xl font-bold leading-tight line-height-[60px]">
             What We Bring To Your
             <br />
             Digital Experience
           </h2>
-          <p  className={`max-w-xl pt-8.5 text-lg text-gray-300 text-right line-height-[30px] ${
-              isInView ? "animate-when-visible animate-slide-top" : "opacity-0"
-            }`}>
-            We help businesses craft a clear and actionable digital roadmap that aligns with both short-term objectives
-            and long-term vision.
+          <p className="max-w-xl pt-8.5 text-lg text-gray-300 text-right line-height-[30px]">
+            We help businesses craft a clear and actionable digital roadmap...
           </p>
         </div>
-      </div>
 
-      {/* Horizontally scrolling container for the cards */}
-      <div
-        ref={scrollRef}
-        id="what-we-bring"
-        className={`flex cursor-grab select-none space-x-11 overflow-x-auto pb-16 active:cursor-grabbing scrollbar-hide px-4 md:px-8 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px] ${
-          isInView ? "animate-when-visible animate-slide-right animation-delay-400" : "opacity-0"
-        }`}
-        onMouseDown={handleMouseDown}
-        onMouseLeave={handleMouseLeave}
-        onMouseUp={handleMouseUp}
-        onMouseMove={handleMouseMove}
-      >
-        {cardData.map((card) => (
-          <WhatWeBringCard
-            key={card.cardNumber}
-            cardNumber={card.cardNumber}
-            title={card.title}
-            description={card.description}
-          />
-        ))}
+        {/* This motion.div moves horizontally based on the scroll progress */}
+        <motion.div
+          style={{ x }}
+          className="flex space-x-11 pt-15 pb-16"
+        >
+          {cardData.map((card) => (
+            <WhatWeBringCard
+              key={card.cardNumber}
+              cardNumber={card.cardNumber}
+              title={card.title}
+              description={card.description}
+            />
+          ))}
+        </motion.div>
       </div>
     </section>
   )

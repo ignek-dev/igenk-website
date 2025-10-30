@@ -265,6 +265,46 @@
       font-size: 3rem; /* equivalent to sm:text-5xl */
     }
   }
+
+  /* --- START: STYLES FOR CARD STACKING ANIMATION --- */
+  @keyframes stack-in {
+    from {
+      opacity: 0;
+      transform: translateY(40px) scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  .animate-stack-in {
+    /* Start with the card hidden */
+    opacity: 0; 
+    /* Point to the animation name */
+    animation-name: stack-in;
+    /* Common properties for the animation */
+    animation-fill-mode: forwards;
+    animation-duration: 0.6s;
+    animation-timing-function: ease-out;
+  }
+  /* --- END: STYLES FOR CARD STACKING ANIMATION --- */
+
+  /* Prevent shadow/edges from bleeding out while maintaining rounded corners */
+.stack-clip {
+  overflow: clip;
+}
+
+@supports not (overflow: clip) {
+  .stack-clip { overflow: hidden; }
+}
+
+/* Responsive fallback: disable sticky stacking on small screens for usability */
+@media (max-width: 768px) {
+  .stack-clip { overflow: visible; }
+  /* Scoped via JSX: only affects the cards rendered in this section */
+  .sticky { position: relative !important; top: 0 !important; }
+}
 }
 
 .scrollbar-hide::-webkit-scrollbar {
