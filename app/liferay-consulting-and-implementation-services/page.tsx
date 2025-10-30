@@ -494,11 +494,9 @@ export default function LiferayConsultationPage() {
             ))}
           </div>
 
-          {/* 👇 UPDATED: Services Grid with corrected spacing, alignment, and dividers */}
           <div className="grid grid-cols-1 md:grid-cols-3">
             {liferayConsultingServicesData[activeServiceTab].map((service: any, index: number) => (
               <div key={index} className="border-b border-gray-700 px-6">
-                {/* 👇 Changed items-center to items-start and updated padding */}
                 <div className="flex items-start gap-4 py-[40px]">
                   <img
                     src="/images/liferay-pages-image/liferay-consultation-page/checkmark-icon.svg" // Replace with your icon path
