@@ -421,33 +421,48 @@ export default function LiferayConsultationPage() {
       <section className="bg-[#F9FAFB] py-[64px]">
         <div className="mx-auto flex flex-col items-center justify-between px-4 md:flex-row md:px-8 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
           {/* Left Content */}
-          <div className="flex flex-1 flex-col justify-center">
+          <div className="flex flex-1 flex-col justify-between gap-25">
             {/* Stats Row */}
-            <div className="flex flex-wrap items-center gap-[120px]">
-              <div>
-                <p className="text-[28px] leading-[36px] font-bold text-gray-900">1×</p>
-                <p className="text-[14px] leading-[20px] text-gray-600">Faster Deployments</p>
+            <div className="flex flex-wrap items-center gap-20">
+              {/* Stat 1 */}
+              <div className="flex gap-3">
+                <p className="text-5xl font-bold text-gray-900">1x</p>
+                <p className="text-lg leading-tight text-gray-600">
+                  Faster
+                  <br />
+                  Deployments
+                </p>
               </div>
-              <div>
-                <p className="text-[28px] leading-[36px] font-bold text-gray-900">18%</p>
-                <p className="text-[14px] leading-[20px] text-gray-600">Increased Adoption</p>
+              {/* Stat 2 */}
+              <div className="flex gap-3">
+                <p className="text-5xl font-bold text-gray-900">18%</p>
+                <p className="text-lg leading-tight text-gray-600">
+                  Increased User
+                  <br />
+                  Adoption
+                </p>
               </div>
-              <div>
-                <p className="text-[28px] leading-[36px] font-bold text-gray-900">+5%</p>
-                <p className="text-[14px] leading-[20px] text-gray-600">Lower TCO</p>
+              {/* Stat 3 */}
+              <div className="flex gap-3">
+                <p className="text-5xl font-bold text-gray-900">+5%</p>
+                <p className="text-lg leading-tight text-gray-600">
+                  Lower
+                  <br />
+                  TCO
+                </p>
               </div>
             </div>
 
-            {/* Heading */}
-            <h2 className="mt-[64px] text-[40px] leading-[52px] font-bold text-gray-900">
-              Your Digital Edge for <br /> Transformation, Always Evolving.
-            </h2>
-
-            {/* Description */}
-            <p className="mt-[40px] max-w-[500px] text-[16px] leading-[26px] text-gray-600">
-              Run your business smarter — track performance, approve automations, and get instant insights right from
-              your phone.
-            </p>
+            {/* Heading and Description Block - Positioned below with a top margin */}
+            <div className="mt-24">
+              <h2 className="text-[40px] leading-[52px] font-bold text-gray-900">
+                Your Digital Edge for <br /> Transformation, Always Evolving.
+              </h2>
+              <p className="mt-6 max-w-[500px] text-[16px] leading-[26px] text-gray-600">
+                Run your business smarter — track performance, approve automations, and get instant insights right from
+                your phone.
+              </p>
+            </div>
           </div>
 
           {/* Right Image */}
@@ -466,6 +481,7 @@ export default function LiferayConsultationPage() {
               src="/images/liferay-pages-image/tablet-image.png"
               alt="Tablet Preview"
               className="relative z-10 h-auto w-[500px] scale-125 object-contain"
+              style={{minWidth: "650px", marginTop: "-60px", marginBottom: "17px" }}
             />
           </div>
         </div>
@@ -477,7 +493,7 @@ export default function LiferayConsultationPage() {
           <div className="flex flex-col gap-16 md:flex-row md:items-start md:justify-between">
             {/* Left Column */}
             <div className="max-w-[520px] flex-1 space-y-[26px] pt-[4px] md:sticky md:top-24">
-              <h1 className="text-5xl font-bold leading-[64px] tracking-[-0.02em] text-white">
+              <h1 className="text-5xl leading-[64px] font-bold tracking-[-0.02em] text-white">
                 Our Liferay
                 <span className="block">Consulting Services</span>
               </h1>
@@ -494,24 +510,24 @@ export default function LiferayConsultationPage() {
             <div className="relative flex flex-1 flex-col items-end">
               <div className="relative w-full max-w-[883px]">
                 {consultingServices.map((item, index) => {
-                  const [ref, isInView] = useInView({ triggerOnce: true });
+                  const [ref, isInView] = useInView({ triggerOnce: true })
 
                   return (
                     <div
                       ref={ref as React.RefObject<HTMLDivElement>}
                       key={index}
-                      className={`sticky transition-opacity duration-500 ${
+                      className={`sticky mb-16 transition-opacity duration-500 ${
                         isInView ? "animate-stack-in" : "opacity-0"
                       }`}
-                      style={{ top: `calc(6rem + ${index * 2}rem)` }}
+                      style={{ top: `calc(6rem + ${index * 4}rem)` }}
                     >
-                      <div className="flex w-full flex-col justify-center rounded-2xl border border-gray-700 bg-[#0C0C0C] p-9 backdrop-blur-md transition-all duration-300 hover:border-[#00AEEF] md:min-h-[196px]">
-                        <h3 className="mb-3 text-2xl font-semibold leading-tight text-white">{item.title}</h3>
+                      <div className="flex w-full flex-col justify-center rounded-2xl border border-gray-700 bg-[#0C0C0C] p-9 pt-6 backdrop-blur-md transition-all duration-300 hover:border-[#00AEEF] md:min-h-[196px]">
+                        <h3 className="mb-3 text-2xl leading-tight font-semibold text-white">{item.title}</h3>
                         <div className="mb-4 h-[1px] bg-gray-700" />
                         <p className="text-lg leading-relaxed text-gray-300">{item.desc}</p>
                       </div>
                     </div>
-                  );
+                  )
                 })}
               </div>
             </div>
@@ -849,7 +865,7 @@ export default function LiferayConsultationPage() {
                   <h2 className="line-height-[60px] letter-spacing-[0.02em] mb-6 text-4xl font-semibold">
                     Words From Our CEO
                   </h2>
-                  <p className="line-height-[30px] mb-8 text-lg leading-relaxed text-gray-300 text-justify">
+                  <p className="line-height-[30px] mb-8 text-justify text-lg leading-relaxed text-gray-300">
                     Over the past decade, my journey with Liferay has been a fascinating one. I’ve been there from its
                     version 6.0 and have watched it take significant steps in OSGI frameworks. I’ve followed its
                     progress in OSGI frameworks and witnessed its evolution from a basic Enterprise Content Management
@@ -866,7 +882,7 @@ export default function LiferayConsultationPage() {
                     <p className="line-height-[44px] letter-spacing-[0.02em] font-serif text-5xl text-white italic">
                       Bhavin Panchani
                     </p>
-                    <p className="text-xl line-height-[30px] text-gray-400">
+                    <p className="line-height-[30px] text-xl text-gray-400">
                       Liferay Certified, Liferay Architect, 10+ Years Of Experience
                     </p>
                   </div>
