@@ -21,6 +21,7 @@ export default function Navigation() {
   const pathname = usePathname() // Get the current path
   const isCareerPage = pathname === "/career" // Check if it's the career page
   const isConsultingPage = pathname === "/liferay-consulting-and-implementation-services"
+  const isHireDeveloperPage = pathname === "/liferay-hire-developer"
   const [isHeaderHovered, setIsHeaderHovered] = useState(false)
 
   const handleMouseEnter = (label: string) => setActiveMenu(label)
@@ -31,7 +32,7 @@ export default function Navigation() {
   ? "bg-black"
   : isCareerPage
   ? "bg-transparent"
-  : isConsultingPage
+  : isConsultingPage || isHireDeveloperPage
   ? "bg-[#0B63CE]"
   : "bg-black"
 
@@ -40,7 +41,7 @@ export default function Navigation() {
       {activeMenu === null ? (
         <header
           className={`z-50 w-full text-white transition-colors duration-300 ${
-            isCareerPage || isConsultingPage ? "absolute top-0" : "relative"
+            isCareerPage || isConsultingPage || isHireDeveloperPage ? "absolute top-0" : "relative"
           } ${backgroundClass}`}
           onMouseEnter={() => setIsHeaderHovered(true)}
           onMouseLeave={() => {
@@ -115,7 +116,7 @@ export default function Navigation() {
      
         <header
           className={`w-full text-white transition-colors duration-300 ${
-           isCareerPage || isConsultingPage ? "absolute top-0" : "relative"
+           isCareerPage || isConsultingPage || isHireDeveloperPage ? "absolute top-0" : "relative"
           } ${backgroundClass}`}
         onMouseEnter={() => setIsHeaderHovered(true)}
         onMouseLeave={() => {

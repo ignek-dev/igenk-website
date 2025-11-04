@@ -7,21 +7,9 @@ import WhatMake from "components/Common/WhatMake"
 import ScheduleMeetingButton from "components/Button/ScheduleMeetingButton"
 import { useState } from "react"
 import { useInView } from "hooks/useInView"
+import WordsFromCEO from "components/Common/WordsFromCEO"
+import EngagementModels from "components/Common/EngagementModels"
 
-export default function LiferayConsultationPage() {
-  const [hoveredCard, setHoveredCard] = useState<string | null>(null)
-  const [activeServiceTab, setActiveServiceTab] = useState("Portal")
-  const [hoveredIndustry, setHoveredIndustry] = useState<string | null>(null)
-
-  // State for the new End-to-End Liferay Consulting Services section
-  const [activePillar, setActivePillar] = useState(0) // 0-indexed for Analysis
-
-  const featureTabs = [
-    "Scalable Solution Architecture",
-    "Customized Liferay Solutions",
-    "User-Centric Consulting Approach",
-    "Strategic Deployment Guidance",
-  ]
 
   const caseStudies = [
     {
@@ -57,6 +45,22 @@ export default function LiferayConsultationPage() {
         "Curabitur at lacus ac velit ornare lobortis. Vestibulum suscipit nulla quis orci. Donec posuere vulputate arcu.",
     },
   ]
+export default function LiferayConsultationPage() {
+  const [hoveredCard, setHoveredCard] = useState<string | null>(null)
+  const [activeServiceTab, setActiveServiceTab] = useState("Portal")
+  const [hoveredIndustry, setHoveredIndustry] = useState<string | null>(null)
+
+  // State for the new End-to-End Liferay Consulting Services section
+  const [activePillar, setActivePillar] = useState(0) // 0-indexed for Analysis
+
+  const featureTabs = [
+    "Scalable Solution Architecture",
+    "Customized Liferay Solutions",
+    "User-Centric Consulting Approach",
+    "Strategic Deployment Guidance",
+  ]
+
+
 
   const consultingServices = [
     {
@@ -224,33 +228,6 @@ export default function LiferayConsultationPage() {
     }
     return chunkedArr
   }
-
-  const engagementModels = [
-    {
-      icon: "/images/liferay-pages-image/liferay-consultation-page/experties.png",
-      title: "Dedicated Team",
-      description: "Opt for a Liferay Dedicated Team to Leverage Cost-Efficiency and Unmatched Technical Expertise.",
-      features: ["Achieve Cost Efficiency", "Enhance IT Infrastructure", "Optimize Project Management"],
-    },
-    {
-      icon: "/images/liferay-pages-image/liferay-consultation-page/add-friend.png", // Note: Use a unique icon path
-      title: "Time & Materials",
-      description:
-        "Gain total control over your predetermined market schedule with a versatile time and materials model for Liferay development.",
-      features: [
-        "Ongoing Software Development Needs",
-        "Supports Part- & Full-time Dev Needs",
-        "Better control over your project",
-      ],
-    },
-    {
-      icon: "/images/liferay-pages-image/liferay-consultation-page/chat-message.png", // Note: Use a unique icon path
-      title: "Fix Price",
-      description:
-        "Implement your requirements with a clear idea and a predetermined budget to shield your product from fluctuating costs.",
-      features: ["Minimal financial risk", "Involves the development of an MVP", "Well-defined Scope & Requirements"],
-    },
-  ]
 
   const industriesWeServe = [
     {
@@ -481,7 +458,7 @@ export default function LiferayConsultationPage() {
               src="/images/liferay-pages-image/tablet-image.png"
               alt="Tablet Preview"
               className="relative z-10 h-auto w-[500px] scale-125 object-contain"
-              style={{minWidth: "650px", marginTop: "-60px", marginBottom: "17px" }}
+              style={{ minWidth: "650px", marginTop: "-60px", marginBottom: "17px" }}
             />
           </div>
         </div>
@@ -566,7 +543,7 @@ export default function LiferayConsultationPage() {
                   key={solution.id}
                   onMouseEnter={() => setHoveredCard(solution.id)}
                   onMouseLeave={() => setHoveredCard(null)}
-                  className={`flex h-[340px] items-center rounded-lg p-8 transition-all duration-500 ease-in-out ${
+                  className={`flex h-[340px] items-center rounded-lg p-8 transition-all duration-300 ease-in-out ${
                     isCurrentPrimary
                       ? "w-full flex-grow-[2] basis-0 flex-row justify-between gap-8 bg-[#0B63CE] text-white"
                       : "w-full flex-grow basis-0 flex-col justify-center border border-gray-200 bg-white text-gray-800 shadow-sm"
@@ -578,7 +555,7 @@ export default function LiferayConsultationPage() {
                       <div className="text-left">
                         <h3 className="text-3xl font-semibold">{solution.title}</h3>
                         <hr className="my-4 max-w-[120px] border-t border-white/50" />
-                        <p className="text-base leading-relaxed">{solution.description}</p>
+                        <p className="text-justify text-base leading-relaxed">{solution.description}</p>
                       </div>
                       <img
                         src={solution.icon}
@@ -672,7 +649,7 @@ export default function LiferayConsultationPage() {
                 key={industry.id}
                 onMouseEnter={() => setHoveredIndustry(industry.id)}
                 onMouseLeave={() => setHoveredIndustry(null)}
-                className={`group relative flex cursor-pointer items-center border-b border-gray-200 py-10 transition-colors duration-300 hover:bg-[#0B63CE]`}
+                className={`group relative flex cursor-pointer items-center border-b border-gray-200 px-10 py-10 transition-colors duration-300 hover:bg-[#0B63CE]`}
               >
                 {/* Column 1: Title */}
                 <div className="w-1/3 flex-shrink-0">
@@ -687,7 +664,7 @@ export default function LiferayConsultationPage() {
                     {industry.description}
                   </p>
                   <div
-                    className={`absolute top-1/2 right-51 z-10 w-[190px] -translate-y-1/2 transform opacity-0 transition-all duration-300 group-hover:translate-x-4 group-hover:opacity-100`}
+                    className={`absolute top-1/2 right-65 z-10 w-[190px] -translate-y-1/2 transform opacity-0 transition-all duration-300 group-hover:translate-x-4 group-hover:opacity-100`}
                   >
                     <img
                       src={industry.image}
@@ -853,142 +830,18 @@ export default function LiferayConsultationPage() {
       </section>
 
       {/* Words from CEO */}
-      <section className="bg-black py-[64px] text-white">
-        <div className="mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
-          <div className="flex flex-col items-center gap-8 md:flex-row">
-            {/* Left Side: CEO Message Card */}
-            <div className="w-full md:w-1/2">
-              {/* Gradient Border Effect: Outer div has the gradient and padding */}
-              <div className="rounded-2xl bg-gradient-to-br from-[#00979E] to-black p-px">
-                {/* Inner div has the black background, creating the border effect */}
-                <div className="h-full w-full rounded-[15px] bg-black p-10">
-                  <h2 className="line-height-[60px] letter-spacing-[0.02em] mb-6 text-4xl font-semibold">
-                    Words From Our CEO
-                  </h2>
-                  <p className="line-height-[30px] mb-8 text-justify text-lg leading-relaxed text-gray-300">
-                    Over the past decade, my journey with Liferay has been a fascinating one. I’ve been there from its
-                    version 6.0 and have watched it take significant steps in OSGI frameworks. I’ve followed its
-                    progress in OSGI frameworks and witnessed its evolution from a basic Enterprise Content Management
-                    System (CMS) into a comprehensive and highly Advanced Digital Experience Platform (DXP). Along the
-                    way, I’ve seen the introduction of groundbreaking solutions like Liferay Commerce, the establishment
-                    of Liferay Analytics Cloud, and the enhancement of its headless architecture capabilities. Liferay
-                    stands as a genuine digital experience platform, consistently leading the way in the domain of
-                    digital transformation. It empowers businesses to craft immersive and personalized experiences for
-                    both customers and employees. What truly sets Liferay apart is its exceptional ability to tailor
-                    solutions to meet the unique needs of various industries. Working with Liferay has been a both
-                    enlightening  and fulfilling experience, and I’m excited to continue this journey.
-                  </p>
-                  <div>
-                    <p className="line-height-[44px] letter-spacing-[0.02em] font-serif text-5xl text-white italic">
-                      Bhavin Panchani
-                    </p>
-                    <p className="line-height-[30px] text-xl text-gray-400">
-                      Liferay Certified, Liferay Architect, 10+ Years Of Experience
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Right Side: Image */}
-            <div className="w-full md:w-1/2">
-              <img
-                src="/images/liferay-pages-image/liferay-consultation-page/CEO-image.png" // Replace with your actual image path
-                alt="CEO Bhavin Panchani"
-                className="h-auto w-full rounded-lg object-cover"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+      <WordsFromCEO />
 
       {/* Engagement Models Section */}
-      <section className="bg-white py-[64px] text-black">
-        <div className="mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
-          {/* Section Header */}
-          <div className="mb-16 grid grid-cols-1 items-end gap-8 md:grid-cols-2">
-            <div>
-              <h2 className="text-5xl leading-tight font-bold tracking-tight text-gray-900">
-                Our Liferay Consulting
-                <span className="block">Services Engagement Models</span>
-              </h2>
-            </div>
-            <div className="flex h-full items-end justify-end">
-              <p className="w-full text-right text-lg text-gray-600">
-                Engage with the Liferay-focused technology partner to get your simple & complex Liferay requirements
-                implemented.
-              </p>
-            </div>
-          </div>
-
-          {/* Engagement Cards */}
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {engagementModels.map((model) => (
-              <div
-                key={model.title}
-                // The group class enables hover effects on child elements
-                className="group rounded-2xl border border-gray-200 bg-white p-7 shadow-md transition-colors duration-300 hover:border-blue-700 hover:bg-[#0B63CE]"
-              >
-                {/* Card Icon */}
-                {/* The icon inverts color when the group is hovered */}
-                <img
-                  src={model.icon}
-                  alt={`${model.title} icon`}
-                  className="mb-8 h-12 w-12 transition-all duration-300 group-hover:brightness-0 group-hover:invert"
-                />
-
-                {/* Card Title */}
-                <h3 className="mb-8 text-3xl font-semibold text-gray-900 transition-colors duration-300 group-hover:text-white">
-                  {model.title}
-                </h3>
-
-                {/* Divider */}
-                <hr className="mb-8 border-t border-gray-200 transition-colors duration-300 group-hover:border-white/30" />
-
-                {/* Card Description */}
-                <p className="mb-8 text-lg text-gray-600 transition-colors duration-300 group-hover:text-white/90">
-                  {model.description}
-                </p>
-
-                {/* Card Features */}
-                <div>
-                  {model.features.map((feature, index) => (
-                    <div
-                      key={index}
-                      className={`border-b border-gray-200 transition-colors duration-300 group-hover:border-white/30 ${
-                        index === model.features.length - 1 ? "border-b-0" : ""
-                      }`}
-                    >
-                      <div className="flex items-center gap-4 py-4">
-                        {/* The checkmark icon inverts color when the group is hovered */}
-                        <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-black transition-colors duration-300 group-hover:bg-white">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="20"
-                            height="20"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            className="text-white transition-colors duration-300 group-hover:text-black"
-                          >
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                          </svg>
-                        </div>
-                        <span className="text-lg font-medium text-gray-900 transition-colors duration-300 group-hover:text-white">
-                          {feature}
-                        </span>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <EngagementModels
+        title={
+          <>
+            Our Liferay Consulting
+            <span className="block">Services Engagement Models</span>
+          </>
+        }
+        description="Engage with the Liferay-focused technology partner to get your simple & complex Liferay requirements implemented."
+      />
       <section className="bg-white text-black"></section>
       <CaseStudy caseStudies={caseStudies} />
       <WhatMake />

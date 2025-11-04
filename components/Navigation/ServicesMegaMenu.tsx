@@ -32,6 +32,8 @@ const liferayServicesLinks = [
   { text: "Upgrade", href: "/liferay-upgrade" },
   { text: "Architecture Service", href: "/liferay-architecture-design" },
   { text: "Consulting Page", href: "/liferay-consulting-and-implementation-services" },
+  { text: "Hire Liferay Devloper", href: "/liferay-hire-developer" },
+
 ]
 
 // --- Main ServicesMegaMenu Component ---
