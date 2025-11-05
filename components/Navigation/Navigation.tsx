@@ -1,13 +1,13 @@
 "use client"
-import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { AnimatePresence,motion } from "framer-motion"
+import { usePathname } from "next/navigation"
+import { useState } from "react"
 import CompanyMegaMenu from "components/Navigation/CompanyMegaMenu"
 import InsightsMegaMenu from "components/Navigation/InsightsMegaMenu"
 import ServicesMegaMenu from "components/Navigation/ServicesMegaMenu"
 import SolutionsMegaMenu from "components/Navigation/SolutionsMegaMenu"
-import { usePathname } from "next/navigation" // Import usePathname hook
 
 const menu = [
   { label: "Company", href: "#" },

@@ -1,6 +1,5 @@
 import ScheduleMeetingButton from "components/Button/ScheduleMeetingButton";
 import { BlogSection } from "components/Common";
-import HeroCTASection from "components/Common/HeroCTASection";
 import TalkToExpert from "components/Common/TalkToExpert";
 import WhatMake from "components/Common/WhatMake";
 

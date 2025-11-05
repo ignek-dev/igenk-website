@@ -1,7 +1,7 @@
 // components/TechnologyChip.tsx
 
-import React from 'react';
 import Image from 'next/image';
+import React from 'react';
 
 interface TechnologyChipProps {
   iconSrc: string;

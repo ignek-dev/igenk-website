@@ -2,8 +2,8 @@
 'use client';
 
 import React from 'react';
-import RatingItem from './RatingItem';
 import { useInView } from 'hooks/useInView';
+import RatingItem from './RatingItem';
 
 const ratingsData = [
   { logoSrc: '/images/ratings/google_logo.webp', logoAlt: 'Google', ratingValue: '4.9' },

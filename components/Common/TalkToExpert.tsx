@@ -1,6 +1,6 @@
 import React from 'react'
-import TalkToExpertCard from './TalkToExpertCard'
 import ScheduleMeetingButton from 'components/Button/ScheduleMeetingButton'
+import TalkToExpertCard from './TalkToExpertCard'
 
 const TalkToExpert = () => {
     return (

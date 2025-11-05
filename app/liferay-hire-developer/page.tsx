@@ -1,116 +1,83 @@
 "use client"
+import React from "react"
 import { BlogSection } from "components/Common"
-import CaseStudy from "components/Common/CaseStudy"
-import HeroCTASection from "components/Common/HeroCTASection"
+import EngagementModels from "components/Common/EngagementModels"
 import TalkToExpert from "components/Common/TalkToExpert"
 import WhatMake from "components/Common/WhatMake"
-import ScheduleMeetingButton from "components/Button/ScheduleMeetingButton"
-import { useState } from "react"
-import { useInView } from "hooks/useInView"
-import React from "react"
 import WordsFromCEO from "components/Common/WordsFromCEO"
-import EngagementModels from "components/Common/EngagementModels"
-import Image from "next/image"
-
-const caseStudies = [
-    {
-      id: 1,
-      image: "/images/liferay-pages-image/caseStudy.png",
-      tag: "Corporate",
-      title: "Music License Management Portal: Onboarding & Data Integrity",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla.",
-    },
-    {
-      id: 2,
-      image: "/images/liferay-pages-image/caseStudy.png",
-      tag: "FinTech",
-      title: "Transforming Financial Services with Innovations",
-      description:
-        "Suspendisse potenti. Maecenas vitae mattis tellus. Nullam quis imperdiet augue. Pellentesque habitant morbi tristique senectus et netus.",
-    },
-    {
-      id: 3,
-      image: "/images/liferay-pages-image/caseStudy.png",
-      tag: "Healthcare",
-      title: "Digital Health Platform: Patient-Centric Solutions",
-      description:
-        "Praesent ut ligula non mi varius sagittis. In hac habitasse platea dictumst. Cras non dolor. Vivamus quis mi.",
-    },
-    {
-      id: 4,
-      image: "/images/liferay-pages-image/caseStudy.png",
-      tag: "E-commerce",
-      title: "Scaling Online Retail with Cloud Technologies",
-      description:
-        "Curabitur at lacus ac velit ornare lobortis. Vestibulum suscipit nulla quis orci. Donec posuere vulputate arcu.",
-    },
-  ]
+import LiferayTechnologicalStacks from "components/LiferayTechnologicalStacks"
 
 export default function LiferayHireDeveloper() {
-    // Data for the marquee animation
+  // Data for the marquee animation
   const expertiseStats = [
     "10 Years of Liferay Expertise",
     "50+ Liferay Projects Delivered",
     "20+ Certified Liferay Experts",
     "24x7 Technical Support",
-  ];
+  ]
 
   const whyHireFromIgnek = [
     {
       icon: "/images/icon/certified-developer.png",
       title: ["Certified Liferay", "Developer"],
-      description: "We create templates for your ReactJS projects, optimizing scalability and efficiency. Our experts leverage React’s component-based architecture, from defining data flows to architecting modular components to ensure seamless integration, we lay the foundation for robust and future-proof web applications.",
+      description:
+        "We create templates for your ReactJS projects, optimizing scalability and efficiency. Our experts leverage React’s component-based architecture, from defining data flows to architecting modular components to ensure seamless integration, we lay the foundation for robust and future-proof web applications.",
     },
     {
       icon: "/images/icon/certified-developer.png", // Replace with the correct icon path
       title: ["Transparent", "Communication"],
-      description: "We analyze your React codebase using tools like ESlint and Prettier to enforce coding standards. Our reviews focus on exact component architecture, state management, and type-checking with TypeScript, suggesting improvements for code readability and maintainability.",
+      description:
+        "We analyze your React codebase using tools like ESlint and Prettier to enforce coding standards. Our reviews focus on exact component architecture, state management, and type-checking with TypeScript, suggesting improvements for code readability and maintainability.",
     },
     {
       icon: "/images/icon/certified-developer.png", // Replace with the correct icon path
       title: ["Flexible", "Hiring Models"],
-      description: "Our performance wizards optimize your React app with efficient data fetching strategies using GraphQL or REST, and techniques like lazy loading and code splitting. Leveraging tools like React Profiler, we identify and eliminate performance constraints, resulting in a faster user interface.",
+      description:
+        "Our performance wizards optimize your React app with efficient data fetching strategies using GraphQL or REST, and techniques like lazy loading and code splitting. Leveraging tools like React Profiler, we identify and eliminate performance constraints, resulting in a faster user interface.",
     },
     {
       icon: "/images/icon/certified-developer.png", // Replace with the correct icon path
       title: ["Fully", "Signed NDA"],
-      description: "We tailor React components to your specific needs, using advanced patterns like Higher Order Components (HOC) and render props. We create dynamic user interfaces, utilizing React hooks and Context API to implement intricate features and custom functionalities that set your application apart.",
+      description:
+        "We tailor React components to your specific needs, using advanced patterns like Higher Order Components (HOC) and render props. We create dynamic user interfaces, utilizing React hooks and Context API to implement intricate features and custom functionalities that set your application apart.",
     },
     {
       icon: "/images/icon/certified-developer.png", // Replace with the correct icon path
       title: ["Cost", "Effective"],
-      description: "We conduct version symphonies, employing tools like Babel for automatic code transformations. From introducing new features to optimizing dependencies, our developers ensure a secure and efficient upgrade process that aligns with your project’s goals.",
+      description:
+        "We conduct version symphonies, employing tools like Babel for automatic code transformations. From introducing new features to optimizing dependencies, our developers ensure a secure and efficient upgrade process that aligns with your project’s goals.",
     },
     {
       icon: "/images/icon/certified-developer.png", // Replace with the correct icon path
       title: ["Easy", "Exit Policy"],
-      description: "We employ tools like React DevTools and Redux DevTools to investigate and resolve bugs and Jest and Enzyme for comprehensive testing. Utilizing techniques such as console.log statements, breakpoints, and error boundary components, we dissect your code, identify issues.",
+      description:
+        "We employ tools like React DevTools and Redux DevTools to investigate and resolve bugs and Jest and Enzyme for comprehensive testing. Utilizing techniques such as console.log statements, breakpoints, and error boundary components, we dissect your code, identify issues.",
     },
-];
+  ]
 
-const easySteps = [
+  const easySteps = [
     {
       step: "01",
-      icon: "/images/icon/search-circle.svg", // Replace with the actual icon for 'Discover & Diagnose'
+      icon: "/images/icon/search-circle.svg", 
       title: "Discover & Diagnose",
-      description: "First, you tell us what you need. Explain your project requirements, goals, and any specific features you want.",
+      description:
+        "First, you tell us what you need. Explain your project requirements, goals, and any specific features you want.",
     },
     {
       step: "02",
-      icon: "/images/icon/search-circle.svg", // Replace with the actual icon for 'Screening & Select'
+      icon: "/images/icon/search-circle.svg", 
       title: "Screening & Select",
       description: "We'll carefully screen our pool of developers to find the best fit for your project.",
     },
     {
       step: "03",
-      icon: "/images/icon/search-circle.svg", // Replace with the actual icon for 'Onboard Developer'
+      icon: "/images/icon/search-circle.svg",
       title: "Onboard Developer",
       description: "Once you've chosen your developer, we'll handle the onboarding process smoothly.",
     },
-];
+  ]
 
-const teamOffersServices = [
+  const teamOffersServices = [
     {
       icon: "/images/icon/services.png", // Replace with your icon path
       title: "Development and Customization",
@@ -122,12 +89,12 @@ const teamOffersServices = [
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi.",
     },
     {
-       icon: "/images/icon/services.png", // Replace with your icon path
+      icon: "/images/icon/services.png", // Replace with your icon path
       title: "Expert Advice",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi.",
     },
     {
-       icon: "/images/icon/services.png", // Replace with your icon path
+      icon: "/images/icon/services.png", // Replace with your icon path
       title: "Proof Of Concept",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi.",
     },
@@ -142,30 +109,29 @@ const teamOffersServices = [
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi.",
     },
     {
-       icon: "/images/icon/services.png", // Replace with your icon path
+      icon: "/images/icon/services.png", // Replace with your icon path
       title: "Support And Maintenance",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi.",
     },
     {
-       icon: "/images/icon/services.png", // Replace with your icon path
+      icon: "/images/icon/services.png", // Replace with your icon path
       title: "Performance Tuning",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi.",
     },
     {
-       icon: "/images/icon/services.png", // Replace with your icon path
+      icon: "/images/icon/services.png", // Replace with your icon path
       title: "Upgradation",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi.",
     },
     {
-       icon: "/images/icon/services.png", // Replace with your icon path
+      icon: "/images/icon/services.png", // Replace with your icon path
       title: "Liferay Architecture",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi.",
     },
-];
+  ]
 
   return (
     <main className="pb-16">
-      {/* Hero */}
       {/* Hero Section */}
       <section className="relative bg-[#0B63CE] text-white">
         {/* Background Gradient */}
@@ -173,18 +139,18 @@ const teamOffersServices = [
 
         {/* Main Content with updated padding */}
         <div className="mx-auto w-full px-4 pt-40 pb-16 md:px-8 md:pt-48 md:pb-20 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
-          <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-2">
+          <div className="grid grid-cols-1 items-center gap-6 md:grid-cols-2">
             {/* Left Side: Text Content */}
             <div>
               <div className="inline-flex w-fit items-center rounded-full border border-white px-8.5 py-[8.8px] text-lg font-normal">
                 Hire Us
               </div>
-              <h1 className="line-height-[88px] letter-spacing-[-0.02em] mt-9 text-7xl leading-tight font-bold sm:text-5xl md:text-6xl">
+              <h1 className="line-height-[88px] letter-spacing-[-0.02em] mt-13 text-7xl leading-tight font-bold sm:text-5xl md:text-6xl">
                 Hire Liferay
                 <br />
                 <span className="block">Developer</span>
               </h1>
-              <p className="line-height-[28px] mt-6 max-w-xl text-lg font-normal">
+              <p className="line-height-[28px] mt-10 max-w-xl text-lg font-normal">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.
                 Pellentesque sit amet.
               </p>
@@ -342,12 +308,12 @@ const teamOffersServices = [
                 {/* Content Wrapper */}
                 <div className="flex items-center gap-7">
                   {/* Icon */}
-                  <div className="flex-shrink-0 w-[115px] h-[115px] rounded-full border border-[#1F2937] p-4 shadow-[0px_0px_0px_0.42px_#F4F4F51A]">
+                  <div className="h-[115px] w-[115px] flex-shrink-0 rounded-full border border-[#1F2937] p-4 shadow-[0px_0px_0px_0.42px_#F4F4F51A]">
                     <img src={service.icon} alt={`${service.title} icon`} className="" />
                   </div>
 
                   {/* Title & Description */}
-                  <div className="max-w-[455px] max-h-[120px]" >
+                  <div className="max-h-[120px] max-w-[455px]">
                     <h3 className="mb-2 text-3xl font-semibold text-[#FFFFFF]">{service.title}</h3>
                     <p className="text-xl text-[#E5E7EB]">{service.description}</p>
                   </div>
@@ -360,10 +326,14 @@ const teamOffersServices = [
           </div>
         </div>
       </section>
+
+      {/* Liferay Technological Stacks */}
+      <LiferayTechnologicalStacks />
+
       {/* Words from CEO */}
       <WordsFromCEO />
-      <section className="bg-white text-black"></section>
-      <CaseStudy caseStudies={caseStudies} />
+
+      {/* <section className="bg-white text-black"></section> */}
       <WhatMake />
       <TalkToExpert />
       <BlogSection />

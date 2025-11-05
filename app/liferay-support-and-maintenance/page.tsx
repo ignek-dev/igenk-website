@@ -1,9 +1,6 @@
-import Image from "next/image"
-import Link from "next/link"
-import { BlogSection } from "../../components/Common"
-import HeroCTASection from "components/Common/HeroCTASection"
-import WhatMake from "components/Common/WhatMake"
 import TalkToExpert from "components/Common/TalkToExpert"
+import WhatMake from "components/Common/WhatMake"
+import { BlogSection } from "../../components/Common"
 
 
 

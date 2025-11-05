@@ -2,8 +2,8 @@
 
 'use client'; // This component uses client-side state and animation
 
+import { AnimatePresence, motion,  } from 'framer-motion';
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 
 interface AccordionItemProps {
   title: string;

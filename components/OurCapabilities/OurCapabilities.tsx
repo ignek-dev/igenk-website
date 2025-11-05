@@ -1,8 +1,8 @@
 "use client"
 
 import React from "react"
-import CapabilityCard from "./CapabilityCard"
 import { useInView } from "hooks/useInView"
+import CapabilityCard from "./CapabilityCard"
 
 // Define the image paths at the top for easy management
 const platformIconPath = "/images/our-capabilities/plateformSection.png"

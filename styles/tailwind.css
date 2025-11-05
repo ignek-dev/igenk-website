@@ -337,6 +337,35 @@
   border-right: none;
 }
 
+/* Custom grid logic for Liferay Tech Stacks */
+.tech-grid-card {
+  /* Base border for all items, using the color from the design */
+  border: 1px solid #D1D5DB; /* This is Tailwind's gray-200 */
+}
+
+/* --- Remove outer borders --- */
+
+/* Remove top border for the first row (first 4 items) */
+.tech-grid-card:nth-child(-n + 4) {
+  border-top: none;
+}
+
+/* Remove left border for the first column */
+.tech-grid-card:nth-child(4n + 1) {
+  border-left: none;
+}
+
+/* Remove right border for the last column */
+.tech-grid-card:nth-child(4n) {
+  border-right: none;
+}
+
+/* Remove bottom border for the last row */
+/* This assumes 4 full rows (16 items total) */
+.tech-grid-card:nth-last-child(-n + 4) {
+  border-bottom: none;
+}
+
 .fancy {
     --offset: 3px;
     background: black;

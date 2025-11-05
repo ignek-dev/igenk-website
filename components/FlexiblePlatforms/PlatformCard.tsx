@@ -1,7 +1,7 @@
 // components/PlatformCard.tsx
 
-import React from 'react';
 import Image from 'next/image';
+import React from 'react';
 import Card from '../Common/Card'; 
 
 

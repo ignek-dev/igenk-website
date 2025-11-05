@@ -1,9 +1,9 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { ArrowRight, ChevronsUpDown } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, ChevronDown, ChevronsDownUp, ChevronsUpDown } from 'lucide-react';
+import { useEffect, useRef, useState } from 'react';
 import CalendarPopup from './CalendarPopup';
 
 const lifeAtIgnekData = {

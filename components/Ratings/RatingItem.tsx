@@ -1,7 +1,7 @@
 // components/RatingItem.tsx
 
-import React from 'react';
 import Image from 'next/image';
+import React from 'react';
 
 const StarIcon = () => (
   <svg className="w-6 h-6 text-yellow-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">

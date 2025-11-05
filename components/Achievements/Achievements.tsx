@@ -2,9 +2,9 @@
 'use client'
 
 import React from 'react';
-import ScheduleMeetingButton from '../Button/ScheduleMeetingButton';
-import StatCard from './StatCard';
 import { useInView } from "hooks/useInView"
+import StatCard from './StatCard';
+import ScheduleMeetingButton from '../Button/ScheduleMeetingButton';
 
 
 const statData = [

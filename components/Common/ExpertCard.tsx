@@ -1,7 +1,7 @@
 // components/ExpertCard.tsx
 
-import React from 'react';
 import Image from 'next/image';
+import React from 'react';
 import ScheduleMeetingButton from '../Button/ScheduleMeetingButton'; // Reusing your existing button
 
 const ExpertCard: React.FC = () => {

@@ -1,6 +1,5 @@
 import { BlogSection } from "components/Common"
 import CaseStudy from "components/Common/CaseStudy";
-import HeroCTASection from "components/Common/HeroCTASection"
 import TalkToExpert from "components/Common/TalkToExpert";
 import WhatMake from "components/Common/WhatMake";
 
@@ -29,11 +28,6 @@ export default function LiferayThemeDevelopmentPage() {
         "Client extensions for themeCSS, globalCSS, globalJS, stylebook, etc",
         "Use Site Initializer to programmatically set content for  sites."
     ]
-    const items = Array.from({ length: 15 }, (_, i) => ({
-        id: i + 1,
-        title: `Item ${i + 1}`,
-        description: `Description ${i + 1}`,
-    }));
     const caseStudies = [
         {
             id: 1,

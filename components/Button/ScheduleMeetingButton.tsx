@@ -1,8 +1,7 @@
 // components/ScheduleMeetingButton.tsx
 
-import React from 'react';
 import Image from 'next/image';
-import { cn } from '../../lib/utils'; // Assuming your utility path
+import React from 'react';
 
 interface ScheduleMeetingButtonProps {
   btnName: string;

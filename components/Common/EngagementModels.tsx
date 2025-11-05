@@ -1,7 +1,6 @@
 // components/Liferay/EngagementModels.tsx
 "use client";
 import { useState } from "react";
-import React from "react";
 
 // Data for the engagement models
 const engagementModelsData = [

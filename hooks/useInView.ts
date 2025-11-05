@@ -1,7 +1,7 @@
 // hooks/useInView.ts
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 export function useInView(options?: IntersectionObserverInit & { triggerOnce?: boolean }) {
   const [isInView, setIsInView] = useState<boolean>(false);

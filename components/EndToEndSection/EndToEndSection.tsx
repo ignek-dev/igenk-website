@@ -1,7 +1,7 @@
 "use client"
 
-import { useInView } from "hooks/useInView" // Adjust path if needed
 import AccordionItem from "components/Common/AccordionItem"
+import { useInView } from "hooks/useInView" // Adjust path if needed
 
 export default function EndToEndSection() {
   // Use the hook here! We pass `triggerOnce: true`.
