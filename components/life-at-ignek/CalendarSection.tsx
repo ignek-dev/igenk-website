@@ -145,7 +145,7 @@ export default function CalendarSection() {
   }, [calendarRef]);
 
 
-  const handleCategoryClick = (slug: string) => {
+  const handleCategoryClick = (slug: IgnekCategory) => {
     setSelectedCategory(slug);
     setActiveImageIndex(0);
   };
@@ -243,15 +243,19 @@ export default function CalendarSection() {
               {activeEvent.images.length > 0 ? (
                 <div className="mt-6">
                   <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl">
-                    <Image
-                      key={activeImageIndex}
-                      // This is now type-safe
-                      src={activeEvent.images[activeImageIndex]}
-                      alt={activeEvent.title}
-                      fill
-                      className="object-cover transition-opacity duration-700 ease-in-out"
-                      sizes="(max-width: 1024px) 90vw, 50vw"
-                    />
+                    {(() => {
+                      const currentImageSrc: string = activeEvent.images[activeImageIndex] ?? activeEvent.images[0]!
+                      return (
+                        <Image
+                          key={activeImageIndex}
+                          src={currentImageSrc}
+                          alt={activeEvent.title}
+                          fill
+                          className="object-cover transition-opacity duration-700 ease-in-out"
+                          sizes="(max-width: 1024px) 90vw, 50vw"
+                        />
+                      )
+                    })()}
                     {activeEvent.images.length > 1 && (
                       <div className="absolute top-[90%] left-1/2 flex -translate-x-1/2 justify-center space-x-2 py-4">
                         {activeEvent.images.map((_, index) => (

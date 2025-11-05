@@ -14,7 +14,7 @@ export default async function PortfolioPage() {
   let items: Awaited<ReturnType<typeof getPortfolioList>> = []
   try {
     items = await getPortfolioList()
-  } catch (err) {
+  } catch {
     return (
       <main className="mx-auto max-w-7xl px-4 py-12 md:px-8">
         <section className="mb-8 text-center">

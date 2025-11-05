@@ -5,10 +5,16 @@ type SanityClient = {
   fetch<T>(query: string, params?: Record<string, unknown>): Promise<T>
 }
 
+type SanityClientConfig = {
+  projectId: string
+  dataset: string
+  apiVersion: string
+  useCdn?: boolean
+  token?: string
+}
+
 async function getSanityClient(): Promise<SanityClient> {
-  // Suppress editor TypeScript resolution error for '@sanity/client'
-  // @ts-ignore
-  const mod: { createClient: (config: any) => SanityClient } | null = await import("@sanity/client").catch(() => null)
+  const mod: { createClient: (config: SanityClientConfig) => SanityClient } | null = await import("@sanity/client").catch(() => null)
   if (!mod?.createClient) {
     throw new Error("Sanity client package is not available. Ensure '@sanity/client' is installed.")
   }

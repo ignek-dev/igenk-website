@@ -4,10 +4,11 @@ import Link from "next/link"
 import styles from "./wp-content.module.css"
 import { getPortfolioBySlug } from "../../../lib/sanity"
 
-type Props = { params: { slug: string } }
+type RouteParams = { slug: string }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const data = await getPortfolioBySlug(params.slug)
+export async function generateMetadata({ params }: { params: Promise<RouteParams> }): Promise<Metadata> {
+  const { slug } = await params
+  const data = await getPortfolioBySlug(slug)
   const title = data?.seoTitle || data?.title || "Portfolio"
   const description = data?.seoDescription || "Portfolio item details"
   return { title, description }
@@ -15,11 +16,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export const revalidate = 60
 
-export default async function PortfolioDetailPage({ params }: Props) {
+export default async function PortfolioDetailPage({ params }: { params: Promise<RouteParams> }) {
+  const { slug } = await params
   let data = null
   try {
-    data = await getPortfolioBySlug(params.slug)
-  } catch (err) {
+    data = await getPortfolioBySlug(slug)
+  } catch {
     return (
       <main className="mx-auto max-w-4xl px-4 py-12 md:px-8">
         <Link href="/portfolio" className="text-[#00979E]">← Back to Portfolio</Link>
