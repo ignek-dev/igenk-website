@@ -215,7 +215,7 @@ export default function LiferayConsultationPage() {
   // Create a 21-item array by repeating the base services
   const fullServiceList = [...baseServices, ...baseServices, ...baseServices]
 
-  const liferayConsultingServicesData: any = {
+  const liferayConsultingServicesData: Record<string, string[]> = {
     Portal: fullServiceList,
     "Enterprise CRM": fullServiceList,
     "Collaboration & social": fullServiceList,
@@ -746,7 +746,7 @@ export default function LiferayConsultationPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3">
-            {liferayConsultingServicesData[activeServiceTab].map((service: string, index: number) => (
+            {liferayConsultingServicesData[activeServiceTab]?.map((service: string, index: number) => (
               <div key={index} className="border-b border-gray-700 px-6">
                 <div className="flex items-start gap-4 py-[40px]">
                   <Image

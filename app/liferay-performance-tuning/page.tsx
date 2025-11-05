@@ -1,9 +1,9 @@
 import { Metadata } from "next"
 import Image from "next/image"
-import { BlogSection } from "../../components/Common"
 import CaseStudy from "components/Common/CaseStudy"
-import WhatMake from "components/Common/WhatMake"
 import TalkToExpert from "components/Common/TalkToExpert"
+import WhatMake from "components/Common/WhatMake"
+import { BlogSection } from "../../components/Common"
 
 
 

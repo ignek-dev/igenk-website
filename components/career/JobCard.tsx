@@ -1,9 +1,9 @@
 // components/career/JobCard.tsx
 
 'use client';
+import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 
 // --- TypeScript Interfaces for Type Safety ---

@@ -1,7 +1,7 @@
 "use client"
+import { AnimatePresence,motion } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
-import { AnimatePresence,motion } from "framer-motion"
 import { usePathname } from "next/navigation"
 import { useState } from "react"
 import CompanyMegaMenu from "components/Navigation/CompanyMegaMenu"

@@ -1,8 +1,8 @@
 import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
-import { getPortfolioBySlug } from "../../../lib/sanity"
 import styles from "./wp-content.module.css"
+import { getPortfolioBySlug } from "../../../lib/sanity"
 
 type Props = { params: { slug: string } }
 

@@ -2,6 +2,8 @@ import { Metadata } from "next"
 import Image from "next/image"
 
 import Achievements from "components/Achievements/Achievements"
+import HeroCTASection from "components/Common/HeroCTASection"
+import { ScrollContextProvider } from "components/Common/ScrollContextProvider"
 import EndToEndSection from "components/EndToEndSection/EndToEndSection"
 import FlexiblePlatforms from "components/FlexiblePlatforms/FlexiblePlatforms"
 import IntermediateFrame from "components/IntermediateFrame"
@@ -10,8 +12,6 @@ import RatingsSection from "components/Ratings/RatingsSection"
 import SuccessStories from "components/success-stories/SuccessStories"
 import WhatWeBring from "components/WhatWeBring/WhatWeBring"
 
-import HeroCTASection from "components/Common/HeroCTASection"
-import { ScrollContextProvider } from "components/Common/ScrollContextProvider"
 import { BlogSection } from "../components/Common"
 
 export const metadata: Metadata = {
