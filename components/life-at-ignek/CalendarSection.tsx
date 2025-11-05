@@ -6,7 +6,25 @@ import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 import CalendarPopup from './CalendarPopup';
 
-const lifeAtIgnekData = {
+
+// --- TYPE DEFINITIONS ---
+interface LifeAtIgnekEvent {
+  tag: string;
+  date: string;
+  title: string;
+  images: string[];
+}
+
+// FIXED (Step 1): Define the specific category slugs
+type IgnekCategory = 
+  | 'office-trip' 
+  | 'fun-friday' 
+  | 'events' 
+  | 'festivals' 
+  | 'birthdays' 
+  | 'achievements';
+
+const lifeAtIgnekData: Record<IgnekCategory, LifeAtIgnekEvent[]> = {
   'office-trip': [
     {
       tag: 'Office Trip',
@@ -76,7 +94,7 @@ const lifeAtIgnekData = {
   ],
 };
 
-const jumpIntoCategories = [
+const jumpIntoCategories: { slug: IgnekCategory; name: string; image: string }[] = [
   { slug: 'fun-friday', name: 'Fun Friday', image: '/images/life-at-ignek/calander-images/fun-friday.jpg' },
   { slug: 'office-trip', name: 'Office Trips', image: '/images/life-at-ignek/calander-images/office-trip.png' },
   { slug: 'events', name: 'Events', image: '/images/life-at-ignek/calander-images/events.png' }, 
@@ -92,11 +110,11 @@ const upcomingEvents = [
 
 // --- MAIN COMPONENT ---
 export default function CalendarSection() {
-  const [selectedCategory, setSelectedCategory] = useState('office-trip');
+  const [selectedCategory, setSelectedCategory] = useState<IgnekCategory>('office-trip');
   const [activeImageIndex, setActiveImageIndex] = useState(0);
   const [selectedDate, setSelectedDate] = useState(new Date('2025-05-01'));
   const [isCalendarOpen, setIsCalendarOpen] = useState(false);
-  const calendarRef = useRef(null);
+  const calendarRef = useRef<HTMLDivElement>(null);
 
   const activeEvents = lifeAtIgnekData[selectedCategory] || [];
   const activeEvent = activeEvents.length > 0 ? activeEvents[0] : null;
@@ -116,7 +134,7 @@ export default function CalendarSection() {
 // Effect to close calendar when clicking outside of it
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
-      if (calendarRef.current && !(calendarRef.current as any).contains(event.target)) {
+      if (calendarRef.current && !calendarRef.current.contains(event.target as Node)) {
         setIsCalendarOpen(false);
       }
     }
@@ -208,7 +226,7 @@ export default function CalendarSection() {
         <main className="relative mt-8 w-full pt-[47px] lg:mt-0 lg:h-[875px] lg:max-w-[1028px]">
           {activeEvent ? (
             <>
-              {/* Card 1: Event Details */}
+              {/* Card 1: Event Details (Unchanged) */}
               <div className="rounded-3xl bg-[#F7F8F9] p-6 shadow-sm">
                 <div className="flex items-center justify-between">
                   <span className="rounded-full border border-black/50 px-4 py-2 text-lg font-normal whitespace-nowrap text-black">
@@ -222,31 +240,41 @@ export default function CalendarSection() {
               </div>
 
               {/* Card 2: Image Carousel */}
-              <div className="mt-6">
-                <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl">
-                  <Image
-                    key={activeImageIndex}
-                    src={activeEvent.images[activeImageIndex]}
-                    alt={activeEvent.title}
-                    fill
-                    className="object-cover transition-opacity duration-700 ease-in-out"
-                    sizes="(max-width: 1024px) 90vw, 50vw"
-                  />
-                  {activeEvent.images.length > 1 && (
-                    <div className="absolute top-[90%] left-1/2 flex -translate-x-1/2 justify-center space-x-2 py-4">
-                      {activeEvent.images.map((_, index) => (
-                        <button
-                          key={index}
-                          onClick={() => setActiveImageIndex(index)}
-                          className={`h-2.5 w-2.5 rounded-full transition-colors ${
-                            activeImageIndex === index ? "bg-black" : "bg-gray-300"
-                          }`}
-                        />
-                      ))}
-                    </div>
-                  )}
+              {activeEvent.images.length > 0 ? (
+                <div className="mt-6">
+                  <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl">
+                    <Image
+                      key={activeImageIndex}
+                      // This is now type-safe
+                      src={activeEvent.images[activeImageIndex]}
+                      alt={activeEvent.title}
+                      fill
+                      className="object-cover transition-opacity duration-700 ease-in-out"
+                      sizes="(max-width: 1024px) 90vw, 50vw"
+                    />
+                    {activeEvent.images.length > 1 && (
+                      <div className="absolute top-[90%] left-1/2 flex -translate-x-1/2 justify-center space-x-2 py-4">
+                        {activeEvent.images.map((_, index) => (
+                          <button
+                            key={index}
+                            onClick={() => setActiveImageIndex(index)}
+                            className={`h-2.5 w-2.5 rounded-full transition-colors ${
+                              activeImageIndex === index ? "bg-black" : "bg-gray-300"
+                            }`}
+                          />
+                        ))}
+                      </div>
+                    )}
+                  </div>
                 </div>
-              </div>
+              ) : (
+                // Optional: Fallback in case an event has no images
+                <div className="mt-6">
+                  <div className="relative aspect-[16/10] w-full flex items-center justify-center overflow-hidden rounded-2xl bg-gray-100">
+                    <p className="text-black/50">No images for this event.</p>
+                  </div>
+                </div>
+              )}
             </>
           ) : (
             <div className="flex h-96 items-center justify-center rounded-3xl bg-[#F7F8F9] p-5">

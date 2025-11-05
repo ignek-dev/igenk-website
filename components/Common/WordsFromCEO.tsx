@@ -1,4 +1,5 @@
 // components/Liferay/WordsFromCEO.tsx
+import Image from "next/image";
 
 export default function WordsFromCEO() {
   return (
@@ -40,10 +41,13 @@ export default function WordsFromCEO() {
 
           {/* Right Side: Image */}
           <div className="w-full md:w-1/2">
-            <img
+            <Image
               src="/images/liferay-pages-image/liferay-consultation-page/CEO-image.png"
               alt="CEO Bhavin Panchani"
-              className="h-auto w-full rounded-lg object-cover"
+              width={800}  // Base width for aspect ratio
+              height={600} // Base height for aspect ratio
+              objectFit="cover" // from object-cover class
+              className="h-auto w-full rounded-lg" // h-auto w-full are preserved
             />
           </div>
         </div>

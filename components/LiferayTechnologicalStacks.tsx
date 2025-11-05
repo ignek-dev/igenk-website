@@ -1,4 +1,5 @@
 // components/LiferayTechnologicalStacks/index.tsx
+import Image from "next/image"
 import React from "react"
 
 // --- Data for the Section ---
@@ -175,7 +176,13 @@ export const LiferayTechnologicalStacks = () => {
                           key={tech.name}
                           className="tech-grid-card relative flex h-[140px] w-full flex-col items-center justify-center px-6 py-25 text-center"
                         >
-                          <img src={tech.logo} alt={`${tech.name} logo`} className="min-h-36 min-w-36 object-contain" />
+                          <Image
+                            src={tech.logo}
+                            alt={`${tech.name} logo`}
+                            width={144} // From min-w-36 (9rem * 16px)
+                            height={144} // From min-h-36 (9rem * 16px)
+                            objectFit="contain" // From object-contain class
+                          />
                           <span className="mt-3 text-sm font-medium text-black/90">{tech.name}</span>
                           {/* Right-side dot (show for all except last column) */}
                           {(index + 1) % 4 !== 0 && (

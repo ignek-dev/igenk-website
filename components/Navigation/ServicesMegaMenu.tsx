@@ -1,5 +1,5 @@
 // components/ServicesMegaMenu.tsx
-
+import Image from "next/image"
 // Data for the card on the left
 const featuredService = {
   // Path starts from the 'public' directory
@@ -46,7 +46,14 @@ export default function ServicesMegaMenu() {
           <div className="flex-shrink-0" style={{ maxWidth: "521px" }}>
             <div className="group relative w-full overflow-hidden rounded-xl">
               {/* Background Image */}
-              <img src={featuredService.imageSrc} alt="Tech Experts" className="h-auto w-full object-cover" />
+             <Image
+                src={featuredService.imageSrc}
+                alt="Tech Experts"
+                width={521} // Base width from parent style
+                height={600} // Estimated height for aspect ratio
+                objectFit="cover"
+                className="h-auto w-full"
+              />
 
               {/* Gradient Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent"></div>
@@ -84,7 +91,7 @@ export default function ServicesMegaMenu() {
                       href={link.href}
                       className="flex items-center gap-3 text-white/80 transition-colors hover:text-white"
                     >
-                      <img src={link.iconUrl} alt="" className="size-8" />
+                      <Image src={link.iconUrl} alt={link.text} width={32} height={32} />
                       <span className="text-xl">{link.text}</span>
                     </a>
                   </li>

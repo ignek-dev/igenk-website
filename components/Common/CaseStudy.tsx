@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import React, { useEffect, useState } from "react";
 export interface CaseStudy {
   id: number;
@@ -40,10 +41,13 @@ const CaseStudy:React.FC<CaseStudyCarouselProps> = ({caseStudies}) => {
                             <div className="bg-[#0f0f0f] border border-gray-800 rounded-2xl p-4 flex flex-col md:flex-row gap-8 ">
                                 {/* Image */}
                                 <div className="flex-shrink-0 w-[420px] h-[318px] overflow-hidden rounded-xl">
-                                    <img
+                                    <Image
                                         src={item.image}
                                         alt={item.title}
-                                        className="w-full h-full object-cover rounded-xl"
+                                        width={420}
+                                        height={318}
+                                        objectFit="cover"
+                                        className="rounded-xl"
                                     />
                                 </div>
 

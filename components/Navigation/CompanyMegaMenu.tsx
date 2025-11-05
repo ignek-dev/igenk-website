@@ -102,7 +102,7 @@ export default function CompanyMegaMenu() {
                 <h4 className="font-semibold mb-3 text-2xl">General</h4>
                 <ul className="space-y-2">
                   {contactDetails.general.map((item) => (
-                    <li key={item.text}><a href={item.href} className="flex items-center gap-2 text-xl text-white/80 hover:text-white transition-colors"><img src={item.icon} alt={item.text} className="w-6 h-6 object-contain" />{item.text}</a></li>
+                    <li key={item.text}><a href={item.href} className="flex items-center gap-2 text-xl text-white/80 hover:text-white transition-colors"><Image src={item.icon} alt={item.text} width={24} height={24} objectFit="contain" />{item.text}</a></li>
                   ))}
                 </ul>
                 <div className="absolute right-0 top-0 h-full w-[1px] bg-white/10" /> 
@@ -113,7 +113,7 @@ export default function CompanyMegaMenu() {
                 <h4 className="font-semibold mb-3 text-2xl">Sales</h4>
                 <ul className="space-y-2">
                   {contactDetails.sales.map((item) => (
-                    <li key={item.text}><a href={item.href} className="flex items-center gap-2 text-xl text-white/80 hover:text-white transition-colors"><img src={item.icon} alt={item.text} className="w-6 h-6 object-contain" />{item.text}</a></li>
+                    <li key={item.text}><a href={item.href} className="flex items-center gap-2 text-xl text-white/80 hover:text-white transition-colors"><Image src={item.icon} alt={item.text} width={24} height={24} objectFit="contain" />{item.text}</a></li>
                   ))}
                 </ul>
                 <div className="absolute right-0 top-0 h-full w-[1px] bg-white/10" /> {/* Right border */}
@@ -124,7 +124,7 @@ export default function CompanyMegaMenu() {
                 <h4 className="font-semibold mb-3 text-2xl ">HR</h4>
                 <ul className="space-y-2">
                   {contactDetails.hr.map((item) => (
-                    <li key={item.text}><a href={item.href} className="flex items-center gap-2 text-xl text-white/80 hover:text-white transition-colors"><img src={item.icon} alt={item.text} className="w-6 h-6 object-contain" />{item.text}</a></li>
+                    <li key={item.text}><a href={item.href} className="flex items-center gap-2 text-xl text-white/80 hover:text-white transition-colors"><Image src={item.icon} alt={item.text} width={24} height={24} objectFit="contain" />{item.text}</a></li>
                   ))}
                 </ul>
               </div>
@@ -132,7 +132,7 @@ export default function CompanyMegaMenu() {
 
             <div className="mt-8 flex gap-16 items-center border-white/10 pt-8">
                 <div className="flex items-center gap-3 text-xl leading-7 text-white/80 max-w-md">
-                  <Image src={"/images/icon/location.png"} alt={"Location"} width={41} height={41} className="rounded-md object-cover flex-shrink-0" />
+                  <Image src={"/images/icon/location.png"} alt={"Location"} width={41} height={41} objectFit="cover" className="rounded-md flex-shrink-0" />
                     E 910-912, Ganesh Glory 11, Jagatpur Road, SG Highway, Ahmedabad, Gujarat - 382470
                 </div>
                 <div className="flex items-center gap-3">

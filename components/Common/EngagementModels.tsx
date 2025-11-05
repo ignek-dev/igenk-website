@@ -1,5 +1,6 @@
 // components/Liferay/EngagementModels.tsx
 "use client";
+import Image from "next/image";
 import { useState } from "react";
 
 // Data for the engagement models
@@ -66,9 +67,11 @@ export default function EngagementModels({ title, description }: EngagementModel
                 }`}
               >
                 {/* Card Icon */}
-                <img
+                <Image
                   src={model.icon}
                   alt={`${model.title} icon`}
+                  width={48}
+                  height={48}
                   className={`mb-8 h-12 w-12 ${isHovered ? "brightness-0 invert" : ""}`}
                 />
 

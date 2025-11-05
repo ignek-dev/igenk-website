@@ -100,7 +100,7 @@ export default function HomePage() {
                 className="group flex items-center justify-center gap-2 rounded-full bg-black/30 px-3 py-3 text-sm text-white transition-colors"
               >
                 <div className="w-8 h-8 flex items-center justify-center rounded-full bg-black/30 border border-[#00979E]"> 
-                  <img src="/images/icon/discover-arrow.png" alt="discover-now" />
+                  <Image src="/images/icon/discover-arrow.png" alt="discover-now" width={18} height={18} />
                 </div>
                 <span className="pr-2 text-xl">Discover More</span>
               </a>

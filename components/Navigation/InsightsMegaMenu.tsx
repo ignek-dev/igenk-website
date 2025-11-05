@@ -1,5 +1,5 @@
 // InsightsMegaMenu.tsx
-
+import Image from "next/image";
 // --- Icon Components ---
 const IconArrowRight = ({ className }: { className?: string }) => (
   <svg className={className} width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -61,7 +61,14 @@ export default function InsightsMegaMenu() {
             <div className="flex flex-col gap-5 w-full max-w-[588px]">
               {insightLinks.map((link) => (
                 <a href={link.href} key={link.title} className="group flex items-center gap-4 p-4 rounded-lg bg-zinc-900/80 hover:bg-zinc-800/80 transition-colors duration-300 h-[130px]">
-                  <div className="text-white/70 group-hover:text-white transition-colors"><img src={link.icon} alt={link.title} className="w-6 h-6 object-contain" /></div>
+                  <div className="text-white/70 group-hover:text-white transition-colors">
+                  <Image 
+                      src={link.icon} 
+                      alt={link.title} 
+                      width={24} 
+                      height={24} 
+                      objectFit="contain" 
+                    /></div>
                   <div className="flex-1">
                     <h3 className="font-semibold text-xl text-white">{link.title}</h3>
                     <p className="text-base text-white/60 mt-1">{link.description}</p>
@@ -79,10 +86,13 @@ export default function InsightsMegaMenu() {
             </h2>
             <a href={featuredEvent.href} className="block group">
                  <div className="overflow-hidden rounded-[14.35px] border-[1.2px] border-white/20 group-hover:border-white/40 transition-all duration-300">
-                     <img 
+                   <Image 
                         src={featuredEvent.imageSrc} 
                         alt={featuredEvent.imageAlt}
-                        className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-300"
+                        width={800} // Base width for aspect ratio
+                        height={450} // Base height for aspect ratio
+                        objectFit="cover" // from object-cover class
+                        className="w-full h-auto group-hover:scale-105 transition-transform duration-300"
                     />
                  </div>
             </a>

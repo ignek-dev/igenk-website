@@ -438,19 +438,25 @@ export default function LiferayConsultationPage() {
           {/* Right Image */}
           <div className="relative flex flex-1 items-center justify-center">
             {/* RGB Glow Background */}
-            <div className="absolute bottom-0 w-[600px] opacity-80">
-              <img
+            <div className="absolute bottom-0 h-full w-[600px] opacity-80">
+              <Image
                 src="/images/liferay-pages-image/rgb-radiant.png"
                 alt="Glow background"
-                className="h-full w-full scale-125 object-contain"
+                fill
+                objectFit="contain"
+                className="scale-147"
+                sizes="600px"
               />
             </div>
 
-            {/* Tablet Image */}
-            <img
+            {/* Tablet Image*/}
+            <Image
               src="/images/liferay-pages-image/tablet-image.png"
               alt="Tablet Preview"
-              className="relative z-10 h-auto w-[500px] scale-125 object-contain"
+              width={500}
+              height={500}
+              objectFit="contain"
+              className="relative z-10 h-auto w-[500px] scale-125"
               style={{ minWidth: "650px", marginTop: "-60px", marginBottom: "17px" }}
             />
           </div>
@@ -550,18 +556,22 @@ export default function LiferayConsultationPage() {
                         <hr className="my-4 max-w-[120px] border-t border-white/50" />
                         <p className="text-justify text-base leading-relaxed">{solution.description}</p>
                       </div>
-                      <img
+                      <Image
                         src={solution.icon}
                         alt={`${solution.title} icon`}
+                        width={112}
+                        height={112}
                         className="h-28 w-28 flex-shrink-0 object-contain transition-all duration-300 ease-in-out"
                       />
                     </>
                   ) : (
                     // Layout for inactive cards
                     <>
-                      <img
+                     <Image
                         src={solution.icon}
                         alt={`${solution.title} icon`}
+                        width={120}
+                        height={120}
                         className="h-30 w-30 object-contain transition-all duration-300 ease-in-out"
                       />
                       <h3 className="mt-6 text-center text-xl font-semibold">{solution.title}</h3>
@@ -596,7 +606,7 @@ export default function LiferayConsultationPage() {
                 <div className="flex flex-col items-start py-[57px] md:flex-row md:items-center md:gap-24">
                   {/* Icon */}
                   <div className="flex-shrink-0">
-                    <img src={feature.icon} alt="" className="h-16 w-16" />
+                      <Image src={feature.icon} alt="" width={64} height={64} className="h-16 w-16" />                  
                   </div>
 
                   {/* Title */}
@@ -659,10 +669,13 @@ export default function LiferayConsultationPage() {
                   <div
                     className={`absolute top-1/2 right-65 z-10 w-[190px] -translate-y-1/2 transform opacity-0 transition-all duration-300 group-hover:translate-x-4 group-hover:opacity-100`}
                   >
-                    <img
+                    <Image
                       src={industry.image}
                       alt={industry.title}
-                      className="h-[140px] w-full rounded-lg object-cover shadow-lg transition-transform duration-300 group-hover:-rotate-10"
+                      width={190}
+                      height={140}
+                      objectFit="cover"
+                      className="h-[140px] w-full rounded-lg shadow-lg transition-transform duration-300 group-hover:-rotate-10"
                     />
                   </div>
                 </div>
@@ -733,12 +746,14 @@ export default function LiferayConsultationPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3">
-            {liferayConsultingServicesData[activeServiceTab].map((service: any, index: number) => (
+            {liferayConsultingServicesData[activeServiceTab].map((service: string, index: number) => (
               <div key={index} className="border-b border-gray-700 px-6">
                 <div className="flex items-start gap-4 py-[40px]">
-                  <img
-                    src="/images/liferay-pages-image/liferay-consultation-page/checkmark-icon.svg" // Replace with your icon path
+                  <Image
+                    src="/images/liferay-pages-image/liferay-consultation-page/checkmark-icon.svg"
                     alt="Checkmark icon"
+                    width={40}
+                    height={40}
                     className="h-10 w-10 flex-shrink-0"
                   />
                   <p className="text-2xl font-medium">{service}</p>

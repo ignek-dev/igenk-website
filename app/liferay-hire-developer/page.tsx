@@ -1,4 +1,5 @@
 "use client"
+import Image from "next/image"
 import React from "react"
 import { BlogSection } from "components/Common"
 import EngagementModels from "components/Common/EngagementModels"
@@ -158,7 +159,7 @@ export default function LiferayHireDeveloper() {
 
             {/* Right Side: Image */}
             <div className="flex items-center justify-center">
-              <img
+              <Image
                 src="/images/liferay-pages-image/liferay-consultation-page/Liferay-dxp.png"
                 alt="Liferay DXP"
                 width={280}
@@ -174,13 +175,13 @@ export default function LiferayHireDeveloper() {
               {expertiseStats.map((stat, index) => (
                 <React.Fragment key={index}>
                   <span className="mx-8 text-xl font-medium">{stat}</span>
-                  <img src="/images/icon/Ellipse.png" alt="ecllips" width={14} height={14} />
+                  <Image src="/images/icon/Ellipse.png" alt="ecllips" width={14} height={14} />
                 </React.Fragment>
               ))}
               {expertiseStats.map((stat, index) => (
                 <React.Fragment key={`duplicate-${index}`}>
                   <span className="mx-8 text-xl font-medium">{stat}</span>
-                  <img src="/images/icon/Ellipse.png" alt="ecllips" width={14} height={14} />
+                 <Image src="/images/icon/Ellipse.png" alt="ecllips" width={14} height={14} />
                 </React.Fragment>
               ))}
             </div>
@@ -206,7 +207,13 @@ export default function LiferayHireDeveloper() {
               <div key={index}>
                 {/* Icon */}
                 <div className="flex h-16 w-16 items-center justify-center">
-                  <img src={item.icon} alt={`${item.title.join(" ")} icon`} />
+                  <Image
+                    src={item.icon}
+                    alt={`${item.title.join(" ")} icon`}
+                    width={64}
+                    height={64}
+                    objectFit="contain"
+                  />
                 </div>
 
                 {/* Title Container with fixed height */}
@@ -266,7 +273,13 @@ export default function LiferayHireDeveloper() {
                   <div className="ml-12 w-full rounded-2xl bg-[#FFFFFF] p-7.5 shadow-lg">
                     {/* Icon Container */}
                     <div className="mb-7 flex h-18 w-18 items-center justify-center rounded-full">
-                      <img src={stepItem.icon} alt="step icon" className="" />
+                      <Image
+                        src={stepItem.icon}
+                        alt="step icon"
+                        width={72}
+                        height={72}
+                        objectFit="contain"
+                      />
                     </div>
                     <h3 className="line-height-[36px] mb-4.5 text-3xl font-normal text-[#03030F]">{stepItem.title}</h3>
                     <p className="text-lg text-[#03030F]/70">{stepItem.description}</p>
@@ -309,7 +322,13 @@ export default function LiferayHireDeveloper() {
                 <div className="flex items-center gap-7">
                   {/* Icon */}
                   <div className="h-[115px] w-[115px] flex-shrink-0 rounded-full border border-[#1F2937] p-4 shadow-[0px_0px_0px_0.42px_#F4F4F51A]">
-                    <img src={service.icon} alt={`${service.title} icon`} className="" />
+                   <Image
+                      src={service.icon}
+                      alt={`${service.title} icon`}
+                      width={83}
+                      height={83}
+                      objectFit="contain"
+                    />
                   </div>
 
                   {/* Title & Description */}

@@ -1,7 +1,7 @@
 // components/career/JobCard.tsx
 
 'use client';
-
+import Image from "next/image";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
@@ -56,10 +56,10 @@ const JobCard = ({ job }: JobCardProps) => {
       {/* Bottom section: Info and Apply Button */}
       <div className="mt-2 flex flex-wrap items-center justify-between gap-4">
         <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-lg font-medium text-gray-600">
-          <span className="flex items-center gap-3"><img src="/images/icon/briefcase.png" alt="briefcase" className="w-6 h-6" /> {job.experience}</span>
-          <span className="flex items-center gap-3"><img src="/images/icon/clock.png" alt="clock" className="w-6 h-6" /> {job.type}</span>
-          <span className="flex items-center gap-3"><img src="/images/icon/wallet.png" alt="salary" className="w-6 h-6" /> {job.salary}</span>
-          <span className="flex items-center gap-3"><img src="/images/icon/map-pin.png" alt="location" className="w-6 h-6" /> {job.location}</span>
+          <span className="flex items-center gap-3"><Image src="/images/icon/briefcase.png" alt="briefcase" width={24} height={24} /> {job.experience}</span>
+          <span className="flex items-center gap-3"><Image src="/images/icon/clock.png" alt="clock" width={24} height={24} /> {job.type}</span>
+          <span className="flex items-center gap-3"><Image src="/images/icon/wallet.png" alt="salary" width={24} height={24} /> {job.salary}</span>
+          <span className="flex items-center gap-3"><Image src="/images/icon/map-pin.png" alt="location" width={24} height={24} /> {job.location}</span>
         </div>
         <Link href="#" className="rounded-full bg-black px-14 py-3.5 text-xl gap-8 font-semibold text-white transition hover:bg-gray-800">
           Apply Now

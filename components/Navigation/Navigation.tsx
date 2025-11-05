@@ -89,7 +89,7 @@ export default function Navigation() {
                 className="rounded-full border border-[#00979E] p-2 text-white/80 transition-colors hover:border-[#00979E] hover:text-white"
               >
                 <div className="flex h-7 w-7 items-center justify-center">
-                  <img src="/images/icon/calendar.png" alt="calendar" className="max-h-full max-w-full" />
+                  <Image src="/images/icon/calendar.png" alt="calendar" width={24} height={24} />
                 </div>
               </button>
               <button
@@ -98,7 +98,7 @@ export default function Navigation() {
                 className="rounded-full border border-[#00979E] p-2 text-white/80 transition-colors hover:border-[#00979E] hover:text-white"
               >
                 <div className="flex h-7 w-7 items-center justify-center">
-                  <img src="/images/icon/arrow-tr.png" alt="arrow-top-right" className="max-h-full max-w-full" />
+                  <Image src="/images/icon/arrow-tr.png" alt="arrow-top-right" width={24} height={24} />
                 </div>
               </button>
             </div>
@@ -164,7 +164,7 @@ export default function Navigation() {
                 className="rounded-full border border-[#00979E] p-2 text-white/80 transition-colors hover:border-[#00979E] hover:text-white"
               >
                 <div className="flex h-7 w-7 items-center justify-center">
-                  <img src="/images/icon/calendar.png" alt="calendar" className="max-h-full max-w-full" />
+                  <Image src="/images/icon/calendar.png" alt="calendar" width={24} height={24} />
                 </div>
               </button>
               <button
@@ -173,7 +173,7 @@ export default function Navigation() {
                 className="rounded-full border border-[#00979E] p-2 text-white/80 transition-colors hover:border-[#00979E] hover:text-white"
               >
                 <div className="flex h-7 w-7 items-center justify-center">
-                  <img src="/images/icon/arrow-tr.png" alt="arrow-top-right" className="max-h-full max-w-full" />
+                  <Image src="/images/icon/arrow-tr.png" alt="arrow-top-right" width={24} height={24} />
                 </div>
               </button>
             </div>
