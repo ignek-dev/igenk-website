@@ -1,57 +1,189 @@
+"use client"
+import { AnimatePresence, motion } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
+import { useState } from "react"
+import CompanyMegaMenu from "components/Navigation/CompanyMegaMenu"
+import InsightsMegaMenu from "components/Navigation/InsightsMegaMenu"
+import ServicesMegaMenu from "components/Navigation/ServicesMegaMenu"
+import SolutionsMegaMenu from "components/Navigation/SolutionsMegaMenu"
 
 const menu = [
   { label: "Company", href: "#" },
   { label: "Services", href: "#" },
   { label: "Solutions", href: "#" },
   { label: "Insights", href: "#" },
+  { label: "Portfolio", href: "/portfolio" },
 ]
 
 export default function Navigation() {
+  const [activeMenu, setActiveMenu] = useState<string | null>(null)
+  const pathname = usePathname() // Get the current path
+  const isCareerPage = pathname === "/career" // Check if it's the career page
+  const isConsultingPage = pathname === "/liferay-consulting-and-implementation-services"
+  const isHireDeveloperPage = pathname === "/liferay-hire-developer"
+  const [isHeaderHovered, setIsHeaderHovered] = useState(false)
+
+  const handleMouseEnter = (label: string) => setActiveMenu(label)
+  const handleMouseLeave = () => setActiveMenu(null)
+
+  const backgroundClass = isHeaderHovered
+    ? "bg-black"
+    : isCareerPage
+    ? "bg-transparent"
+    : isConsultingPage || isHireDeveloperPage
+    ? "bg-[#0B63CE]"
+    : "bg-black"
+
   return (
-    <header className="relative w-full bg-black text-white">
-      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(1000px_circle_at_5%_0%,#0E7BF8_0%,#00979E_40%,transparent_65%)] opacity-30" />
-      <nav className="mx-auto max-w-7xl px-6 py-6 flex items-center">
-        <Link href="/" className="flex items-center gap-3" aria-label="Home">
-          <Image src="/images/logo.svg" alt="Ignek logo" width={120} height={28} priority />
-        </Link>
+    <>
+      {activeMenu === null ? (
+        <header
+          className={`z-50 w-full text-white transition-colors duration-300 ${
+            isCareerPage || isConsultingPage || isHireDeveloperPage ? "absolute top-0" : "relative"
+          } ${backgroundClass}`}
+          onMouseEnter={() => setIsHeaderHovered(true)}
+          onMouseLeave={() => {
+            handleMouseLeave()
+            setIsHeaderHovered(false)
+          }}
+        >
+          {!isCareerPage && (
+            <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_14%_0%,#00979E_0%,#0E7BF800_60%)] opacity-20" />
+          )}{" "}
+          <nav className="mx-auto flex w-full items-center px-4 py-6.5 md:px-8 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
+            <Link href="/" className="flex items-center gap-3" aria-label="Home">
+              <Image src="/images/logo.svg" alt="Ignek logo" width={182} height={86} priority />
+            </Link>
 
-        <div className="flex-1" />
+            <div className="flex-1" />
 
-        <ul className="hidden md:flex items-center gap-10 text-sm tracking-wide mr-6">
-          {menu.map((item) => (
-            <li key={item.label}>
-              <Link href={item.href} className="text-white/90 hover:text-white transition-colors">
-                {item.label}
-              </Link>
-            </li>
-          ))}
-        </ul>
+            <ul className="mr-6 hidden items-center gap-10 text-lg tracking-wide uppercase md:flex">
+              {menu.map((item) => (
+                <li key={item.label} onMouseEnter={() => handleMouseEnter(item.label)} className="relative">
+                  <a
+                    href={item.href}
+                    className={`pb-2 transition-colors ${
+                      activeMenu === item.label ? "text-white" : "text-white/90"
+                    } hover:text-white`}
+                  >
+                    {item.label}
+                  </a>
+                  {/* Active state bottom border */}
+                  {activeMenu === item.label && (
+                    <div
+                      className="absolute bottom-0 left-0 h-[3px] w-full"
+                      style={{ backgroundColor: "#00979E" }}
+                    ></div>
+                  )}
+                </li>
+              ))}
+            </ul>
 
-        <div className="flex items-center gap-4">
-          <button
-            type="button"
-            aria-label="Calendar"
-            className="rounded-full border border-white/30 p-2 text-white/80 hover:text-white hover:border-white transition-colors"
+            <div className="flex items-center gap-4">
+              <button
+                type="button"
+                aria-label="Calendar"
+                className="rounded-full border border-[#00979E] p-2 text-white/80 transition-colors hover:border-[#00979E] hover:text-white"
+              >
+                <div className="flex h-7 w-7 items-center justify-center">
+                  <Image src="/images/icon/calendar.png" alt="calendar" width={24} height={24} />
+                </div>
+              </button>
+              <button
+                type="button"
+                aria-label="Go"
+                className="rounded-full border border-[#00979E] p-2 text-white/80 transition-colors hover:border-[#00979E] hover:text-white"
+              >
+                <div className="flex h-7 w-7 items-center justify-center">
+                  <Image src="/images/icon/arrow-tr.png" alt="arrow-top-right" width={24} height={24} />
+                </div>
+              </button>
+            </div>
+          </nav>
+        </header>
+      ) : (
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeMenu}
+            initial={{ opacity: 1, y: -200 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            className="absolute left-0 z-50 w-full border-t border-white/10 bg-black text-white"
           >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="3" y="4" width="18" height="18" rx="2" stroke="currentColor" />
-              <path d="M16 2v4M8 2v4M3 10h18" stroke="currentColor" />
-            </svg>
-          </button>
-          <button
-            type="button"
-            aria-label="Go"
-            className="rounded-full border border-white/30 p-2 text-white/80 hover:text-white hover:border-white transition-colors"
-          >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M7 17l10-10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-              <path d="M17 7h-6M17 7v6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-            </svg>
-          </button>
-        </div>
-      </nav>
-    </header>
+            <header
+              className={`w-full text-white transition-colors duration-300 ${
+                isCareerPage || isConsultingPage || isHireDeveloperPage ? "absolute top-0" : "relative"
+              } ${backgroundClass}`}
+              onMouseEnter={() => setIsHeaderHovered(true)}
+              onMouseLeave={() => {
+                handleMouseLeave()
+                setIsHeaderHovered(false)
+              }}
+            >
+              {!isCareerPage && (
+                <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_14%_0%,#00979E_0%,#0E7BF800_60%)] opacity-20" />
+              )}{" "}
+              <nav className="mx-auto flex w-full items-center px-4 py-6 md:px-8 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px]">
+                <Link href="/" className="flex items-center gap-3" aria-label="Home">
+                  <Image src="/images/logo.svg" alt="Ignek logo" width={182} height={86} priority />
+                </Link>
+
+                <div className="flex-1" />
+
+                <ul className="mr-6 hidden items-center gap-10 text-lg tracking-wide uppercase md:flex">
+                  {menu.map((item) => (
+                    <li key={item.label} onMouseEnter={() => handleMouseEnter(item.label)} className="relative">
+                      <a
+                        href={item.href}
+                        className={`pb-2 transition-colors ${
+                          activeMenu === item.label ? "text-white" : "text-white/90"
+                        } hover:text-white`}
+                      >
+                        {item.label}
+                      </a>
+                      {/* Active state bottom border */}
+                      {activeMenu === item.label && (
+                        <div
+                          className="absolute bottom-0 left-0 h-[3px] w-full"
+                          style={{ backgroundColor: "#00979E" }}
+                        ></div>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="flex items-center gap-4">
+                  <button
+                    type="button"
+                    aria-label="Calendar"
+                    className="rounded-full border border-[#00979E] p-2 text-white/80 transition-colors hover:border-[#00979E] hover:text-white"
+                  >
+                    <div className="flex h-7 w-7 items-center justify-center">
+                      <Image src="/images/icon/calendar.png" alt="calendar" width={24} height={24} />
+                    </div>
+                  </button>
+                  <button
+                    type="button"
+                    aria-label="Go"
+                    className="rounded-full border border-[#00979E] p-2 text-white/80 transition-colors hover:border-[#00979E] hover:text-white"
+                  >
+                    <div className="flex h-7 w-7 items-center justify-center">
+                      <Image src="/images/icon/arrow-tr.png" alt="arrow-top-right" width={24} height={24} />
+                    </div>
+                  </button>
+                </div>
+              </nav>
+              {activeMenu === "Company" && <CompanyMegaMenu />}
+              {activeMenu === "Insights" && <InsightsMegaMenu />}
+              {activeMenu === "Services" && <ServicesMegaMenu />}
+              {activeMenu === "Solutions" && <SolutionsMegaMenu />}
+            </header>
+          </motion.div>
+        </AnimatePresence>
+      )}
+    </>
   )
 }

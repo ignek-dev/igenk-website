@@ -1,14 +1,14 @@
 [
   {
-    "id": "post-1",
-    "title": "Build your own Chrome Extension with React",
-    "excerpt": "A Chrome Extension is a small software program that adds extra features or functionality to your browser.",
-    "image": "/images/blog.svg"
-  },
-  {
     "id": "post-2",
     "title": "Optimizing Liferay Portal for Performance",
     "excerpt": "Techniques to improve throughput and responsiveness across your Liferay stack.",
+    "image": "/images/blog.svg"
+  },
+  {
+    "id": "post-1",
+    "title": "Build your own Chrome Extension with React",
+    "excerpt": "A Chrome Extension is a small software program that adds extra features or functionality to your....",
     "image": "/images/blog.svg"
   },
   {

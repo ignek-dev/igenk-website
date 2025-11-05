@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 /*
   The default border color has changed to `currentColor` in Tailwind CSS v4,
@@ -8,12 +8,405 @@
   If we ever want to remove these styles, we need to add an explicit border
   color utility to any element that depends on these defaults.
 */
+
 @layer base {
+  html {
+    font-family: var(--font-poppins), sans-serif;
+  }
+
   *,
   ::after,
   ::before,
   ::backdrop,
   ::file-selector-button {
     border-color: var(--color-gray-200, currentColor);
+  }
+}
+
+@layer utilities {
+
+  /* Define the animation keyframes */
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+    /* --- START: STYLES FOR ON-SCROLL SECTION ANIMATIONS --- */
+  @keyframes slide-in-from-top {
+    from {
+      opacity: 0;
+      /* Increased distance for a more noticeable effect */
+      transform: translateY(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slide-in-from-left {
+    from {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slide-in-from-right {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slide-in-from-bottom {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+   @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  /* Base utility class for scroll animations */
+  .animate-when-visible {
+    opacity: 0;
+    animation-fill-mode: forwards;
+    animation-duration: 0.7s; /* Made it slightly faster */
+    animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smoother ease-out */
+  }
+
+  /* Specific animation classes */
+  .animate-slide-top {
+    animation-name: slide-in-from-top;
+  }
+  .animate-slide-left {
+    animation-name: slide-in-from-left;
+  }
+  .animate-slide-right {
+    animation-name: slide-in-from-right;
+  }
+  .animate-slide-bottom {
+    animation-name: slide-in-from-bottom;
+  }
+  .animate-fade-in {
+    animation-name: fade-in;
+  }
+
+  /* Delay utilities (no change here) */
+  .animation-delay-200 { animation-delay: 0.2s; }
+  .animation-delay-400 { animation-delay: 0.4s; }
+  .animation-delay-600 { animation-delay: 0.6s; }
+  /* --- END: STYLES FOR ON-SCROLL SECTION ANIMATIONS --- */
+
+  /* Create a utility class to apply the animation */
+  .animate-marquee-custom {
+    animation: marquee 35s linear infinite;
+  }
+
+  .animate-marquee-medium {
+    animation: marquee 20s linear infinite;
+  }
+
+  .animate-marquee-fast {
+    animation: marquee 10s linear infinite;
+  }
+
+ .text-mask-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px; /* Adjust this to fit your design */
+  aspect-ratio: 1200 / 400; /* Use the same aspect ratio as your PNG image */
+}
+
+.masked-hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  /* The key part: using the new image as a stencil */
+ mask-image: var(--mask-image);  
+ mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+}
+
+ /* --- START: STYLES FOR IMAGE CARD COLLAGE --- */
+  .collage-container {
+    position: relative;
+    width: 100%;
+    height: 589px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* This enables the 3D perspective for child elements */
+    perspective: 1200px;
+    overflow: hidden;
+  }
+
+  .card-wrapper {
+    position: absolute;
+    width: 35%;
+    max-width: 480px; 
+    height: 65%;
+    /* This makes the 3D transforms look smooth */
+    transform-style: preserve-3d;
+    /* This is the animation for when the card's position changes */
+    transition: transform 0.8s ease, opacity 0.8s ease;
+  }
+
+  .collage-card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    border: 3px solid white;
+  }
+
+  /* Card Positions */
+   .card-center {
+    transform: translateX(0) translateZ(0) rotateY(0deg) scale(1);
+    opacity: 1;
+    z-index: 50;
+  }
+  .card-left-1 {
+    transform: translateX(-45%) translateZ(-120px) rotateY(30deg) scale(0.95);
+    opacity: 1;
+    z-index: 40;
+  }
+  .card-right-1 {
+    transform: translateX(45%) translateZ(-120px) rotateY(-30deg) scale(0.95);
+    opacity: 1;
+    z-index: 40;
+  }
+  .card-left-2 {
+    transform: translateX(-85%) translateZ(-250px) rotateY(40deg) scale(0.9);
+    opacity: 1;
+    z-index: 30;
+  }
+  .card-right-2 {
+    transform: translateX(85%) translateZ(-250px) rotateY(-40deg) scale(0.9);
+    opacity: 1;
+    z-index: 30;
+  }
+  .card-hidden {
+    transform: scale(0.8);
+    opacity: 0;
+    z-index: 20;
+  }
+
+  /* --- ADDED: Media Query for Responsive Adjustments on Mobile --- */
+  @media (max-width: 768px) {
+    .collage-container {
+      /* Reduce height for smaller screens */
+      height: 450px;
+    }
+
+    .card-wrapper {
+      /* Make cards take up more horizontal space on smaller screens */
+      width: 60%;
+      height: 60%;
+    }
+
+    /* Adjust positions to be closer together */
+    .card-left-1 {
+      transform: translateX(-40%) translateZ(-80px) rotateY(25deg) scale(0.9);
+    }
+    .card-right-1 {
+      transform: translateX(40%) translateZ(-80px) rotateY(-25deg) scale(0.9);
+    }
+
+    /* Hide the outer-most cards to avoid clutter */
+    .card-left-2,
+    .card-right-2 {
+      transform: scale(0.7);
+      opacity: 0;
+    }
+  }
+  /* --- END: STYLES FOR IMAGE CARD COLLAGE --- */
+
+  /* Responsive adjustments for the heading font size */
+  @media (max-width: 768px) {
+    .text-mask-heading {
+      font-size: 4rem; 
+    }
+  }
+
+  @media (max-width: 640px) {
+    .text-mask-heading {
+      font-size: 3rem; /* equivalent to sm:text-5xl */
+    }
+  }
+
+  /* --- START: STYLES FOR CARD STACKING ANIMATION --- */
+  @keyframes stack-in {
+    from {
+      opacity: 0;
+      transform: translateY(40px) scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  .animate-stack-in {
+    /* Start with the card hidden */
+    opacity: 0; 
+    /* Point to the animation name */
+    animation-name: stack-in;
+    /* Common properties for the animation */
+    animation-fill-mode: forwards;
+    animation-duration: 0.6s;
+    animation-timing-function: ease-out;
+  }
+  /* --- END: STYLES FOR CARD STACKING ANIMATION --- */
+
+  /* Prevent shadow/edges from bleeding out while maintaining rounded corners */
+.stack-clip {
+  overflow: clip;
+}
+
+@supports not (overflow: clip) {
+  .stack-clip { overflow: hidden; }
+}
+
+/* Responsive fallback: disable sticky stacking on small screens for usability */
+@media (max-width: 768px) {
+  .stack-clip { overflow: visible; }
+  /* Scoped via JSX: only affects the cards rendered in this section */
+  .sticky { position: relative !important; top: 0 !important; }
+}
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Custom grid in Career page */
+.career-card {
+  border: 1px solid #1f2937;
+}
+
+.career-card:nth-child(-n + 5) {
+  border-top: none;
+}
+
+.career-card:nth-last-child(-n + 5) {
+  border-bottom: none;
+}
+
+.career-card:nth-child(5n + 1) {
+  border-left: none;
+}
+
+.career-card:nth-child(5n + 5) {
+  border-right: none;
+}
+
+/* Custom grid logic for Liferay Tech Stacks */
+.tech-grid-card {
+  /* Base border for all items, using the color from the design */
+  border: 1px solid #D1D5DB; /* This is Tailwind's gray-200 */
+}
+
+/* --- Remove outer borders --- */
+
+/* Remove top border for the first row (first 4 items) */
+.tech-grid-card:nth-child(-n + 4) {
+  border-top: none;
+}
+
+/* Remove left border for the first column */
+.tech-grid-card:nth-child(4n + 1) {
+  border-left: none;
+}
+
+/* Remove right border for the last column */
+.tech-grid-card:nth-child(4n) {
+  border-right: none;
+}
+
+/* Remove bottom border for the last row */
+/* This assumes 4 full rows (16 items total) */
+.tech-grid-card:nth-last-child(-n + 4) {
+  border-bottom: none;
+}
+
+.fancy {
+    --offset: 3px;
+    background: black;
+    border-radius: 50px;
+    position: relative;
+    height: 60px;
+    /* width:max-content; */
+    /* max-width: auto; */
+    overflow: hidden;
+}
+
+/* Conic gradient */
+.fancy::before { 
+    content: '';
+    background: conic-gradient(transparent 270deg, #00ffff, #00ffff, #00ffff);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    aspect-ratio: 1;
+    width: 100%;
+    animation: rotate 3s linear infinite;
+}
+
+/* Overlay */
+.fancy::after {
+    content: '';
+    background: inherit;
+    border-radius: inherit;
+    position: absolute;
+    inset: var(--offset);
+    height: calc(100% - 2 * var(--offset));
+    width: calc(100% - 2 * var(--offset));
+}
+
+@keyframes rotate {
+  from {
+    transform: translate(-50%, -50%) scale(1.4) rotate(0turn);
+  }
+
+  to {
+    transform: translate(-50%, -50%) scale(2.4) rotate(1turn);
   }
 }
