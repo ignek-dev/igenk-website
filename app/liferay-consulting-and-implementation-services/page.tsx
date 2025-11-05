@@ -1,6 +1,6 @@
 "use client"
 import Image from "next/image"
-import { useState } from "react"
+import React, { useState } from "react"
 import ScheduleMeetingButton from "components/Button/ScheduleMeetingButton"
 import { BlogSection } from "components/Common"
 import CaseStudy from "components/Common/CaseStudy"
@@ -54,11 +54,11 @@ export default function LiferayConsultationPage() {
   // State for the new End-to-End Liferay Consulting Services section
   const [activePillar, setActivePillar] = useState(0) // 0-indexed for Analysis
 
-  const featureTabs = [
-    "Scalable Solution Architecture",
-    "Customized Liferay Solutions",
-    "User-Centric Consulting Approach",
-    "Strategic Deployment Guidance",
+   const expertiseStats = [
+    "10 Years of Liferay Expertise",
+    "50+ Liferay Projects Delivered",
+    "20+ Certified Liferay Experts",
+    "24x7 Technical Support",
   ]
 
 
@@ -355,33 +355,50 @@ export default function LiferayConsultationPage() {
       <section className="relative bg-[#0B63CE] text-white">
         <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_10%_0%,#0E7BF8_0%,#00979E_40%,transparent_65%)] opacity-25" />
         <div className="mx-auto w-full px-4 pt-40 pb-16 md:px-8 md:pt-48 md:pb-20 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
-          <div className="relative grid items-start gap-10 md:grid-cols-2">
+          <div className="grid grid-cols-1 items-center gap-6 md:grid-cols-2">
+            {/* Left Side: Text Content */}
             <div>
-              <div className="line-height-[28px] inline-flex items-center rounded-full border border-white px-8.5 py-[8.8px] text-lg font-normal text-white">
+              <div className="inline-flex w-fit items-center rounded-full border border-white px-8.5 py-[8.8px] text-lg font-normal">
                 Liferay Services
               </div>
-              <h1 className="line-height-[88px] letter-spacing-[-0.02em] mt-9 text-7xl leading-tight font-bold text-white sm:text-5xl md:text-6xl">
+              <h1 className="line-height-[88px] letter-spacing-[-0.02em] mt-13 text-7xl leading-tight font-bold sm:text-5xl md:text-6xl">
                 Liferay Consulting &
                 <br />
                 <span className="block">Implementation Services</span>
               </h1>
-              {/* Feature tabs */}
-              <div className="mt-12 flex flex-wrap gap-7.5">
-                {featureTabs.map((label) => (
-                  <span
-                    key={label}
-                    className="inline-flex items-center rounded-full border border-[#9CA3AF] px-4 py-4 text-xl font-semibold text-white transition-colors"
-                  >
-                    {label}
-                  </span>
-                ))}
-              </div>
-            </div>
-            <div className="flex items-end justify-end">
-              <p className="line-height-[28px] absolute bottom-0 max-w-xl text-right text-lg font-normal text-white sm:text-lg md:mt-16 md:justify-self-end">
+              <p className="line-height-[28px] mt-10 max-w-xl text-lg font-normal">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.
-                Pellentesque sit amet
+                Pellentesque sit amet.
               </p>
+            </div>
+
+            {/* Right Side: Image */}
+            <div className="flex items-center justify-center">
+              <Image
+                src="/images/liferay-pages-image/liferay-consultation-page/Liferay-dxp.png"
+                alt="Liferay DXP"
+                width={280}
+                height={280}
+                className="h-auto max-w-sm"
+              />
+            </div>
+          </div>
+
+          {/* Marquee Animation Bar */}
+          <div className="relative flex w-full overflow-hidden pt-22">
+            <div className="animate-marquee-fast flex min-w-full flex-shrink-0 items-center justify-around">
+              {expertiseStats.map((stat, index) => (
+                <React.Fragment key={index}>
+                  <span className="mx-8 text-xl font-medium">{stat}</span>
+                  <Image src="/images/icon/Ellipse.png" alt="ecllips" width={14} height={14} />
+                </React.Fragment>
+              ))}
+              {expertiseStats.map((stat, index) => (
+                <React.Fragment key={`duplicate-${index}`}>
+                  <span className="mx-8 text-xl font-medium">{stat}</span>
+                  <Image src="/images/icon/Ellipse.png" alt="ecllips" width={14} height={14} />
+                </React.Fragment>
+              ))}
             </div>
           </div>
         </div>
@@ -567,7 +584,7 @@ export default function LiferayConsultationPage() {
                   ) : (
                     // Layout for inactive cards
                     <>
-                     <Image
+                      <Image
                         src={solution.icon}
                         alt={`${solution.title} icon`}
                         width={120}
@@ -606,7 +623,7 @@ export default function LiferayConsultationPage() {
                 <div className="flex flex-col items-start py-[57px] md:flex-row md:items-center md:gap-24">
                   {/* Icon */}
                   <div className="flex-shrink-0">
-                      <Image src={feature.icon} alt="" width={64} height={64} className="h-16 w-16" />                  
+                    <Image src={feature.icon} alt="" width={64} height={64} className="h-16 w-16" />
                   </div>
 
                   {/* Title */}
