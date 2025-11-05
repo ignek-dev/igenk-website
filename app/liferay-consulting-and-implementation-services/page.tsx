@@ -1,14 +1,14 @@
 "use client"
+import Image from "next/image"
+import { useState } from "react"
+import ScheduleMeetingButton from "components/Button/ScheduleMeetingButton"
 import { BlogSection } from "components/Common"
 import CaseStudy from "components/Common/CaseStudy"
-import HeroCTASection from "components/Common/HeroCTASection"
+import EngagementModels from "components/Common/EngagementModels"
 import TalkToExpert from "components/Common/TalkToExpert"
 import WhatMake from "components/Common/WhatMake"
-import ScheduleMeetingButton from "components/Button/ScheduleMeetingButton"
-import { useState } from "react"
-import { useInView } from "hooks/useInView"
 import WordsFromCEO from "components/Common/WordsFromCEO"
-import EngagementModels from "components/Common/EngagementModels"
+import { useInView } from "hooks/useInView"
 
 
   const caseStudies = [
@@ -49,6 +49,7 @@ export default function LiferayConsultationPage() {
   const [hoveredCard, setHoveredCard] = useState<string | null>(null)
   const [activeServiceTab, setActiveServiceTab] = useState("Portal")
   const [hoveredIndustry, setHoveredIndustry] = useState<string | null>(null)
+  console.log(hoveredIndustry)
 
   // State for the new End-to-End Liferay Consulting Services section
   const [activePillar, setActivePillar] = useState(0) // 0-indexed for Analysis
@@ -219,14 +220,6 @@ export default function LiferayConsultationPage() {
     "Enterprise CRM": fullServiceList,
     "Collaboration & social": fullServiceList,
     "E- Commerce": fullServiceList,
-  }
-
-  const chunkArray = (array: any[], size: number) => {
-    const chunkedArr: any[] = []
-    for (let i = 0; i < array.length; i += size) {
-      chunkedArr.push(array.slice(i, i + size))
-    }
-    return chunkedArr
   }
 
   const industriesWeServe = [

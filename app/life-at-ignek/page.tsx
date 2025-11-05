@@ -1,6 +1,6 @@
+import Image from "next/image"
 import CalendarSection from "components/life-at-ignek/CalendarSection";
 import ImageCardCollage from "components/life-at-ignek/ImageCardCollage";
-import Image from "next/image"
 
 export default function LifeAtIgnekPage() {
   const values = [

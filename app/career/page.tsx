@@ -1,5 +1,4 @@
-import Image from "next/image"
-import Link from "next/link"
+import Image from "next/image";
 import JobCard from "../../components/career/JobCard"
 
 export default function CareerPage() {
@@ -116,8 +115,9 @@ export default function CareerPage() {
                 </video>
               </div>
             </div>
-             <p className="max-w-xl pb-12 text-right text-[20px] leading-[30px] font-normal tracking-[0] text-white/80 sm:text-[18px] sm:leading-[28px] md:justify-self-end">
-              At IGNEK we value people and it include their growth, learning, and perks that help you succeed personally and professionally.
+            <p className="max-w-xl pb-12 text-right text-[20px] leading-[30px] font-normal tracking-[0] text-white/80 sm:text-[18px] sm:leading-[28px] md:justify-self-end">
+              At IGNEK we value people and it include their growth, learning, and perks that help you succeed personally
+              and professionally.
             </p>
           </div>
         </div>
@@ -127,11 +127,8 @@ export default function CareerPage() {
       <section className="border-t border-white/20 bg-black text-white">
         <div className="mx-auto w-full px-4 py-16 md:px-8 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px]">
           <div className="grid items-start gap-10 md:grid-cols-2">
-            <h2 className="text-2xl font-semibold sm:text-3xl md:text-5xl">
-              More Than Just a Job
-
-            </h2>
-             <p className="max-w-xl pb-12 text-right text-[20px] leading-[30px] font-normal tracking-[0] text-white/80 sm:text-[18px] sm:leading-[28px] md:justify-self-end">
+            <h2 className="text-2xl font-semibold sm:text-3xl md:text-5xl">More Than Just a Job</h2>
+            <p className="max-w-xl pb-12 text-right text-[20px] leading-[30px] font-normal tracking-[0] text-white/80 sm:text-[18px] sm:leading-[28px] md:justify-self-end">
               At IGNEK to enjoy perks that inspire—learning, flexibility, and a workplace that values your well-being.
             </p>
           </div>
@@ -145,10 +142,13 @@ export default function CareerPage() {
                 } career-card`}
               >
                 {" "}
-                <img
+                <Image
                   src={p.icon || ""}
                   alt={p.title.join(" ")}
+                  width={188}
+                  height={127}
                   className="mx-auto max-h-[127px] max-w-[188px] object-cover"
+                  style={{ height: "auto", width: "auto" }}
                 />
                 <div className="mt-4 text-2xl leading-tight font-semibold">
                   {p.title[0]}

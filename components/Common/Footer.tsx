@@ -1,7 +1,7 @@
 "use client"
-import { useState  } from "react";
-import Link from "next/link";
 import { motion} from "framer-motion";
+import Link from "next/link";
+import { useState  } from "react";
 import "./Footer.css"
 
 export default function Footer() {

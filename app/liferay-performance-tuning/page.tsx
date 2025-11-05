@@ -1,8 +1,6 @@
 import { Metadata } from "next"
 import Image from "next/image"
 import { BlogSection } from "../../components/Common"
-import { Button } from "../../components/Button/Button"
-import HeroCTASection from "components/Common/HeroCTASection"
 import CaseStudy from "components/Common/CaseStudy"
 import WhatMake from "components/Common/WhatMake"
 import TalkToExpert from "components/Common/TalkToExpert"

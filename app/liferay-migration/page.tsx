@@ -1,10 +1,7 @@
-import Image from "next/image"
-import Link from "next/link"
-import { BlogSection } from "../../components/Common"
-import HeroCTASection from "components/Common/HeroCTASection"
-import WhatMake from "components/Common/WhatMake"
 import TalkToExpert from "components/Common/TalkToExpert"
 import ScheduleMeetingButton from "components/Button/ScheduleMeetingButton"
+import WhatMake from "components/Common/WhatMake"
+import { BlogSection } from "../../components/Common"
 
 export default function LiferayMigrationPage() {
   const featureTabs = [
@@ -13,15 +10,15 @@ export default function LiferayMigrationPage() {
     "Ensure Long‑Term Support & Scalability",
   ]
 
-  const circlePoints = [
-    { label: "Create Personalized Experiences for Users", pos: "top-4 left-1/2 -translate-x-1/2" },
-    { label: "Easy Integration Capabilities", pos: "top-1/3 right-4" },
-    { label: "Rich UI/UX Capabilities", pos: "top-1/2 right-2 -translate-y-1/2" },
-    { label: "Workflows, Forms, and Collaboration", pos: "bottom-1/3 right-4" },
-    { label: "Low Code/No Code Features boost Citizen Development", pos: "bottom-4 left-1/2 -translate-x-1/2" },
-    { label: "Mobile‑ready Capabilities", pos: "bottom-1/3 left-4" },
-    { label: "Efficient Content Management", pos: "top-1/2 left-2 -translate-y-1/2" },
-  ]
+  // const circlePoints = [
+  //   { label: "Create Personalized Experiences for Users", pos: "top-4 left-1/2 -translate-x-1/2" },
+  //   { label: "Easy Integration Capabilities", pos: "top-1/3 right-4" },
+  //   { label: "Rich UI/UX Capabilities", pos: "top-1/2 right-2 -translate-y-1/2" },
+  //   { label: "Workflows, Forms, and Collaboration", pos: "bottom-1/3 right-4" },
+  //   { label: "Low Code/No Code Features boost Citizen Development", pos: "bottom-4 left-1/2 -translate-x-1/2" },
+  //   { label: "Mobile‑ready Capabilities", pos: "bottom-1/3 left-4" },
+  //   { label: "Efficient Content Management", pos: "top-1/2 left-2 -translate-y-1/2" },
+  // ]
 
   const steps = [
     {

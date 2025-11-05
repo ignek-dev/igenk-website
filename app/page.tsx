@@ -1,17 +1,18 @@
 import { Metadata } from "next"
 import Image from "next/image"
-import { BlogSection } from "../components/Common"
-import AccordionItem from "components/Common/AccordionItem"
+
+import Achievements from "components/Achievements/Achievements"
+import EndToEndSection from "components/EndToEndSection/EndToEndSection"
+import FlexiblePlatforms from "components/FlexiblePlatforms/FlexiblePlatforms"
 import IntermediateFrame from "components/IntermediateFrame"
 import OurCapabilities from "components/OurCapabilities/OurCapabilities"
-import FlexiblePlatforms from "components/FlexiblePlatforms/FlexiblePlatforms"
-import WhatWeBring from "components/WhatWeBring/WhatWeBring"
-import Achievements from "components/Achievements/Achievements"
-import SuccessStories from "components/success-stories/SuccessStories"
-import HeroCTASection from "components/Common/HeroCTASection"
 import RatingsSection from "components/Ratings/RatingsSection"
-import EndToEndSection from "components/EndToEndSection/EndToEndSection"
+import SuccessStories from "components/success-stories/SuccessStories"
+import WhatWeBring from "components/WhatWeBring/WhatWeBring"
+
+import HeroCTASection from "components/Common/HeroCTASection"
 import { ScrollContextProvider } from "components/Common/ScrollContextProvider"
+import { BlogSection } from "../components/Common"
 
 export const metadata: Metadata = {
   title: "Ignek - Transform Your Digital Experience",

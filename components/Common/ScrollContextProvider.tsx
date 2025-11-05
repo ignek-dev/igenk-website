@@ -1,7 +1,7 @@
 'use client';
 
-import { createContext, useContext, useRef, ReactNode } from 'react';
-import { useScroll, MotionValue } from 'framer-motion';
+import { MotionValue, useScroll } from 'framer-motion';
+import { createContext,ReactNode, useContext, useRef } from 'react';
 
 // 1. Create a context to hold the scroll progress value
 const ScrollContext = createContext<MotionValue<number> | null>(null);

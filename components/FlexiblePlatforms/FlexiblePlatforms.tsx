@@ -1,8 +1,8 @@
 // components/FlexiblePlatforms.tsx
 'use client';
+import Image from 'next/image';
 import React from 'react';
 // import PlatformCard from './PlatformCard';
-import Image from 'next/image';
 import { useInView } from 'hooks/useInView';
 
 const platformsData = [

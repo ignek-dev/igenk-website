@@ -1,9 +1,9 @@
 'use client';
 
 import React from 'react';
+import { useInView } from 'hooks/useInView';
 import AccordionItem from './AccordionItem';
 import ExpertCard from './ExpertCard';
-import { useInView } from 'hooks/useInView';
 
 const faqItems = [
   {

@@ -1,10 +1,9 @@
 'use client'
 
-import React, { useRef, useState } from "react"
-import WhatWeBringCard from "./WhatWeBringCard"
-import { useInView } from "hooks/useInView"
 import { motion, useTransform } from "framer-motion"
+import React from "react"
 import { useSharedScroll } from "components/Common/ScrollContextProvider"
+import WhatWeBringCard from "./WhatWeBringCard"
 
 // Dummy data for the six cards
 const cardData = [

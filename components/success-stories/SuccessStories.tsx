@@ -1,10 +1,9 @@
 // components/SuccessStories.tsx
 "use client"
-import React, {useRef} from "react"
-import SuccessStoryCard, { Story } from "./SuccessStoryCard"
-import { motion, useTransform, useScroll } from "framer-motion"
-import { useInView } from "hooks/useInView"
+import { motion, useTransform } from "framer-motion"
+import React from "react"
 import { useSharedScroll } from "components/Common/ScrollContextProvider"
+import SuccessStoryCard, { Story } from "./SuccessStoryCard"
 
 // CHANGED: Consolidated Provided Services data
 const commonProvidedServices = [
@@ -54,11 +53,6 @@ const SuccessStories: React.FC = () => {
 
   // This animation starts after the horizontal scroll is 75% complete
 const sectionY = useTransform(sharedScrollYProgress, [0.75, 1], ["100%", "0%"])
-
-const [cardsRef, cardsInView] = useInView({
-    triggerOnce: true,
-    threshold: 0.2, // Start animation when 20% of the container is visible
-  });
 
   return (
    <motion.section
