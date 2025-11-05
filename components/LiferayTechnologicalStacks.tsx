@@ -145,7 +145,7 @@ export const LiferayTechnologicalStacks = () => {
                 >
                   {/* Indicator Divider */}
                   <span
-                    className={`absolute top-1/2 left-0 h-[90px] w-1 -translate-y-1/2  ${
+                    className={`absolute top-1/2 left-0 h-[90px] w-1 -translate-y-1/2 ${
                       index === 0 // Active state
                         ? "bg-[#D1D5DB]"
                         : "bg-gray-300"

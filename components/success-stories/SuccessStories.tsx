@@ -49,45 +49,41 @@ const stories: Story[] = [
 
 const SuccessStories: React.FC = () => {
   // Use the context hook here as well
-  const sharedScrollYProgress = useSharedScroll();
+  const sharedScrollYProgress = useSharedScroll()
 
   // This animation starts after the horizontal scroll is 75% complete
-const sectionY = useTransform(sharedScrollYProgress, [0.75, 1], ["100%", "0%"])
+  const sectionY = useTransform(sharedScrollYProgress, [0.75, 1], ["100%", "0%"])
 
   return (
-   <motion.section
+    <motion.section
       style={{ y: sectionY }}
       id="success-stories"
-      className="sticky top-0 z-20 h-screen w-full rounded-t-[5rem] bg-white text-black shadow-xl stack-clip"
+      className="stack-clip sticky top-0 z-20 h-screen w-full rounded-t-[5rem] bg-white text-black shadow-xl"
     >
-      <div className="mx-auto  w-full px-4 py-12 md:px-6 md:py-16 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
+      <div className="mx-auto w-full px-4 py-12 md:px-6 md:py-16 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
         <div className="mx-auto w-full max-w-7xl px-4 md:px-8">
           {/* Header */}
           <div className="mx-auto mb-8 max-w-3xl text-center">
-            <h2 className="mb-4 text-center text-4xl font-semibold md:text-5xl">
-              Success Stories
-            </h2>
-            <p className="mt-1 text-lg text-gray-600">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit...
-            </p>
+            <h2 className="mb-4 text-center text-4xl font-semibold md:text-5xl">Success Stories</h2>
+            <p className="mt-1 text-lg text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
           </div>
           {/* Cards Container */}
-           <div className="space-y-8">
-              {stories.map((story, index) => (
-             <div 
-              key={index} 
-              className="sticky"
-              // The style attribute creates the stacking offset for each card
-              style={{ top: `calc(6rem + ${index * 2}rem)` }}
-            >
-              <SuccessStoryCard story={story} />
-            </div>
-          ))}
-            </div>
+          <div className="space-y-8">
+            {stories.map((story, index) => (
+              <div
+                key={index}
+                className="sticky"
+                // The style attribute creates the stacking offset for each card
+                style={{ top: `calc(6rem + ${index * 2}rem)` }}
+              >
+                <SuccessStoryCard story={story} />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </motion.section>
   )
 }
 
-export default SuccessStories;
+export default SuccessStories

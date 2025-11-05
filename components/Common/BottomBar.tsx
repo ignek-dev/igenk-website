@@ -12,11 +12,10 @@ const socialIcons = [
 
 const BottomBar: React.FC = () => {
   return (
-      <div className=" bg-[#121212] px-4 py-6 md:px-8 mx-auto w-full">
-        <div className="mx-auto flex flex-col items-center gap-6 text-center md:flex-row md:justify-center">
-          {/* Left Section: Copyright and Legal Links */}
-          <div className="flex w-[60%] justify-between items-center">
-
+    <div className="mx-auto w-full bg-[#121212] px-4 py-6 md:px-8">
+      <div className="mx-auto flex flex-col items-center gap-6 text-center md:flex-row md:justify-center">
+        {/* Left Section: Copyright and Legal Links */}
+        <div className="flex w-[60%] items-center justify-between">
           <div className="flex flex-col items-center gap-4 text-[18px] text-gray-400 md:flex-row md:items-center">
             <p className="flex-shrink-0">©2025 IGNEK. All rights reserved</p>
             <div className="flex flex-wrap justify-center gap-x-3 gap-y-2">
@@ -25,7 +24,7 @@ const BottomBar: React.FC = () => {
               </a>
               <span className="text-gray-600">|</span>
               <a href="#" className="transition-colors hover:text-white">
-                Terms & Conditions  
+                Terms & Conditions
               </a>
               <span className="text-gray-600">|</span>
               <a href="#" className="transition-colors hover:text-white">
@@ -47,8 +46,8 @@ const BottomBar: React.FC = () => {
             ))}
           </div>
         </div>
-        </div>
       </div>
+    </div>
   )
 }
 

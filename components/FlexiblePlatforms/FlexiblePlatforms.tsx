@@ -1,46 +1,52 @@
 // components/FlexiblePlatforms.tsx
-'use client';
-import Image from 'next/image';
-import React from 'react';
+"use client"
+import Image from "next/image"
+import React from "react"
 // import PlatformCard from './PlatformCard';
-import { useInView } from 'hooks/useInView';
+import { useInView } from "hooks/useInView"
 
 const platformsData = [
   {
-    platformName: 'Liferay',
+    platformName: "Liferay",
     hoverDescription: (
       <p>
-        Liferay is a <strong>Digital Experience Platform (DXP)</strong> that enables organizations to build and manage <strong>digital experiences across various channels</strong>. It provides tools for creating and managing websites, portals, intranets, and more. Liferay is known for its <strong>flexibility, scalability, and open-source</strong> nature.
+        Liferay is a <strong>Digital Experience Platform (DXP)</strong> that enables organizations to build and manage{" "}
+        <strong>digital experiences across various channels</strong>. It provides tools for creating and managing
+        websites, portals, intranets, and more. Liferay is known for its{" "}
+        <strong>flexibility, scalability, and open-source</strong> nature.
       </p>
     ),
   },
-];
+]
 
 const FlexiblePlatforms = () => {
   const [sectionRef, isInView] = useInView({ threshold: 0.2, triggerOnce: true })
   return (
-    <section ref={sectionRef} className="bg-[#F9FAF7] text-black py-20 lg:py-16 overflow-hidden"> 
-      <div className="mx-auto w-full px-4 md:px-6 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px] grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+    <section ref={sectionRef} className="overflow-hidden bg-[#F9FAF7] py-20 text-black lg:py-16">
+      <div className="mx-auto grid w-full items-start gap-12 px-4 md:px-6 lg:grid-cols-2 lg:gap-16 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
         {/* Left Column: Title and Description */}
-        <div className={`transition-all duration-[1500ms] ease-out ${
+        <div
+          className={`transition-all duration-[1500ms] ease-out ${
             isInView
-              ? 'opacity-100 translate-x-0 animate-when-visible animate-slide-left animation-delay-200'
-              : 'opacity-0 -translate-x-20'
+              ? "animate-when-visible animate-slide-left animation-delay-200 translate-x-0 opacity-100"
+              : "-translate-x-20 opacity-0"
           }`}
         >
-          <h2 className="text-5xl sm:text-5xl font-bold leading-tight">
+          <h2 className="text-5xl leading-tight font-bold sm:text-5xl">
             Flexible Platforms.
             <span className="block">Scalable Experiences.</span>
           </h2>
           <p className="mt-6 text-lg text-gray-600">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br /> Ut et massa mi. Aliquam in hendrerit urna.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            <br /> Ut et massa mi. Aliquam in hendrerit urna.
           </p>
         </div>
 
-        <div  className={`relative group rounded-[20px] overflow-hidden w-[680px] h-[496px] transition-all duration-[1500ms] ease-out ${
+        <div
+          className={`group relative h-[496px] w-[680px] overflow-hidden rounded-[20px] transition-all duration-[1500ms] ease-out ${
             isInView
-              ? 'opacity-100 translate-x-0 animate-when-visible animate-slide-right animation-delay-200'
-              : 'opacity-0 translate-x-20'
+              ? "animate-when-visible animate-slide-right animation-delay-200 translate-x-0 opacity-100"
+              : "translate-x-20 opacity-0"
           }`}
         >
           {/* 1. Background Image */}
@@ -53,22 +59,19 @@ const FlexiblePlatforms = () => {
           />
 
           {/* 2. Bottom Shadow Effect */}
-          <div className="absolute bottom-0 left-0 right-0 h-2/3 bg-gradient-to-t from-black/60 to-transparent" />
+          <div className="absolute right-0 bottom-0 left-0 h-2/3 bg-gradient-to-t from-black/60 to-transparent" />
 
           {/* 3. Text Overlay (Visible on Hover) */}
-          <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-10 text-white 
-                       bg-black/40 opacity-0 group-hover:opacity-100 
-                       transition-opacity duration-500">
+          <div className="absolute inset-0 flex flex-col justify-end bg-black/40 p-6 text-white opacity-0 transition-opacity duration-500 group-hover:opacity-100 md:p-10">
             <h3 className="text-4xl font-bold">{platformsData[0]?.platformName}</h3>
-            <div className="mt-4 text-lg text-gray-200 leading-relaxed max-w-2xl">
+            <div className="mt-4 max-w-2xl text-lg leading-relaxed text-gray-200">
               {platformsData[0]?.hoverDescription}
             </div>
           </div>
         </div>
-
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default FlexiblePlatforms;
+export default FlexiblePlatforms

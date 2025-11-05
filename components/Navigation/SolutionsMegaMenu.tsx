@@ -1,6 +1,6 @@
 // components/SolutionsMegaMenu.tsx
 // --- Data for the Mega Menu ---
-import Image from "next/image";
+import Image from "next/image"
 // const iconUrl = "/images/mega-menu/solution-e1.png"
 
 const solutionsLinks = [
@@ -28,7 +28,11 @@ const marketplaceLinks = [
 ]
 
 const aiLinks = [
-  { text: "Cognitive Virtual Assistants for Enterprise Experiences", href: "#", icon: "/images/mega-menu/liferay-ai-1.png" },
+  {
+    text: "Cognitive Virtual Assistants for Enterprise Experiences",
+    href: "#",
+    icon: "/images/mega-menu/liferay-ai-1.png",
+  },
   { text: "AI-Driven Personalization & Engagement", href: "#", icon: "/images/mega-menu/liferay-ai-2.png" },
   { text: "Intelligent Search & Knowledge Discovery", href: "#", icon: "/images/mega-menu/liferay-ai-3.png" },
   { text: "Autonomous Workflow Optimization", href: "#", icon: "/images/mega-menu/liferay-ai-4.png" },
@@ -53,12 +57,12 @@ export default function SolutionsMegaMenu() {
                       href={link.href}
                       className="flex items-center gap-4 text-xl text-white/100 transition-colors hover:text-white"
                     >
-                      <Image 
-                        src={link.icon} 
-                        alt={link.text} 
-                        width={60} 
-                        height={60} 
-                        className="flex-shrink-0 rounded-lg" 
+                      <Image
+                        src={link.icon}
+                        alt={link.text}
+                        width={60}
+                        height={60}
+                        className="flex-shrink-0 rounded-lg"
                       />
                       {/* CHANGE: Removed whitespace-pre and used dangerouslySetInnerHTML for line breaks */}
                       <span dangerouslySetInnerHTML={{ __html: link.text }} />
@@ -76,12 +80,12 @@ export default function SolutionsMegaMenu() {
                       href={link.href}
                       className="flex items-center gap-4 text-xl text-white/100 transition-colors hover:text-white"
                     >
-                      <Image 
-                        src={link.icon} 
-                        alt={link.text} 
-                        width={60} 
-                        height={60} 
-                        className="flex-shrink-0 rounded-lg" 
+                      <Image
+                        src={link.icon}
+                        alt={link.text}
+                        width={60}
+                        height={60}
+                        className="flex-shrink-0 rounded-lg"
                       />
                       <span dangerouslySetInnerHTML={{ __html: link.text }} />
                     </a>
@@ -101,12 +105,12 @@ export default function SolutionsMegaMenu() {
                       href={link.href}
                       className="flex items-center gap-4 text-xl text-white/100 transition-colors hover:text-white"
                     >
-                      <Image 
-                        src={link.icon} 
-                        alt={link.text} 
-                        width={60} 
-                        height={60} 
-                        className="flex-shrink-0 rounded-lg" 
+                      <Image
+                        src={link.icon}
+                        alt={link.text}
+                        width={60}
+                        height={60}
+                        className="flex-shrink-0 rounded-lg"
                       />
                       <span dangerouslySetInnerHTML={{ __html: link.text }} />
                     </a>
@@ -123,12 +127,12 @@ export default function SolutionsMegaMenu() {
                       href={link.href}
                       className="flex items-center gap-4 text-xl text-white/100 transition-colors hover:text-white"
                     >
-                      <Image 
-                        src={link.icon} 
-                        alt={link.text} 
-                        width={60} 
-                        height={60} 
-                        className="flex-shrink-0 rounded-lg" 
+                      <Image
+                        src={link.icon}
+                        alt={link.text}
+                        width={60}
+                        height={60}
+                        className="flex-shrink-0 rounded-lg"
                       />{" "}
                       <span dangerouslySetInnerHTML={{ __html: link.text }} />
                     </a>

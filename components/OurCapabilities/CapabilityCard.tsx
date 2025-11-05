@@ -1,10 +1,10 @@
-import Image from 'next/image';
-import React from 'react';
+import Image from "next/image"
+import React from "react"
 
 interface CapabilityCardProps {
-  iconSrc: string;
-  title: string;
-  description: string;
+  iconSrc: string
+  title: string
+  description: string
 }
 
 const CapabilityCard: React.FC<CapabilityCardProps> = ({ iconSrc, title, description }) => {
@@ -32,6 +32,6 @@ const CapabilityCard: React.FC<CapabilityCardProps> = ({ iconSrc, title, descrip
       <p className="text-base leading-relaxed text-gray-300">{description}</p>
     </div>
   )
-};
+}
 
-export default CapabilityCard;
+export default CapabilityCard

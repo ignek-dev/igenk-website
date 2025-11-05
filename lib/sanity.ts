@@ -14,7 +14,9 @@ type SanityClientConfig = {
 }
 
 async function getSanityClient(): Promise<SanityClient> {
-  const mod: { createClient: (config: SanityClientConfig) => SanityClient } | null = await import("@sanity/client").catch(() => null)
+  const mod: { createClient: (config: SanityClientConfig) => SanityClient } | null = await import(
+    "@sanity/client"
+  ).catch(() => null)
   if (!mod?.createClient) {
     throw new Error("Sanity client package is not available. Ensure '@sanity/client' is installed.")
   }
@@ -23,9 +25,7 @@ async function getSanityClient(): Promise<SanityClient> {
   const apiVersion = env.SANITY_API_VERSION
 
   if (!projectId || !dataset || !apiVersion) {
-    throw new Error(
-      "Sanity env not configured. Please set SANITY_PROJECT_ID, SANITY_DATASET, and SANITY_API_VERSION."
-    )
+    throw new Error("Sanity env not configured. Please set SANITY_PROJECT_ID, SANITY_DATASET, and SANITY_API_VERSION.")
   }
 
   return mod.createClient({

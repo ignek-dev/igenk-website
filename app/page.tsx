@@ -94,12 +94,12 @@ export default function HomePage() {
               Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris.
             </p>
 
-            <div className="md:self-end md:justify-self-end pb-3">
+            <div className="pb-3 md:self-end md:justify-self-end">
               <a
                 href="#discover"
                 className="group flex items-center justify-center gap-2 rounded-full bg-black/30 px-3 py-3 text-sm text-white transition-colors"
               >
-                <div className="w-8 h-8 flex items-center justify-center rounded-full bg-black/30 border border-[#00979E]"> 
+                <div className="flex h-8 w-8 items-center justify-center rounded-full border border-[#00979E] bg-black/30">
                   <Image src="/images/icon/discover-arrow.png" alt="discover-now" width={18} height={18} />
                 </div>
                 <span className="pr-2 text-xl">Discover More</span>

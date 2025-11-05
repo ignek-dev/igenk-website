@@ -1,38 +1,44 @@
 // components/Liferay/EngagementModels.tsx
-"use client";
-import Image from "next/image";
-import { useState } from "react";
+"use client"
+import Image from "next/image"
+import { useState } from "react"
 
 // Data for the engagement models
 const engagementModelsData = [
-    {
-        icon: "/images/liferay-pages-image/liferay-consultation-page/experties.png",
-        title: "Dedicated Team",
-        description: "Opt for a Liferay Dedicated Team to Leverage Cost-Efficiency and Unmatched Technical Expertise.",
-        features: ["Achieve Cost Efficiency", "Enhance IT Infrastructure", "Optimize Project Management"],
-    },
-    {
-        icon: "/images/liferay-pages-image/liferay-consultation-page/add-friend.png",
-        title: "Time & Materials",
-        description: "Gain total control over your predetermined market schedule with a versatile time and materials model for Liferay development.",
-        features: ["Ongoing Software Development Needs", "Supports Part- & Full-time Dev Needs", "Better control over your project"],
-    },
-    {
-        icon: "/images/liferay-pages-image/liferay-consultation-page/chat-message.png",
-        title: "Fix Price",
-        description: "Implement your requirements with a clear idea and a predetermined budget to shield your product from fluctuating costs.",
-        features: ["Minimal financial risk", "Involves the development of an MVP", "Well-defined Scope & Requirements"],
-    },
-];
+  {
+    icon: "/images/liferay-pages-image/liferay-consultation-page/experties.png",
+    title: "Dedicated Team",
+    description: "Opt for a Liferay Dedicated Team to Leverage Cost-Efficiency and Unmatched Technical Expertise.",
+    features: ["Achieve Cost Efficiency", "Enhance IT Infrastructure", "Optimize Project Management"],
+  },
+  {
+    icon: "/images/liferay-pages-image/liferay-consultation-page/add-friend.png",
+    title: "Time & Materials",
+    description:
+      "Gain total control over your predetermined market schedule with a versatile time and materials model for Liferay development.",
+    features: [
+      "Ongoing Software Development Needs",
+      "Supports Part- & Full-time Dev Needs",
+      "Better control over your project",
+    ],
+  },
+  {
+    icon: "/images/liferay-pages-image/liferay-consultation-page/chat-message.png",
+    title: "Fix Price",
+    description:
+      "Implement your requirements with a clear idea and a predetermined budget to shield your product from fluctuating costs.",
+    features: ["Minimal financial risk", "Involves the development of an MVP", "Well-defined Scope & Requirements"],
+  },
+]
 
 interface EngagementModelsProps {
-  title: React.ReactNode;
-  description: string;
+  title: React.ReactNode
+  description: string
 }
 
 export default function EngagementModels({ title, description }: EngagementModelsProps) {
   // The hover state is now managed inside this component
-  const [hoveredModel, setHoveredModel] = useState<string | null>(null);
+  const [hoveredModel, setHoveredModel] = useState<string | null>(null)
 
   return (
     <section className="bg-white py-[64px] text-black">
@@ -40,30 +46,24 @@ export default function EngagementModels({ title, description }: EngagementModel
         {/* Section Header - Now uses props for dynamic content */}
         <div className="mb-16 grid grid-cols-1 items-end gap-8 md:grid-cols-2">
           <div>
-            <h2 className="text-5xl font-semibold leading-tight tracking-tight text-[#000000]">
-              {title}
-            </h2>
+            <h2 className="text-5xl leading-tight font-semibold tracking-tight text-[#000000]">{title}</h2>
           </div>
           <div className="flex h-full items-end justify-end">
-            <p className="w-full text-right text-xl text-[#374151] text-normal line-height-[30px] ">
-              {description}
-            </p>
+            <p className="text-normal line-height-[30px] w-full text-right text-xl text-[#374151]">{description}</p>
           </div>
         </div>
 
         {/* Engagement Cards */}
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {engagementModelsData.map((model) => {
-            const isHovered = hoveredModel === model.title;
+            const isHovered = hoveredModel === model.title
             return (
               <div
                 key={model.title}
                 onMouseEnter={() => setHoveredModel(model.title)}
                 onMouseLeave={() => setHoveredModel(null)}
                 className={`rounded-2xl border p-7 shadow-md transition-colors duration-300 ${
-                  isHovered
-                    ? "bg-[#0B63CE] border-blue-700 text-white"
-                    : "bg-white border-gray-200 text-black"
+                  isHovered ? "border-blue-700 bg-[#0B63CE] text-white" : "border-gray-200 bg-white text-black"
                 }`}
               >
                 {/* Card Icon */}
@@ -82,9 +82,7 @@ export default function EngagementModels({ title, description }: EngagementModel
                 <hr className={`mb-8 border-t ${isHovered ? "border-white/30" : "border-gray-200"}`} />
 
                 {/* Card Description */}
-                <p className={`mb-8 text-lg ${isHovered ? "text-white/90" : "text-gray-600"}`}>
-                  {model.description}
-                </p>
+                <p className={`mb-8 text-lg ${isHovered ? "text-white/90" : "text-gray-600"}`}>{model.description}</p>
 
                 {/* Card Features */}
                 <div>
@@ -96,7 +94,11 @@ export default function EngagementModels({ title, description }: EngagementModel
                       }`}
                     >
                       <div className="flex items-center gap-4 py-4">
-                        <div className={`flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full transition-colors duration-300 ${isHovered ? 'bg-white' : 'bg-black'}`}>
+                        <div
+                          className={`flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full transition-colors duration-300 ${
+                            isHovered ? "bg-white" : "bg-black"
+                          }`}
+                        >
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="20"
@@ -107,7 +109,7 @@ export default function EngagementModels({ title, description }: EngagementModel
                             strokeWidth="2"
                             strokeLinecap="round"
                             strokeLinejoin="round"
-                            className={`transition-colors duration-300 ${isHovered ? 'text-black' : 'text-white'}`}
+                            className={`transition-colors duration-300 ${isHovered ? "text-black" : "text-white"}`}
                           >
                             <polyline points="20 6 9 17 4 12"></polyline>
                           </svg>
@@ -118,10 +120,10 @@ export default function EngagementModels({ title, description }: EngagementModel
                   ))}
                 </div>
               </div>
-            );
+            )
           })}
         </div>
       </div>
     </section>
-  );
+  )
 }

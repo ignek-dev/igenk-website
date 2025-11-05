@@ -1,159 +1,146 @@
-'use client';
+"use client"
 
-import { ArrowRight, ChevronsUpDown } from 'lucide-react';
-import Image from 'next/image';
-import Link from 'next/link';
-import { useEffect, useRef, useState } from 'react';
-import CalendarPopup from './CalendarPopup';
-
+import { ArrowRight, ChevronsUpDown } from "lucide-react"
+import Image from "next/image"
+import Link from "next/link"
+import { useEffect, useRef, useState } from "react"
+import CalendarPopup from "./CalendarPopup"
 
 // --- TYPE DEFINITIONS ---
 interface LifeAtIgnekEvent {
-  tag: string;
-  date: string;
-  title: string;
-  images: string[];
+  tag: string
+  date: string
+  title: string
+  images: string[]
 }
 
 // FIXED (Step 1): Define the specific category slugs
-type IgnekCategory = 
-  | 'office-trip' 
-  | 'fun-friday' 
-  | 'events' 
-  | 'festivals' 
-  | 'birthdays' 
-  | 'achievements';
+type IgnekCategory = "office-trip" | "fun-friday" | "events" | "festivals" | "birthdays" | "achievements"
 
 const lifeAtIgnekData: Record<IgnekCategory, LifeAtIgnekEvent[]> = {
-  'office-trip': [
+  "office-trip": [
     {
-      tag: 'Office Trip',
-      date: 'Aug 6 2025',
+      tag: "Office Trip",
+      date: "Aug 6 2025",
       title: "Team IGNEK's Unforgettable Escape to Kumbhalgarh",
       images: [
-        '/images/life-at-ignek/calander-images/office-trip.png',
-        '/images/life-at-ignek/calander-images/fun-friday.jpg', 
-        '/images/life-at-ignek/calander-images/office-trip.png', 
+        "/images/life-at-ignek/calander-images/office-trip.png",
+        "/images/life-at-ignek/calander-images/fun-friday.jpg",
+        "/images/life-at-ignek/calander-images/office-trip.png",
       ],
     },
   ],
-  'fun-friday': [
+  "fun-friday": [
     {
-      tag: 'Fun Friday',
-      date: 'June 27 2025',
-      title: 'Laughter, Games & Good Vibes – Fun Friday',
+      tag: "Fun Friday",
+      date: "June 27 2025",
+      title: "Laughter, Games & Good Vibes – Fun Friday",
       images: [
-        '/images/life-at-ignek/calander-images/fun-friday.jpg',
-        '/images/life-at-ignek/calander-images/office-trip.png', 
+        "/images/life-at-ignek/calander-images/fun-friday.jpg",
+        "/images/life-at-ignek/calander-images/office-trip.png",
       ],
     },
   ],
-  'events': [
+  events: [
     {
-      tag: 'Events',
-      date: 'June 27 2025',
-      title: 'Laughter, Games & Good Vibes – Fun Friday',
+      tag: "Events",
+      date: "June 27 2025",
+      title: "Laughter, Games & Good Vibes – Fun Friday",
       images: [
-        '/images/life-at-ignek/calander-images/events.png',
-        '/images/life-at-ignek/calander-images/office-trip.png', 
+        "/images/life-at-ignek/calander-images/events.png",
+        "/images/life-at-ignek/calander-images/office-trip.png",
       ],
     },
   ],
-  'festivals': [
+  festivals: [
     {
-      tag: 'Festivals',
-      date: 'June 27 2025',
-      title: 'Laughter, Games & Good Vibes – Fun Friday',
+      tag: "Festivals",
+      date: "June 27 2025",
+      title: "Laughter, Games & Good Vibes – Fun Friday",
       images: [
-        '/images/life-at-ignek/calander-images/festival.png',
-        '/images/life-at-ignek/calander-images/office-trip.png', 
+        "/images/life-at-ignek/calander-images/festival.png",
+        "/images/life-at-ignek/calander-images/office-trip.png",
       ],
     },
   ],
-  'birthdays': [
+  birthdays: [
     {
-      tag: 'Birthdays',
-      date: 'June 27 2025',
-      title: 'Laughter, Games & Good Vibes – Fun Friday',
+      tag: "Birthdays",
+      date: "June 27 2025",
+      title: "Laughter, Games & Good Vibes – Fun Friday",
       images: [
-        '/images/life-at-ignek/calander-images/birthdays.png',
-        '/images/life-at-ignek/calander-images/office-trip.png', 
+        "/images/life-at-ignek/calander-images/birthdays.png",
+        "/images/life-at-ignek/calander-images/office-trip.png",
       ],
     },
   ],
-  'achievements': [
+  achievements: [
     {
-      tag: 'Achievements',
-      date: 'June 27 2025',
-      title: 'Laughter, Games & Good Vibes – Fun Friday',
+      tag: "Achievements",
+      date: "June 27 2025",
+      title: "Laughter, Games & Good Vibes – Fun Friday",
       images: [
-        '/images/life-at-ignek/calander-images/achievements.png',
-        '/images/life-at-ignek/calander-images/office-trip.png', 
+        "/images/life-at-ignek/calander-images/achievements.png",
+        "/images/life-at-ignek/calander-images/office-trip.png",
       ],
     },
   ],
-};
+}
 
 const jumpIntoCategories: { slug: IgnekCategory; name: string; image: string }[] = [
-  { slug: 'fun-friday', name: 'Fun Friday', image: '/images/life-at-ignek/calander-images/fun-friday.jpg' },
-  { slug: 'office-trip', name: 'Office Trips', image: '/images/life-at-ignek/calander-images/office-trip.png' },
-  { slug: 'events', name: 'Events', image: '/images/life-at-ignek/calander-images/events.png' }, 
-  { slug: 'festivals', name: 'Festivals', image: '/images/life-at-ignek/calander-images/festival.png' }, 
-  { slug: 'birthdays', name: 'Birthdays', image: '/images/life-at-ignek/calander-images/birthdays.png' }, 
-  { slug: 'achievements', name: 'Achievements', image: '/images/life-at-ignek/calander-images/achievements.png' },
-];
-
-const upcomingEvents = [
-    { name: "Fun Friday Aug" },
-    { name: "Diwali 2025" }
+  { slug: "fun-friday", name: "Fun Friday", image: "/images/life-at-ignek/calander-images/fun-friday.jpg" },
+  { slug: "office-trip", name: "Office Trips", image: "/images/life-at-ignek/calander-images/office-trip.png" },
+  { slug: "events", name: "Events", image: "/images/life-at-ignek/calander-images/events.png" },
+  { slug: "festivals", name: "Festivals", image: "/images/life-at-ignek/calander-images/festival.png" },
+  { slug: "birthdays", name: "Birthdays", image: "/images/life-at-ignek/calander-images/birthdays.png" },
+  { slug: "achievements", name: "Achievements", image: "/images/life-at-ignek/calander-images/achievements.png" },
 ]
+
+const upcomingEvents = [{ name: "Fun Friday Aug" }, { name: "Diwali 2025" }]
 
 // --- MAIN COMPONENT ---
 export default function CalendarSection() {
-  const [selectedCategory, setSelectedCategory] = useState<IgnekCategory>('office-trip');
-  const [activeImageIndex, setActiveImageIndex] = useState(0);
-  const [selectedDate, setSelectedDate] = useState(new Date('2025-05-01'));
-  const [isCalendarOpen, setIsCalendarOpen] = useState(false);
-  const calendarRef = useRef<HTMLDivElement>(null);
+  const [selectedCategory, setSelectedCategory] = useState<IgnekCategory>("office-trip")
+  const [activeImageIndex, setActiveImageIndex] = useState(0)
+  const [selectedDate, setSelectedDate] = useState(new Date("2025-05-01"))
+  const [isCalendarOpen, setIsCalendarOpen] = useState(false)
+  const calendarRef = useRef<HTMLDivElement>(null)
 
-  const activeEvents = lifeAtIgnekData[selectedCategory] || [];
-  const activeEvent = activeEvents.length > 0 ? activeEvents[0] : null;
+  const activeEvents = lifeAtIgnekData[selectedCategory] || []
+  const activeEvent = activeEvents.length > 0 ? activeEvents[0] : null
 
   useEffect(() => {
-  if (!activeEvent || activeEvent.images.length <= 1) return;
+    if (!activeEvent || activeEvent.images.length <= 1) return
 
-  const interval = setInterval(() => {
-    setActiveImageIndex((prevIndex) =>
-      prevIndex === activeEvent.images.length - 1 ? 0 : prevIndex + 1
-    );
-  }, 3000); 
+    const interval = setInterval(() => {
+      setActiveImageIndex((prevIndex) => (prevIndex === activeEvent.images.length - 1 ? 0 : prevIndex + 1))
+    }, 3000)
 
-  return () => clearInterval(interval); 
-}, [activeEvent]);
+    return () => clearInterval(interval)
+  }, [activeEvent])
 
-// Effect to close calendar when clicking outside of it
+  // Effect to close calendar when clicking outside of it
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (calendarRef.current && !calendarRef.current.contains(event.target as Node)) {
-        setIsCalendarOpen(false);
+        setIsCalendarOpen(false)
       }
     }
-    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside)
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [calendarRef]);
-
+      document.removeEventListener("mousedown", handleClickOutside)
+    }
+  }, [calendarRef])
 
   const handleCategoryClick = (slug: IgnekCategory) => {
-    setSelectedCategory(slug);
-    setActiveImageIndex(0);
-  };
-  
+    setSelectedCategory(slug)
+    setActiveImageIndex(0)
+  }
+
   const formatDisplayDate = (date: Date) => {
-    const options: Intl.DateTimeFormatOptions = { month: 'long', year: 'numeric' };
-    return new Intl.DateTimeFormat('en-US', options).format(date);
-  };
+    const options: Intl.DateTimeFormatOptions = { month: "long", year: "numeric" }
+    return new Intl.DateTimeFormat("en-US", options).format(date)
+  }
 
   return (
     <section className="overflow-x-none bg-white text-black">
@@ -274,7 +261,7 @@ export default function CalendarSection() {
               ) : (
                 // Optional: Fallback in case an event has no images
                 <div className="mt-6">
-                  <div className="relative aspect-[16/10] w-full flex items-center justify-center overflow-hidden rounded-2xl bg-gray-100">
+                  <div className="relative flex aspect-[16/10] w-full items-center justify-center overflow-hidden rounded-2xl bg-gray-100">
                     <p className="text-black/50">No images for this event.</p>
                   </div>
                 </div>

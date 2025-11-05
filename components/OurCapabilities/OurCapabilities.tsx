@@ -72,7 +72,7 @@ const OurCapabilities: React.FC = () => {
     },
   ]
 
-   const [sectionRef, isInView] = useInView({
+  const [sectionRef, isInView] = useInView({
     triggerOnce: true,
     threshold: 0.2, // Start animation when 20% of the section is visible
   })
@@ -81,22 +81,30 @@ const OurCapabilities: React.FC = () => {
     <section ref={sectionRef} className="bg-black py-16 text-white">
       <div className="mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
         {/* Header Section */}
-        <div className="flex flex-col lg:flex-row lg:justify-between lg:items-end mb-12 lg:mb-20">
-          <h2  className={`text-4xl sm:text-5xl font-bold mb-4 lg:mb-0 ${
+        <div className="mb-12 flex flex-col lg:mb-20 lg:flex-row lg:items-end lg:justify-between">
+          <h2
+            className={`mb-4 text-4xl font-bold sm:text-5xl lg:mb-0 ${
               isInView ? "animate-when-visible animate-slide-top" : "opacity-0"
-            }`}>Our Capabilities</h2>
-          <p className={`max-w-xl text-lg text-gray-300 text-right ${
+            }`}
+          >
+            Our Capabilities
+          </h2>
+          <p
+            className={`max-w-xl text-right text-lg text-gray-300 ${
               isInView ? "animate-when-visible animate-slide-top" : "opacity-0"
-            }`}>
+            }`}
+          >
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.
             Pellentesque sit amet sapien fringilla.
           </p>
         </div>
 
         {/* Capabilities Grid */}
-        <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10  ${
+        <div
+          className={`grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3 ${
             isInView ? "animate-when-visible animate-fade-in animation-delay-200" : "opacity-0"
-          }`}>
+          }`}
+        >
           {capabilitiesData.map((capability, index) => (
             <CapabilityCard
               key={index}

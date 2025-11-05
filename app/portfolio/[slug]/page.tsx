@@ -24,9 +24,14 @@ export default async function PortfolioDetailPage({ params }: { params: Promise<
   } catch {
     return (
       <main className="mx-auto max-w-4xl px-4 py-12 md:px-8">
-        <Link href="/portfolio" className="text-[#00979E]">← Back to Portfolio</Link>
+        <Link href="/portfolio" className="text-[#00979E]">
+          ← Back to Portfolio
+        </Link>
         <div className="mt-6 rounded-md border border-white/10 bg-black/20 p-6">
-          <p className="text-white/80">Sanity is not configured. Please set `SANITY_PROJECT_ID`, `SANITY_DATASET`, and `SANITY_API_VERSION` in your environment.</p>
+          <p className="text-white/80">
+            Sanity is not configured. Please set `SANITY_PROJECT_ID`, `SANITY_DATASET`, and `SANITY_API_VERSION` in your
+            environment.
+          </p>
         </div>
       </main>
     )
@@ -36,14 +41,18 @@ export default async function PortfolioDetailPage({ params }: { params: Promise<
     return (
       <main className="mx-auto max-w-4xl px-4 py-12 md:px-8">
         <p className="text-white/70">Portfolio item not found.</p>
-        <Link href="/portfolio" className="mt-4 inline-block text-[#00979E]">Back to Portfolio</Link>
+        <Link href="/portfolio" className="mt-4 inline-block text-[#00979E]">
+          Back to Portfolio
+        </Link>
       </main>
     )
   }
 
   return (
     <main className="mx-auto max-w-4xl px-4 py-12 md:px-8">
-      <Link href="/portfolio" className="text-[#00979E]">← Back to Portfolio</Link>
+      <Link href="/portfolio" className="text-[#00979E]">
+        ← Back to Portfolio
+      </Link>
       <article className="mt-6">
         <h1 className="text-3xl font-bold tracking-tight md:text-4xl">{data.title}</h1>
         {data.publishedAt && (
@@ -64,7 +73,10 @@ export default async function PortfolioDetailPage({ params }: { params: Promise<
 
         {data.wordpressLink && (
           <p className="mt-4 text-sm">
-            Source: <a href={data.wordpressLink} target="_blank" rel="noopener noreferrer" className="text-[#00979E]">WordPress</a>
+            Source:{" "}
+            <a href={data.wordpressLink} target="_blank" rel="noopener noreferrer" className="text-[#00979E]">
+              WordPress
+            </a>
           </p>
         )}
 

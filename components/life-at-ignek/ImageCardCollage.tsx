@@ -1,54 +1,54 @@
-"use client";
+"use client"
 
-import Image from "next/image";
-import { useEffect, useState } from "react";
+import Image from "next/image"
+import { useEffect, useState } from "react"
 
 interface ImageCardCollageProps {
-  images: string[];
+  images: string[]
 }
 
 export default function ImageCardCollage({ images }: ImageCardCollageProps) {
   // State to track the card that is currently in the center
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0)
 
   // useEffect to set up a timer that cycles through the images
   useEffect(() => {
     const interval = setInterval(() => {
       // Move to the next index, looping back to 0 at the end
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 3000);
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length)
+    }, 3000)
 
     // Cleanup function to clear the interval when the component is unmounted
-    return () => clearInterval(interval);
-  }, [images.length]);
+    return () => clearInterval(interval)
+  }, [images.length])
 
   // Helper function to determine the CSS class for each card's position
   const getCardClass = (index: number) => {
-    const totalImages = images.length;
-    let offset = index - currentIndex;
+    const totalImages = images.length
+    let offset = index - currentIndex
 
     // Handle the loop around effect
     if (offset > totalImages / 2) {
-      offset -= totalImages;
+      offset -= totalImages
     } else if (offset < -totalImages / 2) {
-      offset += totalImages;
+      offset += totalImages
     }
-    
+
     switch (offset) {
       case 0:
-        return 'card-center'; // The card in the middle
+        return "card-center" // The card in the middle
       case 1:
-        return 'card-right-1'; // The card to the immediate right
+        return "card-right-1" // The card to the immediate right
       case -1:
-        return 'card-left-1'; // The card to the immediate left
+        return "card-left-1" // The card to the immediate left
       case 2:
-        return 'card-right-2'; // The second card to the right
+        return "card-right-2" // The second card to the right
       case -2:
-        return 'card-left-2'; // The second card to the left
+        return "card-left-2" // The second card to the left
       default:
-        return 'card-hidden'; // All other cards
+        return "card-hidden" // All other cards
     }
-  };
+  }
 
   return (
     <div className="collage-container">
@@ -59,12 +59,12 @@ export default function ImageCardCollage({ images }: ImageCardCollageProps) {
               src={src}
               alt={`Collage image ${index + 1}`}
               fill
-              style={{ objectFit: 'cover' }}
+              style={{ objectFit: "cover" }}
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
           </div>
         </div>
       ))}
     </div>
-  );
+  )
 }

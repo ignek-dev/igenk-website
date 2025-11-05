@@ -11,6 +11,7 @@ Ignek.com is a high-performance website built using a hybrid static-dynamic appr
 ### Hybrid Static-Dynamic Approach
 
 **Static Pages (95% of site):**
+
 - Company pages
 - Services pages
 - Solutions pages
@@ -20,17 +21,20 @@ Ignek.com is a high-performance website built using a hybrid static-dynamic appr
 - Contact pages
 
 **Dynamic Section:**
+
 - Blog posts and content management
 
 ## 🛠️ Technology Stack
 
 ### Frontend Framework
+
 - **Next.js** with Static Site Generation (SSG)
 - **TypeScript** for type safety
 - **Tailwind CSS** for utility-first styling
 - **Component-based** design system
 
 ### Performance & Optimization
+
 - **Global CDN** for lightning-fast content delivery
 - **Image optimization** and lazy loading
 - **Automatic sitemap generation**
@@ -39,6 +43,7 @@ Ignek.com is a high-performance website built using a hybrid static-dynamic appr
 - **Progressive Web App (PWA)** capabilities
 
 ### Development Tools
+
 - **ESLint & Prettier** for code quality
 - **Vitest & React Testing Library** for testing
 - **Playwright** for end-to-end testing
@@ -55,7 +60,8 @@ Ignek.com is a high-performance website built using a hybrid static-dynamic appr
 ## 🚀 Getting Started
 
 ### Prerequisites
-- Node.js 18+ 
+
+- Node.js 18+
 - pnpm (recommended) or npm
 
 ### Installation
@@ -111,6 +117,7 @@ pnpm build-storybook  # Build Storybook for production
 ## 🎨 Design System
 
 The website follows a modern, clean design approach with:
+
 - **Responsive design** for all device sizes
 - **Dark/Light mode** support
 - **Consistent typography** and spacing
@@ -120,9 +127,11 @@ The website follows a modern, clean design approach with:
 ## 🔧 Content Management
 
 ### Static Pages
+
 Developer → Code Changes → Git → Auto Deploy → Live Site
 
 ### Blog Content (Future Implementation)
+
 Content Editor → WordPress/CMS → API → Auto Rebuild → Live Blog
 
 ## 📈 Monitoring & Analytics
@@ -136,11 +145,13 @@ Content Editor → WordPress/CMS → API → Auto Rebuild → Live Blog
 ## 🚀 Deployment
 
 The website is optimized for deployment on:
+
 - **Vercel** (recommended)
 - **Netlify**
 - Any static hosting provider
 
 ### Deployment Pipeline
+
 Code Push → Build Process → Static Files → CDN Deployment
 
 ## 🤝 Contributing
@@ -158,6 +169,7 @@ This project is proprietary and confidential. All rights reserved by Ignek.
 ## 🆘 Support
 
 For support and questions:
+
 - Email: support@ignek.com
 - Website: [ignek.com](https://www.ignek.com)
 
@@ -165,4 +177,4 @@ For support and questions:
 
 **Built with ❤️ by the Ignek Team**
 
-*Transform your digital experience with Ignek today!*
+_Transform your digital experience with Ignek today!_

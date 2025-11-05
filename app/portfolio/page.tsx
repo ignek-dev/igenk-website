@@ -22,7 +22,10 @@ export default async function PortfolioPage() {
           <p className="mt-2 text-white/70">A curated list of our recent work and success stories.</p>
         </section>
         <div className="rounded-md border border-white/10 bg-black/20 p-6">
-          <p className="text-white/80">Sanity is not configured. Please set `SANITY_PROJECT_ID`, `SANITY_DATASET`, and `SANITY_API_VERSION` in your environment.</p>
+          <p className="text-white/80">
+            Sanity is not configured. Please set `SANITY_PROJECT_ID`, `SANITY_DATASET`, and `SANITY_API_VERSION` in your
+            environment.
+          </p>
         </div>
       </main>
     )
@@ -40,7 +43,10 @@ export default async function PortfolioPage() {
       ) : (
         <ul className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((item) => (
-            <li key={item._id} className="group rounded-lg border border-white/10 bg-black/20 p-4 transition-colors hover:border-[#00979E]">
+            <li
+              key={item._id}
+              className="group rounded-lg border border-white/10 bg-black/20 p-4 transition-colors hover:border-[#00979E]"
+            >
               <Link href={`/portfolio/${item.slug.current}`} className="block">
                 <div className="relative aspect-[16/9] w-full overflow-hidden rounded-md bg-black/30">
                   {item.imageUrl ? (

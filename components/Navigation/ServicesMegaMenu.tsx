@@ -33,7 +33,6 @@ const liferayServicesLinks = [
   { text: "Architecture Service", href: "/liferay-architecture-design" },
   { text: "Consulting Page", href: "/liferay-consulting-and-implementation-services" },
   { text: "Hire Liferay Devloper", href: "/liferay-hire-developer" },
-
 ]
 
 // --- Main ServicesMegaMenu Component ---
@@ -46,7 +45,7 @@ export default function ServicesMegaMenu() {
           <div className="flex-shrink-0" style={{ maxWidth: "521px" }}>
             <div className="group relative w-full overflow-hidden rounded-xl">
               {/* Background Image */}
-             <Image
+              <Image
                 src={featuredService.imageSrc}
                 alt="Tech Experts"
                 width={521} // Base width from parent style
@@ -60,7 +59,7 @@ export default function ServicesMegaMenu() {
               {/* Dark Overlay */}
               <div className="absolute inset-0 flex flex-col justify-end text-white">
                 {/* Container for the text with its own padding */}
-                <div className="px-8 pb-2 mr-4">
+                <div className="mr-4 px-8 pb-2">
                   <h2
                     className="text-3xl leading-tight font-bold"
                     dangerouslySetInnerHTML={{ __html: featuredService.title }}
@@ -70,7 +69,7 @@ export default function ServicesMegaMenu() {
                 {/* Button is now a full-width block at the bottom */}
                 <a
                   href={featuredService.buttonHref}
-                  className="w-70 max-h-[47px] flex items-center justify-center mb-3  align-middle text-center text-lg font-semibold text-white transition-opacity hover:opacity-90"
+                  className="mb-3 flex max-h-[47px] w-70 items-center justify-center text-center align-middle text-lg font-semibold text-white transition-opacity hover:opacity-90"
                   style={{ backgroundColor: "#00979E" }}
                 >
                   {featuredService.buttonText}

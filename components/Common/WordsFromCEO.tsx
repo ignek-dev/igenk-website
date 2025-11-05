@@ -1,5 +1,5 @@
 // components/Liferay/WordsFromCEO.tsx
-import Image from "next/image";
+import Image from "next/image"
 
 export default function WordsFromCEO() {
   return (
@@ -16,16 +16,16 @@ export default function WordsFromCEO() {
                 </h2>
                 <p className="line-height-[30px] mb-8 text-justify text-lg leading-relaxed text-gray-300">
                   Over the past decade, my journey with Liferay has been a fascinating one. I’ve been there from its
-                  version 6.0 and have watched it take significant steps in OSGI frameworks. I’ve followed its
-                  progress in OSGI frameworks and witnessed its evolution from a basic Enterprise Content Management
-                  System (CMS) into a comprehensive and highly Advanced Digital Experience Platform (DXP). Along the
-                  way, I’ve seen the introduction of groundbreaking solutions like Liferay Commerce, the establishment
-                  of Liferay Analytics Cloud, and the enhancement of its headless architecture capabilities. Liferay
-                  stands as a genuine digital experience platform, consistently leading the way in the domain of
-                  digital transformation. It empowers businesses to craft immersive and personalized experiences for
-                  both customers and employees. What truly sets Liferay apart is its exceptional ability to tailor
-                  solutions to meet the unique needs of various industries. Working with Liferay has been a both
-                  enlightening and fulfilling experience, and I’m excited to continue this journey.
+                  version 6.0 and have watched it take significant steps in OSGI frameworks. I’ve followed its progress
+                  in OSGI frameworks and witnessed its evolution from a basic Enterprise Content Management System (CMS)
+                  into a comprehensive and highly Advanced Digital Experience Platform (DXP). Along the way, I’ve seen
+                  the introduction of groundbreaking solutions like Liferay Commerce, the establishment of Liferay
+                  Analytics Cloud, and the enhancement of its headless architecture capabilities. Liferay stands as a
+                  genuine digital experience platform, consistently leading the way in the domain of digital
+                  transformation. It empowers businesses to craft immersive and personalized experiences for both
+                  customers and employees. What truly sets Liferay apart is its exceptional ability to tailor solutions
+                  to meet the unique needs of various industries. Working with Liferay has been a both enlightening and
+                  fulfilling experience, and I’m excited to continue this journey.
                 </p>
                 <div>
                   <p className="line-height-[44px] letter-spacing-[0.02em] font-serif text-5xl text-white italic">
@@ -44,7 +44,7 @@ export default function WordsFromCEO() {
             <Image
               src="/images/liferay-pages-image/liferay-consultation-page/CEO-image.png"
               alt="CEO Bhavin Panchani"
-              width={800}  // Base width for aspect ratio
+              width={800} // Base width for aspect ratio
               height={600} // Base height for aspect ratio
               objectFit="cover" // from object-cover class
               className="h-auto w-full rounded-lg" // h-auto w-full are preserved
@@ -53,5 +53,5 @@ export default function WordsFromCEO() {
         </div>
       </div>
     </section>
-  );
+  )
 }

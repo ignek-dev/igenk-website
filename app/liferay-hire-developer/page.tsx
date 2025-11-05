@@ -59,14 +59,14 @@ export default function LiferayHireDeveloper() {
   const easySteps = [
     {
       step: "01",
-      icon: "/images/icon/search-circle.svg", 
+      icon: "/images/icon/search-circle.svg",
       title: "Discover & Diagnose",
       description:
         "First, you tell us what you need. Explain your project requirements, goals, and any specific features you want.",
     },
     {
       step: "02",
-      icon: "/images/icon/search-circle.svg", 
+      icon: "/images/icon/search-circle.svg",
       title: "Screening & Select",
       description: "We'll carefully screen our pool of developers to find the best fit for your project.",
     },
@@ -181,7 +181,7 @@ export default function LiferayHireDeveloper() {
               {expertiseStats.map((stat, index) => (
                 <React.Fragment key={`duplicate-${index}`}>
                   <span className="mx-8 text-xl font-medium">{stat}</span>
-                 <Image src="/images/icon/Ellipse.png" alt="ecllips" width={14} height={14} />
+                  <Image src="/images/icon/Ellipse.png" alt="ecllips" width={14} height={14} />
                 </React.Fragment>
               ))}
             </div>
@@ -273,13 +273,7 @@ export default function LiferayHireDeveloper() {
                   <div className="ml-12 w-full rounded-2xl bg-[#FFFFFF] p-7.5 shadow-lg">
                     {/* Icon Container */}
                     <div className="mb-7 flex h-18 w-18 items-center justify-center rounded-full">
-                      <Image
-                        src={stepItem.icon}
-                        alt="step icon"
-                        width={72}
-                        height={72}
-                        objectFit="contain"
-                      />
+                      <Image src={stepItem.icon} alt="step icon" width={72} height={72} objectFit="contain" />
                     </div>
                     <h3 className="line-height-[36px] mb-4.5 text-3xl font-normal text-[#03030F]">{stepItem.title}</h3>
                     <p className="text-lg text-[#03030F]/70">{stepItem.description}</p>
@@ -322,7 +316,7 @@ export default function LiferayHireDeveloper() {
                 <div className="flex items-center gap-7">
                   {/* Icon */}
                   <div className="h-[115px] w-[115px] flex-shrink-0 rounded-full border border-[#1F2937] p-4 shadow-[0px_0px_0px_0.42px_#F4F4F51A]">
-                   <Image
+                    <Image
                       src={service.icon}
                       alt={`${service.title} icon`}
                       width={83}
@@ -345,13 +339,10 @@ export default function LiferayHireDeveloper() {
           </div>
         </div>
       </section>
-
       {/* Liferay Technological Stacks */}
       <LiferayTechnologicalStacks />
-
       {/* Words from CEO */}
       <WordsFromCEO />
-
       {/* <section className="bg-white text-black"></section> */}
       <WhatMake />
       <TalkToExpert />
