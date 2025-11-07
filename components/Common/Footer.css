@@ -45,7 +45,7 @@
 }
 
 /* SVG and text defaults */
-svg {
+.svg-custom {
   width: 100%;
   height: auto;
   max-width: 1350px;

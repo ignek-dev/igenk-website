@@ -138,7 +138,7 @@ export default function Footer() {
           </div>
           {/* Big brand logo */}
           <div className="gradient-box" onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
-            <svg width="1350" height="500">
+            <svg className="svg-custom" width="1350" height="500">
               <defs>
                 <linearGradient id="textGradient" x1="0" y1="0" x2="0" y2="1">
                   <stop offset="0%" stopColor="#FFFFFF" />
