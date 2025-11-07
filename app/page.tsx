@@ -81,14 +81,14 @@ export default function HomePage() {
         </div>
 
         <div className="mx-auto w-full px-4 pt-20 pb-12 md:px-6 md:pb-16 lg:pb-20 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
-          <h1 className="text-6xl leading-none font-extrabold md:text-7xl lg:text-8xl xl:text-9xl 2xl:text-[8.25rem]">
+          <h1 className="text-6xl letter-spacing-[0.04em] leading-none font-extrabold hero-heading">
             Transform Your
             <br />
             <span className="italic">DIGITAL EXPERIENCE</span>
             <br />
             <span>With IGNEK Today</span>
           </h1>
-          <div className="mt-18 grid items-start gap-8 md:grid-cols-2">
+          <div className="mt-20 grid items-start gap-8 md:grid-cols-2">
             <p className="max-w-xl text-xl text-white/80 sm:text-base">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.
               Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris.
@@ -108,10 +108,10 @@ export default function HomePage() {
           </div>
 
           {/* Divider line matching text color */}
-          <div className="mt-16.5 border-t border-white/30" />
+          <div className="mt-17.5 border-t border-white/30" />
 
           {/* Logos row: 7 items with spacing and responsive wrap */}
-          <div className="mt-10 overflow-hidden">
+          <div className="mt-12 overflow-hidden">
             {/* Inner container is the animated flex row */}
             <div className="animate-marquee-fast flex gap-x-16 whitespace-nowrap">
               {/* We map the partners array twice for a seamless loop */}

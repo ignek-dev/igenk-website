@@ -22,7 +22,7 @@ export default function BlogSection() {
       <div className="mx-auto w-full px-4 py-[64px] md:px-8 md:py-[64px] lg:py-[64px] [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
         <div className="grid items-center gap-10 md:grid-cols-2">
           <h2
-            className={`text-5xl leading-tight font-semibold sm:text-4xl md:text-5xl ${
+            className={`text-5xl leading-tight font-semibold sm:text-4xl md:text-5xl [@media(min-width:1440px)]:text-4xl [@media(min-width:1520px)]:text-5xl ${
               isInView ? "animate-when-visible animate-slide-left animation-delay-200" : "opacity-0"
             }`}
           >
