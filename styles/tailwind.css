@@ -25,6 +25,30 @@
 
 @layer utilities {
 
+  .hero-heading {
+    font-size: theme('fontSize.6xl');
+
+   @media (min-width: 768px) {
+      font-size: theme('fontSize.6xl'); /* 'md:text-6xl' */
+    }
+    /* @screen lg */
+    @media (min-width: 1024px) {
+      font-size: theme('fontSize.7xl'); /* 'lg:text-7xl' */
+    }
+    /* @screen xl */
+    @media (min-width: 1280px) {
+      font-size: theme('fontSize.8xl'); /* 'xl:text-8xl' */
+    }
+
+    /* 3. These are your custom breakpoints */
+    @media (min-width: 1440px) {
+      font-size: 6.42rem;
+    }
+    @media (min-width: 1800px) {
+      font-size: 8.25rem;
+    }
+  }
+
   /* Define the animation keyframes */
   @keyframes marquee {
     0% {

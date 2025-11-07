@@ -58,7 +58,7 @@ const WhatWeBring: React.FC = () => {
       <div className="mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
         {/* Header content (your styling is preserved) */}
         <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
-          <h2 className="line-height-[60px] text-5xl leading-tight font-bold">
+          <h2 className="line-height-[60px] text-5xl leading-tight font-bold [@media(min-width:1440px)]:text-4xl [@media(min-width:1520px)]:text-5xl">
             What We Bring To Your
             <br />
             Digital Experience
