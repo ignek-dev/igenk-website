@@ -56,18 +56,6 @@ text {
   transition: fill 0.6s ease-in-out;
 }
 
-/* Medium devices (tablets, small laptops) */
-@media screen and (max-width: 1024px) {
-  .gradient-box {
-    height: 18rem;
-    padding-top: 6rem;
-  }
-
-  text {
-    font-size: clamp(80px, 12vw, 250px);
-  }
-}
-
 /* Small devices (mobiles) */
 @media screen and (max-width: 768px) {
   .gradient-box {
@@ -77,6 +65,18 @@ text {
 
   text {
     font-size: clamp(60px, 10vw, 200px);
+  }
+}
+
+/* Medium devices (tablets, small laptops) */
+@media screen and (max-width: 1024px) {
+  .gradient-box {
+    height: 20rem;
+    padding-top: 8rem;
+  }
+
+  text {
+    font-size: clamp(180px, 15vw, 300px);
   }
 }
 

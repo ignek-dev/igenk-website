@@ -25,7 +25,7 @@ export default function EndToEndSection() {
             <h2
               className={`${getAnimationClass(
                 "animate-slide-top"
-              )} line-height-[60px] letter-spacing-[-0.02em] text-5xl font-semibold sm:text-4xl md:text-5xl`}
+              )} line-height-[60px] letter-spacing-[-0.02em] text-5xl font-semibold sm:text-4xl md:text-5xl [@media(min-width:1440px)]:text-4xl [@media(min-width:1520px)]:text-5xl `}
             >
               Your End-to-End Digital Transformation Partner
             </h2>
