@@ -53,7 +53,7 @@ export default function BlogSection() {
                 className="h-auto w-full object-cover"
               />
             </div>
-            <h3 className="line-height-[44px] pt-2 text-4xl font-semibold text-[#101012] md:text-3xl">
+            <h3 className="line-height-[44px] pt-2 text-4xl font-semibold text-[#101012] md:text-3xl [@media(min-width:1440px)]:pt-15 [@media(min-width:1520px)]:pt-17 [@media(min-width:1800px)]:pt-2">
               {main?.title || "Blog Post"}
             </h3>
             <p className="mt-2 text-lg text-[#101012] text-gray-700">
@@ -85,8 +85,8 @@ export default function BlogSection() {
                     className="h-full w-full object-cover"
                   />
                 </div>
-                <div className="pb-6">
-                  <h4 className="line-height-[32px] text-2xl font-semibold md:text-2xl">{item.title}</h4>
+                <div className="[@media(min-width:1800px)]:pb-6">
+                  <h4 className="line-height-[32px] text-xl font-semibold [@media(min-width:1440px)]:text-lg [@media(min-width:1520px)]:text-xl [@media(min-width:1820px)]:text-2xl">{item.title}</h4>
                   <p className="line-height-[24px] mt-1 line-clamp-2 text-base text-gray-700">{item.excerpt}</p>
                 </div>
                 <div className="col-span-2 mt-1 w-full border-t border-gray-300" />
