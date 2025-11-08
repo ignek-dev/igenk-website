@@ -352,13 +352,13 @@ export default function LiferayConsultationPage() {
       <section className="relative bg-[#0B63CE] text-white">
         <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_10%_0%,#0E7BF8_0%,#00979E_40%,transparent_65%)] opacity-25" />
         <div className="mx-auto w-full px-4 pt-40 pb-16 md:px-8 md:pt-48 md:pb-20 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
-          <div className="grid grid-cols-1 items-center gap-6 md:grid-cols-2">
+          <div className="grid grid-cols-1 items-center gap-6 md:grid-cols-5">
             {/* Left Side: Text Content */}
-            <div>
+            <div className="col-span-3">
               <div className="inline-flex w-fit items-center rounded-full border border-white px-8.5 py-[8.8px] text-lg font-normal">
                 Liferay Services
               </div>
-              <h1 className="line-height-[88px] letter-spacing-[-0.02em] mt-13 text-7xl leading-tight font-bold sm:text-5xl md:text-6xl">
+              <h1 className="line-height-[88px] letter-spacing-[-0.02em] mt-13 text-7xl leading-tight  font-bold sm:text-5xl md:text-6xl [@media(min-width:1440px)]:text-5xl [@media(min-width:1800px)]:text-6xl">
                 Liferay Consulting &
                 <br />
                 <span className="block">Implementation Services</span>
@@ -370,7 +370,7 @@ export default function LiferayConsultationPage() {
             </div>
 
             {/* Right Side: Image */}
-            <div className="flex items-center justify-center">
+            <div className="flex items-center justify-center md:col-span-2">
               <Image
                 src="/images/liferay-pages-image/liferay-consultation-page/Liferay-dxp.png"
                 alt="Liferay DXP"
@@ -558,7 +558,7 @@ export default function LiferayConsultationPage() {
                   onMouseLeave={() => setHoveredCard(null)}
                   className={`flex h-[340px] items-center rounded-lg p-8 transition-all duration-300 ease-in-out ${
                     isCurrentPrimary
-                      ? "w-full flex-grow-[2] basis-0 flex-row justify-between gap-8 bg-[#0B63CE] text-white"
+                      ? "w-full flex-grow-[2] basis-0 flex-row justify-between gap-8 bg-[#0B63CE] text-white [@media(min-width:1440px)]:flex-grow-[3] [@media(min-width:1800px)]:flex-grow-[2]"
                       : "w-full flex-grow basis-0 flex-col justify-center border border-gray-200 bg-white text-gray-800 shadow-sm"
                   } `}
                 >
@@ -603,7 +603,7 @@ export default function LiferayConsultationPage() {
         <div className="mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
           {/* Section Header */}
           <div className="w-full">
-            <h2 className="text-5xl leading-tight font-bold tracking-tight">
+            <h2 className="text-5xl leading-tight font-bold tracking-tight md:whitespace-pre">
               Why Liferay Can Be Best Choice For Your Project ?
             </h2>
             <p className="mt-4 text-lg text-white/80">
@@ -748,7 +748,7 @@ export default function LiferayConsultationPage() {
               <button
                 key={tab}
                 onClick={() => setActiveServiceTab(tab)}
-                className={`flex-1 rounded-full px-8 py-4 text-center text-2xl font-medium transition-colors duration-300 ${
+                className={`flex-1 rounded-full px-8 py-4 text-center text-2xl font-medium transition-colors duration-300 md:whitespace-pre ${
                   activeServiceTab === tab
                     ? "border border-blue-600 bg-blue-600 text-white"
                     : "border border-white text-white hover:border-blue-600 hover:text-white"

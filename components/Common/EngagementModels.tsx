@@ -46,7 +46,7 @@ export default function EngagementModels({ title, description }: EngagementModel
         {/* Section Header - Now uses props for dynamic content */}
         <div className="mb-16 grid grid-cols-1 items-end gap-8 md:grid-cols-2">
           <div>
-            <h2 className="text-5xl leading-tight font-semibold tracking-tight text-[#000000]">{title}</h2>
+            <h2 className="text-5xl leading-tight font-semibold tracking-tight text-[#000000] [@media(min-width:1440px)]:text-4xl [@media(min-width:1800px)]:text-5xl">{title}</h2>
           </div>
           <div className="flex h-full items-end justify-end">
             <p className="text-normal line-height-[30px] w-full text-right text-xl text-[#374151]">{description}</p>
@@ -82,7 +82,7 @@ export default function EngagementModels({ title, description }: EngagementModel
                 <hr className={`mb-8 border-t ${isHovered ? "border-white/30" : "border-gray-200"}`} />
 
                 {/* Card Description */}
-                <p className={`mb-8 text-lg ${isHovered ? "text-white/90" : "text-gray-600"}`}>{model.description}</p>
+                <p className={`mb-8 text-lg  ${isHovered ? "text-white/90" : "text-gray-600"}`}>{model.description}</p>
 
                 {/* Card Features */}
                 <div>

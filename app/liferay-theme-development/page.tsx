@@ -74,7 +74,7 @@ export default function LiferayThemeDevelopmentPage() {
               <div className="inline-flex items-center rounded-full border border-white/30 px-4 py-2 text-sm text-white/80">
                 Liferay Services
               </div>
-              <h1 className="mt-9 text-4xl leading-tight font-semibold sm:text-5xl md:text-6xl">
+              <h1 className="mt-9 text-4xl leading-tight font-semibold sm:text-5xl md:text-6xl [@media(min-width:1440px)]:text-5xl [@media(min-width:1500px)]:text-6xl">
                 Liferay
                 <br />
                 <span className="block">Theme Development</span>
@@ -92,7 +92,7 @@ export default function LiferayThemeDevelopmentPage() {
             {featureTabs.map((label) => (
               <span
                 key={label}
-                className="inline-flex items-center rounded-full border border-white/30 px-7 py-5 text-lg text-white transition-colors hover:border-white hover:text-white"
+                className="inline-flex items-center rounded-full border border-white/30 px-7 py-5 [@media(min-width:1440px)]:text-base [@media(min-width:1500px)]:text-lg text-lg text-white transition-colors hover:border-white hover:text-white"
               >
                 {label}
               </span>

@@ -238,11 +238,11 @@ export default function LiferayEcommerceDevelopmentPage() {
           </div>
 
           {/* Feature tabs */}
-          <div className="mt-15 flex flex-wrap gap-5">
+          <div className="mt-15 flex flex-wrap gap-4">
             {featureTabs.map((label) => (
               <span
                 key={label}
-                className="inline-flex items-center rounded-full border border-white/30 px-7 py-5 text-lg text-white transition-colors hover:border-white hover:text-white"
+                className="inline-flex items-center rounded-full border border-white/30 px-7 py-5 [@media(min-width:1440px)]:text-base [@media(min-width:1500px)]:text-lg text-lg text-white transition-colors hover:border-white hover:text-white"
               >
                 {label}
               </span>
@@ -276,10 +276,10 @@ export default function LiferayEcommerceDevelopmentPage() {
                   </span>
 
                   {/* Title */}
-                  <h3 className="mb-2 text-[30px] font-medium text-black">{item.text}</h3>
+                  <h3 className="mb-2 text-[30px] font-medium text-black w-[700px]">{item.text}</h3>
 
                   {/* Description */}
-                  <p className="text-[20px] font-normal text-gray-600">{item.description}</p>
+                  <p className="text-[20px] font-normal text-gray-600 text-justify">{item.description}</p>
                 </div>
               ))}
             </div>
