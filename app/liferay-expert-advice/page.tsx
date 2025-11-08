@@ -66,11 +66,11 @@ export default function LiferayExpertAdvicePage() {
           </div>
 
           {/* Feature tabs */}
-          <div className="mt-15 flex flex-wrap gap-5">
+          <div className="mt-15 flex flex-wrap gap-4">
             {featureTabs.map((label) => (
               <span
                 key={label}
-                className="inline-flex items-center rounded-full border border-white/30 px-7 py-5 text-lg text-white transition-colors hover:border-white hover:text-white"
+                className="inline-flex items-center rounded-full border border-white/30 px-6 py-5 [@media(min-width:1440px)]:text-base [@media(min-width:1500px)]:text-lg text-lg text-white transition-colors hover:border-white hover:text-white"
               >
                 {label}
               </span>
@@ -119,7 +119,7 @@ export default function LiferayExpertAdvicePage() {
         <div className="mx-auto grid w-full grid-cols-12 items-start gap-[100px] px-4 md:px-8 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px]">
           {/* Left Column */}
           <div className="sticky top-10 col-span-12 flex flex-col justify-center space-y-6 md:col-span-6">
-            <h1 className="text-5xl leading-[60px] leading-tight font-bold text-white">
+            <h1 className="text-5xl leading-[60px] leading-tight font-bold text-white [@media(min-width:1440px)]:text-4xl [@media(min-width:1800px)]:text-5xl">
               Solutions For Production, Performance, Development And Architecture
             </h1>
             <p className="text-lg leading-relaxed text-white">

@@ -130,11 +130,11 @@ export default function LiferayDevelopmentAndCustomizationPage() {
           </div>
 
           {/* Feature tabs */}
-          <div className="mt-15 flex flex-wrap gap-5">
+          <div className="mt-15 flex flex-wrap gap-4.5">
             {featureTabs.map((label) => (
               <span
                 key={label}
-                className="inline-flex items-center rounded-full border border-white/30 px-7 py-5 text-lg text-white transition-colors hover:border-white hover:text-white"
+                className="inline-flex items-center rounded-full border border-white/30 px-7 py-5 [@media(min-width:1440px)]:text-base [@media(min-width:1500px)]:text-lg text-white transition-colors hover:border-white hover:text-white"
               >
                 {label}
               </span>
@@ -192,7 +192,7 @@ export default function LiferayDevelopmentAndCustomizationPage() {
       <section className="bg-black py-[64px] text-white lg:py-[64px]">
         <div className="mx-auto w-full items-start px-4 md:px-8 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px]">
           <div className="relative grid items-start gap-10 md:grid-cols-2">
-            <h2 className="text-3xl leading-[60px] font-semibold sm:text-4xl md:text-5xl">
+            <h2 className="text-3xl leading-[60px] font-semibold sm:text-4xl [@media(min-width:1440px)]:text-4xl [@media(min-width:1800px)]:text-5xl">
               Our Liferay Custom Module/ Portlet Development Services
             </h2>
             <p className="absolute bottom-0 max-w-xl text-right text-xl text-white md:justify-self-end">
@@ -276,7 +276,7 @@ export default function LiferayDevelopmentAndCustomizationPage() {
 
                       {/* Title */}
                       <h3
-                        className="mb-3 pt-4 text-[30px] font-semibold"
+                        className="mb-3 pt-4 text-[30px] font-bold [@media(min-width:1440px)]:text-[20px] [@media(min-width:1500px)]:text-[23px] [@media(min-width:1800px)]:text-[30px]"
                         dangerouslySetInnerHTML={{ __html: item.text }}
                       />
                     </div>

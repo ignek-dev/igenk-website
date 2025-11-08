@@ -103,7 +103,7 @@ export default function LiferaySupportMaintenancePage() {
             {featureTabs.map((label) => (
               <span
                 key={label}
-                className="inline-flex items-center rounded-full border border-white/30 px-7 py-5 text-lg text-white transition-colors hover:border-white hover:text-white"
+                className="inline-flex items-center rounded-full border border-white/30 px-7 py-5 [@media(min-width:1440px)]:text-base [@media(min-width:1500px)]:text-lg text-lg text-white transition-colors hover:border-white hover:text-white"
               >
                 {label}
               </span>
@@ -117,7 +117,7 @@ export default function LiferaySupportMaintenancePage() {
         <div className="mx-auto w-full px-4 py-[64px] md:px-8 md:py-[64px] lg:py-[64px] [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px]">
           <div className="grid items-start gap-10 md:grid-cols-2">
             <div>
-              <h2 className="w-[70%] text-5xl leading-[60px] font-semibold sm:text-3xl md:text-5xl">
+              <h2 className="w-[80%] text-5xl leading-[60px] font-semibold sm:text-3xl md:text-5xl">
                 Liferay Support And Maintenance
               </h2>
               <p className="mt-4 max-w-xl text-sm text-[20px] text-gray-700">

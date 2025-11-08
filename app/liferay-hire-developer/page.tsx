@@ -218,7 +218,7 @@ export default function LiferayHireDeveloper() {
 
                 {/* Title Container with fixed height */}
                 <div className="mt-8.5">
-                  <h3 className="line-height-[44px] letter-spacing-[-0.02em] text-4xl font-semibold">
+                  <h3 className="line-height-[44px] letter-spacing-[-0.02em] text-4xl font-semibold whitespace-pre">
                     {/* Map over the title array to create line breaks */}
                     {item.title.map((line, lineIndex) => (
                       <span key={lineIndex} className="block">
