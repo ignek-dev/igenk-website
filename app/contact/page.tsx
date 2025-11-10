@@ -56,7 +56,7 @@ const InstagramIcon = () => (
 // --- TYPES FOR PROPS ---
 type FormInputProps = {
   label: string
-  placeholder: string 
+  placeholder: string
   type?: string
 }
 
@@ -68,7 +68,7 @@ type FormTextAreaProps = {
 
 const FormInput = ({
   label,
-  placeholder: _placeholder, 
+  placeholder: _placeholder,
   type = "text",
 }: FormInputProps) => (
   <div className="relative z-0 w-full">
@@ -160,16 +160,16 @@ export default function ContactPage() {
               <div className="mt-9.5 flex flex-col gap-8 sm:flex-row sm:items-center sm:gap-32">
                 <h3 className="text-lg text-[#FFFFFF]">Follow us on</h3>
                 <div className="flex space-x-5">
-                  <a href="#" className="text-white/80 hover:text-white" aria-label="Facebook">
+                  <a href="https://www.facebook.com/ignekinfo/" className="text-white/80 hover:text-white" aria-label="Facebook" target="blank">
                     <FacebookIcon />
                   </a>
-                  <a href="#" className="text-white/80 hover:text-white" aria-label="X">
+                  <a href="https://x.com/ignekinfotech" className="text-white/80 hover:text-white" aria-label="X" target="blank">
                     <XIcon />
                   </a>
-                  <a href="#" className="text-white/80 hover:text-white" aria-label="LinkedIn">
+                  <a href="https://www.linkedin.com/company/ignek-infotech/about/" className="text-white/80 hover:text-white" aria-label="LinkedIn" target="blank">
                     <LinkedInIcon />
                   </a>
-                  <a href="#" className="text-white/80 hover:text-white" aria-label="Instagram">
+                  <a href="https://www.instagram.com/_ignek/" className="text-white/80 hover:text-white" aria-label="Instagram" target="blank">
                     <InstagramIcon />
                   </a>
                 </div>
@@ -214,7 +214,7 @@ export default function ContactPage() {
             <div>
               <h2 className="text-5xl leading-tight font-semibold tracking-tight text-[#000000]">
                 Our Offices locations in india
-                <br /> 
+                <br />
                 and United Arab Emirates
               </h2>
             </div>
@@ -227,22 +227,22 @@ export default function ContactPage() {
           </div>
 
           {/* Locations List */}
-          <div className="flex flex-col gap-7.5"> 
+          <div className="flex flex-col gap-7.5">
             {/* Location 1: Ahmedabad */}
             <div className="flex flex-col md:flex-row md:items-start md:gap-10">
               {/* Left Side: Image */}
               <div className="">
                 <Image
-                  src="/images/ahmedabad.png" 
+                  src="/images/ahmedabad.png"
                   alt="Ahmedabad Office Location"
-                  width={853} 
+                  width={853}
                   height={341}
                   objectFit="contain"
                   className="w-[853px] h-[341px]"
                 />
               </div>
               {/* Right Side: Details (Flex container for content and divider) */}
-              <div className="mt-6 md:mt-0 md:w-1/2 md:pl-3.5 flex flex-col"> 
+              <div className="mt-6 md:mt-0 md:w-1/2 md:pl-3.5 flex flex-col">
                 <div> {/* Wrapper for the actual details */}
                   <h3 className="text-4xl font-semibold text-[#151314] letter-spacing-[-0.02em]">Ahmedabad, India</h3>
                   <p className="mt-4 text-lg text-[#4D464A]">
@@ -271,9 +271,9 @@ export default function ContactPage() {
                     </div>
                   </div>
                 </div>
-                
+
                 {/* --- Divider now *inside* the right-hand details column --- */}
-                <hr className="mt-25 border-t border-[#DBD3D3] w-full" /> 
+                <hr className="mt-25 border-t border-[#DBD3D3] w-full" />
               </div>
             </div>
 

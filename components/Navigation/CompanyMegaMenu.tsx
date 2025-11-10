@@ -110,10 +110,10 @@ const contactDetails = {
 }
 
 const socialLinks = [
-  { icon: <IconLinkedIn />, href: "#", label: "LinkedIn" },
-  { icon: <IconFacebook />, href: "#", label: "Facebook" },
-  { icon: <IconX />, href: "#", label: "X" },
-  { icon: <IconInstagram />, href: "#", label: "Instagram" },
+  { icon: <IconLinkedIn />, href: "https://www.linkedin.com/company/ignek-infotech/about/", label: "LinkedIn" },
+  { icon: <IconFacebook />, href: "https://www.facebook.com/ignekinfo/", label: "Facebook" },
+  { icon: <IconX />, href: "https://x.com/ignekinfotech", label: "X" },
+  { icon: <IconInstagram />, href: "https://www.instagram.com/_ignek/", label: "Instagram" },
 ]
 
 // --- Main MegaMenu Component ---
@@ -239,6 +239,7 @@ export default function CompanyMegaMenu() {
                     key={social.label}
                     aria-label={social.label}
                     className="flex size-12 items-center justify-center rounded-full bg-white text-black/70 transition-colors hover:bg-gray-200"
+                    target="blank"
                   >
                     {social.icon}
                   </a>

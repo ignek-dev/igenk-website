@@ -4,6 +4,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { usePathname, useRouter } from "next/navigation"
 import { useState } from "react"
+import CalendlyButton from "components/CalendlyPopupButton/CalendlyButton"
 import CompanyMegaMenu from "components/Navigation/CompanyMegaMenu"
 import InsightsMegaMenu from "components/Navigation/InsightsMegaMenu"
 import ServicesMegaMenu from "components/Navigation/ServicesMegaMenu"
@@ -81,15 +82,16 @@ export default function Navigation() {
             </ul>
 
             <div className="flex items-center gap-4">
-              <button
+              {/* <button
                 type="button"
                 aria-label="Calendar"
                 className="rounded-full border border-[#00979E] p-2 text-white/80 transition-colors hover:border-[#00979E] hover:text-white"
               >
-                <div className="flex h-7 w-7 items-center justify-center">
+                <div className="flex h-7 w-7 items-center justify-center cursor-pointer">
                   <Image src="/images/icon/calendar.png" alt="calendar" width={24} height={24} />
                 </div>
-              </button>
+              </button> */}
+              <CalendlyButton/>
               <button
                 type="button"
                 aria-label="Go"
