@@ -59,7 +59,7 @@ export default function LiferayProofOfConceptPage() {
       {/* Hero */}
       <section className="relative bg-black text-white">
         <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_10%_0%,#0E7BF8_0%,#00979E_40%,transparent_65%)] opacity-25" />
-        <div className="mx-auto w-full px-4 pt-12 pb-16 md:px-8 md:pt-20 md:pb-28 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px]">
+        <div className="mx-auto w-full px-4 pt-12 pb-16 md:px-8 md:pt-20 md:pb-28 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1820px)]:px-[192px]">
           <div className="relative grid items-start gap-10 md:grid-cols-2">
             <div>
               <div className="inline-flex items-center rounded-full border border-white/30 px-4 py-2 text-lg text-white">
@@ -79,11 +79,11 @@ export default function LiferayProofOfConceptPage() {
           </div>
 
           {/* Feature tabs */}
-          <div className="mt-15 flex flex-wrap gap-5">
+          <div className="mt-15 flex flex-wrap gap-4 [@media(min-width:1440px)]:gap-2 [@media(min-width:1800px)]:gap-4">
             {featureTabs.map((label, index) => (
               <span
                 key={index}
-                className="inline-flex items-center rounded-full border border-white/30 px-7 py-5 text-lg text-white transition-colors hover:border-white hover:text-white"
+                className="inline-flex items-center rounded-full border border-white/30 px-7 [@media(min-width:1440px)]:px-3 [@media(min-width:1800px)]:px-7 py-5 [@media(min-width:1440px)]:text-base [@media(min-width:1500px)]:text-base [@media(min-width:1800px)]:text-lg text-white transition-colors hover:border-white hover:text-white"
               >
                 {label}
               </span>
@@ -93,7 +93,7 @@ export default function LiferayProofOfConceptPage() {
       </section>
 
       <section className="bg-[#f7f7f7] text-black">
-        <div className="mx-auto w-full px-4 py-[64px] md:px-8 md:py-[64px] lg:py-[64px] [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px]">
+        <div className="mx-auto w-full px-4 py-[64px] md:px-8 md:py-[64px] lg:py-[64px] [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
           <h2 className="text-5xl leading-tight font-semibold sm:text-4xl md:text-5xl">
             What We Do With Liferay POC Services
           </h2>
@@ -105,8 +105,8 @@ export default function LiferayProofOfConceptPage() {
           <div className="pt-8">
             <div className="grid grid-cols-1 gap-[60px] sm:grid-cols-2 md:grid-cols-3">
               {liferayPOCServices.map((item, index) => (
-                <div key={index} className="flex h-[80px] rounded-full border border-[#E5E7EB] bg-white">
-                  <span className="flex h-full w-[17%] items-center justify-center rounded-full bg-black">
+                <div key={index} className="flex min-h-[80px]  rounded-full border border-[#E5E7EB] bg-white">
+                  <span className="flex h-full [@media(min-width:1440px)]:w-[38%] [@media(min-width:1800px)]:w-[25%]  items-center justify-center rounded-full bg-black">
                     <svg
                       width="40"
                       height="40"
@@ -124,7 +124,7 @@ export default function LiferayProofOfConceptPage() {
                       />
                     </svg>
                   </span>
-                  <p className="w-[80%] p-3 pr-0 text-left text-xl font-medium text-black">{item}</p>
+                  <p className="w-full  p-4 pr-4 text-left text-lg [@media(min-width:1440px)]:text-sm [@media(min-width:1500px)]:text-sm [@media(min-width:1800px)]:text-base font-medium text-black whitespace-wrap">{item}</p>
                 </div>
               ))}
             </div>

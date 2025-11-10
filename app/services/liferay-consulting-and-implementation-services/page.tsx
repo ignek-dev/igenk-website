@@ -458,7 +458,7 @@ export default function LiferayConsultationPage() {
                 alt="Glow background"
                 fill
                 objectFit="contain"
-                className="scale-147 [@media(min-width:1440px)]:scale-159 [@media(min-width:1800px)]:scale-147"
+                className="scale-147 [@media(min-width:1440px)]:scale-152 [@media(min-width:1500px)]:scale-147"
                 sizes="600px"
               />
             </div>
@@ -470,7 +470,7 @@ export default function LiferayConsultationPage() {
               width={500}
               height={500}
               objectFit="contain"
-              className="relative z-10 h-auto w-[500px] scale-125"
+              className="relative z-10 h-auto w-[500px] scale-125 [@media(min-width:1440px)]:scale-129 [@media(min-width:1500px)]:scale-125"
               style={{ minWidth: "650px", marginTop: "-60px", marginBottom: "17px"   }}
             />
           </div>

@@ -62,7 +62,7 @@ export default function EngagementModels({ title, description }: EngagementModel
                 key={model.title}
                 onMouseEnter={() => setHoveredModel(model.title)}
                 onMouseLeave={() => setHoveredModel(null)}
-                className={`rounded-2xl border p-7 shadow-md transition-colors duration-300 ${
+                className={`flex flex-col justify-between h-full rounded-2xl border p-7 shadow-md transition-colors duration-300 ${
                   isHovered ? "border-blue-700 bg-[#0B63CE] text-white" : "border-gray-200 bg-white text-black"
                 }`}
               >
@@ -75,6 +75,8 @@ export default function EngagementModels({ title, description }: EngagementModel
                   className={`mb-8 h-12 w-12 ${isHovered ? "brightness-0 invert" : ""}`}
                 />
 
+              <div>
+
                 {/* Card Title */}
                 <h3 className="mb-8 text-3xl font-semibold">{model.title}</h3>
 
@@ -83,9 +85,10 @@ export default function EngagementModels({ title, description }: EngagementModel
 
                 {/* Card Description */}
                 <p className={`mb-8 text-lg  ${isHovered ? "text-white/90" : "text-gray-600"}`}>{model.description}</p>
+              </div>
 
                 {/* Card Features */}
-                <div>
+                <div className="mt-auto space-y-3">
                   {model.features.map((feature, index) => (
                     <div
                       key={index}
@@ -114,7 +117,7 @@ export default function EngagementModels({ title, description }: EngagementModel
                             <polyline points="20 6 9 17 4 12"></polyline>
                           </svg>
                         </div>
-                        <span className="text-lg font-medium">{feature}</span>
+                        <span className="text-base font-medium  [@media(min-width:1440px)]:text-base [@media(min-width:1800px)]:text-lg [@media(min-width:1800px)]:min-w-[350px] max-w-[180px]">{feature}</span>
                       </div>
                     </div>
                   ))}

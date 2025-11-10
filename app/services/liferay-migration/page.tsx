@@ -82,7 +82,7 @@ export default function LiferayMigrationPage() {
       {/* Hero */}
       <section className="relative bg-black text-white">
         <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_10%_0%,#0E7BF8_0%,#00979E_40%,transparent_65%)] opacity-25" />
-        <div className="mx-auto w-full px-4 pt-12 pb-16 md:px-8 md:pt-20 md:pb-28 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px]">
+        <div className="mx-auto w-full px-4 pt-12 pb-16 md:px-8 md:pt-20 md:pb-28 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
           <div className="relative grid items-start gap-10 md:grid-cols-2">
             <div>
               <div className="inline-flex items-center rounded-full border border-white/30 px-4 py-2 text-lg text-white">
@@ -116,7 +116,7 @@ export default function LiferayMigrationPage() {
 
       {/* Circular reasons section */}
       <section className="bg-[#f7f7f7] text-black">
-        <div className="mx-auto w-full px-4 py-[64px] md:px-8 md:py-[64px] lg:py-[64px] [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px]">
+        <div className="mx-auto w-full px-4 py-[64px] md:px-8 md:py-[64px] lg:py-[64px] [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
           <div className="relative flex flex-col items-center justify-center px-6 text-center">
             {/* Outer Dotted Circle */}
             <div className="relative flex h-[700px] w-[700px] items-center justify-center rounded-full border-2 border-dotted border-gray-300">
@@ -175,7 +175,7 @@ export default function LiferayMigrationPage() {
 
       {/* Migration Process timeline */}
       <section className="bg-black text-white">
-        <div className="mx-auto w-full px-4 py-[64px] md:px-8 md:py-[64px] lg:py-[64px] [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px]">
+        <div className="mx-auto w-full px-4 py-[64px] md:px-8 md:py-[64px] lg:py-[64px] [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
           <div className="grid items-start gap-10 lg:grid-cols-[0.9fr_1.1fr]">
             <div className="sticky top-0 w-[80%]">
               <h2 className="text-3xl leading-[60px] font-semibold sm:text-4xl md:text-5xl">
@@ -191,7 +191,7 @@ export default function LiferayMigrationPage() {
               <div className="relative">
                 <div className="relative ml-12 flex flex-col">
                   {/* Vertical line */}
-                  <div className="absolute top-0 left-7 h-[90%] bg-white" style={{ width: "4px" }}></div>
+                  <div className="absolute top-0 left-7 h-[89%] [@media(min-width:2140px)]:h-[90%] bg-white" style={{ width: "4px" }}></div>
 
                   {steps.map((step, index) => (
                     <div
