@@ -407,7 +407,7 @@ export default function LiferayConsultationPage() {
           {/* Left Content */}
           <div className="flex flex-1 flex-col justify-between gap-25">
             {/* Stats Row */}
-            <div className="flex flex-wrap items-center gap-20">
+            <div className="[@media(min-width:1440px)]:grid grid-cols-2 [@media(min-width:1800px)]:flex flex-no-wrap items-center gap-20">
               {/* Stat 1 */}
               <div className="flex gap-3">
                 <p className="text-5xl font-bold text-gray-900">1x</p>
@@ -420,10 +420,10 @@ export default function LiferayConsultationPage() {
               {/* Stat 2 */}
               <div className="flex gap-3">
                 <p className="text-5xl font-bold text-gray-900">18%</p>
-                <p className="text-lg leading-tight text-gray-600">
-                  Increased User
+                <p className="text-lg leading-tight text-gray-600 whitespace-nowrap">
+                  Increased 
                   <br />
-                  Adoption
+                 User Adoption
                 </p>
               </div>
               {/* Stat 3 */}
@@ -458,7 +458,7 @@ export default function LiferayConsultationPage() {
                 alt="Glow background"
                 fill
                 objectFit="contain"
-                className="scale-147"
+                className="scale-147 [@media(min-width:1440px)]:scale-159 [@media(min-width:1800px)]:scale-147"
                 sizes="600px"
               />
             </div>
@@ -471,7 +471,7 @@ export default function LiferayConsultationPage() {
               height={500}
               objectFit="contain"
               className="relative z-10 h-auto w-[500px] scale-125"
-              style={{ minWidth: "650px", marginTop: "-60px", marginBottom: "17px" }}
+              style={{ minWidth: "650px", marginTop: "-60px", marginBottom: "17px"   }}
             />
           </div>
         </div>
@@ -666,7 +666,7 @@ export default function LiferayConsultationPage() {
                 key={industry.id}
                 onMouseEnter={() => setHoveredIndustry(industry.id)}
                 onMouseLeave={() => setHoveredIndustry(null)}
-                className={`group relative flex cursor-pointer items-center border-b border-gray-200 px-10 py-10 transition-colors duration-300 hover:bg-[#0B63CE]`}
+                className={`group relative flex cursor-pointer items-center border-b border-gray-200 [@media(min-width:1440px)]:px-4 [@media(min-width:1800px)]:px-10 py-10 transition-colors duration-300 hover:bg-[#0B63CE]`}
               >
                 {/* Column 1: Title */}
                 <div className="w-1/3 flex-shrink-0">
@@ -681,7 +681,7 @@ export default function LiferayConsultationPage() {
                     {industry.description}
                   </p>
                   <div
-                    className={`absolute top-1/2 right-65 z-10 w-[190px] -translate-y-1/2 transform opacity-0 transition-all duration-300 group-hover:translate-x-4 group-hover:opacity-100`}
+                    className={`absolute top-1/2 [@media(min-width:1440px)]:right-30 [@media(min-width:1800px)]:right-65 z-10 w-[180px] -translate-y-1/2 transform opacity-0 transition-all duration-300 group-hover:translate-x-4 group-hover:opacity-100`}
                   >
                     <Image
                       src={industry.image}
@@ -743,12 +743,12 @@ export default function LiferayConsultationPage() {
           </div>
 
           {/* Tabs */}
-          <div className="mb-16 flex items-center justify-center gap-4">
+          <div className="mb-10 flex items-center justify-center gap-4">
             {liferayConsultingTabs.map((tab) => (
               <button
                 key={tab}
                 onClick={() => setActiveServiceTab(tab)}
-                className={`flex-1 rounded-full px-8 py-4 text-center text-2xl font-medium transition-colors duration-300 md:whitespace-pre ${
+                className={`flex-1 rounded-full px-8 py-4 text-center text-2xl font-medium transition-colors duration-300 md:whitespace-pre cursor-pointer ${
                   activeServiceTab === tab
                     ? "border border-blue-600 bg-blue-600 text-white"
                     : "border border-white text-white hover:border-blue-600 hover:text-white"
@@ -759,7 +759,7 @@ export default function LiferayConsultationPage() {
             ))}
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {liferayConsultingServicesData[activeServiceTab]?.map((service: string, index: number) => (
               <div key={index} className="border-b border-gray-700 px-6">
                 <div className="flex items-start gap-4 py-[40px]">
@@ -770,7 +770,7 @@ export default function LiferayConsultationPage() {
                     height={40}
                     className="h-10 w-10 flex-shrink-0"
                   />
-                  <p className="text-2xl font-medium">{service}</p>
+                  <p className="text-2xl [@media(min-width:1440px)]:text-xl [@media(min-width:1800px)]:text-2xl font-medium">{service}</p>
                 </div>
               </div>
             ))}
@@ -794,7 +794,7 @@ export default function LiferayConsultationPage() {
           </div>
 
           {/* Content Grid */}
-          <div className="grid grid-cols-1 items-start gap-2 md:grid-cols-2 lg:grid-cols-[1fr_3fr]">
+          <div className="grid grid-cols-1 items-start gap-8 md:grid-cols-2 lg:grid-cols-[1fr_3fr]">
             {/* Left Column: Numbered Service List */}
             <div className="flex flex-col">
               {endToEndServices.map((service, index) => (
@@ -815,7 +815,7 @@ export default function LiferayConsultationPage() {
             </div>
 
             {/* Right Column: Interactive Pillars */}
-            <div className="relative flex h-[500px] w-full items-start justify-between gap-4">
+            <div className="relative flex h-[500px] w-full items-start justify-between gap-5">
               {endToEndServices.map((service, index) => (
                 <div
                   key={index}
@@ -839,8 +839,8 @@ export default function LiferayConsultationPage() {
                   {/* Content for Active Pillar */}
                   {activePillar === index && (
                     <div className="pt-4">
-                      <h3 className="text-3xl font-bold">{service.name}</h3>
-                      <hr className="my-4 w-1/3 border-t-2 border-white/50" />
+                      <h3 className="text-3xl font-bold min-w-[220px]">{service.name}</h3>
+                      <hr className="my-4 w-full border-t-2 border-white/50" />
                       <p className="text-base leading-relaxed">{service.description}</p>
                     </div>
                   )}

@@ -262,7 +262,7 @@ export default function LiferayHireDeveloper() {
                 >
                   {/* Vertical Line */}
                   {index < easySteps.length - 1 && (
-                    <div className="absolute top-26 left-[32px] h-[calc(100%+5.5rem)] w-[1.23px] bg-[#EAEAFF]"></div>
+                    <div className="absolute top-30 left-[32px] h-[calc(100%+5.5rem)] w-[1.23px] bg-[#EAEAFF]"></div>
                   )}
                   {/* Step Number Circle */}
                   <div className="z-10 flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-full bg-blue-700 text-xl font-bold">
@@ -313,7 +313,7 @@ export default function LiferayHireDeveloper() {
             {teamOffersServices.map((service, index) => (
               <div key={index} className="p-9">
                 {/* Content Wrapper */}
-                <div className="flex items-center gap-7">
+                <div className="flex items-center gap-4">
                   {/* Icon */}
                   <div className="h-[115px] w-[115px] flex-shrink-0 rounded-full border border-[#1F2937] p-4 shadow-[0px_0px_0px_0.42px_#F4F4F51A]">
                     <Image
@@ -327,13 +327,13 @@ export default function LiferayHireDeveloper() {
 
                   {/* Title & Description */}
                   <div className="max-h-[120px] max-w-[455px]">
-                    <h3 className="mb-2 text-3xl font-semibold text-[#FFFFFF]">{service.title}</h3>
+                    <h3 className="mb-2 text-3xl font-semibold text-[#FFFFFF] [@media(min-width:1440px)]:text-2xl [@media(min-width:1800px)]:text-3xl">{service.title}</h3>
                     <p className="text-xl text-[#E5E7EB]">{service.description}</p>
                   </div>
                 </div>
 
                 {/* Partial Divider */}
-                {index < teamOffersServices.length - 2 && <hr className="mt-8 border-t border-[#6B7280]" />}
+                {index < teamOffersServices.length - 2 && <hr className="mt-14 border-t border-[#6B7280]" />}
               </div>
             ))}
           </div>
