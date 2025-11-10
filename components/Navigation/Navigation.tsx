@@ -2,7 +2,7 @@
 import { AnimatePresence, motion } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
-import { usePathname } from "next/navigation"
+import { usePathname, useRouter } from "next/navigation"
 import { useState } from "react"
 import CompanyMegaMenu from "components/Navigation/CompanyMegaMenu"
 import InsightsMegaMenu from "components/Navigation/InsightsMegaMenu"
@@ -21,9 +21,10 @@ export default function Navigation() {
   const [activeMenu, setActiveMenu] = useState<string | null>(null)
   const pathname = usePathname() // Get the current path
   const isCareerPage = pathname === "/career" // Check if it's the career page
-  const isConsultingPage = pathname === "/liferay-consulting-and-implementation-services"
-  const isHireDeveloperPage = pathname === "/liferay-hire-developer"
+  const isConsultingPage = pathname === "/services/liferay-consulting-and-implementation-services"
+  const isHireDeveloperPage = pathname === "/services/liferay-hire-developer"
   const [isHeaderHovered, setIsHeaderHovered] = useState(false)
+  const router = useRouter();
 
   const handleMouseEnter = (label: string) => setActiveMenu(label)
   const handleMouseLeave = () => setActiveMenu(null)
@@ -31,18 +32,17 @@ export default function Navigation() {
   const backgroundClass = isHeaderHovered
     ? "bg-black"
     : isCareerPage
-    ? "bg-transparent"
-    : isConsultingPage || isHireDeveloperPage
-    ? "bg-[#0B63CE]"
-    : "bg-black"
+      ? "bg-transparent"
+      : isConsultingPage || isHireDeveloperPage
+        ? "bg-[#0B63CE]"
+        : "bg-black"
 
   return (
     <>
       {activeMenu === null ? (
         <header
-          className={`z-50 w-full text-white transition-colors duration-300 ${
-            isCareerPage || isConsultingPage || isHireDeveloperPage ? "absolute top-0" : "relative"
-          } ${backgroundClass}`}
+          className={`z-50 w-full text-white transition-colors duration-300 ${isCareerPage || isConsultingPage || isHireDeveloperPage ? "absolute top-0" : "relative"
+            } ${backgroundClass}`}
           onMouseEnter={() => setIsHeaderHovered(true)}
           onMouseLeave={() => {
             handleMouseLeave()
@@ -64,9 +64,8 @@ export default function Navigation() {
                 <li key={item.label} onMouseEnter={() => handleMouseEnter(item.label)} className="relative">
                   <a
                     href={item.href}
-                    className={`pb-2 transition-colors ${
-                      activeMenu === item.label ? "text-white" : "text-white/90"
-                    } hover:text-white`}
+                    className={`pb-2 transition-colors ${activeMenu === item.label ? "text-white" : "text-white/90"
+                      } hover:text-white`}
                   >
                     {item.label}
                   </a>
@@ -95,8 +94,10 @@ export default function Navigation() {
                 type="button"
                 aria-label="Go"
                 className="rounded-full border border-[#00979E] p-2 text-white/80 transition-colors hover:border-[#00979E] hover:text-white"
+                onClick={() => router.push("/contact")}
+
               >
-                <div className="flex h-7 w-7 items-center justify-center">
+                <div className="flex h-7 w-7 items-center justify-center cursor-pointer">
                   <Image src="/images/icon/arrow-tr.png" alt="arrow-top-right" width={24} height={24} />
                 </div>
               </button>
@@ -114,9 +115,8 @@ export default function Navigation() {
             className="absolute left-0 z-50 w-full border-t border-white/10 bg-black text-white"
           >
             <header
-              className={`w-full text-white transition-colors duration-300 ${
-                isCareerPage || isConsultingPage || isHireDeveloperPage ? "absolute top-0" : "relative"
-              } ${backgroundClass}`}
+              className={`w-full text-white transition-colors duration-300 ${isCareerPage || isConsultingPage || isHireDeveloperPage ? "absolute top-0" : "relative"
+                } ${backgroundClass}`}
               onMouseEnter={() => setIsHeaderHovered(true)}
               onMouseLeave={() => {
                 handleMouseLeave()
@@ -138,9 +138,8 @@ export default function Navigation() {
                     <li key={item.label} onMouseEnter={() => handleMouseEnter(item.label)} className="relative">
                       <a
                         href={item.href}
-                        className={`pb-2 transition-colors ${
-                          activeMenu === item.label ? "text-white" : "text-white/90"
-                        } hover:text-white`}
+                        className={`pb-2 transition-colors ${activeMenu === item.label ? "text-white" : "text-white/90"
+                          } hover:text-white`}
                       >
                         {item.label}
                       </a>
