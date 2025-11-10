@@ -1,6 +1,6 @@
+import { BlogSection } from "components/Common"
 import TalkToExpert from "components/Common/TalkToExpert"
 import WhatMake from "components/Common/WhatMake"
-import { BlogSection } from "../../components/Common"
 
 export default function LiferaySupportMaintenancePage() {
   const featureTabs = [
