@@ -1,4 +1,8 @@
 @import "tailwindcss";
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
 
 /*
   The default border color has changed to `currentColor` in Tailwind CSS v4,
@@ -359,6 +363,88 @@
 
 .career-card:nth-child(5n + 5) {
   border-right: none;
+}
+
+/* Custom grid logic for Liferay Tech Stacks */
+.tech-grid-card {
+  /* Base border for all items, using the color from the design */
+  border: 1px solid #D1D5DB; /* This is Tailwind's gray-200 */
+}
+
+/* --- Remove outer borders --- */
+
+/* Remove top border for the first row (first 4 items) */
+.tech-grid-card:nth-child(-n + 4) {
+  border-top: none;
+}
+
+/* Remove left border for the first column */
+.tech-grid-card:nth-child(4n + 1) {
+  border-left: none;
+}
+
+/* Remove right border for the last column */
+.tech-grid-card:nth-child(4n) {
+  border-right: none;
+}
+
+/* Remove bottom border for the last row */
+/* This assumes 4 full rows (16 items total) */
+.tech-grid-card:nth-last-child(-n + 4) {
+  border-bottom: none;
+}
+
+.fancy {
+    --offset: 3px;
+    background: black;
+    border-radius: 50px;
+    position: relative;
+    height: 60px;
+    /* width:max-content; */
+    /* max-width: auto; */
+    overflow: hidden;
+}
+
+/* Conic gradient */
+.fancy::before { 
+    content: '';
+    background: conic-gradient(transparent 270deg, #00ffff, #00ffff, #00ffff);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    aspect-ratio: 1;
+    width: 100%;
+    animation: rotate 3s linear infinite;
+}
+
+/* Overlay */
+.fancy::after {
+    content: '';
+    background: inherit;
+    border-radius: inherit;
+    position: absolute;
+    inset: var(--offset);
+    height: calc(100% - 2 * var(--offset));
+    width: calc(100% - 2 * var(--offset));
+}
+
+@keyframes rotate {
+  from {
+    transform: translate(-50%, -50%) scale(1.4) rotate(0turn);
+  }
+
+  to {
+    transform: translate(-50%, -50%) scale(2.4) rotate(1turn);
+  }
+}
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 /* Custom grid logic for Liferay Tech Stacks */

@@ -1,0 +1,279 @@
+:root {
+  /* --content-max-width: 900px; */
+  --page-padding: 2rem;
+  --text-color: #333;
+  --heading-color: #1a202c;
+  --link-color: #3182ce;
+  --border-color: #e2e8f0;
+  --code-bg: #f7fafc;
+}
+
+body {
+  /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; */
+  color: var(--text-color);
+  margin: 0;
+  background: #fff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+  padding: var(--page-padding);
+}
+
+.wp-post {
+  max-width: var(--content-max-width);
+  width: 100%;
+}
+
+/* --- Typography --- */
+
+.wp-post-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 1rem 0;
+  color: var(--heading-color);
+}
+
+.entry-content {
+  line-height: 1.7;
+  font-size: 1.1rem;
+}
+
+.entry-content h1,
+.entry-content h2,
+.entry-content h3,
+.entry-content h4,
+.entry-content h5,
+.entry-content h6 {
+  color: var(--heading-color);
+  font-weight: 600;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.entry-content h5,
+.entry-content h5 b {
+  font-size: 2rem;
+  color: #3D7EF1;
+}
+
+.entry-content p {
+  margin-bottom: 1.25rem;
+}
+
+.entry-content ul,
+.entry-content ol {
+  /* padding-left: 1.5rem; */
+  margin-bottom: 1.25rem;
+}
+
+.entry-content li {
+  margin-bottom: 0.5rem;
+}
+
+.entry-content strong,
+.entry-content b {
+  font-weight: 600;
+}
+
+.entry-content pre[class*="language-"],
+.entry-content pre[class*="language-"]>code {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.entry-content pre {
+  position: relative;
+  border: 1px solid var(--border-color);
+  margin: 1.5rem 0;
+  border-radius: 0;
+  scrollbar-width: none;
+  background: var(--code-bg);
+  overflow-x: auto;
+}
+
+
+.entry-content pre>code {
+  display: block;
+  /* font-family: 'Fira Code', 'Consolas', 'Monaco', monospace; */
+  font-size: 14px;
+  line-height: 1.6;
+  white-space: pre;
+  padding: 1rem;
+}
+
+.entry-content pre.line-numbers {
+  counter-reset: linenumber;
+   padding: 1em 0 1em 3em !important;
+
+}
+
+.entry-content .line-numbers-rows {
+  position: relative;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 3.2em;
+  border-right: 1px solid var(--border-color);
+  /* padding-top: 1em; */
+  font-size: 14px;
+  user-select: none;
+  pointer-events: none;
+}
+
+.line-numbers-rows>span {
+  display: inline-block;
+  counter-increment: linenumber;
+  height: 1.6em;
+}
+
+.line-numbers-rows>span::before {
+  content: counter(linenumber);
+  color: #999;
+  display: block;
+  text-align: right;
+  padding-right: 1em;
+}
+
+div.code-toolbar {
+  position: relative;
+}
+
+div.code-toolbar>.toolbar {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+div.code-toolbar:hover>.toolbar {
+  opacity: 1;
+}
+
+.toolbar-item button {
+  background: #e9ecef;
+  color: #495057;
+  border: 1px solid #dee2e6;
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.toolbar-item button:hover {
+  background: #cbd5e0;
+}
+
+.elementor-blockquote {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+pre.line-numbers {
+  display: flex;
+  align-items: stretch;
+  margin: 10px 0 !important;
+}
+
+pre.line-numbers code {
+  flex: 1;
+  padding: 10px 15px;
+  line-height: 1.5;
+}
+
+.elementor *,
+.elementor :after,
+.elementor :before {
+  box-sizing: border-box;
+}
+
+.blog-section dd,
+.blog-section dl,
+.blog-section dt,
+.blog-section li,
+.blog-section ol,
+.blog-section ul {
+  background: #fff0;
+  border: 0;
+  font-size: 100%;
+  margin-block-end: 0;
+  margin-block-start: 0;
+  outline: 0;
+  vertical-align: baseline;
+}
+.entry-content ul {
+  list-style-type: disc !important;
+  padding-left: 1.5rem !important;
+  margin: 1rem 0;
+  color: black;
+}
+
+
+/* Optional: custom marker color or symbol */
+.entry-content ul li[aria-level="1"]::marker {
+  color: black;
+  font-size: 1rem;
+  content: "• ";
+  font-weight: 600;
+}
+
+.e-con-inner {
+  width: 100%;
+  padding: 0px 80px;
+}
+/*******************new*******************/
+/* Restore bullets for top-level list items */
+.entry-content ul li[aria-level="1"]::marker {
+  color: black;
+  font-size: 1rem;
+  font-weight: 600;
+  content: "• ";
+}
+
+/* Add spacing between first-level items */
+.entry-content ul li[aria-level="1"] {
+  margin-bottom: 0.5rem;
+  padding-left: 0.5rem;
+}
+
+/* Nested lists default styling */
+.entry-content ul li ul li {
+  list-style-type: disc;
+  margin-left: 1.5rem;
+  font-weight: 400;
+}
+
+/* Paragraph spacing inside li */
+.entry-content li p {
+  margin: 0;
+  padding: 0;
+}
+
+pre[data-line] {
+    padding: 1em 0 1em 3em;
+    position: relative;
+}
+
+/* Line numbers plugin */
+pre.line-numbers {
+  padding-left: 3.5rem;
+}
+
+/* Code font */
+code[class*="language-"] {
+  font-family: "Fira Code", monospace;
+}
+
+/* Prism toolbar / copy-to-clipboard */
+div.prismjs-default.copy-to-clipboard {
+  margin: 1rem 0;
+}

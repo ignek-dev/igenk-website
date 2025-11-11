@@ -4,6 +4,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { usePathname, useRouter } from "next/navigation"
 import { useState } from "react"
+import CalendlyButton from "components/CalendlyPopupButton/CalendlyButton"
 import CompanyMegaMenu from "components/Navigation/CompanyMegaMenu"
 import InsightsMegaMenu from "components/Navigation/InsightsMegaMenu"
 import ServicesMegaMenu from "components/Navigation/ServicesMegaMenu"
@@ -21,6 +22,7 @@ export default function Navigation() {
   const [activeMenu, setActiveMenu] = useState<string | null>(null)
   const pathname = usePathname() // Get the current path
   const isCareerPage = pathname === "/career" // Check if it's the career page
+  const isAboutUsPage = pathname === '/about'
   const isConsultingPage = pathname === "/services/liferay-consulting-and-implementation-services"
   const isHireDeveloperPage = pathname === "/services/liferay-hire-developer"
   const [isHeaderHovered, setIsHeaderHovered] = useState(false)
@@ -31,7 +33,7 @@ export default function Navigation() {
 
   const backgroundClass = isHeaderHovered
     ? "bg-black"
-    : isCareerPage
+    : isCareerPage || isAboutUsPage
       ? "bg-transparent"
       : isConsultingPage || isHireDeveloperPage
         ? "bg-[#0B63CE]"
@@ -41,7 +43,7 @@ export default function Navigation() {
     <>
       {activeMenu === null ? (
         <header
-          className={`z-50 w-full text-white transition-colors duration-300 ${isCareerPage || isConsultingPage || isHireDeveloperPage ? "absolute top-0" : "relative"
+          className={`z-50 w-full text-white transition-colors duration-300 ${isCareerPage || isAboutUsPage || isConsultingPage || isHireDeveloperPage ? "absolute top-0" : "relative"
             } ${backgroundClass}`}
           onMouseEnter={() => setIsHeaderHovered(true)}
           onMouseLeave={() => {
@@ -49,7 +51,7 @@ export default function Navigation() {
             setIsHeaderHovered(false)
           }}
         >
-          {!isCareerPage && (
+          {!isCareerPage && !isAboutUsPage && (
             <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_14%_0%,#00979E_0%,#0E7BF800_60%)] opacity-20" />
           )}{" "}
           <nav className="mx-auto flex w-full items-center px-4 py-6.5 md:px-8 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
@@ -81,15 +83,16 @@ export default function Navigation() {
             </ul>
 
             <div className="flex items-center gap-4">
-              <button
+              {/* <button
                 type="button"
                 aria-label="Calendar"
                 className="rounded-full border border-[#00979E] p-2 text-white/80 transition-colors hover:border-[#00979E] hover:text-white"
               >
-                <div className="flex h-7 w-7 items-center justify-center">
+                <div className="flex h-7 w-7 items-center justify-center cursor-pointer">
                   <Image src="/images/icon/calendar.png" alt="calendar" width={24} height={24} />
                 </div>
-              </button>
+              </button> */}
+              <CalendlyButton/>
               <button
                 type="button"
                 aria-label="Go"
@@ -115,7 +118,7 @@ export default function Navigation() {
             className="absolute left-0 z-50 w-full border-t border-white/10 bg-black text-white"
           >
             <header
-              className={`w-full text-white transition-colors duration-300 ${isCareerPage || isConsultingPage || isHireDeveloperPage ? "absolute top-0" : "relative"
+              className={`w-full text-white transition-colors duration-300 ${isCareerPage || isAboutUsPage || isConsultingPage || isHireDeveloperPage ? "absolute top-0" : "relative"
                 } ${backgroundClass}`}
               onMouseEnter={() => setIsHeaderHovered(true)}
               onMouseLeave={() => {
@@ -123,7 +126,7 @@ export default function Navigation() {
                 setIsHeaderHovered(false)
               }}
             >
-              {!isCareerPage && (
+              {!isCareerPage && !isAboutUsPage && (
                 <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_14%_0%,#00979E_0%,#0E7BF800_60%)] opacity-20" />
               )}{" "}
               <nav className="mx-auto flex w-full items-center px-4 py-6 md:px-8 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px]">

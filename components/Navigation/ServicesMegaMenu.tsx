@@ -1,5 +1,6 @@
 // components/ServicesMegaMenu.tsx
 import Image from "next/image"
+import CalendlyButton from "components/CalendlyPopupButton/CalendlyButton"
 // Data for the card on the left
 const featuredService = {
   // Path starts from the 'public' directory
@@ -67,13 +68,23 @@ export default function ServicesMegaMenu() {
                 </div>
 
                 {/* Button is now a full-width block at the bottom */}
-                <a
+                {/* <a
                   href={featuredService.buttonHref}
                   className="mb-3 flex max-h-[47px] w-70 items-center justify-center text-center align-middle text-lg font-semibold text-white transition-opacity hover:opacity-90"
                   style={{ backgroundColor: "#00979E" }}
                 >
                   {featuredService.buttonText}
-                </a>
+                </a> */}
+                <CalendlyButton
+                  customButton
+                  customButtonContent={
+                    <button  className="mb-3 flex max-h-[47px] w-70 items-center justify-center text-center align-middle text-lg font-semibold text-white transition-opacity hover:opacity-90 cursor-pointer"
+                      style={{ backgroundColor: "#00979E" }}
+                    >
+                       {featuredService.buttonText}
+                    </button>
+                  }
+                />
               </div>
             </div>
           </div>
