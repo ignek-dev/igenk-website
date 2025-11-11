@@ -434,3 +434,108 @@
     transform: translate(-50%, -50%) scale(2.4) rotate(1turn);
   }
 }
+
+
+/* WhatsMake Animation CSS */
+.whatsmake-card {
+  transition: background-color 1.2s ease-in-out, color 1.2s ease-in-out;
+}
+
+/* Define the hover animation using keyframes */
+/* .whatsmake-card:hover {
+  animation:bgFade 1.2s forwards;
+  color: #ffffff; 
+} */
+
+/* Keyframes for smooth background fade */
+/* @keyframes bgFade {
+  0% {
+    background-color: #ffffff;
+  }
+  50% {
+    background-color: #9ca3af;
+  }
+  100% {
+    background-color: #000000;
+  }
+} */
+
+/* Optional: reverse animation when hover ends */
+/* .whatsmake-card{
+  transition: background-color 1.2s ease-in-out, color 1.2s ease-in-out;
+} */
+
+/* Define the hover animation using keyframes */
+/* .whatsmake-card:hover {
+  animation:  bgFade 1.2s forwards;
+  color: #ffffff; 
+} */
+
+/* Keyframes for smooth background fade */
+/* @keyframes bgFade {
+  0% {
+    background-color: #ffffff;
+  }
+  50% {
+    background-color: #9ca3af; 
+  }
+  100% {
+    background-color: #000000;
+  }
+} */
+
+/* Optional: reverse animation when hover ends */
+/* .whatsmake-card {
+  animation:  bgFade 1.2s forwards;
+}
+
+@keyframes bgFadeReverse {
+  0% {
+    background-color: #000000;
+  }
+  50% {
+    background-color: #9ca3af;
+  }
+  100% {
+    background-color: #ffffff;
+  }
+} */
+.whatsmake-card {
+  transition: background-color 2s ease-in-out, color 2s ease-in-out;
+}
+
+/* Define the hover animation using keyframes */
+.whatsmake-card:hover {
+  animation: bgFade 2.8s forwards;
+  color: #ffffff; /* change text to white */
+}
+
+/* Keyframes for smooth background fade */
+@keyframes bgFade {
+  0% {
+    background-color: #ffffff;
+  }
+  50% {
+    background-color: #bfbfbf; /* Tailwind gray-400 */
+  }
+  100% {
+    background-color: #000000;
+  }
+}
+
+/* Optional: reverse animation when hover ends */
+.whatsmake-card{
+  animation: bgFadeReverse 2.5s forwards;
+}
+
+@keyframes bgFadeReverse {
+  0% {
+    background-color: #000000;
+  }
+  50% {
+    background-color: #bfbfbf;
+  }
+  100% {
+    background-color: #ffffff;
+  }
+}
