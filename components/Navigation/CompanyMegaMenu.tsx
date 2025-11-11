@@ -11,7 +11,7 @@ const IconArrowRight = ({ className }: { className?: string }) => (
 )
 
 // Social Icons
-const IconLinkedIn = () => (
+export const IconLinkedIn = () => (
   <svg
     width="22"
     height="22"
@@ -27,7 +27,7 @@ const IconLinkedIn = () => (
     <circle cx="4" cy="4" r="2"></circle>
   </svg>
 )
-const IconFacebook = () => (
+export const IconFacebook = () => (
   <svg
     width="22"
     height="22"
@@ -41,7 +41,7 @@ const IconFacebook = () => (
     <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
   </svg>
 )
-const IconX = () => (
+export const IconX = () => (
   <svg
     width="22"
     height="22"
@@ -56,7 +56,7 @@ const IconX = () => (
     <path d="m6 6 12 12"></path>
   </svg>
 )
-const IconInstagram = () => (
+export const IconInstagram = () => (
   <svg
     width="22"
     height="22"
