@@ -438,7 +438,7 @@
 
 /* WhatsMake Animation CSS */
 .whatsmake-card {
-  transition: background-color 1.2s ease-in-out, color 1.2s ease-in-out;
+  transition: background-color 0.8s ease-in-out, color 0.8s ease-in-out;
 }
 
 /* Define the hover animation using keyframes */
@@ -501,12 +501,12 @@
   }
 } */
 .whatsmake-card {
-  transition: background-color 2s ease-in-out, color 2s ease-in-out;
+  transition: background-color 0.8s ease-in-out, color 0.8s ease-in-out;
 }
 
 /* Define the hover animation using keyframes */
 .whatsmake-card:hover {
-  animation: bgFade 2.8s forwards;
+  animation: bgFade 0.8s forwards;
   color: #ffffff; /* change text to white */
 }
 
@@ -525,7 +525,7 @@
 
 /* Optional: reverse animation when hover ends */
 .whatsmake-card{
-  animation: bgFadeReverse 2.5s forwards;
+  animation: bgFadeReverse 0.8s forwards;
 }
 
 @keyframes bgFadeReverse {
