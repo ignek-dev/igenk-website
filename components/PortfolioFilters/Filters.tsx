@@ -1,6 +1,6 @@
 export default function Filters() {
     return (
-        <aside className="w-full md:w-1/4 lg:w-1/5 bg-white p-5 rounded-2xl shadow-sm">
+        <aside className="w-full md:w-1/4 lg:w-1/5 bg-white p-5 rounded-2xl shadow-sm h-full">
             <h2 className="font-semibold text-2xl mb-4">Filters</h2>
 
             {/* Search */}

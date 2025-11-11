@@ -2,7 +2,6 @@ import type { Metadata } from "next"
 import Filters from "components/PortfolioFilters/Filters"
 import PortfolioList from "components/PortfolioList/PortfolioList"
 
-
 export const metadata: Metadata = {
   title: "Portfolio | IGNEK",
   description: "Explore our portfolio of projects and case studies.",
@@ -52,16 +51,17 @@ export default async function PortfolioPage() {
         </div>
       </section>
       <div className="mx-auto  px-4 py-12 md:px-8">
-        <section className="mb-8 text-center">
+        {/* <section className="mb-8 text-center">
           <h1 className="text-3xl font-bold tracking-tight md:text-4xl">Our Portfolio</h1>
           <p className="mt-2 text-white/70">A curated list of our recent work and success stories.</p>
-        </section>
+        </section> */}
 
-        <div className="flex flex-col md:flex-row gap-6 p-[50px] pt-0">
+        <div className="flex flex-col md:flex-row gap-6 p-[50px] pt-0 pb-0">
           <Filters />
           <PortfolioList />
         </div>
       </div>
+        {/* <PortfolioRenderer/> */}
     </main>
   )
 }
