@@ -506,29 +506,35 @@
 
 /* Define the hover animation using keyframes */
 .whatsmake-card:hover {
-  animation: bgFade 0.8s forwards;
+  animation: bgFade 0.8s ease-in forwards;
   color: #ffffff; /* change text to white */
 }
 
 /* Keyframes for smooth background fade */
-@keyframes bgFade {
+/* @keyframes bgFade {
   0% {
     background-color: #ffffff;
   }
   50% {
-    background-color: #bfbfbf; /* Tailwind gray-400 */
+    background-color: #bfbfbf;
   }
   100% {
     background-color: #000000;
   }
-}
+} */
 
 /* Optional: reverse animation when hover ends */
 .whatsmake-card{
-  animation: bgFadeReverse 0.8s forwards;
+  animation: bgFadeReverse 0.8s ease-in forwards;
+  background-color: #FFF;
 }
 
-@keyframes bgFadeReverse {
+.card-stack .stuck .whatsmake-card {
+  background-color: #000;
+  color: #FFF;
+}
+
+/* @keyframes bgFadeReverse {
   0% {
     background-color: #000000;
   }
@@ -538,4 +544,4 @@
   100% {
     background-color: #ffffff;
   }
-}
+} */
