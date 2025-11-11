@@ -4,14 +4,10 @@ import { BlogSection } from "components/Common"
 import CaseStudy from "components/Common/CaseStudy"
 import TalkToExpert from "components/Common/TalkToExpert"
 import WhatMake from "components/Common/WhatMake"
+import { dxpUpgradeServices, features, featureTabs, supprotAndMaintanceServices, upgradePhases } from "data/liferay-upgrade"
 
 export default function LiferayUpgradePage() {
-  const featureTabs = [
-    "Data-driven Optimization",
-    "Empower Digital Builders",
-    "Seamless B2B Buying",
-    "Low/no-code Empowerment",
-  ]
+  
   const caseStudies = [
     {
       id: 1,
@@ -55,192 +51,6 @@ export default function LiferayUpgradePage() {
     { number: 6, title: "Ongoing Technical Assistance" },
     { number: 7, title: "Ongoing Technical Assistance" },
     { number: 8, title: "Ongoing Technical Assistance" },
-  ]
-
-  const supprotAndMaintanceServices = [
-    {
-      text: "Enhanced Functionality",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. ",
-    },
-    {
-      text: "Optimized Performance ",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris.",
-    },
-    {
-      text: "Stronger Security",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris.",
-    },
-    {
-      text: "Support for New Features",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris.",
-    },
-    {
-      text: "Seamless Integration",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris.",
-    },
-  ]
-  const dxpUpgradeServices = [
-    {
-      text: "Liferay <br/> Expertise",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. ",
-    },
-    {
-      text: "Customized <br/> Upgrade Strategies ",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris.",
-    },
-    {
-      text: "Comprehensive <br/> Upgrade Process",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris.",
-    },
-    {
-      text: "Enhanced </br> Security",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris.",
-    },
-    {
-      text: "Seamless </br>Integration",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris.",
-    },
-    {
-      text: "Ongoing Support </br/> and Training",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris.",
-    },
-  ]
-  const upgradePhases = [
-    {
-      phase: "1. Pre-Upgrade Phase",
-      sections: [
-        {
-          title: "Assessment Of Current Environment",
-          points: [
-            "Analyze the existing application architecture, identifying customizations and integrations.",
-            "Evaluate the performance and security aspects of the current system.",
-          ],
-        },
-        {
-          title: "Backup Data",
-          points: [
-            "Configuration Files: Backup crucial configuration files.",
-            "Database: Ensure a complete backup of the existing database.",
-            "Document Library: Backup repositories such as SharePoint and Documentum.",
-            "Application Server: Create a backup of the application server for easy restoration.",
-          ],
-        },
-        {
-          title: "Compatibility Check",
-          points: [
-            "Verify that the current database version is compatible with Liferay DXP 7.4.",
-            "Review custom modules and themes for compatibility issues.",
-          ],
-        },
-      ],
-    },
-    {
-      phase: "2. Upgrade Phase",
-      sections: [
-        {
-          title: "Setting Up The Environment",
-          points: [
-            "Prepare the new server environment for Liferay DXP 7.4 installation.",
-            "Install necessary software dependencies (Java, application server, database).",
-          ],
-        },
-        {
-          title: "Database Upgrade Steps",
-          points: [
-            "Stop the Liferay server to ensure data integrity.",
-            "Create a new schema for the upgraded version and import existing data.",
-            "Use the Liferay Upgrade Tool to run database migrations.",
-          ],
-        },
-        {
-          title: "Upgrading Extensions And Custom Modules",
-          points: [
-            "Upgrade Extensions and Custom Modules.",
-            "Modify code based on API changes and dependencies.",
-            "Rebuild and deploy updated custom modules using Gradle commands.",
-          ],
-        },
-        {
-          title: "Upgrading Themes",
-          points: [
-            "To guarantee compatibility with the latest version, update custom themes.",
-            "Modify styles, templates, and scripts as necessary.",
-            "Rebuild and deploy themes using the Liferay Theme Generator.",
-          ],
-        },
-        {
-          title: "Functional And Integration Testing",
-          points: [
-            "Conduct thorough testing to ensure all features, modules, and integrations work as expected.",
-            "As problems or bugs come up during testing, find and fix them.",
-          ],
-        },
-      ],
-    },
-    {
-      phase: "3. Post-Upgrade Phase",
-      sections: [
-        {
-          title: "User Acceptance Testing (UAT)",
-          points: [
-            "Include end users in verifying that the updated system satisfies their needs.",
-            "Gather feedback and make necessary adjustments before the final rollout.",
-          ],
-        },
-        {
-          title: "Promotion To Production",
-          points: [
-            "Once UAT is complete and all issues are resolved, promote the upgraded platform to the production environment.",
-            "Run final sanity checks to confirm that the system operates smoothly.",
-          ],
-        },
-        {
-          title: "Training & Support",
-          points: [
-            "Educate consumers about new features and functionalities; offer training sessions.",
-            "Offer ongoing support to address any post-upgrade questions or issues.",
-          ],
-        },
-      ],
-    },
-  ]
-
-  const features = [
-    {
-      title: "Advanced Personalization",
-      desc: "Create custom experiences for different user segments using enhanced personalization tools.",
-    },
-    {
-      title: "Low-Code Experience Creation",
-      desc: "Use low-code capabilities to design and customize digital experiences without extensive coding knowledge.",
-    },
-    {
-      title: "Improved Workflow Automation",
-      desc: "Automate content approvals, publishing processes, and task management more efficiently.",
-    },
-    {
-      title: "Headless CMS Flexibility",
-      desc: "Utilize headless CMS features to deliver content across various channels and devices.",
-    },
-    {
-      title: "Integrated SEO & Accessibility Audits",
-      desc: "We monitor performance, availability, user experience, security, backup, and updates.",
-    },
-    {
-      title: "DocuSign Integration",
-      desc: "Simplify document management through DocuSign integration for sending, tracking, & managing contracts.",
-    },
   ]
 
   const containerRef = useRef<HTMLDivElement | null>(null)
@@ -305,10 +115,15 @@ export default function LiferayUpgradePage() {
                 <span className="block">DXP 7.4 Upgrade</span>
               </h1>
             </div>
+<<<<<<< Updated upstream
             <p className="absolute bottom-0 max-w-xl text-lg text-white sm:text-lg md:mt-16 md:justify-self-end">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.
               Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis
               tellus.
+=======
+            <p className="absolute bottom-0 max-w-xl text-lg text-right text-white sm:text-base md:mt-16 md:justify-self-end">
+              Liferay DXP 7.4 introduces advanced features, enhanced performance, and stronger security for a more powerful digital experience. Our upgrade services cover database optimization, workspace setup, module updates, and theme enhancements, ensuring a smooth transition. Maximize the benefits of Liferay DXP 7.4 Upgrade with our seamless upgrade process, designed to meet your business needs.
+>>>>>>> Stashed changes
             </p>
           </div>
 
@@ -383,11 +198,10 @@ export default function LiferayUpgradePage() {
         <div className="mx-auto w-full items-start px-4 md:px-8 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px]">
           <div className="relative grid items-start gap-10 md:grid-cols-2">
             <h2 className="text-3xl leading-[60px] font-semibold sm:text-4xl md:text-5xl">
-              Liferay Portal Customization Services
+              Key Benefits of Liferay DXP 7.4 Upgrade
             </h2>
             <p className="absolute bottom-0 max-w-xl text-right text-xl text-white md:justify-self-end">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.
-              Pellentesque sit amet sapien fringilla,
+              Liferay DXP 7.4 Upgrade is essential for organizations aiming to enhance their digital experience capabilities and stay competitive in today’s fast-paced environment. Here are several compelling reasons to consider the upgrade
             </p>
           </div>
           <div className="pt-12">

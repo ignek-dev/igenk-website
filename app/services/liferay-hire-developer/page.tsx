@@ -7,129 +7,10 @@ import TalkToExpert from "components/Common/TalkToExpert"
 import WhatMake from "components/Common/WhatMake"
 import WordsFromCEO from "components/Common/WordsFromCEO"
 import LiferayTechnologicalStacks from "components/LiferayTechnologicalStacks"
+import { easySteps, expertiseStats, teamOffersServices, whyHireFromIgnek } from "data/liferay-hire-developer"
 
 export default function LiferayHireDeveloper() {
   // Data for the marquee animation
-  const expertiseStats = [
-    "10 Years of Liferay Expertise",
-    "50+ Liferay Projects Delivered",
-    "20+ Certified Liferay Experts",
-    "24x7 Technical Support",
-  ]
-
-  const whyHireFromIgnek = [
-    {
-      icon: "/images/icon/certified-developer.png",
-      title: ["Certified Liferay", "Developer"],
-      description:
-        "We create templates for your ReactJS projects, optimizing scalability and efficiency. Our experts leverage React’s component-based architecture, from defining data flows to architecting modular components to ensure seamless integration, we lay the foundation for robust and future-proof web applications.",
-    },
-    {
-      icon: "/images/icon/certified-developer.png", // Replace with the correct icon path
-      title: ["Transparent", "Communication"],
-      description:
-        "We analyze your React codebase using tools like ESlint and Prettier to enforce coding standards. Our reviews focus on exact component architecture, state management, and type-checking with TypeScript, suggesting improvements for code readability and maintainability.",
-    },
-    {
-      icon: "/images/icon/certified-developer.png", // Replace with the correct icon path
-      title: ["Flexible", "Hiring Models"],
-      description:
-        "Our performance wizards optimize your React app with efficient data fetching strategies using GraphQL or REST, and techniques like lazy loading and code splitting. Leveraging tools like React Profiler, we identify and eliminate performance constraints, resulting in a faster user interface.",
-    },
-    {
-      icon: "/images/icon/certified-developer.png", // Replace with the correct icon path
-      title: ["Fully", "Signed NDA"],
-      description:
-        "We tailor React components to your specific needs, using advanced patterns like Higher Order Components (HOC) and render props. We create dynamic user interfaces, utilizing React hooks and Context API to implement intricate features and custom functionalities that set your application apart.",
-    },
-    {
-      icon: "/images/icon/certified-developer.png", // Replace with the correct icon path
-      title: ["Cost", "Effective"],
-      description:
-        "We conduct version symphonies, employing tools like Babel for automatic code transformations. From introducing new features to optimizing dependencies, our developers ensure a secure and efficient upgrade process that aligns with your project’s goals.",
-    },
-    {
-      icon: "/images/icon/certified-developer.png", // Replace with the correct icon path
-      title: ["Easy", "Exit Policy"],
-      description:
-        "We employ tools like React DevTools and Redux DevTools to investigate and resolve bugs and Jest and Enzyme for comprehensive testing. Utilizing techniques such as console.log statements, breakpoints, and error boundary components, we dissect your code, identify issues.",
-    },
-  ]
-
-  const easySteps = [
-    {
-      step: "01",
-      icon: "/images/icon/search-circle.svg",
-      title: "Discover & Diagnose",
-      description:
-        "First, you tell us what you need. Explain your project requirements, goals, and any specific features you want.",
-    },
-    {
-      step: "02",
-      icon: "/images/icon/search-circle.svg",
-      title: "Screening & Select",
-      description: "We'll carefully screen our pool of developers to find the best fit for your project.",
-    },
-    {
-      step: "03",
-      icon: "/images/icon/search-circle.svg",
-      title: "Onboard Developer",
-      description: "Once you've chosen your developer, we'll handle the onboarding process smoothly.",
-    },
-  ]
-
-  const teamOffersServices = [
-    {
-      icon: "/images/icon/services.png", // Replace with your icon path
-      title: "Development and Customization",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi.",
-    },
-    {
-      icon: "/images/icon/services.png", // Replace with your icon path
-      title: "Theme Development",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi.",
-    },
-    {
-      icon: "/images/icon/services.png", // Replace with your icon path
-      title: "Expert Advice",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi.",
-    },
-    {
-      icon: "/images/icon/services.png", // Replace with your icon path
-      title: "Proof Of Concept",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi.",
-    },
-    {
-      icon: "/images/icon/services.png", // Replace with your icon path
-      title: "Ecommerce Development",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi.",
-    },
-    {
-      icon: "/images/icon/services.png", // Replace with your icon path
-      title: "Migration",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi.",
-    },
-    {
-      icon: "/images/icon/services.png", // Replace with your icon path
-      title: "Support And Maintenance",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi.",
-    },
-    {
-      icon: "/images/icon/services.png", // Replace with your icon path
-      title: "Performance Tuning",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi.",
-    },
-    {
-      icon: "/images/icon/services.png", // Replace with your icon path
-      title: "Upgradation",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi.",
-    },
-    {
-      icon: "/images/icon/services.png", // Replace with your icon path
-      title: "Liferay Architecture",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi.",
-    },
-  ]
 
   return (
     <main className="pb-16">
@@ -152,8 +33,7 @@ export default function LiferayHireDeveloper() {
                 <span className="block">Developer</span>
               </h1>
               <p className="line-height-[28px] mt-10 max-w-xl text-lg font-normal">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.
-                Pellentesque sit amet.
+                We’re a team of certified Liferay developer and Liferay Consultant with deep expertise spanning various versions of the Liferay Portal. Our “Liferay first” approach has saved clients significant costs and time, resulting in successful deliveries. Hire our Liferay developer for cost-effective solutions and faster time-to-market.
               </p>
             </div>
 
@@ -195,9 +75,7 @@ export default function LiferayHireDeveloper() {
           <div className="w-full">
             <h2 className="text-5xl leading-tight font-bold tracking-tight">Why Hire Liferay Developer From IGNEK?</h2>
             <p className="mt-4 text-lg text-black/80">
-              Transform your business with our ReactJS Custom Application Development Services. Our team of highly
-              skilled ReactJS developers is committed to delivering exceptional solutions to help you achieve your
-              business objectives.
+              At IGNEK, our Liferay Consultant bring over a decade of experience, crafting secure, scalable solutions across various industries. Hire Liferay developer for innovative problem-solving. 
             </p>
           </div>
 
@@ -249,7 +127,7 @@ export default function LiferayHireDeveloper() {
                 <span className="block">Developer In Just 3 Easy Steps</span>
               </h2>
               <p className="mt-6 max-w-lg text-xl text-[#E5E7EB]">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.
+                Hire Liferay developer in just three effortless steps with us! With our refined process, finding the perfect Liferay Consultant for your project is quick, efficient, and hassle-free. 
               </p>
             </div>
 
@@ -303,9 +181,7 @@ export default function LiferayHireDeveloper() {
               Services Our Liferay Development Team Offers
             </h2>
             <p className="mt-4 text-lg text-white/80">
-              Our Spring Boot microservices are designed to be small and operate independently, providing several
-              benefits. This approach facilitates easier maintenance, enhances productivity, improves fault tolerance,
-              aligns better with business objectives, and more.
+              Explore our expertise in Liferay! We’re experienced and ready to help with everything, from building user-friendly interfaces to managing backend systems. Whether you need a custom portal, smooth integration, or ongoing support, we’ve got you covered. Partner with us today and make the most of Liferay for your business.
             </p>
           </div>
           {/* Services Grid */}

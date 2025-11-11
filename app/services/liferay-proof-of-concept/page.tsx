@@ -2,14 +2,10 @@ import { BlogSection } from "components/Common"
 import CaseStudy from "components/Common/CaseStudy"
 import TalkToExpert from "components/Common/TalkToExpert"
 import WhatMake from "components/Common/WhatMake"
+import { featureTabs, liferayPOCServices } from "data/liferay-proof-of-concept"
 
 export default function LiferayProofOfConceptPage() {
-  const featureTabs = [
-    "Discuss PoC requirements",
-    "Assist To Validate The Assumption",
-    "Liferay Functionality Identification",
-    "Liferay Functionality Identification",
-  ]
+  
   const caseStudies = [
     {
       id: 1,
@@ -44,16 +40,7 @@ export default function LiferayProofOfConceptPage() {
         "Curabitur at lacus ac velit ornare lobortis. Vestibulum suscipit nulla quis orci. Donec posuere vulputate arcu.",
     },
   ]
-  const liferayPOCServices = [
-    "Know your industry and understand the requirements",
-    "Map high-level requirements against Liferay OOTB features",
-    "Create a full Liferay demo using mapped OOTB features",
-    "Identify customization and custom development needs",
-    "Identify Integration needs with third-party services",
-    "Liferay POC Services will help to define a more accurate project & and timeline",
-    "Define hardware needs from non-functional requirements.",
-    "Identify risks and outline them for communication",
-  ]
+
   return (
     <main className="pb-16">
       {/* Hero */}
@@ -72,9 +59,7 @@ export default function LiferayProofOfConceptPage() {
               </h1>
             </div>
             <p className="absolute bottom-0 max-w-xl text-lg text-white sm:text-lg md:mt-16 md:justify-self-end">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.
-              Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis
-              tellus.
+              Liferay Proof of Concept (PoC) Services serve as a trial to assess if Liferay technology is suitable for a specific project or solution. We demonstrate how Liferay’s portal features can be customized to meet the client's unique requirements and validate before full implementation.
             </p>
           </div>
 

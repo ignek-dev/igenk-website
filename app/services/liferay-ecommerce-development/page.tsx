@@ -4,133 +4,11 @@ import { BlogSection } from "components/Common"
 import CaseStudy from "components/Common/CaseStudy"
 import TalkToExpert from "components/Common/TalkToExpert"
 import WhatMake from "components/Common/WhatMake"
+import { ecommerceDevelopment, ecommerceDevelopmentUsingLiferay, featureTabs, steps } from "data/liferay-ecommerce-development"
 
 export default function LiferayEcommerceDevelopmentPage() {
-  const featureTabs = [
-    "Integrated shopping platform",
-    "Personalized customer experience",
-    "Multichannel sales support",
-    "Seamless checkout process",
-  ]
-
-  const ecommerceDevelopment = [
-    {
-      text: "Efficient User Interfaces",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ",
-    },
-    {
-      text: "Efficient User Interfaces",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ",
-    },
-    {
-      text: "Efficient User Interfaces",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ",
-    },
-    {
-      text: "Efficient User Interfaces",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ",
-    },
-    {
-      text: "Efficient User Interfaces",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ",
-    },
-    {
-      text: "Efficient User Interfaces",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ",
-    },
-  ]
-  const ecommerceDevelopmentUsingLiferay = [
-    {
-      text: "Product and Catalog Management",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ",
-    },
-    {
-      text: "Cart Management",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ",
-    },
-    {
-      text: "Warehouse management",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ",
-    },
-    {
-      text: "Order management",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ",
-    },
-    {
-      text: "Personalization and Targeting",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ",
-    },
-    {
-      text: "Analytics and Reporting",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ",
-    },
-    {
-      text: "Integration support",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ",
-    },
-    {
-      text: "Look and feel customization",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ",
-    },
-  ]
-  const steps = [
-    {
-      number: 1,
-      title: "Pre-Development Analysis and Planning",
-      description:
-        "We explore your business needs and craft a detailed development blueprint, outlining milestones, budget considerations, and a timeline for execution.",
-    },
-    {
-      number: 2,
-      title: "Prototyping",
-      description:
-        "You'll receive prototypes for the product, category, and homepage. After UI/UX testing and optimization, we'll seek your approval before proceeding to the design phase.",
-    },
-    {
-      number: 3,
-      title: "Design Development",
-      description:
-        "Pre-built themes are available, but for a distinctive impact, we specialize in custom designs tailored to your customers' specific needs and business goals.",
-    },
-    {
-      number: 4,
-      title: "Store Development",
-      description:
-        "We build your e-commerce infrastructure, customize features, and integrate both customers and products, using sprints with regular progress updates.",
-    },
-    {
-      number: 5,
-      title: "Extensions and Integrations",
-      description:
-        "Your store integrates with extensions and third-party systems as needed. Unsure which system fits? We guide you in choosing and integrating the best solution.",
-    },
-    {
-      number: 6,
-      title: "Quality Control",
-      description:
-        "Thorough testing of features and integrations is conducted meticulously, ensuring any bugs are swiftly addressed to mitigate security risks and safeguard against potential data loss.",
-    },
-    {
-      number: 7,
-      title: "Project Release",
-      description:
-        "Your store is live and functional! After project completion, you can continue working with us for ongoing e-commerce consultation and comprehensive post-release support.",
-    },
-  ]
+  
+  
 
   const caseStudies = [
     {
@@ -231,9 +109,7 @@ export default function LiferayEcommerceDevelopmentPage() {
               </h1>
             </div>
             <p className="absolute bottom-0 max-w-xl text-lg text-white sm:text-lg md:mt-16 md:justify-self-end">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.
-              Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis
-              tellus.
+              Liferay Ecommerce Development empowers businesses to build integrated digital commerce platforms that enhance customer experiences while optimizing transaction processes and content management.
             </p>
           </div>
 
@@ -254,12 +130,10 @@ export default function LiferayEcommerceDevelopmentPage() {
       <section className="bg-[#f7f7f7] text-black">
         <div className="mx-auto w-full px-4 py-[64px] md:px-8 md:py-[64px] lg:py-[64px] [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px]">
           <h2 className="text-5xl leading-tight font-semibold sm:text-4xl md:text-5xl">
-            Liferay Ecommerce Development
+            Ecommerce Development Using Liferay
           </h2>
           <p className="mt-4 justify-self-center text-lg leading-relaxed text-[#101012] text-gray-700">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.
-            Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis
-            tellus. Nullam quis imperdiet augue.
+            Liferay Ecommerce Development Service streamlines online retail operations with customizable storefronts, product management, order processing, and marketing tools for businesses seeking a strong online presence.
           </p>
           <div className="pt-4">
             <div className="flex flex-col">
@@ -322,8 +196,7 @@ export default function LiferayEcommerceDevelopmentPage() {
             </div>
             <div className="relative">
               <p className="absolute justify-self-center text-lg leading-relaxed text-[#101012] text-gray-700">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.
-                Pellentesque sit amet sapien fringilla,
+                Having completed numerous projects with excellence, we offer a clear and adaptable approach to Liferay Ecommerce Development, guiding you from the inception stage through to the post-release phases.
               </p>
             </div>
           </div>

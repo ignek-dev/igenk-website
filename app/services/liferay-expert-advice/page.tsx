@@ -2,44 +2,12 @@ import ScheduleMeetingButton from "components/Button/ScheduleMeetingButton"
 import { BlogSection } from "components/Common"
 import TalkToExpert from "components/Common/TalkToExpert"
 import WhatMake from "components/Common/WhatMake"
+import { expoerAdvices, featureTabs, solutions } from "data/liferayExpert"
 
 export default function LiferayExpertAdvicePage() {
-  const featureTabs = [
-    "Liferay Consultation",
-    "Liferay Architectural Design",
-    "Liferay Customization and Development",
-    "Liferay Performance Optimization",
-  ]
-  const expoerAdvices = [
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.",
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.",
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.",
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.",
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.",
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.",
-  ]
-  const solutions = [
-    {
-      number: "01",
-      title: "Liferay Production Release Issues",
-      desc: "Liferay Production Release Issues Navigating Liferay production releases requires precision and a strong grasp of the platform’s intricacies. Our experts provide in-depth analysis and troubleshooting to quickly identify and resolve potential issues. From deployment challenges to compatibility concerns, we deliver actionable insights to ensure a smooth and successful rollout.",
-    },
-    {
-      number: "02",
-      title: "Liferay Performance Issues",
-      desc: "Collaborate with our architects to build a strong architectural foundation for your Liferay deployment. We deliver tailored solutions that are scalable, resilient, and future-proof, ensuring alignment with your business objectives. From cloud migration and microservices adoption to enhancing high availability, our experts provide the guidance needed for long-term success.",
-    },
-    {
-      number: "03",
-      title: "Development & Integration",
-      desc: "Collaborate with our architects to build a strong architectural foundation for your Liferay deployment. We deliver tailored solutions that are scalable, resilient, and future-proof, ensuring alignment with your business objectives. From cloud migration and microservices adoption to enhancing high availability, our experts provide the guidance needed for long-term success.",
-    },
-    {
-      number: "04",
-      title: "Liferay Approaches for Architecture",
-      desc: "Collaborate with our architects to build a strong architectural foundation for your Liferay deployment. We deliver tailored solutions that are scalable, resilient, and future-proof, ensuring alignment with your business objectives. From cloud migration and microservices adoption to enhancing high availability, our experts provide the guidance needed for long-term success.",
-    },
-  ]
+
+ 
+
 
   return (
     <main className="pb-16">
@@ -59,9 +27,7 @@ export default function LiferayExpertAdvicePage() {
               </h1>
             </div>
             <p className="absolute bottom-0 max-w-xl text-lg text-white sm:text-lg md:mt-16 md:justify-self-end">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.
-              Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis
-              tellus.
+              Our Liferay Expert Advice Services are here to provide you with the guidance and expertise you need to ensure your digital experience platform performs at its best. Whether you are just starting with Liferay or looking to optimize and scale your existing setup, our team of seasoned professionals is ready to assist you every step of the way.  
             </p>
           </div>
 
@@ -87,8 +53,7 @@ export default function LiferayExpertAdvicePage() {
                 Liferay Expert Advice Service
               </h2>
               <p className="mt-4 max-w-xl text-sm text-[20px] text-gray-700">
-                As a leading Liferay Development Company, we provide comprehensive Liferay Development Services
-                including custom portlets, Rest API integration, portal customization,
+               Gain actionable insights through our Liferay Expert Advice Service and Liferay Consultation, helping you enhance performance, implement new features, and create smooth, engaging user experiences.
               </p>
             </div>
             <div className="w-full space-y-4 md:justify-self-end">
@@ -123,11 +88,10 @@ export default function LiferayExpertAdvicePage() {
               Solutions For Production, Performance, Development And Architecture
             </h1>
             <p className="text-lg leading-relaxed text-white">
-              Our Liferay Expert Advice Services are designed to provide comprehensive support and innovative solutions
-              to enhance your Liferay experience.
+              From production releases to architecture design, our Liferay Expert Advice Services offer tailored strategies and hands-on support to improve efficiency, scalability, and overall platform performance.  
             </p>
             <div>
-              <ScheduleMeetingButton isFullWidth={false} btnName="Schedule Meeting" />
+              <ScheduleMeetingButton isFullWidth={false} btnName="Schedule a Call" />
             </div>
           </div>
 

@@ -3,16 +3,10 @@ import { useEffect, useRef, useState } from "react"
 import { BlogSection } from "components/Common"
 import TalkToExpert from "components/Common/TalkToExpert"
 import WhatMake from "components/Common/WhatMake"
+import { featureTabs, keyActivityArchitecureSystem } from "data/liferay-architecture-design"
 
 export default function LiferayArchitectureDesignPage() {
-  const featureTabs = [
-    "System Architecture",
-    "Database Architecture",
-    "Deployment Architecture",
-    "Lorem ipsum",
-    "Lorem ipsum",
-    "Lorem ipsum",
-  ]
+  
   const systemArchitecure = [
     {
       text: "System Architecure1",
@@ -50,48 +44,7 @@ export default function LiferayArchitectureDesignPage() {
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque",
     },
   ]
-  const keyActivityArchitecureSystem = [
-    {
-      text: "Understand Business Goals",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris.",
-    },
-    {
-      text: "System Components & frameworks",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris.",
-    },
-    {
-      text: "Protocols & Communication Channels",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris.",
-    },
-    {
-      text: "Aligning OOTB features with Use Cases.",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris.",
-    },
-    {
-      text: "Draw Diagrams",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris.",
-    },
-    {
-      text: "System Testing",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris.",
-    },
-    {
-      text: "Monitoring and Analytics",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris.",
-    },
-    {
-      text: "Custom Development & Customization",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris.",
-    },
-  ]
+
   const containerRef = useRef<HTMLDivElement | null>(null)
   const [isDragging, setIsDragging] = useState(false)
   const [startX, setStartX] = useState(0)
@@ -155,9 +108,7 @@ export default function LiferayArchitectureDesignPage() {
               </h1>
             </div>
             <p className="absolute bottom-0 max-w-xl text-lg text-white sm:text-lg md:mt-16 md:justify-self-end">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.
-              Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis
-              tellus.
+              Liferay Architecture Design Services provides tailored solutions for designing and optimizing Liferay applications. We focus on aligning architecture with business needs for enhanced performance and scalability. Our services offer strategic guidance from concept to implementation, covering security, integrations, and user experience.
             </p>
           </div>
 
