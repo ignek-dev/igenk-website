@@ -17,6 +17,7 @@ interface BlogCardProps {
 
 export default function BlogCard({ blog }: BlogCardProps) {
   return (
+    <div className="bg-white rounded-[19px] h-[480px]">
     <div className="bg-white rounded-[19px] p-4 h-[302px]">
       <div className="rounded-[19px] overflow-hidden">
         <Image
@@ -36,8 +37,8 @@ export default function BlogCard({ blog }: BlogCardProps) {
         <span>{blog.readTime}</span>
       </div>
 
-      <h3 className="text-lg font-semibold text-gray-900 mt-3">
-        {blog.title.length > 35 ? `${blog.title.slice(0, 35)}...` : blog.title}
+      <h3 className="text-2xl font-semibold text-gray-900 mt-3">
+        {blog.title.length > 35 ? `${blog.title.slice(0, 85)}...` : blog.title}
       </h3>
 
       <div className="flex items-center mt-4 space-x-2 text-sm text-gray-600">
@@ -52,6 +53,7 @@ export default function BlogCard({ blog }: BlogCardProps) {
         <span>•</span>
         <span>{blog.date}</span>
       </div>
+    </div>
     </div>
   );
 }

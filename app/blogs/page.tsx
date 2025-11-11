@@ -18,6 +18,46 @@ const blogs: BlogData[] = [
     authPic: "/images/blogs/blogAuthor.png",
   },
   {
+    id: 1,
+    title: "Build your own Chrome Extension with React",
+    author: "Bhavin Panchani",
+    date: "Jul 7, 2025",
+    readTime: "6 mins read",
+    category: "Liferay Blog",
+    image: "/images/blogs/blogImage.png",
+    authPic: "/images/blogs/blogAuthor.png",
+  },
+  {
+    id: 1,
+    title: "Build your own Chrome Extension with React",
+    author: "Bhavin Panchani",
+    date: "Jul 7, 2025",
+    readTime: "6 mins read",
+    category: "Liferay Blog",
+    image: "/images/blogs/blogImage.png",
+    authPic: "/images/blogs/blogAuthor.png",
+  },
+  {
+    id: 1,
+    title: "Build your own Chrome Extension with React",
+    author: "Bhavin Panchani",
+    date: "Jul 7, 2025",
+    readTime: "6 mins read",
+    category: "Liferay Blog",
+    image: "/images/blogs/blogImage.png",
+    authPic: "/images/blogs/blogAuthor.png",
+  },
+  {
+    id: 1,
+    title: "Build your own Chrome Extension with React",
+    author: "Bhavin Panchani",
+    date: "Jul 7, 2025",
+    readTime: "6 mins read",
+    category: "Liferay Blog",
+    image: "/images/blogs/blogImage.png",
+    authPic: "/images/blogs/blogAuthor.png",
+  },
+  {
     id: 2,
     title: "Learn how to optimize React apps",
     author: "Bhavin Panchani",
@@ -78,89 +118,6 @@ const cardData = [
     icon: "/images/blogs/liferayIcon.png",
     title: "Liferay",
     description: "Explore strategies, leadership skills, and growth tactics for",
-  },
-]
-const toolsData = [
-  {
-    id: 1,
-    icon: "/images/marketplace/ai-blog-workspace.png", // Note: Update paths to your images
-    module: "Artificial Intelligence",
-    title: "AI Blog Workspace For Liferay",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet.",
-    tags: ["Content Management And Operation", "Content Writing", "Blog Writing"],
-  },
-  {
-    id: 2,
-    icon: "/images/marketplace/batch-client-extension.png",
-    module: "Batch",
-    title: "Batch Client Extension Generator",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet.",
-    tags: ["Content Management And Operation", "Content Writing", "Blog Writing"],
-  },
-  {
-    id: 3,
-    icon: "/images/marketplace/email-authentication.png",
-    module: "Artificial Intelligence",
-    title: "Email OTP Authentication for Community Edition",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet.",
-    tags: ["Content Management And Operation", "Content Writing", "Blog Writing"],
-  },
-  {
-    id: 4,
-    icon: "/images/marketplace/ai-blog-workspace.png",
-    module: "Artificial Intelligence",
-    title: "AI Blog Workspace For Liferay",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet.",
-    tags: ["Content Management And Operation", "Content Writing", "Blog Writing"],
-  },
-  {
-    id: 5,
-    icon: "/images/marketplace/batch-client-extension.png",
-    module: "Batch",
-    title: "Batch Client Extension Generator",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet.",
-    tags: ["Content Management And Operation", "Content Writing", "Blog Writing"],
-  },
-  {
-    id: 6,
-    icon: "/images/marketplace/email-authentication.png",
-    module: "Artificial Intelligence",
-    title: "Email OTP Authentication for Community Edition",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet.",
-    tags: ["Content Management And Operation", "Content Writing", "Blog Writing"],
-  },
-  {
-    id: 7,
-    icon: "/images/marketplace/ai-blog-workspace.png",
-    module: "Artificial Intelligence",
-    title: "AI Blog Workspace For Liferay",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet.",
-    tags: ["Content Management And Operation", "Content Writing", "Blog Writing"],
-  },
-  {
-    id: 8,
-    icon: "/images/marketplace/batch-client-extension.png",
-    module: "Batch",
-    title: "Batch Client Extension Generator",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet.",
-    tags: ["Content Management And Operation", "Content Writing", "Blog Writing"],
-  },
-  {
-    id: 9,
-    icon: "/images/marketplace/email-authentication.png",
-    module: "Artificial Intelligence",
-    title: "Email OTP Authentication for Community Edition",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet.",
-    tags: ["Content Management And Operation", "Content Writing", "Blog Writing"],
   },
 ]
 
@@ -238,9 +195,12 @@ export default function Blogs() {
                     <Image
                       src={blog.icon}
                       alt={blog.authorName}
+                      // width={40}
+                      // height={40}
+                      // className="rounded-[50%] border-2 border-white/80"
                       width={40}
                       height={40}
-                      className="rounded-[50%] border-2 border-white/80"
+                      className="w-10 h-10 object-cover rounded-full border-2 border-white/80"
                     />
                     <span className="font-medium">{blog.authorName}</span>
                     <span className="opacity-80">• {blog.date}</span>
@@ -249,7 +209,7 @@ export default function Blogs() {
               </div>
             ))}
           </div>
-          <div className="flex flex-col px-6 py-16">
+          <div className="flex flex-col py-16">
             {/* Section Title */}
             <h2 className="mb-6 text-5xl leading-tight font-semibold tracking-tight text-[#000000]">
               Browse By Category
@@ -262,7 +222,7 @@ export default function Blogs() {
               ))}
             </div>
           </div>
-          <div className="px-6 pb-16">
+          <div className="pb-16">
             <h2 className="mb-6 text-5xl leading-tight font-semibold tracking-tight text-[#000000]">Browse Latest Blog</h2>
               <div className="grid grid-cols-1 gap-11 md:grid-cols-2 lg:grid-cols-3">
                 {blogs.map((blog) => (
@@ -273,7 +233,7 @@ export default function Blogs() {
             
 
             {/* --- Pagination --- */}
-            {/* <Pagination /> */}
+            <Pagination />
           </div>
         </div>
       </section>
