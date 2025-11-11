@@ -1,31 +1,31 @@
-import React from 'react';
+import React from "react"
 
 // Array of text to display in the frame
 const frameContent = [
-  'DELIVER SEAMLESS JOURNEYS',
-  'PERSONALIZE EVERY INTERACTION',
-  'TRANSFORM CUSTOMER TOUCHPOINTS',
-  'AUTOMATE WHAT MATTERS',
-  'TURN DATA INTO DECISIONS',
-  'LEAD WITH STRATEGY',
-];
+  "DELIVER SEAMLESS JOURNEYS",
+  "PERSONALIZE EVERY INTERACTION",
+  "TRANSFORM CUSTOMER TOUCHPOINTS",
+  "AUTOMATE WHAT MATTERS",
+  "TURN DATA INTO DECISIONS",
+  "LEAD WITH STRATEGY",
+]
 
 const IntermediateFrame = () => {
-    const marqueeContent = [...frameContent, ...frameContent];
+  const marqueeContent = [...frameContent, ...frameContent]
   return (
-    <section className="w-full h-[79px] bg-[#FFFFFF] flex items-center justify-around overflow-hidden">
-      <div className="flex animate-marquee-custom gap-x-24">
+    <section className="flex h-[83px] w-full items-center justify-around overflow-hidden bg-[#FFFFFF]">
+      <div className="animate-marquee-custom flex gap-x-24">
         {marqueeContent.map((text, index) => (
           <p
             key={`${text}-${index}`}
-            className="font-normal text-black uppercase text-[24px] tracking-wide whitespace-nowrap"
+            className="text-[24px] font-normal tracking-wide whitespace-nowrap text-black uppercase"
           >
             {text}
           </p>
         ))}
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default IntermediateFrame;
+export default IntermediateFrame

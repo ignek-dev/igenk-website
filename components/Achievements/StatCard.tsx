@@ -1,28 +1,33 @@
 // components/StatCard.tsx
 
-import React from 'react';
+import React from "react"
 
 interface StatCardProps {
-  number: string;
-  title: string;
-  description: string;
+  number: string
+  title: string
+  description: string
+  isInView: boolean
+  index: number
 }
 
-const StatCard: React.FC<StatCardProps> = ({ number, title, description }) => {
-  return (
-    <div className="flex flex-col">
-      <div className="text-white text-7xl font-bold mb-4">
-        {number}
-      </div>
-      <div className="border-t border-gray-700 pt-4 mb-4" /> {/* Horizontal line */}
-      <h4 className="text-white text-xl font-semibold mb-2">
-        {title}
-      </h4>
-      <p className="text-gray-400 text-base">
-        {description}
-      </p>
-    </div>
-  );
-};
+const StatCard: React.FC<StatCardProps> = ({ number, title, description, isInView, index }) => {
+  // Determine animation direction based on the card's index
+  const animationDirection = index < 2 ? "animate-slide-top" : "animate-slide-bottom"
 
-export default StatCard;
+  // Add a staggered delay for a nicer effect
+
+  return (
+    <div
+      className={`flex flex-col ${
+        isInView ? `animate-when-visible ${animationDirection} animation-delay-200` : "opacity-0"
+      }`}
+    >
+      <div className="line-height-[88px] mb-16.5 text-8xl font-semibold text-white">{number}</div>
+      <div className="mb-12.5 border-t border-gray-700" /> {/* Horizontal line */}
+      <h4 className="line-height-[32px] mb-2 text-2xl font-semibold text-white">{title}</h4>
+      <p className="line-height-[28px] w-full text-lg leading-relaxed text-gray-400">{description}</p>
+    </div>
+  )
+}
+
+export default StatCard

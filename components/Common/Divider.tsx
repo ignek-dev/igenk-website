@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react"
 
 const Divider: React.FC = () => {
-  return <div className="w-full h-px bg-gray-700 my-4" />;
-};
+  return <div className="my-4 h-px w-full bg-gray-700" />
+}
 
-export default Divider;
+export default Divider

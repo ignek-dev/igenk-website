@@ -1,19 +1,19 @@
-import React from 'react';
-import Image from 'next/image';
+import Image from "next/image"
+import React from "react"
 
 interface CapabilityCardProps {
-  iconSrc: string;
-  title: string;
-  description: string;
+  iconSrc: string
+  title: string
+  description: string
 }
 
 const CapabilityCard: React.FC<CapabilityCardProps> = ({ iconSrc, title, description }) => {
   return (
-    <div className="flex flex-col p-4">
+    <div className="flex flex-col p-6 pl-0">
       {/* Icon and Title */}
       <div className="mb-2 flex items-center space-x-3">
-        <Image src={iconSrc} alt={`${title} icon`} width={36} height={36} className="object-contain" />
-        <h3 className="text-xl font-semibold text-white">{title}</h3>
+        <Image src={iconSrc} alt={`${title} icon`} width={48} height={48} className="object-contain" />
+        <h3 className="text-3xl font-semibold text-white whitespace-pre [@media(min-width:1440px)]:text-2xl  [@media(min-width:1800px)]:text-3xl">{title}</h3>
       </div>
 
       {/* "Progress Bar" */}
@@ -29,9 +29,9 @@ const CapabilityCard: React.FC<CapabilityCardProps> = ({ iconSrc, title, descrip
         Your browser does not support the video tag.
       </video>
       {/* Description */}
-      <p className="text-sm leading-relaxed text-gray-300">{description}</p>
+      <p className="text-base leading-relaxed text-gray-300">{description}</p>
     </div>
   )
-};
+}
 
-export default CapabilityCard;
+export default CapabilityCard

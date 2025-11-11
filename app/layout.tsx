@@ -1,15 +1,15 @@
 import "styles/tailwind.css"
-import Navigation from "../components/Navigation/Navigation"
+import { Poppins } from "next/font/google"
+import BottomBar from "components/Common/BottomBar"
 import { Footer } from "../components/Common"
-import { Poppins } from "next/font/google";
-import BottomBar from "components/Common/BottomBar";
+import Navigation from "../components/Navigation/Navigation"
 
 const poppins = Poppins({
   subsets: ["latin"],
   style: ["normal", "italic"],
   weight: ["400", "500", "600", "700", "800"],
   variable: "--font-poppins",
-});
+})
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (

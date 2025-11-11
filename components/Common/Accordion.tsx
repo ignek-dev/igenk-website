@@ -4,7 +4,7 @@ import { useState } from "react"
 
 export type AccordionItem = {
   title: string
-  content: string | React.ReactNode;
+  content: string | React.ReactNode
 }
 
 type AccordionProps = {
@@ -50,5 +50,3 @@ export function Accordion({ items, defaultOpenIndex = 0 }: AccordionProps) {
     </div>
   )
 }
-
-

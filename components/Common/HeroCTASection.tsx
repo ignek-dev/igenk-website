@@ -1,38 +1,40 @@
-import React from 'react';
-import AccordionItem from './AccordionItem';
-import ExpertCard from './ExpertCard';
+"use client"
+
+import React from "react"
+import { useInView } from "hooks/useInView"
+import AccordionItem from "./AccordionItem"
+import ExpertCard from "./ExpertCard"
 
 const faqItems = [
   {
-    title: 'What Services Do You Offer?',
+    title: "What Services Do You Offer?",
     content: (
       <p>
-        We offer end-to-end digital solutions including UX/UI design, custom development, digital
-        transformation, staff augmentation, and integration services across platforms like Liferay, ReactJS,
-        and more.
+        We offer end-to-end digital solutions including UX/UI design, custom development, digital transformation, staff
+        augmentation, and integration services across platforms like Liferay, ReactJS, and more.
       </p>
     ),
   },
   {
-    title: 'Do You Work With Small Businesses Or Only Large Enterprises?',
+    title: "Do You Work With Small Businesses Or Only Large Enterprises?",
     content: (
       <p>
-        We work with businesses of all sizes, from startups to large enterprises. Our solutions are tailored
-        to meet the unique needs and goals of each client.
+        We work with businesses of all sizes, from startups to large enterprises. Our solutions are tailored to meet the
+        unique needs and goals of each client.
       </p>
     ),
   },
   {
-    title: 'How do you ensure project quality and timelines?',
+    title: "How do you ensure project quality and timelines?",
     content: (
       <p>
-        We follow agile methodologies, conduct regular quality checks, and maintain transparent communication
-        with clients to ensure projects are delivered on time and to the highest quality standards.
+        We follow agile methodologies, conduct regular quality checks, and maintain transparent communication with
+        clients to ensure projects are delivered on time and to the highest quality standards.
       </p>
     ),
   },
   {
-    title: 'Can I hire a dedicated developer or team for my project?',
+    title: "Can I hire a dedicated developer or team for my project?",
     content: (
       <p>
         Yes, we provide flexible engagement models, including dedicated developer or team hiring, to seamlessly
@@ -41,7 +43,7 @@ const faqItems = [
     ),
   },
   {
-    title: 'What technologies do you specialize in?',
+    title: "What technologies do you specialize in?",
     content: (
       <p>
         Our expertise spans a wide range of modern technologies including Java, React, Spring Boot, Liferay,
@@ -49,21 +51,27 @@ const faqItems = [
       </p>
     ),
   },
-];
+]
 
 const HeroCTASection: React.FC = () => {
+  const [sectionRef, isInView] = useInView({
+    triggerOnce: true,
+    threshold: 0.2,
+  })
+
   return (
-    <section className="bg-black text-white py-20 lg:py-24">
-      <div className="mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px] grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+    <section ref={sectionRef} className="bg-black py-16 text-white lg:py-16">
+      <div className="mx-auto grid w-full items-start gap-12 px-4 md:px-6 lg:grid-cols-2 lg:gap-16 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
         {/* Left Column: FAQ Section */}
-        <div>
+        <div className={isInView ? "animate-when-visible animate-slide-left" : "opacity-0"}>
           {/* Main Title and Description */}
-          <h2 className="text-5xl font-bold leading-tight mb-8">
+          <h2 className="mb-8 text-5xl leading-tight font-bold">
             Flexible Platforms.
             <span className="block">Scalable Experiences.</span>
           </h2>
-          <p className="mt-6 text-lg text-gray-400 max-w-md mb-12">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br /> Ut et massa mi. Aliquam in hendrerit urna.
+          <p className="mt-6 mb-12 max-w-md text-lg text-gray-400">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            <br /> Ut et massa mi. Aliquam in hendrerit urna.
           </p>
 
           {/* Accordion List */}
@@ -75,12 +83,16 @@ const HeroCTASection: React.FC = () => {
         </div>
 
         {/* Right Column: Expert Card */}
-        <div className="sticky top-24"> 
+        <div
+          className={`sticky top-24 ${
+            isInView ? "animate-when-visible animate-slide-right animation-delay-200" : "opacity-0"
+          }`}
+        >
           <ExpertCard />
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default HeroCTASection;
+export default HeroCTASection

@@ -1,6 +1,6 @@
 // components/SolutionsMegaMenu.tsx
-
 // --- Data for the Mega Menu ---
+import Image from "next/image"
 // const iconUrl = "/images/mega-menu/solution-e1.png"
 
 const solutionsLinks = [
@@ -28,7 +28,11 @@ const marketplaceLinks = [
 ]
 
 const aiLinks = [
-  { text: "Cognitive Virtual Assistants for Enterprise Experiences", href: "#", icon: "/images/mega-menu/liferay-ai-1.png" },
+  {
+    text: "Cognitive Virtual Assistants for Enterprise Experiences",
+    href: "#",
+    icon: "/images/mega-menu/liferay-ai-1.png",
+  },
   { text: "AI-Driven Personalization & Engagement", href: "#", icon: "/images/mega-menu/liferay-ai-2.png" },
   { text: "Intelligent Search & Knowledge Discovery", href: "#", icon: "/images/mega-menu/liferay-ai-3.png" },
   { text: "Autonomous Workflow Optimization", href: "#", icon: "/images/mega-menu/liferay-ai-4.png" },
@@ -39,7 +43,7 @@ const aiLinks = [
 // --- Main SolutionsMegaMenu Component ---
 export default function SolutionsMegaMenu() {
   return (
-    <div className="absolute inset-x-0 top-full z-50 border-t border-white/10 bg-black text-white">
+    <>
       <div className="mx-auto w-full px-4 py-12 md:px-8 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px]">
         <div className="flex w-full justify-between gap-24">
           {/* Left Group (Solutions & Integrations) */}
@@ -53,7 +57,13 @@ export default function SolutionsMegaMenu() {
                       href={link.href}
                       className="flex items-center gap-4 text-xl text-white/100 transition-colors hover:text-white"
                     >
-                      <img src={link.icon} alt="" className="size-[60px] flex-shrink-0 rounded-lg" />
+                      <Image
+                        src={link.icon}
+                        alt={link.text}
+                        width={60}
+                        height={60}
+                        className="flex-shrink-0 rounded-lg"
+                      />
                       {/* CHANGE: Removed whitespace-pre and used dangerouslySetInnerHTML for line breaks */}
                       <span dangerouslySetInnerHTML={{ __html: link.text }} />
                     </a>
@@ -70,7 +80,13 @@ export default function SolutionsMegaMenu() {
                       href={link.href}
                       className="flex items-center gap-4 text-xl text-white/100 transition-colors hover:text-white"
                     >
-                      <img src={link.icon} alt="" className="size-[60px] flex-shrink-0 rounded-lg" />
+                      <Image
+                        src={link.icon}
+                        alt={link.text}
+                        width={60}
+                        height={60}
+                        className="flex-shrink-0 rounded-lg"
+                      />
                       <span dangerouslySetInnerHTML={{ __html: link.text }} />
                     </a>
                   </li>
@@ -89,7 +105,13 @@ export default function SolutionsMegaMenu() {
                       href={link.href}
                       className="flex items-center gap-4 text-xl text-white/100 transition-colors hover:text-white"
                     >
-                      <img src={link.icon} alt="" className="size-[60px] flex-shrink-0 rounded-lg" />
+                      <Image
+                        src={link.icon}
+                        alt={link.text}
+                        width={60}
+                        height={60}
+                        className="flex-shrink-0 rounded-lg"
+                      />
                       <span dangerouslySetInnerHTML={{ __html: link.text }} />
                     </a>
                   </li>
@@ -105,7 +127,13 @@ export default function SolutionsMegaMenu() {
                       href={link.href}
                       className="flex items-center gap-4 text-xl text-white/100 transition-colors hover:text-white"
                     >
-                      <img src={link.icon} alt="" className="size-[60px] flex-shrink-0 rounded-lg" />{" "}
+                      <Image
+                        src={link.icon}
+                        alt={link.text}
+                        width={60}
+                        height={60}
+                        className="flex-shrink-0 rounded-lg"
+                      />{" "}
                       <span dangerouslySetInnerHTML={{ __html: link.text }} />
                     </a>
                   </li>
@@ -115,6 +143,6 @@ export default function SolutionsMegaMenu() {
           </div>
         </div>
       </div>
-    </div>
+    </>
   )
 }

@@ -1,6 +1,8 @@
-'use client'
+"use client"
 
-import React, { useRef, useState } from "react"
+import { motion, useTransform } from "framer-motion"
+import React from "react"
+import { useSharedScroll } from "components/Common/ScrollContextProvider"
 import WhatWeBringCard from "./WhatWeBringCard"
 
 // Dummy data for the six cards
@@ -43,69 +45,40 @@ const cardData = [
   },
 ]
 
-const WhatWeBring = () => {
-  const scrollRef = useRef<HTMLDivElement>(null)
-  const [isDragging, setIsDragging] = useState(false)
-  const [startX, setStartX] = useState(0)
-  const [scrollLeft, setScrollLeft] = useState(0)
+const WhatWeBring: React.FC = () => {
+  // 👇 Use the context hook to get the scroll progress
+  const scrollYProgress = useSharedScroll()
 
-  const handleMouseDown = (e: React.MouseEvent) => {
-    if (!scrollRef.current) return
-    setIsDragging(true)
-    setStartX(e.pageX - scrollRef.current.offsetLeft)
-    setScrollLeft(scrollRef.current.scrollLeft)
-  }
-
-  const handleMouseLeave = () => {
-    setIsDragging(false)
-  }
-
-  const handleMouseUp = () => {
-    setIsDragging(false)
-  }
-
-  const handleMouseMove = (e: React.MouseEvent) => {
-    if (!isDragging || !scrollRef.current) return
-    e.preventDefault() 
-    const x = e.pageX - scrollRef.current.offsetLeft
-    const walk = (x - startX) * 1.5 
-    scrollRef.current.scrollLeft = scrollLeft - walk
-  }
+  // The rest of the animation logic is the same
+  const x = useTransform(scrollYProgress, [0, 0.75], ["0%", "-82%"])
 
   return (
-    <section className="overflow-hidden bg-black py-20 text-white">
-      {/* Container for the header, matching your site's padding */}
-      <div className="mx-auto mb-16 w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px]">
-        <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
-          <h2 className="text-5xl leading-tight font-bold">
+    // This section is "sticky" and stays on screen while the parent scrolls
+    <section className="sticky top-0 z-10 flex h-screen items-center overflow-hidden bg-black py-16 text-white">
+      <div className="mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
+        {/* Header content (your styling is preserved) */}
+        <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between [@media(min-width:1280px)]:mt-24 [@media(min-width:1800px)]:mt-0">
+          <h2 className="line-height-[60px] text-5xl leading-tight font-bold [@media(min-width:1440px)]:text-4xl [@media(min-width:1520px)]:text-5xl [@media(min-width:1520px)]:pt-8">
             What We Bring To Your
             <br />
             Digital Experience
           </h2>
-          <p className="max-w-xl pt-2 text-lg text-gray-300">
-            We help businesses craft a clear and actionable digital roadmap that aligns with both short-term objectives
-            and long-term vision.
+          <p className="line-height-[30px] max-w-xl pt-8.5 text-right text-lg text-gray-300">
+            We help businesses craft a clear and actionable digital roadmap...
           </p>
         </div>
-      </div>
 
-      {/* Horizontally scrolling container for the cards */}
-      <div
-        ref={scrollRef}
-        className="flex overflow-x-auto space-x-8 pb-8 cursor-grab active:cursor-grabbing select-none scrollbar-hide px-4 md:px-8 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px]"
-        onMouseDown={handleMouseDown}
-        onMouseLeave={handleMouseLeave}
-        onMouseUp={handleMouseUp}
-        onMouseMove={handleMouseMove}
-      >
-        {cardData.map((card) => (
-          <WhatWeBringCard
-            key={card.cardNumber}
-            cardNumber={card.cardNumber}
-            title={card.title}
-            description={card.description}
-          />
-        ))}
+        {/* This motion.div moves horizontally based on the scroll progress */}
+        <motion.div style={{ x }} className="flex space-x-11 pt-15 pb-16">
+          {cardData.map((card) => (
+            <WhatWeBringCard
+              key={card.cardNumber}
+              cardNumber={card.cardNumber}
+              title={card.title}
+              description={card.description}
+            />
+          ))}
+        </motion.div>
       </div>
     </section>
   )
