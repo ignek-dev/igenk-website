@@ -80,8 +80,8 @@ export default function LiferaySupportMaintenancePage() {
       {/* Hero */}
       <section className="relative bg-black text-white">
         <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_10%_0%,#0E7BF8_0%,#00979E_40%,transparent_65%)] opacity-25" />
-        <div className="mx-auto w-full px-4 pt-12 pb-16 md:px-8 md:pt-20 md:pb-28 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px]">
-          <div className="relative grid items-start gap-10 md:grid-cols-2">
+        <div className="mx-auto w-full px-4 pt-12 pb-16 md:px-8 md:pt-20 md:pb-28 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
+          <div className="relative grid items-start gap-14 md:grid-cols-2">
             <div className="">
               <div className="inline-flex items-center rounded-full border border-white/30 px-4 py-2 text-lg text-white">
                 Liferay Services
@@ -92,18 +92,18 @@ export default function LiferaySupportMaintenancePage() {
                 <span className="block">And Maintenance</span>
               </h1>
             </div>
-            <p className="absolute bottom-0 max-w-xl text-lg text-white sm:text-lg md:mt-16 md:justify-self-end">
-              End‑to‑end support and reliable maintenance for your Liferay platform—ensuring uptime, performance, and
+            <p className="absolute bottom-0 max-w-lg text-lg text-white sm:text-lg md:mt-16 md:justify-self-end pl-0 text-right">
+              End‑to‑end support and reliable maintenance for your  Liferay platform—ensuring uptime, performance, and
               ongoing improvements.
             </p>
           </div>
 
           {/* Feature tabs */}
-          <div className="mt-15 flex flex-wrap gap-5">
+          <div className="mt-15 flex flex-wrap gap-4">
             {featureTabs.map((label) => (
               <span
                 key={label}
-                className="inline-flex items-center rounded-full border border-white/30 px-7 py-5 [@media(min-width:1440px)]:text-base [@media(min-width:1500px)]:text-lg text-lg text-white transition-colors hover:border-white hover:text-white"
+                className="inline-flex items-center rounded-full border border-white/30 px-5 py-5 [@media(min-width:1440px)]:text-base [@media(min-width:1500px)]:text-lg text-lg text-white transition-colors hover:border-white hover:text-white"
               >
                 {label}
               </span>
@@ -114,7 +114,7 @@ export default function LiferaySupportMaintenancePage() {
 
       {/* Support & Maintenance core with checklist */}
       <section className="bg-[#f7f7f7] text-black">
-        <div className="mx-auto w-full px-4 py-[64px] md:px-8 md:py-[64px] lg:py-[64px] [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px]">
+        <div className="mx-auto w-full px-4 py-[64px] md:px-8 md:py-[64px] lg:py-[64px] [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
           <div className="grid items-start gap-10 md:grid-cols-2">
             <div>
               <h2 className="w-[80%] text-5xl leading-[60px] font-semibold sm:text-3xl md:text-5xl">
@@ -156,7 +156,7 @@ export default function LiferaySupportMaintenancePage() {
 
       {/* Key Activities */}
       <section className="bg-black text-white">
-        <div className="mx-auto w-full px-4 py-[64px] md:px-8 md:py-[64px] lg:py-[64px] [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px]">
+        <div className="mx-auto w-full px-4 py-[64px] md:px-8 md:py-[64px] lg:py-[64px] [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
           <div className="relative grid items-start gap-10 md:grid-cols-2">
             <h2 className="text-3xl leading-[60px] font-semibold sm:text-4xl md:text-5xl">
               Key Activities Under Our Liferay Support And Maintenance Service
@@ -166,20 +166,20 @@ export default function LiferaySupportMaintenancePage() {
             </p>
           </div>
 
-          <div className="mt-10 grid grid-cols-1 gap-12 lg:grid-cols-2">
+          <div className="mt-10 grid grid-cols-1 gap-14 lg:grid-cols-2">
             {/* Left column */}
             <div>
               <div className="space-y-8">
                 {activitiesLeft.map((item, index) => (
                   <div key={item.title} className="group">
                     {index !== 0 && <div className="border-t border-white/30" />}
-                    <div className="relative mt-6 flex items-start gap-6 pl-0">
+                    <div className="relative mt-8 flex items-start gap-6 pl-0">
                       <span className="border border-black bg-white p-8 text-3xl font-medium text-black">
                         {item?.num}
                       </span>
                       <div>
-                        <h3 className="text-3xl font-medium">{item.title}</h3>
-                        <p className="mt-2 text-xl text-white">{item.desc}</p>
+                        <h3 className="text-3xl font-medium whitespace-nowrap">{item.title}</h3>
+                        <p className="mt-2 text-xl text-white [@media(min-width:1440px)]:min-h-[104px] [@media(min-width:1800)]:min-h-full [@media(min-width:1500px)]:mb-1 [@media(min-width:1800px)]:mb-0 ">{item.desc}</p>
                       </div>
                     </div>
                   </div>
@@ -189,17 +189,17 @@ export default function LiferaySupportMaintenancePage() {
 
             {/* Right column */}
             <div>
-              <div className="space-y-8">
+              <div className="[@media(min-width:1440px)]:space-y-8 [@media(min-width:1500px)]:space-y-8.5 [@media(min-width:1800px)]:space-y-8">
                 {activitiesRight.map((item, index) => (
                   <div key={item.title} className="group">
                     {index !== 0 && <div className="border-t border-white/30" />}
-                    <div className="relative mt-6 flex items-start gap-6 pl-0">
+                    <div className="relative mt-8 flex items-start gap-6 pl-0">
                       <span className="border border-black bg-white p-8 text-3xl font-medium text-black">
                         {item?.num}
                       </span>
                       <div>
                         <h3 className="text-3xl font-medium">{item.title}</h3>
-                        <p className="mt-2 text-xl text-white">{item.desc}</p>
+                        <p className="mt-2 text-xl text-white [@media(min-width:1440px)]:min-h-[101px] [@media(min-width:1800)]:min-h-full [@media(min-width:1500px)]:mb-1 [@media(min-width:1800px)]:mb-0 ">{item.desc}</p>
                       </div>
                     </div>
                   </div>
