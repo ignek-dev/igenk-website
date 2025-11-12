@@ -1,8 +1,13 @@
 "use client"
+
+
 import Image from "next/image"
+import { useEffect, useState } from "react";
+// import { ChevronLeft, ChevronRight } from "lucide-react";
 import BlogCard, { BlogData } from "components/Blogmain/BlogCards"
 import TechCard from "components/Blogmain/TechCards"
 import { Pagination } from "components/marketplace/Pagination"
+import { AnimatePresence, motion } from "framer-motion";
 
 const blogs: BlogData[] = [
   {
@@ -16,47 +21,47 @@ const blogs: BlogData[] = [
     authPic: "/images/blogs/blogAuthor.png",
   },
   {
-    id: 1,
-    title: "Build your own Chrome Extension with React",
-    author: "Bhavin Panchani",
-    date: "Jul 7, 2025",
-    readTime: "6 mins read",
-    category: "Liferay Blog",
-    image: "/images/blogs/blogImage.png",
-    authPic: "/images/blogs/blogAuthor.png",
-  },
-  {
-    id: 1,
-    title: "Build your own Chrome Extension with React",
-    author: "Bhavin Panchani",
-    date: "Jul 7, 2025",
-    readTime: "6 mins read",
-    category: "Liferay Blog",
-    image: "/images/blogs/blogImage.png",
-    authPic: "/images/blogs/blogAuthor.png",
-  },
-  {
-    id: 1,
-    title: "Build your own Chrome Extension with React",
-    author: "Bhavin Panchani",
-    date: "Jul 7, 2025",
-    readTime: "6 mins read",
-    category: "Liferay Blog",
-    image: "/images/blogs/blogImage.png",
-    authPic: "/images/blogs/blogAuthor.png",
-  },
-  {
-    id: 1,
-    title: "Build your own Chrome Extension with React",
-    author: "Bhavin Panchani",
-    date: "Jul 7, 2025",
-    readTime: "6 mins read",
-    category: "Liferay Blog",
-    image: "/images/blogs/blogImage.png",
-    authPic: "/images/blogs/blogAuthor.png",
-  },
-  {
     id: 2,
+    title: "Build your own Chrome Extension with React",
+    author: "Bhavin Panchani",
+    date: "Jul 7, 2025",
+    readTime: "6 mins read",
+    category: "Liferay Blog",
+    image: "/images/blogs/blogImage.png",
+    authPic: "/images/blogs/blogAuthor.png",
+  },
+  {
+    id: 3,
+    title: "Build your own Chrome Extension with React",
+    author: "Bhavin Panchani",
+    date: "Jul 7, 2025",
+    readTime: "6 mins read",
+    category: "Liferay Blog",
+    image: "/images/blogs/blogImage.png",
+    authPic: "/images/blogs/blogAuthor.png",
+  },
+  {
+    id: 4,
+    title: "Build your own Chrome Extension with React",
+    author: "Bhavin Panchani",
+    date: "Jul 7, 2025",
+    readTime: "6 mins read",
+    category: "Liferay Blog",
+    image: "/images/blogs/blogImage.png",
+    authPic: "/images/blogs/blogAuthor.png",
+  },
+  {
+    id: 5,
+    title: "Build your own Chrome Extension with React",
+    author: "Bhavin Panchani",
+    date: "Jul 7, 2025",
+    readTime: "6 mins read",
+    category: "Liferay Blog",
+    image: "/images/blogs/blogImage.png",
+    authPic: "/images/blogs/blogAuthor.png",
+  },
+  {
+    id: 6,
     title: "Learn how to optimize React apps",
     author: "Bhavin Panchani",
     date: "Jul 10, 2025",
@@ -77,25 +82,26 @@ const blogsCardData = [
     category: "Liferay Blog",
     date: "Jul 7, 2025",
   },
-  // {
-  //   id: 2,
-  //   icon: "/images/marketplace/batch-client-extension.png",
-  //   module: "Batch",
-  //   title: "Batch Client Extension Generator",
-  //   description:
-  //     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet.",
-  //   tags: ["Content Management And Operation", "Content Writing", "Blog Writing"],
-  // },
-  // {
-  //   id: 3,
-  //   icon: "/images/marketplace/email-authentication.png",
-  //   module: "Artificial Intelligence",
-  //   title: "Email OTP Authentication for Community Edition",
-  //   description:
-  //     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet.",
-  //   tags: ["Content Management And Operation", "Content Writing", "Blog Writing"],
-  // }
+  {
+    id: 2,
+    icon: "/images/blogs/blog2.jpg",
+    authorName: "Bhavin Panchani",
+    time: "6 mins read",
+    title: "Comparison of Client Extensions and OSGi: Modern vs Traditional Liferay Development",
+    category: "Liferay Blog",
+    date: "Jul 7, 2025",
+  },
+  {
+    id: 3,
+    icon: "/images/blogs/blog3.jpg",
+    authorName: "Bhavin Panchani",
+    time: "6 mins read",
+    title: "Comparison of Client Extensions and OSGi: Modern vs Traditional Liferay Development",
+    category: "Liferay Blog",
+    date: "Jul 7, 2025",
+  }
 ]
+
 const cardData = [
   {
     icon: "/images/blogs/liferayIcon.png",
@@ -120,6 +126,18 @@ const cardData = [
 ]
 
 export default function Blogs() {
+  const [index, setIndex] = useState<number>(0);
+
+  const nextCard = () => setIndex((prev) => (prev + 1) % blogsCardData.length);
+  const prevCard = () => setIndex((prev) => (prev - 1 + blogsCardData.length) % blogsCardData.length);
+
+  //  Auto-slide every 2 seconds
+  useEffect(() => {
+    const interval = setInterval(nextCard, 2000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const currentBlog = blogsCardData[index] ?? blogsCardData[0];
   return (
     <main className="pb-5">
       {/* Hero */}
@@ -166,47 +184,89 @@ export default function Blogs() {
       <BlogCarousel />
     </main> */}
 
-          <div className="mx-auto grid h-[640px] w-[100%] gap-6">
-            {blogsCardData.map((blog) => (
-              <div key={blog.title} className="relative cursor-pointer overflow-hidden rounded-[22px] shadow-lg">
-                {/* Background Image */}
-                <div className="relative h-[640px] w-full">
-                  <Image
-                    src={blog.icon}
-                    alt={blog.title}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    className="object-cover brightness-75"
-                    priority
-                  />
+<div className="flex flex-col items-center justify-center bg-gray-100">
+{/* <div className="mx-auto grid h-[640px] w-[100%] gap-6"> */}
+      <div className="relative w-full h-[640px] mx-auto overflow-hidden rounded-[22px]">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={currentBlog?.id || 0}
+            initial={{ x: 100, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            exit={{ x: -100, opacity: 0 }}
+            transition={{ duration: 0.6, ease: "easeInOut" }}
+            className="absolute inset-0 w-full h-full"
+          >
+            {/* Card */}
+            <div className="relative h-[640px] w-full cursor-pointer overflow-hidden rounded-[22px] shadow-lg">
+              {/* Background Image */}
+              <div className="relative h-[640px] w-full">
+                <Image
+                  src={currentBlog?.icon || ""}
+                  alt={currentBlog?.title || ""}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover brightness-75"
+                  priority
+                />
+              </div>
+
+              {/* Overlay Content */}
+              <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/70 via-black/30 to-transparent p-6 text-white">
+                <div className="mb-4 flex items-center space-x-2 text-sm opacity-90">
+                  <span className="rounded-full bg-white/20 px-3 py-1 backdrop-blur-md">
+                    {currentBlog?.category || ""}
+                  </span>
+                  <span>• {currentBlog?.time || ""}</span>
                 </div>
 
-                {/* Overlay Content */}
-                <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/70 via-black/30 to-transparent p-5 text-white">
-                  <div className="mb-[1.125rem] flex items-center space-x-2 text-sm opacity-90">
-                    <span className="rounded-full bg-white/20 px-3 py-1 backdrop-blur-md">{blog.category}</span>
-                    <span>• {blog.time}</span>
-                  </div>
+                <h2 className="mb-4 text-2xl font-semibold leading-snug">
+                  {currentBlog?.title || ""}
+                </h2>
 
-                  <h2 className="mb-[1.125rem] text-lg leading-snug font-semibold">{blog.title}</h2>
-                  <div className="flex items-center space-x-2 text-sm">
-                    <Image
-                      src={blog.icon}
-                      alt={blog.authorName}
-                      // width={40}
-                      // height={40}
-                      // className="rounded-[50%] border-2 border-white/80"
-                      width={40}
-                      height={40}
-                      className="w-10 h-10 object-cover rounded-full border-2 border-white/80"
-                    />
-                    <span className="font-medium">{blog.authorName}</span>
-                    <span className="opacity-80">• {blog.date}</span>
-                  </div>
+                <div className="flex items-center space-x-2 text-sm">
+                  <Image
+                    src={currentBlog?.icon || ""}
+                    alt={currentBlog?.authorName || ""}
+                    width={40}
+                    height={40}
+                    className="w-10 h-10 object-cover rounded-full border-2 border-white/80"
+                  />
+                  <span className="font-medium">{currentBlog?.authorName || ""}</span>
+                  <span className="opacity-80">• {currentBlog?.date || ""}</span>
                 </div>
               </div>
-            ))}
-          </div>
+            </div>
+          </motion.div>
+        </AnimatePresence>
+
+        {/* Navigation arrows */}
+        <button
+          onClick={prevCard}
+          className="absolute top-1/2 left-4 -translate-y-1/2 p-2 rounded-full transition"
+        >
+         <Image
+             src="/images/blogs/prevImage.png"
+            alt="Previous"
+            width={70}
+            height={70}
+            className="opacity-90 hover:opacity-100 transition"
+          />
+        </button>
+        <button
+          onClick={nextCard}
+          className="absolute top-1/2 right-4 -translate-y-1/2 p-2 rounded-full transition"
+        >
+           <Image
+            src="/images/blogs/nextImage.png"
+            alt="Previous"
+            width={70}
+            height={70}
+            className="opacity-90 hover:opacity-100 transition"
+          />
+        </button>
+      </div>
+    </div>
+
           <div className="flex flex-col py-16">
             {/* Section Title */}
             <h2 className="mb-6 text-5xl leading-tight font-semibold tracking-tight text-[#000000]">
