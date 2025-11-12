@@ -10,28 +10,9 @@ export const metadata: Metadata = {
 export const revalidate = 60
 
 export default async function PortfolioPage() {
-  // let items: Awaited<ReturnType<typeof getPortfolioList>> = []
-  // try {
-  //   items = await getPortfolioList()
-  // } catch {
-  //   return (
-  //     <main className="mx-auto max-w-7xl px-4 py-12 md:px-8">
-  //       <section className="mb-8 text-center">
-  //         <h1 className="text-3xl font-bold tracking-tight md:text-4xl">Our Portfolio</h1>
-  //         <p className="mt-2 text-white/70">A curated list of our recent work and success stories.</p>
-  //       </section>
-  //       <div className="rounded-md border border-white/10 bg-black/20 p-6">
-  //         <p className="text-white/80">
-  //           Sanity is not configured. Please set `SANITY_PROJECT_ID`, `SANITY_DATASET`, and `SANITY_API_VERSION` in your
-  //           environment.
-  //         </p>
-  //       </div>
-  //     </main>
-  //   )
-  // }
-
+  
   return (
-    <main className="pb-16" >
+    <main className="pb-0" >
       {/* Hero */}
       <section className="relative bg-black text-white">
         <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_10%_0%,#0E7BF8_0%,#00979E_40%,transparent_65%)] opacity-25" />
@@ -50,16 +31,16 @@ export default async function PortfolioPage() {
           </div>
         </div>
       </section>
-      <div className="mx-auto  px-4 py-12 md:px-8">
+      <div className="mx-auto  px-4 py-12 md:px-8 bg-[#F9FAF7]">
         {/* <section className="mb-8 text-center">
           <h1 className="text-3xl font-bold tracking-tight md:text-4xl">Our Portfolio</h1>
           <p className="mt-2 text-white/70">A curated list of our recent work and success stories.</p>
         </section> */}
 
-        <div className="flex flex-col md:flex-row gap-6 p-[50px] pt-0 pb-0">
-          <Filters />
+        {/* <div className="flex flex-col md:flex-row gap-6 p-[50px] pt-0 pb-0"> */}
+        
           <PortfolioList />
-        </div>
+        {/* </div> */}
       </div>
         {/* <PortfolioRenderer/> */}
     </main>
