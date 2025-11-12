@@ -4,6 +4,33 @@ import TalkToExpert from "components/Common/TalkToExpert"
 import WhatMake from "components/Common/WhatMake"
 
 export default function LiferayExpertAdvicePage() {
+  const WhatMakeData = [
+    {
+      title: "Strong Expertise",
+      desc: "We are experts with years of experience, dedicated to staying updated on the latest trends and advancements.",
+    },
+    {
+      title: "Client First",
+      desc: "Our tailored solutions prioritize client satisfaction, aligning with your objectives to foster trust and mutual success.",
+    },
+    {
+      title: "Effective Communication",
+      desc: "We are experts with years of experience, dedicated to staying updated on the latest trends and advancements.",
+    },
+    {
+      title: "On Time Delivery",
+      desc: "We prioritize deadlines, ensuring timely delivery without ever compromising on quality.",
+    },
+    {
+      title: "Results Focused",
+      desc: "Our dedicated team works hard to deliver measurable results, driving your business forward toward collective success.",
+    },
+    {
+      title: "End-to-End Support",
+      desc: "We provide complete support, from start to finish, and ongoing guidance even after project completion.",
+    },
+  ]
+  
   const featureTabs = [
     "Liferay Consultation",
     "Liferay Architectural Design",
@@ -150,7 +177,7 @@ export default function LiferayExpertAdvicePage() {
           </div>
         </div>
       </section>
-      <WhatMake />
+      <WhatMake WhatMakeData={WhatMakeData}/>
       <TalkToExpert />
       <BlogSection />
 

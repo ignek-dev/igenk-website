@@ -9,6 +9,32 @@ import WordsFromCEO from "components/Common/WordsFromCEO"
 import LiferayTechnologicalStacks from "components/LiferayTechnologicalStacks"
 
 export default function LiferayHireDeveloper() {
+  const WhatMakeData = [
+    {
+      title: "Strong Expertise",
+      desc: "We are experts with years of experience, dedicated to staying updated on the latest trends and advancements.",
+    },
+    {
+      title: "Client First",
+      desc: "Our tailored solutions prioritize client satisfaction, aligning with your objectives to foster trust and mutual success.",
+    },
+    {
+      title: "Effective Communication",
+      desc: "We are experts with years of experience, dedicated to staying updated on the latest trends and advancements.",
+    },
+    {
+      title: "On Time Delivery",
+      desc: "We prioritize deadlines, ensuring timely delivery without ever compromising on quality.",
+    },
+    {
+      title: "Results Focused",
+      desc: "Our dedicated team works hard to deliver measurable results, driving your business forward toward collective success.",
+    },
+    {
+      title: "End-to-End Support",
+      desc: "We provide complete support, from start to finish, and ongoing guidance even after project completion.",
+    },
+  ]
   // Data for the marquee animation
   const expertiseStats = [
     "10 Years of Liferay Expertise",
@@ -344,7 +370,7 @@ export default function LiferayHireDeveloper() {
       {/* Words from CEO */}
       <WordsFromCEO />
       {/* <section className="bg-white text-black"></section> */}
-      <WhatMake />
+      <WhatMake WhatMakeData={WhatMakeData}/>
       <TalkToExpert />
       <BlogSection />
     </main>

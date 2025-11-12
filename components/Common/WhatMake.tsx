@@ -3,35 +3,17 @@
 import { useEffect, useState } from "react"
 import { useInView } from "hooks/useInView"
 
-// declare var window: any;
-const highlights = [
-  {
-    title: "Liferay-First Approach",
-    desc: "We specialize exclusively in latest Liferay development, ensuring deep focus and unmatched expertise.",
-  },
-  {
-    title: "Partner, Not Vendor",
-    desc: "We work as an extension of your team, aligning with your goals instead of just delivering tasks.",
-  },
-  {
-    title: "Best Practices Only",
-    desc: "Every solution follows Liferay and industry best practices for security, scalability, and sustainability.",
-  },
-  {
-    title: "Pre-Sales Support",
-    desc: "Strengthen your proposals with our technical insights and solution expertise.",
-  },
-  {
-    title: "Accelerated Delivery",
-    desc: "Benefit from our library of ready-to-use modules, connectors, and integrations.",
-  },
-  {
-    title: "Proven Industry Recognition",
-    desc: "Top-rated on Upwork, with 200+ technical blogs and detailed case studies showcasing our success.",
-  },
-]
+type WhatMakeItem = {
+  title: string;
+  desc: string;
+};
 
-const WhatMake = () => {
+// Define props type
+type WhatMakeProps = {
+  WhatMakeData: WhatMakeItem[];
+};
+
+const WhatMake: React.FC<WhatMakeProps> = ({ WhatMakeData }) => {
 
   const [stuck, setStuck] = useState<Map<number, boolean>>();
 
@@ -78,7 +60,7 @@ const WhatMake = () => {
         {/* Right Column - Card Stack */}
         <div className="card-stack relative flex flex-1 flex-col items-end">
           <div className="relative w-full max-w-[883px]">
-            {highlights.map((item, index) => {
+            {WhatMakeData.map((item, index) => {
               const [ref, isInView] = useInView({ triggerOnce: true })
 
               return (
