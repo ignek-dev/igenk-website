@@ -11,6 +11,7 @@ export interface BlogData {
   category: string;
   image: string;
   authPic: string
+  desc?:string
 }
 
 interface BlogCardProps {
