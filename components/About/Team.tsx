@@ -193,8 +193,7 @@ const Team: React.FC = () => {
                         marginTop: 64,
                     }}
                 >
-                    A tight-knit team of strategists, designers, and developers—united by a
-                    shared passion
+                    Our passionate team of innovators and experts brings IGNEK’s vision and Liferay excellence to life.
                 </p>
             </div>
 

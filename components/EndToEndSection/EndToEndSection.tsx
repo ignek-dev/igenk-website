@@ -35,8 +35,7 @@ export default function EndToEndSection() {
               "animate-slide-top"
             )} line-height-[30px] max-w-3xl pt-6.5 text-right text-lg text-white/80`}
           >
-            We help businesses craft a clear and actionable digital roadmap that aligns with both short-term objectives
-            and long-term vision
+            We empower enterprises to innovate and scale with comprehensive Liferay DXP solutions, combining strategy, design, and technology for seamless digital transformation success.
           </p>
         </div>
 
@@ -46,7 +45,7 @@ export default function EndToEndSection() {
             <div className="mt-6.5">
               <h3 className="text-2xl font-semibold md:text-4xl">Digital Experience</h3>
               <p className="mt-3 max-w-xl text-lg text-white/80">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.
+                We craft unified and personalized digital experiences using Liferay DXP, ensuring customer engagement, consistency, and business growth across all digital touchpoints.
               </p>
             </div>
           </div>
@@ -60,19 +59,19 @@ export default function EndToEndSection() {
               {[
                 {
                   title: "DX Strategy",
-                  content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi.",
+                  content: "We define data-driven digital transformation strategies that align technology, business goals, and customer needs for long-term growth.",
                 },
-                { title: "DX Design", content: "Lorem ipsum dolor sit amet..." },
-                { title: "DX Engineering", content: "Lorem ipsum dolor sit amet..." },
+                { title: "DX Design", content: "Our design experts create user-centric interfaces and seamless journeys that elevate brand identity and enhance engagement." },
+                { title: "DX Engineering", content: "We engineer scalable, secure, and high-performing digital platforms leveraging Liferay DXP to accelerate transformation and innovation." },
               ].map((item, index) => (
                 <AccordionItem key={index} title={item.title} content={item.content} />
               ))}
             </div>
             <div>
               {[
-                { title: "DX Intelligence", content: "Lorem ipsum dolor sit amet..." },
-                { title: "DX Marketing", content: "Lorem ipsum dolor sit amet..." },
-                { title: "DX Infrastructure", content: "Lorem ipsum dolor sit amet..." },
+                { title: "DX Intelligence", content: "We integrate analytics and AI-driven insights to optimize performance, personalize experiences, and support informed business decisions." },
+                { title: "DX Marketing", content: "We help businesses deliver targeted campaigns and consistent messaging using integrated digital marketing strategies and tools." },
+                { title: "DX Infrastructure", content: "We build reliable, cloud-ready infrastructures that support scalability, performance, and security across enterprise digital ecosystems." },
               ].map((item, index) => (
                 <AccordionItem key={index} title={item.title} content={item.content} />
               ))}
@@ -85,15 +84,15 @@ export default function EndToEndSection() {
           <div className={getAnimationClass("animate-slide-left", "animation-delay-200")}>
             <h3 className="text-2xl font-semibold md:text-4xl">Staff augmentation</h3>
             <p className="mt-3 max-w-xl text-lg text-white/80">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.
+              We provide expert Liferay developers and consultants through flexible staff augmentation models, ensuring rapid scalability, domain expertise, and seamless project delivery.
             </p>
           </div>
           <div className={`${getAnimationClass("animate-slide-right", "animation-delay-200")} grid gap-10 md:gap-12`}>
             <div>
               {[
-                { title: "Technical Excellence", content: "Lorem ipsum dolor sit amet..." },
-                { title: "Value-Based Pricing", content: "Lorem ipsum dolor sit amet..." },
-                { title: "Training", content: "Lorem ipsum dolor sit amet..." },
+                { title: "Technical Excellence", content: "Delivering innovative, scalable, and reliable Liferay solutions built with unmatched technical expertise and industry best practices." },
+                { title: "Value-Based Pricing", content: "Offering transparent, outcome-driven pricing models that align with your business value." },
+                { title: "Training", content: "Empowering teams with expert-led Liferay platform training for efficiency and innovation." },
               ].map((item, index) => (
                 <AccordionItem key={index} title={item.title} content={item.content} />
               ))}

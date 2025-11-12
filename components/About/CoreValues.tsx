@@ -13,28 +13,28 @@ const VALUES: CoreValue[] = [
         number: "01",
         title: "Integrity",
         description:
-            "We uphold transparency and honesty in every decision, interaction, and business relationship we make.",
+            "We uphold honesty and transparency in every Liferay project, building lasting trust with our clients.",
         img: "/images/about/integrity-img.png",
     },
     {
         number: "02",
         title: "Collaboration",
         description:
-            "Working together across diverse teams, we achieve more through shared ideas, mutual respect, and aligned goals.",
+            "Through teamwork and open communication, we create impactful Liferay solutions that drive shared success.",
         img: "/images/about/collaboration-img.png",
     },
     {
         number: "03",
         title: "Growth",
         description:
-            "We pursue continuous learning and improvement, evolving with every challenge, opportunity, and market shift.",
+            "We foster continuous learning and innovation, empowering our team and clients to achieve sustainable growth.",
         img: "/images/about/growth-img.png",
     },
     {
         number: "04",
         title: "Adaptability",
         description:
-            "We embrace change with agility and optimism, turning uncertainty into innovation, resilience, and long-term progress.",
+            "We embrace change with agility, evolving our Liferay solutions to meet dynamic business needs.",
         img: "/images/about/adaptability-img.png",
     },
 ];
@@ -51,8 +51,7 @@ const CoreValues = () => {
         </h2>
 
         <p className="font-poppins font-normal text-[20px] leading-[30px] text-[#4B5563] mt-7 mb-[38px] max-w-[720px] mx-auto">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. 
-            Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla,
+            Our commitment to integrity, innovation, and teamwork drives us to deliver exceptional Liferay solutions globally.
         </p>
     </div>
 

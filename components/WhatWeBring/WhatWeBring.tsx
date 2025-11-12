@@ -11,37 +11,37 @@ const cardData = [
     cardNumber: "01",
     title: "Enterprise Websites",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum auctor ornare leo, non suscipit magna interdum eu. Curabitur pellentesque nibh et, maximus ante fermentum sit amet.",
+      "We build robust and scalable enterprise websites powered by Liferay DXP, enabling organizations to deliver personalized, secure, and high-performing digital experiences. Our solutions are designed to align with your brand’s goals, ensuring seamless integration, user-centric design, and long-term adaptability. With our expertise, we help enterprises transform their online presence into an impactful digital ecosystem that drives engagement and business growth.",
   },
   {
     cardNumber: "02",
     title: "Employee Experience",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum auctor ornare leo, non suscipit magna interdum eu. Curabitur pellentesque nibh et, maximus ante fermentum sit amet.",
+      "Our employee experience solutions create connected, engaging, and efficient digital workplaces built on Liferay DXP. We focus on collaboration, accessibility, and personalization to enhance productivity and satisfaction. By integrating modern tools and intuitive interfaces, we empower employees to work smarter, communicate effectively, and stay aligned with organizational goals, fostering a culture of innovation and performance.",
   },
   {
     cardNumber: "03",
     title: "Digital Commerce",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum auctor ornare leo, non suscipit magna interdum eu. Curabitur pellentesque nibh et, maximus ante fermentum sit amet.",
+      "We deliver end-to-end Liferay Commerce solutions that transform how businesses sell and interact online. From product management and secure payments to personalized shopping journeys, our platforms offer seamless, data-driven commerce experiences. Our goal is to help enterprises scale effortlessly, boost customer loyalty, and increase conversion rates through innovative, flexible, and future-ready digital commerce architectures.",
   },
   {
     cardNumber: "04",
     title: "Another Service",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum auctor ornare leo, non suscipit magna interdum eu. Curabitur pellentesque nibh et, maximus ante fermentum sit amet.",
+      "Our tailored Liferay implementation services address diverse business challenges with innovative, strategic, and technology-driven solutions. We partner with enterprises to plan, design, and deliver digital transformation initiatives that create measurable impact. By combining deep Liferay expertise with agile methodologies, we ensure every project aligns with your business objectives and drives sustainable digital growth.",
   },
   {
     cardNumber: "05",
     title: "Creative Solutions",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum auctor ornare leo, non suscipit magna interdum eu. Curabitur pellentesque nibh et, maximus ante fermentum sit amet.",
+      "We blend creativity and technology to craft meaningful digital experiences that inspire and engage. Our team focuses on design thinking, storytelling, and seamless functionality to create visually stunning and user-friendly solutions. From concept to execution, we transform ideas into impactful digital assets that enhance brand visibility, drive interaction, and deliver exceptional customer experiences.",
   },
   {
     cardNumber: "06",
     title: "Data Insights",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum auctor ornare leo, non suscipit magna interdum eu. Curabitur pellentesque nibh et, maximus ante fermentum sit amet.",
+      "We turn complex data into actionable business intelligence through Liferay analytics and AI-driven insights. Our solutions help organizations uncover trends, predict behavior, and make informed decisions that accelerate growth. By integrating analytics seamlessly into your digital ecosystem, we empower you to measure performance, enhance user experiences, and optimize outcomes across all business channels.",
   },
 ]
 
@@ -64,7 +64,7 @@ const WhatWeBring: React.FC = () => {
             Digital Experience
           </h2>
           <p className="line-height-[30px] max-w-xl pt-8.5 text-right text-lg text-gray-300">
-            We help businesses craft a clear and actionable digital roadmap...
+            We empower businesses to deliver exceptional digital experiences through innovative strategies, design, and technology built on the power of Liferay DXP.
           </p>
         </div>
 
