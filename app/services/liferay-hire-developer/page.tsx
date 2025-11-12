@@ -10,6 +10,37 @@ import LiferayTechnologicalStacks from "components/LiferayTechnologicalStacks"
 import { easySteps, expertiseStats, teamOffersServices, whyHireFromIgnek } from "data/liferay-hire-developer"
 
 export default function LiferayHireDeveloper() {
+const LiferayHireTitle1 = "Why Hire Liferay Developer"
+  const LiferayHireTitle2 ="From IGNEK?"
+  const LiferayHireSubContent = "At IGNEK, our Liferay Consultant bring over a decade of experience, crafting secure, scalable solutions across various industries. Hire Liferay developer for innovative problem-solving."
+ 
+  const LiferayHireData = [
+    {
+      title: "Certified Liferay Developer",
+      desc: "Our developers are certified in Liferay, meaning they’ve undergone rigorous training and testing to prove their proficiency. You can trust their knowledge and abilities.",
+    },
+    {
+      title: "Transparent Communication",
+      desc: "We believe in transparent communication throughout the development process. You’ll always be kept in the loop, with regular updates and open dialogue to address any concerns or questions.",
+    },
+    {
+      title: "Flexible Hiring Models",
+      desc: "Choose from our flexible hiring models! Tailored to suit your needs, whether it’s hourly, part-time, or full-time. Get the flexibility you need to scale your team as your project demands.",
+    },
+    {
+      title: "Fully Signed NDA",
+      desc: "Our fully signed NDA ensures complete confidentiality. Protect your sensitive information with our legally binding agreements. Peace of mind guaranteed.",
+    },
+    {
+      title: "Cost-Effective",
+      desc: "Hiring a dedicated Liferay Developer from IGNEK is cost-effective. You get access to top-tier talent without the overhead costs associated with in-house hiring.",
+    },
+    {
+      title: "Easy Exit Policy",
+      desc: "Our Easy Exit Policy ensures a hassle-free process when ending services. We prioritize your satisfaction, making transitions smooth and transparent.",
+    },
+  ]
+
   // Data for the marquee animation
 
   return (
@@ -231,7 +262,7 @@ export default function LiferayHireDeveloper() {
       {/* Words from CEO */}
       <WordsFromCEO />
       {/* <section className="bg-white text-black"></section> */}
-      <WhatMake />
+     <WhatMake WhatMakeData={LiferayHireData} titleText1={LiferayHireTitle1} titleText2={LiferayHireTitle2} subContext={LiferayHireSubContent}/>
       <TalkToExpert />
       <BlogSection />
     </main>

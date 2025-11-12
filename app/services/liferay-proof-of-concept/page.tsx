@@ -5,6 +5,43 @@ import WhatMake from "components/Common/WhatMake"
 import { featureTabs, liferayPOCServices } from "data/liferay-proof-of-concept"
 
 export default function LiferayProofOfConceptPage() {
+
+   const LiferayProofOfConceptTitle1 = "Why Choose IGNEK For Liferay"
+  const LiferayProofOfConceptTitle2 ="Proof Of Concept?"
+  const LiferayProofOfConceptSubContent = "At IGNEK, Our expert engineers use up to date software’s and vast knowledge to craft solutions that match your needs and expectations. Putting clients first is our thing, and we’re proud to support our very first business client till today!"
+ 
+  const LiferayProofOfConceptData = [
+    {
+      title: "Strong Expertise",
+      desc: "We are experts with years of experience, dedicated to staying updated on the latest trends and advancements.",
+    },
+    {
+      title: "Client First",
+      desc: "Our tailored solutions prioritize client satisfaction, aligning with your objectives to foster trust and mutual success.",
+    },
+    {
+      title: "Effective Communication",
+      desc: "We are experts with years of experience, dedicated to staying updated on the latest trends and advancements.",
+    },
+    {
+      title: "On Time Delivery",
+      desc: "We prioritize deadlines, ensuring timely delivery without ever compromising on quality.",
+    },
+    {
+      title: "Results Focused",
+      desc: "Our dedicated team works hard to deliver measurable results, driving your business forward toward collective success.",
+    },
+    {
+      title: "End-to-End Support",
+      desc: "We provide complete support, from start to finish, and ongoing guidance even after project completion.",
+    },
+  ]
+  const featureTabs = [
+    "Discuss PoC requirements",
+    "Assist To Validate The Assumption",
+    "Liferay Functionality Identification",
+    "Liferay Functionality Identification",
+  ]
   
   const caseStudies = [
     {
@@ -117,7 +154,7 @@ export default function LiferayProofOfConceptPage() {
         </div>
       </section>
       <CaseStudy caseStudies={caseStudies} />
-      <WhatMake />
+       <WhatMake WhatMakeData={LiferayProofOfConceptData} titleText1={LiferayProofOfConceptTitle1} titleText2={LiferayProofOfConceptTitle2} subContext={LiferayProofOfConceptSubContent}/>
       <TalkToExpert />
       <BlogSection />
 
