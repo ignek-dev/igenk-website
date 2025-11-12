@@ -171,7 +171,7 @@ export default function PortfolioList() {
                                                             {/* Read More Button */}
                                                             <div className="transition-all duration-500 transform translate-y-5 opacity-0 group-hover:translate-y-0 group-hover:opacity-100">
                                                                 <button
-                                                                    onClick={() => router.push("/contact")}
+                                                                    onClick={() => router.push(`/case-study/id/${item.id}`)}
                                                                     className="bg-indigo-600 text-white px-6 py-2 rounded-full shadow-md hover:bg-indigo-700 transition w-full text-xl cursor-pointer"
                                                                 >
                                                                     Read More
@@ -186,8 +186,8 @@ export default function PortfolioList() {
                                                     {/* First */}
                                                     <li
                                                         className={`px-4 py-2 border rounded-md cursor-pointer ${currentPage === 1
-                                                                ? "text-gray-400 border-gray-300 cursor-not-allowed"
-                                                                : "hover:bg-gray-100"
+                                                            ? "text-gray-400 border-gray-300 cursor-not-allowed"
+                                                            : "hover:bg-gray-100"
                                                             }`}
                                                         onClick={() => currentPage > 1 && setCurrentPage(1)}
                                                     >
@@ -197,8 +197,8 @@ export default function PortfolioList() {
                                                     {/* Back */}
                                                     <li
                                                         className={`px-4 py-2 border rounded-md cursor-pointer ${currentPage === 1
-                                                                ? "text-gray-400 border-gray-300 cursor-not-allowed"
-                                                                : "hover:bg-gray-100"
+                                                            ? "text-gray-400 border-gray-300 cursor-not-allowed"
+                                                            : "hover:bg-gray-100"
                                                             }`}
                                                         onClick={() => currentPage > 1 && setCurrentPage((p) => Math.max(1, p - 1))}
                                                     >
@@ -244,8 +244,8 @@ export default function PortfolioList() {
                                                                     key={i}
                                                                     onClick={() => setCurrentPage(i)}
                                                                     className={`px-4 py-2 border rounded-md cursor-pointer transition-all duration-200 ${currentPage === i
-                                                                            ? "bg-black text-white border-black"
-                                                                            : "hover:bg-gray-100"
+                                                                        ? "bg-black text-white border-black"
+                                                                        : "hover:bg-gray-100"
                                                                         }`}
                                                                 >
                                                                     {i}
@@ -280,8 +280,8 @@ export default function PortfolioList() {
                                                     {/* Next */}
                                                     <li
                                                         className={`px-4 py-2 border rounded-md cursor-pointer ${currentPage === totalPages
-                                                                ? "text-gray-400 border-gray-300 cursor-not-allowed"
-                                                                : "hover:bg-gray-100"
+                                                            ? "text-gray-400 border-gray-300 cursor-not-allowed"
+                                                            : "hover:bg-gray-100"
                                                             }`}
                                                         onClick={() =>
                                                             currentPage < totalPages && setCurrentPage((p) => Math.min(totalPages, p + 1))
@@ -293,8 +293,8 @@ export default function PortfolioList() {
                                                     {/* Last */}
                                                     <li
                                                         className={`px-4 py-2 border rounded-md cursor-pointer ${currentPage === totalPages
-                                                                ? "text-gray-400 border-gray-300 cursor-not-allowed"
-                                                                : "hover:bg-gray-100"
+                                                            ? "text-gray-400 border-gray-300 cursor-not-allowed"
+                                                            : "hover:bg-gray-100"
                                                             }`}
                                                         onClick={() => currentPage < totalPages && setCurrentPage(totalPages)}
                                                     >
