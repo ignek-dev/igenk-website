@@ -10,6 +10,7 @@ import "prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard";
 import "prismjs/plugins/line-numbers/prism-line-numbers";
 
 import "../../../../components/Portfolio/PortfolioRenderer.css";
+import { CSS_URLS } from "data/portfolioCss";
 
 
 // --- TypeScript type for WordPress portfolio post ---
@@ -31,18 +32,9 @@ export default function PortfolioRenderer({ params }: { params: Promise<{ id: st
 
     // --- Load external CSS dynamically ---
     useEffect(() => {
-        const cssUrls = [
-            "https://www.ignek.com/wp-content/litespeed/css/ad83c34674cf09f56d46e7ed16b9ba6d.css?ver=ac0b8",
-            "https://www.ignek.com/wp-content/litespeed/css/e5f517224ca259b2712b7381a2ffa7f0.css?ver=78aff",
-            "https://www.ignek.com/wp-content/litespeed/css/0bbfb2c9170dc57a341ba754dd2e7b93.css?ver=13339",
-            "https://www.ignek.com/wp-content/litespeed/css/3cd06061990ac340055b721bdb7e91bb.css?ver=5aefa",
-            "https://www.gstatic.com/recaptcha/releases/naPR4A6FAh-yZLuCX253WaZq/styles__ltr.css",
-            "https://www.ignek.com/wp-content/litespeed/css/641b8ac492ae62e0937c42f5a415e82e.css?ver=d61f9"
-        ];
-
         const links: HTMLLinkElement[] = [];
 
-        cssUrls.forEach((href) => {
+        CSS_URLS.forEach((href) => {
             const link = document.createElement("link");
             link.rel = "stylesheet";
             link.href = href;

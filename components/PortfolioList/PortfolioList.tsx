@@ -26,7 +26,7 @@ export default function PortfolioList() {
     const [selectedTechnology, setSelectedTechnology] = useState<string | null>(null);
     const [debouncedSearch, setDebouncedSearch] = useState(searchTerm);
     const router = useRouter();
-    const PER_PAGE = 5;
+    const PER_PAGE = 3;
     const API_BASE = "https://www.ignek.com/wp-json/wp/v2/portfolio";
 
     // useEffect(() => {
@@ -85,7 +85,7 @@ export default function PortfolioList() {
             if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
 
             const data = (await res.json()) as WPPortfolioPost[];
-            const total = Number(res.headers.get("x-wp-total")) || 1;
+            const total = Number(res.headers.get("x-wp-totalpages")) || 1;
             console.log("total", total)
             setPosts(data);
             setTotalPages(total);
