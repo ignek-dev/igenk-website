@@ -39,7 +39,7 @@ const SuccessStoryCard: React.FC<{ story: Story }> = ({ story }) => {
           <h3 className="mb-4 text-3xl font-bold text-gray-900">{story.title}</h3>
           <p className="mb-6 leading-relaxed text-gray-600">{story.description}</p>
           <a
-            href="/case-studies"
+            href="/case-study"
             className="mb-8 inline-flex items-center gap-1 rounded-full border border-[#00979E] bg-white px-5 py-2 text-sm font-semibold text-gray-800 transition-all hover:bg-gray-50"
             style={{ boxShadow: "0px 0px 12px -2px #00979E" }}
           >
