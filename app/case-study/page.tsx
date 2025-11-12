@@ -15,7 +15,7 @@ export default async function PortfolioPage() {
       {/* Hero */}
       <section className="relative bg-black text-white">
         <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_10%_0%,#0E7BF8_0%,#00979E_40%,transparent_65%)] opacity-25" />
-        <div className="mx-auto w-full px-4 pt-12 pb-16 md:px-8 md:pt-20 md:pb-28 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px]">
+        <div className="mx-auto w-full px-4 pt-12 pb-16 md:px-8 md:pt-20 md:pb-28 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
           <div className="relative grid items-start gap-10 md:grid-cols-2">
             <div>
               <h1 className="mt-9 text-4xl leading-tight font-semibold sm:text-5xl md:text-6xl">
@@ -30,7 +30,7 @@ export default async function PortfolioPage() {
           </div>
         </div>
       </section>
-      <div className="mx-auto  px-4 py-12 md:px-8 bg-[#F9FAF7]">
+      <div className="px-[192px] py-12 md:px-[192px] bg-[#F9FAF7]">
         {/* <section className="mb-8 text-center">
           <h1 className="text-3xl font-bold tracking-tight md:text-4xl">Our Portfolio</h1>
           <p className="mt-2 text-white/70">A curated list of our recent work and success stories.</p>

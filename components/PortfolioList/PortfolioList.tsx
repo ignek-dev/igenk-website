@@ -112,7 +112,7 @@ export default function PortfolioList() {
 
     console.log(error)
     return (
-        <div className="flex flex-col md:flex-row gap-12 p-[50px] pt-0 pb-0 bg-[#F9FAF7]">
+        <div className="flex flex-col md:flex-row gap-12 pt-0 pb-0 bg-[#F9FAF7]">
             <Filters
                 search={searchTerm}
                 setSearch={setSearchTerm}
