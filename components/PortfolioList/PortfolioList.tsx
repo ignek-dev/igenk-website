@@ -12,6 +12,7 @@ interface WPPortfolioPost {
     excerpt: { rendered: string };
     _embedded?: {
         ["wp:featuredmedia"]?: { source_url: string }[];
+        ["wp:term"]?: Array<Array<{ name: string; slug: string; taxonomy: string }>>;
     };
 }
 
@@ -26,7 +27,7 @@ export default function PortfolioList() {
     const [selectedTechnology, setSelectedTechnology] = useState<string | null>(null);
     const [debouncedSearch, setDebouncedSearch] = useState(searchTerm);
     const router = useRouter();
-    const PER_PAGE = 5;
+    const PER_PAGE = 3;
     const API_BASE = "https://www.ignek.com/wp-json/wp/v2/portfolio";
 
     // useEffect(() => {
@@ -85,7 +86,7 @@ export default function PortfolioList() {
             if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
 
             const data = (await res.json()) as WPPortfolioPost[];
-            const total = Number(res.headers.get("x-wp-total")) || 1;
+            const total = Number(res.headers.get("x-wp-totalpages")) || 1;
             setPosts(data);
             setTotalPages(total);
         } catch (err: unknown) {
@@ -157,10 +158,10 @@ export default function PortfolioList() {
                                                         {/* Text Section */}
                                                         <div className="flex flex-col justify-center p-[46px] md:w-1/2 w-full relative">
                                                             <span className="text-lg bg-white px-4 py-1 rounded-full w-fit mb-2">
-                                                                Corporate
+                                                                {item._embedded?.["wp:term"]?.[0]?.[0]?.name || "General"}
                                                             </span>
                                                             <h3
-                                                                className="text-3xl font-semibold leading-snug mb-2 line-clamp-2"
+                                                                className="text-3xl font-semibold leading-snug mb-2"
                                                                 dangerouslySetInnerHTML={{ __html: item.title.rendered }}
                                                             />
                                                             <p
