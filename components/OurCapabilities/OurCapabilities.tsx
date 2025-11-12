@@ -12,63 +12,63 @@ const OurCapabilities: React.FC = () => {
   const capabilitiesData = [
     {
       title: "Platform Selection",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit.",
+      description: "Choose the right Liferay platform to achieve scalable digital transformation goals.",
     },
     {
       title: "Omni-channel",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit.",
+      description: "Deliver seamless, consistent experiences across web, mobile, and digital platforms.",
     },
     {
       title: "Platform upgrades",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit.",
+      description: "Upgrade to the latest Liferay DXP for enhanced performance and security.",
     },
     {
       title: "CMS",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit.",
+      description: "Empower content teams with flexible, easy-to-manage Liferay CMS solutions.",
     },
     {
       title: "Personalization",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit.",
+      description: "Engage users with behavior-based, contextual, and data-driven personalized experiences.",
     },
     {
       title: "Search",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit.",
+      description: "Enhance content discovery and user experience with advanced Liferay search.",
     },
     {
       title: "Commerce",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit.",
+      description: "Build seamless, integrated Liferay Commerce experiences for digital shopping journeys.",
     },
     {
       title: "DAM",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit.",
+      description: "Manage and distribute digital assets efficiently with Liferay DAM.",
     },
     {
       title: "Workflow Automation",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit.",
+      description: "Automate processes, improve governance, and boost efficiency using Liferay workflows.",
     },
     {
       title: "Multisite Management",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit.",
+      description: "Control multiple sites easily with centralized Liferay platform management.",
     },
     {
       title: "Integrations",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit.",
+      description: "Connect enterprise systems and tools seamlessly with Liferay DXP.",
     },
     {
       title: "Headless Architecture",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit.",
+      description: "Deliver flexible, API-driven experiences through Liferay headless architecture.",
     },
     {
       title: "Lowcode",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit.",
+      description: "Develop faster with Liferay low-code tools and simplified workflows.",
     },
     {
       title: "Security & Governance",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit.",
+      description: "Ensure enterprise-grade data protection, compliance, and secure Liferay environments.",
     },
     {
       title: "Artificial intelligence",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit.",
+      description: "Leverage AI insights to personalize experiences and automate smarter decisions.",
     },
   ]
 
@@ -94,8 +94,7 @@ const OurCapabilities: React.FC = () => {
               isInView ? "animate-when-visible animate-slide-top" : "opacity-0"
             }`}
           >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.
-            Pellentesque sit amet sapien fringilla.
+            We build flexible platforms and scalable digital experiences using Liferay DXP, empowering enterprises with agility, performance, and future-ready digital growth.
           </p>
         </div>
 

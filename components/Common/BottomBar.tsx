@@ -4,10 +4,10 @@ import Image from "next/image"
 import React from "react"
 
 const socialIcons = [
-  { name: "X", path: "/images/icon/twitter.png", alt: "X (formerly Twitter)" }, // Placeholder for X
-  { name: "Facebook", path: "/images/icon/facebook.png", alt: "Facebook" }, // Placeholder for Facebook
-  { name: "LinkedIn", path: "/images/icon/linkedIn.png", alt: "LinkedIn" }, // Placeholder for LinkedIn
-  { name: "YouTube", path: "/images/icon/youtube.png", alt: "YouTube" }, // Placeholder for YouTube
+  { name: "X", path: "/images/icon/twitter.png", alt: "X (formerly Twitter)", href: "https://x.com/ignekinfotech" }, // Placeholder for X
+  { name: "Facebook", path: "/images/icon/facebook.png", alt: "Facebook", href: "https://www.facebook.com/ignekinfo/" }, // Placeholder for Facebook
+  { name: "LinkedIn", path: "/images/icon/linkedIn.png", alt: "LinkedIn", href: "https://www.linkedin.com/company/ignek-infotech/about/", }, // Placeholder for LinkedIn
+  { name: "YouTube", path: "/images/icon/youtube.png", alt: "YouTube", href: "https://www.youtube.com/@ignek6023" }, // Placeholder for YouTube
 ]
 
 const BottomBar: React.FC = () => {
@@ -19,19 +19,19 @@ const BottomBar: React.FC = () => {
           <div className="flex flex-col items-center gap-4 text-base text-gray-400 md:flex-row md:items-center">
             <p className="flex-shrink-0">©2025 IGNEK. All rights reserved</p>
             <div className="flex flex-wrap justify-center gap-x-3 gap-y-2">
-              <a href="#" className="transition-colors hover:text-white">
+              <a href="/contact" className="transition-colors hover:text-white">
                 Privacy Policy
               </a>
               <span className="text-gray-600">|</span>
-              <a href="#" className="transition-colors hover:text-white">
+              <a href="/contact" className="transition-colors hover:text-white">
                 Terms & Conditions
               </a>
               <span className="text-gray-600">|</span>
-              <a href="#" className="transition-colors hover:text-white">
+              <a href="/contact" className="transition-colors hover:text-white">
                 Cookies Policy
               </a>
               <span className="text-gray-600">|</span>
-              <a href="#" className="transition-colors hover:text-white">
+              <a href="/contact" className="transition-colors hover:text-white">
                 Map
               </a>
             </div>
@@ -40,7 +40,7 @@ const BottomBar: React.FC = () => {
           {/* Right Section: Social Media Icons */}
           <div className="flex items-center gap-4">
             {socialIcons.map((icon, index) => (
-              <a key={index} href="#" aria-label={icon.name} className="flex-shrink-0">
+              <a key={index} href={icon.href} aria-label={icon.name} className="flex-shrink-0" target="blank">
                 <Image src={icon.path} alt={icon.alt} width={28} height={28} className="object-contain" />
               </a>
             ))}

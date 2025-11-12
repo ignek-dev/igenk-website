@@ -1,0 +1,309 @@
+import { Metadata } from "next"
+import Image from "next/image"
+import { BlogSection } from "components/Common"
+import CaseStudy from "components/Common/CaseStudy"
+import TalkToExpert from "components/Common/TalkToExpert"
+import WhatMake from "components/Common/WhatMake"
+import { featureTabs, items } from "data/liferay-performance-tuning"
+
+export const metadata: Metadata = {
+  title: "Liferay Performance Tuning | IGNEK",
+  description:
+    "Optimize your Liferay platform with IGNEK's performance tuning services: JVM tuning, caching, DB optimization, and more.",
+}
+
+const LiferayPerformanceTuningTitle1 = "Why Choose IGNEK For Liferay"
+const LiferayPerformanceTuningTitle2 ="Performance Tuning?"
+const LiferayPerformanceTuningSubContent = "At IGNEK, Our expert engineers use up to date software’s and vast knowledge to craft solutions that match your needs and expectations. Putting clients first is our thing, and we’re proud to support our very first business client till today!"
+ 
+
+const LiferayPerformanceTuningData = [
+  {
+    title: "Strong Expertise",
+    desc: "We are experts with years of experience, dedicated to staying updated on the latest trends and advancements.",
+  },
+  {
+    title: "Client First",
+    desc: "Our tailored solutions prioritize client satisfaction, aligning with your objectives to foster trust and mutual success.",
+  },
+  {
+    title: "Effective Communication",
+    desc: "We are experts with years of experience, dedicated to staying updated on the latest trends and advancements.",
+  },
+  {
+    title: "On Time Delivery",
+    desc: "We prioritize deadlines, ensuring timely delivery without ever compromising on quality.",
+  },
+  {
+    title: "Results Focused",
+    desc: "Our dedicated team works hard to deliver measurable results, driving your business forward toward collective success.",
+  },
+  {
+    title: "End-to-End Support",
+    desc: "We provide complete support, from start to finish, and ongoing guidance even after project completion.",
+  },
+]
+
+
+
+const caseStudies = [
+  {
+    id: 1,
+    image: "/images/liferay-pages-image/caseStudy.png",
+    tag: "Corporate",
+    title: "Music License Management Portal: Onboarding & Data Integrity",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla.",
+  },
+  {
+    id: 2,
+    image: "/images/liferay-pages-image/caseStudy.png",
+    tag: "FinTech",
+    title: "Transforming Financial Services with Innovations",
+    description:
+      "Suspendisse potenti. Maecenas vitae mattis tellus. Nullam quis imperdiet augue. Pellentesque habitant morbi tristique senectus et netus.",
+  },
+  {
+    id: 3,
+    image: "/images/liferay-pages-image/caseStudy.png",
+    tag: "Healthcare",
+    title: "Digital Health Platform: Patient-Centric Solutions",
+    description:
+      "Praesent ut ligula non mi varius sagittis. In hac habitasse platea dictumst. Cras non dolor. Vivamus quis mi.",
+  },
+  {
+    id: 4,
+    image: "/images/liferay-pages-image/caseStudy.png",
+    tag: "E-commerce",
+    title: "Scaling Online Retail with Cloud Technologies",
+    description:
+      "Curabitur at lacus ac velit ornare lobortis. Vestibulum suscipit nulla quis orci. Donec posuere vulputate arcu.",
+  },
+]
+
+export default function LiferayPerformanceTuningPage() {
+  return (
+    <main className="pb-16">
+      <section className="relative bg-black text-white">
+        <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_10%_0%,#0E7BF8_0%,#00979E_40%,transparent_65%)] opacity-25" />
+        <div className="mx-auto w-full px-4 pt-12 pb-16 md:px-8 md:pt-20 md:pb-28 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
+          <div className="relative grid items-start gap-10 md:grid-cols-2">
+            <div className="">
+              <div className="inline-flex items-center rounded-full border border-white/30 px-4 py-2 text-lg text-white">
+                Liferay Services
+              </div>
+              <h1 className="mt-9 text-4xl leading-tight font-semibold sm:text-5xl md:text-5xl">
+                Liferay
+                <br />
+                <span className="block">Performance Tuning</span>
+              </h1>
+            </div>
+            <p className="absolute bottom-0 max-w-xl text-base text-white sm:text-base md:mt-16 md:justify-self-end text-right">
+              Optimize your Liferay Portal with specialized Liferay Performance Tuning, improving speed, stability, and resource efficiency for superior user experience.
+            </p>
+          </div>
+
+          {/* Feature tabs */}
+          <div className="mt-15 flex flex-wrap gap-6 [@media(min-width:1500px)]:gap-8 [@media(min-width:1800px)]:gap-5">
+            {featureTabs.map((label, index) => (
+              <span
+                key={index}
+                className="inline-flex items-center rounded-full border border-white/30 [@media(min-width:1440px)]:px-11 [@media(min-width:1500px)]:px-13 [@media(min-width:1800px)]:px-13 py-5 text-lg text-white transition-colors hover:border-white hover:text-white"
+              >
+                {label}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Liferay Performance Tuning - Features Grid */}
+      <section className="bg-[#f7f7f7] text-black">
+        <div className="mx-auto w-full px-4 py-[64px] md:px-8 md:py-[64px] lg:py-[64px] [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
+          <h2 className="text-5xl leading-tight font-semibold sm:text-4xl md:text-5xl">Common Liferay Performance Challenges We Solve</h2>
+          <p className="mt-4 justify-self-center text-lg leading-relaxed text-[#101012] text-gray-700">
+            Through expert Liferay Performance Tuning, we identify bottlenecks, optimize configurations, and deliver faster, more scalable, and reliable Liferay DXP experiences.
+          </p>
+
+          {/* Row 1 */}
+          <div className="mt-12 grid grid-cols-1 divide-y divide-gray-200 md:grid-cols-3 md:divide-x md:divide-y-0">
+            <div className="flex flex-col items-center justify-center px-8 py-12 text-center">
+              <h3 className="w-[90%] text-center text-3xl font-semibold">Slow Page Load Times</h3>
+              <p className="mt-3 text-gray-700">
+                Delays caused by unoptimized code, heavy themes, or large assets are resolved through Liferay Performance Tuning.
+              </p>
+            </div>
+            <div className="flex flex-col items-center justify-center px-8 py-12 text-center">
+              <h3 className="w-[90%] text-3xl font-semibold">Inefficient Database Queries</h3>
+              <p className="mt-3 text-gray-700">
+                Poorly optimized queries slow down portals; we refine indexing and database performance for faster results.
+              </p>
+            </div>
+            <div className="flex flex-col items-center justify-center px-8 py-12 text-center">
+              <h3 className="w-[90%] text-3xl font-semibold">High Server Resource Usage</h3>
+              <p className="mt-3 text-gray-700">
+                Memory leaks, unbalanced loads, or heavy CPU usage are minimized with fine-tuned Liferay DXP Performance Tuning.
+              </p>
+            </div>
+          </div>
+
+          {/* Row 2 */}
+          <div className="grid grid-cols-1 divide-y divide-gray-200 border-t border-gray-200 md:grid-cols-3 md:divide-x md:divide-y-0">
+            <div className="flex flex-col items-center justify-center px-8 py-12 text-center">
+              <h3 className="w-[90%] text-3xl font-semibold">Scalability Issues Under Heavy Traffic</h3>
+              <p className="mt-3 text-gray-700">
+                We prepare portals to handle spikes in traffic with clustering, caching, and distributed deployment.
+              </p>
+            </div>
+            <div className="flex flex-col items-center justify-center px-8 py-12 text-center">
+              <h3 className="w-[90%] text-3xl font-semibold">Poor Search and Indexing Performance</h3>
+              <p className="mt-3 text-gray-700">
+                Slow or inaccurate search results are fixed with optimized indexing and search tuning for seamless user experiences.
+              </p>
+            </div>
+            <div className="flexflex-col items-center justify-center px-8 py-12 text-center">
+              <h3 className="w-[90%] text-3xl font-semibold">Frequent Downtime and Instability</h3>
+              <p className="mt-3 text-gray-700">
+                Through proactive monitoring and fault-tolerant setups, we ensure reliable and stable Liferay Portal performance.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Outcome Of Our Liferay Performance Tuning Services */}
+      <section className="bg-black text-white">
+        <div className="mx-auto w-full px-4 py-[64px] md:px-8 md:py-[64px] lg:py-[64px] [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
+          <div className="relative grid items-start gap-10 md:grid-cols-2">
+            <h2 className="text-3xl leading-[60px] font-semibold sm:text-4xl [@media(min-width:1400px)]:text-4xl [@media(min-width:1800px)]:text-5xl">
+              Outcome Of Our Liferay
+              <br />
+              Performance Tuning Services
+            </h2>
+            <p className="absolute bottom-0 max-w-xl text-right text-xl text-white md:justify-self-end">
+              Liferay Performance Tuning improves portal speed, stability, scalability, security, and resource efficiency for optimal performance.
+            </p>
+          </div>
+
+          <div className="mt-12 grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-3">
+            {items.map((item, index) => {
+              const isLastRow = index >= items.length - (items.length % 3 || 3)
+
+              return (
+                <div key={item.title} className="group relative min-h-[246px]">
+                  <Image src="/images/icon/progress.svg" alt="Progress icon" width={32} height={32} />
+                  <h3 className="mt-4 [@media(min-width:1400px)]:w-[89%] [@media(min-width:1800px)]:w-[65%] min-h-[80px] text-3xl font-medium">{item.title}</h3>
+                  <p className="mt-3  text-white/80">{item.desc}</p>
+                  {!isLastRow && <div className="absolute bottom-0 mt-6 w-full border-t border-white/30" />}
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* What We Do With Our Liferay DXP Performance Tuning Services */}
+      <section className="bg-[#f7f7f7] text-black">
+        <div className="mx-auto w-full px-4 py-[64px] md:px-8 md:py-[64px] lg:py-[64px] [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
+          <div className="relative grid items-start gap-10 md:grid-cols-2">
+            <h2 className="text-3xl [@media(min-width:1400px)]:leading-[40px] [@media(min-width:1800px)]:leading-[60px] font-semibold sm:text-4xl md:text-4xl [@media(min-width:1800px)]:text-5xl">
+              What We Do With Our Liferay DXP Performance Tuning Services
+            </h2>
+            <p className="absolute bottom-0 max-w-xl text-right text-xl text-gray-700 md:justify-self-end">
+              With our Liferay expertise, we use Liferay DXP Performance Tuning techniques like server optimization, JVM adjustments, and database enhancements for improved speed, stability, and scalability of your Liferay DXP portal.
+            </p>
+          </div>
+
+          <div className="mt-10 grid grid-cols-1 gap-12 lg:grid-cols-2">
+            {/* Left stack */}
+            <div className="pr-12">
+              <div className="space-y-8">
+                {[
+                  {
+                    title: "JVM Memory Tuning",
+                    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla.",
+                  },
+                  {
+                    title: "Code Optimization",
+                    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.",
+                  },
+                  {
+                    title: "Liferay theme optimization",
+                    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.",
+                  },
+                  {
+                    title: "Database Thread Pool & Connection Pool Optimization",
+                    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.",
+                  },
+                  {
+                    title: "Portal Tuning by Disabling Unnecessary Filters & enabling JS & CSS Caching",
+                    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.",
+                  },
+                  {
+                    title: "Web server configuration improves performance",
+                    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.",
+                  },
+                  {
+                    title: "Load Testing and Tuning",
+                    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.",
+                  },
+                ].map((item) => (
+                  <div key={item.title} className="group pb-[40px] transition-colors duration-300 hover:border-black">
+                    <div className="relative mt-6 flex h-[108px] flex-col justify-center pl-6">
+                      <span className="absolute top-0 left-0 h-full w-1 bg-gray-300 transition-colors duration-300 group-hover:bg-black" />
+                      <div>
+                        <h3 className="[@media(min-width:1400px)]:text-[24px] [@media(min-width:1800px)]:text-[30px] font-medium">{item.title}</h3>
+                        <p className="mt-2 text-base text-gray-700">{item.desc}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Right card */}
+            <div>
+              <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
+                <h3 className="text-3xl font-semibold md:text-3xl">JVM Memory Tuning</h3>
+                <ul className="mt-4 space-y-4">
+                  {[
+                    "Optimize Heap Memory → Set Initial Heap Size, Set Maximum Heap Size",
+                    "Optimize Garbage Collection → Choose Garbage Collector Selection, Adjust GC Threads Numbers",
+                    "Set Metaspace",
+                    "Set Thread Stack Size",
+                    "Generate Heap Dump on OutOfMemory Error",
+                    "Use JVM Memory Tuning tools like JVisualVM or JConsole",
+                  ].map((text) => (
+                    <li key={text} className="flex items-center gap-3">
+                      <span className="flex shrink-0 items-center justify-center rounded-full bg-black aspect-square w-4 md:w-6">
+                        <svg
+                          viewBox="0 0 12 12"
+                          className="h-[50%] w-[50%] text-white"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M3 6l2 2 4-4"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
+                      </span>
+                      <span className="text-lg text-gray-800 leading-snug">{text}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <CaseStudy caseStudies={caseStudies} />
+      <WhatMake WhatMakeData={LiferayPerformanceTuningData} titleText1={LiferayPerformanceTuningTitle1} titleText2={LiferayPerformanceTuningTitle2} subContext={LiferayPerformanceTuningSubContent}/>
+      <TalkToExpert />
+      <BlogSection />
+    </main>
+  )
+}

@@ -10,22 +10,22 @@ const statData = [
   {
     number: "80+",
     title: "Project Completed",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et.",
+    description: "We’ve successfully delivered a diverse range of digital products—from corporate websites to complex enterprise solutions.",
   },
   {
     number: "50+",
     title: "In House Developers",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et.",
+    description: "Our experienced and dedicated team of developers ensures quality, security, and on-time delivery in every project.",
   },
   {
     number: "98%",
     title: "Client Satisfaction Rate",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et.",
+    description: "We focus on collaboration, transparency, and innovation—earning the trust and satisfaction of clients across industries.",
   },
   {
     number: "10+",
     title: "Years Of Experience",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et.",
+    description: "With over a decade in the industry, we bring deep expertise, proven methodologies, and strategic insights to every project.",
   },
 ]
 
@@ -48,7 +48,7 @@ const Achievements = () => {
             Scalable Experiences.
           </h2>
           <p className="mb-10 max-w-md text-lg text-gray-300">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit.
+            We design and develop digital solutions that adapt and grow with your business needs. Our platforms are built to deliver seamless performance, exceptional user experiences, and long-term scalability.
           </p>
           <ScheduleMeetingButton isFullWidth={false} btnName="Schedule Meeting" />
         </div>

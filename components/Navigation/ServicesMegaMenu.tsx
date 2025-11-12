@@ -1,5 +1,6 @@
 // components/ServicesMegaMenu.tsx
 import Image from "next/image"
+import CalendlyButton from "components/CalendlyPopupButton/CalendlyButton"
 // Data for the card on the left
 const featuredService = {
   // Path starts from the 'public' directory
@@ -21,18 +22,18 @@ const digitalExperienceLinks = [
 
 // Data for the "Liferay Services" section
 const liferayServicesLinks = [
-  { text: "Development & Customization", href: "/liferay-development-and-customization" },
-  { text: "Theme Development", href: "/liferay-theme-development" },
-  { text: "Expert Advice", href: "/liferay-expert-advice" },
-  { text: "Proof Of Concept", href: "/liferay-proof-of-concept" },
-  { text: "Ecommerce Development", href: "/liferay-ecommerce-development" },
-  { text: "Migration", href: "/liferay-migration" },
-  { text: "Support & Maintenance", href: "/liferay-support-and-maintenance" },
-  { text: "Performance Tuning", href: "/liferay-performance-tuning" },
-  { text: "Upgrade", href: "/liferay-upgrade" },
-  { text: "Architecture Service", href: "/liferay-architecture-design" },
-  { text: "Consulting Page", href: "/liferay-consulting-and-implementation-services" },
-  { text: "Hire Liferay Devloper", href: "/liferay-hire-developer" },
+  { text: "Development & Customization", href: "/services/liferay-development-and-customization" },
+  { text: "Theme Development", href: "/services/liferay-theme-development" },
+  { text: "Expert Advice", href: "/services/liferay-expert-advice" },
+  { text: "Proof Of Concept", href: "/services/liferay-proof-of-concept" },
+  { text: "Ecommerce Development", href: "/services/liferay-ecommerce-development" },
+  { text: "Migration", href: "/services/liferay-migration" },
+  { text: "Support & Maintenance", href: "/services/liferay-support-and-maintenance" },
+  { text: "Performance Tuning", href: "/services/liferay-performance-tuning" },
+  { text: "Upgrade", href: "/services/liferay-upgrade" },
+  { text: "Architecture Service", href: "/services/liferay-architecture-design" },
+  { text: "Consulting Page", href: "/services/liferay-consulting-and-implementation-services" },
+  { text: "Hire Liferay Devloper", href: "/services/liferay-hire-developer" },
 ]
 
 // --- Main ServicesMegaMenu Component ---
@@ -67,13 +68,23 @@ export default function ServicesMegaMenu() {
                 </div>
 
                 {/* Button is now a full-width block at the bottom */}
-                <a
+                {/* <a
                   href={featuredService.buttonHref}
                   className="mb-3 flex max-h-[47px] w-70 items-center justify-center text-center align-middle text-lg font-semibold text-white transition-opacity hover:opacity-90"
                   style={{ backgroundColor: "#00979E" }}
                 >
                   {featuredService.buttonText}
-                </a>
+                </a> */}
+                <CalendlyButton
+                  customButton
+                  customButtonContent={
+                    <button  className="mb-3 flex max-h-[47px] w-70 items-center justify-center text-center align-middle text-lg font-semibold text-white transition-opacity hover:opacity-90 cursor-pointer"
+                      style={{ backgroundColor: "#00979E" }}
+                    >
+                       {featuredService.buttonText}
+                    </button>
+                  }
+                />
               </div>
             </div>
           </div>

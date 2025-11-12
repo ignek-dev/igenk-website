@@ -1,0 +1,158 @@
+import { BlogSection } from "components/Common"
+import CaseStudy from "components/Common/CaseStudy"
+import TalkToExpert from "components/Common/TalkToExpert"
+import WhatMake from "components/Common/WhatMake"
+import { featureTabs, liferayPOCServices } from "data/liferay-proof-of-concept"
+
+export default function LiferayProofOfConceptPage() {
+
+   const LiferayProofOfConceptTitle1 = "Why Choose IGNEK For Liferay"
+  const LiferayProofOfConceptTitle2 ="Proof Of Concept?"
+  const LiferayProofOfConceptSubContent = "At IGNEK, Our expert engineers use up to date software’s and vast knowledge to craft solutions that match your needs and expectations. Putting clients first is our thing, and we’re proud to support our very first business client till today!"
+ 
+  const LiferayProofOfConceptData = [
+    {
+      title: "Strong Expertise",
+      desc: "We are experts with years of experience, dedicated to staying updated on the latest trends and advancements.",
+    },
+    {
+      title: "Client First",
+      desc: "Our tailored solutions prioritize client satisfaction, aligning with your objectives to foster trust and mutual success.",
+    },
+    {
+      title: "Effective Communication",
+      desc: "We are experts with years of experience, dedicated to staying updated on the latest trends and advancements.",
+    },
+    {
+      title: "On Time Delivery",
+      desc: "We prioritize deadlines, ensuring timely delivery without ever compromising on quality.",
+    },
+    {
+      title: "Results Focused",
+      desc: "Our dedicated team works hard to deliver measurable results, driving your business forward toward collective success.",
+    },
+    {
+      title: "End-to-End Support",
+      desc: "We provide complete support, from start to finish, and ongoing guidance even after project completion.",
+    },
+  ]
+ 
+  const caseStudies = [
+    {
+      id: 1,
+      image: "/images/liferay-pages-image/caseStudy.png",
+      tag: "Corporate",
+      title: "Music License Management Portal: Onboarding & Data Integrity",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla.",
+    },
+    {
+      id: 2,
+      image: "/images/liferay-pages-image/caseStudy.png",
+      tag: "FinTech",
+      title: "Transforming Financial Services with Innovations",
+      description:
+        "Suspendisse potenti. Maecenas vitae mattis tellus. Nullam quis imperdiet augue. Pellentesque habitant morbi tristique senectus et netus.",
+    },
+    {
+      id: 3,
+      image: "/images/liferay-pages-image/caseStudy.png",
+      tag: "Healthcare",
+      title: "Digital Health Platform: Patient-Centric Solutions",
+      description:
+        "Praesent ut ligula non mi varius sagittis. In hac habitasse platea dictumst. Cras non dolor. Vivamus quis mi.",
+    },
+    {
+      id: 4,
+      image: "/images/liferay-pages-image/caseStudy.png",
+      tag: "E-commerce",
+      title: "Scaling Online Retail with Cloud Technologies",
+      description:
+        "Curabitur at lacus ac velit ornare lobortis. Vestibulum suscipit nulla quis orci. Donec posuere vulputate arcu.",
+    },
+  ]
+
+  return (
+    <main className="pb-16">
+      {/* Hero */}
+      <section className="relative bg-black text-white">
+        <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_10%_0%,#0E7BF8_0%,#00979E_40%,transparent_65%)] opacity-25" />
+        <div className="mx-auto w-full px-4 pt-12 pb-16 md:px-8 md:pt-20 md:pb-28 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1820px)]:px-[192px]">
+          <div className="relative grid items-start gap-10 md:grid-cols-2">
+            <div>
+              <div className="inline-flex items-center rounded-full border border-white/30 px-4 py-2 text-lg text-white">
+                Liferay Services
+              </div>
+              <h1 className="mt-9 text-4xl leading-tight font-semibold sm:text-5xl md:text-6xl">
+                Liferay Proof
+                <br />
+                <span className="block">Of Concept</span>
+              </h1>
+            </div>
+            <p className="absolute bottom-0 max-w-xl text-right text-lg text-white sm:text-lg md:mt-16 md:justify-self-end">
+              Liferay Proof of Concept (PoC) Services serve as a trial to assess if Liferay technology is suitable for a specific project or solution. We demonstrate how Liferay’s portal features can be customized to meet the client's unique requirements and validate before full implementation.
+            </p>
+          </div>
+
+          {/* Feature tabs */}
+          <div className="mt-15 flex flex-wrap gap-4 [@media(min-width:1440px)]:gap-2 [@media(min-width:1800px)]:gap-4">
+            {featureTabs.map((label, index) => (
+              <span
+                key={index}
+                className="inline-flex items-center rounded-full border border-white/30 px-7 [@media(min-width:1440px)]:px-4 [@media(min-width:1800px)]:px-7 py-5 [@media(min-width:1440px)]:text-sm [@media(min-width:1500px)]:text-base [@media(min-width:1800px)]:text-lg text-white transition-colors hover:border-white hover:text-white"
+              >
+                {label}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#f7f7f7] text-black">
+        <div className="mx-auto w-full px-4 py-[64px] md:px-8 md:py-[64px] lg:py-[64px] [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
+          <h2 className="text-5xl leading-tight font-semibold sm:text-4xl md:text-5xl">
+            What We Do With Liferay POC Services
+          </h2>
+          <p className="mt-4 justify-self-center text-lg leading-relaxed text-[#101012] text-gray-700">
+            Our Liferay PoC services align your needs with Liferay’s out-of-the-box capabilities. We provide a
+            functional prototype to gauge if Liferay Proof of Concept meets your objectives, document feature
+            comparisons, highlight time-to-market reductions, and assess future project risks.
+          </p>
+          <div className="pt-8">
+            <div className="grid grid-cols-1 gap-[60px] sm:grid-cols-2 md:grid-cols-3">
+              {liferayPOCServices.map((item, index) => (
+                <div key={index} className="flex min-h-[80px]  rounded-full border border-[#E5E7EB] bg-white">
+                  <span className="flex h-full [@media(min-width:1440px)]:w-[38%] [@media(min-width:1800px)]:w-[25%]  items-center justify-center rounded-full bg-black">
+                    <svg
+                      width="40"
+                      height="40"
+                      viewBox="0 0 12 12"
+                      className="text-white"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M3 6l2 2 4-4"
+                        stroke="currentColor"
+                        strokeWidth="1"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </span>
+                  <p className="w-full  p-4 pr-4 text-left text-lg [@media(min-width:1440px)]:text-sm [@media(min-width:1500px)]:text-sm [@media(min-width:1800px)]:text-base font-medium text-black whitespace-wrap">{item}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+      <CaseStudy caseStudies={caseStudies} />
+       <WhatMake WhatMakeData={LiferayProofOfConceptData} titleText1={LiferayProofOfConceptTitle1} titleText2={LiferayProofOfConceptTitle2} subContext={LiferayProofOfConceptSubContent}/>
+      <TalkToExpert />
+      <BlogSection />
+
+      {/* CTA */}
+    </main>
+  )
+}

@@ -24,7 +24,7 @@ const CaseStudy: React.FC<CaseStudyCarouselProps> = ({ caseStudies }) => {
 
   return (
     <section className="overflow-hidden bg-black py-16 text-white">
-      <div className="max-w-7xl px-[150px]">
+      <div className="max-w-7xl px-[192px]">
         <h2 className="mb-10 px-4 text-3xl font-semibold">Related Case Studies</h2>
 
         <div className="relative flex transition-transform duration-700 ease-in-out">

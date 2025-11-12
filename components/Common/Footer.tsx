@@ -11,51 +11,56 @@ export default function Footer() {
     {
       title: "Company",
       items: [
-        { label: "About", href: "#" },
+        { label: "About", href: "/about" },
         { label: "Career", href: "/career" },
-        { label: "Case Study", href: "#" },
-        { label: "Blogs", href: "#" },
+        { label: "Case Study", href: "/case-study" },
+        { label: "Blogs", href: "/blog" },
       ],
     },
     {
       title: "Solutions",
       items: [
-        { label: "Enterprise Websites", href: "#" },
-        { label: "Employee Experience", href: "#" },
-        { label: "Digital Commerce", href: "#" },
-        { label: "Partner Experience", href: "#" },
-        { label: "Supplier Experience", href: "#" },
-        { label: "Customer Experience", href: "#" },
+        { label: "Enterprise Websites", href: "/contact" },
+        { label: "Employee Experience", href: "/contact" },
+        { label: "Digital Commerce", href: "/contact" },
+        { label: "Partner Experience", href: "/contact" },
+        { label: "Supplier Experience", href: "/contact" },
+        { label: "Customer Experience", href: "/contact" },
       ],
     },
     {
-      title: "Services",
+      title: "Liferay Services",
       items: [
-        { label: "Enterprise Portal Development", href: "#" },
-        { label: "Dedicated Development Team", href: "#" },
-        { label: "Back-end Development", href: "#" },
-        { label: "Front-end Development", href: "#" },
-        { label: "Digital Transformation", href: "#" },
-        { label: "SaaS Development", href: "#" },
+        { label: "Development and Customization", href: "/services/liferay-development-and-customization" },
+        // { label: "Theme Development", href: "/services/liferay-theme-development" },
+        { label: "Expert Advice", href: "/services/liferay-expert-advice" },
+        { label: "Proof Of Concept", href: "/services/liferay-proof-of-concept" },
+        { label: "Ecommerce Development", href: "/services/liferay-ecommerce-development" },
+        { label: "Migration", href: "/services/liferay-migration" },
+        { label: "Support And Maintenance", href: "/services/liferay-support-and-maintenance" },
+        { label: "Performance Tuning", href: "/services/liferay-performance-tuning" },
+        { label: "Upgradation", href: "/services/liferay-upgrade" },
+        { label: "Architecture Service", href: "/services/liferay-architecture-design" },
+        { label: "Consultation", href: "/services/liferay-consulting-and-implementation-services" }
       ],
     },
     {
       title: "Integrations",
       items: [
-        { label: "Matomo Integration with Liferay", href: "#" },
-        { label: "Microsoft Teams integration with Liferay", href: "#" },
-        { label: "Jira Integration With Liferay", href: "#" },
+        { label: "Matomo Integration with Liferay", href: "/contact" },
+        { label: "Microsoft Teams integration with Liferay", href: "/contact" },
+        { label: "Jira Integration With Liferay", href: "/contact" },
       ],
     },
-    {
-      title: "Hire Us",
-      items: [
-        { label: "Liferay", href: "#" },
-        { label: "Spring Boot", href: "#" },
-        { label: "ReactJS", href: "#" },
-        { label: "Healthcare", href: "#" },
-      ],
-    },
+    // {
+    //   title: "Hire Us",
+    //   items: [
+    //     { label: "Liferay", href: "/contact" },
+    //     { label: "Spring Boot", href: "/contact" },
+    //     { label: "ReactJS", href: "/contact" },
+    //     { label: "Healthcare", href: "/contact" },
+    //   ],
+    // },
   ]
 
   return (
@@ -64,12 +69,12 @@ export default function Footer() {
       <div className="mx-auto flex w-full border-b border-white/100 pl-4 md:pl-8 [@media(min-width:1440px)]:pl-[192px] [@media(min-width:1920px)]:pl-[192px]">
         <div className="relative w-[80%] pt-12 pr-4 pb-20 md:pt-16 md:pr-8 md:pb-24 [@media(min-width:1440px)]:pr-[192px] [@media(min-width:1920px)]:pr-[192px]">
           <motion.div
-            className="absolute right-0 bottom-0 h-full w-full rounded-br-[19rem] border-r-2 border-b-2 border-white/100"
+            className="absolute right-0 bottom-0 h-full w-full rounded-br-[19rem] border-r-2 border-b-2 border-white/100 pointer-events-none"
             initial={{ width: 0 }}
             animate={{ width: "100%" }}
-            transition={{ duration: 0.4, ease: "easeIn" }}
+            transition={{ duration: 0.9, ease: "easeIn" }}
           />
-          <div className="grid grid-cols-2 gap-10 md:grid-cols-3 lg:grid-cols-5">
+          <div className="grid grid-cols-2 gap-10 md:grid-cols-3 lg:grid-cols-4">
             <>
               {menus.map((menu) => (
                 <div key={menu.title}>
@@ -77,7 +82,7 @@ export default function Footer() {
                   <ul className="mt-5 space-y-3 text-xl text-white/80">
                     {menu.items.map((it) => (
                       <li key={it.label}>
-                        <Link href={it.href} className="hover:text-white">
+                        <Link href={it.href} className="hover:text-white cursor-pointer">
                           {it.label}
                         </Link>
                       </li>
