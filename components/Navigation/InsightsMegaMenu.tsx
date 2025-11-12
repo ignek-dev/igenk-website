@@ -13,7 +13,7 @@ const insightLinks = [
     icon: "/images/icon/blogs.png",
     title: "Blogs",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    href: "/contact",
+    href: "/blog",
   },
   {
     icon: "/images/icon/case-studies.png",
