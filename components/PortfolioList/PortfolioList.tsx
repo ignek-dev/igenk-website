@@ -1,10 +1,10 @@
 "use client";
 
-import MarqueeOverlay from "components/MarqueeOverlay/MarqueeOverlay";
-import Filters from "components/PortfolioFilters/Filters";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
+import MarqueeOverlay from "components/MarqueeOverlay/MarqueeOverlay";
+import Filters from "components/PortfolioFilters/Filters";
 
 interface WPPortfolioPost {
     id: number;
@@ -110,6 +110,7 @@ export default function PortfolioList() {
     //         </div>
     //     );
 
+    console.log(error)
     return (
         <div className="flex flex-col md:flex-row gap-12 p-[50px] pt-0 pb-0 bg-[#F9FAF7]">
             <Filters
@@ -209,7 +210,7 @@ export default function PortfolioList() {
                                                         const pages = [];
                                                         const maxVisible = 5; // Number of visible page buttons
                                                         let start = Math.max(1, currentPage - 2);
-                                                        let end = Math.min(totalPages, start + maxVisible - 1);
+                                                        const end = Math.min(totalPages, start + maxVisible - 1);
 
                                                         if (end - start < maxVisible - 1) {
                                                             start = Math.max(1, end - maxVisible + 1);

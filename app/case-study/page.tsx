@@ -1,5 +1,4 @@
 import type { Metadata } from "next"
-import Filters from "components/PortfolioFilters/Filters"
 import PortfolioList from "components/PortfolioList/PortfolioList"
 
 export const metadata: Metadata = {

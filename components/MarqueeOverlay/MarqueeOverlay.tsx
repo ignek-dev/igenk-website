@@ -1,7 +1,7 @@
 "use client";
 
-import { commonProvidedServices } from "components/success-stories/SuccessStories";
 import Image from "next/image";
+import { commonProvidedServices } from "components/success-stories/SuccessStories";
 
 export default function MarqueeOverlay() {
     return (
