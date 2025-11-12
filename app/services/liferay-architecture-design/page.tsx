@@ -3,16 +3,40 @@ import { useEffect, useRef, useState } from "react"
 import { BlogSection } from "components/Common"
 import TalkToExpert from "components/Common/TalkToExpert"
 import WhatMake from "components/Common/WhatMake"
+import { featureTabs, keyActivityArchitecureSystem } from "data/liferay-architecture-design"
 
 export default function LiferayArchitectureDesignPage() {
-  const featureTabs = [
-    "System Architecture",
-    "Database Architecture",
-    "Deployment Architecture",
-    "Lorem ipsum",
-    "Lorem ipsum",
-    "Lorem ipsum",
+
+   const LiferayArchitectureTitle1 = "Why Choose IGNEK For Liferay"
+  const LiferayArchitectureTitle2 ="Architecture Design Service?"
+  const LiferayArchitectureSubContent = "At IGNEK, Our expert engineers use up to date software’s and vast knowledge to craft solutions that match your needs and expectations. Putting clients first is our thing, and we’re proud to support our very first business client till today!"
+  const LiferayArchitectureData = [
+    {
+      title: "Strong Expertise",
+      desc: "We are experts with years of experience, dedicated to staying updated on the latest trends and advancements.",
+    },
+    {
+      title: "Client First",
+      desc: "Our tailored solutions prioritize client satisfaction, aligning with your objectives to foster trust and mutual success.",
+    },
+    {
+      title: "Effective Communication",
+      desc: "We are experts with years of experience, dedicated to staying updated on the latest trends and advancements.",
+    },
+    {
+      title: "On Time Delivery",
+      desc: "We prioritize deadlines, ensuring timely delivery without ever compromising on quality.",
+    },
+    {
+      title: "Results Focused",
+      desc: "Our dedicated team works hard to deliver measurable results, driving your business forward toward collective success.",
+    },
+    {
+      title: "End-to-End Support",
+      desc: "We provide complete support, from start to finish, and ongoing guidance even after project completion.",
+    },
   ]
+  
   const systemArchitecure = [
     {
       text: "System Architecure1",
@@ -50,48 +74,7 @@ export default function LiferayArchitectureDesignPage() {
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque",
     },
   ]
-  const keyActivityArchitecureSystem = [
-    {
-      text: "Understand Business Goals",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris.",
-    },
-    {
-      text: "System Components & frameworks",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris.",
-    },
-    {
-      text: "Protocols & Communication Channels",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris.",
-    },
-    {
-      text: "Aligning OOTB features with Use Cases.",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris.",
-    },
-    {
-      text: "Draw Diagrams",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris.",
-    },
-    {
-      text: "System Testing",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris.",
-    },
-    {
-      text: "Monitoring and Analytics",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris.",
-    },
-    {
-      text: "Custom Development & Customization",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris.",
-    },
-  ]
+
   const containerRef = useRef<HTMLDivElement | null>(null)
   const [isDragging, setIsDragging] = useState(false)
   const [startX, setStartX] = useState(0)
@@ -154,10 +137,8 @@ export default function LiferayArchitectureDesignPage() {
                 <span className="block">Design</span>
               </h1>
             </div>
-            <p className="absolute bottom-0 max-w-xl text-lg text-white sm:text-lg md:mt-16 md:justify-self-end">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.
-              Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis
-              tellus.
+            <p className="absolute bottom-0 [@media(min-width:1440px)]:max-w-xl [@media(min-width:1500px)]:max-w-3xl text-right [@media(min-width:1440px)]:text-base [@media(min-width:1500px)]:text-lg  text-white  md:mt-16 md:justify-self-end">
+              Liferay Architecture Design Services provides tailored solutions for designing and optimizing Liferay applications. We focus on aligning architecture with business needs for enhanced performance and scalability. Our services offer strategic guidance from concept to implementation, covering security, integrations, and user experience.
             </p>
           </div>
 
@@ -177,7 +158,7 @@ export default function LiferayArchitectureDesignPage() {
       <section>
         <div className="py-[0px] [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
           <div
-            className="flex gap-10 overflow-x-hidden"
+            className="flex gap-10 overflow-x-hidden cursor-grab"
             onMouseDown={handleMouseDown}
             onMouseLeave={handleMouseLeave}
             onMouseUp={handleMouseUp}
@@ -202,20 +183,20 @@ export default function LiferayArchitectureDesignPage() {
       <section className="bg-black text-white">
         <div className="mx-auto w-full px-4 py-[64px] md:px-8 md:py-[64px] lg:py-[64px] [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
           <div className="relative grid items-start gap-10 md:grid-cols-2">
-            <h2 className="text-3xl leading-[60px] font-semibold sm:text-4xl md:text-5xl">
+            <h2 className="text-3xl [@media(min-width:1440px)]:leading-[40px] [@media(min-width:1500px)]:leading-[50px] font-semibold [@media(min-width:1440px)]:text-3xl [@media(min-width:1500px)]:text-4xl">
               Key Activities Under Our Liferay Architecture Design Services
             </h2>
-            <p className="absolute bottom-0 max-w-xl text-right text-xl text-white md:justify-self-end">
+            <p className="absolute bottom-0 max-w-xl text-right [@media(min-width:1440px)]:text-lg [@media(min-width:1500px)]:text-xl text-white md:justify-self-end ">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.
             </p>
           </div>
           <div className="mt-[67px] grid grid-cols-12 gap-4">
             {keyActivityArchitecureSystem.map((item, index) => (
               <div key={index} className="col-span-12 flex grid grid-cols-12 items-center gap-4 p-4">
-                <div className="col-span-3 mb-2 flex items-center border-none pr-[100px] text-3xl font-medium font-semibold">
+                <div className="col-span-3 mb-2 flex items-center border-none pr-[100px] [@media(min-width:1440px)]:text-lg [@media(min-width:1500px)]:text-xl [@media(min-width:1800px)]:text-2xl font-semibold">
                   {item.text}
                 </div>
-                <div className="col-span-9 flex h-[104px] items-center rounded-[8px] border border-[#1F2937] p-4 text-xl">
+                <div className="col-span-9 flex h-[104px] items-center rounded-[8px] border border-[#1F2937] p-4 [@media(min-width:1440px)]:text-base [@media(min-width:1500px)]:text-lg">
                   {item.description}
                 </div>
               </div>
@@ -224,7 +205,7 @@ export default function LiferayArchitectureDesignPage() {
         </div>
       </section>
 
-      <WhatMake />
+      <WhatMake WhatMakeData={LiferayArchitectureData} titleText1={LiferayArchitectureTitle1} titleText2={LiferayArchitectureTitle2} subContext={LiferayArchitectureSubContent}/>
       {/* <HeroCTASection /> */}
       <TalkToExpert />
       <BlogSection />

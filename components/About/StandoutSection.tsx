@@ -3,28 +3,32 @@ import CardRail, { Card } from "./CardRail";
 
 const cardsData: Card[] = [
   {
-    title: "Accelerated Solution",
-    desc: "Following standard serve as strong evidence of our position as the experts in software development services.",
+    title: "Business Acceleration",
+    desc: "As a leading Liferay Development Company, we empower businesses with fast, scalable, and result-driven solutions.",
   },
   {
-    title: "Worthwhile Collaboration",
-    desc: "Following standard serve as strong evidence of our position as the experts in software development services.",
+    title: "Custom Expertise",
+    desc: "IGNEK crafts tailored Liferay solutions designed to optimize business performance and enhance user engagement.",
   },
   {
-    title: "Cutting Edge Technologies",
-    desc: "Following standard serve as strong evidence of our position as the experts in software development services.",
+    title: "Collaborative Success",
+    desc: "Partner with IGNEK, a Liferay Boutique Company, for transparent collaboration and impactful digital transformation outcomes.",
   },
   {
-    title: "Well Tested Solutions",
-    desc: "Following standard serve as strong evidence of our position as the experts in software development services.",
+    title: "Cutting-Edge Technologies",
+    desc: "We leverage modern tools and Liferay innovations to create seamless, future-ready digital experiences.",
   },
   {
-    title: "Cutting Edge Technologies",
-    desc: "Following standard serve as strong evidence of our position as the experts in software development services.",
+    title: "Well-Tested Delivery",
+    desc: "Our Liferay solutions undergo rigorous testing, ensuring stability, scalability, and long-term business value.",
   },
   {
-    title: "Worthwhile Collaboration",
-    desc: "Following standard serve as strong evidence of our position as the experts in software development services.",
+    title: "Enterprise Solutions",
+    desc: "IGNEK delivers world-class Liferay development services that adapt to your evolving digital transformation goals.",
+  },
+  {
+    title: "Round-the-Clock Support",
+    desc: "Our expert team provides 24/7 assistance, ensuring your Liferay platform runs smoothly without interruptions.",
   },
 ];
 
@@ -71,8 +75,7 @@ const StandoutSection = () => {
             lineHeight: "30px",
           }}
         >
-          Following standard serve as strong evidence of our position as the
-          experts in software development services.
+          IGNEK, a trusted Liferay Consulting Partner, delivers innovation, reliability, and unmatched digital experience expertise.
         </p>
 
         {/* Cards */}

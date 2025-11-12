@@ -83,11 +83,7 @@ export default function AboutUs() {
                         {/* Right Column */}
                         <div className="flex justify-end items-end">
                             <p className="font-poppins font-normal text-[20px] leading-[30px] text-right text-white/80 w-[631px]">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et<br />
-                                massa mi.
-                                Aliquam in hendrerit urna. Pellentesque sit amet <br />
-                                sapien fringilla,
-                                mattis ligula consectetur, ultrices mauris.
+                                We specialize in Liferay development and consulting, delivering exceptional digital transformation experiences globally.
                             </p>
                         </div>
                     </div>
@@ -107,14 +103,15 @@ export default function AboutUs() {
                                 <br />
                                 Trust IGNEK
                             </h2>
+                            <p className="text-lg text-[#555555] leading-relaxed pt-5">
+                                Companies trust IGNEK for proven Liferay expertise, innovation, reliability, and transformative digital experience solutions.
+                            </p>
                         </div>
 
                         {/* Right Column - Content */}
                         <div className="space-y-8">
                             {/* Introductory Paragraph */}
-                            <p className="text-lg text-[#555555] leading-relaxed">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla,
-                            </p>
+                            
 
                             {/* Section 1: Digital Excellence */}
                             <div className="space-y-3">

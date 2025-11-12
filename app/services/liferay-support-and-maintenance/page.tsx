@@ -1,79 +1,41 @@
 import { BlogSection } from "components/Common"
 import TalkToExpert from "components/Common/TalkToExpert"
 import WhatMake from "components/Common/WhatMake"
+import { activitiesLeft, activitiesRight, featureTabs, supportChecklist } from "data/liferay-support-and-maintenance"
 
 export default function LiferaySupportMaintenancePage() {
-  const featureTabs = [
-    "Application Maintenance Support",
-    "Annual Maintenance Contracts",
-    "Application Monitoring",
-    "Troubleshooting & Bug Fixes",
-  ]
 
-  const supportChecklist = [
-    "24×7 availability with SLA‑backed response times",
-    "Incident tracking, analysis, and root‑cause resolution",
-    "Performance review and optimization across the stack",
-    "Release management, patching, and version upgrades",
-    "Security audits and vulnerability fixes",
-    "Backup & disaster recovery readiness",
-  ]
-
-  const activitiesLeft = [
+   const LiferaySupportMaintenanceTitle1 = "Why Choose IGNEK For Liferay Support And Maintenance Service?"
+  const LiferaySupportMaintenanceTitle2 =""
+  const LiferaySupportMaintenanceSubContent = "At IGNEK, Our expert engineers use up to date software’s and vast knowledge to craft solutions that match your needs and expectations. Putting clients first is our thing, and we’re proud to support our very first business client till today!"
+ 
+  const LiferaySupportMaintenanceData = [
     {
-      num: "01",
-      title: "Monitoring",
-      desc: "We monitor performance, availability, user experience, security, logs, content, integrations, ",
+      title: "Strong Expertise",
+      desc: "We are experts with years of experience, dedicated to staying updated on the latest trends and advancements.",
     },
     {
-      num: "02",
-      title: "Content & Configuration",
-      desc: "After deployment, adapt Liferay to changing needs through configuration tweaks and content updates,",
+      title: "Client First",
+      desc: "Our tailored solutions prioritize client satisfaction, aligning with your objectives to foster trust and mutual success.",
     },
     {
-      num: "03",
-      title: "Debugging & Bug fixing",
-      desc: "Rapidly resolve post-launch issues, ensuring Liferay Portal’s seamless performance with expert debugging ",
+      title: "Effective Communication",
+      desc: "We are experts with years of experience, dedicated to staying updated on the latest trends and advancements.",
     },
     {
-      num: "04",
-      title: "Enhancement & Development",
-      desc: "We offer post-production Liferay development, unlocking its full potential of Liferay with dynamic enhancements ",
+      title: "On Time Delivery",
+      desc: "We prioritize deadlines, ensuring timely delivery without ever compromising on quality.",
     },
     {
-      num: "05",
-      title: "Regular Updates",
-      desc: "We ensure your Liferay Server remains up-to-date by Regular Updated in Liferay.",
+      title: "Results Focused",
+      desc: "Our dedicated team works hard to deliver measurable results, driving your business forward toward collective success.",
+    },
+    {
+      title: "End-to-End Support",
+      desc: "We provide complete support, from start to finish, and ongoing guidance even after project completion.",
     },
   ]
 
-  const activitiesRight = [
-    {
-      num: "06",
-      title: "Backup and Recovery",
-      desc: "Ensure data integrity with scheduled backups and implement a robust disaster recovery plan for reliability.",
-    },
-    {
-      num: "07",
-      title: "License Management",
-      desc: "Maintain Liferay compliance by monitoring licensing terms, tracking renewals, and ensuring adherence to usage limits.",
-    },
-    {
-      num: "08",
-      title: "Performance Tuning",
-      desc: "Periodically review and optimize the performance of Liferay, making adjustments to configurations as needed.",
-    },
-    {
-      num: "09",
-      title: "Testing Environment",
-      desc: "Maintain a separate testing environment to validate updates and changes before applying them",
-    },
-    {
-      num: "10",
-      title: "Regular Audits",
-      desc: "Conduct regular audits of the Liferay implementation to identify and address any inefficiencies or areas ",
-    },
-  ]
 
   return (
     <main className="pb-16">
@@ -93,8 +55,7 @@ export default function LiferaySupportMaintenancePage() {
               </h1>
             </div>
             <p className="absolute bottom-0 max-w-lg text-lg text-white sm:text-lg md:mt-16 md:justify-self-end pl-0 text-right">
-              End‑to‑end support and reliable maintenance for your  Liferay platform—ensuring uptime, performance, and
-              ongoing improvements.
+              Ensure your Liferay Portal runs smoothly with expert Liferay Support And Maintenance. Get proactive monitoring, timely updates, and reliable technical support for continuous platform performance.
             </p>
           </div>
 
@@ -158,11 +119,11 @@ export default function LiferaySupportMaintenancePage() {
       <section className="bg-black text-white">
         <div className="mx-auto w-full px-4 py-[64px] md:px-8 md:py-[64px] lg:py-[64px] [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
           <div className="relative grid items-start gap-10 md:grid-cols-2">
-            <h2 className="text-3xl leading-[60px] font-semibold sm:text-4xl md:text-5xl">
+            <h2 className="text-3xl [@media(min-width:1440px)]:leading-[50px] [@media(min-width:1800px)]:leading-[60px]  font-semibold sm:text-3xl md:text-4xl ">
               Key Activities Under Our Liferay Support And Maintenance Service
             </h2>
-            <p className="absolute bottom-0 max-w-xl text-right text-xl text-white md:justify-self-end">
-              Our approach blends prevention and rapid response to keep your platform stable, secure, and performing.
+            <p className="absolute bottom-0 max-w-lg text-right text-lg text-white md:justify-self-end">
+              Our dedicated Liferay team offers ongoing Liferay Support and Maintenance to address the challenges of a dynamic business environment. We tailor our services to optimize the performance and longevity of your Liferay solutions.
             </p>
           </div>
 
@@ -179,7 +140,7 @@ export default function LiferaySupportMaintenancePage() {
                       </span>
                       <div>
                         <h3 className="text-3xl font-medium whitespace-nowrap">{item.title}</h3>
-                        <p className="mt-2 text-xl text-white [@media(min-width:1440px)]:min-h-[104px] [@media(min-width:1800)]:min-h-full [@media(min-width:1500px)]:mb-1 [@media(min-width:1800px)]:mb-0 ">{item.desc}</p>
+                        <p className="mt-2 text-xl text-white [@media(min-width:1440px)]:min-h-[104px] [@media(min-width:1800)]:min-h-full [@media(min-width:1500px)]:mb-1 [@media(min-width:1800px)]:mb-0">{item.desc}</p>
                       </div>
                     </div>
                   </div>
@@ -189,7 +150,7 @@ export default function LiferaySupportMaintenancePage() {
 
             {/* Right column */}
             <div>
-              <div className="[@media(min-width:1440px)]:space-y-8 [@media(min-width:1500px)]:space-y-8.5 [@media(min-width:1800px)]:space-y-8">
+              <div className="[@media(min-width:1440px)]:space-y-9.5 [@media(min-width:1500px)]:space-y-9.5 [@media(min-width:1800px)]:space-y-12">
                 {activitiesRight.map((item, index) => (
                   <div key={item.title} className="group">
                     {index !== 0 && <div className="border-t border-white/30" />}
@@ -199,7 +160,7 @@ export default function LiferaySupportMaintenancePage() {
                       </span>
                       <div>
                         <h3 className="text-3xl font-medium">{item.title}</h3>
-                        <p className="mt-2 text-xl text-white [@media(min-width:1440px)]:min-h-[101px] [@media(min-width:1800)]:min-h-full [@media(min-width:1500px)]:mb-1 [@media(min-width:1800px)]:mb-0 ">{item.desc}</p>
+                        <p className="mt-2 text-xl text-white [@media(min-width:1440px)]:min-h-[101px] [@media(min-width:1800)]:min-h-full [@media(min-width:1500px)]:mb-1 [@media(min-width:1800px)]:mb-3 ">{item.desc}</p>
                       </div>
                     </div>
                   </div>
@@ -210,7 +171,7 @@ export default function LiferaySupportMaintenancePage() {
         </div>
       </section>
 
-      <WhatMake />
+     <WhatMake WhatMakeData={LiferaySupportMaintenanceData}  titleText1={LiferaySupportMaintenanceTitle1} titleText2={LiferaySupportMaintenanceTitle2} subContext={LiferaySupportMaintenanceSubContent}/>
       <TalkToExpert />
       <BlogSection />
 

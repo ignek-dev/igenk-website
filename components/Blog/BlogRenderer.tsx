@@ -1,7 +1,7 @@
 "use client";
 
 import Prism from "prismjs";
-import React, { useEffect,useRef, useState  } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import './BlogRenderer.css'
 
 import "prismjs/components/prism-javascript";
@@ -17,8 +17,9 @@ import "prismjs/plugins/toolbar/prism-toolbar";
 import "prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard";
 import "prismjs/plugins/line-numbers/prism-line-numbers";
 import BlogSidebar from "components/BlogSidebar/BlogSidebar";
+import ExploreServices from "components/ExploreServices/ExploreServices";
 
-const POST_API = "https://www.ignek.com/wp-json/wp/v2/posts/40391?_embed";
+const POST_API = "https://www.ignek.com/wp-json/wp/v2/posts/40578?_embed";
 
 // 🧠 Helper: removes indentation
 function unindentCode(codeString: string): string {
@@ -205,30 +206,18 @@ export default function PostRenderer() {
     return (
         <div className="blog-section">
             {/* GRID LAYOUT — 4 columns */}
-             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 ">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 ">
                 {/* --- MAIN ARTICLE (3 cols) --- */}
                 <div className="lg:col-span-8 border-r border-[#E3E3E3]">
                     <article className="wp-post font-sans">
-                        {/* <h1
-                            className="wp-post-title text-3xl font-bold mb-6"
-                            dangerouslySetInnerHTML={{ __html: post.title.rendered }}
-                        />
-
-                        {featured && (
-                            <div className="wp-featured-image mb-6">
-                                <img
-                                    src={featured}
-                                    alt={post.title.rendered}
-                                    className="w-full max-h-[400px] object-cover rounded-lg"
-                                />
-                            </div>
-                        )} */}
-
                         <div
                             className="entry-content prose max-w-none text-gray-800 leading-relaxed"
                             ref={contentRef}
                             dangerouslySetInnerHTML={{ __html: cleanHTML }}
                         />
+                        <div className="px-[80px] mb-[40px]">
+                            <ExploreServices />
+                        </div>
                     </article>
                 </div>
 

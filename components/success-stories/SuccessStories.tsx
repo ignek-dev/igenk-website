@@ -6,7 +6,7 @@ import { useSharedScroll } from "components/Common/ScrollContextProvider"
 import SuccessStoryCard, { Story } from "./SuccessStoryCard"
 
 // CHANGED: Consolidated Provided Services data
-const commonProvidedServices = [
+export const commonProvidedServices = [
   { name: "Java", iconSrc: "/images/success-stories/java.png" },
   { name: "Bootstrap", iconSrc: "/images/success-stories/bootstrap.png" },
   { name: "Kenesis", iconSrc: "/images/success-stories/javascript.png" },

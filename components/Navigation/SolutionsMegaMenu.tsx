@@ -45,17 +45,17 @@ export default function SolutionsMegaMenu() {
   return (
     <>
       <div className="mx-auto w-full px-4 py-12 md:px-8 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px]">
-        <div className="flex w-full justify-between gap-24">
+        <div className="flex w-full justify-between gap-18">
           {/* Left Group (Solutions & Integrations) */}
-          <div className="flex gap-x-8">
+          <div className="flex gap-x-8 [@media(min-width:1440px)]:gap-x-14">
             <div>
-              <h3 className="mb-6 text-3xl font-semibold">Solutions</h3>
+              <h3 className="mb-6 text-2xl font-semibold">Solutions</h3>
               <ul className="space-y-4">
                 {solutionsLinks.map((link, index) => (
                   <li key={`sol-${index}`}>
                     <a
                       href={link.href}
-                      className="flex items-center gap-4 text-xl text-white/100 transition-colors hover:text-white"
+                      className="flex items-center gap-4 text-lg text-white/100 transition-colors hover:text-white"
                     >
                       <Image
                         src={link.icon}
@@ -72,13 +72,13 @@ export default function SolutionsMegaMenu() {
               </ul>
             </div>
             <div>
-              <h3 className="mb-6 text-3xl font-semibold">Integrations</h3>
+              <h3 className="mb-6 text-2xl font-semibold">Integrations</h3>
               <ul className="space-y-4">
                 {integrationsLinks.map((link, index) => (
                   <li key={`int-${index}`}>
                     <a
                       href={link.href}
-                      className="flex items-center gap-4 text-xl text-white/100 transition-colors hover:text-white"
+                      className="flex items-center gap-4 text-lg text-white/100 transition-colors hover:text-white"
                     >
                       <Image
                         src={link.icon}
@@ -97,13 +97,13 @@ export default function SolutionsMegaMenu() {
 
           <div className="flex gap-x-8">
             <div>
-              <h3 className="mb-6 text-3xl font-semibold">Liferay Marketplace</h3>
+              <h3 className="mb-6 text-2xl font-semibold">Liferay Marketplace</h3>
               <ul className="space-y-4">
                 {marketplaceLinks.map((link, index) => (
                   <li key={`mp-${index}`}>
                     <a
                       href={link.href}
-                      className="flex items-center gap-4 text-xl text-white/100 transition-colors hover:text-white"
+                      className="flex items-center gap-4 text-lg text-white/100 transition-colors hover:text-white"
                     >
                       <Image
                         src={link.icon}
@@ -119,13 +119,13 @@ export default function SolutionsMegaMenu() {
               </ul>
             </div>
             <div>
-              <h3 className="mb-6 text-3xl font-semibold">Liferay + AI</h3>
+              <h3 className="mb-6 text-2xl font-semibold">Liferay + AI</h3>
               <ul className="space-y-4">
                 {aiLinks.map((link, index) => (
                   <li key={`ai-${index}`}>
                     <a
                       href={link.href}
-                      className="flex items-center gap-4 text-xl text-white/100 transition-colors hover:text-white"
+                      className="flex items-center gap-4 text-lg text-white/100 transition-colors hover:text-white"
                     >
                       <Image
                         src={link.icon}

@@ -44,6 +44,38 @@ const caseStudies = [
       "Curabitur at lacus ac velit ornare lobortis. Vestibulum suscipit nulla quis orci. Donec posuere vulputate arcu.",
   },
 ]
+
+const LiferayConsultationTitle1 = "Why Choose IGNEK For Liferay"
+  const LiferayConsultationTitle2 ="Development and Customization?"
+  const LiferayConsultationSubContent = "At IGNEK, Our expert engineers use up to date software’s and vast knowledge to craft solutions that match your needs and expectations. Putting clients first is our thing, and we’re proud to support our very first business client till today!"
+ 
+
+const LiferayConsultationData = [
+  {
+    title: "Strong Expertise",
+    desc: "We are experts with years of experience, dedicated to staying updated on the latest trends and advancements.",
+  },
+  {
+    title: "Client First",
+    desc: "Our tailored solutions prioritize client satisfaction, aligning with your objectives to foster trust and mutual success.",
+  },
+  {
+    title: "Effective Communication",
+    desc: "We are experts with years of experience, dedicated to staying updated on the latest trends and advancements.",
+  },
+  {
+    title: "On Time Delivery",
+    desc: "We prioritize deadlines, ensuring timely delivery without ever compromising on quality.",
+  },
+  {
+    title: "Results Focused",
+    desc: "Our dedicated team works hard to deliver measurable results, driving your business forward toward collective success.",
+  },
+  {
+    title: "End-to-End Support",
+    desc: "We provide complete support, from start to finish, and ongoing guidance even after project completion.",
+  },
+]
 export default function LiferayConsultationPage() {
   const [hoveredCard, setHoveredCard] = useState<string | null>(null)
   const [activeServiceTab, setActiveServiceTab] = useState("Portal")
@@ -866,7 +898,7 @@ export default function LiferayConsultationPage() {
       />
       <section className="bg-white text-black"></section>
       <CaseStudy caseStudies={caseStudies} />
-      <WhatMake />
+      <WhatMake WhatMakeData={LiferayConsultationData} titleText1={LiferayConsultationTitle1} titleText2={LiferayConsultationTitle2}subContext={LiferayConsultationSubContent}/>
       <TalkToExpert />
       <BlogSection />
     </main>

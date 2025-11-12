@@ -1,0 +1,88 @@
+/* Scoped normalization for imported WordPress/Elementor HTML to prevent overlap */
+
+.wpContent {
+  word-break: break-word;
+}
+
+.wpContent :where(h1, h2, h3, h4, h5, h6) {
+  display: block;
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 0.75rem 0;
+}
+
+.wpContent :where(p) {
+  display: block;
+  line-height: 1.6;
+  margin: 0.75rem 0;
+}
+
+.wpContent :where(ul) {
+  display: block;
+  padding-left: 1.25rem;
+  list-style: disc;
+  margin: 0.75rem 0;
+}
+
+.wpContent :where(ol) {
+  display: block;
+  padding-left: 1.25rem;
+  list-style: decimal;
+  margin: 0.75rem 0;
+}
+
+.wpContent :where(li) {
+  display: list-item;
+  margin: 0.25rem 0;
+}
+
+.wpContent :where(a) {
+  color: #00979E;
+  text-decoration: underline;
+}
+
+.wpContent :where(img) {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Neutralize Elementor-specific transforms/positioning that can cause overlap */
+.wpContent :where(.elementor-widget, .elementor-element) {
+  position: static !important;
+  transform: none !important;
+}
+
+.wpContent :where(.e-transform) {
+  transform: none !important;
+}
+
+.wpContent :where(.elementor-inline-items) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.wpContent :where(.elementor-icon-list-item) {
+  display: flex;
+  align-items: center;
+}
+
+.wpContent :where(blockquote) {
+  margin: 1rem 0;
+  padding-left: 1rem;
+  border-left: 2px solid rgba(255,255,255,0.2);
+}
+
+.wpContent :where(table) {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.wpContent :where(th, td) {
+  border: 1px solid rgba(255,255,255,0.2);
+  padding: 0.5rem;
+}
+
+.wpContent :where(div, section) {
+  clear: both;
+}

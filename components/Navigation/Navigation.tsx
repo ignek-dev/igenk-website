@@ -15,7 +15,7 @@ const menu = [
   { label: "Services", href: "#" },
   { label: "Solutions", href: "#" },
   { label: "Insights", href: "#" },
-  { label: "Portfolio", href: "/portfolio" },
+  // { label: "Portfolio", href: "/portfolio" },
 ]
 
 export default function Navigation() {

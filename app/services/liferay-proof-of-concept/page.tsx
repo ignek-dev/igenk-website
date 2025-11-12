@@ -2,14 +2,41 @@ import { BlogSection } from "components/Common"
 import CaseStudy from "components/Common/CaseStudy"
 import TalkToExpert from "components/Common/TalkToExpert"
 import WhatMake from "components/Common/WhatMake"
+import { featureTabs, liferayPOCServices } from "data/liferay-proof-of-concept"
 
 export default function LiferayProofOfConceptPage() {
-  const featureTabs = [
-    "Discuss PoC requirements",
-    "Assist To Validate The Assumption",
-    "Liferay Functionality Identification",
-    "Liferay Functionality Identification",
+
+   const LiferayProofOfConceptTitle1 = "Why Choose IGNEK For Liferay"
+  const LiferayProofOfConceptTitle2 ="Proof Of Concept?"
+  const LiferayProofOfConceptSubContent = "At IGNEK, Our expert engineers use up to date software’s and vast knowledge to craft solutions that match your needs and expectations. Putting clients first is our thing, and we’re proud to support our very first business client till today!"
+ 
+  const LiferayProofOfConceptData = [
+    {
+      title: "Strong Expertise",
+      desc: "We are experts with years of experience, dedicated to staying updated on the latest trends and advancements.",
+    },
+    {
+      title: "Client First",
+      desc: "Our tailored solutions prioritize client satisfaction, aligning with your objectives to foster trust and mutual success.",
+    },
+    {
+      title: "Effective Communication",
+      desc: "We are experts with years of experience, dedicated to staying updated on the latest trends and advancements.",
+    },
+    {
+      title: "On Time Delivery",
+      desc: "We prioritize deadlines, ensuring timely delivery without ever compromising on quality.",
+    },
+    {
+      title: "Results Focused",
+      desc: "Our dedicated team works hard to deliver measurable results, driving your business forward toward collective success.",
+    },
+    {
+      title: "End-to-End Support",
+      desc: "We provide complete support, from start to finish, and ongoing guidance even after project completion.",
+    },
   ]
+ 
   const caseStudies = [
     {
       id: 1,
@@ -44,16 +71,7 @@ export default function LiferayProofOfConceptPage() {
         "Curabitur at lacus ac velit ornare lobortis. Vestibulum suscipit nulla quis orci. Donec posuere vulputate arcu.",
     },
   ]
-  const liferayPOCServices = [
-    "Know your industry and understand the requirements",
-    "Map high-level requirements against Liferay OOTB features",
-    "Create a full Liferay demo using mapped OOTB features",
-    "Identify customization and custom development needs",
-    "Identify Integration needs with third-party services",
-    "Liferay POC Services will help to define a more accurate project & and timeline",
-    "Define hardware needs from non-functional requirements.",
-    "Identify risks and outline them for communication",
-  ]
+
   return (
     <main className="pb-16">
       {/* Hero */}
@@ -71,10 +89,8 @@ export default function LiferayProofOfConceptPage() {
                 <span className="block">Of Concept</span>
               </h1>
             </div>
-            <p className="absolute bottom-0 max-w-xl text-lg text-white sm:text-lg md:mt-16 md:justify-self-end">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.
-              Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis
-              tellus.
+            <p className="absolute bottom-0 max-w-xl text-right text-lg text-white sm:text-lg md:mt-16 md:justify-self-end">
+              Liferay Proof of Concept (PoC) Services serve as a trial to assess if Liferay technology is suitable for a specific project or solution. We demonstrate how Liferay’s portal features can be customized to meet the client's unique requirements and validate before full implementation.
             </p>
           </div>
 
@@ -83,7 +99,7 @@ export default function LiferayProofOfConceptPage() {
             {featureTabs.map((label, index) => (
               <span
                 key={index}
-                className="inline-flex items-center rounded-full border border-white/30 px-7 [@media(min-width:1440px)]:px-3 [@media(min-width:1800px)]:px-7 py-5 [@media(min-width:1440px)]:text-base [@media(min-width:1500px)]:text-base [@media(min-width:1800px)]:text-lg text-white transition-colors hover:border-white hover:text-white"
+                className="inline-flex items-center rounded-full border border-white/30 px-7 [@media(min-width:1440px)]:px-4 [@media(min-width:1800px)]:px-7 py-5 [@media(min-width:1440px)]:text-sm [@media(min-width:1500px)]:text-base [@media(min-width:1800px)]:text-lg text-white transition-colors hover:border-white hover:text-white"
               >
                 {label}
               </span>
@@ -132,7 +148,7 @@ export default function LiferayProofOfConceptPage() {
         </div>
       </section>
       <CaseStudy caseStudies={caseStudies} />
-      <WhatMake />
+       <WhatMake WhatMakeData={LiferayProofOfConceptData} titleText1={LiferayProofOfConceptTitle1} titleText2={LiferayProofOfConceptTitle2} subContext={LiferayProofOfConceptSubContent}/>
       <TalkToExpert />
       <BlogSection />
 

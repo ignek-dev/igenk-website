@@ -2,13 +2,10 @@ import ScheduleMeetingButton from "components/Button/ScheduleMeetingButton"
 import { BlogSection } from "components/Common"
 import TalkToExpert from "components/Common/TalkToExpert"
 import WhatMake from "components/Common/WhatMake"
+import { features, featureTabs, steps } from "data/liferay-migration"
 
 export default function LiferayMigrationPage() {
-  const featureTabs = [
-    "Seamless Migration to Liferay DXP",
-    "Upgrading/Migration",
-    "Ensure Long‑Term Support & Scalability",
-  ]
+
 
   // const circlePoints = [
   //   { label: "Create Personalized Experiences for Users", pos: "top-4 left-1/2 -translate-x-1/2" },
@@ -20,63 +17,38 @@ export default function LiferayMigrationPage() {
   //   { label: "Efficient Content Management", pos: "top-1/2 left-2 -translate-y-1/2" },
   // ]
 
-  const steps = [
+    const LiferayMigrationTitle1 = "Why Choose IGNEK For Liferay"
+  const LiferayMigrationTitle2 ="Migration?"
+  const LiferayMigrationSubContent = "At IGNEK, Our expert engineers use up to date software’s and vast knowledge to craft solutions that match your needs and expectations. Putting clients first is our thing, and we’re proud to support our very first business client till today!"
+ 
+  const  LiferayMigrationData = [
     {
-      title: "Requirement Understanding",
-      desc: "We analyze the current portal, compare it with the new version's needs, and identify improvements for a smooth transition and clear migration requirements.",
+      title: "Strong Expertise",
+      desc: "We are experts with years of experience, dedicated to staying updated on the latest trends and advancements.",
     },
     {
-      title: "Migration Planning",
-      desc: "We ensure a smooth Liferay transition by planning design, architecture, and data migration. Once approved, we migrate your data and workflow for a secure, seamless upgrade.",
+      title: "Client First",
+      desc: "Our tailored solutions prioritize client satisfaction, aligning with your objectives to foster trust and mutual success.",
     },
     {
-      title: "Portal Design – UI/UX",
-      desc: "Our UI & UX experts design intuitive interfaces, develop mock screens to finalize the theme, and complete the portal's design. We conduct review sessions for any adjustments.",
+      title: "Effective Communication",
+      desc: "We are experts with years of experience, dedicated to staying updated on the latest trends and advancements.",
     },
     {
-      title: "Portal Development",
-      desc: "We handle your Liferay upgrade, including content migration, theme development, data transfer, and media migration, optimizing for a seamless digital experience.",
+      title: "On Time Delivery",
+      desc: "We prioritize deadlines, ensuring timely delivery without ever compromising on quality.",
     },
     {
-      title: "Portal Migration QA",
-      desc: "We’ll verify migration with manual and automated tests to ensure everything works perfectly. Our QA team will validate content, media, and database against the legacy system.",
+      title: "Results Focused",
+      desc: "Our dedicated team works hard to deliver measurable results, driving your business forward toward collective success.",
     },
     {
-      title: "Portal Deployment & Production Release",
-      desc: "After QA approval, we’ll transition to the new platform while keeping the old system running for a few weeks. This enables cross-validation, including SEO impact and user behavior.",
+      title: "End-to-End Support",
+      desc: "We provide complete support, from start to finish, and ongoing guidance even after project completion.",
     },
   ]
 
-  const features = [
-    {
-      title: "Easy Integration Capabilities",
-      position: "top-[-10px] left-1/2  right-[-100px]",
-    },
-    {
-      title: "B2B & B2C Digital Commerce",
-      position: "top-[25%] right-[30px] flex flex-row",
-    },
-    {
-      title: "Forms, Workflow, and Collaboration",
-      position: "bottom-[20%] right-[-18%] flex flex-row",
-    },
-    {
-      title: "Low Code/No Code Tool for Rapid Custom Development",
-      position: "bottom-[10%] left-1/2 -translate-x-1/2 min-w-[347px]",
-    },
-    {
-      title: "Native Headless Capabilities",
-      position: "bottom-[22%] left-[-130px] flex flex-row-reverse ",
-    },
-    {
-      title: "Efficient Content Management System",
-      position: "top-[45%] left-[-20px] flex flex-row-reverse",
-    },
-    {
-      title: "Create Personalized Experiences for Users",
-      position: "top-[20%] left-[-135px] flex flex-row-reverse",
-    },
-  ]
+
   return (
     <main className="pb-16">
       {/* Hero */}
@@ -95,8 +67,7 @@ export default function LiferayMigrationPage() {
               </h1>
             </div>
             <p className="absolute bottom-0 max-w-xl text-lg text-white sm:text-lg md:mt-16 md:justify-self-end">
-              Migrate confidently to Liferay with a proven plan that protects data, accelerates delivery, and unlocks
-              new capabilities.
+              Upgrade smoothly to the latest Liferay version with expert Liferay Migration. Our Liferay Portal Migration ensures secure data transfer, minimal downtime, and optimized platform performance.
             </p>
           </div>
 
@@ -182,7 +153,7 @@ export default function LiferayMigrationPage() {
                 Our Liferay Migration Process
               </h2>
               <p className="mt-4 mb-8 max-w-xl text-lg text-white">
-                Understand objectives, plan dependencies, and execute migrations with predictable outcomes.
+                We optimize transitions from legacy systems to Liferay with our proven Liferay Portal Migration services, using best practices for seamless upgrades. Our expertise ensures cost-effective, high-quality transitions. Here is our Liferay Migration process.
               </p>
               <ScheduleMeetingButton isFullWidth={false} btnName="Schedule Meeting" />
             </div>
@@ -222,7 +193,7 @@ export default function LiferayMigrationPage() {
       </section>
 
       {/* Case Studies (reuse BlogSection) */}
-      <WhatMake />
+      <WhatMake WhatMakeData={ LiferayMigrationData} titleText1={ LiferayMigrationTitle1} titleText2={ LiferayMigrationTitle2} subContext={ LiferayMigrationSubContent}/>
       <TalkToExpert />
       <BlogSection />
 

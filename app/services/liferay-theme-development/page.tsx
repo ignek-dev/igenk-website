@@ -4,6 +4,37 @@ import TalkToExpert from "components/Common/TalkToExpert"
 import WhatMake from "components/Common/WhatMake"
 
 export default function LiferayThemeDevelopmentPage() {
+  const LiferayThemeDevelopmentTitle1 = "Why Choose IGNEK For Liferay Theme Development Service?"
+  const LiferayThemeDevelopmentTitle2 =""
+  const LiferayThemeDevelopmentSubContent = "At IGNEK, Our expert engineers use up to date software’s and vast knowledge to craft solutions that match your needs and expectations. Putting clients first is our thing, and we’re proud to support our very first business client till today!"
+
+    const LiferayThemeDevelopmentData = [
+    {
+      title: "Strong Expertise",
+      desc: "We are experts with years of experience, dedicated to staying updated on the latest trends and advancements.",
+    },
+    {
+      title: "Client First",
+      desc: "Our tailored solutions prioritize client satisfaction, aligning with your objectives to foster trust and mutual success.",
+    },
+    {
+      title: "Effective Communication",
+      desc: "We are experts with years of experience, dedicated to staying updated on the latest trends and advancements.",
+    },
+    {
+      title: "On Time Delivery",
+      desc: "We prioritize deadlines, ensuring timely delivery without ever compromising on quality.",
+    },
+    {
+      title: "Results Focused",
+      desc: "Our dedicated team works hard to deliver measurable results, driving your business forward toward collective success.",
+    },
+    {
+      title: "End-to-End Support",
+      desc: "We provide complete support, from start to finish, and ongoing guidance even after project completion.",
+    },
+  ]
+
   const featureTabs = [
     "Customized UI Design",
     "Responsive Layouts",
@@ -80,7 +111,7 @@ export default function LiferayThemeDevelopmentPage() {
                 <span className="block">Theme Development</span>
               </h1>
             </div>
-            <p className="absolute bottom-0 max-w-xl text-lg text-white sm:text-lg md:mt-16 md:justify-self-end">
+            <p className="absolute bottom-0 max-w-lg text-right text-lg text-white sm:text-lg md:mt-16 md:justify-self-end">
               Transform your Liferay Portal with our expert Liferay Theme Development Services. We specialize in
               converting UX designs into visually captivating HTML and implementing responsive Liferay Theme. Our
               approach ensures
@@ -129,7 +160,7 @@ export default function LiferayThemeDevelopmentPage() {
         </div>
       </section>
       <CaseStudy caseStudies={caseStudies} />
-      <WhatMake />
+       <WhatMake WhatMakeData={LiferayThemeDevelopmentData}  titleText1={LiferayThemeDevelopmentTitle1} titleText2={LiferayThemeDevelopmentTitle2} subContext={LiferayThemeDevelopmentSubContent}/>
       <TalkToExpert />
       <BlogSection />
     </main>
