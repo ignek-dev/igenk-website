@@ -3,8 +3,8 @@ import WhatMake from "components/Common/WhatMake"
 import { BlogSection } from "../../components/Common"
 
 export default function LiferaySupportMaintenancePage() {
-  const LiferaySupportMaintenanceTitle1 = "Why Choose IGNEK For Liferay Support"
-  const LiferaySupportMaintenanceTitle2 ="And Maintenance Service?"
+  const LiferaySupportMaintenanceTitle1 = "Why Choose IGNEK For Liferay Support And Maintenance Service?"
+  const LiferaySupportMaintenanceTitle2 =""
   const LiferaySupportMaintenanceSubContent = "At IGNEK, Our expert engineers use up to date software’s and vast knowledge to craft solutions that match your needs and expectations. Putting clients first is our thing, and we’re proud to support our very first business client till today!"
  
   const LiferaySupportMaintenanceData = [

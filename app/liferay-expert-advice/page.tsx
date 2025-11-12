@@ -4,8 +4,8 @@ import TalkToExpert from "components/Common/TalkToExpert"
 import WhatMake from "components/Common/WhatMake"
 
 export default function LiferayExpertAdvicePage() {
-  const LiferayExpertAdviceTitle1 = "Why Choose IGNEK For Liferay Expert"
-  const LiferayExpertAdviceTitle2 ="Advice: Elevate Your Digital Experience?"
+  const LiferayExpertAdviceTitle1 = "Why Choose IGNEK For Liferay Expert Advice: Elevate Your Digital Experience?"
+  const LiferayExpertAdviceTitle2 =""
   const LiferayExpertAdviceSubContent = "At IGNEK, Our expert engineers use up to date software’s and vast knowledge to craft solutions that match your needs and expectations. Putting clients first is our thing, and we’re proud to support our very first business client till today!"
  
   const LiferayExpertAdviceData = [

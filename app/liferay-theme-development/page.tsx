@@ -4,8 +4,8 @@ import TalkToExpert from "components/Common/TalkToExpert"
 import WhatMake from "components/Common/WhatMake"
 
 export default function LiferayThemeDevelopmentPage() {
-  const LiferayThemeDevelopmentTitle1 = "Why Choose IGNEK For Liferay Theme"
-  const LiferayThemeDevelopmentTitle2 ="Development Service?"
+  const LiferayThemeDevelopmentTitle1 = "Why Choose IGNEK For Liferay Theme Development Service?"
+  const LiferayThemeDevelopmentTitle2 =""
   const LiferayThemeDevelopmentSubContent = "At IGNEK, Our expert engineers use up to date software’s and vast knowledge to craft solutions that match your needs and expectations. Putting clients first is our thing, and we’re proud to support our very first business client till today!"
  
   const LiferayThemeDevelopmentData = [
