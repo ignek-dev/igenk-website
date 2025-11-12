@@ -86,7 +86,6 @@ export default function PortfolioList() {
 
             const data = (await res.json()) as WPPortfolioPost[];
             const total = Number(res.headers.get("x-wp-total")) || 1;
-            console.log("total", total)
             setPosts(data);
             setTotalPages(total);
         } catch (err: unknown) {

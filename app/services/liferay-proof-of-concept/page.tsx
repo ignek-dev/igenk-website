@@ -36,13 +36,7 @@ export default function LiferayProofOfConceptPage() {
       desc: "We provide complete support, from start to finish, and ongoing guidance even after project completion.",
     },
   ]
-  const featureTabs = [
-    "Discuss PoC requirements",
-    "Assist To Validate The Assumption",
-    "Liferay Functionality Identification",
-    "Liferay Functionality Identification",
-  ]
-  
+ 
   const caseStudies = [
     {
       id: 1,

@@ -94,9 +94,6 @@ export default function LiferayThemeDevelopmentPage() {
     },
   ]
 
-  console.log("data theme ",  LiferayThemeDevelopmentData)
-  console.log("WhatMakeData passed →", LiferayThemeDevelopmentData);
-
   return (
     <main className="pb-16">
       {/* Hero */}

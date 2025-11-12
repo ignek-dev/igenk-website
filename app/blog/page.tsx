@@ -1,8 +1,8 @@
 "use client"
 import Image from "next/image"
 import BlogCard, { BlogData } from "components/Blogmain/BlogCards"
-import { Pagination } from "components/marketplace/Pagination"
 import TechCard from "components/Blogmain/TechCards"
+import { Pagination } from "components/marketplace/Pagination"
 
 const blogs: BlogData[] = [
   {

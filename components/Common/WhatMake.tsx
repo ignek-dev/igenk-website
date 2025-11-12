@@ -17,7 +17,6 @@ type WhatMakeProps = {
 };
 
 const WhatMake: React.FC<WhatMakeProps> = ({ WhatMakeData ,titleText1,titleText2, subContext}) => {
-  console.log("data ",  WhatMakeData,titleText1,titleText2)
 
   const [stuck, setStuck] = useState<Map<number, boolean>>();
 
