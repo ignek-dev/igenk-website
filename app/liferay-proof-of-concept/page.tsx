@@ -4,7 +4,11 @@ import TalkToExpert from "components/Common/TalkToExpert"
 import WhatMake from "components/Common/WhatMake"
 
 export default function LiferayProofOfConceptPage() {
-  const WhatMakeData = [
+  const LiferayProofOfConceptTitle1 = "Why Choose IGNEK For Liferay"
+  const LiferayProofOfConceptTitle2 ="Proof Of Concept?"
+  const LiferayProofOfConceptSubContent = "At IGNEK, Our expert engineers use up to date software’s and vast knowledge to craft solutions that match your needs and expectations. Putting clients first is our thing, and we’re proud to support our very first business client till today!"
+ 
+  const LiferayProofOfConceptData = [
     {
       title: "Strong Expertise",
       desc: "We are experts with years of experience, dedicated to staying updated on the latest trends and advancements.",
@@ -158,11 +162,9 @@ export default function LiferayProofOfConceptPage() {
         </div>
       </section>
       <CaseStudy caseStudies={caseStudies} />
-      <WhatMake WhatMakeData={WhatMakeData}/>
+      <WhatMake WhatMakeData={LiferayProofOfConceptData} titleText1={LiferayProofOfConceptTitle1} titleText2={LiferayProofOfConceptTitle2} subContext={LiferayProofOfConceptSubContent}/>
       <TalkToExpert />
       <BlogSection />
-
-      {/* CTA */}
     </main>
   )
 }

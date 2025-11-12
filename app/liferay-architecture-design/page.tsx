@@ -5,7 +5,10 @@ import TalkToExpert from "components/Common/TalkToExpert"
 import WhatMake from "components/Common/WhatMake"
 
 export default function LiferayArchitectureDesignPage() {
-  const WhatMakeData = [
+  const LiferayArchitectureTitle1 = "Why Choose IGNEK For Liferay"
+  const LiferayArchitectureTitle2 ="Architecture Design Service?"
+  const LiferayArchitectureSubContent = "At IGNEK, Our expert engineers use up to date software’s and vast knowledge to craft solutions that match your needs and expectations. Putting clients first is our thing, and we’re proud to support our very first business client till today!"
+  const LiferayArchitectureData = [
     {
       title: "Strong Expertise",
       desc: "We are experts with years of experience, dedicated to staying updated on the latest trends and advancements.",
@@ -251,7 +254,7 @@ export default function LiferayArchitectureDesignPage() {
         </div>
       </section>
 
-     <WhatMake WhatMakeData={WhatMakeData}/>
+     <WhatMake WhatMakeData={LiferayArchitectureData} titleText1={LiferayArchitectureTitle1} titleText2={LiferayArchitectureTitle2} subContext={LiferayArchitectureSubContent}/>
       {/* <HeroCTASection /> */}
       <TalkToExpert />
       <BlogSection />

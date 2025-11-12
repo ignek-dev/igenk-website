@@ -45,7 +45,12 @@ const caseStudies = [
   },
 ]
 
-const WhatMakeData = [
+const LiferayConsultationTitle1 = "Why Choose IGNEK For Liferay"
+  const LiferayConsultationTitle2 ="Development and Customization?"
+  const LiferayConsultationSubContent = "At IGNEK, Our expert engineers use up to date software’s and vast knowledge to craft solutions that match your needs and expectations. Putting clients first is our thing, and we’re proud to support our very first business client till today!"
+ 
+
+const LiferayConsultationData = [
   {
     title: "Strong Expertise",
     desc: "We are experts with years of experience, dedicated to staying updated on the latest trends and advancements.",
@@ -893,7 +898,7 @@ export default function LiferayConsultationPage() {
       />
       <section className="bg-white text-black"></section>
       <CaseStudy caseStudies={caseStudies} />
-      <WhatMake WhatMakeData={WhatMakeData}/>
+      <WhatMake WhatMakeData={LiferayConsultationData} titleText1={LiferayConsultationTitle1} titleText2={LiferayConsultationTitle2}subContext={LiferayConsultationSubContent}/>
       <TalkToExpert />
       <BlogSection />
     </main>

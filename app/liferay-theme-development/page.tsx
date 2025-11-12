@@ -4,7 +4,11 @@ import TalkToExpert from "components/Common/TalkToExpert"
 import WhatMake from "components/Common/WhatMake"
 
 export default function LiferayThemeDevelopmentPage() {
-  const WhatMakeData = [
+  const LiferayThemeDevelopmentTitle1 = "Why Choose IGNEK For Liferay Theme"
+  const LiferayThemeDevelopmentTitle2 ="Development Service?"
+  const LiferayThemeDevelopmentSubContent = "At IGNEK, Our expert engineers use up to date software’s and vast knowledge to craft solutions that match your needs and expectations. Putting clients first is our thing, and we’re proud to support our very first business client till today!"
+ 
+  const LiferayThemeDevelopmentData = [
     {
       title: "Strong Expertise",
       desc: "We are experts with years of experience, dedicated to staying updated on the latest trends and advancements.",
@@ -155,7 +159,7 @@ export default function LiferayThemeDevelopmentPage() {
         </div>
       </section>
       <CaseStudy caseStudies={caseStudies} />
-      <WhatMake WhatMakeData={WhatMakeData}/>
+      <WhatMake WhatMakeData={LiferayThemeDevelopmentData}  titleText1={LiferayThemeDevelopmentTitle1} titleText2={LiferayThemeDevelopmentTitle2} subContext={LiferayThemeDevelopmentSubContent}/>
       <TalkToExpert />
       <BlogSection />
     </main>

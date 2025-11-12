@@ -10,7 +10,12 @@ export const metadata: Metadata = {
   description:
     "Optimize your Liferay platform with IGNEK's performance tuning services: JVM tuning, caching, DB optimization, and more.",
 }
-const WhatMakeData = [
+const LiferayPerformanceTuningTitle1 = "Why Choose IGNEK For Liferay"
+const LiferayPerformanceTuningTitle2 ="Performance Tuning?"
+const LiferayPerformanceTuningSubContent = "At IGNEK, Our expert engineers use up to date software’s and vast knowledge to craft solutions that match your needs and expectations. Putting clients first is our thing, and we’re proud to support our very first business client till today!"
+ 
+
+const LiferayPerformanceTuningData = [
   {
     title: "Strong Expertise",
     desc: "We are experts with years of experience, dedicated to staying updated on the latest trends and advancements.",
@@ -339,7 +344,7 @@ export default function LiferayPerformanceTuningPage() {
         </div>
       </section>
       <CaseStudy caseStudies={caseStudies} />
-      <WhatMake WhatMakeData={WhatMakeData}/>
+      <WhatMake WhatMakeData={LiferayPerformanceTuningData} titleText1={LiferayPerformanceTuningTitle1} titleText2={LiferayPerformanceTuningTitle2} subContext={LiferayPerformanceTuningSubContent}/>
       <TalkToExpert />
       <BlogSection />
     </main>

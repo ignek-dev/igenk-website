@@ -4,7 +4,11 @@ import WhatMake from "components/Common/WhatMake"
 import { BlogSection } from "../../components/Common"
 
 export default function LiferayMigrationPage() {
-  const WhatMakeData = [
+  const LiferayMigrationTitle1 = "Why Choose IGNEK For Liferay"
+  const LiferayMigrationTitle2 ="Migration?"
+  const LiferayMigrationSubContent = "At IGNEK, Our expert engineers use up to date software’s and vast knowledge to craft solutions that match your needs and expectations. Putting clients first is our thing, and we’re proud to support our very first business client till today!"
+ 
+  const  LiferayMigrationData = [
     {
       title: "Strong Expertise",
       desc: "We are experts with years of experience, dedicated to staying updated on the latest trends and advancements.",
@@ -248,7 +252,7 @@ export default function LiferayMigrationPage() {
       </section>
 
       {/* Case Studies (reuse BlogSection) */}
-      <WhatMake WhatMakeData={WhatMakeData}/>
+      <WhatMake WhatMakeData={ LiferayMigrationData} titleText1={ LiferayMigrationTitle1} titleText2={ LiferayMigrationTitle2} subContext={ LiferayMigrationSubContent}/>
       <TalkToExpert />
       <BlogSection />
 

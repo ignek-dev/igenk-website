@@ -9,30 +9,34 @@ import WordsFromCEO from "components/Common/WordsFromCEO"
 import LiferayTechnologicalStacks from "components/LiferayTechnologicalStacks"
 
 export default function LiferayHireDeveloper() {
-  const WhatMakeData = [
+  const LiferayHireTitle1 = "Why Hire Liferay Developer"
+  const LiferayHireTitle2 ="From IGNEK?"
+  const LiferayHireSubContent = "At IGNEK, our Liferay Consultant bring over a decade of experience, crafting secure, scalable solutions across various industries. Hire Liferay developer for innovative problem-solving."
+ 
+  const LiferayHireData = [
     {
-      title: "Strong Expertise",
-      desc: "We are experts with years of experience, dedicated to staying updated on the latest trends and advancements.",
+      title: "Certified Liferay Developer",
+      desc: "Our developers are certified in Liferay, meaning they’ve undergone rigorous training and testing to prove their proficiency. You can trust their knowledge and abilities.",
     },
     {
-      title: "Client First",
-      desc: "Our tailored solutions prioritize client satisfaction, aligning with your objectives to foster trust and mutual success.",
+      title: "Transparent Communication",
+      desc: "We believe in transparent communication throughout the development process. You’ll always be kept in the loop, with regular updates and open dialogue to address any concerns or questions.",
     },
     {
-      title: "Effective Communication",
-      desc: "We are experts with years of experience, dedicated to staying updated on the latest trends and advancements.",
+      title: "Flexible Hiring Models",
+      desc: "Choose from our flexible hiring models! Tailored to suit your needs, whether it’s hourly, part-time, or full-time. Get the flexibility you need to scale your team as your project demands.",
     },
     {
-      title: "On Time Delivery",
-      desc: "We prioritize deadlines, ensuring timely delivery without ever compromising on quality.",
+      title: "Fully Signed NDA",
+      desc: "Our fully signed NDA ensures complete confidentiality. Protect your sensitive information with our legally binding agreements. Peace of mind guaranteed.",
     },
     {
-      title: "Results Focused",
-      desc: "Our dedicated team works hard to deliver measurable results, driving your business forward toward collective success.",
+      title: "Cost-Effective",
+      desc: "Hiring a dedicated Liferay Developer from IGNEK is cost-effective. You get access to top-tier talent without the overhead costs associated with in-house hiring.",
     },
     {
-      title: "End-to-End Support",
-      desc: "We provide complete support, from start to finish, and ongoing guidance even after project completion.",
+      title: "Easy Exit Policy",
+      desc: "Our Easy Exit Policy ensures a hassle-free process when ending services. We prioritize your satisfaction, making transitions smooth and transparent.",
     },
   ]
   // Data for the marquee animation
@@ -370,7 +374,7 @@ export default function LiferayHireDeveloper() {
       {/* Words from CEO */}
       <WordsFromCEO />
       {/* <section className="bg-white text-black"></section> */}
-      <WhatMake WhatMakeData={WhatMakeData}/>
+      <WhatMake WhatMakeData={LiferayHireData} titleText1={LiferayHireTitle1} titleText2={LiferayHireTitle2} subContext={LiferayHireSubContent}/>
       <TalkToExpert />
       <BlogSection />
     </main>

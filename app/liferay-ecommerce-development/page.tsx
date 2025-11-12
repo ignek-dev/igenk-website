@@ -6,7 +6,11 @@ import TalkToExpert from "components/Common/TalkToExpert"
 import WhatMake from "components/Common/WhatMake"
 
 export default function LiferayEcommerceDevelopmentPage() {
-  const WhatMakeData = [
+  const LiferayEcommerceDevelopmentTitle1 = "Why Choose IGNEK For Liferay"
+  const LiferayEcommerceDevelopmentTitle2 ="Ecommerce Development?"
+  const LiferayEcommerceDevelopmentSubContent = "At IGNEK, Our expert engineers use up to date software’s and vast knowledge to craft solutions that match your needs and expectations. Putting clients first is our thing, and we’re proud to support our very first business client till today!"
+ 
+  const LiferayEcommerceDevelopmentData = [
     {
       title: "Strong Expertise",
       desc: "We are experts with years of experience, dedicated to staying updated on the latest trends and advancements.",
@@ -391,8 +395,7 @@ export default function LiferayEcommerceDevelopmentPage() {
       </section>
 
       <CaseStudy caseStudies={caseStudies} />
-
-      <WhatMake WhatMakeData={WhatMakeData}/>
+      <WhatMake WhatMakeData={LiferayEcommerceDevelopmentData} titleText1={LiferayEcommerceDevelopmentTitle1} titleText2={LiferayEcommerceDevelopmentTitle2} subContext={LiferayEcommerceDevelopmentSubContent}/>
       <TalkToExpert />
       <BlogSection />
 

@@ -3,7 +3,11 @@ import TalkToExpert from "components/Common/TalkToExpert"
 import WhatMake from "components/Common/WhatMake"
 
 export default function LiferayDevelopmentAndCustomizationPage() {
-  const WhatMakeData = [
+  const LiferayDevelopmentAndCustomizationTitle1 = "Why Choose IGNEK For Liferay"
+  const LiferayDevelopmentAndCustomizationTitle2 ="Development and Customization?"
+  const LiferayDevelopmentAndCustomizationSubContent = "At IGNEK, Our expert engineers use up to date software’s and vast knowledge to craft solutions that match your needs and expectations. Putting clients first is our thing, and we’re proud to support our very first business client till today!"
+ 
+  const LiferayDevelopmentAndCustomizationData = [
     {
       title: "Strong Expertise",
       desc: "We are experts with years of experience, dedicated to staying updated on the latest trends and advancements.",
@@ -317,7 +321,7 @@ export default function LiferayDevelopmentAndCustomizationPage() {
           </div>
         </div>
       </section>
-      <WhatMake WhatMakeData={WhatMakeData}/>
+      <WhatMake WhatMakeData={LiferayDevelopmentAndCustomizationData} titleText1={LiferayDevelopmentAndCustomizationTitle1} titleText2={LiferayDevelopmentAndCustomizationTitle2} subContext={LiferayDevelopmentAndCustomizationSubContent}/>
       <TalkToExpert />
       <BlogSection />
 

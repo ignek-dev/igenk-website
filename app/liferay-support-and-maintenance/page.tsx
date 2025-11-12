@@ -3,7 +3,11 @@ import WhatMake from "components/Common/WhatMake"
 import { BlogSection } from "../../components/Common"
 
 export default function LiferaySupportMaintenancePage() {
-  const WhatMakeData = [
+  const LiferaySupportMaintenanceTitle1 = "Why Choose IGNEK For Liferay Support"
+  const LiferaySupportMaintenanceTitle2 ="And Maintenance Service?"
+  const LiferaySupportMaintenanceSubContent = "At IGNEK, Our expert engineers use up to date software’s and vast knowledge to craft solutions that match your needs and expectations. Putting clients first is our thing, and we’re proud to support our very first business client till today!"
+ 
+  const LiferaySupportMaintenanceData = [
     {
       title: "Strong Expertise",
       desc: "We are experts with years of experience, dedicated to staying updated on the latest trends and advancements.",
@@ -235,8 +239,7 @@ export default function LiferaySupportMaintenancePage() {
           </div>
         </div>
       </section>
-
-      <WhatMake WhatMakeData={WhatMakeData}/>
+      <WhatMake WhatMakeData={LiferaySupportMaintenanceData}  titleText1={LiferaySupportMaintenanceTitle1} titleText2={LiferaySupportMaintenanceTitle2} subContext={LiferaySupportMaintenanceSubContent}/>
       <TalkToExpert />
       <BlogSection />
 

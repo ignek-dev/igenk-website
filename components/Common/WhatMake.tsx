@@ -11,9 +11,12 @@ type WhatMakeItem = {
 // Define props type
 type WhatMakeProps = {
   WhatMakeData: WhatMakeItem[];
+  titleText1:string;
+  titleText2:string;
+  subContext:string;
 };
 
-const WhatMake: React.FC<WhatMakeProps> = ({ WhatMakeData }) => {
+const WhatMake: React.FC<WhatMakeProps> = ({ WhatMakeData ,titleText1,titleText2, subContext}) => {
 
   const [stuck, setStuck] = useState<Map<number, boolean>>();
 
@@ -48,12 +51,11 @@ const WhatMake: React.FC<WhatMakeProps> = ({ WhatMakeData }) => {
         {/* Left Column */}
         <div className="flex-1 space-y-[26px] pt-[4px] md:sticky md:top-24">
           <h1 className="text-5xl leading-[64px] font-bold tracking-[-0.02em]">
-          What Makes IGNEK 
-          <br/>The Right Choice
+          {titleText1}
+          <br/>{titleText2}
           </h1>
           <p className="leading-[28px] max-w-[520px] text-gray/500 text-[18px]">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.
-          Pellentesque sit amet sapien fringilla,
+         {subContext}
           </p>
         </div>
 
