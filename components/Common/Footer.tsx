@@ -52,15 +52,15 @@ export default function Footer() {
         { label: "Jira Integration With Liferay", href: "/contact" },
       ],
     },
-    {
-      title: "Hire Us",
-      items: [
-        { label: "Liferay", href: "/contact" },
-        { label: "Spring Boot", href: "/contact" },
-        { label: "ReactJS", href: "/contact" },
-        { label: "Healthcare", href: "/contact" },
-      ],
-    },
+    // {
+    //   title: "Hire Us",
+    //   items: [
+    //     { label: "Liferay", href: "/contact" },
+    //     { label: "Spring Boot", href: "/contact" },
+    //     { label: "ReactJS", href: "/contact" },
+    //     { label: "Healthcare", href: "/contact" },
+    //   ],
+    // },
   ]
 
   return (
@@ -74,7 +74,7 @@ export default function Footer() {
             animate={{ width: "100%" }}
             transition={{ duration: 0.9, ease: "easeIn" }}
           />
-          <div className="grid grid-cols-2 gap-10 md:grid-cols-3 lg:grid-cols-5">
+          <div className="grid grid-cols-2 gap-10 md:grid-cols-3 lg:grid-cols-4">
             <>
               {menus.map((menu) => (
                 <div key={menu.title}>
