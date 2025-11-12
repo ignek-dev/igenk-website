@@ -70,8 +70,7 @@ const HeroCTASection: React.FC = () => {
             <span className="block">Scalable Experiences.</span>
           </h2>
           <p className="mt-6 mb-12 max-w-md text-lg text-gray-400">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            <br /> Ut et massa mi. Aliquam in hendrerit urna.
+            We design and develop digital solutions that adapt and grow with your business needs. Our platforms are built to deliver seamless performance, exceptional user experiences, and long-term scalability.
           </p>
 
           {/* Accordion List */}

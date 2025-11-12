@@ -33,8 +33,7 @@ export default function BlogSection() {
               isInView ? "animate-when-visible animate-slide-right animation-delay-200" : "opacity-0"
             }`}
           >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.
-            Pellentesque sit amet sapien fringilla,
+            Explore our blogs for expert insights, trends, and innovations driving digital transformation and shaping the future. 
           </p>
         </div>
 

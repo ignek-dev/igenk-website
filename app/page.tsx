@@ -11,8 +11,9 @@ import OurCapabilities from "components/OurCapabilities/OurCapabilities"
 import RatingsSection from "components/Ratings/RatingsSection"
 import SuccessStories from "components/success-stories/SuccessStories"
 import WhatWeBring from "components/WhatWeBring/WhatWeBring"
-
+import { partners } from "data/homepage-content"
 import { BlogSection } from "../components/Common"
+
 
 export const metadata: Metadata = {
   title: "Ignek - Transform Your Digital Experience",
@@ -35,41 +36,6 @@ export const metadata: Metadata = {
   },
 }
 
-const partners = [
-  {
-    name: "Youngsoft India",
-    image: "/images/partner/youngsoftIndia.svg",
-  },
-  {
-    name: "United Nations",
-    image: "/images/partner/United-nations.png",
-  },
-  {
-    name: "This",
-    image: "/images/partner/This.png",
-  },
-  {
-    name: "Cognizer AI",
-    image: "/images/partner/cognizerAI.png",
-  },
-  {
-    name: "Mibusoft",
-    image: "/images/partner/mibusoft.png",
-  },
-  {
-    name: "Navvis",
-    image: "/images/partner/navvis.png",
-  },
-  {
-    name: "EduTecks",
-    image: "/images/partner/youngsoftIndia.svg",
-  },
-  {
-    name: "Infogain",
-    image: "/images/partner/youngsoftIndia.svg",
-  },
-]
-
 export default function HomePage() {
   return (
     <main className="">
@@ -90,8 +56,7 @@ export default function HomePage() {
           </h1>
           <div className="mt-20 grid items-start gap-8 md:grid-cols-2">
             <p className="max-w-xl text-xl text-white/80 sm:text-base">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.
-              Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris.
+              Transform your digital landscape with cutting-edge DXP solutions tailored to your unique business needs.
             </p>
 
             <div className="pb-3 md:self-end md:justify-self-end">
