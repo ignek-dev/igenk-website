@@ -89,10 +89,10 @@ export default function LiferaySupportMaintenancePage() {
       <section className="bg-black text-white">
         <div className="mx-auto w-full px-4 py-[64px] md:px-8 md:py-[64px] lg:py-[64px] [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
           <div className="relative grid items-start gap-10 md:grid-cols-2">
-            <h2 className="text-3xl leading-[60px] font-semibold sm:text-4xl md:text-5xl">
+            <h2 className="text-3xl [@media(min-width:1440px)]:leading-[50px] [@media(min-width:1800px)]:leading-[60px]  font-semibold sm:text-3xl md:text-4xl ">
               Key Activities Under Our Liferay Support And Maintenance Service
             </h2>
-            <p className="absolute bottom-0 max-w-xl text-right text-xl text-white md:justify-self-end">
+            <p className="absolute bottom-0 max-w-lg text-right text-lg text-white md:justify-self-end">
               Our dedicated Liferay team offers ongoing Liferay Support and Maintenance to address the challenges of a dynamic business environment. We tailor our services to optimize the performance and longevity of your Liferay solutions.
             </p>
           </div>
@@ -110,7 +110,7 @@ export default function LiferaySupportMaintenancePage() {
                       </span>
                       <div>
                         <h3 className="text-3xl font-medium whitespace-nowrap">{item.title}</h3>
-                        <p className="mt-2 text-xl text-white [@media(min-width:1440px)]:min-h-[104px] [@media(min-width:1800)]:min-h-full [@media(min-width:1500px)]:mb-1 [@media(min-width:1800px)]:mb-0 ">{item.desc}</p>
+                        <p className="mt-2 text-xl text-white [@media(min-width:1440px)]:min-h-[104px] [@media(min-width:1800)]:min-h-full [@media(min-width:1500px)]:mb-1 [@media(min-width:1800px)]:mb-0">{item.desc}</p>
                       </div>
                     </div>
                   </div>
@@ -120,7 +120,7 @@ export default function LiferaySupportMaintenancePage() {
 
             {/* Right column */}
             <div>
-              <div className="[@media(min-width:1440px)]:space-y-8 [@media(min-width:1500px)]:space-y-8.5 [@media(min-width:1800px)]:space-y-8">
+              <div className="[@media(min-width:1440px)]:space-y-9.5 [@media(min-width:1500px)]:space-y-9.5 [@media(min-width:1800px)]:space-y-12">
                 {activitiesRight.map((item, index) => (
                   <div key={item.title} className="group">
                     {index !== 0 && <div className="border-t border-white/30" />}
@@ -130,7 +130,7 @@ export default function LiferaySupportMaintenancePage() {
                       </span>
                       <div>
                         <h3 className="text-3xl font-medium">{item.title}</h3>
-                        <p className="mt-2 text-xl text-white [@media(min-width:1440px)]:min-h-[101px] [@media(min-width:1800)]:min-h-full [@media(min-width:1500px)]:mb-1 [@media(min-width:1800px)]:mb-0 ">{item.desc}</p>
+                        <p className="mt-2 text-xl text-white [@media(min-width:1440px)]:min-h-[101px] [@media(min-width:1800)]:min-h-full [@media(min-width:1500px)]:mb-1 [@media(min-width:1800px)]:mb-3 ">{item.desc}</p>
                       </div>
                     </div>
                   </div>

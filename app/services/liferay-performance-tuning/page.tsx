@@ -76,7 +76,7 @@ export default function LiferayPerformanceTuningPage() {
             {featureTabs.map((label, index) => (
               <span
                 key={index}
-                className="inline-flex items-center rounded-full border border-white/30 [@media(min-width:1440px)]:px-14 [@media(min-width:1500px)]:px-16 [@media(min-width:1800px)]:px-9 py-5 text-lg text-white transition-colors hover:border-white hover:text-white"
+                className="inline-flex items-center rounded-full border border-white/30 [@media(min-width:1440px)]:px-11 [@media(min-width:1500px)]:px-13 [@media(min-width:1800px)]:px-13 py-5 text-lg text-white transition-colors hover:border-white hover:text-white"
               >
                 {label}
               </span>

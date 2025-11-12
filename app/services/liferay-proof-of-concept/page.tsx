@@ -58,7 +58,7 @@ export default function LiferayProofOfConceptPage() {
                 <span className="block">Of Concept</span>
               </h1>
             </div>
-            <p className="absolute bottom-0 max-w-xl text-lg text-white sm:text-lg md:mt-16 md:justify-self-end">
+            <p className="absolute bottom-0 max-w-xl text-right text-lg text-white sm:text-lg md:mt-16 md:justify-self-end">
               Liferay Proof of Concept (PoC) Services serve as a trial to assess if Liferay technology is suitable for a specific project or solution. We demonstrate how Liferay’s portal features can be customized to meet the client's unique requirements and validate before full implementation.
             </p>
           </div>
@@ -68,7 +68,7 @@ export default function LiferayProofOfConceptPage() {
             {featureTabs.map((label, index) => (
               <span
                 key={index}
-                className="inline-flex items-center rounded-full border border-white/30 px-7 [@media(min-width:1440px)]:px-3 [@media(min-width:1800px)]:px-7 py-5 [@media(min-width:1440px)]:text-base [@media(min-width:1500px)]:text-base [@media(min-width:1800px)]:text-lg text-white transition-colors hover:border-white hover:text-white"
+                className="inline-flex items-center rounded-full border border-white/30 px-7 [@media(min-width:1440px)]:px-4 [@media(min-width:1800px)]:px-7 py-5 [@media(min-width:1440px)]:text-sm [@media(min-width:1500px)]:text-base [@media(min-width:1800px)]:text-lg text-white transition-colors hover:border-white hover:text-white"
               >
                 {label}
               </span>

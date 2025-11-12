@@ -80,7 +80,7 @@ export default function LiferayThemeDevelopmentPage() {
                 <span className="block">Theme Development</span>
               </h1>
             </div>
-            <p className="absolute bottom-0 max-w-xl text-lg text-white sm:text-lg md:mt-16 md:justify-self-end">
+            <p className="absolute bottom-0 max-w-lg text-right text-lg text-white sm:text-lg md:mt-16 md:justify-self-end">
               Transform your Liferay Portal with our expert Liferay Theme Development Services. We specialize in
               converting UX designs into visually captivating HTML and implementing responsive Liferay Theme. Our
               approach ensures

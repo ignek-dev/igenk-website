@@ -83,36 +83,36 @@ export const teamOffersServices = [
     {
       icon: "/images/icon/services.png", // Replace with your icon path
       title: "Proof Of Concept",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi.",
+      description: "Discover our Liferay Proof of Concept service! We created a prototype to demonstrate how Liferay can address your specific business needs. Test functionalities and visualize your solution before full implementation. Let's turn your ideas into reality!",
     },
     {
       icon: "/images/icon/services.png", // Replace with your icon path
       title: "Ecommerce Development",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi.",
+      description: "Liferay Ecommerce allows organizations to effortlessly create and manage digital commerce experiences. It combines powerful content management with extensive e-commerce features for seamless, engaging customer interactions.",
     },
     {
       icon: "/images/icon/services.png", // Replace with your icon path
       title: "Migration",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi.",
+      description: "Check out our Liferay Migration service! We smoothly transition your portal to newer versions or different platforms. Benefit from improved functionality and security. Let's ensure your portal stays up-to-date and efficient together!",
     },
     {
       icon: "/images/icon/services.png", // Replace with your icon path
       title: "Support And Maintenance",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi.",
+      description: "Explore our Liferay Support & Maintenance service! We provide ongoing assistance to keep your Liferay portal running smoothly. From troubleshooting to updates, our expert team ensures your portal stays secure and up-to-date. Focus on your business while we handle the technicalities!",
     },
     {
       icon: "/images/icon/services.png", // Replace with your icon path
       title: "Performance Tuning",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi.",
+      description: "Explore our Liferay Performance Tuning service! We optimize your portal for faster loading times and a smoother user experience. Enhance efficiency and scalability to meet growing demands. Boost your Liferay site's performance today!",
     },
     {
       icon: "/images/icon/services.png", // Replace with your icon path
       title: "Upgradation",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi.",
+      description: "Explore our Liferay Upgradation services! We make upgrading your Liferay portal easy. From planning to execution, we ensure a smooth transition to the latest version. Stay ahead with enhanced features and security. Upgrade hassle-free with us!",
     },
     {
       icon: "/images/icon/services.png", // Replace with your icon path
       title: "Liferay Architecture",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi.",
+      description: "Discover our Liferay Architecture Design service! We create tailored architectural plans for your portal, ensuring scalability, security, and efficiency. From initial concept to implementation, we'll build a solid foundation for your Liferay platform. Let's design your success together!",
     },
   ]

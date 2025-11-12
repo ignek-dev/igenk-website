@@ -107,7 +107,7 @@ export default function LiferayArchitectureDesignPage() {
                 <span className="block">Design</span>
               </h1>
             </div>
-            <p className="absolute bottom-0 max-w-xl text-lg text-white sm:text-lg md:mt-16 md:justify-self-end">
+            <p className="absolute bottom-0 [@media(min-width:1440px)]:max-w-xl [@media(min-width:1500px)]:max-w-3xl text-right [@media(min-width:1440px)]:text-base [@media(min-width:1500px)]:text-lg  text-white  md:mt-16 md:justify-self-end">
               Liferay Architecture Design Services provides tailored solutions for designing and optimizing Liferay applications. We focus on aligning architecture with business needs for enhanced performance and scalability. Our services offer strategic guidance from concept to implementation, covering security, integrations, and user experience.
             </p>
           </div>
@@ -128,7 +128,7 @@ export default function LiferayArchitectureDesignPage() {
       <section>
         <div className="py-[0px] [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
           <div
-            className="flex gap-10 overflow-x-hidden"
+            className="flex gap-10 overflow-x-hidden cursor-grab"
             onMouseDown={handleMouseDown}
             onMouseLeave={handleMouseLeave}
             onMouseUp={handleMouseUp}
@@ -153,20 +153,20 @@ export default function LiferayArchitectureDesignPage() {
       <section className="bg-black text-white">
         <div className="mx-auto w-full px-4 py-[64px] md:px-8 md:py-[64px] lg:py-[64px] [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
           <div className="relative grid items-start gap-10 md:grid-cols-2">
-            <h2 className="text-3xl leading-[60px] font-semibold sm:text-4xl md:text-5xl">
+            <h2 className="text-3xl [@media(min-width:1440px)]:leading-[40px] [@media(min-width:1500px)]:leading-[50px] font-semibold [@media(min-width:1440px)]:text-3xl [@media(min-width:1500px)]:text-4xl">
               Key Activities Under Our Liferay Architecture Design Services
             </h2>
-            <p className="absolute bottom-0 max-w-xl text-right text-xl text-white md:justify-self-end">
+            <p className="absolute bottom-0 max-w-xl text-right [@media(min-width:1440px)]:text-lg [@media(min-width:1500px)]:text-xl text-white md:justify-self-end ">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.
             </p>
           </div>
           <div className="mt-[67px] grid grid-cols-12 gap-4">
             {keyActivityArchitecureSystem.map((item, index) => (
               <div key={index} className="col-span-12 flex grid grid-cols-12 items-center gap-4 p-4">
-                <div className="col-span-3 mb-2 flex items-center border-none pr-[100px] text-3xl font-medium font-semibold">
+                <div className="col-span-3 mb-2 flex items-center border-none pr-[100px] [@media(min-width:1440px)]:text-lg [@media(min-width:1500px)]:text-xl [@media(min-width:1800px)]:text-2xl font-semibold">
                   {item.text}
                 </div>
-                <div className="col-span-9 flex h-[104px] items-center rounded-[8px] border border-[#1F2937] p-4 text-xl">
+                <div className="col-span-9 flex h-[104px] items-center rounded-[8px] border border-[#1F2937] p-4 [@media(min-width:1440px)]:text-base [@media(min-width:1500px)]:text-lg">
                   {item.description}
                 </div>
               </div>

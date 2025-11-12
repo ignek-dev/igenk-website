@@ -33,7 +33,10 @@ export default function LiferayHireDeveloper() {
                 <span className="block">Developer</span>
               </h1>
               <p className="line-height-[28px] mt-10 max-w-xl text-lg font-normal">
-                We’re a team of certified Liferay developer and Liferay Consultant with deep expertise spanning various versions of the Liferay Portal. Our “Liferay first” approach has saved clients significant costs and time, resulting in successful deliveries. Hire our Liferay developer for cost-effective solutions and faster time-to-market.
+                We’re a team of certified Liferay developer and Liferay Consultant with deep expertise spanning various
+                versions of the Liferay Portal. Our “Liferay first” approach has saved clients significant costs and
+                time, resulting in successful deliveries. Hire our Liferay developer for cost-effective solutions and
+                faster time-to-market.
               </p>
             </div>
 
@@ -75,7 +78,8 @@ export default function LiferayHireDeveloper() {
           <div className="w-full">
             <h2 className="text-5xl leading-tight font-bold tracking-tight">Why Hire Liferay Developer From IGNEK?</h2>
             <p className="mt-4 text-lg text-black/80">
-              At IGNEK, our Liferay Consultant bring over a decade of experience, crafting secure, scalable solutions across various industries. Hire Liferay developer for innovative problem-solving. 
+              At IGNEK, our Liferay Consultant bring over a decade of experience, crafting secure, scalable solutions
+              across various industries. Hire Liferay developer for innovative problem-solving.
             </p>
           </div>
 
@@ -127,7 +131,8 @@ export default function LiferayHireDeveloper() {
                 <span className="block">Developer In Just 3 Easy Steps</span>
               </h2>
               <p className="mt-6 max-w-lg text-xl text-[#E5E7EB]">
-                Hire Liferay developer in just three effortless steps with us! With our refined process, finding the perfect Liferay Consultant for your project is quick, efficient, and hassle-free. 
+                Hire Liferay developer in just three effortless steps with us! With our refined process, finding the
+                perfect Liferay Consultant for your project is quick, efficient, and hassle-free.
               </p>
             </div>
 
@@ -140,7 +145,7 @@ export default function LiferayHireDeveloper() {
                 >
                   {/* Vertical Line */}
                   {index < easySteps.length - 1 && (
-                    <div className="absolute top-30 left-[32px] h-[calc(100%+5.5rem)] w-[1.23px] bg-[#EAEAFF]"></div>
+                    <div className="absolute top-35 left-[32px] h-[calc(100%+4.7rem)] w-[1.23px] bg-[#EAEAFF]"></div>
                   )}
                   {/* Step Number Circle */}
                   <div className="z-10 flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-full bg-blue-700 text-xl font-bold">
@@ -181,17 +186,20 @@ export default function LiferayHireDeveloper() {
               Services Our Liferay Development Team Offers
             </h2>
             <p className="mt-4 text-lg text-white/80">
-              Explore our expertise in Liferay! We’re experienced and ready to help with everything, from building user-friendly interfaces to managing backend systems. Whether you need a custom portal, smooth integration, or ongoing support, we’ve got you covered. Partner with us today and make the most of Liferay for your business.
+              Explore our expertise in Liferay! We’re experienced and ready to help with everything, from building
+              user-friendly interfaces to managing backend systems. Whether you need a custom portal, smooth
+              integration, or ongoing support, we’ve got you covered. Partner with us today and make the most of Liferay
+              for your business.
             </p>
           </div>
           {/* Services Grid */}
-          <div className="mt-16 grid grid-cols-1 md:grid-cols-2">
+          <div className="mt-16 grid auto-rows-[minmax(260px,auto)] grid-cols-1 gap-x-8 gap-y-12 md:grid-cols-2 [@media(min-width:1440px)]:gap-x-10 [@media(min-width:1536px)]:gap-x-12 [@media(min-width:1800px)]:gap-x-14">
             {teamOffersServices.map((service, index) => (
-              <div key={index} className="p-9">
-                {/* Content Wrapper */}
-                <div className="flex items-center gap-4">
+              <div key={index} className="flex h-full flex-col justify-between p-9">
+                {/* Inner Flex for Icon and Text */}
+                <div className="flex items-start gap-6">
                   {/* Icon */}
-                  <div className="h-[115px] w-[115px] flex-shrink-0 rounded-full border border-[#1F2937] p-4 shadow-[0px_0px_0px_0.42px_#F4F4F51A]">
+                  <div className="flex h-[115px] w-[125px] flex-shrink-0 items-center justify-center rounded-full border border-[#1F2937] p-4 shadow-[0px_0px_0px_0.42px_#F4F4F51A]">
                     <Image
                       src={service.icon}
                       alt={`${service.title} icon`}
@@ -201,14 +209,17 @@ export default function LiferayHireDeveloper() {
                     />
                   </div>
 
-                  {/* Title & Description */}
-                  <div className="max-h-[120px] max-w-[455px]">
-                    <h3 className="mb-2 text-3xl font-semibold text-[#FFFFFF] [@media(min-width:1440px)]:text-2xl [@media(min-width:1800px)]:text-3xl">{service.title}</h3>
-                    <p className="text-xl text-[#E5E7EB]">{service.description}</p>
+                  {/* Title + Description */}
+                  <div className="flex max-w-[330px] flex-col justify-start [@media(min-width:1440px)]:max-w-[340px] [@media(min-width:1536px)]:max-w-[360px] [@media(min-width:1800px)]:max-w-[380px]">
+                    <h3 className="mb-3 text-3xl leading-tight font-semibold text-[#FFFFFF] [@media(min-width:1440px)]:text-2xl [@media(min-width:1536px)]:text-[28px] [@media(min-width:1800px)]:text-3xl">
+                      {service.title}
+                    </h3>
+
+                    <p className="line-clamp-none text-lg leading-relaxed text-[#E5E7EB]">{service.description}</p>
                   </div>
                 </div>
 
-                {/* Partial Divider */}
+                {/* Divider */}
                 {index < teamOffersServices.length - 2 && <hr className="mt-14 border-t border-[#6B7280]" />}
               </div>
             ))}

@@ -95,7 +95,7 @@ export default function LiferayEcommerceDevelopmentPage() {
       {/* Hero */}
       <section className="relative bg-black text-white">
         <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_10%_0%,#0E7BF8_0%,#00979E_40%,transparent_65%)] opacity-25" />
-        <div className="mx-auto w-full px-4 pt-12 pb-16 md:px-8 md:pt-20 md:pb-28 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px]">
+        <div className="mx-auto w-full px-4 pt-12 pb-16 md:px-8 md:pt-20 md:pb-28 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
           <div className="relative grid items-start gap-10 md:grid-cols-2">
             <div>
               <div className="inline-flex items-center rounded-full border border-white/30 px-4 py-2 text-lg text-white">
@@ -108,7 +108,7 @@ export default function LiferayEcommerceDevelopmentPage() {
                 <span className="block">Development</span>
               </h1>
             </div>
-            <p className="absolute bottom-0 max-w-xl text-lg text-white sm:text-lg md:mt-16 md:justify-self-end">
+            <p className="absolute bottom-0 max-w-2xl text-right text-lg text-white sm:text-lg md:mt-16 md:justify-self-end">
               Liferay Ecommerce Development empowers businesses to build integrated digital commerce platforms that enhance customer experiences while optimizing transaction processes and content management.
             </p>
           </div>
@@ -118,7 +118,7 @@ export default function LiferayEcommerceDevelopmentPage() {
             {featureTabs.map((label) => (
               <span
                 key={label}
-                className="inline-flex items-center rounded-full border border-white/30 px-7 py-5 [@media(min-width:1440px)]:text-base [@media(min-width:1500px)]:text-lg text-lg text-white transition-colors hover:border-white hover:text-white"
+                className="inline-flex items-center rounded-full border border-white/30 [@media(min-width:1440px)]:px-4  [@media(min-width:1800px)]:px-7 py-5 [@media(min-width:1440px)]:text-base [@media(min-width:1500px)]:text-lg text-lg text-white transition-colors hover:border-white hover:text-white"
               >
                 {label}
               </span>
@@ -128,7 +128,7 @@ export default function LiferayEcommerceDevelopmentPage() {
       </section>
 
       <section className="bg-[#f7f7f7] text-black">
-        <div className="mx-auto w-full px-4 py-[64px] md:px-8 md:py-[64px] lg:py-[64px] [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px]">
+        <div className="mx-auto w-full px-4 py-[64px] md:px-8 md:py-[64px] lg:py-[64px] [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
           <h2 className="text-5xl leading-tight font-semibold sm:text-4xl md:text-5xl">
             Ecommerce Development Using Liferay
           </h2>
@@ -150,10 +150,10 @@ export default function LiferayEcommerceDevelopmentPage() {
                   </span>
 
                   {/* Title */}
-                  <h3 className="mb-2 text-[30px] font-medium text-black w-[700px]">{item.text}</h3>
+                  <h3 className="mb-2 text-[30px] font-medium text-black w-[800px]">{item.text}</h3>
 
                   {/* Description */}
-                  <p className="text-[20px] font-normal text-gray-600 text-justify">{item.description}</p>
+                  <p className="text-[20px] font-normal text-gray-600 text-justify w-[1800px]">{item.description}</p>
                 </div>
               ))}
             </div>
@@ -162,7 +162,7 @@ export default function LiferayEcommerceDevelopmentPage() {
       </section>
 
       <section className="bg-black py-[64px] text-white lg:py-[64px]">
-        <div className="mx-auto w-full items-start px-4 md:px-8 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px]">
+        <div className="mx-auto w-full items-start px-4 md:px-8 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
           <h2 className="text-5xl leading-tight font-semibold sm:text-4xl md:text-5xl">
             Ecommerce Development Using Liferay
           </h2>
@@ -187,7 +187,7 @@ export default function LiferayEcommerceDevelopmentPage() {
       </section>
 
       <section className="bg-[#f7f7f7] text-black">
-        <div className="mx-auto w-full px-4 py-[64px] md:px-8 md:py-[64px] lg:py-[64px] [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px]">
+        <div className="mx-auto w-full px-4 py-[64px] md:px-8 md:py-[64px] lg:py-[64px] [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
           <div className="grid items-center gap-10 md:grid-cols-2">
             <div>
               <h2 className="text-5xl leading-tight font-semibold sm:text-4xl md:text-5xl">
