@@ -1,6 +1,6 @@
 import Image from "next/image"
-import JobCard from "../../components/career/JobCard"
 import { jobs, perks } from "data/career"
+import JobCard from "../../components/career/JobCard"
 
 export default function CareerPage() {
   
