@@ -19,19 +19,19 @@ const BottomBar: React.FC = () => {
           <div className="flex flex-col items-center gap-4 text-base text-gray-400 md:flex-row md:items-center">
             <p className="flex-shrink-0">©2025 IGNEK. All rights reserved</p>
             <div className="flex flex-wrap justify-center gap-x-3 gap-y-2">
-              <a href="#" className="transition-colors hover:text-white">
+              <a href="/contact" className="transition-colors hover:text-white">
                 Privacy Policy
               </a>
               <span className="text-gray-600">|</span>
-              <a href="#" className="transition-colors hover:text-white">
+              <a href="/contact" className="transition-colors hover:text-white">
                 Terms & Conditions
               </a>
               <span className="text-gray-600">|</span>
-              <a href="#" className="transition-colors hover:text-white">
+              <a href="/contact" className="transition-colors hover:text-white">
                 Cookies Policy
               </a>
               <span className="text-gray-600">|</span>
-              <a href="#" className="transition-colors hover:text-white">
+              <a href="/contact" className="transition-colors hover:text-white">
                 Map
               </a>
             </div>
