@@ -50,7 +50,7 @@ const WhatWeBring: React.FC = () => {
   const scrollYProgress = useSharedScroll()
 
   // The rest of the animation logic is the same
-  const x = useTransform(scrollYProgress, [0, 0.75], ["0%", "-82%"])
+  const x = useTransform(scrollYProgress, [0, 0.75], ["0%", "-210%"])
 
   return (
     // This section is "sticky" and stays on screen while the parent scrolls
