@@ -294,9 +294,9 @@ export default function ContactPage() {
               <div className="mt-6 md:mt-4 md:w-1/2 md:pl-3.5">
                 <h3 className="text-4xl font-semibold text-black">United Arab Emirates</h3>
                 <p className="mt-4 text-lg text-[#4D464A]">
-                  E 910- 912, Ganesh Glory 11, Jagatpur Road, SG Highway,
+                  Arabian Sky Business center , office Number : 09-106,
                   <br />
-                  Ahmedabad, Gujarat – 382470
+                  Umm Hurrair 2 Dubai UAE
                 </p>
                 <div className="mt-24 flex flex-col gap-8 sm:flex-row sm:gap-16">
                   <div className="flex flex-col gap-1">
@@ -305,7 +305,7 @@ export default function ContactPage() {
                       href="mailto:newyork@konstruktion.com"
                       className="text-lg font-medium text-[#151314] hover:text-blue-600"
                     >
-                      newyork@konstruktion.com
+                      connect@ignek.com
                     </a>
                   </div>
                   <div className="flex flex-col gap-1">
@@ -314,7 +314,7 @@ export default function ContactPage() {
                       href="tel:+4146781903"
                       className="text-lg font-medium text-[#151314] hover:text-blue-600"
                     >
-                      (414) 6781 - 903
+                      +97 154 219 8252
                     </a>
                   </div>
                 </div>

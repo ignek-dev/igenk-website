@@ -24,49 +24,57 @@ const CaseStudy: React.FC<CaseStudyCarouselProps> = ({ caseStudies }) => {
   // const [error, setError] = useState<string | null>(null);
   const currentPage = 1
   const router = useRouter();
-  const PER_PAGE = 10;
+  // const PER_PAGE = 10;
   const API_BASE = "https://insights.ignek.com/wp-json/wp/v2/portfolio";
   useEffect(() => {
+    if (!posts.length) return; // only run when data is ready
+
     const interval = setInterval(() => {
-      setActiveIndex((prev) => (prev + 1) % 10)
-    }, 4000)
-    return () => clearInterval(interval)
-  }, [])
+      setActiveIndex((prev) => (prev + 1) % posts.length);
+    }, 4000); // change every 4 seconds
 
+    return () => clearInterval(interval);
+  }, [posts]);
 
-  const fetchPosts = useCallback(async () => {
-    try {
-      // setLoading(true);
-      // setError(null);
-      window.scrollTo({ top: 0, behavior: "smooth" });
+  const fetchPosts = useCallback(
+    async (idsToFilter: number[]) => {
+      try {
+        window.scrollTo({ top: 0, behavior: "smooth" });
 
-      // Build API params dynamically
-      const params = new URLSearchParams({
-        per_page: String(PER_PAGE),
-        page: String(currentPage),
-        _embed: "",
-      });
-      const res = await fetch(`${API_BASE}?${params.toString()}`, {
-        cache: "no-store",
-      });
+        // Build API params
+        const params = new URLSearchParams({
+          per_page: String(50),
+          page: String(currentPage),
+          _embed: "",
+        });
 
-      if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
+        const res = await fetch(`${API_BASE}?${params.toString()}`, {
+          cache: "no-store",
+        });
 
-      const data = (await res.json()) as WPPortfolioPost[];
-      // const total = Number(res.headers.get("x-wp-totalpages")) || 1;
-      setPosts(data);
-      // setTotalPages(total);
-    } catch (err: unknown) {
-      console.log(err)
-      // if (err instanceof Error) setError(err.message);
-      // else setError("Failed to fetch posts");
-    } finally {
-      // setLoading(false);
-    }
-  }, [currentPage]);
+        if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
+
+        const data = (await res.json()) as WPPortfolioPost[];
+        // ✅ Filter only posts whose IDs are in the provided array
+        const filteredPosts = idsToFilter.length
+          ? data
+            .filter((post) => idsToFilter.includes(post.id))
+            .sort(
+              (a, b) => idsToFilter.indexOf(a.id) - idsToFilter.indexOf(b.id)
+            )
+          : data;
+        setPosts(filteredPosts);
+      } catch (err) {
+        console.error("Error fetching posts:", err);
+      }
+    },
+    [currentPage]
+  );
 
   useEffect(() => {
-    fetchPosts();
+    // const id=[19498,32037,32555]
+    const categoryIds = [19498, 32037, 32555];
+    fetchPosts(categoryIds);
   }, [fetchPosts]);
   return (
     <section className="overflow-hidden bg-black py-16 text-white">
@@ -86,14 +94,14 @@ const CaseStudy: React.FC<CaseStudyCarouselProps> = ({ caseStudies }) => {
             >
               <div className="flex flex-col gap-8 rounded-2xl border border-gray-800 bg-[#0f0f0f] p-4 md:flex-row">
                 {/* Image */}
-                <div className="h-[318px] w-[420px] flex-shrink-0 overflow-hidden rounded-xl">
+                <div className="h-[318px] w-[450px] flex-shrink-0 overflow-hidden rounded-xl md:w-1/2">
                   <Image
                     src={item._embedded?.["wp:featuredmedia"]?.[0]?.source_url || "/images/portfolio/portfolioImg.png"}
                     alt={item.title.rendered}
-                    width={420}
+                    width={450}
                     height={300}
                     objectFit="cover"
-                    className="rounded-xl h-full"
+                    className="rounded-xl h-full w-full"
                   />
                 </div>
 

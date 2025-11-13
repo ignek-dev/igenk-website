@@ -2,42 +2,9 @@ import ScheduleMeetingButton from "components/Button/ScheduleMeetingButton"
 import { BlogSection } from "components/Common"
 import TalkToExpert from "components/Common/TalkToExpert"
 import WhatMake from "components/Common/WhatMake"
-import { expoerAdvices, featureTabs, solutions } from "data/liferayExpert"
+import { expoerAdvices, featureTabs, LiferayExpertAdviceData, LiferayExpertAdviceSubContent, LiferayExpertAdviceTitle1, LiferayExpertAdviceTitle2, solutions } from "data/liferayExpert"
 
 export default function LiferayExpertAdvicePage() {
-
-  const LiferayExpertAdviceTitle1 = "Why Choose IGNEK For Liferay Expert Advice: Elevate Your Digital Experience?"
-  const LiferayExpertAdviceTitle2 =""
-  const LiferayExpertAdviceSubContent = "At IGNEK, Our expert engineers use up to date software’s and vast knowledge to craft solutions that match your needs and expectations. Putting clients first is our thing, and we’re proud to support our very first business client till today!"
- 
-  const LiferayExpertAdviceData = [
-    {
-      title: "Strong Expertise",
-      desc: "We are experts with years of experience, dedicated to staying updated on the latest trends and advancements.",
-    },
-    {
-      title: "Client First",
-      desc: "Our tailored solutions prioritize client satisfaction, aligning with your objectives to foster trust and mutual success.",
-    },
-    {
-      title: "Effective Communication",
-      desc: "We are experts with years of experience, dedicated to staying updated on the latest trends and advancements.",
-    },
-    {
-      title: "On Time Delivery",
-      desc: "We prioritize deadlines, ensuring timely delivery without ever compromising on quality.",
-    },
-    {
-      title: "Results Focused",
-      desc: "Our dedicated team works hard to deliver measurable results, driving your business forward toward collective success.",
-    },
-    {
-      title: "End-to-End Support",
-      desc: "We provide complete support, from start to finish, and ongoing guidance even after project completion.",
-    },
-  ]
-
-
   return (
     <main className="pb-16">
       {/* Hero */}
@@ -56,7 +23,10 @@ export default function LiferayExpertAdvicePage() {
               </h1>
             </div>
             <p className="absolute bottom-0 max-w-2xl text-right text-lg text-white sm:text-lg md:mt-16 md:justify-self-end">
-              Our Liferay Expert Advice Services are here to provide you with the guidance and expertise you need to ensure your digital experience platform performs at its best. Whether you are just starting with Liferay or looking to optimize and scale your existing setup, our team of seasoned professionals is ready to assist you every step of the way.  
+              Our Liferay Expert Advice Services are here to provide you with the guidance and expertise you need to
+              ensure your digital experience platform performs at its best. Whether you are just starting with Liferay
+              or looking to optimize and scale your existing setup, our team of seasoned professionals is ready to
+              assist you every step of the way.
             </p>
           </div>
 
@@ -65,7 +35,7 @@ export default function LiferayExpertAdvicePage() {
             {featureTabs.map((label) => (
               <span
                 key={label}
-                className="inline-flex items-center rounded-full border border-white/30 px-6 py-5 [@media(min-width:1440px)]:text-base [@media(min-width:1500px)]:text-lg text-lg text-white transition-colors hover:border-white hover:text-white"
+                className="inline-flex items-center rounded-full border border-white/30 px-6 py-5 text-lg text-white transition-colors hover:border-white hover:text-white [@media(min-width:1440px)]:text-base [@media(min-width:1500px)]:text-lg"
               >
                 {label}
               </span>
@@ -82,7 +52,8 @@ export default function LiferayExpertAdvicePage() {
                 Liferay Expert Advice Service
               </h2>
               <p className="mt-4 max-w-xl text-sm text-[20px] text-gray-700">
-               Gain actionable insights through our Liferay Expert Advice Service and Liferay Consultation, helping you enhance performance, implement new features, and create smooth, engaging user experiences.
+                Gain actionable insights through our Liferay Expert Advice Service and Liferay Consultation, helping you
+                enhance performance, implement new features, and create smooth, engaging user experiences.
               </p>
             </div>
             <div className="w-full space-y-4 md:justify-self-end">
@@ -117,7 +88,8 @@ export default function LiferayExpertAdvicePage() {
               Solutions For Production, Performance, Development And Architecture
             </h1>
             <p className="text-lg leading-relaxed text-white">
-              From production releases to architecture design, our Liferay Expert Advice Services offer tailored strategies and hands-on support to improve efficiency, scalability, and overall platform performance.  
+              From production releases to architecture design, our Liferay Expert Advice Services offer tailored
+              strategies and hands-on support to improve efficiency, scalability, and overall platform performance.
             </p>
             <div>
               <ScheduleMeetingButton isFullWidth={false} btnName="Schedule a Call" />
@@ -143,7 +115,12 @@ export default function LiferayExpertAdvicePage() {
           </div>
         </div>
       </section>
-       <WhatMake WhatMakeData={LiferayExpertAdviceData}  titleText1={LiferayExpertAdviceTitle1} titleText2={LiferayExpertAdviceTitle2} subContext={LiferayExpertAdviceSubContent}/>
+      <WhatMake
+        WhatMakeData={LiferayExpertAdviceData}
+        titleText1={LiferayExpertAdviceTitle1}
+        titleText2={LiferayExpertAdviceTitle2}
+        subContext={LiferayExpertAdviceSubContent}
+      />
       <TalkToExpert />
       <BlogSection />
 

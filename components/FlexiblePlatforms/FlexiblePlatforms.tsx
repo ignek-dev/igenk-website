@@ -23,7 +23,7 @@ const FlexiblePlatforms = () => {
   const [sectionRef, isInView] = useInView({ threshold: 0.2, triggerOnce: true })
   return (
     <section ref={sectionRef} className="overflow-hidden bg-[#F9FAF7] py-20 text-black lg:py-16">
-      <div className="mx-auto grid w-full items-start gap-12 px-4 md:px-6 lg:grid-cols-2 lg:gap-16 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
+      <div className="mx-auto grid w-full items-start  px-4 md:px-6 lg:grid-cols-2  [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
         {/* Left Column: Title and Description */}
         <div
           className={`transition-all duration-[1500ms] ease-out ${
@@ -42,7 +42,7 @@ const FlexiblePlatforms = () => {
         </div>
 
         <div
-          className={`group relative min-h-[496px] w-full overflow-hidden rounded-[20px] transition-all duration-[1500ms] ease-out ${
+          className={`group relative min-h-[646px] w-full overflow-hidden rounded-[20px] transition-all duration-[1500ms] ease-out ${
             isInView
               ? "animate-when-visible animate-slide-right animation-delay-200 translate-x-0 opacity-100"
               : "translate-x-20 opacity-0"

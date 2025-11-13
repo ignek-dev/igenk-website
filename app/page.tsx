@@ -47,7 +47,7 @@ export default function HomePage() {
         </div>
 
         <div className="mx-auto w-full px-4 pt-20 pb-12 md:px-6 md:pb-16 lg:pb-20 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
-          <h1 className="text-6xl letter-spacing-[0.04em] leading-none font-extrabold hero-heading">
+          <h1 className="text-6xl letter-spacing-[0.04em] font-extrabold hero-heading leading-[8rem]">
             Transform Your
             <br />
             <span className="italic">DIGITAL EXPERIENCE</span>
@@ -55,7 +55,7 @@ export default function HomePage() {
             <span>With IGNEK Today</span>
           </h1>
           <div className="mt-20 grid items-start gap-8 md:grid-cols-2">
-            <p className="max-w-xl text-xl text-white/80 sm:text-base">
+            <p className="max-w-xl text-xl text-white/80 sm:text-xl leading-[30px]">
               Transform your digital landscape with cutting-edge DXP solutions tailored to your unique business needs.
             </p>
 

@@ -3,9 +3,11 @@
 import Image from "next/image"
 import Link from "next/link"
 import React from "react"
+import { commonProvidedServices } from "./SuccessStories"
 import TechnologyChip from "./TechnologyChip"
 
 export interface Story {
+  id: number
   imageSrc: string
   tag: string
   title: string
@@ -25,7 +27,7 @@ const SuccessStoryCard: React.FC<{ story: Story }> = ({ story }) => {
             alt={story.title}
             width={800}
             height={600}
-            className="h-full w-full object-cover"
+            className="h-full w-full"
           />
         </div>
 
@@ -38,9 +40,11 @@ const SuccessStoryCard: React.FC<{ story: Story }> = ({ story }) => {
             {story.tag}
           </span>
           <h3 className="mb-4 text-3xl font-bold text-gray-900">{story.title}</h3>
-          <p className="mb-6 leading-relaxed text-gray-600">{story.description}</p>
+          <p className="mb-6 leading-relaxed text-gray-600 line-clamp-3"
+            dangerouslySetInnerHTML={{ __html: story.description }}
+          />
           <Link
-            href="/case-study"
+            href={`/case-study/id/${story.id}`}
             className="mb-8 inline-flex items-center gap-1 rounded-full border border-[#00979E] bg-white px-5 py-2 text-sm font-semibold text-gray-800 transition-all hover:bg-gray-50"
             style={{ boxShadow: "0px 0px 12px -2px #00979E" }}
           >
@@ -48,7 +52,7 @@ const SuccessStoryCard: React.FC<{ story: Story }> = ({ story }) => {
           </Link>
           <h4 className="mb-4 text-lg font-semibold text-gray-800">Provided Services</h4>
           <div className="flex flex-wrap gap-3">
-            {story.services.map((service, idx) => (
+            {commonProvidedServices.map((service, idx) => (
               <TechnologyChip key={idx} iconSrc={service.iconSrc} name={service.name} />
             ))}
           </div>

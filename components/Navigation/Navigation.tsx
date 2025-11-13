@@ -3,7 +3,7 @@ import { AnimatePresence, motion } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
 import { usePathname, useRouter } from "next/navigation"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import CalendlyButton from "components/CalendlyPopupButton/CalendlyButton"
 import CompanyMegaMenu from "components/Navigation/CompanyMegaMenu"
 import InsightsMegaMenu from "components/Navigation/InsightsMegaMenu"
@@ -28,24 +28,39 @@ export default function Navigation() {
   const [isHeaderHovered, setIsHeaderHovered] = useState(false)
   const router = useRouter();
 
-  const handleMouseEnter = (label: string) => setActiveMenu(label)
+  const handleMouseEnter = (label: string) => {
+    setActiveMenu(label)
+    setIsHeaderHovered(true)
+  }
   const handleMouseLeave = () => setActiveMenu(null)
+  const [isScrolled, setIsScrolled] = useState(false);
 
+  // Scroll listener
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50); // when scrolled 50px from top
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   const backgroundClass = isHeaderHovered
     ? "bg-black"
-    : isCareerPage || isAboutUsPage
-      ? "bg-transparent"
-      : isConsultingPage || isHireDeveloperPage
-        ? "bg-[#0B63CE]"
-        : "bg-black"
+    : isScrolled
+      ? "bg-black sticky"
+      : isCareerPage || isAboutUsPage
+        ? "bg-transparent"
+        : isConsultingPage || isHireDeveloperPage
+          ? "bg-[#0B63CE]"
+          : "bg-black"
 
   return (
     <>
       {activeMenu === null ? (
         <header
-          className={`z-50 w-full text-white transition-colors duration-300 ${isCareerPage || isAboutUsPage || isConsultingPage || isHireDeveloperPage ? "absolute top-0" : "relative"
+          className={`absolute top-0 z-1000 w-full text-white transition-colors duration-300 ${isCareerPage || isAboutUsPage || isConsultingPage || isHireDeveloperPage ? "absolute top-0" : "relative"
             } ${backgroundClass}`}
-          onMouseEnter={() => setIsHeaderHovered(true)}
+          // onMouseEnter={() => setIsHeaderHovered(true)}
           onMouseLeave={() => {
             handleMouseLeave()
             setIsHeaderHovered(false)
@@ -66,7 +81,7 @@ export default function Navigation() {
                 <li key={item.label} onMouseEnter={() => handleMouseEnter(item.label)} className="relative">
                   <a
                     href={item.href}
-                    className={`pb-2 transition-colors ${activeMenu === item.label ? "text-white" : "text-white/90"
+                    className={`pb-2 transition-colors text-2xl ${activeMenu === item.label ? "text-white" : "text-white/90"
                       } hover:text-white`}
                   >
                     {item.label}
@@ -82,7 +97,8 @@ export default function Navigation() {
               ))}
             </ul>
 
-            <div className="flex items-center gap-4 z-10">
+            <div className="flex items-center gap-4 z-10"
+            >
               {/* <button
                 type="button"
                 aria-label="Calendar"
@@ -92,7 +108,7 @@ export default function Navigation() {
                   <Image src="/images/icon/calendar.png" alt="calendar" width={24} height={24} />
                 </div>
               </button> */}
-              <CalendlyButton/>
+              <CalendlyButton />
               <button
                 type="button"
                 aria-label="Go"
@@ -101,7 +117,7 @@ export default function Navigation() {
 
               >
                 <div className="flex h-7 w-7 items-center justify-center cursor-pointer">
-                  <Image src="/images/icon/arrow-tr.png" alt="arrow-top-right" width={24} height={24} />
+                  <Image src="/images/icon/arrow-tr.png" alt="arrow-top-right" width={46} height={46} />
                 </div>
               </button>
             </div>
@@ -111,11 +127,11 @@ export default function Navigation() {
         <AnimatePresence mode="wait">
           <motion.div
             key={activeMenu}
-            initial={{ opacity: 1, y: -200 }}
+            initial={{ opacity: 1, y: -300 }}
             whileInView={{ opacity: 1, y: 0 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-            className="absolute left-0 z-50 w-full border-t border-white/10 bg-black text-white"
+            transition={{ duration: 1.5 }}
+            className={`top-0 left-0 z-50 w-full border-t border-white/10 bg-black text-white ${isScrolled ? "sticky" : "absolute"}`}
           >
             <header
               className={`w-full text-white transition-colors duration-300 ${isCareerPage || isAboutUsPage || isConsultingPage || isHireDeveloperPage ? "absolute top-0" : "relative"
@@ -141,7 +157,7 @@ export default function Navigation() {
                     <li key={item.label} onMouseEnter={() => handleMouseEnter(item.label)} className="relative">
                       <a
                         href={item.href}
-                        className={`pb-2 transition-colors ${activeMenu === item.label ? "text-white" : "text-white/90"
+                        className={`pb-2 transition-colors text-2xl ${activeMenu === item.label ? "text-white" : "text-white/90"
                           } hover:text-white`}
                       >
                         {item.label}
@@ -158,22 +174,16 @@ export default function Navigation() {
                 </ul>
 
                 <div className="flex items-center gap-4">
-                  <button
-                    type="button"
-                    aria-label="Calendar"
-                    className="rounded-full border border-[#00979E] p-2 text-white/80 transition-colors hover:border-[#00979E] hover:text-white"
-                  >
-                    <div className="flex h-7 w-7 items-center justify-center">
-                      <Image src="/images/icon/calendar.png" alt="calendar" width={24} height={24} />
-                    </div>
-                  </button>
+                  <CalendlyButton />
                   <button
                     type="button"
                     aria-label="Go"
                     className="rounded-full border border-[#00979E] p-2 text-white/80 transition-colors hover:border-[#00979E] hover:text-white"
+                    onClick={() => router.push("/contact")}
+
                   >
-                    <div className="flex h-7 w-7 items-center justify-center">
-                      <Image src="/images/icon/arrow-tr.png" alt="arrow-top-right" width={24} height={24} />
+                    <div className="flex h-7 w-7 items-center justify-center cursor-pointer">
+                      <Image src="/images/icon/arrow-tr.png" alt="arrow-top-right" width={46} height={46} />
                     </div>
                   </button>
                 </div>

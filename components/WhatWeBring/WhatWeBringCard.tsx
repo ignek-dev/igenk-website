@@ -20,10 +20,10 @@ const WhatWeBringCard: React.FC<WhatWeBringCardProps> = ({ cardNumber, title, de
     >
       {/* The rest of the content is passed as children to the Card */}
       {/* Card Number */}
-      <span className="mb-5 text-2xl font-semibold text-white">({cardNumber})</span>
+      <span className="mb-5 text-xl font-semibold text-white">({cardNumber})</span>
 
       {/* Heading */}
-      <h3 className="mb-8 max-w-[250px] text-4xl font-bold whitespace-pre-wrap text-[#00979E] lg:text-5xl">{title}</h3>
+      <h3 className="mb-8 max-w-[250px] text-5xl font-bold whitespace-pre-wrap text-[#00979E] lg:text-5xl leading-[54px]">{title}</h3>
 
       {/* Description */}
       <p className="mt-[80px] text-lg leading-relaxed text-white">{description}</p>

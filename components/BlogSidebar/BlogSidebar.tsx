@@ -22,8 +22,7 @@ export interface WPPost {
     };
 
 }
-
-const PER_PAGE = 3;
+// const PER_PAGE = 3;
 const API_URL = "https://insights.ignek.com/wp-json/wp/v2/posts";
 export const WhatsappIcon = () => (
     <svg width="22" height="22" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -35,7 +34,10 @@ export const MainIcon = () => (
         <path d="M20 2C20 0.9 19.1 0 18 0H2C0.9 0 0 0.9 0 2V14C0 15.1 0.9 16 2 16H18C19.1 16 20 15.1 20 14V2ZM18 2L10 7L2 2H18ZM18 14H2V4L10 9L18 4V14Z" fill="white" />
     </svg>
 )
-const BlogSidebar = () => {
+interface BlogSidebarProps {
+    categoryId?: number; // ✅ make it optional or required
+}
+const BlogSidebar = ({ categoryId }: BlogSidebarProps) => {
     const socialLinks = [
         { icon: <IconLinkedIn />, href: "https://www.linkedin.com/company/ignek-infotech/about/", label: "LinkedIn" },
         { icon: <IconFacebook />, href: "https://www.facebook.com/ignekinfo/", label: "Facebook" },
@@ -52,63 +54,76 @@ const BlogSidebar = () => {
     // const [error, setError] = useState<string | null>(null);
     // const [currentPage, setCurrentPage] = useState(1);
     // const [totalPages, setTotalPages] = useState(1);
-    const currentPage = 1
-    const fetchBlogs = useCallback(async () => {
-        try {
-            // setLoading(true);
-            // setError(null);
-            window.scrollTo({ top: 0, behavior: "smooth" });
+    // const currentPage = 1
+    const fetchBlogs = useCallback(
+        async (idsToFilter: number[]) => {
+            try {
+                window.scrollTo({ top: 0, behavior: "smooth" });
 
+                const res = await fetch(`${API_URL}?per_page=100&categories=${categoryId}&_embed`, { cache: "no-store" });
 
-            const res = await fetch(
-                `${API_URL}?per_page=${PER_PAGE}&page=${currentPage}&_embed`,
-                { cache: "no-store" }
-            );
+                if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
 
-            if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
+                const data = (await res.json()) as WPPost[];
 
-            const data = await res.json();
-            // const total = Number(res.headers.get("x-wp-totalpages")) || 1;
+                // 🧠 Filter only blogs whose IDs match the given array
+                const filteredData = idsToFilter.length
+                    ? data.filter((post) => idsToFilter.includes(post.id))
+                    : data;
 
-            const formatted: BlogData[] = (data as WPPost[]).map((post) => ({
-                id: post.id,
-                title: post.title?.rendered || "Untitled",
-                author: post._embedded?.author?.[0]?.name || "Bhavin Panchani",
-                date: post.date
-                    ? new Date(post.date).toLocaleDateString("en-US", {
-                        month: "short",
-                        day: "numeric",
-                        year: "numeric",
-                    })
-                    : "Unknown date",
-                readTime: `${Math.max(
-                    2,
-                    Math.ceil((post.content?.rendered?.length || 0) / 1200)
-                )} min read`,
-                category:
-                    post._embedded?.["wp:term"]?.[0]?.[0]?.name || "General",
-                image:
-                    post._embedded?.["wp:featuredmedia"]?.[0]?.source_url ||
-                    "/images/blogs/blogImage.png",
-                authPic:
-                    post._embedded?.author?.[0]?.avatar_urls?.["96"] ||
-                    "/images/blogs/blogAuthor.png",
-            }));
+                const formatted: BlogData[] = filteredData.map((post) => ({
+                    id: post.id,
+                    title: post.title?.rendered || "Untitled",
+                    author: post._embedded?.author?.[0]?.name || "Bhavin Panchani",
+                    date: post.date
+                        ? new Date(post.date).toLocaleDateString("en-US", {
+                            month: "short",
+                            day: "numeric",
+                            year: "numeric",
+                        })
+                        : "Unknown date",
+                    readTime: `${Math.max(
+                        2,
+                        Math.ceil((post.content?.rendered?.length || 0) / 1200)
+                    )} min read`,
+                    category:
+                        post._embedded?.["wp:term"]?.[0]?.[0]?.name || "General",
+                    image:
+                        post._embedded?.["wp:featuredmedia"]?.[0]?.source_url ||
+                        "/images/blogs/blogImage.png",
+                    authPic:
+                        post._embedded?.author?.[0]?.avatar_urls?.["96"] ||
+                        "/images/blogs/blogAuthor.png",
+                    desc: post?.excerpt?.rendered || "",
+                }));
 
-            setBlogs(formatted);
-            // setTotalPages(total);
-        } catch (err: unknown) {
-            // if (err instanceof Error) setError(err.message);
-            // else setError("Failed to fetch blogs");
-            console.log(err)
-        } finally {
-            // setLoading(false);
-        }
-    }, [currentPage]);
+                setBlogs(formatted);
+            } catch (err) {
+                console.log(err)
+            } finally {
+                // setLoading(false);
+            }
+        },
+        []
+    );
 
+    // useEffect(() => {
+    //     const ids = [40314, 39874, 39138]; // example IDs
+    //     fetchBlogs(ids);
+    // }, [fetchBlogs]);
     useEffect(() => {
-        fetchBlogs();
-    }, [fetchBlogs]);
+        const categoryMap: Record<number, number[]> = {
+            15: [40314, 39874, 39138], // liferay
+            16: [40126, 40338, 39747], // react
+            21: [28831, 28897, 26212], // spring boot
+        };
+
+        const ids = categoryId ? categoryMap[categoryId] || [] : [];
+
+        if (ids.length > 0) {
+            fetchBlogs(ids);
+        }
+    }, [categoryId, fetchBlogs]);
 
     const router = useRouter();
 
