@@ -12,28 +12,28 @@ const featuredService = {
 
 // Data for the "Digital Experience" section
 const digitalExperienceLinks = [
-  { text: "DX Strategy", href: "#", iconUrl: "/images/mega-menu/dx-strategy.png" },
-  { text: "DX Design", href: "#", iconUrl: "/images/mega-menu/dx-design.png" },
-  { text: "DX Engineering", href: "#", iconUrl: "/images/mega-menu/dx-engineering.png" },
-  { text: "DX Intelligence", href: "#", iconUrl: "/images/mega-menu/dx-intelligence.png" },
-  { text: "DX Marketing", href: "#", iconUrl: "/images/mega-menu/dx-marketing.png" },
-  { text: "DX Infrastructure", href: "#", iconUrl: "/images/mega-menu/dx-infrastructure.png" },
+  { text: "DX Strategy", href: "/contact", iconUrl: "/images/mega-menu/dx-strategy.png" },
+  { text: "DX Design", href: "/contact", iconUrl: "/images/mega-menu/dx-design.png" },
+  { text: "DX Engineering", href: "/contact", iconUrl: "/images/mega-menu/dx-engineering.png" },
+  { text: "DX Intelligence", href: "/contact", iconUrl: "/images/mega-menu/dx-intelligence.png" },
+  { text: "DX Marketing", href: "/contact", iconUrl: "/images/mega-menu/dx-marketing.png" },
+  { text: "DX Infrastructure", href: "/contact", iconUrl: "/images/mega-menu/dx-infrastructure.png" },
 ]
 
 // Data for the "Liferay Services" section
 const liferayServicesLinks = [
-  { text: "Development & Customization", href: "/services/liferay-development-and-customization" },
-  { text: "Theme Development", href: "/services/liferay-theme-development" },
-  { text: "Expert Advice", href: "/services/liferay-expert-advice" },
-  { text: "Proof Of Concept", href: "/services/liferay-proof-of-concept" },
-  { text: "Ecommerce Development", href: "/services/liferay-ecommerce-development" },
-  { text: "Migration", href: "/services/liferay-migration" },
-  { text: "Support & Maintenance", href: "/services/liferay-support-and-maintenance" },
-  { text: "Performance Tuning", href: "/services/liferay-performance-tuning" },
-  { text: "Upgrade", href: "/services/liferay-upgrade" },
-  { text: "Architecture Service", href: "/services/liferay-architecture-design" },
   { text: "Consulting Page", href: "/services/liferay-consulting-and-implementation-services" },
+  { text: "Performance Tuning", href: "/services/liferay-performance-tuning" },
+  { text: "Proof Of Concept", href: "/services/liferay-proof-of-concept" },
+  { text: "Support & Maintenance", href: "/services/liferay-support-and-maintenance" },
+  { text: "Architecture", href: "/services/liferay-architecture-design" },
+  { text: "Ecommerce Development", href: "/services/liferay-ecommerce-development" },
+  { text: "Development & Customization", href: "/services/liferay-development-and-customization" },
+  { text: "Expert Advice", href: "/services/liferay-expert-advice" },
+  { text: "Upgradation", href: "/services/liferay-upgrade" },
   { text: "Hire Liferay Devloper", href: "/services/liferay-hire-developer" },
+  { text: "Migration", href: "/services/liferay-migration" },
+  // { text: "Theme Development", href: "/services/liferay-theme-development" },
 ]
 
 // --- Main ServicesMegaMenu Component ---
@@ -116,12 +116,12 @@ export default function ServicesMegaMenu() {
             <div className="w-1/2">
               <h3 className="mb-6 text-3xl font-semibold md:text-2xl">Liferay Services</h3>
               {/* Using a grid to create two columns */}
-              <ul className="grid grid-cols-2 gap-x-32 gap-y-4 [@media(min-width:1440px)]:gap-x-68 [@media(min-width:1820px)]:gap-x-32">
+              <ul className="grid grid-cols-2 gap-x-32 gap-y-4 [@media(min-width:1440px)]:gap-x-62 [@media(min-width:1820px)]:gap-x-32">
                 {liferayServicesLinks.map((link) => (
                   <li key={link.text}>
                     <a
                       href={link.href}
-                      className="text-xl md:text-lg whitespace-pre text-white/80 transition-colors hover:text-white"
+                      className="text-xl  md:text-lg whitespace-pre text-white/80 transition-colors hover:text-white"
                     >
                       {link.text}
                     </a>
