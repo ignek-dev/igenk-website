@@ -1,141 +1,11 @@
 import { BlogSection } from "components/Common"
 import TalkToExpert from "components/Common/TalkToExpert"
 import WhatMake from "components/Common/WhatMake"
+import { customizationServices, developmentServices, featureTabs, LiferayDevelopmentAndCustomizationData, LiferayDevelopmentAndCustomizationSubContent, LiferayDevelopmentAndCustomizationTitle1, LiferayDevelopmentAndCustomizationTitle2, liferayIntegrationServices, portalDevelopmentService } from "data/liferay-development-and-customization"
 
 export default function LiferayDevelopmentAndCustomizationPage() {
 
-   const LiferayDevelopmentAndCustomizationTitle1 = "Why Choose IGNEK For Liferay"
-  const LiferayDevelopmentAndCustomizationTitle2 ="Development and Customization?"
-  const LiferayDevelopmentAndCustomizationSubContent = "At IGNEK, Our expert engineers use up to date software’s and vast knowledge to craft solutions that match your needs and expectations. Putting clients first is our thing, and we’re proud to support our very first business client till today!"
- 
-  const LiferayDevelopmentAndCustomizationData = [
-    {
-      title: "Strong Expertise",
-      desc: "We are experts with years of experience, dedicated to staying updated on the latest trends and advancements.",
-    },
-    {
-      title: "Client First",
-      desc: "Our tailored solutions prioritize client satisfaction, aligning with your objectives to foster trust and mutual success.",
-    },
-    {
-      title: "Effective Communication",
-      desc: "We are experts with years of experience, dedicated to staying updated on the latest trends and advancements.",
-    },
-    {
-      title: "On Time Delivery",
-      desc: "We prioritize deadlines, ensuring timely delivery without ever compromising on quality.",
-    },
-    {
-      title: "Results Focused",
-      desc: "Our dedicated team works hard to deliver measurable results, driving your business forward toward collective success.",
-    },
-    {
-      title: "End-to-End Support",
-      desc: "We provide complete support, from start to finish, and ongoing guidance even after project completion.",
-    },
-  ]
 
-  const featureTabs = [
-    "Portal development",
-    "Portlet Customization",
-    "Theme development",
-    "Performance optimization",
-    "Liferay Integration",
-  ]
-
-  const developmentServices = [
-    "Develop public & private sites using Liferay sites, site templates, page templates, and layout features.",
-    "Leverage Liferay’s default capabilities like fragments, web content, and layout to build pages.",
-    "Create widget templates to render Liferay assets across OOTB portlets like asset publishers, web content displays, and search results.",
-    "Use various Liferay search facets to implement a rich search result experience.",
-    "Use Liferay’s scheduled content, Kaleo workflow, and User & Role feature to manage content publishing.",
-    "Using the Liferay page experience to customize content based on the logged-in users.",
-  ]
-
-  const portalDevelopmentService = [
-    "Liferay MVC Portlet is a Java-based framework for developing portlets within the Liferay Portal environment, facilitating the creation of dynamic web applications with Model-View-Controller (MVC) architecture.",
-    "Liferay Service Builder that automates the generation of service layers, persistence layers, and API classes, streamlining the development process for building robust, scalable applications on the Liferay platform.",
-    "Liferay React Portlet combines the versatility of Liferay’s portal framework with the flexibility and interactive user experiences offered by React.js, allowing developers to create dynamic, single-page applications within the Liferay environment.",
-    "Develop Rest APIs using Liferay Rest Builder & Liferay Module development using standards like OSGI, JSR 168 and 268",
-  ]
-  const liferayIntegrationServices = [
-    "SSO Integration supports SAML, Keyclock,  LDAP, OpenId, OAuth, and more",
-    "Social Media Integration like Facebook and Google login",
-    "Analytics integration like Google Analytics and Liferay Analytics Cloud",
-    "Google Meet, Microsoft Teams, Zoom and Jitsi integration",
-    "SMS and WhatsApp Integration using Twilio",
-    "Payment Integration like Stripe, Braintree, Paypal, Vonage and more",
-    "File storage integration like Amzon S3, Google Cloud Storage, Microsoft Azure Blob Storage",
-    "Data Integration like Liferay Talend Integration",
-    "Google Drive and Microsoft Office 365 integration",
-    "Much more Third-Party integration using REST API or client SDK",
-    "Zendesk Chat Integration and Digital Signature Integration",
-    "Google Authentication for multi-factor authentication",
-    "Apache ActiveMQ Integration for distributing loads",
-  ]
-
-  const customizationServices = [
-    {
-      text: "Customizing <br/> JSPs",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien ",
-    },
-    {
-      text: "Implementing <br/>Portlet Filters ",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien ",
-    },
-    {
-      text: "Waiting for <br/> Lifecycle events",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien ",
-    },
-    {
-      text: "Writing Widget <br/> templates",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien ",
-    },
-    {
-      text: "Overriding Liferay services <br/> using wrappers",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien ",
-    },
-    {
-      text: "Overriding Liferay MVC <br/> Commands",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien ",
-    },
-    {
-      text: "Overriding <br/> OSGI Services",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien ",
-    },
-    {
-      text: "Customizing Core </br> Functionality with Ext",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien ",
-    },
-    {
-      text: "Model<br/> listeners",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien ",
-    },
-    {
-      text: "Search model </br>contributor",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien ",
-    },
-    {
-      text: "Context <br/> contributor",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien ",
-    },
-    {
-      text: "Implementing Liferay <br/> hooks",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien ",
-    },
-  ]
   return (
     <main className="pb-16">
       {/* Hero */}
@@ -155,9 +25,7 @@ export default function LiferayDevelopmentAndCustomizationPage() {
               </h1>
             </div>
             <p className="absolute bottom-0 max-w-lg text-right text-lg text-white sm:text-lg md:mt-16 md:justify-self-end">
-              Transform your Liferay Portal with our expert Liferay Theme Development Services. We specialize in
-              converting UX designs into visually captivating HTML and implementing responsive Liferay Theme. Our
-              approach ensures
+              With our Liferay Development and customization, we simplify digital transformation for businesses. We specialize in web portals, intranets, and collaboration tools to fit your needs.
             </p>
           </div>
 
@@ -225,7 +93,7 @@ export default function LiferayDevelopmentAndCustomizationPage() {
         <div className="mx-auto w-full items-start px-4 md:px-8 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px]">
           <div className="relative grid items-start gap-10 md:grid-cols-2">
             <h2 className="text-3xl leading-[60px] font-semibold sm:text-4xl [@media(min-width:1440px)]:text-4xl [@media(min-width:1800px)]:text-5xl">
-              Our Liferay Custom Module/ Portlet Development Services
+              Our Liferay Customization and Development Services
             </h2>
             <p className="absolute bottom-0 max-w-xl text-right text-xl text-white md:justify-self-end">
               Our approach blends prevention and rapid response to keep your platform stable, secure, and performing.
@@ -258,9 +126,7 @@ export default function LiferayDevelopmentAndCustomizationPage() {
             Liferay Integration Services
           </h2>
           <p className="mt-4 justify-self-center text-lg leading-relaxed text-[#101012] text-gray-700">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.
-            Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis
-            tellus.
+            Enable seamless data flow and connectivity by integrating Liferay with ERP, CRM, and third-party business applications.
           </p>
           <div className="pt-4">
             <section className="w-full pt-10 text-white">
@@ -289,8 +155,7 @@ export default function LiferayDevelopmentAndCustomizationPage() {
               Liferay Portal Customization Services
             </h2>
             <p className="absolute bottom-0 max-w-xl text-right text-xl text-white md:justify-self-end">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.
-              Pellentesque sit amet sapien fringilla,
+              Transform your Liferay experience with custom solutions that make your platform faster, smarter, and easier to use.
             </p>
           </div>
           <div className="pt-12">

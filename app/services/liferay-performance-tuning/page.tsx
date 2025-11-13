@@ -4,82 +4,13 @@ import { BlogSection } from "components/Common"
 import CaseStudy from "components/Common/CaseStudy"
 import TalkToExpert from "components/Common/TalkToExpert"
 import WhatMake from "components/Common/WhatMake"
-import { featureTabs, items } from "data/liferay-performance-tuning"
+import { caseStudies, featureTabs, items, LiferayPerformanceTuningData, LiferayPerformanceTuningSubContent, LiferayPerformanceTuningTitle1, LiferayPerformanceTuningTitle2 } from "data/liferay-performance-tuning"
 
 export const metadata: Metadata = {
   title: "Liferay Performance Tuning | IGNEK",
   description:
     "Optimize your Liferay platform with IGNEK's performance tuning services: JVM tuning, caching, DB optimization, and more.",
 }
-
-const LiferayPerformanceTuningTitle1 = "Why Choose IGNEK For Liferay"
-const LiferayPerformanceTuningTitle2 ="Performance Tuning?"
-const LiferayPerformanceTuningSubContent = "At IGNEK, Our expert engineers use up to date software’s and vast knowledge to craft solutions that match your needs and expectations. Putting clients first is our thing, and we’re proud to support our very first business client till today!"
- 
-
-const LiferayPerformanceTuningData = [
-  {
-    title: "Strong Expertise",
-    desc: "We are experts with years of experience, dedicated to staying updated on the latest trends and advancements.",
-  },
-  {
-    title: "Client First",
-    desc: "Our tailored solutions prioritize client satisfaction, aligning with your objectives to foster trust and mutual success.",
-  },
-  {
-    title: "Effective Communication",
-    desc: "We are experts with years of experience, dedicated to staying updated on the latest trends and advancements.",
-  },
-  {
-    title: "On Time Delivery",
-    desc: "We prioritize deadlines, ensuring timely delivery without ever compromising on quality.",
-  },
-  {
-    title: "Results Focused",
-    desc: "Our dedicated team works hard to deliver measurable results, driving your business forward toward collective success.",
-  },
-  {
-    title: "End-to-End Support",
-    desc: "We provide complete support, from start to finish, and ongoing guidance even after project completion.",
-  },
-]
-
-
-
-const caseStudies = [
-  {
-    id: 1,
-    image: "/images/liferay-pages-image/caseStudy.png",
-    tag: "Corporate",
-    title: "Music License Management Portal: Onboarding & Data Integrity",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla.",
-  },
-  {
-    id: 2,
-    image: "/images/liferay-pages-image/caseStudy.png",
-    tag: "FinTech",
-    title: "Transforming Financial Services with Innovations",
-    description:
-      "Suspendisse potenti. Maecenas vitae mattis tellus. Nullam quis imperdiet augue. Pellentesque habitant morbi tristique senectus et netus.",
-  },
-  {
-    id: 3,
-    image: "/images/liferay-pages-image/caseStudy.png",
-    tag: "Healthcare",
-    title: "Digital Health Platform: Patient-Centric Solutions",
-    description:
-      "Praesent ut ligula non mi varius sagittis. In hac habitasse platea dictumst. Cras non dolor. Vivamus quis mi.",
-  },
-  {
-    id: 4,
-    image: "/images/liferay-pages-image/caseStudy.png",
-    tag: "E-commerce",
-    title: "Scaling Online Retail with Cloud Technologies",
-    description:
-      "Curabitur at lacus ac velit ornare lobortis. Vestibulum suscipit nulla quis orci. Donec posuere vulputate arcu.",
-  },
-]
 
 export default function LiferayPerformanceTuningPage() {
   return (
@@ -98,8 +29,9 @@ export default function LiferayPerformanceTuningPage() {
                 <span className="block">Performance Tuning</span>
               </h1>
             </div>
-            <p className="absolute bottom-0 max-w-xl text-base text-white sm:text-base md:mt-16 md:justify-self-end text-right">
-              Optimize your Liferay Portal with specialized Liferay Performance Tuning, improving speed, stability, and resource efficiency for superior user experience.
+            <p className="absolute bottom-0 max-w-xl text-right text-base text-white sm:text-base md:mt-16 md:justify-self-end">
+              Optimize your Liferay Portal with specialized Liferay Performance Tuning, improving speed, stability, and
+              resource efficiency for superior user experience.
             </p>
           </div>
 
@@ -108,7 +40,7 @@ export default function LiferayPerformanceTuningPage() {
             {featureTabs.map((label, index) => (
               <span
                 key={index}
-                className="inline-flex items-center rounded-full border border-white/30 [@media(min-width:1440px)]:px-11 [@media(min-width:1500px)]:px-13 [@media(min-width:1800px)]:px-13 py-5 text-lg text-white transition-colors hover:border-white hover:text-white"
+                className="inline-flex items-center rounded-full border border-white/30 py-5 text-lg text-white transition-colors hover:border-white hover:text-white [@media(min-width:1440px)]:px-11 [@media(min-width:1500px)]:px-13 [@media(min-width:1800px)]:px-13"
               >
                 {label}
               </span>
@@ -120,9 +52,12 @@ export default function LiferayPerformanceTuningPage() {
       {/* Liferay Performance Tuning - Features Grid */}
       <section className="bg-[#f7f7f7] text-black">
         <div className="mx-auto w-full px-4 py-[64px] md:px-8 md:py-[64px] lg:py-[64px] [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
-          <h2 className="text-5xl leading-tight font-semibold sm:text-4xl md:text-5xl">Common Liferay Performance Challenges We Solve</h2>
-          <p className="mt-4 justify-self-center text-lg leading-relaxed text-[#101012] text-gray-700">
-            Through expert Liferay Performance Tuning, we identify bottlenecks, optimize configurations, and deliver faster, more scalable, and reliable Liferay DXP experiences.
+          <h2 className="text-5xl justify-self-center leading-tight font-semibold sm:text-4xl md:text-5xl">
+            Common Liferay Performance Challenges We Solve
+          </h2>
+          <p className="mt-4 justify-self-center text-center text-lg leading-relaxed text-[#101012] text-gray-700">
+            Through expert Liferay Performance Tuning, we identify bottlenecks, optimize configurations, and deliver
+            faster, more scalable, and reliable Liferay DXP experiences.
           </p>
 
           {/* Row 1 */}
@@ -130,19 +65,22 @@ export default function LiferayPerformanceTuningPage() {
             <div className="flex flex-col items-center justify-center px-8 py-12 text-center">
               <h3 className="w-[90%] text-center text-3xl font-semibold">Slow Page Load Times</h3>
               <p className="mt-3 text-gray-700">
-                Delays caused by unoptimized code, heavy themes, or large assets are resolved through Liferay Performance Tuning.
+                Delays caused by unoptimized code, heavy themes, or large assets are resolved through Liferay
+                Performance Tuning.
               </p>
             </div>
             <div className="flex flex-col items-center justify-center px-8 py-12 text-center">
               <h3 className="w-[90%] text-3xl font-semibold">Inefficient Database Queries</h3>
               <p className="mt-3 text-gray-700">
-                Poorly optimized queries slow down portals; we refine indexing and database performance for faster results.
+                Poorly optimized queries slow down portals; we refine indexing and database performance for faster
+                results.
               </p>
             </div>
             <div className="flex flex-col items-center justify-center px-8 py-12 text-center">
               <h3 className="w-[90%] text-3xl font-semibold">High Server Resource Usage</h3>
               <p className="mt-3 text-gray-700">
-                Memory leaks, unbalanced loads, or heavy CPU usage are minimized with fine-tuned Liferay DXP Performance Tuning.
+                Memory leaks, unbalanced loads, or heavy CPU usage are minimized with fine-tuned Liferay DXP Performance
+                Tuning.
               </p>
             </div>
           </div>
@@ -158,13 +96,15 @@ export default function LiferayPerformanceTuningPage() {
             <div className="flex flex-col items-center justify-center px-8 py-12 text-center">
               <h3 className="w-[90%] text-3xl font-semibold">Poor Search and Indexing Performance</h3>
               <p className="mt-3 text-gray-700">
-                Slow or inaccurate search results are fixed with optimized indexing and search tuning for seamless user experiences.
+                Slow or inaccurate search results are fixed with optimized indexing and search tuning for seamless user
+                experiences.
               </p>
             </div>
             <div className="flexflex-col items-center justify-center px-8 py-12 text-center">
               <h3 className="w-[90%] text-3xl font-semibold">Frequent Downtime and Instability</h3>
               <p className="mt-3 text-gray-700">
-                Through proactive monitoring and fault-tolerant setups, we ensure reliable and stable Liferay Portal performance.
+                Through proactive monitoring and fault-tolerant setups, we ensure reliable and stable Liferay Portal
+                performance.
               </p>
             </div>
           </div>
@@ -181,7 +121,8 @@ export default function LiferayPerformanceTuningPage() {
               Performance Tuning Services
             </h2>
             <p className="absolute bottom-0 max-w-xl text-right text-xl text-white md:justify-self-end">
-              Liferay Performance Tuning improves portal speed, stability, scalability, security, and resource efficiency for optimal performance.
+              Liferay Performance Tuning improves portal speed, stability, scalability, security, and resource
+              efficiency for optimal performance.
             </p>
           </div>
 
@@ -192,8 +133,10 @@ export default function LiferayPerformanceTuningPage() {
               return (
                 <div key={item.title} className="group relative min-h-[246px]">
                   <Image src="/images/icon/progress.svg" alt="Progress icon" width={32} height={32} />
-                  <h3 className="mt-4 [@media(min-width:1400px)]:w-[89%] [@media(min-width:1800px)]:w-[65%] min-h-[80px] text-3xl font-medium">{item.title}</h3>
-                  <p className="mt-3  text-white/80">{item.desc}</p>
+                  <h3 className="mt-4 min-h-[80px] text-3xl font-medium [@media(min-width:1400px)]:w-[89%] [@media(min-width:1800px)]:w-[65%]">
+                    {item.title}
+                  </h3>
+                  <p className="mt-3 text-white/80">{item.desc}</p>
                   {!isLastRow && <div className="absolute bottom-0 mt-6 w-full border-t border-white/30" />}
                 </div>
               )
@@ -206,11 +149,13 @@ export default function LiferayPerformanceTuningPage() {
       <section className="bg-[#f7f7f7] text-black">
         <div className="mx-auto w-full px-4 py-[64px] md:px-8 md:py-[64px] lg:py-[64px] [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
           <div className="relative grid items-start gap-10 md:grid-cols-2">
-            <h2 className="text-3xl [@media(min-width:1400px)]:leading-[40px] [@media(min-width:1800px)]:leading-[60px] font-semibold sm:text-4xl md:text-4xl [@media(min-width:1800px)]:text-5xl">
+            <h2 className="text-3xl font-semibold sm:text-4xl md:text-4xl [@media(min-width:1400px)]:leading-[40px] [@media(min-width:1800px)]:text-5xl [@media(min-width:1800px)]:leading-[60px]">
               What We Do With Our Liferay DXP Performance Tuning Services
             </h2>
             <p className="absolute bottom-0 max-w-xl text-right text-xl text-gray-700 md:justify-self-end">
-              With our Liferay expertise, we use Liferay DXP Performance Tuning techniques like server optimization, JVM adjustments, and database enhancements for improved speed, stability, and scalability of your Liferay DXP portal.
+              With our Liferay expertise, we use Liferay DXP Performance Tuning techniques like server optimization, JVM
+              adjustments, and database enhancements for improved speed, stability, and scalability of your Liferay DXP
+              portal.
             </p>
           </div>
 
@@ -252,7 +197,9 @@ export default function LiferayPerformanceTuningPage() {
                     <div className="relative mt-6 flex h-[108px] flex-col justify-center pl-6">
                       <span className="absolute top-0 left-0 h-full w-1 bg-gray-300 transition-colors duration-300 group-hover:bg-black" />
                       <div>
-                        <h3 className="[@media(min-width:1400px)]:text-[24px] [@media(min-width:1800px)]:text-[30px] font-medium">{item.title}</h3>
+                        <h3 className="font-medium [@media(min-width:1400px)]:text-[24px] [@media(min-width:1800px)]:text-[30px]">
+                          {item.title}
+                        </h3>
                         <p className="mt-2 text-base text-gray-700">{item.desc}</p>
                       </div>
                     </div>
@@ -275,7 +222,7 @@ export default function LiferayPerformanceTuningPage() {
                     "Use JVM Memory Tuning tools like JVisualVM or JConsole",
                   ].map((text) => (
                     <li key={text} className="flex items-center gap-3">
-                      <span className="flex shrink-0 items-center justify-center rounded-full bg-black aspect-square w-4 md:w-6">
+                      <span className="flex aspect-square w-4 shrink-0 items-center justify-center rounded-full bg-black md:w-6">
                         <svg
                           viewBox="0 0 12 12"
                           className="h-[50%] w-[50%] text-white"
@@ -291,7 +238,7 @@ export default function LiferayPerformanceTuningPage() {
                           />
                         </svg>
                       </span>
-                      <span className="text-lg text-gray-800 leading-snug">{text}</span>
+                      <span className="text-lg leading-snug text-gray-800">{text}</span>
                     </li>
                   ))}
                 </ul>
@@ -301,7 +248,12 @@ export default function LiferayPerformanceTuningPage() {
         </div>
       </section>
       <CaseStudy caseStudies={caseStudies} />
-      <WhatMake WhatMakeData={LiferayPerformanceTuningData} titleText1={LiferayPerformanceTuningTitle1} titleText2={LiferayPerformanceTuningTitle2} subContext={LiferayPerformanceTuningSubContent}/>
+      <WhatMake
+        WhatMakeData={LiferayPerformanceTuningData}
+        titleText1={LiferayPerformanceTuningTitle1}
+        titleText2={LiferayPerformanceTuningTitle2}
+        subContext={LiferayPerformanceTuningSubContent}
+      />
       <TalkToExpert />
       <BlogSection />
     </main>

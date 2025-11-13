@@ -9,12 +9,22 @@ import TalkToExpert from "components/Common/TalkToExpert"
 import WhatMake from "components/Common/WhatMake"
 import WordsFromCEO from "components/Common/WordsFromCEO"
 import {
+  caseStudies,
   consultingServices,
+  endToEndServices,
   expertiseStats,
+  industriesWeServe,
+  LiferayConsultationData,
+  LiferayConsultationSubContent,
+  LiferayConsultationTitle1,
+  LiferayConsultationTitle2,
   liferayProjectFeatures,
   liferaySolutions,
 } from "data/liferay-consulting-and-implementation-services"
 import { useInView } from "hooks/useInView"
+
+
+
 
  const caseStudies = [
   {
@@ -191,132 +201,10 @@ export default function LiferayConsultationPage() {
     "E- Commerce": CommerceServices,
   }
 
-  const industriesWeServe = [
-    {
-      id: "Healthcare",
-      title: "Healthcare",
-      description:
-        "We offer a comprehensive suite of digital services tailored to meet the diverse needs of our clients.",
-      image: "/images/liferay-pages-image/liferay-consultation-page/Healthcare.jpg", // Default image for all
-    },
-    {
-      id: "Manufacturing",
-      title: "Manufacturing",
-      description:
-        "We offer a comprehensive suite of digital services tailored to meet the diverse needs of our clients.",
-      image: "/images/liferay-pages-image/liferay-consultation-page/Manufacturing.jpg",
-    },
-    {
-      id: "Corporate",
-      title: "Corporate",
-      description:
-        "We offer a comprehensive suite of digital services tailored to meet the diverse needs of our clients.",
-      image: "/images/liferay-pages-image/liferay-consultation-page/Corporate.jpg",
-    },
-    {
-      id: "Government",
-      title: "Government",
-      description:
-        "We offer a comprehensive suite of digital services tailored to meet the diverse needs of our clients.",
-      image: "/images/liferay-pages-image/liferay-consultation-page/Government.jpg",
-    },
-    {
-      id: "Aviation",
-      title: "Aviation",
-      description:
-        "We offer a comprehensive suite of digital services tailored to meet the diverse needs of our clients.",
-      image: "/images/liferay-pages-image/liferay-consultation-page/Aviation.jpg",
-    },
-    {
-      id: "Fintech",
-      title: "Fintech",
-      description:
-        "We offer a comprehensive suite of digital services tailored to meet the diverse needs of our clients.",
-      image: "/images/liferay-pages-image/liferay-consultation-page/Healthcare.jpg",
-    },
-    {
-      id: "NGOs",
-      title: "NGOs",
-      description:
-        "We offer a comprehensive suite of digital services tailored to meet the diverse needs of our clients.",
-      image: "/images/liferay-pages-image/liferay-consultation-page/Healthcare.jpg",
-    },
-    {
-      id: "Social",
-      title: "Social",
-      description:
-        "We offer a comprehensive suite of digital services tailored to meet the diverse needs of our clients.",
-      image: "/images/liferay-pages-image/liferay-consultation-page/Healthcare.jpg",
-    },
-    {
-      id: "Entertainment",
-      title: "Entertainment",
-      description:
-        "We offer a comprehensive suite of digital services tailored to meet the diverse needs of our clients.",
-      image: "/images/liferay-pages-image/liferay-consultation-page/Healthcare.jpg",
-    },
-    {
-      id: "IT Sector",
-      title: "IT Sector",
-      description:
-        "We offer a comprehensive suite of digital services tailored to meet the diverse needs of our clients.",
-      image: "/images/liferay-pages-image/liferay-consultation-page/Healthcare.jpg",
-    },
-    {
-      id: "Telecom",
-      title: "Telecom",
-      description:
-        "We offer a comprehensive suite of digital services tailored to meet the diverse needs of our clients.",
-      image: "/images/liferay-pages-image/liferay-consultation-page/Healthcare.jpg",
-    },
-    {
-      id: "Environment",
-      title: "Environment",
-      description:
-        "We offer a comprehensive suite of digital services tailored to meet the diverse needs of our clients.",
-      image: "/images/liferay-pages-image/liferay-consultation-page/Healthcare.jpg",
-    },
-  ]
+
 
   // Data for the new End-to-End Liferay Consulting Services section
-  const endToEndServices = [
-    {
-      number: "01",
-      name: "Analysis",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur.",
-    },
-    {
-      number: "02",
-      name: "Design",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur.",
-    },
-    {
-      number: "03",
-      name: "Development",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur.",
-    },
-    {
-      number: "04",
-      name: "Testing",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur.",
-    },
-    {
-      number: "05",
-      name: "Deployment",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur.",
-    },
-    {
-      number: "06",
-      name: "Maintenance",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur.",
-    },
-  ]
+
 
   return (
     <main className="pb-16">
@@ -382,41 +270,36 @@ export default function LiferayConsultationPage() {
             <div className="flex-no-wrap grid-cols-2 items-center gap-20 [@media(min-width:1440px)]:grid [@media(min-width:1800px)]:flex">
               {/* Stat 1 */}
               <div className="flex gap-3">
-                <p className="text-5xl font-bold text-gray-900">1x</p>
+                <p className="text-5xl font-bold text-gray-900">30%</p>
                 <p className="text-lg leading-tight text-gray-600">
-                  Faster
-                  <br />
-                  Deployments
+                   Project Success
                 </p>
               </div>
               {/* Stat 2 */}
               <div className="flex gap-3">
-                <p className="text-5xl font-bold text-gray-900">18%</p>
+                <p className="text-5xl font-bold text-gray-900">20%</p>
                 <p className="text-lg leading-tight whitespace-nowrap text-gray-600">
-                  Increased
-                  <br />
-                  User Adoption
+                  Cost Efficiency
                 </p>
               </div>
               {/* Stat 3 */}
               <div className="flex gap-3">
-                <p className="text-5xl font-bold text-gray-900">+5%</p>
+                <p className="text-5xl font-bold text-gray-900">10%</p>
                 <p className="text-lg leading-tight text-gray-600">
-                  Lower
-                  <br />
-                  TCO
+                  Revenue Growth
                 </p>
               </div>
+              
             </div>
+            
 
             {/* Heading and Description Block - Positioned below with a top margin */}
             <div className="mt-24">
               <h2 className="text-[40px] leading-[52px] font-bold text-gray-900">
-                Your Digital Edge for <br /> Transformation, Always Evolving.
+                Your Digital Edge for Transformation Always Evolving with Liferay Consulting
               </h2>
               <p className="mt-6 max-w-[500px] text-[16px] leading-[26px] text-gray-600">
-                Run your business smarter — track performance, approve automations, and get instant insights right from
-                your phone.
+               Simplifying complexity and driving transformation with expert Liferay Consulting services.
               </p>
             </div>
           </div>
@@ -540,7 +423,7 @@ export default function LiferayConsultationPage() {
                       <div className="text-left">
                         <h3 className="text-3xl font-semibold">{solution.title}</h3>
                         <hr className="my-4 max-w-[120px] border-t border-white/50" />
-                        <p className="text-justify text-base leading-relaxed">{solution.description}</p>
+                        <p className="text-base leading-relaxed">{solution.description}</p>
                       </div>
                       <Image
                         src={solution.icon}
@@ -626,8 +509,7 @@ export default function LiferayConsultationPage() {
             </div>
             <div className="flex h-full items-end justify-end">
               <p className="line-height-[30px] w-full text-right text-xl font-normal text-gray-600">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.
-                Pellentesque sit amet
+                We help every industry grow digitally through tailored Liferay Consulting and innovative technology solutions.
               </p>
             </div>
           </div>
@@ -710,7 +592,7 @@ export default function LiferayConsultationPage() {
             </div>
             <div className="flex h-full items-end justify-end">
               <p className="w-full text-right text-xl text-white/80">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.
+                Through expert Liferay Consulting, we design and implement secure, flexible, and user-centric digital platforms for every business need.
               </p>
             </div>
           </div>
@@ -762,9 +644,7 @@ export default function LiferayConsultationPage() {
               We Offer end-to-end Liferay Consulting Services
             </h2>
             <p className="mt-4 text-lg text-gray-600">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.
-              Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis
-              tellus. Nullam quis imperdiet augue.
+              Delivering complete Liferay Consulting solutions from planning to maintenance for seamless digital transformation and growth.
             </p>
           </div>
 
