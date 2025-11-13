@@ -65,8 +65,8 @@ export default function CalendlyButton({
         <Image
           src="/images/icon/calendar.png"
           alt="calendar"
-          width={24}
-          height={24}
+          width={46}
+          height={46}
         />
       </div>
     </button>

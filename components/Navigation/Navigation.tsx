@@ -81,7 +81,7 @@ export default function Navigation() {
                 <li key={item.label} onMouseEnter={() => handleMouseEnter(item.label)} className="relative">
                   <a
                     href={item.href}
-                    className={`pb-2 transition-colors ${activeMenu === item.label ? "text-white" : "text-white/90"
+                    className={`pb-2 transition-colors text-2xl ${activeMenu === item.label ? "text-white" : "text-white/90"
                       } hover:text-white`}
                   >
                     {item.label}
@@ -117,7 +117,7 @@ export default function Navigation() {
 
               >
                 <div className="flex h-7 w-7 items-center justify-center cursor-pointer">
-                  <Image src="/images/icon/arrow-tr.png" alt="arrow-top-right" width={24} height={24} />
+                  <Image src="/images/icon/arrow-tr.png" alt="arrow-top-right" width={46} height={46} />
                 </div>
               </button>
             </div>
@@ -157,7 +157,7 @@ export default function Navigation() {
                     <li key={item.label} onMouseEnter={() => handleMouseEnter(item.label)} className="relative">
                       <a
                         href={item.href}
-                        className={`pb-2 transition-colors ${activeMenu === item.label ? "text-white" : "text-white/90"
+                        className={`pb-2 transition-colors text-2xl ${activeMenu === item.label ? "text-white" : "text-white/90"
                           } hover:text-white`}
                       >
                         {item.label}
@@ -183,7 +183,7 @@ export default function Navigation() {
 
                   >
                     <div className="flex h-7 w-7 items-center justify-center cursor-pointer">
-                      <Image src="/images/icon/arrow-tr.png" alt="arrow-top-right" width={24} height={24} />
+                      <Image src="/images/icon/arrow-tr.png" alt="arrow-top-right" width={46} height={46} />
                     </div>
                   </button>
                 </div>
