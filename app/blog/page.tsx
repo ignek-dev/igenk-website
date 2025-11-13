@@ -1,71 +1,9 @@
 "use client"
 import Image from "next/image"
+import { useCallback, useEffect, useState } from "react"
 import BlogCard, { BlogData } from "components/Blogmain/BlogCards"
 import TechCard from "components/Blogmain/TechCards"
-import { Pagination } from "components/marketplace/Pagination"
-
-const blogs: BlogData[] = [
-  {
-    id: 1,
-    title: "Build your own Chrome Extension with React",
-    author: "Bhavin Panchani",
-    date: "Jul 7, 2025",
-    readTime: "6 mins read",
-    category: "Liferay Blog",
-    image: "/images/blogs/blogImage.png",
-    authPic: "/images/blogs/blogAuthor.png",
-  },
-  {
-    id: 1,
-    title: "Build your own Chrome Extension with React",
-    author: "Bhavin Panchani",
-    date: "Jul 7, 2025",
-    readTime: "6 mins read",
-    category: "Liferay Blog",
-    image: "/images/blogs/blogImage.png",
-    authPic: "/images/blogs/blogAuthor.png",
-  },
-  {
-    id: 1,
-    title: "Build your own Chrome Extension with React",
-    author: "Bhavin Panchani",
-    date: "Jul 7, 2025",
-    readTime: "6 mins read",
-    category: "Liferay Blog",
-    image: "/images/blogs/blogImage.png",
-    authPic: "/images/blogs/blogAuthor.png",
-  },
-  {
-    id: 1,
-    title: "Build your own Chrome Extension with React",
-    author: "Bhavin Panchani",
-    date: "Jul 7, 2025",
-    readTime: "6 mins read",
-    category: "Liferay Blog",
-    image: "/images/blogs/blogImage.png",
-    authPic: "/images/blogs/blogAuthor.png",
-  },
-  {
-    id: 1,
-    title: "Build your own Chrome Extension with React",
-    author: "Bhavin Panchani",
-    date: "Jul 7, 2025",
-    readTime: "6 mins read",
-    category: "Liferay Blog",
-    image: "/images/blogs/blogImage.png",
-    authPic: "/images/blogs/blogAuthor.png",
-  },
-  {
-    id: 2,
-    title: "Learn how to optimize React apps",
-    author: "Bhavin Panchani",
-    date: "Jul 10, 2025",
-    readTime: "5 mins read",
-    category: "Performance",
-    image: "/images/blogs/blogImage.png",
-    authPic: "/images/blogs/blogAuthor.png",
-  },
-]
+import { WPPost } from "components/BlogSidebar/BlogSidebar"
 
 const blogsCardData = [
   {
@@ -77,49 +15,114 @@ const blogsCardData = [
     category: "Liferay Blog",
     date: "Jul 7, 2025",
   },
-  // {
-  //   id: 2,
-  //   icon: "/images/marketplace/batch-client-extension.png",
-  //   module: "Batch",
-  //   title: "Batch Client Extension Generator",
-  //   description:
-  //     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet.",
-  //   tags: ["Content Management And Operation", "Content Writing", "Blog Writing"],
-  // },
-  // {
-  //   id: 3,
-  //   icon: "/images/marketplace/email-authentication.png",
-  //   module: "Artificial Intelligence",
-  //   title: "Email OTP Authentication for Community Edition",
-  //   description:
-  //     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet.",
-  //   tags: ["Content Management And Operation", "Content Writing", "Blog Writing"],
-  // }
 ]
 const cardData = [
   {
+    id: 15,
     icon: "/images/blogs/liferayIcon.png",
     title: "Liferay",
     description: "Explore strategies, leadership skills, and growth tactics for",
   },
   {
+    id: 16,
     icon: "/images/blogs/reactIcon.png",
     title: "React",
     description: "Explore strategies, leadership skills, and growth tactics for",
   },
   {
+    id: 21,
     icon: "/images/blogs/liferayIcon.png",
-    title: "Liferay",
+    title: "Spring Boot",
     description: "Explore strategies, leadership skills, and growth tactics for",
   },
-  {
-    icon: "/images/blogs/liferayIcon.png",
-    title: "Liferay",
-    description: "Explore strategies, leadership skills, and growth tactics for",
-  },
+  // {
+  //   icon: "/images/blogs/liferayIcon.png",
+  //   title: "Node Js",
+  //   description: "Explore strategies, leadership skills, and growth tactics for",
+  // },
 ]
+// interface WPBlogPost {
+//   id: number;
+//   title: { rendered: string };
+//   excerpt: { rendered: string };
+//   date: string;
+//   _embedded?: {
+//     author?: { name: string }[];
+//     "wp:featuredmedia"?: { source_url: string }[];
+//   };
+// }
+
+const PER_PAGE = 9;
+const API_URL = "https://insights.ignek.com/wp-json/wp/v2/posts";
 
 export default function Blogs() {
+  const [blogs, setBlogs] = useState<BlogData[]>([]);
+  const [loading, setLoading] = useState(true);
+  // const [error, setError] = useState<string | null>(null);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
+  const [selectedCategory, setSelectedCategory] = useState<number | null>(15);
+
+  // --- Fetch posts dynamically from WordPress API ---
+  const fetchBlogs = useCallback(async () => {
+    try {
+      setLoading(true);
+      // setError(null);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+
+      // Prepare category filter query
+      const categoryQuery = selectedCategory
+        ? `&categories=${selectedCategory}`
+        : "";
+      const res = await fetch(
+        `${API_URL}?per_page=${PER_PAGE}&page=${currentPage}&${categoryQuery}&_embed`,
+        { cache: "no-store" }
+      );
+
+      if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
+
+      const data = await res.json();
+      const total = Number(res.headers.get("x-wp-totalpages")) || 1;
+
+      const formatted: BlogData[] = (data as WPPost[]).map((post) => ({
+        id: post.id,
+        title: post.title?.rendered || "Untitled",
+        author: post._embedded?.author?.[0]?.name || "Bhavin Panchani",
+        date: post.date
+          ? new Date(post.date).toLocaleDateString("en-US", {
+            month: "short",
+            day: "numeric",
+            year: "numeric",
+          })
+          : "Unknown date",
+        readTime: `${Math.max(
+          2,
+          Math.ceil((post.content?.rendered?.length || 0) / 1200)
+        )} min read`,
+        category:
+          post._embedded?.["wp:term"]?.[0]?.[0]?.name || "General",
+        image:
+          post._embedded?.["wp:featuredmedia"]?.[0]?.source_url ||
+          "/images/blogs/blogImage.png",
+        authPic:
+          post._embedded?.author?.[0]?.avatar_urls?.["96"] ||
+          "/images/blogs/blogAuthor.png",
+      }));
+
+      setBlogs(formatted);
+      setTotalPages(total);
+    } catch (err: unknown) {
+      // if (err instanceof Error) setError(err.message);
+      // else setError("Failed to fetch blogs");
+      console.log(err)
+    } finally {
+      setLoading(false);
+    }
+  }, [currentPage, selectedCategory]);
+
+  useEffect(() => {
+    fetchBlogs();
+  }, [fetchBlogs]);
   return (
     <main className="pb-5">
       {/* Hero */}
@@ -214,24 +217,152 @@ export default function Blogs() {
             </h2>
 
             {/* Cards Grid */}
-            <div className="grid grid-cols-1 gap-1 sm:grid-cols-2 md:grid-cols-4">
-              {cardData.map((card, index) => (
-                <TechCard key={index} icon={card.icon} title={card.title} description={card.description} />
-              ))}
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4">
+              {cardData.map((card, index) => {
+                const isSelected = selectedCategory === card.id; // ✅ compare id to id
+                return (
+                  <div
+                    key={index}
+                    onClick={() => {
+                      setCurrentPage(1); // reset pagination
+                      // ✅ toggle select by id
+                      setSelectedCategory(
+                        selectedCategory === card.id ? null : card.id
+                      );
+                    }}
+                  >
+                    <TechCard
+                      icon={card.icon}
+                      title={card.title}
+                      description={card.description}
+                      isSelected={isSelected}
+                    />
+                  </div>
+                );
+              })}
             </div>
           </div>
           <div className="pb-16">
             <h2 className="mb-6 text-5xl leading-tight font-semibold tracking-tight text-[#000000]">Browse Latest Blog</h2>
-              <div className="grid grid-cols-1 gap-11 md:grid-cols-2 lg:grid-cols-3">
-                {blogs.map((blog,index) => (
-                  <BlogCard key={index} blog={blog} />
-                ))}
-              </div>
-            
-            
+            <div className="grid grid-cols-1 gap-11 md:grid-cols-2 lg:grid-cols-3">
+              {
+                loading ? (
+                  <p>Loading post…</p>
+                ) : (
+                  blogs.map((blog, index) => (
+                    <BlogCard key={index} blog={blog} />
+                  ))
+                )
+              }
 
-            {/* --- Pagination --- */}
-            <Pagination />
+            </div>
+
+            <div className="flex justify-left mt-10">
+              <ul className="flex items-center gap-2 text-base font-medium">
+                {/* First */}
+                <li
+                  className={`px-4 py-2 border rounded-md cursor-pointer ${currentPage === 1
+                    ? "text-gray-400 border-gray-300 cursor-not-allowed"
+                    : "hover:bg-gray-100"
+                    }`}
+                  onClick={() => currentPage > 1 && setCurrentPage(1)}
+                >
+                  « First
+                </li>
+
+                {/* Back */}
+                <li
+                  className={`px-4 py-2 border rounded-md cursor-pointer ${currentPage === 1
+                    ? "text-gray-400 border-gray-300 cursor-not-allowed"
+                    : "hover:bg-gray-100"
+                    }`}
+                  onClick={() => currentPage > 1 && setCurrentPage((p) => Math.max(1, p - 1))}
+                >
+                  ‹ Back
+                </li>
+
+                {/* Dynamic Pages */}
+                {(() => {
+                  const pages = [];
+                  const maxVisible = 5;
+                  let start = Math.max(1, currentPage - 2);
+                  const end = Math.min(totalPages, start + maxVisible - 1);
+                  if (end - start < maxVisible - 1) start = Math.max(1, end - maxVisible + 1);
+
+                  if (start > 1) {
+                    pages.push(
+                      <li
+                        key={1}
+                        onClick={() => setCurrentPage(1)}
+                        className={`px-4 py-2 border rounded-md cursor-pointer hover:bg-gray-100 ${currentPage === 1 ? "bg-black text-white" : ""
+                          }`}
+                      >
+                        1
+                      </li>
+                    );
+                    if (start > 2)
+                      pages.push(<li key="dots-start" className="px-2 text-gray-500 select-none">...</li>);
+                  }
+
+                  for (let i = start; i <= end; i++) {
+                    pages.push(
+                      <li
+                        key={i}
+                        onClick={() => setCurrentPage(i)}
+                        className={`px-4 py-2 border rounded-md cursor-pointer transition-all duration-200 ${currentPage === i
+                          ? "bg-black text-white border-black"
+                          : "hover:bg-gray-100"
+                          }`}
+                      >
+                        {i}
+                      </li>
+                    );
+                  }
+
+                  if (end < totalPages) {
+                    if (end < totalPages - 1)
+                      pages.push(<li key="dots-end" className="px-2 text-gray-500 select-none">...</li>);
+                    pages.push(
+                      <li
+                        key={totalPages}
+                        onClick={() => setCurrentPage(totalPages)}
+                        className={`px-4 py-2 border rounded-md cursor-pointer hover:bg-gray-100 ${currentPage === totalPages ? "bg-black text-white border-black" : ""
+                          }`}
+                      >
+                        {totalPages}
+                      </li>
+                    );
+                  }
+
+                  return pages;
+                })()}
+
+                {/* Next */}
+                <li
+                  className={`px-4 py-2 border rounded-md cursor-pointer ${currentPage === totalPages
+                    ? "text-gray-400 border-gray-300 cursor-not-allowed"
+                    : "hover:bg-gray-100"
+                    }`}
+                  onClick={() => currentPage < totalPages && setCurrentPage((p) => Math.min(totalPages, p + 1))}
+                >
+                  Next ›
+                </li>
+
+                {/* Last */}
+                <li
+                  className={`px-4 py-2 border rounded-md cursor-pointer ${currentPage === totalPages
+                    ? "text-gray-400 border-gray-300 cursor-not-allowed"
+                    : "hover:bg-gray-100"
+                    }`}
+                  onClick={() => currentPage < totalPages && setCurrentPage(totalPages)}
+                >
+                  Last »
+                </li>
+              </ul>
+            </div>
+
+
+
           </div>
         </div>
       </section>

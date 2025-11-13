@@ -1,5 +1,6 @@
 // InsightsMegaMenu.tsx
 import Image from "next/image"
+import Link from "next/link"
 // --- Icon Components ---
 const IconArrowRight = ({ className }: { className?: string }) => (
   <svg className={className} width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -12,26 +13,26 @@ const insightLinks = [
   {
     icon: "/images/icon/blogs.png",
     title: "Blogs",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    description: "The latest industry news, updates and info.",
     href: "/blog",
   },
   {
     icon: "/images/icon/case-studies.png",
     title: "Case Studies",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    description: "Take a closer look at the projects we've delivered",
     href: "/case-study",
   },
   {
     icon: "/images/icon/webinars.png",
     title: "Webinars",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    description: "Watch our latest organized webinar",
     href: "/contact",
   },
   {
     icon: "/images/icon/blogs.png",
-    title: "Podcast",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    href: "/contact",
+    title: "Marketplace",
+    description: "Modules that make your Liferay experience effortless.",
+    href: "/marketplace",
   },
 ]
 
@@ -42,7 +43,7 @@ const featuredEvent = {
   // The path starts from the `public` directory
   imageSrc: "/images/mega-menu/Event-image.jpg",
   imageAlt: "Customer Onboarding with Low Code/No-Code Capabilities of Liferay Portal Webinar",
-  href: "#", // Link to the webinar page
+  href: "/webinar", // Link to the webinar page
 }
 
 // --- Main InsightsMegaMenu Component ---
@@ -79,7 +80,7 @@ export default function InsightsMegaMenu() {
           {/* Right Side: Featured Event */}
           <div className="col-span-7">
             <h2 className="max-w-1xl mb-6 text-3xl leading-tight font-bold">{featuredEvent.title}</h2>
-            <a href={featuredEvent.href} className="group block">
+            <Link href={featuredEvent.href} className="group block">
               <div className="overflow-hidden rounded-[14.35px] border-[1.2px] border-white/20 transition-all duration-300 group-hover:border-white/40">
                 <Image
                   src={featuredEvent.imageSrc}
@@ -90,7 +91,7 @@ export default function InsightsMegaMenu() {
                   className="h-auto w-full transition-transform duration-300 group-hover:scale-105"
                 />
               </div>
-            </a>
+            </Link>
           </div>
         </div>
       </div>

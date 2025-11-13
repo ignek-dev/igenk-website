@@ -1,27 +1,27 @@
 "use client";
 
+import Image from "next/image";
+import { useParams } from "next/navigation";
 import Prism from "prismjs";
-import React, { useEffect, useRef, useState } from "react";
-import './BlogRenderer.css'
+import { useEffect, useRef, useState } from "react";
+import "../../../components/Blog/BlogRenderer.css";
 
 import "prismjs/components/prism-javascript";
 import "prismjs/components/prism-css";
 import "prismjs/components/prism-bash";
 import "prismjs/components/prism-json";
 import "prismjs/components/prism-yaml";
-
 import "prismjs/themes/prism.css";
 import "prismjs/plugins/line-numbers/prism-line-numbers.css";
 import "prismjs/plugins/toolbar/prism-toolbar.css";
 import "prismjs/plugins/toolbar/prism-toolbar";
 import "prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard";
 import "prismjs/plugins/line-numbers/prism-line-numbers";
+
 import BlogSidebar from "components/BlogSidebar/BlogSidebar";
 import ExploreServices from "components/ExploreServices/ExploreServices";
+import { blogCSSLink } from "data/blogCss";
 
-const POST_API = "https://insights.ignek.com/wp-json/wp/v2/posts/40578?_embed";
-
-// 🧠 Helper: removes indentation
 function unindentCode(codeString: string): string {
     if (!codeString) return "";
 
@@ -48,29 +48,55 @@ function unindentCode(codeString: string): string {
         .join("\n");
 }
 
-// ✅ TypeScript types
+
+// TypeScript types
 interface WPPost {
     id: number;
     title: { rendered: string };
     content: { rendered: string };
+    date?: string;
     _embedded?: {
-        ["wp:featuredmedia"]?: Array<{
-            source_url: string;
+        ["wp:featuredmedia"]?: Array<{ source_url: string }>;
+        author?: Array<{
+            name: string;
+            avatar_urls?: Record<string, string>; // avatar sizes like "24", "48", "96"
         }>;
     };
+    categories?: number[];
 }
 
-export default function PostRenderer() {
+export default function BlogDetails() {
+    const { id } = useParams(); // ✅ Get ID from route
     const [post, setPost] = useState<WPPost | null>(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
     const contentRef = useRef<HTMLDivElement>(null);
 
-    // 🧭 Fetch post on mount
     useEffect(() => {
+
+        const links: HTMLLinkElement[] = [];
+
+        blogCSSLink.forEach((href) => {
+            const link = document.createElement("link");
+            link.rel = "stylesheet";
+            link.href = href;
+            document.head.appendChild(link);
+            links.push(link);
+        });
+
+        return () => {
+            links.forEach((link) => document.head.removeChild(link));
+        };
+    }, []);
+
+    // Fetch post by ID
+    useEffect(() => {
+        if (!id) return;
+
         async function fetchPost() {
             try {
-                const res = await fetch(POST_API);
+                setLoading(true);
+                const res = await fetch(`https://insights.ignek.com/wp-json/wp/v2/posts/${id}?_embed`);
                 if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
                 const data = (await res.json()) as WPPost;
                 setPost(data);
@@ -80,10 +106,10 @@ export default function PostRenderer() {
                 setLoading(false);
             }
         }
-        fetchPost();
-    }, []);
 
-    // 🧠 Enhance content after render
+        fetchPost();
+    }, [id]);
+
     useEffect(() => {
         if (!post || !contentRef.current) return;
 
@@ -162,70 +188,79 @@ export default function PostRenderer() {
         Prism.highlightAllUnder(contentEl);
     }, [post]);
 
+    // Highlight Prism syntax
+    useEffect(() => {
+        if (!post || !contentRef.current) return;
+        Prism.highlightAllUnder(contentRef.current);
+    }, [post]);
+
     if (loading) return <p>Loading post…</p>;
-    if (error) return <p style={{ color: "red" }}>Error: {error}</p>;
+    if (error) return <p className="text-red-500">Error: {error}</p>;
     if (!post) return null;
-
-
-
 
     const cleanHTML = post.content.rendered
     // .replace(/\\\//g, "/")
     // .replace(/<xmp>/g, "")
-    // .replace(/<\/xmp>/g, "");
+    // .replace(/<\/xmp>/g, "")
 
-    // return (
-    //     <article className="wp-post" style={{ fontFamily: "Arial, sans-serif" }}>
-    //         <h1
-    //             className="wp-post-title"
-    //             dangerouslySetInnerHTML={{ __html: post.title.rendered }}
-    //         />
-    //         {featured && (
-    //             <div className="wp-featured-image">
-    //                 <img
-    //                     src={featured}
-    //                     alt={post.title.rendered}
-    //                     style={{
-    //                         width: "100%",
-    //                         maxHeight: "400px",
-    //                         objectFit: "cover",
-    //                         borderRadius: "8px",
-    //                         margin: "20px 0",
-    //                     }}
-    //                 />
-    //             </div>
-    //         )}
-    //         <div
-    //             className="entry-content"
-    //             ref={contentRef}
-    //             dangerouslySetInnerHTML={{ __html: cleanHTML }}
-    //             style={{ lineHeight: "1.6", fontSize: "16px" }}
-    //         />
-    //     </article>
-    // );
     return (
-        <div className="blog-section">
-            {/* GRID LAYOUT — 4 columns */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 ">
-                {/* --- MAIN ARTICLE (3 cols) --- */}
-                <div className="lg:col-span-8 border-r border-[#E3E3E3]">
-                    <article className="wp-post font-sans">
-                        <div
-                            className="entry-content prose max-w-none text-gray-800 leading-relaxed"
-                            ref={contentRef}
-                            dangerouslySetInnerHTML={{ __html: cleanHTML }}
-                        />
-                        <div className="px-[80px] mb-[40px]">
-                            <ExploreServices />
-                        </div>
-                    </article>
-                </div>
+        <>
+            <section className="relative bg-black text-white">
+                <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_10%_0%,#0E7BF8_0%,#00979E_40%,transparent_65%)] opacity-25" />
+                <div className="mx-auto w-full px-4 pt-12 pb-16 md:px-8 md:pt-20 md:pb-22 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
+                    <div className="text-center flex flex-col items-center justify-center px-6 py-16">
+                        <h1 className="bg-[linear-gradient(0deg,#FFFFFF,#FFFFFF),linear-gradient(0deg,rgba(0,0,0,0.23),rgba(0,0,0,0.23))] bg-clip-text text-transparent text-5xl sm:text-6xl md:text-7xl font-bold leading-tight">
+                            {post.title?.rendered || "Untitled"}
+                        </h1>
 
-                {/* --- SIDEBAR (1 col) --- */}
-                <div className="lg:col-span-4">
-                    <BlogSidebar />
+                        <div className="max-w-2xl mt-6 text-lg text-gray-200 sm:text-xl md:mt-10">
+                            <div className="flex items-center mt-4 space-x-2 text-sm text-white">
+                                <Image
+                                    src={post._embedded?.author?.[0]?.avatar_urls?.["96"] || "/images/blogs/blogAuthor.png"}
+                                    alt={"authorI"}
+                                    width={40}
+                                    height={40}
+                                    className="w-10 h-10 object-cover rounded-full border border-gray-200"
+                                />
+                                <span className="font-medium">{post._embedded?.author?.[0]?.name || "Bhavin Panchani"}</span>
+                                <span>•</span>
+                                <span>{post.date
+                                    ? new Date(post.date).toLocaleDateString("en-US", {
+                                        month: "short",
+                                        day: "numeric",
+                                        year: "numeric",
+                                    })
+                                    : "Unknown date"}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div className="blog-section">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
+                    {/* MAIN CONTENT */}
+                    <div className="lg:col-span-8 border-r border-[#E3E3E3]">
+                        <article className="wp-post font-sans">
+                            <div
+                                ref={contentRef}
+                                className="entry-content prose max-w-none text-gray-800 leading-relaxed"
+                                dangerouslySetInnerHTML={{ __html: cleanHTML }}
+                            />
+                            <div className="px-[80px] mb-[40px]">
+                                <ExploreServices />
+                            </div>
+                        </article>
+                    </div>
+
+                    {/* SIDEBAR */}
+                    <div className="lg:col-span-4">
+                        <BlogSidebar
+                            categoryId={post?.categories?.[0] ?? 0}
+                        />
+                    </div>
                 </div>
             </div>
-        </div>
+        </>
+
     );
 }

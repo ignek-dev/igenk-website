@@ -1,4 +1,5 @@
 "use client"
+import { useState } from "react"
 import { Pagination } from "components/marketplace/Pagination"
 import { ToolCard } from "components/marketplace/ToolCard"
 
@@ -7,11 +8,12 @@ const toolsData = [
   {
     id: 1,
     icon: "/images/marketplace/ai-blog-workspace.png", // Note: Update paths to your images
-    module: "Artificial Intelligence",
+    module: "Content Management and Operations",
     title: "AI Blog Workspace For Liferay",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet.",
-    tags: ["Content Management And Operation", "Content Writing", "Blog Writing"],
+      "Automate your entire Liferay blog workflow with AI technology that generates content, images, and styles, all at once.",
+    tags: ["Blog Generation","Generative AI", "Content Automation"],
+    link: "https://marketplace.liferay.com/p/ai-blog-workspace",
   },
   {
     id: 2,
@@ -19,76 +21,34 @@ const toolsData = [
     module: "Batch",
     title: "Batch Client Extension Generator",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet.",
-    tags: ["Content Management And Operation", "Content Writing", "Blog Writing"],
+      "Create extensions in bulk with automation, enabling developers to save time and simplify their Liferay project workflows.",
+    tags: ["Batch Automation","Objects","Liferay Client Extension"],
+    link: "https://marketplace.liferay.com/p/batch-client-extension-generator",
   },
   {
     id: 3,
     icon: "/images/marketplace/email-authentication.png",
-    module: "Artificial Intelligence",
+    module: "Identity Management & Governance",
     title: "Email OTP Authentication for Community Edition",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet.",
-    tags: ["Content Management And Operation", "Content Writing", "Blog Writing"],
-  },
-  {
-    id: 4,
-    icon: "/images/marketplace/ai-blog-workspace.png",
-    module: "Artificial Intelligence",
-    title: "AI Blog Workspace For Liferay",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet.",
-    tags: ["Content Management And Operation", "Content Writing", "Blog Writing"],
-  },
-  {
-    id: 5,
-    icon: "/images/marketplace/batch-client-extension.png",
-    module: "Batch",
-    title: "Batch Client Extension Generator",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet.",
-    tags: ["Content Management And Operation", "Content Writing", "Blog Writing"],
-  },
-  {
-    id: 6,
-    icon: "/images/marketplace/email-authentication.png",
-    module: "Artificial Intelligence",
-    title: "Email OTP Authentication for Community Edition",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet.",
-    tags: ["Content Management And Operation", "Content Writing", "Blog Writing"],
-  },
-  {
-    id: 7,
-    icon: "/images/marketplace/ai-blog-workspace.png",
-    module: "Artificial Intelligence",
-    title: "AI Blog Workspace For Liferay",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet.",
-    tags: ["Content Management And Operation", "Content Writing", "Blog Writing"],
-  },
-  {
-    id: 8,
-    icon: "/images/marketplace/batch-client-extension.png",
-    module: "Batch",
-    title: "Batch Client Extension Generator",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet.",
-    tags: ["Content Management And Operation", "Content Writing", "Blog Writing"],
-  },
-  {
-    id: 9,
-    icon: "/images/marketplace/email-authentication.png",
-    module: "Artificial Intelligence",
-    title: "Email OTP Authentication for Community Edition",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet.",
-    tags: ["Content Management And Operation", "Content Writing", "Blog Writing"],
+      "Enable simple and secure email OTP login for Liferay CE user overcome verification to visitors and better protect the portal in general.",
+    tags: ["OAuth", "MFA","2FA For Community Edition"],
+    link: "https://marketplace.liferay.com/p/email-otp-authentication-for-community-edition-of-liferay",
   },
 ]
 
-
 export default function MarketplacePage() {
+  // --- Pagination State ---
+  const [currentPage, setCurrentPage] = useState<number>(1)
+  const ITEMS_PER_PAGE = 9
+
+  const totalItems = toolsData.length
+  const totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE)
+
+  // --- Calculate items for the current page ---
+  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE
+  const endIndex = startIndex + ITEMS_PER_PAGE
+  const currentTools = toolsData.slice(startIndex, endIndex)
   return (
     <main className="">
       {/* Hero */}
@@ -104,9 +64,8 @@ export default function MarketplacePage() {
               </h1>
             </div>
             <p className="absolute bottom-0 max-w-2xl text-right text-lg text-white sm:text-lg md:mt-16 md:justify-self-end">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.
-              Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis
-              tellus.
+              Experience the next level of efficiency with Liferay tools that streamline operations, enhance
+              performance, and help you achieve consistent excellence across every digital initiative.
             </p>
           </div>
         </div>
@@ -125,15 +84,15 @@ export default function MarketplacePage() {
             </div>
             <div className="flex h-full items-end justify-end">
               <p className="text-normal line-height-[30px] w-full text-right text-xl text-[#374151]">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.
-                Pellentesque sit amet
+                Deliver better results with Liferay tools built to sustain automation and efficiency, easing management
+                for growing teams.
               </p>
             </div>
           </div>
 
-        {/* --- Grid --- */}
+          {/* --- Grid --- */}
           <div className="grid grid-cols-1 gap-11 md:grid-cols-2 lg:grid-cols-3">
-            {toolsData.map((tool) => (
+            {currentTools.map((tool) => (
               <ToolCard
                 key={tool.id}
                 icon={tool.icon}
@@ -141,13 +100,15 @@ export default function MarketplacePage() {
                 title={tool.title}
                 description={tool.description}
                 tags={tool.tags}
+                link={tool.link}
               />
             ))}
           </div>
 
-          {/* --- Pagination --- */}
-          <Pagination />
-          
+          {/* --- Pagination (now dynamic) --- */}
+          {totalPages > 1 && (
+            <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={setCurrentPage} />
+          )}
         </div>
       </section>
     </main>

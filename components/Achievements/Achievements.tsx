@@ -47,8 +47,8 @@ const Achievements = () => {
             <br />
             Defined by Liferay Success
           </h2>
-          <p className="mb-10 max-w-md text-lg text-gray-300">
-            As a leading Liferay Development Company, we combine innovation, experience, and technical excellence to deliver impactful digital solutions. Our proven track record reflects our commitment to quality, collaboration, and client success across every project.
+          <p className="mb-7 max-w-md text-lg text-gray-300">
+            We design and develop digital solutions that adapt and grow with your business needs. Our platforms are built to deliver seamless performance, exceptional user experiences, and long-term scalability.
           </p>
           <ScheduleMeetingButton isFullWidth={false} btnName="Schedule Meeting" />
         </div>

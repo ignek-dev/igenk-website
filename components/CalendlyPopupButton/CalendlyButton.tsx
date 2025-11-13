@@ -59,14 +59,14 @@ export default function CalendlyButton({
       type="button"
       aria-label="Calendar"
       onClick={handleOpenCalendly}
-      className="rounded-full border border-[#00979E] p-2 text-white/80 transition-colors hover:border-[#00979E] hover:text-white"
+      className="rounded-full border border-[#00979E] p-2 text-white/80 transition-colors hover:border-[#00979E] hover:text-white z-1000"
     >
       <div className="flex h-7 w-7 items-center justify-center cursor-pointer">
         <Image
           src="/images/icon/calendar.png"
           alt="calendar"
-          width={24}
-          height={24}
+          width={46}
+          height={46}
         />
       </div>
     </button>

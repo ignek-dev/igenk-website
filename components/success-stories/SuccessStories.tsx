@@ -1,8 +1,9 @@
 // components/SuccessStories.tsx
 "use client"
 import { motion, useTransform } from "framer-motion"
-import React from "react"
+import React, { useCallback, useEffect, useState } from "react"
 import { useSharedScroll } from "components/Common/ScrollContextProvider"
+import { WPPortfolioPost } from "components/PortfolioList/PortfolioList"
 import SuccessStoryCard, { Story } from "./SuccessStoryCard"
 
 // CHANGED: Consolidated Provided Services data
@@ -20,34 +21,62 @@ export const commonProvidedServices = [
 ]
 
 // Dummy Data - Updated to use commonProvidedServices
-const stories: Story[] = [
-  {
-    imageSrc: "/images/success-stories/Music-license.png",
-    tag: "Corporate",
-    title: "Music License Management Portal : Onboarding & Data Integrity",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus.",
-    services: commonProvidedServices, // Use the common services array
-  },
-  {
-    imageSrc: "/images/success-stories/Music-license.png",
-    tag: "Enterprise",
-    title: "Global CRM Platform for a Leading Tech Company",
-    description:
-      "A second story about a different project, highlighting other skills and outcomes to showcase a range of capabilities.",
-    services: commonProvidedServices, // Use the common services array
-  },
-  {
-    imageSrc: "/images/success-stories/Music-license.png",
-    tag: "E-Commerce",
-    title: "Scalable Online Marketplace for a Retail Giant", // Example for third story
-    description:
-      "The third story focuses on e-commerce, discussing challenges like payment gateway integration and inventory management.",
-    services: commonProvidedServices, // Use the common services array
-  },
-]
 
+
+const API_BASE = "https://insights.ignek.com/wp-json/wp/v2/portfolio";
 const SuccessStories: React.FC = () => {
+  const [posts, setPosts] = useState<Story[]>([]);
+  const fetchPosts = useCallback(
+    async (idsToFilter: number[]) => {
+      try {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+
+        // Build API params
+        const params = new URLSearchParams({
+          per_page: String(50),
+          page: String(1),
+          _embed: "",
+        });
+
+        const res = await fetch(`${API_BASE}?${params.toString()}`, {
+          cache: "no-store",
+        });
+
+        if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
+
+        const data = (await res.json()) as WPPortfolioPost[];
+        // ✅ Filter only posts whose IDs are in the provided array
+        const filteredPosts = idsToFilter.length
+          ? data
+            .filter((post) => idsToFilter.includes(post.id))
+            .sort(
+              (a, b) => idsToFilter.indexOf(a.id) - idsToFilter.indexOf(b.id)
+            )
+          : data;
+        const mappedStories: Story[] = filteredPosts.map((post) => ({
+          id: post?.id,
+          imageSrc:
+            post._embedded?.["wp:featuredmedia"]?.[0]?.source_url ||
+            "/images/portfolio/portfolioImg.png",
+          tag: post._embedded?.["wp:term"]?.[0]?.[0]?.name || "General",
+          title: post.title.rendered,
+          description: post.excerpt.rendered,
+          services: [], // <-- Add this line to satisfy the interface
+        }))
+
+        setPosts(mappedStories)
+      } catch (err) {
+        console.error("Error fetching posts:", err);
+      }
+    },
+    []
+  );
+
+  useEffect(() => {
+    // const id=[19498,32037,32555]
+    const categoryIds = [19498, 32037, 32555];
+    fetchPosts(categoryIds);
+  }, [fetchPosts]);
   // Use the context hook here as well
   const sharedScrollYProgress = useSharedScroll()
 
@@ -58,10 +87,10 @@ const SuccessStories: React.FC = () => {
     <motion.section
       style={{ y: sectionY }}
       id="success-stories"
-      className="stack-clip sticky top-0 z-20 h-screen w-full rounded-t-[5rem] bg-white text-black shadow-xl"
+      className="stack-clip sticky top-0 z-20 h-max w-full rounded-t-[5rem] bg-white text-black shadow-xl"
     >
       <div className="mx-auto w-full px-4 py-12 md:px-6 md:py-16 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
-        <div className="mx-auto w-full max-w-7xl px-4 md:px-8">
+        <div className="w-full px-4 md:px-8">
           {/* Header */}
           <div className="mx-auto mb-8 max-w-3xl text-center">
             <h2 className="mb-4 text-center text-4xl font-semibold md:text-5xl">Success Stories</h2>
@@ -69,10 +98,10 @@ const SuccessStories: React.FC = () => {
           </div>
           {/* Cards Container */}
           <div className="space-y-8">
-            {stories.map((story, index) => (
+            {posts.map((story, index) => (
               <div
                 key={index}
-                className="sticky"
+                // className="sticky"
                 // The style attribute creates the stacking offset for each card
                 style={{ top: `calc(6rem + ${index * 2}rem)` }}
               >
