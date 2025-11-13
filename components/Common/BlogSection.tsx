@@ -140,7 +140,8 @@ export default function BlogSection() {
             {blogs?.slice(1).map((item, index) => (
               <div
                 key={item.id}
-                className={`grid grid-cols-[260px_1fr] items-center gap-5 cursor-pointer ${index !== 0 && index !== blogs.length - 1 ? "mb-7" : ""
+                className={`grid grid-cols-[260px_1fr] items-center gap-5 cursor-pointer 
+                 mb-6
                   }`}
                 onClick={() => router.push(`/blog/${item?.id}`)}
               >
@@ -153,7 +154,7 @@ export default function BlogSection() {
                     className="h-full w-full object-cover"
                   />
                 </div>
-                <div className="[@media(min-width:1800px)]:pb-6">
+                <div className="[@media(min-width:1800px)]:pb-0">
                   <h4 className="line-height-[24px] text-xl font-semibold [@media(min-width:1440px)]:text-lg [@media(min-width:1520px)]:text-xl [@media(min-width:1820px)]:text-xl">{item.title}</h4>
                   <p className="line-height-[24px] mt-1 line-clamp-2 text-base text-gray-700"
                     dangerouslySetInnerHTML={{ __html: item.desc ?? "" }}

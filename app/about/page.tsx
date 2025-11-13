@@ -103,16 +103,16 @@ export default function AboutUs() {
                                 <br />
                                 Trust IGNEK
                             </h2>
-                            <p className="text-lg text-[#555555] leading-relaxed pt-5">
-                                Companies trust IGNEK for proven Liferay expertise, innovation, reliability, and transformative digital experience solutions.
-                            </p>
+
                         </div>
 
                         {/* Right Column - Content */}
                         <div className="space-y-8">
                             {/* Introductory Paragraph */}
-                            
 
+                            <p className="text-xl text-[#555555] leading-relaxed pt-5 text-right mb-12">
+                                Companies trust IGNEK for proven Liferay expertise, innovation, reliability, and transformative digital experience solutions.
+                            </p>
                             {/* Section 1: Digital Excellence */}
                             <div className="space-y-3">
                                 <h3 className="text-xl font-bold text-black">
