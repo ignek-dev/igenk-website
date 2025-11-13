@@ -62,6 +62,7 @@ interface WPPost {
             avatar_urls?: Record<string, string>; // avatar sizes like "24", "48", "96"
         }>;
     };
+    categories?: number[];
 }
 
 export default function BlogDetails() {
@@ -253,7 +254,9 @@ export default function BlogDetails() {
 
                     {/* SIDEBAR */}
                     <div className="lg:col-span-4">
-                        <BlogSidebar />
+                        <BlogSidebar
+                            categoryId={post?.categories?.[0] ?? 0}
+                        />
                     </div>
                 </div>
             </div>

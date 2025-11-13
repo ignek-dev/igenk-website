@@ -13,7 +13,7 @@ type BlogItem = {
   excerpt: string
   image: string
 }
-const PER_PAGE = 4;
+// const PER_PAGE = 4;
 const API_URL = "https://insights.ignek.com/wp-json/wp/v2/posts";
 export default function BlogSection() {
   const list = posts as BlogItem[]
@@ -21,76 +21,77 @@ export default function BlogSection() {
   const [blogs, setBlogs] = useState<BlogData[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const currentPage=1;
+  // const currentPage = 1;
   // const [totalPages, setTotalPages] = useState(1);
-  console.log("loading",error,loading)
-  const fetchBlogs = useCallback(async () => {
-    try {
-      setLoading(true);
-      setError(null);
-      window.scrollTo({ top: 0, behavior: "smooth" });
+  console.log("loading", error, loading)
+  const fetchBlogs = useCallback(
+    async (idsToFilter: number[]) => {
+      try {
+        setLoading(true);
+        setError(null);
+        window.scrollTo({ top: 0, behavior: "smooth" });
 
+        const res = await fetch(`${API_URL}?per_page=100&categories=15&_embed`, { cache: "no-store" });
 
-      const res = await fetch(
-        `${API_URL}?per_page=${PER_PAGE}&page=${currentPage}&_embed`,
-        { cache: "no-store" }
-      );
+        if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
 
-      if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
+        const data = (await res.json()) as WPPost[];
 
-      const data = await res.json();
-      // const total = Number(res.headers.get("x-wp-totalpages")) || 1;
+        // 🧠 Filter only blogs whose IDs match the given array
+        const filteredData = idsToFilter.length
+          ? data.filter((post) => idsToFilter.includes(post.id))
+          : data;
 
-      const formatted: BlogData[] = (data as WPPost[]).map((post) => ({
-        id: post.id,
-        title: post.title?.rendered || "Untitled",
-        author: post._embedded?.author?.[0]?.name || "Bhavin Panchani",
-        date: post.date
-          ? new Date(post.date).toLocaleDateString("en-US", {
-            month: "short",
-            day: "numeric",
-            year: "numeric",
-          })
-          : "Unknown date",
-        readTime: `${Math.max(
-          2,
-          Math.ceil((post.content?.rendered?.length || 0) / 1200)
-        )} min read`,
-        category:
-          post._embedded?.["wp:term"]?.[0]?.[0]?.name || "General",
-        image:
-          post._embedded?.["wp:featuredmedia"]?.[0]?.source_url ||
-          "/images/blogs/blogImage.png",
-        authPic:
-          post._embedded?.author?.[0]?.avatar_urls?.["96"] ||
-          "/images/blogs/blogAuthor.png",
-        desc: post?.excerpt?.rendered
-      }));
+        const formatted: BlogData[] = filteredData.map((post) => ({
+          id: post.id,
+          title: post.title?.rendered || "Untitled",
+          author: post._embedded?.author?.[0]?.name || "Bhavin Panchani",
+          date: post.date
+            ? new Date(post.date).toLocaleDateString("en-US", {
+              month: "short",
+              day: "numeric",
+              year: "numeric",
+            })
+            : "Unknown date",
+          readTime: `${Math.max(
+            2,
+            Math.ceil((post.content?.rendered?.length || 0) / 1200)
+          )} min read`,
+          category:
+            post._embedded?.["wp:term"]?.[0]?.[0]?.name || "General",
+          image:
+            post._embedded?.["wp:featuredmedia"]?.[0]?.source_url ||
+            "/images/blogs/blogImage.png",
+          authPic:
+            post._embedded?.author?.[0]?.avatar_urls?.["96"] ||
+            "/images/blogs/blogAuthor.png",
+          desc: post?.excerpt?.rendered || "",
+        }));
 
-      setBlogs(formatted);
-      // setTotalPages(total);
-    } catch (err: unknown) {
-      // if (err instanceof Error) setError(err.message);
-      // else setError("Failed to fetch blogs");
-      console.log(err)
-    } finally {
-      setLoading(false);
-    }
-  }, [currentPage]);
+        setBlogs(formatted);
+      } catch (err) {
+        console.error("Failed to fetch blogs:", err);
+        setError(err instanceof Error ? err.message : "Failed to fetch blogs");
+      } finally {
+        setLoading(false);
+      }
+    },
+    []
+  );
 
   useEffect(() => {
-    fetchBlogs();
+    const ids = [40578, 40314, 39874, 39138]; // example IDs
+    fetchBlogs(ids);
   }, [fetchBlogs]);
-
   const router = useRouter();
 
   const [sectionRef, isInView] = useInView({ threshold: 0.2, triggerOnce: true })
-
+  if (blogs?.length < 1)
+    return <div className="text-black">Loading.......</div>
   return (
     <section className="bg-white text-black">
       <div className="mx-auto w-full px-4 py-[64px] md:px-8 md:py-[64px] lg:py-[64px] [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
         <div className="grid items-center gap-10 md:grid-cols-2 "
-
         >
           <h2
             className={`text-5xl leading-tight font-semibold sm:text-4xl md:text-5xl [@media(min-width:1440px)]:text-4xl [@media(min-width:1520px)]:text-5xl ${isInView ? "animate-when-visible animate-slide-left animation-delay-200" : "opacity-0"
@@ -153,7 +154,7 @@ export default function BlogSection() {
                   />
                 </div>
                 <div className="[@media(min-width:1800px)]:pb-6">
-                  <h4 className="line-height-[32px] text-xl font-semibold [@media(min-width:1440px)]:text-lg [@media(min-width:1520px)]:text-xl [@media(min-width:1820px)]:text-2xl">{item.title}</h4>
+                  <h4 className="line-height-[24px] text-xl font-semibold [@media(min-width:1440px)]:text-lg [@media(min-width:1520px)]:text-xl [@media(min-width:1820px)]:text-xl">{item.title}</h4>
                   <p className="line-height-[24px] mt-1 line-clamp-2 text-base text-gray-700"
                     dangerouslySetInnerHTML={{ __html: item.desc ?? "" }}
                   />
