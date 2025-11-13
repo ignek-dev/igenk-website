@@ -137,7 +137,7 @@ export default function BlogSection() {
             className={`space-y-4 transition-all duration-[1500ms] ease-out ${isInView ? "translate-x-0 opacity-100" : "translate-x-20 opacity-0"
               }`}
           >
-            {blogs?.slice(1).map((item, index) => (
+            {blogs?.slice(1).map((item) => (
               <div
                 key={item.id}
                 className={`grid grid-cols-[260px_1fr] items-center gap-5 cursor-pointer 

@@ -1,6 +1,6 @@
 "use client"
-import { Metadata } from "next"
 import Image from "next/image"
+import { useState } from "react"
 import { BlogSection } from "components/Common"
 import CaseStudy from "components/Common/CaseStudy"
 import TalkToExpert from "components/Common/TalkToExpert"
@@ -14,7 +14,6 @@ import {
   LiferayPerformanceTuningTitle1,
   LiferayPerformanceTuningTitle2,
 } from "data/liferay-performance-tuning"
-import { useState } from "react"
 
 // export const metadata: Metadata = {
 //   title: "Liferay Performance Tuning | IGNEK",
