@@ -8,13 +8,13 @@ import EngagementModels from "components/Common/EngagementModels"
 import TalkToExpert from "components/Common/TalkToExpert"
 import WhatMake from "components/Common/WhatMake"
 import WordsFromCEO from "components/Common/WordsFromCEO"
-import { useInView } from "hooks/useInView"
 import {
   consultingServices,
   expertiseStats,
   liferayProjectFeatures,
   liferaySolutions,
 } from "data/liferay-consulting-and-implementation-services"
+import { useInView } from "hooks/useInView"
 
  const caseStudies = [
   {
