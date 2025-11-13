@@ -77,19 +77,19 @@ const companyLinks = [
   {
     image: "/images/mega-menu/AboutUS.png",
     title: "About Us",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    description: "We are a digital solutions company focused on innovation and quality.",
     href: "/about",
   },
   {
     image: "/images/mega-menu/Careers.png", // Replace with your actual image path
     title: "Careers",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    description: "Join our team and grow your skills through exciting real-world projects.",
     href: "/career",
   },
   {
     image: "/images/mega-menu/LifeAtIgnek.png", // Replace with your actual image path
     title: "Life#IGNEK",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    description: "Experience a collaborative, creative, and energetic work culture at IGNEK.",
     href: "/life-at-ignek",
   },
 ]
@@ -159,8 +159,8 @@ export default function CompanyMegaMenu() {
               We&apos;re the Top #1 Digital experience development company contributing towards a smart World
             </h2>
             <p className="mt-4 max-w-3xl text-lg text-white/70">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Sit
-              amet sapien fringilla, mattis ligula consectetur, ultrices mauris.
+              IGNEK delivers smart, high-quality digital experiences that transform businesses, improve efficiency, and
+              accelerate growth through expert engineering, modern design, and reliable technology solutions.
             </p>
 
             <div className="mt-6 grid grid-cols-3 gap-x-8 gap-y-6 border-white/10 pt-8">

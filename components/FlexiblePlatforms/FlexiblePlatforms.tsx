@@ -37,8 +37,7 @@ const FlexiblePlatforms = () => {
             <span className="block">Scalable Experiences.</span>
           </h2>
           <p className="mt-6 text-lg text-gray-600">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            <br /> Ut et massa mi. Aliquam in hendrerit urna.
+            We specialize in Liferay DXP framework development, offering expert Liferay Consulting, Liferay Implementation, and Liferay Portal Development Services that help enterprises create connected, scalable, and high-performing digital ecosystems built for the future. Our team ensures seamless integration, optimized performance, and personalized user experiences that accelerate digital transformation and business growth.
           </p>
         </div>
 
@@ -51,7 +50,7 @@ const FlexiblePlatforms = () => {
         >
           {/* 1. Background Image */}
           <Image
-            src="/images/liferay-details.jpg"
+            src="/images/Liferay_dxp.png"
             alt="Liferay Digital Experience Platform"
             layout="fill"
             objectFit="cover"

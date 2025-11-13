@@ -4,12 +4,12 @@ import Image from "next/image"
 // const iconUrl = "/images/mega-menu/solution-e1.png"
 
 const solutionsLinks = [
-  { text: "Enterprise Websites", href: "#", icon: "/images/mega-menu/solution-e1.png" },
-  { text: "Employee Experience", href: "#", icon: "/images/mega-menu/solution-e2.png" },
-  { text: "Digital Commerce", href: "#", icon: "/images/mega-menu/solution-e3.png" },
-  { text: "Partner Experience", href: "#", icon: "/images/mega-menu/solution-e4.png" },
-  { text: "Supplier Experience", href: "#", icon: "/images/mega-menu/solution-e5.png" },
-  { text: "Customer Experience", href: "#", icon: "/images/mega-menu/solution-e6.png" },
+  { text: "Enterprise Websites", href: "/contact", icon: "/images/mega-menu/solution-e1.png" },
+  { text: "Employee Experience", href: "/contact", icon: "/images/mega-menu/solution-e2.png" },
+  { text: "Digital Commerce", href: "/contact", icon: "/images/mega-menu/solution-e3.png" },
+  { text: "Partner Experience", href: "/contact", icon: "/images/mega-menu/solution-e4.png" },
+  { text: "Supplier Experience", href: "/contact", icon: "/images/mega-menu/solution-e5.png" },
+  { text: "Customer Experience", href: "/contact", icon: "/images/mega-menu/solution-e6.png" },
 ]
 
 const integrationsLinks = [
@@ -22,9 +22,9 @@ const integrationsLinks = [
 ]
 
 const marketplaceLinks = [
-  { text: "AI Blog Workspace", href: "#", icon: "/images/mega-menu/marketplace-e1.png" },
-  { text: "Batch Client Extension Generator", href: "#", icon: "/images/mega-menu/marketplace-e2.png" },
-  { text: "Batch Client Extension Generator", href: "#", icon: "/images/mega-menu/marketplace-e3.png" },
+  { text: "AI Blog Workspace", href: "https://marketplace.liferay.com/p/ai-blog-workspace", icon: "/images/mega-menu/marketplace-e1.png" },
+  { text: "Batch Client Extension Generator", href: "https://marketplace.liferay.com/p/batch-client-extension-generator", icon: "/images/mega-menu/marketplace-e2.png" },
+  { text: "Email OTP Authentication for Community Edition Of Liferay", href: "https://marketplace.liferay.com/p/email-otp-authentication-for-community-edition-of-liferay", icon: "/images/mega-menu/marketplace-e3.png" },
 ]
 
 const aiLinks = [
