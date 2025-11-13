@@ -82,7 +82,7 @@ export default function Navigation() {
               ))}
             </ul>
 
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-4 z-10">
               {/* <button
                 type="button"
                 aria-label="Calendar"

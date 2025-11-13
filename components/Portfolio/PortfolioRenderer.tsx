@@ -21,7 +21,7 @@ interface WPPortfolioPost {
     };
 }
 
-const POST_API = "https://www.ignek.com/wp-json/wp/v2/portfolio/32555?_embed";
+const POST_API = "https://insights.ignek.com/wp-json/wp/v2/portfolio/32555?_embed";
 
 export default function PortfolioRenderer() {
     const [post, setPost] = useState<WPPortfolioPost | null>(null);

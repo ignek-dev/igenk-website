@@ -16,7 +16,7 @@ import {
   liferaySolutions,
 } from "data/liferay-consulting-and-implementation-services"
 
-const caseStudies = [
+ const caseStudies = [
   {
     id: 1,
     image: "/images/liferay-pages-image/caseStudy.png",
