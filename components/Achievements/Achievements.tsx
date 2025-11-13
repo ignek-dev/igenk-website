@@ -43,12 +43,12 @@ const Achievements = () => {
           className={`flex flex-col items-start ${isInView ? "animate-when-visible animate-slide-left" : "opacity-0"}`}
         >
           <h2 className="mb-8 max-w-lg text-5xl leading-tight font-bold">
-            Flexible Platforms.
+            Delivering Impact,
             <br />
-            Scalable Experiences.
+            Defined by Liferay Success
           </h2>
           <p className="mb-10 max-w-md text-lg text-gray-300">
-            We design and develop digital solutions that adapt and grow with your business needs. Our platforms are built to deliver seamless performance, exceptional user experiences, and long-term scalability.
+            As a leading Liferay Development Company, we combine innovation, experience, and technical excellence to deliver impactful digital solutions. Our proven track record reflects our commitment to quality, collaboration, and client success across every project.
           </p>
           <ScheduleMeetingButton isFullWidth={false} btnName="Schedule Meeting" />
         </div>

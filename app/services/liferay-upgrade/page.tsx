@@ -4,85 +4,11 @@ import { BlogSection } from "components/Common"
 import CaseStudy from "components/Common/CaseStudy"
 import TalkToExpert from "components/Common/TalkToExpert"
 import WhatMake from "components/Common/WhatMake"
-import { dxpUpgradeServices, features, featureTabs, supprotAndMaintanceServices, upgradePhases } from "data/liferay-upgrade"
+import { caseStudies, dxpUpgradeServices, dynamicSteps, features, featureTabs, LiferayUpgradeData, LiferayUpgradeSubContent, LiferayUpgradeTitle1, LiferayUpgradeTitle2, supprotAndMaintanceServices, upgradePhases } from "data/liferay-upgrade"
 
 export default function LiferayUpgradePage() {
 
-   const LiferayUpgradeTitle1 = "Why Choose IGNEK For"
-  const LiferayUpgradeTitle2 ="Liferay DXP 7.4 Upgrade Services?"
-  const LiferayUpgradeSubContent = "Liferay DXP 7.4 Upgrade is a pivotal step for organizations looking to enhance their digital experience. At IGNEK, we specialize in delivering seamless and effective Liferay DXP upgrade services, ensuring you unlock the full potential of this powerful platform. Here are several compelling reasons to choose us for your upgrade"
- 
-  const LiferayUpgradeData = [
-    {
-      title: "Liferay Expertise",
-      desc: "Our team of certified professionals has extensive experience in Liferay implementations and upgrades, ensuring a seamless transition to DXP 7.4 with minimal disruptions.",
-    },
-    {
-      title: "Customized Upgrade Strategies",
-      desc: "We develop tailored upgrade strategies based on a thorough assessment of your current environment, aligning the upgrade with your specific business objectives.",
-    },
-    {
-      title: "Comprehensive Upgrade Process",
-      desc: "Our structured upgrade process covers all phases, including pre-upgrade assessment, database migrations, custom module updates, and post-upgrade testing, ensuring no detail is overlooked.",
-    },
-    {
-      title: "Enhanced Security",
-      desc: "We implement the latest security features of Liferay DXP 7.4 to protect your digital assets, ensuring compliance and safeguarding sensitive information throughout the upgrade.",
-    },
-    {
-      title: "Seamless Integration",
-      desc: "Our focus on maximizing the capabilities of Liferay DXP 7.4 includes ensuring seamless integration with existing systems, enhancing functionality, and creating a cohesive digital ecosystem.",
-    },
-    {
-      title: "Ongoing Support and Training",
-      desc: "We provide comprehensive training for your team post-upgrade and offer ongoing support to address any issues or questions, ensuring your organization fully leverages the new features.",
-    },
-  ]
-  
-  const caseStudies = [
-    {
-      id: 1,
-      image: "/images/liferay-pages-image/caseStudy.png",
-      tag: "Corporate",
-      title: "Music License Management Portal: Onboarding & Data Integrity",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla.",
-    },
-    {
-      id: 2,
-      image: "/images/liferay-pages-image/caseStudy.png",
-      tag: "FinTech",
-      title: "Transforming Financial Services with Innovations",
-      description:
-        "Suspendisse potenti. Maecenas vitae mattis tellus. Nullam quis imperdiet augue. Pellentesque habitant morbi tristique senectus et netus.",
-    },
-    {
-      id: 3,
-      image: "/images/liferay-pages-image/caseStudy.png",
-      tag: "Healthcare",
-      title: "Digital Health Platform: Patient-Centric Solutions",
-      description:
-        "Praesent ut ligula non mi varius sagittis. In hac habitasse platea dictumst. Cras non dolor. Vivamus quis mi.",
-    },
-    {
-      id: 4,
-      image: "/images/liferay-pages-image/caseStudy.png",
-      tag: "E-commerce",
-      title: "Scaling Online Retail with Cloud Technologies",
-      description:
-        "Curabitur at lacus ac velit ornare lobortis. Vestibulum suscipit nulla quis orci. Donec posuere vulputate arcu.",
-    },
-  ]
-  const dynamicSteps = [
-    { number: 1, title: "Ongoing Technical Assistance" },
-    { number: 2, title: "Ongoing Technical Assistance" },
-    { number: 3, title: "Ongoing Technical Assistance" },
-    { number: 4, title: "Ongoing Technical Assistance" },
-    { number: 5, title: "Ongoing Technical Assistance" },
-    { number: 6, title: "Ongoing Technical Assistance" },
-    { number: 7, title: "Ongoing Technical Assistance" },
-    { number: 8, title: "Ongoing Technical Assistance" },
-  ]
+
 
   const containerRef = useRef<HTMLDivElement | null>(null)
   const [isDragging, setIsDragging] = useState(false)
@@ -170,11 +96,9 @@ export default function LiferayUpgradePage() {
 
       <section className="bg-[#f7f7f7] text-black">
         <div className="mx-auto w-full px-4 py-[64px] md:px-8 md:py-[64px] lg:py-[64px] [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
-          <h2 className="text-5xl leading-tight font-semibold sm:text-4xl md:text-5xl">Liferay DXP 7.4 Upgrade</h2>
+          <h2 className="text-5xl leading-tight font-semibold sm:text-4xl md:text-5xl">Why Liferay DXP 7.4 Upgrade is a Game-Changer</h2>
           <p className="mt-4 justify-self-center text-lg leading-relaxed text-[#101012] text-gray-700">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.
-            Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis
-            tellus. Nullam quis imperdiet augue.
+            Learn how the 7.4 upgrade transforms your digital platform, making it faster, smarter, and more secure.
           </p>
           <div className="ml-[-20px] pt-4">
             <div
@@ -259,11 +183,10 @@ export default function LiferayUpgradePage() {
         <div className="mx-auto w-full items-start px-4 md:px-8 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
           <div className="relative grid items-start gap-10 md:grid-cols-2">
             <h2 className="text-3xl [@media(min-width:1440px)]:leading-[40px] [@media(min-width:1500px)]:leading-[60px] font-semibold [@media(min-width:1440px)]:max-w-[430px] [@media(min-width:1440px)]:text-3xl [@media(min-width:1500px)]:max-w-[430px] [@media(min-width:1500px)]:text-5xl">
-              Liferay DXP 7.4 Upgrade Process : A Complete Guide
+              Liferay DXP 7.4 Upgrade Process
             </h2>
             <p className="absolute bottom-0 max-w-xl text-right text-lg [@media(min-width:1440px)]:text-lg text-gray-700 md:justify-self-end">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.
-              Pellentesque sit amet
+              Our Liferay DXP 7.4 upgrade process ensures smooth migration, improved performance, enhanced security, and feature-rich functionality with minimal downtime.
             </p>
           </div>
           <div className="pt-12">

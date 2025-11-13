@@ -3,77 +3,11 @@ import { useEffect, useRef, useState } from "react"
 import { BlogSection } from "components/Common"
 import TalkToExpert from "components/Common/TalkToExpert"
 import WhatMake from "components/Common/WhatMake"
-import { featureTabs, keyActivityArchitecureSystem } from "data/liferay-architecture-design"
+import { featureTabs, keyActivityArchitecureSystem, LiferayArchitectureData, LiferayArchitectureSubContent, LiferayArchitectureTitle1, LiferayArchitectureTitle2, systemArchitecure } from "data/liferay-architecture-design"
 
 export default function LiferayArchitectureDesignPage() {
 
-   const LiferayArchitectureTitle1 = "Why Choose IGNEK For Liferay"
-  const LiferayArchitectureTitle2 ="Architecture Design Service?"
-  const LiferayArchitectureSubContent = "At IGNEK, Our expert engineers use up to date software’s and vast knowledge to craft solutions that match your needs and expectations. Putting clients first is our thing, and we’re proud to support our very first business client till today!"
-  const LiferayArchitectureData = [
-    {
-      title: "Strong Expertise",
-      desc: "We are experts with years of experience, dedicated to staying updated on the latest trends and advancements.",
-    },
-    {
-      title: "Client First",
-      desc: "Our tailored solutions prioritize client satisfaction, aligning with your objectives to foster trust and mutual success.",
-    },
-    {
-      title: "Effective Communication",
-      desc: "We are experts with years of experience, dedicated to staying updated on the latest trends and advancements.",
-    },
-    {
-      title: "On Time Delivery",
-      desc: "We prioritize deadlines, ensuring timely delivery without ever compromising on quality.",
-    },
-    {
-      title: "Results Focused",
-      desc: "Our dedicated team works hard to deliver measurable results, driving your business forward toward collective success.",
-    },
-    {
-      title: "End-to-End Support",
-      desc: "We provide complete support, from start to finish, and ongoing guidance even after project completion.",
-    },
-  ]
-  
-  const systemArchitecure = [
-    {
-      text: "System Architecure1",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque",
-    },
-    {
-      text: "System Architecure2",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque",
-    },
-    {
-      text: "System Architecure3",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque",
-    },
-    {
-      text: "System Architecure4",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque",
-    },
-    {
-      text: "System Architecure5",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque",
-    },
-    {
-      text: "System Architecure6",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque",
-    },
-    {
-      text: "System Architecure7",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque",
-    },
-  ]
+
 
   const containerRef = useRef<HTMLDivElement | null>(null)
   const [isDragging, setIsDragging] = useState(false)
@@ -156,7 +90,15 @@ export default function LiferayArchitectureDesignPage() {
         </div>
       </section>
       <section>
-        <div className="py-[0px] [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
+        <div className="mx-auto w-full px-4 py-[64px] md:px-8 md:py-[64px] lg:py-[64px] [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
+          <div className="relative grid items-start gap-10 md:grid-cols-2 mb-[67px]">
+            <h2 className="text-3xl [@media(min-width:1440px)]:leading-[40px] [@media(min-width:1500px)]:leading-[50px] font-semibold [@media(min-width:1440px)]:text-3xl [@media(min-width:1500px)]:text-4xl">
+              Key Deliverables of Our Liferay Architecture Design Services
+            </h2>
+            <p className="absolute bottom-0 max-w-xl text-right [@media(min-width:1440px)]:text-lg [@media(min-width:1500px)]:text-xl text-black md:justify-self-end ">
+              Our Liferay Architecture Design Services deliver clear, actionable outputs that guide your technical and business teams toward successful implementation.
+            </p>
+          </div>
           <div
             className="flex gap-10 overflow-x-hidden cursor-grab"
             onMouseDown={handleMouseDown}
@@ -187,7 +129,7 @@ export default function LiferayArchitectureDesignPage() {
               Key Activities Under Our Liferay Architecture Design Services
             </h2>
             <p className="absolute bottom-0 max-w-xl text-right [@media(min-width:1440px)]:text-lg [@media(min-width:1500px)]:text-xl text-white md:justify-self-end ">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.
+              We offer design documents for Liferay Portal Architecture, covering system components, security, load balancing, backup, user management, site structure, content management, integrations, caching, and monitoring.
             </p>
           </div>
           <div className="mt-[67px] grid grid-cols-12 gap-4">

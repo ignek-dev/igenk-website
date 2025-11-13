@@ -40,3 +40,70 @@ export const featureTabs = [
   "Enhanced User Interaction Speed",
   "Proactive Monitoring and Maintenance",
 ]
+
+export const LiferayPerformanceTuningTitle1 = "Why Choose IGNEK For Liferay"
+export const LiferayPerformanceTuningTitle2 = "Performance Tuning?"
+export const LiferayPerformanceTuningSubContent =
+  "At IGNEK, Our expert engineers use up to date software’s and vast knowledge to craft solutions that match your needs and expectations. Putting clients first is our thing, and we’re proud to support our very first business client till today!"
+
+export const LiferayPerformanceTuningData = [
+  {
+    title: "Performance Experts",
+    desc: "Our specialists analyze and fine-tune your portal for maximum speed, reliability, and efficiency.",
+  },
+  {
+    title: "Customized Optimization",
+    desc: "We tailor performance strategies to your unique configurations, user load, and business requirements.",
+  },
+  {
+    title: "Proactive Issue Resolution",
+    desc: "We identify bottlenecks and optimize resources before they impact user experience.",
+  },
+  {
+    title: "Scalability-First Approach",
+    desc: "Prepare your portal for growth with optimized caching, clustering, and distributed deployments.",
+  },
+  {
+    title: "End-to-End Performance Audits",
+    desc: "From code profiling to server tuning, we monitor and optimize continuously for lasting improvements.",
+  },
+  {
+    title: "Ongoing Support & Monitoring",
+    desc: "We provide continuous guidance, ensuring your portal remains fast, stable, and future-ready.",
+  },
+]
+
+export const caseStudies = [
+  {
+    id: 1,
+    image: "/images/liferay-pages-image/caseStudy.png",
+    tag: "Corporate",
+    title: "Music License Management Portal: Onboarding & Data Integrity",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla.",
+  },
+  {
+    id: 2,
+    image: "/images/liferay-pages-image/caseStudy.png",
+    tag: "FinTech",
+    title: "Transforming Financial Services with Innovations",
+    description:
+      "Suspendisse potenti. Maecenas vitae mattis tellus. Nullam quis imperdiet augue. Pellentesque habitant morbi tristique senectus et netus.",
+  },
+  {
+    id: 3,
+    image: "/images/liferay-pages-image/caseStudy.png",
+    tag: "Healthcare",
+    title: "Digital Health Platform: Patient-Centric Solutions",
+    description:
+      "Praesent ut ligula non mi varius sagittis. In hac habitasse platea dictumst. Cras non dolor. Vivamus quis mi.",
+  },
+  {
+    id: 4,
+    image: "/images/liferay-pages-image/caseStudy.png",
+    tag: "E-commerce",
+    title: "Scaling Online Retail with Cloud Technologies",
+    description:
+      "Curabitur at lacus ac velit ornare lobortis. Vestibulum suscipit nulla quis orci. Donec posuere vulputate arcu.",
+  },
+]

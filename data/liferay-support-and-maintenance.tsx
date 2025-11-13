@@ -69,3 +69,35 @@ export const activitiesRight = [
     desc: "Conduct regular audits of the Liferay implementation to identify and address any inefficiencies or areas for improvement.",
   },
 ]
+
+export const LiferaySupportMaintenanceTitle1 = "Why Choose IGNEK For Liferay Support And Maintenance Service?"
+export const LiferaySupportMaintenanceTitle2 = ""
+export const LiferaySupportMaintenanceSubContent =
+  "At IGNEK, Our expert engineers use up to date software’s and vast knowledge to craft solutions that match your needs and expectations. Putting clients first is our thing, and we’re proud to support our very first business client till today!"
+
+export const LiferaySupportMaintenanceData = [
+  {
+    title: "Proactive Monitoring",
+    desc: "We continuously track performance, security, and integrations to prevent issues before they arise.",
+  },
+  {
+    title: "Rapid Issue Resolution",
+    desc: "Our experts quickly identify, debug, and resolve post-launch issues for seamless portal operation.",
+  },
+  {
+    title: "Customized Maintenance",
+    desc: "We tailor updates, patches, and enhancements to fit your specific Liferay environment and business goals.",
+  },
+  {
+    title: "Security & Compliance Focus",
+    desc: "We conduct audits, apply patches, and ensure licensing compliance for worry-free operations.",
+  },
+  {
+    title: "Performance-Driven Approach",
+    desc: "Through periodic tuning, backups, and recovery planning, we maintain optimal portal speed, stability, and resilience.",
+  },
+  {
+    title: "Ongoing Expert Guidance",
+    desc: "Our team provides continuous advice and support, helping your Liferay portal evolve with your business needs.",
+  },
+]
