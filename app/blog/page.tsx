@@ -138,9 +138,7 @@ export default function Blogs() {
               </h1>
             </div>
             <p className="absolute bottom-0 max-w-2xl text-right text-lg text-white sm:text-lg md:mt-16 md:justify-self-end">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.
-              Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis
-              tellus.
+              Explore our latest tech blogs to stay informed on trends, innovations, and best practices across industries, helping you leverage technology effectively for business growth and operational excellence.
             </p>
           </div>
         </div>
@@ -160,8 +158,7 @@ export default function Blogs() {
 
             <div className="flex h-full items-end justify-end">
               <p className="text-normal line-height-[30px] w-full text-right text-xl text-[#374151]">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.
-                Pellentesque sit amet
+                Stay updated with our newly written tech blogs, covering trends, insights, and innovations to help your business stay ahead.
               </p>
             </div>
           </div>

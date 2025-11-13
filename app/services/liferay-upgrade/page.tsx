@@ -105,7 +105,7 @@ export default function LiferayUpgradePage() {
 
       <section className="bg-[#f7f7f7] text-black">
         <div className="mx-auto w-full px-4 py-[64px] md:px-8 md:py-[64px] lg:py-[64px] [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
-          <h2 className="text-5xl leading-tight font-semibold sm:text-4xl md:text-5xl">
+          <h2 className="text-5xl justify-self-center leading-tight font-semibold sm:text-4xl md:text-5xl">
             Why Liferay DXP 7.4 Upgrade is a Game-Changer
           </h2>
           <p className="mt-4 justify-self-center text-lg leading-relaxed text-[#101012] text-gray-700">

@@ -66,17 +66,7 @@ const StandoutSection = () => {
         </h2>
 
         {/* Right caption */}
-        <p
-          className="absolute left-[1072px] top-[124px] w-[653px] h-[60px] text-right text-[#E5E7EB]"
-          style={{
-            fontFamily: "Poppins, ui-sans-serif, system-ui",
-            fontWeight: 400,
-            fontSize: 20,
-            lineHeight: "30px",
-          }}
-        >
-          IGNEK, a trusted Liferay Consulting Partner, delivers innovation, reliability, and unmatched digital experience expertise.
-        </p>
+        
 
         {/* Cards */}
         <CardRail cards={cardsData} />
