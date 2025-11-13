@@ -4,12 +4,21 @@ import { BlogSection } from "components/Common"
 import CaseStudy from "components/Common/CaseStudy"
 import TalkToExpert from "components/Common/TalkToExpert"
 import WhatMake from "components/Common/WhatMake"
-import { caseStudies, dxpUpgradeServices, dynamicSteps, features, featureTabs, LiferayUpgradeData, LiferayUpgradeSubContent, LiferayUpgradeTitle1, LiferayUpgradeTitle2, supprotAndMaintanceServices, upgradePhases } from "data/liferay-upgrade"
+import {
+  caseStudies,
+  dxpUpgradeServices,
+  dynamicSteps,
+  features,
+  featureTabs,
+  LiferayUpgradeData,
+  LiferayUpgradeSubContent,
+  LiferayUpgradeTitle1,
+  LiferayUpgradeTitle2,
+  supprotAndMaintanceServices,
+  upgradePhases,
+} from "data/liferay-upgrade"
 
 export default function LiferayUpgradePage() {
-
-
-
   const containerRef = useRef<HTMLDivElement | null>(null)
   const [isDragging, setIsDragging] = useState(false)
   const [startX, setStartX] = useState(0)
@@ -96,7 +105,9 @@ export default function LiferayUpgradePage() {
 
       <section className="bg-[#f7f7f7] text-black">
         <div className="mx-auto w-full px-4 py-[64px] md:px-8 md:py-[64px] lg:py-[64px] [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
-          <h2 className="text-5xl leading-tight font-semibold sm:text-4xl md:text-5xl">Why Liferay DXP 7.4 Upgrade is a Game-Changer</h2>
+          <h2 className="text-5xl leading-tight font-semibold sm:text-4xl md:text-5xl">
+            Why Liferay DXP 7.4 Upgrade is a Game-Changer
+          </h2>
           <p className="mt-4 justify-self-center text-lg leading-relaxed text-[#101012] text-gray-700">
             Learn how the 7.4 upgrade transforms your digital platform, making it faster, smarter, and more secure.
           </p>
@@ -148,10 +159,10 @@ export default function LiferayUpgradePage() {
       <section className="bg-black py-[64px] text-white md:py-[64px] lg:py-[64px]">
         <div className="mx-auto w-full items-start px-4 md:px-8 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
           <div className="relative grid items-start gap-10 md:grid-cols-2">
-            <h2 className="text-3xl leading-[60px] [@media(min-width:1440px)]:max-w-sm [@media(min-width:1500px)]:max-w-lg font-semibold [@media(min-width:1440px)]:text-4xl [@media(min-width:1500px)]:text-5xl">
+            <h2 className="text-3xl leading-[60px] font-semibold [@media(min-width:1440px)]:max-w-sm [@media(min-width:1440px)]:text-4xl [@media(min-width:1500px)]:max-w-lg [@media(min-width:1500px)]:text-5xl">
               Key Benefits of Liferay DXP 7.4 Upgrade
             </h2>
-            <p className="absolute bottom-0 max-w-lg text-right text-xl  text-white [@media(min-width:1440px)]:text-base md:justify-self-end">
+            <p className="absolute bottom-0 max-w-lg text-right text-xl text-white md:justify-self-end [@media(min-width:1440px)]:text-base">
               Liferay DXP 7.4 Upgrade is essential for organizations aiming to enhance their digital experience
               capabilities and stay competitive in today’s fast-paced environment. Here are several compelling reasons
               to consider the upgrade
@@ -163,7 +174,7 @@ export default function LiferayUpgradePage() {
                 <div key={index} className="flex flex-col pb-8">
                   <div className="flex items-center justify-between border-b border-gray-300 last:border-b-0">
                     <h3
-                      className="mb-3 pt-4 font-semibold whitespace-wrap max-w-[215px] [@media(min-width:1440px)]:text-[28px] [@media(min-width:1800px)]:text-[30px]"
+                      className="whitespace-wrap mb-3 max-w-[215px] pt-4 font-semibold [@media(min-width:1440px)]:text-[28px] [@media(min-width:1800px)]:text-[30px]"
                       dangerouslySetInnerHTML={{ __html: item.text }}
                     />
                     <span className="mb-3 pt-4 text-[30px] font-semibold">
@@ -182,11 +193,12 @@ export default function LiferayUpgradePage() {
       <section className="bg-[#f7f7f7] py-[64px] text-black md:py-[64px] lg:py-[64px]">
         <div className="mx-auto w-full items-start px-4 md:px-8 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
           <div className="relative grid items-start gap-10 md:grid-cols-2">
-            <h2 className="text-3xl [@media(min-width:1440px)]:leading-[40px] [@media(min-width:1500px)]:leading-[60px] font-semibold [@media(min-width:1440px)]:max-w-[430px] [@media(min-width:1440px)]:text-3xl [@media(min-width:1500px)]:max-w-[430px] [@media(min-width:1500px)]:text-5xl">
+            <h2 className="text-3xl font-semibold [@media(min-width:1440px)]:max-w-[430px] [@media(min-width:1440px)]:text-3xl [@media(min-width:1440px)]:leading-[40px] [@media(min-width:1500px)]:max-w-[430px] [@media(min-width:1500px)]:text-5xl [@media(min-width:1500px)]:leading-[60px]">
               Liferay DXP 7.4 Upgrade Process
             </h2>
-            <p className="absolute bottom-0 max-w-xl text-right text-lg [@media(min-width:1440px)]:text-lg text-gray-700 md:justify-self-end">
-              Our Liferay DXP 7.4 upgrade process ensures smooth migration, improved performance, enhanced security, and feature-rich functionality with minimal downtime.
+            <p className="absolute bottom-0 max-w-xl text-right text-lg text-gray-700 md:justify-self-end [@media(min-width:1440px)]:text-lg">
+              Our Liferay DXP 7.4 upgrade process ensures smooth migration, improved performance, enhanced security, and
+              feature-rich functionality with minimal downtime.
             </p>
           </div>
           <div className="pt-12">
@@ -304,10 +316,10 @@ export default function LiferayUpgradePage() {
       <section className="bg-[#f7f7f7] py-[64px] text-black md:py-[64px] lg:py-[64px]">
         <div className="mx-auto w-full items-start px-4 md:px-8 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
           <div className="relative grid items-start gap-10 md:grid-cols-2">
-            <h2 className="text-3xl [@media(min-width:1440px)]:max-w-[430px] [@media(min-width:1500px)]:max-w-[550px] [@media(min-width:1440px)]:leading-[40px] [@media(min-width:1500px)]:leading-[50px] font-semibold [@media(min-width:1440px)]:text-3xl [@media(min-width:1500px)]:text-4xl">
+            <h2 className="text-3xl font-semibold [@media(min-width:1440px)]:max-w-[430px] [@media(min-width:1440px)]:text-3xl [@media(min-width:1440px)]:leading-[40px] [@media(min-width:1500px)]:max-w-[550px] [@media(min-width:1500px)]:text-4xl [@media(min-width:1500px)]:leading-[50px]">
               Why Choose IGNEK For Liferay DXP 7.4 Upgrade Services?
             </h2>
-            <p className="absolute bottom-0 max-w-xl text-right text-lg [@media(min-width:1440px)]:text-base text-gray-700 md:justify-self-end">
+            <p className="absolute bottom-0 max-w-xl text-right text-lg text-gray-700 md:justify-self-end [@media(min-width:1440px)]:text-base">
               Liferay DXP 7.4 Upgrade is a pivotal step for organizations looking to enhance their digital experience.
               At IGNEK, we specialize in
             </p>
@@ -318,7 +330,7 @@ export default function LiferayUpgradePage() {
                 <div key={index} className="flex flex-col pb-8">
                   <div className="flex items-center justify-between border-b border-gray-300 last:border-b-0">
                     <h3
-                      className="mb-3 pt-4 [@media(min-width:1440px)]:text-[26px] [@media(min-width:1500px)]:text-[30px] font-semibold"
+                      className="mb-3 pt-4 font-semibold [@media(min-width:1440px)]:text-[26px] [@media(min-width:1500px)]:text-[30px]"
                       dangerouslySetInnerHTML={{ __html: item.text }}
                     />
                   </div>
@@ -333,8 +345,17 @@ export default function LiferayUpgradePage() {
 
       <CaseStudy caseStudies={caseStudies} />
 
-        <WhatMake WhatMakeData={LiferayUpgradeData}  titleText1={LiferayUpgradeTitle1} titleText2={LiferayUpgradeTitle2} subContext={LiferayUpgradeSubContent}/>
-      <TalkToExpert />
+      <WhatMake
+        WhatMakeData={LiferayUpgradeData}
+        titleText1={LiferayUpgradeTitle1}
+        titleText2={LiferayUpgradeTitle2}
+        subContext={LiferayUpgradeSubContent}
+      />
+      <TalkToExpert
+        heading="Future-Proof Your Portal with Liferay 7.4 Upgrade"
+        description="Upgrade to 7.4 for stronger security, scalability, and smarter digital experiences."
+        buttonText="Upgrade Your Liferay"
+      />
       <BlogSection />
     </main>
   )

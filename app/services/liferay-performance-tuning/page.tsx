@@ -5,7 +5,15 @@ import { BlogSection } from "components/Common"
 import CaseStudy from "components/Common/CaseStudy"
 import TalkToExpert from "components/Common/TalkToExpert"
 import WhatMake from "components/Common/WhatMake"
-import { caseStudies, featureTabs, items, LiferayPerformanceTuningData, LiferayPerformanceTuningSubContent, LiferayPerformanceTuningTitle1, LiferayPerformanceTuningTitle2 } from "data/liferay-performance-tuning"
+import {
+  caseStudies,
+  featureTabs,
+  items,
+  LiferayPerformanceTuningData,
+  LiferayPerformanceTuningSubContent,
+  LiferayPerformanceTuningTitle1,
+  LiferayPerformanceTuningTitle2,
+} from "data/liferay-performance-tuning"
 import { useState } from "react"
 
 // export const metadata: Metadata = {
@@ -137,7 +145,7 @@ export default function LiferayPerformanceTuningPage() {
       {/* Liferay Performance Tuning - Features Grid */}
       <section className="bg-[#f7f7f7] text-black">
         <div className="mx-auto w-full px-4 py-[64px] md:px-8 md:py-[64px] lg:py-[64px] [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
-          <h2 className="text-5xl justify-self-center leading-tight font-semibold sm:text-4xl md:text-5xl">
+          <h2 className="justify-self-center text-5xl leading-tight font-semibold sm:text-4xl md:text-5xl">
             Common Liferay Performance Challenges We Solve
           </h2>
           <p className="mt-4 justify-self-center text-center text-lg leading-relaxed text-[#101012] text-gray-700">
@@ -311,7 +319,11 @@ export default function LiferayPerformanceTuningPage() {
         titleText2={LiferayPerformanceTuningTitle2}
         subContext={LiferayPerformanceTuningSubContent}
       />
-      <TalkToExpert />
+      <TalkToExpert
+        heading="Liferay Optimization for Peak Performance"
+        description="Reduce bottlenecks, enhance throughput, and ensure stable portal operations."
+        buttonText="Start Performance Tuning"
+      />
       <BlogSection />
     </main>
   )

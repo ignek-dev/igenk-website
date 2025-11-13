@@ -132,10 +132,7 @@ export default function LiferayConsultationPage() {
     "E- Commerce": CommerceServices,
   }
 
-
-
   // Data for the new End-to-End Liferay Consulting Services section
-
 
   return (
     <main className="pb-16">
@@ -202,27 +199,22 @@ export default function LiferayConsultationPage() {
               {/* Stat 1 */}
               <div className="flex gap-3">
                 <p className="text-5xl font-bold text-gray-900">30%</p>
-                <p className="text-lg leading-tight text-gray-600">
-                   Project Success
-                </p>
+                <p className="text-lg leading-tight text-gray-600">Project Success</p>
               </div>
               {/* Stat 2 */}
               <div className="flex gap-3">
                 <p className="text-5xl font-bold text-gray-900">20%</p>
                 <p className="text-lg leading-tight whitespace-nowrap text-gray-600">
-                  Cost Efficiency
+                  Cost <br />
+                  Efficiency
                 </p>
               </div>
               {/* Stat 3 */}
               <div className="flex gap-3">
                 <p className="text-5xl font-bold text-gray-900">10%</p>
-                <p className="text-lg leading-tight text-gray-600">
-                  Revenue Growth
-                </p>
+                <p className="text-lg leading-tight text-gray-600">Revenue Growth</p>
               </div>
-              
             </div>
-            
 
             {/* Heading and Description Block - Positioned below with a top margin */}
             <div className="mt-24">
@@ -230,7 +222,7 @@ export default function LiferayConsultationPage() {
                 Your Digital Edge for Transformation Always Evolving with Liferay Consulting
               </h2>
               <p className="mt-6 max-w-[500px] text-[16px] leading-[26px] text-gray-600">
-               Simplifying complexity and driving transformation with expert Liferay Consulting services.
+                Simplifying complexity and driving transformation with expert Liferay Consulting services.
               </p>
             </div>
           </div>
@@ -440,7 +432,8 @@ export default function LiferayConsultationPage() {
             </div>
             <div className="flex h-full items-end justify-end">
               <p className="line-height-[30px] w-full text-right text-xl font-normal text-gray-600">
-                We help every industry grow digitally through tailored Liferay Consulting and innovative technology solutions.
+                We help every industry grow digitally through tailored Liferay Consulting and innovative technology
+                solutions.
               </p>
             </div>
           </div>
@@ -463,7 +456,7 @@ export default function LiferayConsultationPage() {
 
                 {/* Column 2: Description */}
                 <div className="flex-1 pr-8">
-                  <p className="text-rgb(0, 0, 0, 0.85) line-height-[30px] max-h-[60px] max-w-[450px] text-lg transition-colors duration-300 group-hover:text-white/80">
+                  <p className="text-rgb(0, 0, 0, 0.85) line-height-[30px] max-w-[450px] text-lg transition-colors duration-300 group-hover:text-white/80">
                     {industry.description}
                   </p>
                   <div
@@ -523,7 +516,8 @@ export default function LiferayConsultationPage() {
             </div>
             <div className="flex h-full items-end justify-end">
               <p className="w-full text-right text-xl text-white/80">
-                Through expert Liferay Consulting, we design and implement secure, flexible, and user-centric digital platforms for every business need.
+                Through expert Liferay Consulting, we design and implement secure, flexible, and user-centric digital
+                platforms for every business need.
               </p>
             </div>
           </div>
@@ -575,7 +569,8 @@ export default function LiferayConsultationPage() {
               We Offer end-to-end Liferay Consulting Services
             </h2>
             <p className="mt-4 text-lg text-gray-600">
-              Delivering complete Liferay Consulting solutions from planning to maintenance for seamless digital transformation and growth.
+              Delivering complete Liferay Consulting solutions from planning to maintenance for seamless digital
+              transformation and growth.
             </p>
           </div>
 
