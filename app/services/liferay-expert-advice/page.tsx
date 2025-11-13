@@ -121,7 +121,11 @@ export default function LiferayExpertAdvicePage() {
         titleText2={LiferayExpertAdviceTitle2}
         subContext={LiferayExpertAdviceSubContent}
       />
-      <TalkToExpert />
+      <TalkToExpert
+        heading="Get Professional Guidance for Liferay Optimization"
+        description="Schedule a Liferay consultation today and start optimizing your environment effectively."
+        buttonText="Consult Our Experts"
+      />
       <BlogSection />
 
       {/* CTA */}

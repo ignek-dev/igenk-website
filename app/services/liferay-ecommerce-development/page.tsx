@@ -219,7 +219,11 @@ export default function LiferayEcommerceDevelopmentPage() {
         titleText2={LiferayEcommerceDevelopmentTitle2}
         subContext={LiferayEcommerceDevelopmentSubContent}
       />
-      <TalkToExpert />
+      <TalkToExpert
+        heading="Transform Your Online Store with Liferay Ecommerce Development"
+        description="Optimize product management, checkout, payment options, and multichannel sales with ease."
+        buttonText="Explore E-Commerce Solutions"
+      />
       <BlogSection />
 
       {/* CTA */}
