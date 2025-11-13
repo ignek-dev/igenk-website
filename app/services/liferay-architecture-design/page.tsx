@@ -3,12 +3,17 @@ import { useEffect, useRef, useState } from "react"
 import { BlogSection } from "components/Common"
 import TalkToExpert from "components/Common/TalkToExpert"
 import WhatMake from "components/Common/WhatMake"
-import { featureTabs, keyActivityArchitecureSystem, LiferayArchitectureData, LiferayArchitectureSubContent, LiferayArchitectureTitle1, LiferayArchitectureTitle2, systemArchitecure } from "data/liferay-architecture-design"
+import {
+  featureTabs,
+  keyActivityArchitecureSystem,
+  LiferayArchitectureData,
+  LiferayArchitectureSubContent,
+  LiferayArchitectureTitle1,
+  LiferayArchitectureTitle2,
+  systemArchitecure,
+} from "data/liferay-architecture-design"
 
 export default function LiferayArchitectureDesignPage() {
-
-
-
   const containerRef = useRef<HTMLDivElement | null>(null)
   const [isDragging, setIsDragging] = useState(false)
   const [startX, setStartX] = useState(0)
@@ -71,8 +76,11 @@ export default function LiferayArchitectureDesignPage() {
                 <span className="block">Design</span>
               </h1>
             </div>
-            <p className="absolute bottom-0 [@media(min-width:1440px)]:max-w-xl [@media(min-width:1500px)]:max-w-3xl text-right [@media(min-width:1440px)]:text-base [@media(min-width:1500px)]:text-lg  text-white  md:mt-16 md:justify-self-end">
-              Liferay Architecture Design Services provides tailored solutions for designing and optimizing Liferay applications. We focus on aligning architecture with business needs for enhanced performance and scalability. Our services offer strategic guidance from concept to implementation, covering security, integrations, and user experience.
+            <p className="absolute bottom-0 text-right text-white md:mt-16 md:justify-self-end [@media(min-width:1440px)]:max-w-xl [@media(min-width:1440px)]:text-base [@media(min-width:1500px)]:max-w-3xl [@media(min-width:1500px)]:text-lg">
+              Liferay Architecture Design Services provides tailored solutions for designing and optimizing Liferay
+              applications. We focus on aligning architecture with business needs for enhanced performance and
+              scalability. Our services offer strategic guidance from concept to implementation, covering security,
+              integrations, and user experience.
             </p>
           </div>
 
@@ -91,16 +99,17 @@ export default function LiferayArchitectureDesignPage() {
       </section>
       <section>
         <div className="mx-auto w-full px-4 py-[64px] md:px-8 md:py-[64px] lg:py-[64px] [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
-          <div className="relative grid items-start gap-10 md:grid-cols-2 mb-[67px]">
-            <h2 className="text-3xl [@media(min-width:1440px)]:leading-[40px] [@media(min-width:1500px)]:leading-[50px] font-semibold [@media(min-width:1440px)]:text-3xl [@media(min-width:1500px)]:text-4xl">
+          <div className="relative mb-[67px] grid items-start gap-10 md:grid-cols-2">
+            <h2 className="text-3xl font-semibold [@media(min-width:1440px)]:text-3xl [@media(min-width:1440px)]:leading-[40px] [@media(min-width:1500px)]:text-4xl [@media(min-width:1500px)]:leading-[50px]">
               Key Deliverables of Our Liferay Architecture Design Services
             </h2>
-            <p className="absolute bottom-0 max-w-xl text-right [@media(min-width:1440px)]:text-lg [@media(min-width:1500px)]:text-xl text-black md:justify-self-end ">
-              Our Liferay Architecture Design Services deliver clear, actionable outputs that guide your technical and business teams toward successful implementation.
+            <p className="absolute bottom-0 max-w-xl text-right text-black md:justify-self-end [@media(min-width:1440px)]:text-lg [@media(min-width:1500px)]:text-xl">
+              Our Liferay Architecture Design Services deliver clear, actionable outputs that guide your technical and
+              business teams toward successful implementation.
             </p>
           </div>
           <div
-            className="flex gap-10 overflow-x-hidden cursor-grab"
+            className="flex cursor-grab gap-10 overflow-x-hidden"
             onMouseDown={handleMouseDown}
             onMouseLeave={handleMouseLeave}
             onMouseUp={handleMouseUp}
@@ -125,17 +134,19 @@ export default function LiferayArchitectureDesignPage() {
       <section className="bg-black text-white">
         <div className="mx-auto w-full px-4 py-[64px] md:px-8 md:py-[64px] lg:py-[64px] [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
           <div className="relative grid items-start gap-10 md:grid-cols-2">
-            <h2 className="text-3xl [@media(min-width:1440px)]:leading-[40px] [@media(min-width:1500px)]:leading-[50px] font-semibold [@media(min-width:1440px)]:text-3xl [@media(min-width:1500px)]:text-4xl">
+            <h2 className="text-3xl font-semibold [@media(min-width:1440px)]:text-3xl [@media(min-width:1440px)]:leading-[40px] [@media(min-width:1500px)]:text-4xl [@media(min-width:1500px)]:leading-[50px]">
               Key Activities Under Our Liferay Architecture Design Services
             </h2>
-            <p className="absolute bottom-0 max-w-xl text-right [@media(min-width:1440px)]:text-lg [@media(min-width:1500px)]:text-xl text-white md:justify-self-end ">
-              We offer design documents for Liferay Portal Architecture, covering system components, security, load balancing, backup, user management, site structure, content management, integrations, caching, and monitoring.
+            <p className="absolute bottom-0 max-w-xl text-right text-white md:justify-self-end [@media(min-width:1440px)]:text-lg [@media(min-width:1500px)]:text-xl">
+              We offer design documents for Liferay Portal Architecture, covering system components, security, load
+              balancing, backup, user management, site structure, content management, integrations, caching, and
+              monitoring.
             </p>
           </div>
           <div className="mt-[67px] grid grid-cols-12 gap-4">
             {keyActivityArchitecureSystem.map((item, index) => (
               <div key={index} className="col-span-12 flex grid grid-cols-12 items-center gap-4 p-4">
-                <div className="col-span-3 mb-2 flex items-center border-none pr-[100px] [@media(min-width:1440px)]:text-lg [@media(min-width:1500px)]:text-xl [@media(min-width:1800px)]:text-2xl font-semibold">
+                <div className="col-span-3 mb-2 flex items-center border-none pr-[100px] font-semibold [@media(min-width:1440px)]:text-lg [@media(min-width:1500px)]:text-xl [@media(min-width:1800px)]:text-2xl">
                   {item.text}
                 </div>
                 <div className="col-span-9 flex h-[104px] items-center rounded-[8px] border border-[#1F2937] p-4 [@media(min-width:1440px)]:text-base [@media(min-width:1500px)]:text-lg">
@@ -147,9 +158,18 @@ export default function LiferayArchitectureDesignPage() {
         </div>
       </section>
 
-      <WhatMake WhatMakeData={LiferayArchitectureData} titleText1={LiferayArchitectureTitle1} titleText2={LiferayArchitectureTitle2} subContext={LiferayArchitectureSubContent}/>
+      <WhatMake
+        WhatMakeData={LiferayArchitectureData}
+        titleText1={LiferayArchitectureTitle1}
+        titleText2={LiferayArchitectureTitle2}
+        subContext={LiferayArchitectureSubContent}
+      />
       {/* <HeroCTASection /> */}
-      <TalkToExpert />
+      <TalkToExpert
+        heading="Design Scalable Solutions with Experienced Liferay Architecture Experts"
+        description="Craft efficient system designs that enhance portal performance and stability."
+        buttonText="Explore Architecture Solutions"
+      />
       <BlogSection />
     </main>
   )

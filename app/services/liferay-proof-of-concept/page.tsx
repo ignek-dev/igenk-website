@@ -2,12 +2,17 @@ import { BlogSection } from "components/Common"
 import CaseStudy from "components/Common/CaseStudy"
 import TalkToExpert from "components/Common/TalkToExpert"
 import WhatMake from "components/Common/WhatMake"
-import { caseStudies, featureTabs, liferayPOCServices, LiferayProofOfConceptData, LiferayProofOfConceptSubContent, LiferayProofOfConceptTitle1, LiferayProofOfConceptTitle2 } from "data/liferay-proof-of-concept"
+import {
+  caseStudies,
+  featureTabs,
+  liferayPOCServices,
+  LiferayProofOfConceptData,
+  LiferayProofOfConceptSubContent,
+  LiferayProofOfConceptTitle1,
+  LiferayProofOfConceptTitle2,
+} from "data/liferay-proof-of-concept"
 
 export default function LiferayProofOfConceptPage() {
-
-
-
   return (
     <main className="pb-16">
       {/* Hero */}
@@ -26,7 +31,9 @@ export default function LiferayProofOfConceptPage() {
               </h1>
             </div>
             <p className="absolute bottom-0 max-w-xl text-right text-lg text-white sm:text-lg md:mt-16 md:justify-self-end">
-              Liferay Proof of Concept (PoC) Services serve as a trial to assess if Liferay technology is suitable for a specific project or solution. We demonstrate how Liferay’s portal features can be customized to meet the client's unique requirements and validate before full implementation.
+              Liferay Proof of Concept (PoC) Services serve as a trial to assess if Liferay technology is suitable for a
+              specific project or solution. We demonstrate how Liferay’s portal features can be customized to meet the
+              client's unique requirements and validate before full implementation.
             </p>
           </div>
 
@@ -35,7 +42,7 @@ export default function LiferayProofOfConceptPage() {
             {featureTabs.map((label, index) => (
               <span
                 key={index}
-                className="inline-flex items-center rounded-full border border-white/30 px-7 [@media(min-width:1440px)]:px-4 [@media(min-width:1800px)]:px-7 py-5 [@media(min-width:1440px)]:text-sm [@media(min-width:1500px)]:text-base [@media(min-width:1800px)]:text-lg text-white transition-colors hover:border-white hover:text-white"
+                className="inline-flex items-center rounded-full border border-white/30 px-7 py-5 text-white transition-colors hover:border-white hover:text-white [@media(min-width:1440px)]:px-4 [@media(min-width:1440px)]:text-sm [@media(min-width:1500px)]:text-base [@media(min-width:1800px)]:px-7 [@media(min-width:1800px)]:text-lg"
               >
                 {label}
               </span>
@@ -57,8 +64,8 @@ export default function LiferayProofOfConceptPage() {
           <div className="pt-8">
             <div className="grid grid-cols-1 gap-[60px] sm:grid-cols-2 md:grid-cols-3">
               {liferayPOCServices.map((item, index) => (
-                <div key={index} className="flex min-h-[80px]  rounded-full border border-[#E5E7EB] bg-white">
-                  <span className="flex h-full [@media(min-width:1440px)]:w-[38%] [@media(min-width:1800px)]:w-[25%]  items-center justify-center rounded-full bg-black">
+                <div key={index} className="flex min-h-[80px] rounded-full border border-[#E5E7EB] bg-white">
+                  <span className="flex h-full items-center justify-center rounded-full bg-black [@media(min-width:1440px)]:w-[38%] [@media(min-width:1800px)]:w-[25%]">
                     <svg
                       width="40"
                       height="40"
@@ -76,7 +83,9 @@ export default function LiferayProofOfConceptPage() {
                       />
                     </svg>
                   </span>
-                  <p className="w-full  p-4 pr-4 text-left text-lg [@media(min-width:1440px)]:text-sm [@media(min-width:1500px)]:text-sm [@media(min-width:1800px)]:text-base font-medium text-black whitespace-wrap">{item}</p>
+                  <p className="whitespace-wrap w-full p-4 pr-4 text-left text-lg font-medium text-black [@media(min-width:1440px)]:text-sm [@media(min-width:1500px)]:text-sm [@media(min-width:1800px)]:text-base">
+                    {item}
+                  </p>
                 </div>
               ))}
             </div>
@@ -84,8 +93,18 @@ export default function LiferayProofOfConceptPage() {
         </div>
       </section>
       <CaseStudy caseStudies={caseStudies} />
-       <WhatMake WhatMakeData={LiferayProofOfConceptData} titleText1={LiferayProofOfConceptTitle1} titleText2={LiferayProofOfConceptTitle2} subContext={LiferayProofOfConceptSubContent}/>
-      <TalkToExpert />
+      <WhatMake
+        WhatMakeData={LiferayProofOfConceptData}
+        titleText1={LiferayProofOfConceptTitle1}
+        titleText2={LiferayProofOfConceptTitle2}
+        subContext={LiferayProofOfConceptSubContent}
+      />
+      <TalkToExpert
+        heading="Validate ideas swiftly with Liferay Proof of Concept."
+        description="Quickly evaluate Liferay functionality to confirm ideas before full-scale implementation."
+        buttonText="Request PoC Consultation"
+      />
+
       <BlogSection />
 
       {/* CTA */}

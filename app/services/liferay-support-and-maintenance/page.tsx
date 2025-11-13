@@ -159,7 +159,11 @@ export default function LiferaySupportMaintenancePage() {
         titleText2={LiferaySupportMaintenanceTitle2}
         subContext={LiferaySupportMaintenanceSubContent}
       />
-      <TalkToExpert />
+      <TalkToExpert
+        heading="24×7 Liferay Support and Maintenance Services"
+        description="Proactive monitoring, updates, and troubleshooting for uninterrupted portal performance."
+        buttonText="Get Support and Maintanance for Liferay Services"
+      />
       <BlogSection />
 
       {/* CTA */}

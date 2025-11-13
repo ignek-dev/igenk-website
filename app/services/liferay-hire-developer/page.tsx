@@ -224,7 +224,7 @@ const LiferayHireTitle1 = "Why Hire Liferay Developer"
             </p>
           </div>
           {/* Services Grid */}
-          <div className="mt-16 grid auto-rows-[minmax(260px,auto)] grid-cols-1 gap-x-8 gap-y-12 md:grid-cols-2 [@media(min-width:1440px)]:gap-x-10 [@media(min-width:1536px)]:gap-x-12 [@media(min-width:1800px)]:gap-x-14">
+          <div className="mt-16 grid auto-rows-[minmax(260px,auto)] grid-cols-1 md:grid-cols-2">
             {teamOffersServices.map((service, index) => (
               <div key={index} className="flex h-full flex-col justify-between p-9">
                 {/* Inner Flex for Icon and Text */}

@@ -165,7 +165,11 @@ export default function LiferayMigrationPage() {
 
       {/* Case Studies (reuse BlogSection) */}
       <WhatMake WhatMakeData={ LiferayMigrationData} titleText1={ LiferayMigrationTitle1} titleText2={ LiferayMigrationTitle2} subContext={ LiferayMigrationSubContent}/>
-      <TalkToExpert />
+      <TalkToExpert
+        heading="Hassle-Free Liferay Portal Migration"
+        description="Ensure smooth upgrades with expert guidance and proven migration strategies."
+        buttonText="Start Your Migration"
+      />
       <BlogSection />
 
       {/* CTA */}

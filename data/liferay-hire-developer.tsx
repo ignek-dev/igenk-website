@@ -12,31 +12,31 @@ export const whyHireFromIgnek = [
         "Our developers are certified in Liferay, meaning they’ve undergone rigorous training and testing to prove their proficiency. You can trust their knowledge and abilities.",
     },
     {
-      icon: "/images/icon/certified-developer.png", // Replace with the correct icon path
+      icon: "/images/icon/Transparent-Communication.svg", // Replace with the correct icon path
       title: ["Transparent", "Communication"],
       description:
         "We believe in transparent communication throughout the development process. You’ll always be kept in the loop, with regular updates and open dialogue to address any concerns or questions.",
     },
     {
-      icon: "/images/icon/certified-developer.png", // Replace with the correct icon path
+      icon: "/images/icon/Flexible-Hiring.svg", // Replace with the correct icon path
       title: ["Flexible", "Hiring Models"],
       description:
         "Choose from our flexible hiring models! Tailored to suit your needs, whether it’s hourly, part-time, or full-time. Get the flexibility you need to scale your team as your project demands.",
     },
     {
-      icon: "/images/icon/certified-developer.png", // Replace with the correct icon path
+      icon: "/images/icon/Fully-Signed-NDA.svg", // Replace with the correct icon path
       title: ["Fully", "Signed NDA"],
       description:
         "Our fully signed NDA ensures complete confidentiality. Protect your sensitive information with our legally binding agreements. Peace of mind guaranteed.",
     },
     {
-      icon: "/images/icon/certified-developer.png", // Replace with the correct icon path
+      icon: "/images/icon/Cost-Effective.svg", // Replace with the correct icon path
       title: ["Cost", "Effective"],
       description:
         "Hiring a dedicated Liferay Developer from IGNEK is cost-effective. You get access to top-tier talent without the overhead costs associated with in-house hiring.",
     },
     {
-      icon: "/images/icon/certified-developer.png", // Replace with the correct icon path
+      icon: "/images/icon/Easy-Exit-Policy.svg", // Replace with the correct icon path
       title: ["Easy", "Exit Policy"],
       description:
         "Our Easy Exit Policy ensures a hassle-free process when ending services. We prioritize your satisfaction, making transitions smooth and transparent.",
@@ -52,13 +52,13 @@ export const easySteps = [
     },
     {
       step: "02",
-      icon: "/images/icon/search-circle.svg",
+      icon: "/images/icon/Screening-Select.svg",
       title: "Screening & Select",
       description: "We'll carefully screen our pool of developers to find the best fit for your project.",
     },
     {
       step: "03",
-      icon: "/images/icon/search-circle.svg",
+      icon: "/images/icon/Onboard-Developer.svg",
       title: "Onboard Developer",
       description: "Once you've chosen your developer, we'll handle the onboarding process smoothly.",
     },
@@ -66,53 +66,53 @@ export const easySteps = [
 
 export const teamOffersServices = [
     {
-      icon: "/images/icon/services.png", // Replace with your icon path
+      icon: "/images/icon/Development-and-Customization .svg", // Replace with your icon path
       title: "Development and Customization",
-      description: "Explore our Liferay Development & Customization services to learn more about how we can help you succeed. Whether you're a small startup, SME, or large enterprise, we have the expertise and resources to support your requirements and goals.",
+      description: "Explore our Liferay Development & Customization services to enhance portal functionality and user experience.",
     },
     {
-      icon: "/images/icon/services.png", // Replace with your icon path
+      icon: "/images/icon/Theme-Development.svg", // Replace with your icon path
       title: "Theme Development",
-      description: "Discover our Liferay Theme Development services! We create custom themes for your Liferay portal, enhancing its look and feel. From design to implementation, we ensure your portal stands out. Elevate your user experience with our tailored themes today!",
+      description: "Create custom Liferay themes to improve look, feel, and user engagement effectively.",
     },
     {
-      icon: "/images/icon/services.png", // Replace with your icon path
+      icon: "/images/icon/Expert-Advice.svg", // Replace with your icon path
       title: "Expert Advice",
-      description: "Explore our Liferay Upgradation services! We make upgrading your Liferay portal easy. From planning to execution, we ensure a smooth transition to the latest version. Stay ahead with enhanced features and security. Upgrade hassle-free with us!",
+      description: "Get expert guidance for smooth Liferay upgrades, optimized performance, and feature implementation.",
     },
     {
-      icon: "/images/icon/services.png", // Replace with your icon path
+      icon: "/images/icon/Proof-Of-Concept.svg", // Replace with your icon path
       title: "Proof Of Concept",
-      description: "Discover our Liferay Proof of Concept service! We created a prototype to demonstrate how Liferay can address your specific business needs. Test functionalities and visualize your solution before full implementation. Let's turn your ideas into reality!",
+      description: "Validate your ideas with a functional Liferay prototype before full-scale implementation.",
     },
     {
-      icon: "/images/icon/services.png", // Replace with your icon path
+      icon: "/images/icon/Ecommerce-Development.svg", // Replace with your icon path
       title: "Ecommerce Development",
-      description: "Liferay Ecommerce allows organizations to effortlessly create and manage digital commerce experiences. It combines powerful content management with extensive e-commerce features for seamless, engaging customer interactions.",
+      description: "Build engaging Liferay e-commerce experiences with seamless content management and commerce integration.",
     },
     {
-      icon: "/images/icon/services.png", // Replace with your icon path
+      icon: "/images/icon/Migration.svg", // Replace with your icon path
       title: "Migration",
-      description: "Check out our Liferay Migration service! We smoothly transition your portal to newer versions or different platforms. Benefit from improved functionality and security. Let's ensure your portal stays up-to-date and efficient together!",
+      description: "Seamlessly migrate your portal to new versions or platforms with improved functionality.",
     },
     {
-      icon: "/images/icon/services.png", // Replace with your icon path
+      icon: "/images/icon/Support-And-Maintenance.svg", // Replace with your icon path
       title: "Support And Maintenance",
-      description: "Explore our Liferay Support & Maintenance service! We provide ongoing assistance to keep your Liferay portal running smoothly. From troubleshooting to updates, our expert team ensures your portal stays secure and up-to-date. Focus on your business while we handle the technicalities!",
+      description: "Keep your Liferay portal running smoothly with proactive support, updates, and troubleshooting.",
     },
     {
-      icon: "/images/icon/services.png", // Replace with your icon path
+      icon: "/images/icon/Performance-Tuning.svg", // Replace with your icon path
       title: "Performance Tuning",
-      description: "Explore our Liferay Performance Tuning service! We optimize your portal for faster loading times and a smoother user experience. Enhance efficiency and scalability to meet growing demands. Boost your Liferay site's performance today!",
+      description: "Optimize portal speed, scalability, and efficiency for a superior user experience.",
     },
     {
-      icon: "/images/icon/services.png", // Replace with your icon path
+      icon: "/images/icon/Upgradation.svg", // Replace with your icon path
       title: "Upgradation",
-      description: "Explore our Liferay Upgradation services! We make upgrading your Liferay portal easy. From planning to execution, we ensure a smooth transition to the latest version. Stay ahead with enhanced features and security. Upgrade hassle-free with us!",
+      description: "Upgrade your Liferay portal effortlessly, with improved features, security, and performance.",
     },
     {
-      icon: "/images/icon/services.png", // Replace with your icon path
+      icon: "/images/icon/Liferay-Architecture.svg", // Replace with your icon path
       title: "Liferay Architecture",
-      description: "Discover our Liferay Architecture Design service! We create tailored architectural plans for your portal, ensuring scalability, security, and efficiency. From initial concept to implementation, we'll build a solid foundation for your Liferay platform. Let's design your success together!",
+      description: "Design scalable, secure Liferay architectures that align with business goals and requirements.",
     },
   ]

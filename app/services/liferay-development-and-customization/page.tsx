@@ -188,7 +188,11 @@ export default function LiferayDevelopmentAndCustomizationPage() {
         </div>
       </section>
         <WhatMake WhatMakeData={LiferayDevelopmentAndCustomizationData} titleText1={LiferayDevelopmentAndCustomizationTitle1} titleText2={LiferayDevelopmentAndCustomizationTitle2} subContext={LiferayDevelopmentAndCustomizationSubContent}/>
-      <TalkToExpert />
+      <TalkToExpert
+        heading="Expert Liferay Development and Customization Services"
+        description="Transform your portal efficiently with our professional Liferay development and customization expertise."
+        buttonText="Start Your Customization"
+      />
       <BlogSection />
 
       {/* CTA */}
