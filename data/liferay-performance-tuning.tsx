@@ -1,35 +1,31 @@
 export const items = [
   {
-    title: "Enhanced User Experience",
-    desc: "Delivering a faster, more responsive Liferay Portal through optimized resource allocation for efficient CPU & disk use.",
+    title: "JVM Memory Tuning",
+    desc: "Optimize JVM settings for enhanced performance with our Liferay Performance Tuning Services, improving efficiency.",
   },
   {
-    title: "Scalability",
-    desc: "Prepare your Liferay environment for growth with scalable configurations, clustering, and distributed deploy.",
+    title: "Code Optimization",
+    desc: "Improve application logic and reduce processing time using Liferay Portal Performance optimization services.",
   },
   {
-    title: "Load Testing Excellence",
-    desc: "Conduct load testing simulations to identify and address performance bottlenecks, resulting in a robust, scalable portal.",
+    title: "Liferay theme optimization",
+    desc: "Enhance UI responsiveness and speed with Liferay DXP Performance Tuning techniques for better UX.",
   },
   {
-    title: "Database Performance",
-    desc: "Optimize database access with tuned configurations, indexing, and query optimizations for enhanced performance.",
+    title: "Database Thread Pool & Connection Pool Optimization",
+    desc: "Fine-tune database connections to boost performance using our Liferay Performance optimization services.",
   },
   {
-    title: "Tailored Portal Configuration",
-    desc: "Customize Liferay Portal settings to fit your organization’s requirements, ensuring the platform meets your business needs.",
+    title: "Portal Tuning by Disabling Unnecessary Filters & enabling JS & CSS Caching",
+    desc: "Increase portal speed with caching and filter optimizations via Liferay Portal Performance optimization services.",
   },
   {
-    title: "Web and Application Server Optimization",
-    desc: "Fine‑tune web and application server settings, including thread pools and connections, to maximize performance.",
+    title: "Web server configuration improves performance",
+    desc: "Maximize server efficiency and response times using Liferay DXP Performance Tuning best practices.",
   },
   {
-    title: "Reliability and Fault Tolerance",
-    desc: "Increase the reliability of your portal with fine‑tuned settings for clustering, failover mechanisms, and session replication.",
-  },
-  {
-    title: "Java Virtual Machine Fine‑Tuning",
-    desc: "Optimize JVM settings, including heap size and garbage collection, for improved Java application performance.",
+    title: "Load Testing and Tuning",
+    desc: "Simulate peak traffic and optimize system resources through Liferay Performance Tuning Services.",
   },
 ]
 

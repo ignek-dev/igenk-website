@@ -1,3 +1,4 @@
+"use client"
 import { Metadata } from "next"
 import Image from "next/image"
 import { BlogSection } from "components/Common"
@@ -13,14 +14,98 @@ import {
   LiferayPerformanceTuningTitle1,
   LiferayPerformanceTuningTitle2,
 } from "data/liferay-performance-tuning"
+import { useState } from "react"
 
-export const metadata: Metadata = {
-  title: "Liferay Performance Tuning | IGNEK",
-  description:
-    "Optimize your Liferay platform with IGNEK's performance tuning services: JVM tuning, caching, DB optimization, and more.",
-}
+// export const metadata: Metadata = {
+//   title: "Liferay Performance Tuning | IGNEK",
+//   description:
+//     "Optimize your Liferay platform with IGNEK's performance tuning services: JVM tuning, caching, DB optimization, and more.",
+// }
+
+const item = [
+  {
+    title: "JVM Memory Tuning",
+    desc: "Optimize heap memory, adjust GC threads, and tune memory usage for peak JVM performance.",
+    details: [
+      "Optimize Heap Memory → Set Initial Heap Size, Set Maximum Heap Size",
+      "Optimize Garbage Collection → Choose Garbage Collector Selection, Adjust GC Threads Numbers",
+      "Set Metaspace",
+      "Set Thread Stack Size",
+      "Generate Heap Dump on OutOfMemory Error",
+      "Use JVM Memory Tuning tools like JVisualVM or JConsole",
+    ],
+  },
+  {
+    title: "Code Optimization",
+    desc: "Improve code efficiency and reduce CPU overhead for faster execution.",
+    details: [
+      "Search Indexing Optimization",
+      "Improve code reviews and efficiency with code splitting.",
+      "Minimize Database Queries",
+      "Data Lazy Loading",
+      "Use Efficient Algorithms and Data Structures",
+      "Optimize Loops and Iterations",
+      "Review External Dependencies",
+      "Avoid Heavy Transactions and Excessive Logging"
+    ],
+  },
+  {
+    title: "Liferay theme optimization",
+    desc: "Enhance UI responsiveness and reduce CSS/JS load times.",
+    details: [
+      "Minification and Compression of CSS and Javascript files",
+      "Optimize and compress images",
+      "Lazy loading of the resources",
+      "CSS Sprites to combine multiple images into a single image file",
+      "Remove Unused CSS and JavaScript",
+      "CDN Integration",
+      "Keep External Dependencies Minimal"
+    ],
+  },
+  {
+    title: "Database Thread Pool & Connection Pool Optimization",
+    desc: "Tune database connection pools to reduce latency.",
+    details: [
+      "Fine-tune Thread and Connection Pools",
+      "Monitor and adjust connection pool settings based on database usage",
+      "Implement database connection pooling strategies",
+      "Regularly review and optimize database queries and transactions to reduce connection pool contention and improve overall performance.",
+    ],
+  },
+  {
+    title: "Portal Tuning by Disabling Unnecessary Filters & enabling JS & CSS Caching",
+    desc: "Improve overall page rendering time by optimizing filters and caching.",
+    details: [
+      "Disable Unnecessary Filters",
+      "Enable JavaScript & CSS Caching",
+      "Optimize Web Server Configuration"
+    ],
+  },
+  {
+    title: "Web server configuration improves performance",
+    desc: "Fine-tune web server parameters for higher throughput.",
+    details: [
+      "Utilize caching mechanisms such as content caching, reverse proxy caching, and HTTP caching headers to reduce server load and improve response times.",
+      "Implement load balancing and clustering techniques to distribute incoming traffic across multiple servers for improved scalability and fault tolerance.",
+      "Utilize content delivery networks (CDNs) to cache and deliver static assets closer to end-users, reducing latency and improving overall website performance."
+    ],
+  },
+  {
+    title: "Load Testing and Tuning",
+    desc: "Simulate heavy traffic to find and fix performance bottlenecks.",
+    details: [
+      "Utilize tools like Apache JMeter or Gatling for load testing to simulate real-world scenarios and identify bottlenecks",
+      "Analyze results to optimize system configurations such as thread pools, caching, and scalability",
+      "Implement caching strategies and horizontal scaling to handle peak loads effectively.",
+      "Monitor key performance metrics and iterate on tuning efforts for continuous optimization.",
+    ],
+  },
+];
+
+
 
 export default function LiferayPerformanceTuningPage() {
+  const [activeIndex, setActiveIndex] = useState(0);
   return (
     <main className="pb-16">
       <section className="relative bg-black text-white">
@@ -167,70 +252,40 @@ export default function LiferayPerformanceTuningPage() {
             </p>
           </div>
 
-          <div className="mt-10 grid grid-cols-1 gap-12 lg:grid-cols-2">
-            {/* Left stack */}
-            <div className="pr-12">
-              <div className="space-y-8">
-                {[
-                  {
-                    title: "JVM Memory Tuning",
-                    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla.",
-                  },
-                  {
-                    title: "Code Optimization",
-                    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.",
-                  },
-                  {
-                    title: "Liferay theme optimization",
-                    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.",
-                  },
-                  {
-                    title: "Database Thread Pool & Connection Pool Optimization",
-                    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.",
-                  },
-                  {
-                    title: "Portal Tuning by Disabling Unnecessary Filters & enabling JS & CSS Caching",
-                    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.",
-                  },
-                  {
-                    title: "Web server configuration improves performance",
-                    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.",
-                  },
-                  {
-                    title: "Load Testing and Tuning",
-                    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.",
-                  },
-                ].map((item) => (
-                  <div key={item.title} className="group pb-[40px] transition-colors duration-300 hover:border-black">
-                    <div className="relative mt-6 flex h-[108px] flex-col justify-center pl-6">
-                      <span className="absolute top-0 left-0 h-full w-1 bg-gray-300 transition-colors duration-300 group-hover:bg-black" />
-                      <div>
-                        <h3 className="font-medium [@media(min-width:1400px)]:text-[24px] [@media(min-width:1800px)]:text-[30px]">
-                          {item.title}
-                        </h3>
-                        <p className="mt-2 text-base text-gray-700">{item.desc}</p>
-                      </div>
+          <section className="pt-13">
+            <div className=" grid  grid-cols-1 gap-12  md:grid-cols-2 md:gap-16">
+              {/* Left column */}
+              <div className="pr-12">
+                <div className="space-y-6">
+                  {items.map((item, index) => (
+                    <div
+                      key={item.title}
+                      className={`group cursor-pointer border-l-4 pl-6 transition-all duration-300 ${activeIndex === index
+                        ? "border-black text-black"
+                        : "border-gray-300 text-gray-600 hover:border-black hover:text-black"
+                        } mb-10`}
+                      onMouseEnter={() => setActiveIndex(index)}
+                    >
+                      <h3 className="font-semibold text-lg md:text-2xl">
+                        {item.title}
+                      </h3>
+                      <p className="mt-2 text-sm md:text-base text-gray-500">
+                        {item.desc}
+                      </p>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
-            </div>
 
-            {/* Right card */}
-            <div>
-              <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
-                <h3 className="text-3xl font-semibold md:text-3xl">JVM Memory Tuning</h3>
-                <ul className="mt-4 space-y-4">
-                  {[
-                    "Optimize Heap Memory → Set Initial Heap Size, Set Maximum Heap Size",
-                    "Optimize Garbage Collection → Choose Garbage Collector Selection, Adjust GC Threads Numbers",
-                    "Set Metaspace",
-                    "Set Thread Stack Size",
-                    "Generate Heap Dump on OutOfMemory Error",
-                    "Use JVM Memory Tuning tools like JVisualVM or JConsole",
-                  ].map((text) => (
+              {/* Right column */}
+              <div className="rounded-xl border border-gray-200 bg-white p-8 shadow-sm transition-all duration-500 h-max w-full">
+                <h3 className="text-2xl font-semibold md:text-3xl">
+                  {item[activeIndex]?.title}
+                </h3>
+                <ul className="mt-6 space-y-4">
+                  {item[activeIndex]?.details.map((text) => (
                     <li key={text} className="flex items-center gap-3">
-                      <span className="flex aspect-square w-4 shrink-0 items-center justify-center rounded-full bg-black md:w-6">
+                      <span className="flex aspect-square w-5 shrink-0 items-center justify-center rounded-full bg-black md:w-6">
                         <svg
                           viewBox="0 0 12 12"
                           className="h-[50%] w-[50%] text-white"
@@ -246,13 +301,15 @@ export default function LiferayPerformanceTuningPage() {
                           />
                         </svg>
                       </span>
-                      <span className="text-lg leading-snug text-gray-800">{text}</span>
+                      <span className="text-base leading-snug text-gray-800">
+                        {text}
+                      </span>
                     </li>
                   ))}
                 </ul>
               </div>
             </div>
-          </div>
+          </section>
         </div>
       </section>
       <CaseStudy caseStudies={caseStudies} />

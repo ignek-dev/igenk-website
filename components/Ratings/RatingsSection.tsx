@@ -20,7 +20,7 @@ const RatingsSection: React.FC = () => {
 
   return (
     <section ref={sectionRef} className="bg-white">
-      <div className="mx-auto w-full overflow-x-hidden px-4 py-12 md:px-6 md:py-13.5 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
+      <div className="mx-auto w-full overflow-x-hidden px-4 py-12 md:px-6 md:py-12 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
         <div className="flex flex-col items-center justify-between divide-y divide-gray-200 md:h-[192px] md:flex-row md:divide-x md:divide-y-0">
           {ratingsData.map((rating, index) => (
             <RatingItem
