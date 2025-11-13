@@ -100,26 +100,26 @@ export default function BlogSection() {
             Explore What's Shaping <br /> Digital Today
           </h2>
           <p
-            className={`max-w-[500px] justify-self-center text-xl leading-relaxed text-[#101012] text-gray-700 ${isInView ? "animate-when-visible animate-slide-right animation-delay-200" : "opacity-0"
+            className={`max-w-[100%] justify-self-center text-right text-xl leading-relaxed text-[#101012] text-gray-700 ${isInView ? "animate-when-visible animate-slide-right animation-delay-200" : "opacity-0"
               }`}
           >
             Explore our blogs for expert insights, trends, and innovations driving digital transformation and shaping the future.
           </p>
         </div>
 
-        <div className="mt-16 grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16 xl:grid-cols-[1fr_0.8fr] xl:gap-20">
+        <div className="mt-16 grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16  xl:gap-20">
           <div
             className={`flex flex-col space-y-2 cursor-pointer ${isInView ? "animate-when-visible animate-slide-left animation-delay-200" : "opacity-0"
               }`}
             onClick={() => router.push(`/blog/${blogs[0]?.id}`)}
           >
-            <div className="overflow-hidden rounded-xl bg-gray-100">
+            <div className="overflow-hidden rounded-xl bg-white">
               <Image
                 src={blogs[0]?.image || "/images/blog.svg"}
                 alt={main?.title || "Blog Post"}
                 width={856}
                 height={459}
-                className="h-auto w-full object-cover"
+                className="h-auto object-cover max-h-[459px] max-w-[856px]"
               />
             </div>
             <h3 className="line-height-[44px] pt-2 text-4xl font-semibold text-[#101012] md:text-3xl [@media(min-width:1440px)]:pt-15 [@media(min-width:1520px)]:pt-17 [@media(min-width:1800px)]:pt-2">

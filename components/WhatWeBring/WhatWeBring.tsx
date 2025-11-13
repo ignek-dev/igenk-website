@@ -57,13 +57,13 @@ const WhatWeBring: React.FC = () => {
     <section className="sticky top-0 z-10 flex h-screen items-center overflow-hidden bg-black py-16 text-white">
       <div className="mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
         {/* Header content (your styling is preserved) */}
-        <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between [@media(min-width:1280px)]:mt-24 [@media(min-width:1800px)]:mt-0">
-          <h2 className="line-height-[60px] text-5xl leading-tight font-bold [@media(min-width:1440px)]:text-4xl [@media(min-width:1520px)]:text-5xl [@media(min-width:1520px)]:pt-8">
+        <div className="flex flex-col align-center gap-8 lg:flex-row lg:items-start lg:justify-between [@media(min-width:1280px)]:mt-24 [@media(min-width:1800px)]:mt-0">
+          <h2 className="line-height-[60px] text-6xl leading-tight font-bold [@media(min-width:1440px)]:text-4xl [@media(min-width:1520px)]:text-5xl [@media(min-width:1520px)]:pt-0">
             What We Bring To Your
             <br />
             Digital Experience
           </h2>
-          <p className="line-height-[30px] max-w-xl pt-8.5 text-right text-lg text-gray-300">
+          <p className="line-height-[30px] max-w-xl pt-0 text-right text-lg text-gray-300">
             We empower businesses to deliver exceptional digital experiences through innovative strategies, design, and technology built on the power of Liferay DXP.
           </p>
         </div>
