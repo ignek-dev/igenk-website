@@ -19,7 +19,7 @@ import "prismjs/plugins/line-numbers/prism-line-numbers";
 import BlogSidebar from "components/BlogSidebar/BlogSidebar";
 import ExploreServices from "components/ExploreServices/ExploreServices";
 
-const POST_API = "https://www.ignek.com/wp-json/wp/v2/posts/40578?_embed";
+const POST_API = "https://insights.ignek.com/wp-json/wp/v2/posts/40578?_embed";
 
 // 🧠 Helper: removes indentation
 function unindentCode(codeString: string): string {

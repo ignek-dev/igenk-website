@@ -1,72 +1,9 @@
 "use client"
 import Image from "next/image"
+import { useCallback, useEffect, useState } from "react"
 import BlogCard, { BlogData } from "components/Blogmain/BlogCards"
 import TechCard from "components/Blogmain/TechCards"
-import { Pagination } from "components/marketplace/Pagination"
-import { useCallback, useEffect, useState } from "react"
-
-const blogs: BlogData[] = [
-  {
-    id: 1,
-    title: "Build your own Chrome Extension with React",
-    author: "Bhavin Panchani",
-    date: "Jul 7, 2025",
-    readTime: "6 mins read",
-    category: "Liferay Blog",
-    image: "/images/blogs/blogImage.png",
-    authPic: "/images/blogs/blogAuthor.png",
-  },
-  {
-    id: 1,
-    title: "Build your own Chrome Extension with React",
-    author: "Bhavin Panchani",
-    date: "Jul 7, 2025",
-    readTime: "6 mins read",
-    category: "Liferay Blog",
-    image: "/images/blogs/blogImage.png",
-    authPic: "/images/blogs/blogAuthor.png",
-  },
-  {
-    id: 1,
-    title: "Build your own Chrome Extension with React",
-    author: "Bhavin Panchani",
-    date: "Jul 7, 2025",
-    readTime: "6 mins read",
-    category: "Liferay Blog",
-    image: "/images/blogs/blogImage.png",
-    authPic: "/images/blogs/blogAuthor.png",
-  },
-  {
-    id: 1,
-    title: "Build your own Chrome Extension with React",
-    author: "Bhavin Panchani",
-    date: "Jul 7, 2025",
-    readTime: "6 mins read",
-    category: "Liferay Blog",
-    image: "/images/blogs/blogImage.png",
-    authPic: "/images/blogs/blogAuthor.png",
-  },
-  {
-    id: 1,
-    title: "Build your own Chrome Extension with React",
-    author: "Bhavin Panchani",
-    date: "Jul 7, 2025",
-    readTime: "6 mins read",
-    category: "Liferay Blog",
-    image: "/images/blogs/blogImage.png",
-    authPic: "/images/blogs/blogAuthor.png",
-  },
-  {
-    id: 2,
-    title: "Learn how to optimize React apps",
-    author: "Bhavin Panchani",
-    date: "Jul 10, 2025",
-    readTime: "5 mins read",
-    category: "Performance",
-    image: "/images/blogs/blogImage.png",
-    authPic: "/images/blogs/blogAuthor.png",
-  },
-]
+import { WPPost } from "components/BlogSidebar/BlogSidebar"
 
 const blogsCardData = [
   {
@@ -81,59 +18,62 @@ const blogsCardData = [
 ]
 const cardData = [
   {
+    id: 15,
     icon: "/images/blogs/liferayIcon.png",
     title: "Liferay",
     description: "Explore strategies, leadership skills, and growth tactics for",
   },
   {
+    id: 16,
     icon: "/images/blogs/reactIcon.png",
     title: "React",
     description: "Explore strategies, leadership skills, and growth tactics for",
   },
   {
+    id: 21,
     icon: "/images/blogs/liferayIcon.png",
     title: "Spring Boot",
     description: "Explore strategies, leadership skills, and growth tactics for",
   },
-  {
-    icon: "/images/blogs/liferayIcon.png",
-    title: "Node Js",
-    description: "Explore strategies, leadership skills, and growth tactics for",
-  },
+  // {
+  //   icon: "/images/blogs/liferayIcon.png",
+  //   title: "Node Js",
+  //   description: "Explore strategies, leadership skills, and growth tactics for",
+  // },
 ]
-interface WPBlogPost {
-  id: number;
-  title: { rendered: string };
-  excerpt: { rendered: string };
-  date: string;
-  _embedded?: {
-    author?: { name: string }[];
-    "wp:featuredmedia"?: { source_url: string }[];
-  };
-}
+// interface WPBlogPost {
+//   id: number;
+//   title: { rendered: string };
+//   excerpt: { rendered: string };
+//   date: string;
+//   _embedded?: {
+//     author?: { name: string }[];
+//     "wp:featuredmedia"?: { source_url: string }[];
+//   };
+// }
 
-const PER_PAGE = 6;
-const API_URL = "https://www.ignek.com/wp-json/wp/v2/posts";
+const PER_PAGE = 9;
+const API_URL = "https://insights.ignek.com/wp-json/wp/v2/posts";
 
 export default function Blogs() {
   const [blogs, setBlogs] = useState<BlogData[]>([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+  // const [error, setError] = useState<string | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
-  const [selectedCategory, setSelectedCategory] = useState<string>("");
+  const [selectedCategory, setSelectedCategory] = useState<number | null>(15);
+
   // --- Fetch posts dynamically from WordPress API ---
   const fetchBlogs = useCallback(async () => {
     try {
       setLoading(true);
-      setError(null);
+      // setError(null);
       window.scrollTo({ top: 0, behavior: "smooth" });
 
       // Prepare category filter query
-      // const categoryQuery = selectedCategory
-      //   ? `&categories=${encodeURIComponent("java")}`
-      //   : "";
-      const categoryQuery = ""
+      const categoryQuery = selectedCategory
+        ? `&categories=${selectedCategory}`
+        : "";
       const res = await fetch(
         `${API_URL}?per_page=${PER_PAGE}&page=${currentPage}&${categoryQuery}&_embed`,
         { cache: "no-store" }
@@ -144,7 +84,7 @@ export default function Blogs() {
       const data = await res.json();
       const total = Number(res.headers.get("x-wp-totalpages")) || 1;
 
-      const formatted: BlogData[] = (data as any[]).map((post) => ({
+      const formatted: BlogData[] = (data as WPPost[]).map((post) => ({
         id: post.id,
         title: post.title?.rendered || "Untitled",
         author: post._embedded?.author?.[0]?.name || "Bhavin Panchani",
@@ -172,8 +112,9 @@ export default function Blogs() {
       setBlogs(formatted);
       setTotalPages(total);
     } catch (err: unknown) {
-      if (err instanceof Error) setError(err.message);
-      else setError("Failed to fetch blogs");
+      // if (err instanceof Error) setError(err.message);
+      // else setError("Failed to fetch blogs");
+      console.log(err)
     } finally {
       setLoading(false);
     }
@@ -278,15 +219,16 @@ export default function Blogs() {
             {/* Cards Grid */}
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4">
               {cardData.map((card, index) => {
-                const isSelected = selectedCategory === card.title;
+                const isSelected = selectedCategory === card.id; // ✅ compare id to id
                 return (
                   <div
                     key={index}
                     onClick={() => {
                       setCurrentPage(1); // reset pagination
+                      // ✅ toggle select by id
                       setSelectedCategory(
-                        selectedCategory === card.title ? "" : card.title
-                      ); // toggle select
+                        selectedCategory === card.id ? null : card.id
+                      );
                     }}
                   >
                     <TechCard

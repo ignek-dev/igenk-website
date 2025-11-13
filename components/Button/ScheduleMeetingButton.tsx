@@ -1,9 +1,8 @@
 // components/ScheduleMeetingButton.tsx
 "use client"
-import CalendlyButton from "components/CalendlyPopupButton/CalendlyButton"
 import Image from "next/image"
-import { useRouter } from "next/navigation"
 import React from "react"
+import CalendlyButton from "components/CalendlyPopupButton/CalendlyButton"
 
 interface ScheduleMeetingButtonProps {
   btnName: string
@@ -11,11 +10,6 @@ interface ScheduleMeetingButtonProps {
 }
 
 const ScheduleMeetingButton: React.FC<ScheduleMeetingButtonProps> = ({ btnName, isFullWidth }) => {
-  const router = useRouter()
-
-  const handleClick = () => {
-    router.push("/contact")
-  }
   return (
     <CalendlyButton
       customButton={true}

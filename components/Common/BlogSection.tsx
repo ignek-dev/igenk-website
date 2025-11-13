@@ -1,10 +1,11 @@
 "use client"
 import Image from "next/image"
+import { useRouter } from "next/navigation";
+import { useCallback, useEffect, useState } from "react";
+import { BlogData } from "components/Blogmain/BlogCards";
+import { WPPost } from "components/BlogSidebar/BlogSidebar";
 import posts from "../../data/blogs.json"
 import { useInView } from "../../hooks/useInView"
-import { useCallback, useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
-import { BlogData } from "components/Blogmain/BlogCards";
 
 type BlogItem = {
   id: string
@@ -13,17 +14,16 @@ type BlogItem = {
   image: string
 }
 const PER_PAGE = 4;
-const API_URL = "https://www.ignek.com/wp-json/wp/v2/posts";
+const API_URL = "https://insights.ignek.com/wp-json/wp/v2/posts";
 export default function BlogSection() {
   const list = posts as BlogItem[]
   const main = list[0]
-  const side = list.slice(1, 4)
   const [blogs, setBlogs] = useState<BlogData[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [totalPages, setTotalPages] = useState(1);
-
+  const currentPage=1;
+  // const [totalPages, setTotalPages] = useState(1);
+  console.log("loading",error,loading)
   const fetchBlogs = useCallback(async () => {
     try {
       setLoading(true);
@@ -39,9 +39,9 @@ export default function BlogSection() {
       if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
 
       const data = await res.json();
-      const total = Number(res.headers.get("x-wp-totalpages")) || 1;
+      // const total = Number(res.headers.get("x-wp-totalpages")) || 1;
 
-      const formatted: BlogData[] = (data as any[]).map((post) => ({
+      const formatted: BlogData[] = (data as WPPost[]).map((post) => ({
         id: post.id,
         title: post.title?.rendered || "Untitled",
         author: post._embedded?.author?.[0]?.name || "Bhavin Panchani",
@@ -68,10 +68,11 @@ export default function BlogSection() {
       }));
 
       setBlogs(formatted);
-      setTotalPages(total);
+      // setTotalPages(total);
     } catch (err: unknown) {
-      if (err instanceof Error) setError(err.message);
-      else setError("Failed to fetch blogs");
+      // if (err instanceof Error) setError(err.message);
+      // else setError("Failed to fetch blogs");
+      console.log(err)
     } finally {
       setLoading(false);
     }

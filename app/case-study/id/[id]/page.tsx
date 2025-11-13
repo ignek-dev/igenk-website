@@ -10,12 +10,49 @@ import "prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard";
 import "prismjs/plugins/line-numbers/prism-line-numbers";
 
 import "../../../../components/Portfolio/PortfolioRenderer.css";
+import { BlogSection } from "components/Common";
+import CaseStudy from "components/Common/CaseStudy";
 
+const caseStudies = [
+    {
+        id: 1,
+        image: "/images/liferay-pages-image/caseStudy.png",
+        tag: "Corporate",
+        title: "Music License Management Portal: Onboarding & Data Integrity",
+        description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla.",
+    },
+    {
+        id: 2,
+        image: "/images/liferay-pages-image/caseStudy.png",
+        tag: "FinTech",
+        title: "Transforming Financial Services with Innovations",
+        description:
+            "Suspendisse potenti. Maecenas vitae mattis tellus. Nullam quis imperdiet augue. Pellentesque habitant morbi tristique senectus et netus.",
+    },
+    {
+        id: 3,
+        image: "/images/liferay-pages-image/caseStudy.png",
+        tag: "Healthcare",
+        title: "Digital Health Platform: Patient-Centric Solutions",
+        description:
+            "Praesent ut ligula non mi varius sagittis. In hac habitasse platea dictumst. Cras non dolor. Vivamus quis mi.",
+    },
+    {
+        id: 4,
+        image: "/images/liferay-pages-image/caseStudy.png",
+        tag: "E-commerce",
+        title: "Scaling Online Retail with Cloud Technologies",
+        description:
+            "Curabitur at lacus ac velit ornare lobortis. Vestibulum suscipit nulla quis orci. Donec posuere vulputate arcu.",
+    },
+]
 
 // --- TypeScript type for WordPress portfolio post ---
 interface WPPortfolioPost {
     title: { rendered: string };
     content: { rendered: string };
+    excerpt: { rendered: string };
     _embedded?: {
         "wp:featuredmedia"?: { source_url: string }[];
     };
@@ -59,7 +96,7 @@ export default function PortfolioRenderer({ params }: { params: Promise<{ id: st
     useEffect(() => {
         const fetchPost = async () => {
             try {
-                const res = await fetch(`https://www.ignek.com/wp-json/wp/v2/portfolio/${id}?_embed`);
+                const res = await fetch(`https://insights.ignek.com/wp-json/wp/v2/portfolio/${id}?_embed`);
                 if (!res.ok) throw new Error(`HTTP ${res.status} - ${res.statusText}`);
                 const data = (await res.json()) as WPPortfolioPost;
                 setPost(data);
@@ -91,12 +128,15 @@ export default function PortfolioRenderer({ params }: { params: Promise<{ id: st
                     <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_10%_0%,#0E7BF8_0%,#00979E_40%,transparent_65%)] opacity-25" />
                     <div className="mx-auto w-full px-4 pt-12 pb-16 md:px-8 md:pt-20 md:pb-28 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px]">
                         <div className="text-center">
-                            <h1 className="mt-9 text-4xl leading-tight font-semibold sm:text-5xl md:text-6xl">
-                                Enterprise Website Redesign : Multilingual Waste Management Solutions with Enhanced User Experience
-                            </h1>
-                            <p className="text-lg text-white sm:text-lg md:mt-16">
-                                We developed Enterprise Website Redesign for a waste management company, transforming their online presence. The new site includes dynamic home pages with videos, multilingual support, and integrated social feeds, ensuring users can access services and information with ease. The redesigned site offers improved user experience and multilingual capabilities, catering to a diverse audience.
-                            </p>
+                            <h1
+                                className="mt-9 text-4xl leading-tight font-semibold sm:text-5xl md:text-6xl"
+                                dangerouslySetInnerHTML={{ __html: post.title.rendered }}
+                            />
+
+                            <p className="text-lg text-white sm:text-lg md:mt-16"
+                                dangerouslySetInnerHTML={{ __html: post.excerpt.rendered }}
+                            />
+
                         </div>
                     </div>
                 </section>
@@ -111,6 +151,8 @@ export default function PortfolioRenderer({ params }: { params: Promise<{ id: st
                     />
                 </article>
             </div>
+            <CaseStudy caseStudies={caseStudies} />
+            <BlogSection />
         </>
     );
 }

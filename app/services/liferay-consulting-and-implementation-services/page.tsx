@@ -10,7 +10,7 @@ import WhatMake from "components/Common/WhatMake"
 import WordsFromCEO from "components/Common/WordsFromCEO"
 import { useInView } from "hooks/useInView"
 
-const caseStudies = [
+ const caseStudies = [
   {
     id: 1,
     image: "/images/liferay-pages-image/caseStudy.png",

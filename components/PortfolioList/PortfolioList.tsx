@@ -6,7 +6,7 @@ import { useCallback, useEffect, useState } from "react";
 import MarqueeOverlay from "components/MarqueeOverlay/MarqueeOverlay";
 import Filters from "components/PortfolioFilters/Filters";
 
-interface WPPortfolioPost {
+export interface WPPortfolioPost {
     id: number;
     title: { rendered: string };
     excerpt: { rendered: string };
@@ -28,7 +28,7 @@ export default function PortfolioList() {
     const [debouncedSearch, setDebouncedSearch] = useState(searchTerm);
     const router = useRouter();
     const PER_PAGE = 3;
-    const API_BASE = "https://www.ignek.com/wp-json/wp/v2/portfolio";
+    const API_BASE = "https://insights.ignek.com/wp-json/wp/v2/portfolio";
 
     // useEffect(() => {
     //     async function fetchPosts() {
@@ -140,7 +140,7 @@ export default function PortfolioList() {
                                                 return (
                                                     <div
                                                         key={item.id}
-                                                        className={`group bg-[#F9FAF7] rounded-none border-b-2 border-gray-200 shadow-[0_6px_10px_-6px_rgba(0,0,0,0.1)] p-5 flex flex-col md:flex-row gap-5 overflow-hidden transition-all duration-500 hover:shadow-[0_8px_15px_-6px_rgba(0,0,0,0.2)] py-0 ${!isImageLeft ? "md:flex-row-reverse" : ""
+                                                        className={`group bg-[#F9FAF7] rounded-xl border-2 border-gray-200 shadow-[0_6px_10px_-6px_rgba(0,0,0,0.1)] p-5 flex flex-col md:flex-row gap-5 overflow-hidden transition-all duration-500 hover:shadow-[0_8px_15px_-6px_rgba(0,0,0,0.2)] py-0 ${!isImageLeft ? "md:flex-row-reverse" : ""
                                                             }`}
                                                     >
                                                         {/* Image Section */}
