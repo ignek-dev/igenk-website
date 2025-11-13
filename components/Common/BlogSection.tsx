@@ -119,7 +119,7 @@ export default function BlogSection() {
                 alt={main?.title || "Blog Post"}
                 width={856}
                 height={459}
-                className="h-auto object-cover max-h-[459px] max-w-[856px]"
+                className="h-auto object-cover max-h-[459px]"
               />
             </div>
             <h3 className="line-height-[44px] pt-2 text-4xl font-semibold text-[#101012] md:text-3xl [@media(min-width:1440px)]:pt-15 [@media(min-width:1520px)]:pt-17 [@media(min-width:1800px)]:pt-2">
