@@ -1,11 +1,19 @@
 import { BlogSection } from "components/Common"
 import TalkToExpert from "components/Common/TalkToExpert"
 import WhatMake from "components/Common/WhatMake"
-import { customizationServices, developmentServices, featureTabs, LiferayDevelopmentAndCustomizationData, LiferayDevelopmentAndCustomizationSubContent, LiferayDevelopmentAndCustomizationTitle1, LiferayDevelopmentAndCustomizationTitle2, liferayIntegrationServices, portalDevelopmentService } from "data/liferay-development-and-customization"
+import {
+  customizationServices,
+  developmentServices,
+  featureTabs,
+  LiferayDevelopmentAndCustomizationData,
+  LiferayDevelopmentAndCustomizationSubContent,
+  LiferayDevelopmentAndCustomizationTitle1,
+  LiferayDevelopmentAndCustomizationTitle2,
+  liferayIntegrationServices,
+  portalDevelopmentService,
+} from "data/liferay-development-and-customization"
 
 export default function LiferayDevelopmentAndCustomizationPage() {
-
-
   return (
     <main className="pb-16">
       {/* Hero */}
@@ -25,7 +33,8 @@ export default function LiferayDevelopmentAndCustomizationPage() {
               </h1>
             </div>
             <p className="absolute bottom-0 max-w-lg text-right text-lg text-white sm:text-lg md:mt-16 md:justify-self-end">
-              With our Liferay Development and customization, we simplify digital transformation for businesses. We specialize in web portals, intranets, and collaboration tools to fit your needs.
+              With our Liferay Development and customization, we simplify digital transformation for businesses. We
+              specialize in web portals, intranets, and collaboration tools to fit your needs.
             </p>
           </div>
 
@@ -34,7 +43,7 @@ export default function LiferayDevelopmentAndCustomizationPage() {
             {featureTabs.map((label) => (
               <span
                 key={label}
-                className="inline-flex items-center rounded-full border border-white/30 px-7 py-5 [@media(min-width:1440px)]:text-base [@media(min-width:1500px)]:text-lg text-white transition-colors hover:border-white hover:text-white"
+                className="inline-flex items-center rounded-full border border-white/30 px-7 py-5 text-white transition-colors hover:border-white hover:text-white [@media(min-width:1440px)]:text-base [@media(min-width:1500px)]:text-lg"
               >
                 {label}
               </span>
@@ -125,8 +134,9 @@ export default function LiferayDevelopmentAndCustomizationPage() {
           <h2 className="text-5xl leading-[60px] leading-tight font-semibold sm:text-4xl md:text-5xl">
             Liferay Integration Services
           </h2>
-          <p className="mt-4 justify-self-center text-lg leading-relaxed text-[#101012] text-gray-700">
-            Enable seamless data flow and connectivity by integrating Liferay with ERP, CRM, and third-party business applications.
+          <p className="mt-4 text-lg leading-relaxed text-[#101012] text-gray-700">
+            Enable seamless data flow and connectivity by integrating Liferay with ERP, CRM, and third-party business
+            applications.
           </p>
           <div className="pt-4">
             <section className="w-full pt-10 text-white">
@@ -155,7 +165,8 @@ export default function LiferayDevelopmentAndCustomizationPage() {
               Liferay Portal Customization Services
             </h2>
             <p className="absolute bottom-0 max-w-xl text-right text-xl text-white md:justify-self-end">
-              Transform your Liferay experience with custom solutions that make your platform faster, smarter, and easier to use.
+              Transform your Liferay experience with custom solutions that make your platform faster, smarter, and
+              easier to use.
             </p>
           </div>
           <div className="pt-12">
@@ -187,7 +198,12 @@ export default function LiferayDevelopmentAndCustomizationPage() {
           </div>
         </div>
       </section>
-        <WhatMake WhatMakeData={LiferayDevelopmentAndCustomizationData} titleText1={LiferayDevelopmentAndCustomizationTitle1} titleText2={LiferayDevelopmentAndCustomizationTitle2} subContext={LiferayDevelopmentAndCustomizationSubContent}/>
+      <WhatMake
+        WhatMakeData={LiferayDevelopmentAndCustomizationData}
+        titleText1={LiferayDevelopmentAndCustomizationTitle1}
+        titleText2={LiferayDevelopmentAndCustomizationTitle2}
+        subContext={LiferayDevelopmentAndCustomizationSubContent}
+      />
       <TalkToExpert
         heading="Expert Liferay Development and Customization Services"
         description="Transform your portal efficiently with our professional Liferay development and customization expertise."

@@ -99,7 +99,7 @@ export default function LiferayArchitectureDesignPage() {
       </section>
       <section>
         <div className="mx-auto w-full px-4 py-[64px] md:px-8 md:py-[64px] lg:py-[64px] [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
-          <div className="relative mb-[67px] grid items-start gap-10 md:grid-cols-2">
+          <div className="relative mb-[47px] grid items-start gap-10 md:grid-cols-2">
             <h2 className="text-3xl font-semibold [@media(min-width:1440px)]:text-3xl [@media(min-width:1440px)]:leading-[40px] [@media(min-width:1500px)]:text-4xl [@media(min-width:1500px)]:leading-[50px]">
               Key Deliverables of Our Liferay Architecture Design Services
             </h2>
@@ -123,8 +123,8 @@ export default function LiferayArchitectureDesignPage() {
                   index !== systemArchitecure.length - 1 ? "border-r border-[#E5E7EB]" : ""
                 }`}
               >
-                <h3 className="mt-[73px] mb-3 text-[36px] leading-normal font-semibold text-gray-600">{item.text}</h3>
-                <p className="mt-[90px] mb-[73px] text-base leading-relaxed text-gray-500">{item.description}</p>
+                <h3 className="mt-[20px] mb-3 text-[36px] leading-normal font-semibold text-gray-600">{item.text}</h3>
+                <p className="mt-[30px] mb-[73px] text-base leading-relaxed text-gray-500">{item.description}</p>
               </div>
             ))}
           </div>

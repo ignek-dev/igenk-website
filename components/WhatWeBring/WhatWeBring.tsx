@@ -11,19 +11,19 @@ const cardData = [
     cardNumber: "01",
     title: "Enterprise Websites",
     description:
-      "We build robust and scalable enterprise websites powered by Liferay DXP, enabling organizations to deliver personalized, secure, and high-performing digital experiences. Our solutions are designed to align with your brand’s goals, ensuring seamless integration, user-centric design, and long-term adaptability. With our expertise, we help enterprises transform their online presence into an impactful digital ecosystem that drives engagement and business growth.",
+      "We build robust and scalable enterprise websites powered by Liferay DXP, enabling organizations to deliver personalized, secure, and high-performing digital experiences. Our solutions align with your brand goals, ensuring seamless integration, user-centric design, and long-term adaptability. With our expertise, we help enterprises transform their online presence into a powerful digital ecosystem that drives engagement and growth.",
   },
   {
     cardNumber: "02",
     title: "Employee Experience",
     description:
-      "Our employee experience solutions create connected, engaging, and efficient digital workplaces built on Liferay DXP. We focus on collaboration, accessibility, and personalization to enhance productivity and satisfaction. By integrating modern tools and intuitive interfaces, we empower employees to work smarter, communicate effectively, and stay aligned with organizational goals, fostering a culture of innovation and performance.",
+      "Our employee experience solutions create connected, engaging, and efficient digital workplaces on Liferay DXP. With a focus on collaboration, accessibility, and personalization, we boost productivity and satisfaction. By integrating modern tools and intuitive interfaces, we empower employees to work smarter, communicate seamlessly, and drive a culture of innovation and performance.",
   },
   {
     cardNumber: "03",
     title: "Digital Commerce",
     description:
-      "We deliver end-to-end Liferay Commerce solutions that transform how businesses sell and interact online. From product management and secure payments to personalized shopping journeys, our platforms offer seamless, data-driven commerce experiences. Our goal is to help enterprises scale effortlessly, boost customer loyalty, and increase conversion rates through innovative, flexible, and future-ready digital commerce architectures.",
+      "We deliver end-to-end Liferay Commerce solutions that transform how businesses sell and engage online. From product management and secure payments to personalized shopping experiences, our platforms enable seamless, data-driven commerce. We help enterprises scale effortlessly, boost customer loyalty, and drive higher conversions through innovative, flexible, and future-ready digital commerce architectures.",
   },
   {
     cardNumber: "04",

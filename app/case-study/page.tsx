@@ -25,7 +25,7 @@ export default async function PortfolioPage() {
               </h1>
             </div>
             <p className="absolute bottom-0 max-w-xl text-lg text-white sm:text-lg md:mt-16 md:justify-self-end">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus.
+              Explore our latest case studies, showcasing real-world solutions, success stories, and impactful results delivered to our clients.
             </p>
           </div>
         </div>

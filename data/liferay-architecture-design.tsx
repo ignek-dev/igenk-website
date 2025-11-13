@@ -81,12 +81,12 @@ export const systemArchitecure = [
       "High-level design document outlining systems, data flow, and integration strategy.",
   },
   {
-    text: "Technical Stack Recommendation",
+    text: "Technical Stack",
     description:
       "Optimized technology mix ensuring scalability, security, and performance.",
   },
   {
-    text: "Security and Compliance Plan",
+    text: "Security and Compliance",
     description:
       "Detailed measures for data protection, authentication, and access control.",
   },
