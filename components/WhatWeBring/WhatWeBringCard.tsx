@@ -16,7 +16,7 @@ const WhatWeBringCard: React.FC<WhatWeBringCardProps> = ({ cardNumber, title, de
       // The 'outline' variant is a good base as it's transparent
       variant="outline"
       // We pass all the unique styles for this section via the className prop
-      className="flex h-auto w-[320px] flex-shrink-0 flex-col rounded-[38px] border-2 border-[#00979E] p-8 hover:border-[#00979E] lg:h-[589px] lg:w-[520px] lg:p-8"
+      className="flex h-auto w-[320px] flex-shrink-0 flex-col rounded-[38px] border-2 border-[#00979E] p-8 hover:border-[#00979E] lg:h-[589px] lg:w-[520px] lg:p-7"
     >
       {/* The rest of the content is passed as children to the Card */}
       {/* Card Number */}
@@ -26,7 +26,7 @@ const WhatWeBringCard: React.FC<WhatWeBringCardProps> = ({ cardNumber, title, de
       <h3 className="mb-8 max-w-[250px] text-5xl font-bold whitespace-pre-wrap text-[#00979E] lg:text-5xl leading-[54px]">{title}</h3>
 
       {/* Description */}
-      <p className="mt-[96px] text-lg leading-relaxed text-white">{description}</p>
+      <p className="mt-[80px] text-lg leading-relaxed text-white">{description}</p>
     </Card>
   )
 }

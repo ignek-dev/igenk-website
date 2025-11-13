@@ -8,6 +8,12 @@ import EngagementModels from "components/Common/EngagementModels"
 import TalkToExpert from "components/Common/TalkToExpert"
 import WhatMake from "components/Common/WhatMake"
 import WordsFromCEO from "components/Common/WordsFromCEO"
+import {
+  consultingServices,
+  expertiseStats,
+  liferayProjectFeatures,
+  liferaySolutions,
+} from "data/liferay-consulting-and-implementation-services"
 import { useInView } from "hooks/useInView"
 
  const caseStudies = [
@@ -46,9 +52,9 @@ import { useInView } from "hooks/useInView"
 ]
 
 const LiferayConsultationTitle1 = "Why Choose IGNEK For Liferay"
-  const LiferayConsultationTitle2 ="Development and Customization?"
-  const LiferayConsultationSubContent = "At IGNEK, Our expert engineers use up to date software’s and vast knowledge to craft solutions that match your needs and expectations. Putting clients first is our thing, and we’re proud to support our very first business client till today!"
- 
+const LiferayConsultationTitle2 = "Development and Customization?"
+const LiferayConsultationSubContent =
+  "At IGNEK, Our expert engineers use up to date software’s and vast knowledge to craft solutions that match your needs and expectations. Putting clients first is our thing, and we’re proud to support our very first business client till today!"
 
 const LiferayConsultationData = [
   {
@@ -85,170 +91,104 @@ export default function LiferayConsultationPage() {
   // State for the new End-to-End Liferay Consulting Services section
   const [activePillar, setActivePillar] = useState(0) // 0-indexed for Analysis
 
-  const expertiseStats = [
-    "10 Years of Liferay Expertise",
-    "50+ Liferay Projects Delivered",
-    "20+ Certified Liferay Experts",
-    "24x7 Technical Support",
-  ]
-
-  const consultingServices = [
-    {
-      number: "01",
-      title: "Liferay Production Release Issues",
-      desc: "Liferay Production Release Issues Navigating Liferay production releases requires precision and a strong grasp of the platform’s intricacies. Our experts provide in-depth analysis and troubleshooting to quickly identify and resolve potential issues. From deployment challenges to compatibility concerns, we deliver actionable insights to ensure a smooth and successful rollout.",
-    },
-    {
-      number: "02",
-      title: "Liferay Performance Issues",
-      desc: "Collaborate with our architects to build a strong architectural foundation for your Liferay deployment. We deliver tailored solutions that are scalable, resilient, and future-proof, ensuring alignment with your business objectives. From cloud migration and microservices adoption to enhancing high availability, our experts provide the guidance needed for long-term success.",
-    },
-    {
-      number: "03",
-      title: "Development & Integration",
-      desc: "Collaborate with our architects to build a strong architectural foundation for your Liferay deployment. We deliver tailored solutions that are scalable, resilient, and future-proof, ensuring alignment with your business objectives. From cloud migration and microservices adoption to enhancing high availability, our experts provide the guidance needed for long-term success.",
-    },
-    {
-      number: "04",
-      title: "Liferay Approaches for Architecture",
-      desc: "Collaborate with our architects to build a strong architectural foundation for your Liferay deployment. We deliver tailored solutions that are scalable, resilient, and future-proof, ensuring alignment with your business objectives. From cloud migration and microservices adoption to enhancing high availability, our experts provide the guidance needed for long-term success.",
-    },
-    {
-      number: "05",
-      title: "Liferay Production Release Issues",
-      desc: "Liferay Production Release Issues Navigating Liferay production releases requires precision and a strong grasp of the platform’s intricacies. Our experts provide in-depth analysis and troubleshooting to quickly identify and resolve potential issues. From deployment challenges to compatibility concerns, we deliver actionable insights to ensure a smooth and successful rollout.",
-    },
-    {
-      number: "06",
-      title: "Liferay Performance Issues",
-      desc: "Collaborate with our architects to build a strong architectural foundation for your Liferay deployment. We deliver tailored solutions that are scalable, resilient, and future-proof, ensuring alignment with your business objectives. From cloud migration and microservices adoption to enhancing high availability, our experts provide the guidance needed for long-term success.",
-    },
-    {
-      number: "07",
-      title: "Development & Integration",
-      desc: "Collaborate with our architects to build a strong architectural foundation for your Liferay deployment. We deliver tailored solutions that are scalable, resilient, and future-proof, ensuring alignment with your business objectives. From cloud migration and microservices adoption to enhancing high availability, our experts provide the guidance needed for long-term success.",
-    },
-    {
-      number: "08",
-      title: "Liferay Approaches for Architecture",
-      desc: "Collaborate with our architects to build a strong architectural foundation for your Liferay deployment. We deliver tailored solutions that are scalable, resilient, and future-proof, ensuring alignment with your business objectives. From cloud migration and microservices adoption to enhancing high availability, our experts provide the guidance needed for long-term success.",
-    },
-  ]
-
-  const liferayProjectFeatures = [
-    {
-      title: "Highly Customizable",
-      description:
-        "Liferay customization options encompass creating custom modules, themes, widget templates, model listeners, service wrappers, JSP overrides, global translation overrides, OSGi service modifications, portlet filters, and many more.",
-      icon: "/images/liferay-pages-image/liferay-consultation-page/web.png",
-    },
-    {
-      title: "User-Friendly Interface",
-      description:
-        "Liferay customization options encompass creating custom modules, themes, widget templates, model listeners, service wrappers, JSP overrides, global translation overrides, OSGi service modifications, portlet filters, and many more.",
-      icon: "/images/liferay-pages-image/liferay-consultation-page/web.png",
-    },
-    {
-      title: "Highly Scalable",
-      description:
-        "Liferay customization options encompass creating custom modules, themes, widget templates, model listeners, service wrappers, JSP overrides, global translation overrides, OSGi service modifications, portlet filters, and many more.",
-      icon: "/images/liferay-pages-image/liferay-consultation-page/web.png",
-    },
-    {
-      title: "One portal for all solutions",
-      description:
-        "Liferay customization options encompass creating custom modules, themes, widget templates, model listeners, service wrappers, JSP overrides, global translation overrides, OSGi service modifications, portlet filters, and many more.",
-      icon: "/images/liferay-pages-image/liferay-consultation-page/web.png",
-    },
-    {
-      title: "Integration",
-      description:
-        "Liferay customization options encompass creating custom modules, themes, widget templates, model listeners, service wrappers, JSP overrides, global translation overrides, OSGi service modifications, portlet filters, and many more.",
-      icon: "/images/liferay-pages-image/liferay-consultation-page/web.png",
-    },
-    {
-      title: "Collaboration tools",
-      description:
-        "Liferay customization options encompass creating custom modules, themes, widget templates, model listeners, service wrappers, JSP overrides, global translation overrides, OSGi service modifications, portlet filters, and many more.",
-      icon: "/images/liferay-pages-image/liferay-consultation-page/web.png",
-    },
-    {
-      title: "Security",
-      description:
-        "Liferay customization options encompass creating custom modules, themes, widget templates, model listeners, service wrappers, JSP overrides, global translation overrides, OSGi service modifications, portlet filters, and many more.",
-      icon: "/images/liferay-pages-image/liferay-consultation-page/web.png",
-    },
-    {
-      title: "Wide range of OOTB Features",
-      description:
-        "Liferay customization options encompass creating custom modules, themes, widget templates, model listeners, service wrappers, JSP overrides, global translation overrides, OSGi service modifications, portlet filters, and many more.",
-      icon: "/images/liferay-pages-image/liferay-consultation-page/web.png",
-    },
-    {
-      title: "Personalization",
-      description:
-        "Liferay customization options encompass creating custom modules, themes, widget templates, model listeners, service wrappers, JSP overrides, global translation overrides, OSGi service modifications, portlet filters, and many more.",
-      icon: "/images/liferay-pages-image/liferay-consultation-page/web.png",
-    },
-    {
-      title: "Analytics",
-      description:
-        "Liferay customization options encompass creating custom modules, themes, widget templates, model listeners, service wrappers, JSP overrides, global translation overrides, OSGi service modifications, portlet filters, and many more.",
-      icon: "/images/liferay-pages-image/liferay-consultation-page/web.png",
-    },
-  ]
-
-  const liferaySolutions = [
-    {
-      id: "Liferay DXP", // Use title as unique ID
-      title: "Liferay DXP",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur.",
-      icon: "/images/liferay-pages-image/liferay-consultation-page/Liferay-dxp.png",
-    },
-    {
-      id: "Liferay Commerce",
-      title: "Liferay Commerce",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur.", // Add description for all cards
-      icon: "/images/liferay-pages-image/liferay-consultation-page/Liferay-commerce.png",
-    },
-    {
-      id: "Analytics Cloud",
-      title: "Analytics Cloud",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur.", // Add description for all cards
-      icon: "/images/liferay-pages-image/liferay-consultation-page/Analytics-cloud.png",
-    },
-    {
-      id: "DXP Cloud",
-      title: "DXP Cloud",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur.", // Add description for all cards
-      icon: "/images/liferay-pages-image/liferay-consultation-page/Dxp-cloud.png",
-    },
-  ]
-
   const liferayConsultingTabs = ["Portal", "Enterprise CRM", "Collaboration & social", "E- Commerce"]
 
-  const baseServices = [
+  const portalServices = [
     "Simplified UI Development",
     "Flexible Enterprise Integration Framework",
     "Out-of-the-box Tools",
     "Secure Single Sign On (SSO)",
+    "Custom Fields",
     "Rules Engine Integration",
     "User Groups, Organizations and Sites",
     "Headless Support",
+    "SOA Framework",
+    "User Personalization",
+    "Multi-Tenancy Support",
+    "Built-in Customization Features",
+    "Role Based Content Delivery",
+    "Single-Click Configuration",
+    "Dynamic Drag & Drop",
+    "Workflow Framework",
+    "User-Driven Workflow & Approval",
+    "Auditing & Performance Monitoring",
+    "Working from Your Desktop with Liferay Sync",
+    "Search & Tagging",
+    "Multi-language Support",
+    "OpenSocial",
+  ]
+  const EnterpriseServices = [
+    "Web Publishing",
+    "Unified Documents & Media",
+    "Mounting Multiple Content Repositories",
+    "User Defined Content Categories Asset Publisher",
+    "Workspace Publishing",
+    "Easy Rich Text Editors",
+    "Web Content Structures and Templates",
+    "Template/Structure Comments",
+    "Integration with Microsoft Office®",
+    "One-Click Page Creation",
+    "Quick Site Creation",
+    "User-Driven Workflow & Approval",
+    "Live Page Editing and Scheduling",
+    "Staging and Easy Website Planning",
+    "Document Conversion and Multi-File Uploads",
+    "Drag-and-Drop Site Maps",
+    "Faceted Search",
+    "Multi-Tier Search",
+    "Dynamic Tagging",
+    "Search Engine Optimization (SEO)",
+    "Easy Integration",
+    "Dynamic Virtual Hosting and Vanity URL",
+    "Multi-Language Support",
+    "Customisable Pages",
+  ]
+  const CollaborationServices = [
+    "KnowledgeBase",
+    "Wikis",
+    "Message Boards",
+    "Blogs",
+    "RSS",
+    "Activity Tracking",
+    "Instant Message",
+    "Email",
+    "Shared Calendar",
+    "Tags & Categories",
+    "Announcements & Alerts",
+    "Dynamic Data Lists",
+    "Polls",
+    "Social Equity",
+  ]
+  const CommerceServices = [
+    "E-commerce Solution",
+    "Intuitive Online Storefront",
+    "Seamless Product Management",
+    "Flexible Pricing and Promotion Options",
+    "Integrated Payment Gateways",
+    "Customizable Shopping Cart",
+    "Order Management System",
+    "CRM Integration",
+    "Customer Support and Assistance",
+    "Scalable Architecture for Growing Businesses",
+    "Customizable Themes and Templates",
+    "Personalized Shopping Experience",
+    "Multi-channel Selling Support",
+    "Dynamic Product Recommendations",
+    "Real-time Inventory Management",
+    "Secure Checkout Process",
+    "Mobile Commerce Compatibility",
+    "Customer Reviews and Ratings",
+    "Analytics and Reporting Tools",
+    "Responsive Design for Any Device",
+    "Integration with Social Media Platforms",
+    "SEO Optimization Features",
   ]
 
-  // Create a 21-item array by repeating the base services
-  const fullServiceList = [...baseServices, ...baseServices, ...baseServices]
-
   const liferayConsultingServicesData: Record<string, string[]> = {
-    Portal: fullServiceList,
-    "Enterprise CRM": fullServiceList,
-    "Collaboration & social": fullServiceList,
-    "E- Commerce": fullServiceList,
+    Portal: portalServices,
+    "Enterprise CRM": EnterpriseServices,
+    "Collaboration & social": CollaborationServices,
+    "E- Commerce": CommerceServices,
   }
 
   const industriesWeServe = [
@@ -390,14 +330,14 @@ export default function LiferayConsultationPage() {
               <div className="inline-flex w-fit items-center rounded-full border border-white px-8.5 py-[8.8px] text-lg font-normal">
                 Liferay Services
               </div>
-              <h1 className="line-height-[88px] letter-spacing-[-0.02em] mt-13 text-7xl leading-tight  font-bold sm:text-5xl md:text-6xl [@media(min-width:1440px)]:text-5xl [@media(min-width:1800px)]:text-6xl">
+              <h1 className="line-height-[88px] letter-spacing-[-0.02em] mt-13 text-7xl leading-tight font-bold sm:text-5xl md:text-6xl [@media(min-width:1440px)]:text-5xl [@media(min-width:1800px)]:text-6xl">
                 Liferay Consulting &
                 <br />
                 <span className="block">Implementation Services</span>
               </h1>
               <p className="line-height-[28px] mt-10 max-w-xl text-lg font-normal">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.
-                Pellentesque sit amet.
+                Optimize your digital ecosystem through tailored Liferay Consulting for seamless implementation,
+                customization, and dedicated support.
               </p>
             </div>
 
@@ -439,7 +379,7 @@ export default function LiferayConsultationPage() {
           {/* Left Content */}
           <div className="flex flex-1 flex-col justify-between gap-25">
             {/* Stats Row */}
-            <div className="[@media(min-width:1440px)]:grid grid-cols-2 [@media(min-width:1800px)]:flex flex-no-wrap items-center gap-20">
+            <div className="flex-no-wrap grid-cols-2 items-center gap-20 [@media(min-width:1440px)]:grid [@media(min-width:1800px)]:flex">
               {/* Stat 1 */}
               <div className="flex gap-3">
                 <p className="text-5xl font-bold text-gray-900">1x</p>
@@ -452,10 +392,10 @@ export default function LiferayConsultationPage() {
               {/* Stat 2 */}
               <div className="flex gap-3">
                 <p className="text-5xl font-bold text-gray-900">18%</p>
-                <p className="text-lg leading-tight text-gray-600 whitespace-nowrap">
-                  Increased 
+                <p className="text-lg leading-tight whitespace-nowrap text-gray-600">
+                  Increased
                   <br />
-                 User Adoption
+                  User Adoption
                 </p>
               </div>
               {/* Stat 3 */}
@@ -503,7 +443,7 @@ export default function LiferayConsultationPage() {
               height={500}
               objectFit="contain"
               className="relative z-10 h-auto w-[500px] scale-125 [@media(min-width:1440px)]:scale-129 [@media(min-width:1500px)]:scale-125"
-              style={{ minWidth: "650px", marginTop: "-60px", marginBottom: "17px"   }}
+              style={{ minWidth: "650px", marginTop: "-60px", marginBottom: "17px" }}
             />
           </div>
         </div>
@@ -520,8 +460,8 @@ export default function LiferayConsultationPage() {
                 <span className="block">Consulting Services</span>
               </h1>
               <p className="max-w-[520px] text-[18px] leading-[28px] text-[#D1D5DB]">
-                We optimize transitions from legacy systems to Liferay with our proven Liferay Portal Migration
-                services, using best practices for seamless.
+                Our Liferay Consulting Services help you maximize the potential of the Liferay platform. From
+                development to support, we’re here to ensure you create top-notch digital experiences for your users.
               </p>
               <div className="pt-[26px]">
                 <ScheduleMeetingButton isFullWidth={false} btnName="Schedule Meeting" />
@@ -639,9 +579,10 @@ export default function LiferayConsultationPage() {
               Why Liferay Can Be Best Choice For Your Project ?
             </h2>
             <p className="mt-4 text-lg text-white/80">
-              APIs (Application Programming Interfaces) act as bridges between systems, allowing seamless communication.
-              Integrating APIs with your ReactJS application enhances functionality and opens new possibilities. Our API
-              Integration Service optimizes performance with effective error handling.
+              Explore our expertise in Liferay! We’re experienced and ready to help with everything, from building
+              user-friendly interfaces to managing backend systems. Whether you need a custom portal, smooth
+              integration, or ongoing support, we’ve got you covered. Partner with us today and make the most of Liferay
+              for your business.
             </p>
           </div>
 
@@ -698,7 +639,7 @@ export default function LiferayConsultationPage() {
                 key={industry.id}
                 onMouseEnter={() => setHoveredIndustry(industry.id)}
                 onMouseLeave={() => setHoveredIndustry(null)}
-                className={`group relative flex cursor-pointer items-center border-b border-gray-200 [@media(min-width:1440px)]:px-4 [@media(min-width:1800px)]:px-10 py-10 transition-colors duration-300 hover:bg-[#0B63CE]`}
+                className={`group relative flex cursor-pointer items-center border-b border-gray-200 py-10 transition-colors duration-300 hover:bg-[#0B63CE] [@media(min-width:1440px)]:px-4 [@media(min-width:1800px)]:px-10`}
               >
                 {/* Column 1: Title */}
                 <div className="w-1/3 flex-shrink-0">
@@ -713,7 +654,7 @@ export default function LiferayConsultationPage() {
                     {industry.description}
                   </p>
                   <div
-                    className={`absolute top-1/2 [@media(min-width:1440px)]:right-30 [@media(min-width:1800px)]:right-65 z-10 w-[180px] -translate-y-1/2 transform opacity-0 transition-all duration-300 group-hover:translate-x-4 group-hover:opacity-100`}
+                    className={`absolute top-1/2 z-10 w-[180px] -translate-y-1/2 transform opacity-0 transition-all duration-300 group-hover:translate-x-4 group-hover:opacity-100 [@media(min-width:1440px)]:right-30 [@media(min-width:1800px)]:right-65`}
                   >
                     <Image
                       src={industry.image}
@@ -780,7 +721,7 @@ export default function LiferayConsultationPage() {
               <button
                 key={tab}
                 onClick={() => setActiveServiceTab(tab)}
-                className={`flex-1 rounded-full px-8 py-4 text-center text-2xl font-medium transition-colors duration-300 md:whitespace-pre cursor-pointer ${
+                className={`flex-1 cursor-pointer rounded-full px-8 py-4 text-center text-2xl font-medium transition-colors duration-300 md:whitespace-pre ${
                   activeServiceTab === tab
                     ? "border border-blue-600 bg-blue-600 text-white"
                     : "border border-white text-white hover:border-blue-600 hover:text-white"
@@ -791,7 +732,7 @@ export default function LiferayConsultationPage() {
             ))}
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
             {liferayConsultingServicesData[activeServiceTab]?.map((service: string, index: number) => (
               <div key={index} className="border-b border-gray-700 px-6">
                 <div className="flex items-start gap-4 py-[40px]">
@@ -802,7 +743,9 @@ export default function LiferayConsultationPage() {
                     height={40}
                     className="h-10 w-10 flex-shrink-0"
                   />
-                  <p className="text-2xl [@media(min-width:1440px)]:text-xl [@media(min-width:1800px)]:text-2xl font-medium">{service}</p>
+                  <p className="text-2xl font-medium [@media(min-width:1440px)]:text-xl [@media(min-width:1800px)]:text-2xl">
+                    {service}
+                  </p>
                 </div>
               </div>
             ))}
@@ -871,7 +814,7 @@ export default function LiferayConsultationPage() {
                   {/* Content for Active Pillar */}
                   {activePillar === index && (
                     <div className="pt-4">
-                      <h3 className="text-3xl font-bold min-w-[220px]">{service.name}</h3>
+                      <h3 className="min-w-[220px] text-3xl font-bold">{service.name}</h3>
                       <hr className="my-4 w-full border-t-2 border-white/50" />
                       <p className="text-base leading-relaxed">{service.description}</p>
                     </div>
@@ -898,7 +841,12 @@ export default function LiferayConsultationPage() {
       />
       <section className="bg-white text-black"></section>
       <CaseStudy caseStudies={caseStudies} />
-      <WhatMake WhatMakeData={LiferayConsultationData} titleText1={LiferayConsultationTitle1} titleText2={LiferayConsultationTitle2}subContext={LiferayConsultationSubContent}/>
+      <WhatMake
+        WhatMakeData={LiferayConsultationData}
+        titleText1={LiferayConsultationTitle1}
+        titleText2={LiferayConsultationTitle2}
+        subContext={LiferayConsultationSubContent}
+      />
       <TalkToExpert />
       <BlogSection />
     </main>

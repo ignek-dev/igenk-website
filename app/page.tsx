@@ -67,7 +67,7 @@ export default function HomePage() {
                 <div className="flex h-8 w-8 items-center justify-center rounded-full border border-[#00979E] bg-black/30">
                   <Image src="/images/icon/discover-arrow.png" alt="discover-now" width={18} height={18} />
                 </div>
-                <span className="pr-2 text-xl">Discover More</span>
+                <span className="pr-2 text-xl font-semibold">Discover More</span>
               </a>
             </div>
           </div>
