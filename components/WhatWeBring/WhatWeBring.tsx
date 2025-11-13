@@ -27,21 +27,21 @@ const cardData = [
   },
   {
     cardNumber: "04",
-    title: "Another Service",
+    title: "Partner Experience",
     description:
-      "Our tailored Liferay implementation services address diverse business challenges with innovative, strategic, and technology-driven solutions. We partner with enterprises to plan, design, and deliver digital transformation initiatives that create measurable impact. By combining deep Liferay expertise with agile methodologies, we ensure every project aligns with your business objectives and drives sustainable digital growth.",
+      "We create unified partner experience solutions on Liferay DXP that strengthen collaboration and transparency. By centralizing communication, resources, and performance insights, we help organizations build stronger partner relationships. Our tailored portals enable seamless onboarding, real-time updates, and mutual growth through trust and efficiency.",
   },
   {
     cardNumber: "05",
-    title: "Creative Solutions",
+    title: "Supplier Experience",
     description:
-      "We blend creativity and technology to craft meaningful digital experiences that inspire and engage. Our team focuses on design thinking, storytelling, and seamless functionality to create visually stunning and user-friendly solutions. From concept to execution, we transform ideas into impactful digital assets that enhance brand visibility, drive interaction, and deliver exceptional customer experiences.",
+      "Our supplier experience platforms streamline communication and operations between enterprises and their suppliers. Built on Liferay DXP, these solutions ensure visibility, compliance, and efficiency across the supply chain. With intuitive workflows and self-service tools, we simplify procurement, strengthen relationships, and enhance supplier engagement.",
   },
   {
     cardNumber: "06",
-    title: "Data Insights",
+    title: "Customer Experience",
     description:
-      "We turn complex data into actionable business intelligence through Liferay analytics and AI-driven insights. Our solutions help organizations uncover trends, predict behavior, and make informed decisions that accelerate growth. By integrating analytics seamlessly into your digital ecosystem, we empower you to measure performance, enhance user experiences, and optimize outcomes across all business channels.",
+      "We design personalized customer experience solutions powered by Liferay DXP to build trust and loyalty. By connecting data, content, and insights, we enable brands to deliver consistent, meaningful interactions across every touchpoint. The result — smoother journeys, stronger engagement, and lasting customer satisfaction.",
   },
 ]
 
