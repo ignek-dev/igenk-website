@@ -114,7 +114,7 @@ export default function LiferayUpgradePage() {
           <div className="ml-[-20px] pt-4">
             <div
               ref={containerRef}
-              className="max-w-full cursor-grab overflow-x-hidden active:cursor-grabbing"
+              className="max-w-full cursor-grab overflow-hidden active:cursor-grabbing"
               onMouseDown={handleMouseDown}
               onMouseLeave={handleMouseLeave}
               onMouseUp={handleMouseUp}
