@@ -290,14 +290,14 @@ export default function CalendarSection() {
                     <p className="text-lg font-normal text-black/50">Today</p>
                   </div>
                   <div className="mt-2 space-y-3">
-                    {upcomingEvents.map((event) => (
+                    {/* {upcomingEvents.map((event) => (
                       <div
                         key={event.name}
                         className="max-w-[165px] rounded-full bg-[#2353FF1A] px-7 py-2 text-center text-base font-medium text-black"
                       >
                         {event.name}
                       </div>
-                    ))}
+                    ))} */}
                   </div>
                 </div>
               </div>
@@ -344,7 +344,7 @@ export default function CalendarSection() {
                   />
                 </div>
                 <Link
-                  href="/careers"
+                  href="/contact"
                   className="group text-md flex items-center gap-3 font-semibold text-black transition-colors hover:text-blue-600"
                 >
                   Reach out
