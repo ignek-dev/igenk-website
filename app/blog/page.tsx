@@ -1,21 +1,11 @@
 "use client"
 import Image from "next/image"
+import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useState } from "react"
 import BlogCard, { BlogData } from "components/Blogmain/BlogCards"
 import TechCard from "components/Blogmain/TechCards"
 import { WPPost } from "components/BlogSidebar/BlogSidebar"
 
-const blogsCardData = [
-  {
-    id: 1,
-    icon: "/images/blogs/blog1.jpg", // Note: Update paths to your images
-    authorName: "Bhavin Panchani",
-    time: "6 mins read",
-    title: "Comparison of Client Extensions and OSGi: Modern vs Traditional Liferay Development",
-    category: "Liferay Blog",
-    date: "Jul 7, 2025",
-  },
-]
 const cardData = [
   {
     id: 15,
@@ -123,6 +113,8 @@ export default function Blogs() {
   useEffect(() => {
     fetchBlogs();
   }, [fetchBlogs]);
+  const router = useRouter();
+
   return (
     <main className="pb-5">
       {/* Hero */}
@@ -170,12 +162,14 @@ export default function Blogs() {
     </main> */}
 
           <div className="mx-auto grid h-[640px] w-[100%] gap-6">
-            {blogsCardData.map((blog) => (
-              <div key={blog.title} className="relative cursor-pointer overflow-hidden rounded-[22px] shadow-lg">
+            {blogs?.slice(0, 1).map((blog) => (
+              <div key={blog.title} className="relative cursor-pointer overflow-hidden rounded-[22px] shadow-lg"
+                onClick={() => router.push(`/blog/${blog.id}`)}
+              >
                 {/* Background Image */}
                 <div className="relative h-[640px] w-full">
                   <Image
-                    src={blog.icon}
+                    src={blog?.image}
                     alt={blog.title}
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
@@ -188,14 +182,14 @@ export default function Blogs() {
                 <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/70 via-black/30 to-transparent p-5 text-white">
                   <div className="mb-[1.125rem] flex items-center space-x-2 text-sm opacity-90">
                     <span className="rounded-full bg-white/20 px-3 py-1 backdrop-blur-md">{blog.category}</span>
-                    <span>• {blog.time}</span>
+                    <span>• {blog?.date}</span>
                   </div>
 
                   <h2 className="mb-[1.125rem] text-lg leading-snug font-semibold">{blog.title}</h2>
                   <div className="flex items-center space-x-2 text-sm">
                     <Image
-                      src={blog.icon}
-                      alt={blog.authorName}
+                      src={blog?.authPic}
+                      alt={"pic"}
                       // width={40}
                       // height={40}
                       // className="rounded-[50%] border-2 border-white/80"
@@ -203,7 +197,7 @@ export default function Blogs() {
                       height={40}
                       className="w-10 h-10 object-cover rounded-full border-2 border-white/80"
                     />
-                    <span className="font-medium">{blog.authorName}</span>
+                    <span className="font-medium">{blog?.author}</span>
                     <span className="opacity-80">• {blog.date}</span>
                   </div>
                 </div>
