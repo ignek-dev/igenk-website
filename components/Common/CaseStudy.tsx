@@ -64,8 +64,6 @@ const CaseStudy: React.FC<CaseStudyCarouselProps> = ({ caseStudies }) => {
             )
           : data;
         setPosts(filteredPosts);
-
-        console.log("✅ Filtered by IDs:", filteredPosts.map((p) => p.id));
       } catch (err) {
         console.error("Error fetching posts:", err);
       }
