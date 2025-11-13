@@ -79,13 +79,6 @@ export default function AboutUs() {
                                 </video>
                             </div>
                         </div>
-
-                        {/* Right Column */}
-                        <div className="flex justify-end items-end">
-                            <p className="font-poppins font-normal text-[20px] leading-[30px] text-right text-white/80 w-[631px]">
-                                We specialize in Liferay development and consulting, delivering exceptional digital transformation experiences globally.
-                            </p>
-                        </div>
                     </div>
 
                 </section>
@@ -103,6 +96,9 @@ export default function AboutUs() {
                                 <br />
                                 Trust IGNEK
                             </h2>
+                            <p className="text-xl text-[#555555] leading-relaxed pt-5 text-left mb-12">
+                                Companies trust IGNEK for proven Liferay expertise, innovation, reliability, and transformative digital experience solutions.
+                            </p>
 
                         </div>
 
@@ -110,9 +106,7 @@ export default function AboutUs() {
                         <div className="space-y-8">
                             {/* Introductory Paragraph */}
 
-                            <p className="text-xl text-[#555555] leading-relaxed pt-5 text-right mb-12">
-                                Companies trust IGNEK for proven Liferay expertise, innovation, reliability, and transformative digital experience solutions.
-                            </p>
+                            
                             {/* Section 1: Digital Excellence */}
                             <div className="space-y-3">
                                 <h3 className="text-xl font-bold text-black">

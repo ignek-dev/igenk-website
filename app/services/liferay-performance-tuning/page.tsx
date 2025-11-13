@@ -13,6 +13,7 @@ import {
   LiferayPerformanceTuningSubContent,
   LiferayPerformanceTuningTitle1,
   LiferayPerformanceTuningTitle2,
+  serviceDate,
 } from "data/liferay-performance-tuning"
 
 // export const metadata: Metadata = {
@@ -45,7 +46,7 @@ const item = [
       "Use Efficient Algorithms and Data Structures",
       "Optimize Loops and Iterations",
       "Review External Dependencies",
-      "Avoid Heavy Transactions and Excessive Logging"
+      "Avoid Heavy Transactions and Excessive Logging",
     ],
   },
   {
@@ -58,7 +59,7 @@ const item = [
       "CSS Sprites to combine multiple images into a single image file",
       "Remove Unused CSS and JavaScript",
       "CDN Integration",
-      "Keep External Dependencies Minimal"
+      "Keep External Dependencies Minimal",
     ],
   },
   {
@@ -74,11 +75,7 @@ const item = [
   {
     title: "Portal Tuning by Disabling Unnecessary Filters & enabling JS & CSS Caching",
     desc: "Improve overall page rendering time by optimizing filters and caching.",
-    details: [
-      "Disable Unnecessary Filters",
-      "Enable JavaScript & CSS Caching",
-      "Optimize Web Server Configuration"
-    ],
+    details: ["Disable Unnecessary Filters", "Enable JavaScript & CSS Caching", "Optimize Web Server Configuration"],
   },
   {
     title: "Web server configuration improves performance",
@@ -86,7 +83,7 @@ const item = [
     details: [
       "Utilize caching mechanisms such as content caching, reverse proxy caching, and HTTP caching headers to reduce server load and improve response times.",
       "Implement load balancing and clustering techniques to distribute incoming traffic across multiple servers for improved scalability and fault tolerance.",
-      "Utilize content delivery networks (CDNs) to cache and deliver static assets closer to end-users, reducing latency and improving overall website performance."
+      "Utilize content delivery networks (CDNs) to cache and deliver static assets closer to end-users, reducing latency and improving overall website performance.",
     ],
   },
   {
@@ -99,12 +96,10 @@ const item = [
       "Monitor key performance metrics and iterate on tuning efforts for continuous optimization.",
     ],
   },
-];
-
-
+]
 
 export default function LiferayPerformanceTuningPage() {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(0)
   return (
     <main className="pb-16">
       <section className="relative bg-black text-white">
@@ -144,7 +139,7 @@ export default function LiferayPerformanceTuningPage() {
       {/* Liferay Performance Tuning - Features Grid */}
       <section className="bg-[#f7f7f7] text-black">
         <div className="mx-auto w-full px-4 py-[64px] md:px-8 md:py-[64px] lg:py-[64px] [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
-          <h2 className="justify-self-center text-5xl leading-tight font-semibold sm:text-4xl md:text-5xl">
+          <h2 className="justify-self-center text-center text-5xl leading-tight font-semibold sm:text-4xl md:text-5xl">
             Common Liferay Performance Challenges We Solve
           </h2>
           <p className="mt-4 justify-self-center text-center text-lg leading-relaxed text-[#101012] text-gray-700">
@@ -219,12 +214,12 @@ export default function LiferayPerformanceTuningPage() {
           </div>
 
           <div className="mt-12 grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-3">
-            {items.map((item, index) => {
-              const isLastRow = index >= items.length - (items.length % 3 || 3)
+            {serviceDate?.map((item, index) => {
+              const isLastRow = index >= serviceDate.length - (serviceDate.length % 3 || 3)
 
               return (
                 <div key={item.title} className="group relative min-h-[246px]">
-                  <Image src="/images/icon/progress.svg" alt="Progress icon" width={32} height={32} />
+                  <Image src={item?.image ?? ""} alt="Progress icon" width={32} height={32} />
                   <h3 className="mt-4 min-h-[80px] text-3xl font-medium [@media(min-width:1400px)]:w-[89%] [@media(min-width:1800px)]:w-[65%]">
                     {item.title}
                   </h3>
@@ -245,42 +240,35 @@ export default function LiferayPerformanceTuningPage() {
               What We Do With Our Liferay DXP Performance Tuning Services
             </h2>
             <p className="absolute bottom-0 max-w-xl text-right text-xl text-gray-700 md:justify-self-end">
-              With our Liferay expertise, we use Liferay DXP Performance Tuning techniques like server optimization, JVM
-              adjustments, and database enhancements for improved speed, stability, and scalability of your Liferay DXP
-              portal.
+              We optimize Liferay DXP performance through server tuning, JVM tweaks, and database enhancements to boost speed, stability, and scalability.
             </p>
           </div>
 
           <section className="pt-13">
-            <div className=" grid  grid-cols-1 gap-12  md:grid-cols-2 md:gap-16">
+            <div className="grid grid-cols-1 gap-12 md:grid-cols-2 md:gap-16">
               {/* Left column */}
               <div className="pr-12">
                 <div className="space-y-6">
                   {items.map((item, index) => (
                     <div
                       key={item.title}
-                      className={`group cursor-pointer border-l-4 pl-6 transition-all duration-300 ${activeIndex === index
-                        ? "border-black text-black"
-                        : "border-gray-300 text-gray-600 hover:border-black hover:text-black"
-                        } mb-10`}
+                      className={`group cursor-pointer border-l-4 pl-6 transition-all duration-300 ${
+                        activeIndex === index
+                          ? "border-black text-black"
+                          : "border-gray-300 text-gray-600 hover:border-black hover:text-black"
+                      } mb-10`}
                       onMouseEnter={() => setActiveIndex(index)}
                     >
-                      <h3 className="font-semibold text-lg md:text-2xl">
-                        {item.title}
-                      </h3>
-                      <p className="mt-2 text-sm md:text-base text-gray-500">
-                        {item.desc}
-                      </p>
+                      <h3 className="text-lg font-semibold md:text-2xl">{item.title}</h3>
+                      <p className="mt-2 text-sm text-gray-500 md:text-base">{item.desc}</p>
                     </div>
                   ))}
                 </div>
               </div>
 
               {/* Right column */}
-              <div className="rounded-xl border border-gray-200 bg-white p-8 shadow-sm transition-all duration-500 h-max w-full">
-                <h3 className="text-2xl font-semibold md:text-3xl">
-                  {item[activeIndex]?.title}
-                </h3>
+              <div className="h-max w-full rounded-xl border border-gray-200 bg-white p-8 shadow-sm transition-all duration-500">
+                <h3 className="text-2xl font-semibold md:text-3xl">{item[activeIndex]?.title}</h3>
                 <ul className="mt-6 space-y-4">
                   {item[activeIndex]?.details.map((text) => (
                     <li key={text} className="flex items-center gap-3">
@@ -300,9 +288,7 @@ export default function LiferayPerformanceTuningPage() {
                           />
                         </svg>
                       </span>
-                      <span className="text-base leading-snug text-gray-800">
-                        {text}
-                      </span>
+                      <span className="text-base leading-snug text-gray-800">{text}</span>
                     </li>
                   ))}
                 </ul>

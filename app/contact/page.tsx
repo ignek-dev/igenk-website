@@ -220,8 +220,7 @@ export default function ContactPage() {
             </div>
             <div className="flex h-full items-end justify-end">
               <p className="text-normal line-height-[30px] w-full text-right text-xl text-[#374151]">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.
-                Pellentesque sit amet{" "}
+                We have offices in India and the United Arab Emirates, providing seamless regional support and collaboration for our global clients.{" "}
               </p>
             </div>
           </div>
@@ -294,7 +293,7 @@ export default function ContactPage() {
               <div className="mt-6 md:mt-4 md:w-1/2 md:pl-3.5">
                 <h3 className="text-4xl font-semibold text-black">United Arab Emirates</h3>
                 <p className="mt-4 text-lg text-[#4D464A]">
-                  Arabian Sky Business center , office Number : 09-106,
+                  office Number : 09-106, Arabian Sky Business center , 
                   <br />
                   Umm Hurrair 2 Dubai UAE
                 </p>
