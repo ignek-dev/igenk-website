@@ -1,4 +1,5 @@
 import "styles/tailwind.css"
+import { Metadata } from 'next'
 import { Poppins } from "next/font/google"
 import BottomBar from "components/Common/BottomBar"
 import { Footer } from "../components/Common"
@@ -11,7 +12,6 @@ const poppins = Poppins({
   variable: "--font-poppins",
 })
 
-import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Ignek - Transform Your Digital Experience',

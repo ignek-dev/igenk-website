@@ -1,7 +1,7 @@
 "use client"
-import React from "react"
 import { Metadata } from "next"
 import Image from "next/image"
+import React from "react"
 
 const metadata: Metadata = {
   title: "Contact Us | Liferay Development, Customization & Consulting Experts",
@@ -157,6 +157,7 @@ export default function ContactPage() {
         setStatus({ type: "error", message: "Failed to send message." })
       }
     } catch (err) {
+      console.log(err)
       setStatus({ type: "error", message: "Network error. Please try again later." })
     } finally {
       setLoading(false)
