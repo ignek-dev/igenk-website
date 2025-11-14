@@ -3,7 +3,7 @@ import { jobs, perks } from "data/career"
 import JobCard from "../../components/career/JobCard"
 
 export default function CareerPage() {
-  
+
 
   return (
     <main className="">
@@ -47,7 +47,7 @@ export default function CareerPage() {
 
       {/* Perks & Benefits */}
       <section className="border-t border-white/20 bg-black text-white">
-        <div className="mx-auto w-full px-4 py-16 md:px-8 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px]">
+        <div className="mx-auto w-full px-4 py-16 md:px-8 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
           <div className="grid items-start gap-10 md:grid-cols-2">
             <h2 className="text-2xl font-semibold sm:text-3xl md:text-5xl">More Than Just a Job</h2>
             <p className="max-w-xl pb-12 text-right text-[20px] leading-[30px] font-normal tracking-[0] text-white/80 sm:text-[18px] sm:leading-[28px] md:justify-self-end">
@@ -59,9 +59,8 @@ export default function CareerPage() {
             {perks.map((p, idx) => (
               <div
                 key={`${p.title[0]}-${idx}`}
-                className={`border-r border-[#1F2937] p-8 text-center ${
-                  idx < perks.length - 5 ? "border-b border-[#1F2937]" : ""
-                } career-card`}
+                className={`border-r border-[#1F2937] p-8 text-center ${idx < perks.length - 5 ? "border-b border-[#1F2937]" : ""
+                  } career-card`}
               >
                 {" "}
                 <Image
@@ -84,8 +83,8 @@ export default function CareerPage() {
       </section>
 
       {/* Open Roles */}
-      <section className="bg-[#F6F6F6] pb-16 text-black">
-        <div className="mx-auto w-full px-4 py-16 md:px-8 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px]">
+      <section className="bg-[#F6F6F6] pb-0 text-black">
+        <div className="mx-auto w-full px-4 py-16 md:px-8 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
           <div className="grid items-start gap-10 md:grid-cols-2">
             <h2 className="text-4xl leading-tight font-semibold tracking-[-0.02em] text-balance sm:text-3xl md:text-5xl">
               <span className="block">Apply at IGNEK</span>

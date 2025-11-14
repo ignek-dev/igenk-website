@@ -151,7 +151,7 @@ const Team: React.FC = () => {
                 style={{
                     position: "absolute",
                     top: 64,
-                    left: 186,
+                    left: 192,
                     width: 1539,
                     height: 120,
                     justifyContent: "space-between",
@@ -202,7 +202,7 @@ const Team: React.FC = () => {
                 className="absolute flex justify-between"
                 style={{
                     top: 248,
-                    left: 186,
+                    left: 192,
                     right: 202,
                     bottom: 64,
                     width: "fit-content",

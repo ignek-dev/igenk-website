@@ -90,7 +90,7 @@ const SuccessStories: React.FC = () => {
       className="stack-clip sticky top-0 z-20 h-max w-full rounded-t-[5rem] bg-white text-black shadow-xl"
     >
       <div className="mx-auto w-full px-4 py-12 md:px-6 md:py-16 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
-        <div className="w-full px-4 md:px-8">
+        <div className="w-full px-0">
           {/* Header */}
           <div className="mx-auto mb-8 max-w-3xl text-center">
             <h2 className="mb-4 text-center text-4xl font-semibold md:text-5xl">Success Stories</h2>

@@ -95,7 +95,7 @@ export default function LiferayThemeDevelopmentPage() {
   ]
 
   return (
-    <main className="pb-16">
+    <main className="pb-0">
       {/* Hero */}
       <section className="relative bg-black text-white">
         <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_10%_0%,#0E7BF8_0%,#00979E_40%,transparent_65%)] opacity-25" />

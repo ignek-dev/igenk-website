@@ -54,7 +54,7 @@ const WhatWeBring: React.FC = () => {
 
   return (
     // This section is "sticky" and stays on screen while the parent scrolls
-    <section className="sticky top-0 z-10 flex h-screen items-center overflow-hidden bg-black py-16 text-white">
+    <section className="sticky top-[140px] z-10 flex h-screen items-center overflow-hidden bg-black py-16 text-white">
       <div className="mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
         {/* Header content (your styling is preserved) */}
         <div className="flex flex-col align-center gap-8 lg:flex-row lg:items-start lg:justify-between [@media(min-width:1280px)]:mt-24 [@media(min-width:1800px)]:mt-0">

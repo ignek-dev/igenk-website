@@ -45,8 +45,8 @@ export default function AboutUs() {
     return (
         <div className="relative bg-[#0B0B0F] text-white">
             <BackgroundLines className="relative flex flex-col justify-center bg-black text-white overflow-hidden">
-                <section className="relative top-[60px] mb-[120px] w-full h-[622px] mx-auto px-4 pt-20 pb-16 md:px-8 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px]">
-                    <div className="grid items-end mt-[77px] lg:grid-cols-2">
+                <section className="relative top-[60px] w-full h-[670px] px-4 pt-20  pb-16 md:px-8 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
+                    <div className="grid items-end mt-[64px] lg:grid-cols-2">
                         {/* Left Column */}
                         <div className="flex flex-col justify-center">
                             {/* Tag */}

@@ -6,11 +6,11 @@ import { expoerAdvices, featureTabs, LiferayExpertAdviceData, LiferayExpertAdvic
 
 export default function LiferayExpertAdvicePage() {
   return (
-    <main className="pb-16">
+    <main className="pb-0">
       {/* Hero */}
       <section className="relative bg-black text-white">
         <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_10%_0%,#0E7BF8_0%,#00979E_40%,transparent_65%)] opacity-25" />
-        <div className="mx-auto w-full px-4 pt-12 pb-16 md:px-8 md:pt-20 md:pb-28 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px]">
+        <div className="mx-auto w-full px-4 pt-12 pb-16 md:px-8 md:pt-16 md:pb-16 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
           <div className="relative grid items-start gap-10 md:grid-cols-2">
             <div>
               <div className="inline-flex items-center rounded-full border border-white/30 px-4 py-2 text-lg text-white">
@@ -60,9 +60,8 @@ export default function LiferayExpertAdvicePage() {
               {expoerAdvices.map((txt, index) => (
                 <div
                   key={index}
-                  className={`flex items-center gap-3 rounded-lg bg-white p-0 ${
-                    index === expoerAdvices.length - 1 ? "pb-0" : "border-b border-gray-200 pb-4"
-                  }`}
+                  className={`flex items-center gap-3 rounded-lg bg-white p-0 ${index === expoerAdvices.length - 1 ? "pb-0" : "border-b border-gray-200 pb-4"
+                    }`}
                 >
                   <span className="flex h-[70px] w-[70px] items-center justify-center rounded-md">
                     <svg width="44" height="48" viewBox="0 0 44 48" fill="none" xmlns="http://www.w3.org/2000/svg">

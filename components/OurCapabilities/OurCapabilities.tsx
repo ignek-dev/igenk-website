@@ -78,7 +78,7 @@ const OurCapabilities: React.FC = () => {
   })
 
   return (
-    <section ref={sectionRef} className="bg-black py-16 text-white">
+    <section ref={sectionRef} className="bg-black py-16 text-white pb-10">
       <div className="mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
         {/* Header Section */}
         <div className="mb-12 flex flex-col lg:mb-20 lg:flex-row lg:items-end lg:justify-between">
