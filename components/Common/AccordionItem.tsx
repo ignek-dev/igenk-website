@@ -22,7 +22,7 @@ const AccordionItem: React.FC<AccordionItemProps> = ({ title, content }) => {
         <span className="text-2xl leading-[36px]">{title}</span>
         <motion.span
           initial={false}
-          animate={{ rotate: isOpen ? 45 : 0 }}
+          animate={{ rotate: isOpen ? 0 : 45}}
           transition={{ duration: 0.3, ease: "easeOut" }}
           className="text-2xl text-gray-400"
         >

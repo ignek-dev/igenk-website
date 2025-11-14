@@ -53,8 +53,8 @@ const CardRail: React.FC<CardRailProps> = ({ cards, width = 417, height = 469 })
 
   return (
     <div
-      className={`absolute top-[297px] px-[192px] right-0 h-[469px] overflow-hidden transition-all duration-300 ${
-        isAtStart ? "left-[192px]" : "left-0"
+      className={`absolute top-[297px] px-[192px] pl-0 right-0 h-[469px] overflow-hidden transition-all duration-300 ${
+        isAtStart ? "left-[192px]" : "left-[192px]"
       }`}
     >
       <div
@@ -103,7 +103,7 @@ const CardRail: React.FC<CardRailProps> = ({ cards, width = 417, height = 469 })
             </div>
 
             {/* Divider */}
-            <div className="absolute bottom-[28px] left-1/2 h-px w-[72%] -translate-x-1/2 bg-white/18" />
+            <div className="absolute bottom-[70px] left-1/2 h-px w-[72%] -translate-x-1/2 bg-white/18" />
           </div>
         ))}
       </div>

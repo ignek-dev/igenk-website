@@ -166,7 +166,7 @@ export default function LiferayConsultationPage() {
               <div className="inline-flex w-fit items-center rounded-full border border-white px-8.5 py-[8.8px] text-lg font-normal">
                 Liferay Services
               </div>
-              <h1 className="line-height-[88px] letter-spacing-[-0.02em] mt-13 text-7xl leading-tight font-bold sm:text-5xl md:text-6xl [@media(min-width:1440px)]:text-5xl [@media(min-width:1800px)]:text-6xl">
+              <h1 className="line-height-[88px] letter-spacing-[-0.02em] mt-13 text-7xl leading-tight font-bold sm:text-5xl md:text-7xl [@media(min-width:1440px)]:text-5xl [@media(min-width:1800px)]:text-6xl">
                 Liferay Consulting &
                 <br />
                 <span className="block">Implementation Services</span>

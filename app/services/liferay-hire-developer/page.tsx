@@ -80,7 +80,7 @@ export default function LiferayHireDeveloper() {
               <div className="inline-flex w-fit items-center rounded-full border border-white px-8.5 py-[8.8px] text-lg font-normal">
                 Hire Us
               </div>
-              <h1 className="line-height-[88px] letter-spacing-[-0.02em] mt-13 text-7xl leading-tight font-bold sm:text-5xl md:text-6xl">
+              <h1 className="line-height-[88px] letter-spacing-[-0.02em] mt-13 text-7xl leading-tight font-bold sm:text-5xl md:text-7xl">
                 Hire Liferay
                 <br />
                 <span className="block">Developer</span>
@@ -152,7 +152,7 @@ export default function LiferayHireDeveloper() {
                 </div>
 
                 {/* Title Container with fixed height */}
-                <div className="mt-8.5">
+                <div className="mt-9">
                   <h3 className="line-height-[44px] letter-spacing-[-0.02em] text-4xl font-semibold whitespace-pre">
                     {/* Map over the title array to create line breaks */}
                     {item.title.map((line, lineIndex) => (
@@ -201,7 +201,7 @@ export default function LiferayHireDeveloper() {
                     <div className="absolute top-35 left-[32px] h-[calc(100%+4.7rem)] w-[1.23px] bg-[#EAEAFF]"></div>
                   )}
                   {/* Step Number Circle */}
-                  <div className="z-10 flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-full bg-blue-700 text-xl font-bold">
+                  <div className="z-10 flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-full bg-blue-700 text-2xl font-bold">
                     {stepItem.step}
                   </div>
 

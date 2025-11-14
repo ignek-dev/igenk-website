@@ -110,7 +110,7 @@ export default function PortfolioRenderer() {
           <div className="mx-auto w-full px-4 pt-12 pb-16 md:px-8 md:pt-20 md:pb-28 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px]">
             <div className="text-center">
               <h1
-                className="mt-9 text-4xl leading-tight font-semibold sm:text-5xl md:text-6xl"
+                className="mt-9 text-4xl leading-tight font-semibold sm:text-5xl md:text-7xl"
                 dangerouslySetInnerHTML={{ __html: post.title.rendered }}
               />
               <p
