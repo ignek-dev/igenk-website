@@ -1,4 +1,5 @@
 "use client"
+import { Metadata } from "next"
 import Image from "next/image"
 import { useState } from "react"
 import { BlogSection } from "components/Common"
@@ -16,12 +17,24 @@ import {
   serviceDate,
 } from "data/liferay-performance-tuning"
 
-// export const metadata: Metadata = {
-//   title: "Liferay Performance Tuning | IGNEK",
-//   description:
-//     "Optimize your Liferay platform with IGNEK's performance tuning services: JVM tuning, caching, DB optimization, and more.",
-// }
+ const metadata: Metadata = {
+  title: "Liferay Performance Tuning Services - IGNEK",
+  description:
+    "Optimize your Liferay site's speed and efficiency with our Liferay Performance Tuning Services. Enhance user experience and drive better results.",
 
+  openGraph: {
+    url: "https://www.ignek.com/services/liferay-performance-tuning/",
+    title: "Liferay Performance Tuning Services - IGNEK",
+    description: "Optimize your Liferay site's speed and efficiency with our Liferay Performance Tuning Services. Enhance user experience and drive better results.",
+    images: [
+      {
+        width: 1200,
+        height: 630,
+        url: "/og-image.png",
+      },
+    ],
+  },
+}
 const item = [
   {
     title: "JVM Memory Tuning",
@@ -252,11 +265,10 @@ export default function LiferayPerformanceTuningPage() {
                   {items.map((item, index) => (
                     <div
                       key={item.title}
-                      className={`group cursor-pointer border-l-4 pl-6 transition-all duration-300 ${
-                        activeIndex === index
+                      className={`group cursor-pointer border-l-4 pl-6 transition-all duration-300 ${activeIndex === index
                           ? "border-black text-black"
                           : "border-gray-300 text-gray-600 hover:border-black hover:text-black"
-                      } mb-10`}
+                        } mb-10`}
                       onMouseEnter={() => setActiveIndex(index)}
                     >
                       <h3 className="text-lg font-semibold md:text-2xl">{item.title}</h3>

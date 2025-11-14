@@ -22,7 +22,7 @@ export default function Navigation() {
   const [activeMenu, setActiveMenu] = useState<string | null>(null)
   const pathname = usePathname() // Get the current path
   const isCareerPage = pathname === "/career" // Check if it's the career page
-  const isAboutUsPage = pathname === '/about'
+  const isAboutUsPage = pathname === '/about-us'
   const isConsultingPage = pathname === "/services/liferay-consulting-and-implementation-services"
   const isHireDeveloperPage = pathname === "/services/liferay-hire-developer"
   const [isHeaderHovered, setIsHeaderHovered] = useState(false)

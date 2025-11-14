@@ -11,7 +11,7 @@ export default function Footer() {
     {
       title: "Company",
       items: [
-        { label: "About", href: "/about" },
+        { label: "About", href: "/about-us" },
         { label: "Career", href: "/career" },
         { label: "Case Study", href: "/case-study" },
         { label: "Blogs", href: "/blog" },

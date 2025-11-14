@@ -1,8 +1,29 @@
+import { Metadata } from "next"
 import ScheduleMeetingButton from "components/Button/ScheduleMeetingButton"
 import { BlogSection } from "components/Common"
 import TalkToExpert from "components/Common/TalkToExpert"
 import WhatMake from "components/Common/WhatMake"
 import { features, featureTabs, LiferayMigrationData, LiferayMigrationSubContent, LiferayMigrationTitle1, LiferayMigrationTitle2, steps } from "data/liferay-migration"
+
+
+ const metadata: Metadata = {
+  title: "Liferay Migration Services - IGNEK",
+  description:
+    "Move smoothly with Liferay Migration Services! Upgrade your digital platform hassle-free with our expert guidance. Elevate your business today!",
+
+  openGraph: {
+    url: "https://www.ignek.com/services/liferay-migration/",
+    title: "Liferay Migration Services - IGNEK",
+    description: "Move smoothly with Liferay Migration Services! Upgrade your digital platform hassle-free with our expert guidance. Elevate your business today!",
+    images: [
+      {
+        width: 1200,
+        height: 630,
+        url: "/og-image.png",
+      },
+    ],
+  },
+}
 
 export default function LiferayMigrationPage() {
 

@@ -1,8 +1,29 @@
+import { Metadata } from "next"
 import ScheduleMeetingButton from "components/Button/ScheduleMeetingButton"
 import { BlogSection } from "components/Common"
 import TalkToExpert from "components/Common/TalkToExpert"
 import WhatMake from "components/Common/WhatMake"
 import { expoerAdvices, featureTabs, LiferayExpertAdviceData, LiferayExpertAdviceSubContent, LiferayExpertAdviceTitle1, LiferayExpertAdviceTitle2, solutions } from "data/liferayExpert"
+
+ const metadata: Metadata = {
+  title: "Liferay Expert Advice | Optimize Your Digital Experience - IGNEK",
+  description:
+    "Discover unparalleled Liferay expert advice and services to enhance your digital experience platform. Contact us to elevate your Liferay environment.",
+
+  openGraph: {
+    url: "https://www.ignek.com/services/liferay-expert-advice/",
+    title: "Liferay Expert Advice | Optimize Your Digital Experience - IGNEK",
+    description: "Discover unparalleled Liferay expert advice and services to enhance your digital experience platform. Contact us to elevate your Liferay environment.",
+    images: [
+      {
+        width: 1200,
+        height: 630,
+        url: "/og-image.png",
+      },
+    ],
+  },
+}
+
 
 export default function LiferayExpertAdvicePage() {
   return (

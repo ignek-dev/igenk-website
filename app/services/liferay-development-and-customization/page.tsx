@@ -1,3 +1,4 @@
+import { Metadata } from "next"
 import { BlogSection } from "components/Common"
 import TalkToExpert from "components/Common/TalkToExpert"
 import WhatMake from "components/Common/WhatMake"
@@ -12,6 +13,25 @@ import {
   liferayIntegrationServices,
   portalDevelopmentService,
 } from "data/liferay-development-and-customization"
+
+const metadata: Metadata = {
+  title: "Liferay Development and Customization Services - IGNEK",
+  description:
+    "Our Liferay Development and Customization Services, to create custom portals and applications perfectly suited to your business needs.",
+
+  openGraph: {
+    url: "https://www.ignek.com/services/liferay-development-and-customization/",
+    title: "Liferay Development and Customization Services - IGNEK",
+    description: "Our Liferay Development and Customization Services, to create custom portals and applications perfectly suited to your business needs.",
+    images: [
+      {
+        width: 1200,
+        height: 630,
+        url: "/og-image.png",
+      },
+    ],
+  },
+}
 
 export default function LiferayDevelopmentAndCustomizationPage() {
   return (
@@ -68,9 +88,8 @@ export default function LiferayDevelopmentAndCustomizationPage() {
               {developmentServices.map((txt, index) => (
                 <div
                   key={index}
-                  className={`flex items-center gap-3 rounded-lg bg-white p-0 pb-4 ${
-                    index === developmentServices.length - 1 ? "" : "border-b border-gray-200"
-                  }`}
+                  className={`flex items-center gap-3 rounded-lg bg-white p-0 pb-4 ${index === developmentServices.length - 1 ? "" : "border-b border-gray-200"
+                    }`}
                 >
                   <span className="flex h-[40px] w-[40px] items-center justify-center rounded-full bg-black">
                     <svg

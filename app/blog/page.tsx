@@ -1,10 +1,30 @@
 "use client"
+import { Metadata } from "next";
 import Image from "next/image"
 import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useState } from "react"
 import BlogCard, { BlogData } from "components/Blogmain/BlogCards"
 import TechCard from "components/Blogmain/TechCards"
 import { WPPost } from "components/BlogSidebar/BlogSidebar"
+
+const metadata: Metadata = {
+  title: "IGNEK : Liferay, ReactJS, Healthcare More Blogs",
+  description:
+    "IGNEK relentlessly writes blogs/articles to cover important concept/topics of Liferay, Java, ReactJS, VueJS & JavaScript",
+
+  openGraph: {
+    url: "https://www.ignek.com/blog/",
+    title: "IGNEK : Liferay, ReactJS, Healthcare More Blogs",
+    description: "IGNEK relentlessly writes blogs/articles to cover important concept/topics of Liferay, Java, ReactJS, VueJS & JavaScript",
+    images: [
+      {
+        width: 1200,
+        height: 630,
+        url: "/og-image.png",
+      },
+    ],
+  },
+}
 
 const cardData = [
   {

@@ -1,3 +1,4 @@
+import { Metadata } from "next"
 import { BlogSection } from "components/Common"
 import CaseStudy from "components/Common/CaseStudy"
 import TalkToExpert from "components/Common/TalkToExpert"
@@ -11,6 +12,26 @@ import {
   LiferayProofOfConceptTitle1,
   LiferayProofOfConceptTitle2,
 } from "data/liferay-proof-of-concept"
+
+
+ const metadata: Metadata = {
+  title: "Liferay POC Services - Enhance Your Business with IGNEK",
+  description:
+    "Explore IGNEK's Liferay POC services. Test Liferay’s features and see how it can enhance your business with a tailored trial run.",
+
+  openGraph: {
+    url: "https://www.ignek.com/services/liferay-poc/",
+    title: "Liferay POC Services - Enhance Your Business with IGNEK",
+    description: "Explore IGNEK's Liferay POC services. Test Liferay’s features and see how it can enhance your business with a tailored trial run.",
+    images: [
+      {
+        width: 1200,
+        height: 630,
+        url: "/og-image.png",
+      },
+    ],
+  },
+}
 
 export default function LiferayProofOfConceptPage() {
   return (

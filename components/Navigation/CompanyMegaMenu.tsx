@@ -78,7 +78,7 @@ const companyLinks = [
     image: "/images/mega-menu/AboutUS.png",
     title: "About Us",
     description: "We are a digital solutions company focused on innovation and quality.",
-    href: "/about",
+    href: "/about-us",
   },
   {
     image: "/images/mega-menu/Careers.png", // Replace with your actual image path

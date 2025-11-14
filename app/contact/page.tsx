@@ -1,7 +1,26 @@
 "use client"
-import Image from "next/image"
 import React from "react"
+import { Metadata } from "next"
+import Image from "next/image"
 
+const metadata: Metadata = {
+  title: "Contact Us | Liferay Development, Customization & Consulting Experts",
+  description:
+    "Contact our team for Liferay development, customization, support, and digital transformation services tailored to your business needs.",
+
+  openGraph: {
+    url: "https://www.ignek.com/contact-us/",
+    title: "Contact Us | Liferay Development, Customization & Consulting Experts",
+    description: "Contact our team for Liferay development, customization, support, and digital transformation services tailored to your business needs.",
+    images: [
+      {
+        width: 1200,
+        height: 630,
+        url: "/og-image.png",
+      },
+    ],
+  },
+}
 const FacebookIcon = () => (
   <svg
     className="h-6 w-6"
@@ -113,7 +132,7 @@ const FormTextArea = ({
 export default function ContactPage() {
   return (
     <main className="bg-black text-white">
-      <section className="relative pt-25 pb-20 md:pb-32">
+      <section className="relative pt-16 pb-16 md:pb-16">
         {/* Main Content with standard padding */}
         <div className="mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
           {/* Top Section: Title and Description */}
@@ -293,7 +312,7 @@ export default function ContactPage() {
               <div className="mt-6 md:mt-4 md:w-1/2 md:pl-3.5">
                 <h3 className="text-4xl font-semibold text-black">United Arab Emirates</h3>
                 <p className="mt-4 text-lg text-[#4D464A]">
-                  office Number : 09-106, Arabian Sky Business center , 
+                  office Number : 09-106, Arabian Sky Business center ,
                   <br />
                   Umm Hurrair 2 Dubai UAE
                 </p>

@@ -1,4 +1,5 @@
 "use client"
+import { Metadata } from "next"
 import { useEffect, useRef, useState } from "react"
 import { BlogSection } from "components/Common"
 import TalkToExpert from "components/Common/TalkToExpert"
@@ -12,6 +13,25 @@ import {
   LiferayArchitectureTitle2,
   systemArchitecure,
 } from "data/liferay-architecture-design"
+
+const metadata: Metadata = {
+  title: "Liferay Architecture Design Services - IGNEK",
+  description:
+    "Let us create an Liferay Architecture Design for your platform. We'll make it work smoothly and perfectly suited to your needs.",
+
+  openGraph: {
+    url: "https://www.ignek.com/services/liferay-architecture-design/",
+    title: "Liferay Architecture Design Services - IGNEK",
+    description: "Let us create an Liferay Architecture Design for your platform. We'll make it work smoothly and perfectly suited to your needs.",
+    images: [
+      {
+        width: 1200,
+        height: 630,
+        url: "/og-image.png",
+      },
+    ],
+  },
+}
 
 export default function LiferayArchitectureDesignPage() {
   const containerRef = useRef<HTMLDivElement | null>(null)
@@ -119,9 +139,8 @@ export default function LiferayArchitectureDesignPage() {
             {systemArchitecure.map((item, index) => (
               <div
                 key={index}
-                className={`max-w-[22%] flex-shrink-0 pr-10 ${
-                  index !== systemArchitecure.length - 1 ? "border-r border-[#E5E7EB]" : ""
-                }`}
+                className={`max-w-[22%] flex-shrink-0 pr-10 ${index !== systemArchitecure.length - 1 ? "border-r border-[#E5E7EB]" : ""
+                  }`}
               >
                 <h3 className="mt-[20px] mb-3 text-[36px] leading-normal font-semibold text-gray-600">{item.text}</h3>
                 <p className="mt-[30px] mb-[73px] text-base leading-relaxed text-gray-500">{item.description}</p>

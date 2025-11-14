@@ -1,4 +1,5 @@
 "use client"
+import { Metadata } from "next"
 import Image from "next/image"
 import React from "react"
 import { BlogSection } from "components/Common"
@@ -9,11 +10,32 @@ import WordsFromCEO from "components/Common/WordsFromCEO"
 import LiferayTechnologicalStacks from "components/LiferayTechnologicalStacks"
 import { easySteps, expertiseStats, teamOffersServices, whyHireFromIgnek } from "data/liferay-hire-developer"
 
+
+ const metadata: Metadata = {
+  title: "Hire Liferay Developer | 1-Week Risk-Free Trial - IGNEK",
+  description:
+    "Hire Liferay developer from us and set up your own Liferay Development team to elevate your Liferay portal development projects.",
+
+  openGraph: {
+    url: "https://www.ignek.com/hire-liferay-developer/",
+    title: "Hire Liferay Developer | 1-Week Risk-Free Trial - IGNEK",
+    description: "Hire Liferay developer from us and set up your own Liferay Development team to elevate your Liferay portal development projects.",
+    images: [
+      {
+        width: 1200,
+        height: 630,
+        url: "/og-image.png",
+      },
+    ],
+  },
+}
+
+
 export default function LiferayHireDeveloper() {
-const LiferayHireTitle1 = "Why Hire Liferay Developer"
-  const LiferayHireTitle2 ="From IGNEK?"
+  const LiferayHireTitle1 = "Why Hire Liferay Developer"
+  const LiferayHireTitle2 = "From IGNEK?"
   const LiferayHireSubContent = "At IGNEK, our Liferay Consultant bring over a decade of experience, crafting secure, scalable solutions across various industries. Hire Liferay developer for innovative problem-solving."
- 
+
   const LiferayHireData = [
     {
       title: "Certified Liferay Developer",
@@ -262,7 +284,7 @@ const LiferayHireTitle1 = "Why Hire Liferay Developer"
       {/* Words from CEO */}
       <WordsFromCEO />
       {/* <section className="bg-white text-black"></section> */}
-     <WhatMake WhatMakeData={LiferayHireData} titleText1={LiferayHireTitle1} titleText2={LiferayHireTitle2} subContext={LiferayHireSubContent}/>
+      <WhatMake WhatMakeData={LiferayHireData} titleText1={LiferayHireTitle1} titleText2={LiferayHireTitle2} subContext={LiferayHireSubContent} />
       <TalkToExpert />
       <BlogSection />
     </main>

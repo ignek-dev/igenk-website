@@ -1,4 +1,5 @@
 "use client"
+import { Metadata } from "next"
 import { useEffect, useRef, useState } from "react"
 import { BlogSection } from "components/Common"
 import CaseStudy from "components/Common/CaseStudy"
@@ -15,6 +16,26 @@ import {
   LiferayEcommerceDevelopmentTitle2,
   steps,
 } from "data/liferay-ecommerce-development"
+
+ const metadata: Metadata = {
+  title: "Liferay Ecommerce Development Company - IGNEK",
+  description:
+    "Get top-notch Liferay Ecommerce Development services tailored to your business needs. Boost sales, enhance user experience, and grow your online store efficiently.",
+
+  openGraph: {
+    url: "https://www.ignek.com/services/liferay-ecommerce-development/",
+    title: "Liferay Ecommerce Development Company - IGNEK",
+    description: "Get top-notch Liferay Ecommerce Development services tailored to your business needs. Boost sales, enhance user experience, and grow your online store efficiently.",
+    images: [
+      {
+        width: 1200,
+        height: 630,
+        url: "/og-image.png",
+      },
+    ],
+  },
+}
+
 
 export default function LiferayEcommerceDevelopmentPage() {
   const containerRef = useRef<HTMLDivElement | null>(null)

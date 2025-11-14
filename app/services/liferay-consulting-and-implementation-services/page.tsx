@@ -1,4 +1,5 @@
 "use client"
+import { Metadata } from "next"
 import Image from "next/image"
 import React, { useState } from "react"
 import ScheduleMeetingButton from "components/Button/ScheduleMeetingButton"
@@ -22,6 +23,25 @@ import {
   liferaySolutions,
 } from "data/liferay-consulting-and-implementation-services"
 import { useInView } from "hooks/useInView"
+
+const metadata: Metadata = {
+  title: "Liferay Consulting Company - IGNEK",
+  description:
+    "Get expert guidance and seamless integration with our Liferay Consulting & Implementation Services. Elevate your digital platform effortlessly.",
+
+  openGraph: {
+    url: "https://ignek.com/services/liferay-consulting-and-implementation-services",
+    title: "Liferay Consulting Company - IGNEK",
+    description: "Get expert guidance and seamless integration with our Liferay Consulting & Implementation Services. Elevate your digital platform effortlessly.",
+    images: [
+      {
+        width: 1200,
+        height: 630,
+        url: "/og-image.png",
+      },
+    ],
+  },
+}
 
 export default function LiferayConsultationPage() {
   const [hoveredCard, setHoveredCard] = useState<string | null>(null)
@@ -284,9 +304,8 @@ export default function LiferayConsultationPage() {
                     <div
                       ref={ref as React.RefObject<HTMLDivElement>}
                       key={index}
-                      className={`sticky mb-16 transition-opacity duration-500 ${
-                        isInView ? "animate-stack-in" : "opacity-0"
-                      }`}
+                      className={`sticky mb-16 transition-opacity duration-500 ${isInView ? "animate-stack-in" : "opacity-0"
+                        }`}
                       style={{ top: `calc(6rem + ${index * 4}rem)` }}
                     >
                       <div className="flex w-full flex-col justify-center rounded-2xl border border-gray-700 bg-[#0C0C0C] p-9 pt-6 backdrop-blur-md transition-all duration-300 hover:border-[#00AEEF] md:min-h-[196px]">
@@ -334,11 +353,10 @@ export default function LiferayConsultationPage() {
                   key={solution.id}
                   onMouseEnter={() => setHoveredCard(solution.id)}
                   onMouseLeave={() => setHoveredCard(null)}
-                  className={`flex h-[340px] items-center rounded-lg p-8 transition-all duration-300 ease-in-out ${
-                    isCurrentPrimary
+                  className={`flex h-[340px] items-center rounded-lg p-8 transition-all duration-300 ease-in-out ${isCurrentPrimary
                       ? "w-full flex-grow-[2] basis-0 flex-row justify-between gap-8 bg-[#0B63CE] text-white [@media(min-width:1440px)]:flex-grow-[3] [@media(min-width:1800px)]:flex-grow-[2]"
                       : "w-full flex-grow basis-0 flex-col justify-center border border-gray-200 bg-white text-gray-800 shadow-sm"
-                  } `}
+                    } `}
                 >
                   {isCurrentPrimary ? (
                     // Layout for the active (primary) card
@@ -528,11 +546,10 @@ export default function LiferayConsultationPage() {
               <button
                 key={tab}
                 onClick={() => setActiveServiceTab(tab)}
-                className={`flex-1 cursor-pointer rounded-full px-8 py-4 text-center text-2xl font-medium transition-colors duration-300 md:whitespace-pre ${
-                  activeServiceTab === tab
+                className={`flex-1 cursor-pointer rounded-full px-8 py-4 text-center text-2xl font-medium transition-colors duration-300 md:whitespace-pre ${activeServiceTab === tab
                     ? "border border-blue-600 bg-blue-600 text-white"
                     : "border border-white text-white hover:border-blue-600 hover:text-white"
-                }`}
+                  }`}
               >
                 {tab}
               </button>
@@ -582,11 +599,10 @@ export default function LiferayConsultationPage() {
                 <div key={index} className="py-6">
                   <div
                     onMouseEnter={() => setActivePillar(index)}
-                    className={`inline-block cursor-pointer border-b-1 transition-all duration-300 ${
-                      activePillar === index
+                    className={`inline-block cursor-pointer border-b-1 transition-all duration-300 ${activePillar === index
                         ? "border-black font-semibold text-black"
                         : "border-transparent text-gray-500 hover:text-black"
-                    }`}
+                      }`}
                   >
                     <span className="mr-4 text-2xl font-semibold">{service.number})</span>
                     <span className="text-2xl font-semibold">{service.name}</span>
@@ -600,18 +616,16 @@ export default function LiferayConsultationPage() {
               {endToEndServices.map((service, index) => (
                 <div
                   key={index}
-                  className={`flex h-full flex-col justify-between rounded-lg p-6 transition-all duration-300 ease-in-out ${
-                    activePillar === index
+                  className={`flex h-full flex-col justify-between rounded-lg p-6 transition-all duration-300 ease-in-out ${activePillar === index
                       ? "w-full flex-grow bg-[#0B63CE] text-white shadow-xl"
                       : "w-[20%] flex-grow-0 border border-[#E5E7EB] bg-white text-gray-400"
-                  }`}
+                    }`}
                 >
                   {/* Rotated Number */}
                   <div className="h-16">
                     <span
-                      className={`block w-min -rotate-90 transform text-5xl font-medium transition-colors duration-300 ${
-                        activePillar === index ? "text-white" : "text-gray-400"
-                      }`}
+                      className={`block w-min -rotate-90 transform text-5xl font-medium transition-colors duration-300 ${activePillar === index ? "text-white" : "text-gray-400"
+                        }`}
                     >
                       {service.number}
                     </span>

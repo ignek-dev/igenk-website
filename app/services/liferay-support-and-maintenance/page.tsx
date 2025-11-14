@@ -1,3 +1,4 @@
+import { Metadata } from "next"
 import { BlogSection } from "components/Common"
 import TalkToExpert from "components/Common/TalkToExpert"
 import WhatMake from "components/Common/WhatMake"
@@ -11,6 +12,26 @@ import {
   LiferaySupportMaintenanceTitle2,
   supportChecklist,
 } from "data/liferay-support-and-maintenance"
+
+const metadata: Metadata = {
+  title: "Liferay Support And Maintenance Services - IGNEK",
+  description:
+    "Keep your Liferay platform running smoothly with our Liferay Support And Maintenance Services. Get expert assistance and ensure continuous operation!",
+
+  openGraph: {
+    url: "https://www.ignek.com/services/liferay-support-and-maintenance/",
+    title: "Liferay Support And Maintenance Services - IGNEK",
+    description: "Keep your Liferay platform running smoothly with our Liferay Support And Maintenance Services. Get expert assistance and ensure continuous operation!",
+    images: [
+      {
+        width: 1200,
+        height: 630,
+        url: "/og-image.png",
+      },
+    ],
+  },
+}
+
 
 export default function LiferaySupportMaintenancePage() {
   return (

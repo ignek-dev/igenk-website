@@ -1,4 +1,5 @@
 "use client"
+import { Metadata } from "next"
 import { useEffect, useRef, useState } from "react"
 import { BlogSection } from "components/Common"
 import CaseStudy from "components/Common/CaseStudy"
@@ -17,6 +18,26 @@ import {
   supprotAndMaintanceServices,
   upgradePhases,
 } from "data/liferay-upgrade"
+
+const metadata: Metadata = {
+  title: "Liferay DXP 7.4 Upgrade Services | Seamless Migration",
+  description:
+    "Liferay DXP 7.4 Upgrade  for seamless migration and enhanced performance. Experience full support for new features transform your digital journey today!	",
+
+  openGraph: {
+    url: "https://www.ignek.com/services/liferay-dxp-7-4-upgrade/",
+    title: "Liferay DXP 7.4 Upgrade Services | Seamless Migration",
+    description: "Liferay DXP 7.4 Upgrade  for seamless migration and enhanced performance. Experience full support for new features transform your digital journey today!	",
+    images: [
+      {
+        width: 1200,
+        height: 630,
+        url: "/og-image.png",
+      },
+    ],
+  },
+}
+
 
 export default function LiferayUpgradePage() {
   const containerRef = useRef<HTMLDivElement | null>(null)
