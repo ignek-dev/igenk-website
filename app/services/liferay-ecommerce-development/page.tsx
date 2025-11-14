@@ -96,8 +96,7 @@ export default function LiferayEcommerceDevelopmentPage() {
               </h1>
             </div>
             <p className="absolute bottom-0 max-w-2xl text-right text-lg text-white sm:text-lg md:mt-16 md:justify-self-end">
-              Liferay Ecommerce Development empowers businesses to build integrated digital commerce platforms that
-              enhance customer experiences while optimizing transaction processes and content management.
+              Liferay Ecommerce Development empowers businesses to build integrated digital commerce platforms that enhance customer experiences.
             </p>
           </div>
 

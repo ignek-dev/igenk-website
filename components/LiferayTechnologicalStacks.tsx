@@ -193,7 +193,7 @@ export const LiferayTechnologicalStacks = () => {
       <div className="mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[192px]">
         <div className="w-full">
           <h2 className="text-5xl leading-tight font-bold tracking-tight">Liferay Technological Stacks</h2>
-          <p className="mt-4 text-lg text-black/80">
+          <p className="mt-4 text-xl text-black/80">
             Liferay runs on a strong mix of technologies that keep it stable and future-ready. It uses Java as its core
             language, supports multiple databases, and allows integration with many other systems. The platform also
             uses modern front-end tools to make websites look great and work smoothly on all devices.

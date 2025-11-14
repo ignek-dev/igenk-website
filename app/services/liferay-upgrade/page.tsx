@@ -82,10 +82,7 @@ export default function LiferayUpgradePage() {
               </h1>
             </div>
             <p className="absolute bottom-0 max-w-xl text-right text-white md:mt-16 md:justify-self-end [@media(min-width:1440px)]:text-sm [@media(min-width:1500px)]:text-base">
-              Liferay DXP 7.4 introduces advanced features, enhanced performance, and stronger security for a more
-              powerful digital experience. Our upgrade services cover database optimization, workspace setup, module
-              updates, and theme enhancements, ensuring a smooth transition. Maximize the benefits of Liferay DXP 7.4
-              Upgrade with our seamless upgrade process, designed to meet your business needs.
+              Liferay DXP 7.4 introduces advanced features, enhanced performance, and stronger security for a more powerful digital experience.
             </p>
           </div>
 

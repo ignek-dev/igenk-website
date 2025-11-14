@@ -218,10 +218,10 @@ export default function LiferayConsultationPage() {
 
             {/* Heading and Description Block - Positioned below with a top margin */}
             <div className="mt-24">
-              <h2 className="text-[40px] leading-[52px] font-bold text-gray-900">
+              <h2 className="text-5xl leading-[52px] font-bold text-gray-900">
                 Your Digital Edge for Transformation Always Evolving with Liferay Consulting
               </h2>
-              <p className="mt-6 max-w-[500px] text-[16px] leading-[26px] text-gray-600">
+              <p className="mt-6 max-w-[500px] text-xl leading-[26px] text-gray-600">
                 Simplifying complexity and driving transformation with expert Liferay Consulting services.
               </p>
             </div>
@@ -290,7 +290,7 @@ export default function LiferayConsultationPage() {
                       style={{ top: `calc(6rem + ${index * 4}rem)` }}
                     >
                       <div className="flex w-full flex-col justify-center rounded-2xl border border-gray-700 bg-[#0C0C0C] p-9 pt-6 backdrop-blur-md transition-all duration-300 hover:border-[#00AEEF] md:min-h-[196px]">
-                        <h3 className="mb-3 text-2xl leading-tight font-semibold text-white">{item.title}</h3>
+                        <h3 className="mb-4 text-2xl leading-tight font-semibold text-white">{item.title}</h3>
                         <div className="mb-4 h-[1px] bg-gray-700" />
                         <p className="text-lg leading-relaxed text-gray-300">{item.desc}</p>
                       </div>
@@ -345,7 +345,7 @@ export default function LiferayConsultationPage() {
                     <>
                       <div className="text-left">
                         <h3 className="text-3xl font-semibold">{solution.title}</h3>
-                        <hr className="my-4 max-w-[120px] border-t border-white/50" />
+                        <hr className="my-7 max-w-[120px] border-t border-white/50" />
                         <p className="text-base leading-relaxed">{solution.description}</p>
                       </div>
                       <Image
@@ -541,7 +541,7 @@ export default function LiferayConsultationPage() {
 
           <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
             {liferayConsultingServicesData[activeServiceTab]?.map((service: string, index: number) => (
-              <div key={index} className="border-b border-gray-700 px-6">
+              <div key={index} className="border-b border-gray-700">
                 <div className="flex items-start gap-4 py-[40px]">
                   <Image
                     src="/images/liferay-pages-image/liferay-consultation-page/checkmark-icon.svg"
@@ -588,8 +588,8 @@ export default function LiferayConsultationPage() {
                         : "border-transparent text-gray-500 hover:text-black"
                     }`}
                   >
-                    <span className="mr-4 text-2xl font-semibold">{service.number})</span>
-                    <span className="text-2xl font-semibold">{service.name}</span>
+                    <span className="mr-4 text-3xl font-semibold">{service.number})</span>
+                    <span className="text-3xl font-semibold">{service.name}</span>
                   </div>
                 </div>
               ))}
@@ -621,7 +621,7 @@ export default function LiferayConsultationPage() {
                   {activePillar === index && (
                     <div className="pt-4">
                       <h3 className="min-w-[220px] text-3xl font-bold">{service.name}</h3>
-                      <hr className="my-4 w-full border-t-2 border-white/50" />
+                      <hr className="my-7 w-full border-t-2 border-white/50" />
                       <p className="text-base leading-relaxed">{service.description}</p>
                     </div>
                   )}

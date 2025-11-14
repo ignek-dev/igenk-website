@@ -31,8 +31,7 @@ export default function LiferaySupportMaintenancePage() {
               </h1>
             </div>
             <p className="absolute bottom-0 max-w-lg pl-0 text-right text-lg text-white sm:text-lg md:mt-16 md:justify-self-end">
-              Ensure your Liferay Portal runs smoothly with expert Liferay Support And Maintenance. Get proactive
-              monitoring, timely updates, and reliable technical support for continuous platform performance.
+              Get expert Liferay Support and Maintenance with proactive monitoring, timely updates, and dependable technical assistance for smooth platform performance.
             </p>
           </div>
 
