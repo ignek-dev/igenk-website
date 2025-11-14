@@ -101,10 +101,10 @@ const item = [
 export default function LiferayPerformanceTuningPage() {
   const [activeIndex, setActiveIndex] = useState(0)
   return (
-    <main className="pb-16">
+    <main className="pb-0">
       <section className="relative bg-black text-white">
         <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_10%_0%,#0E7BF8_0%,#00979E_40%,transparent_65%)] opacity-25" />
-        <div className="mx-auto w-full px-4 pt-12 pb-16 md:px-8 md:pt-20 md:pb-28 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
+        <div className="mx-auto w-full px-4 pt-12 pb-16 md:px-8 md:pt-16 md:pb-16 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
           <div className="relative grid items-start gap-10 md:grid-cols-2">
             <div className="">
               <div className="inline-flex items-center rounded-full border border-white/30 px-4 py-2 text-lg text-white">

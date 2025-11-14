@@ -46,7 +46,7 @@ export default function HomePage() {
           <div className="absolute right-[-150px] bottom-[-150px] h-[500px] w-[500px] rounded-full bg-[#0E7BF8] opacity-15 blur-[100px]" />
         </div>
 
-        <div className="mx-auto w-full px-4 pt-20 pb-12 md:px-6 md:pb-16 lg:pb-20 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
+        <div className="mx-auto w-full px-4 py-16 pb-12 md:px-6 md:pb-16 lg:pb-16 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
           <h1 className="text-6xl letter-spacing-[0.04em] font-extrabold hero-heading leading-[8rem]">
             Transform Your
             <br />

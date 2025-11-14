@@ -137,11 +137,11 @@ export default function BlogSection() {
             className={`space-y-4 transition-all duration-[1500ms] ease-out ${isInView ? "translate-x-0 opacity-100" : "translate-x-20 opacity-0"
               }`}
           >
-            {blogs?.slice(1).map((item) => (
+            {blogs?.slice(1).map((item, index) => (
               <div
                 key={item.id}
                 className={`grid grid-cols-[260px_1fr] items-center gap-5 cursor-pointer 
-                 mb-6
+                 ${index == blogs?.length - 2 ? "mb-0" : "mb-6"}
                   }`}
                 onClick={() => router.push(`/blog/${item?.id}`)}
               >

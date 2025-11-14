@@ -48,7 +48,7 @@ const StandoutSection = () => {
       </div>
 
       {/* Canvas container */}
-      <div className="relative max-w-[1920px] pt-[72px] min-h-[860px]">
+      <div className="relative max-w-[1920px] pt-[64px] min-h-[860px]">
         {/* H1 */}
         <h2
           className="absolute left-[192px] top-[64px] w-[623px] h-[120px] text-white capitalize"

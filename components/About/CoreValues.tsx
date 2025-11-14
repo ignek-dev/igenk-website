@@ -66,7 +66,7 @@ const CoreValues = () => {
                     transition-colors duration-300 hover:bg-white
                 "
             >
-                <div className="relative flex h-full items-center px-8">
+                <div className="relative flex h-full items-center px-0">
                     {/* Number */}
                     <span
                         className="inline-block h-[36px] w-[41px] text-[30px] font-medium leading-[36px] text-[#0B0B0F]"

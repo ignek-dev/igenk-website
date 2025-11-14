@@ -44,14 +44,14 @@ const LiferayHireTitle1 = "Why Hire Liferay Developer"
   // Data for the marquee animation
 
   return (
-    <main className="pb-16">
+    <main className="pb-0">
       {/* Hero Section */}
       <section className="relative bg-[#0B63CE] text-white">
         {/* Background Gradient */}
         <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_10%_0%,#0E7BF8_0%,#00979E_40%,transparent_65%)] opacity-25" />
 
         {/* Main Content with updated padding */}
-        <div className="mx-auto w-full px-4 pt-40 pb-16 md:px-8 md:pt-48 md:pb-20 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
+        <div className="mx-auto w-full px-4 pt-50 pb-16 md:px-8 md:pt-48 md:pb-16 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
           <div className="grid grid-cols-1 items-center gap-6 md:grid-cols-2">
             {/* Left Side: Text Content */}
             <div>

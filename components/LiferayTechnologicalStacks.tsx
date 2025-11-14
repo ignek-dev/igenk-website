@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image"
-import React, { useEffect, useRef, useState} from "react"
+import React, { useEffect, useRef, useState } from "react"
 
 const stackData = [
   {
@@ -25,9 +25,9 @@ const stackData = [
     category: "Apps Integration",
     description: "Connect multiple applications seamlessly.",
     technologies: [
-      { name: "Apache ActiveMQ", logo: "/images/tech-logos/apache_activeMQ.png" },
-      { name: "Google Drive", logo: "/images/tech-logos/google_drive.png" },
-      { name: "Google Analytics", logo: "/images/tech-logos/google_analytics.webp" },
+      { name: "Apache ActiveMQ", logo: "/images/tech-logos/apache_activeMQ.svg" },
+      { name: "Google Drive", logo: "/images/tech-logos/google_drive.svg" },
+      { name: "Google Analytics", logo: "/images/tech-logos/google_analytics.svg" },
       { name: "Microsoft Teams", logo: "/images/tech-logos/microsoft_teams.svg" },
       { name: "GZendesk Chat", logo: "/images/tech-logos/zendesk_chat.png" },
       { name: "MS Office", logo: "/images/tech-logos/MS_Office.svg" },
@@ -40,10 +40,10 @@ const stackData = [
     description: "Manage and store data.",
     technologies: [
       { name: "MongoDB", logo: "/images/tech-logos/mongoDB.svg" },
-      { name: "MySQL", logo: "/images/tech-logos/MySQL.png" },
-      { name: "PostgreSQL", logo: "/images/tech-logos/postgreSQL.png" },
+      { name: "MySQL", logo: "/images/tech-logos/MySQL.svg" },
+      { name: "PostgreSQL", logo: "/images/tech-logos/postgreSQL.svg" },
       { name: "Oracle", logo: "/images/tech-logos/Oracle.svg" },
-      { name: "MS SQL", logo: "/images/tech-logos/MSSQL.png" },
+      { name: "MS SQL", logo: "/images/tech-logos/MSSQL.svg" },
       { name: "HSQL", logo: "/images/tech-logos/hypersql.webp" },
     ],
   },
@@ -80,7 +80,7 @@ const stackData = [
     technologies: [
       { name: "SAML", logo: "/images/tech-logos/saml.png" },
       { name: "Google Authentication (2FA)", logo: "/images/tech-logos/Google_Authentication.png" },
-      { name: "OpenID", logo: "/images/tech-logos/OpenID.png" },
+      { name: "OpenID", logo: "/images/tech-logos/OpenID.svg" },
       { name: "Facebook Login", logo: "/images/tech-logos/Facebook_Login.png" },
       { name: "Oauth2.0", logo: "/images/tech-logos/Oauth2.png" },
       { name: "LDAP", logo: "/images/tech-logos/LDAP.png" },
@@ -114,13 +114,13 @@ const stackData = [
     category: "Frontend Component",
     description: "Build interactive web elements.",
     technologies: [
-      { name: "Material UI", logo: "/images/tech-logos/Material_UI.png" },
+      { name: "Material UI", logo: "/images/tech-logos/Material_UI.svg" },
       { name: "Clay", logo: "/images/tech-logos/cluyUi.png" },
-      { name: "Chakra UI", logo: "/images/tech-logos/Chakra_UI.jpeg" },
-      { name: "React Bootstrap", logo: "/images/tech-logos/Bootstrap.webp" },
+      { name: "Chakra UI", logo: "/images/tech-logos/Chakra_UI.svg" },
+      { name: "React Bootstrap", logo: "/images/tech-logos/React Bootstrap.svg" },
     ],
   },
-  
+
   {
     category: "Build Tools",
     description: "Automate software compilation process.",
@@ -152,7 +152,7 @@ const stackData = [
       { name: "Github", logo: "/images/tech-logos/Github.png" },
       { name: "GitLab", logo: "/images/tech-logos/GitLab.png" },
       { name: "Bitbucket", logo: "/images/tech-logos/Bitbucket.png" },
-      { name: "SVN", logo: "/images/tech-logos/SVN.png" },
+      { name: "SVN", logo: "/images/tech-logos/SVN.svg" },
     ],
   },
   {
@@ -194,7 +194,9 @@ export const LiferayTechnologicalStacks = () => {
         <div className="w-full">
           <h2 className="text-5xl leading-tight font-bold tracking-tight">Liferay Technological Stacks</h2>
           <p className="mt-4 text-lg text-black/80">
-            Liferay runs on a strong mix of technologies that keep it stable and future-ready. It uses Java as its core language, supports multiple databases, and allows integration with many other systems. The platform also uses modern front-end tools to make websites look great and work smoothly on all devices.
+            Liferay runs on a strong mix of technologies that keep it stable and future-ready. It uses Java as its core
+            language, supports multiple databases, and allows integration with many other systems. The platform also
+            uses modern front-end tools to make websites look great and work smoothly on all devices.
           </p>
         </div>
 
