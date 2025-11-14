@@ -44,6 +44,7 @@ export default function BlogSection() {
 
         const formatted: BlogData[] = filteredData.map((post) => ({
           id: post.id,
+          slug: post.slug,
           title: post.title?.rendered || "Untitled",
           author: post._embedded?.author?.[0]?.name || "Bhavin Panchani",
           date: post.date
@@ -111,7 +112,7 @@ export default function BlogSection() {
           <div
             className={`flex flex-col space-y-2 cursor-pointer ${isInView ? "animate-when-visible animate-slide-left animation-delay-200" : "opacity-0"
               }`}
-            onClick={() => router.push(`/blog/${blogs[0]?.id}`)}
+            onClick={() => router.push(`/blog/${blogs[0]?.slug}`)}
           >
             <div className="overflow-hidden rounded-xl bg-white">
               <Image
@@ -143,7 +144,7 @@ export default function BlogSection() {
                 className={`grid grid-cols-[260px_1fr] items-center gap-5 cursor-pointer 
                  ${index == blogs?.length - 2 ? "mb-0" : "mb-6"}
                   }`}
-                onClick={() => router.push(`/blog/${item?.id}`)}
+                onClick={() => router.push(`/blog/${item?.slug}`)}
               >
                 <div className="overflow-hidden rounded-lg bg-gray-100">
                   <Image

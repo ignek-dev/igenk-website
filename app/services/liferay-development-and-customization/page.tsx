@@ -1,3 +1,4 @@
+import { Metadata } from "next"
 import { BlogSection } from "components/Common"
 import TalkToExpert from "components/Common/TalkToExpert"
 import WhatMake from "components/Common/WhatMake"
@@ -13,6 +14,25 @@ import {
   portalDevelopmentService,
 } from "data/liferay-development-and-customization"
 
+const metadata: Metadata = {
+  title: "Liferay Development and Customization Services - IGNEK",
+  description:
+    "Our Liferay Development and Customization Services, to create custom portals and applications perfectly suited to your business needs.",
+
+  openGraph: {
+    url: "https://www.ignek.com/services/liferay-development-and-customization/",
+    title: "Liferay Development and Customization Services - IGNEK",
+    description: "Our Liferay Development and Customization Services, to create custom portals and applications perfectly suited to your business needs.",
+    images: [
+      {
+        width: 1200,
+        height: 630,
+        url: "/og-image.png",
+      },
+    ],
+  },
+}
+
 export default function LiferayDevelopmentAndCustomizationPage() {
   return (
     <main className="pb-16">
@@ -25,7 +45,7 @@ export default function LiferayDevelopmentAndCustomizationPage() {
               <div className="inline-flex items-center rounded-full border border-white/30 px-4 py-2 text-lg text-white">
                 Liferay Services
               </div>
-              <h1 className="mt-9 text-4xl leading-tight font-semibold sm:text-5xl md:text-6xl">
+              <h1 className="mt-9 text-4xl leading-tight font-semibold sm:text-5xl md:text-7xl">
                 Liferay
                 <br />
                 <span className="block">Development &</span>
@@ -33,8 +53,7 @@ export default function LiferayDevelopmentAndCustomizationPage() {
               </h1>
             </div>
             <p className="absolute bottom-0 max-w-lg text-right text-lg text-white sm:text-lg md:mt-16 md:justify-self-end">
-              With our Liferay Development and customization, we simplify digital transformation for businesses. We
-              specialize in web portals, intranets, and collaboration tools to fit your needs.
+              With our Liferay Development and customization, we simplify digital transformation for businesses to fit your needs.
             </p>
           </div>
 
@@ -68,9 +87,8 @@ export default function LiferayDevelopmentAndCustomizationPage() {
               {developmentServices.map((txt, index) => (
                 <div
                   key={index}
-                  className={`flex items-center gap-3 rounded-lg bg-white p-0 pb-4 ${
-                    index === developmentServices.length - 1 ? "" : "border-b border-gray-200"
-                  }`}
+                  className={`flex items-center gap-3 rounded-lg bg-white p-0 pb-4 ${index === developmentServices.length - 1 ? "" : "border-b border-gray-200"
+                    }`}
                 >
                   <span className="flex h-[40px] w-[40px] items-center justify-center rounded-full bg-black">
                     <svg
@@ -90,7 +108,7 @@ export default function LiferayDevelopmentAndCustomizationPage() {
                       />
                     </svg>
                   </span>
-                  <span className="p-3 text-sm text-[18px] font-medium text-black">{txt}</span>
+                  <span className="p-3 text-sm text-[20px] font-medium text-black">{txt}</span>
                 </div>
               ))}
             </div>

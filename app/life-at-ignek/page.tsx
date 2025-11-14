@@ -60,7 +60,7 @@ export default function LifeAtIgnekPage() {
             {/* Left Column: Text Content */}
             <div>
               <div className="absolute top-0 left-0 pt-4">
-                <h2 className="text-5xl font-extrabold tracking-tight sm:text-5xl md:text-6xl">Culture & Values</h2>
+                <h2 className="text-5xl font-extrabold tracking-tight sm:text-5xl md:text-7xl">Culture & Values</h2>
                 <p className="mt-4 max-w-xl text-xl text-white/70">
                   Our Culture & Values guide our actions and define our principles, shaping the Employee Experience at
                   IGNEK.

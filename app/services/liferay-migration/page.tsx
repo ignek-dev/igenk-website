@@ -1,8 +1,29 @@
+import { Metadata } from "next"
 import ScheduleMeetingButton from "components/Button/ScheduleMeetingButton"
 import { BlogSection } from "components/Common"
 import TalkToExpert from "components/Common/TalkToExpert"
 import WhatMake from "components/Common/WhatMake"
 import { features, featureTabs, LiferayMigrationData, LiferayMigrationSubContent, LiferayMigrationTitle1, LiferayMigrationTitle2, steps } from "data/liferay-migration"
+
+
+ const metadata: Metadata = {
+  title: "Liferay Migration Services - IGNEK",
+  description:
+    "Move smoothly with Liferay Migration Services! Upgrade your digital platform hassle-free with our expert guidance. Elevate your business today!",
+
+  openGraph: {
+    url: "https://www.ignek.com/services/liferay-migration/",
+    title: "Liferay Migration Services - IGNEK",
+    description: "Move smoothly with Liferay Migration Services! Upgrade your digital platform hassle-free with our expert guidance. Elevate your business today!",
+    images: [
+      {
+        width: 1200,
+        height: 630,
+        url: "/og-image.png",
+      },
+    ],
+  },
+}
 
 export default function LiferayMigrationPage() {
 
@@ -31,14 +52,14 @@ export default function LiferayMigrationPage() {
               <div className="inline-flex items-center rounded-full border border-white/30 px-4 py-2 text-lg text-white">
                 Liferay Services
               </div>
-              <h1 className="mt-9 text-4xl leading-tight font-semibold sm:text-5xl md:text-6xl">
+              <h1 className="mt-9 text-4xl leading-tight font-semibold sm:text-5xl md:text-7xl">
                 Liferay
                 <br />
                 <span className="block">Migration</span>
               </h1>
             </div>
             <p className="absolute bottom-0 max-w-xl text-lg text-white sm:text-lg md:mt-16 md:justify-self-end text-right">
-              Upgrade smoothly to the latest Liferay version with expert Liferay Migration. Our Liferay Portal Migration ensures secure data transfer, minimal downtime, and optimized platform performance.
+              Upgrade smoothly to the latest Liferay version with expert Liferay Migration to ensures secure data transfer, minimal downtime, and optimized platform performance.
             </p>
           </div>
 

@@ -1,95 +1,139 @@
-import type { Metadata } from "next"
-import Image from "next/image"
-import Link from "next/link"
-import styles from "./wp-content.module.css"
-import { getPortfolioBySlug } from "../../../lib/sanity"
+"use client";
+import { useParams } from "next/navigation";
+import Prism from "prismjs";
+import React, { useEffect, useRef, useState } from "react";
+import "prismjs/themes/prism.css";
+import "prismjs/plugins/line-numbers/prism-line-numbers.css";
+import "prismjs/plugins/toolbar/prism-toolbar.css";
+import "prismjs/plugins/toolbar/prism-toolbar";
+import "prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard";
+import "prismjs/plugins/line-numbers/prism-line-numbers";
 
-type RouteParams = { slug: string }
+import "../../../components/Portfolio/PortfolioRenderer.css";
+import { BlogSection } from "components/Common";
+import CaseStudy from "components/Common/CaseStudy";
 
-export async function generateMetadata({ params }: { params: Promise<RouteParams> }): Promise<Metadata> {
-  const { slug } = await params
-  const data = await getPortfolioBySlug(slug)
-  const title = data?.seoTitle || data?.title || "Portfolio"
-  const description = data?.seoDescription || "Portfolio item details"
-  return { title, description }
+
+const caseStudies = [
+  { id: 1, image: "/images/liferay-pages-image/caseStudy.png", tag: "Corporate", title: "Music License Management Portal: Onboarding & Data Integrity", description: "Lorem ipsum dolor sit amet..." },
+  { id: 2, image: "/images/liferay-pages-image/caseStudy.png", tag: "FinTech", title: "Transforming Financial Services with Innovations", description: "Suspendisse potenti..." },
+  { id: 3, image: "/images/liferay-pages-image/caseStudy.png", tag: "Healthcare", title: "Digital Health Platform: Patient-Centric Solutions", description: "Praesent ut ligula..." },
+  { id: 4, image: "/images/liferay-pages-image/caseStudy.png", tag: "E-commerce", title: "Scaling Online Retail with Cloud Technologies", description: "Curabitur at lacus..." }
+];
+
+interface WPPortfolioPost {
+  title: { rendered: string };
+  content: { rendered: string };
+  excerpt: { rendered: string };
+  _embedded?: {
+    "wp:featuredmedia"?: { source_url: string }[];
+  };
 }
 
-export const revalidate = 60
+export default function PortfolioRenderer() {
+  const params = useParams();
+  const slug = params.slug as string; // ✅ GET SLUG FROM URL
 
-export default async function PortfolioDetailPage({ params }: { params: Promise<RouteParams> }) {
-  const { slug } = await params
-  let data = null
-  try {
-    data = await getPortfolioBySlug(slug)
-  } catch {
-    return (
-      <main className="mx-auto max-w-4xl px-4 py-12 md:px-8">
-        <Link href="/portfolio" className="text-[#00979E]">
-          ← Back to Portfolio
-        </Link>
-        <div className="mt-6 rounded-md border border-white/10 bg-black/20 p-6">
-          <p className="text-white/80">
-            Sanity is not configured. Please set `SANITY_PROJECT_ID`, `SANITY_DATASET`, and `SANITY_API_VERSION` in your
-            environment.
-          </p>
-        </div>
-      </main>
-    )
-  }
+  const [post, setPost] = useState<WPPortfolioPost | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
-  if (!data) {
-    return (
-      <main className="mx-auto max-w-4xl px-4 py-12 md:px-8">
-        <p className="text-white/70">Portfolio item not found.</p>
-        <Link href="/portfolio" className="mt-4 inline-block text-[#00979E]">
-          Back to Portfolio
-        </Link>
-      </main>
-    )
-  }
+  const contentRef = useRef<HTMLDivElement | null>(null);
+
+  // Load external CSS
+  useEffect(() => {
+    const cssUrls = [
+      "https://www.ignek.com/wp-content/litespeed/css/ad83c34674cf09f56d46e7ed16b9ba6d.css?ver=ac0b8",
+      "https://www.ignek.com/wp-content/litespeed/css/e5f517224ca259b2712b7381a2ffa7f0.css?ver=78aff",
+      "https://www.ignek.com/wp-content/litespeed/css/0bbfb2c9170dc57a341ba754dd2e7b93.css?ver=13339",
+      "https://www.ignek.com/wp-content/litespeed/css/3cd06061990ac340055b721bdb7e91bb.css?ver=5aefa",
+      "https://www.gstatic.com/recaptcha/releases/naPR4A6FAh-yZLuCX253WaZq/styles__ltr.css",
+      "https://www.ignek.com/wp-content/litespeed/css/641b8ac492ae62e0937c42f5a415e82e.css?ver=d61f9"
+    ];
+
+    const links: HTMLLinkElement[] = [];
+
+    cssUrls.forEach((href) => {
+      const link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.href = href;
+      document.head.appendChild(link);
+      links.push(link);
+    });
+
+    return () => {
+      links.forEach((link) => document.head.removeChild(link));
+    };
+  }, []);
+
+  // Fetch by SLUG
+  useEffect(() => {
+    if (!slug) return;
+
+    async function fetchPost() {
+      try {
+        const res = await fetch(
+          `https://insights.ignek.com/wp-json/wp/v2/portfolio?slug=${slug}&_embed`
+        );
+
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
+        const data = (await res.json()) as WPPortfolioPost[];
+
+        setPost(data[0] ?? null); // WP returns array
+      } catch (err) {
+        setError(err instanceof Error ? err.message : "Failed to fetch post");
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    fetchPost();
+  }, [slug]);
+
+  // Prism highlight
+  useEffect(() => {
+    if (post && contentRef.current) {
+      Prism.highlightAllUnder(contentRef.current);
+    }
+  }, [post]);
+
+  if (loading) return <p>Loading…</p>;
+  if (error) return <p className="text-red-500">Error: {error}</p>;
+  if (!post) return <p>No post found.</p>;
 
   return (
-    <main className="mx-auto max-w-4xl px-4 py-12 md:px-8">
-      <Link href="/portfolio" className="text-[#00979E]">
-        ← Back to Portfolio
-      </Link>
-      <article className="mt-6">
-        <h1 className="text-3xl font-bold tracking-tight md:text-4xl">{data.title}</h1>
-        {data.publishedAt && (
-          <p className="mt-2 text-sm text-white/50">Published {new Date(data.publishedAt).toLocaleDateString()}</p>
-        )}
-
-        {data.imageUrl && (
-          <div className="relative mt-6 aspect-[16/9] w-full overflow-hidden rounded-md bg-black/30">
-            <Image
-              src={data.imageUrl}
-              alt={data.title}
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 100vw, 1000px"
-            />
+    <>
+      <main className="pb-16">
+        <section className="relative bg-black text-white">
+          <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_10%_0%,#0E7BF8_0%,#00979E_40%,transparent_65%)] opacity-25" />
+          <div className="mx-auto w-full px-4 pt-12 pb-16 md:px-8 md:pt-20 md:pb-28 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px]">
+            <div className="text-center">
+              <h1
+                className="mt-9 text-4xl leading-tight font-semibold sm:text-5xl md:text-7xl"
+                dangerouslySetInnerHTML={{ __html: post.title.rendered }}
+              />
+              <p
+                className="text-lg text-white sm:text-lg md:mt-16"
+                dangerouslySetInnerHTML={{ __html: post.excerpt.rendered }}
+              />
+            </div>
           </div>
-        )}
+        </section>
+      </main>
 
-        {data.wordpressLink && (
-          <p className="mt-4 text-sm">
-            Source:{" "}
-            <a href={data.wordpressLink} target="_blank" rel="noopener noreferrer" className="text-[#00979E]">
-              WordPress
-            </a>
-          </p>
-        )}
-
-        {/* Render imported WordPress HTML */}
-        {data.bodyHtml ? (
+      <div className="portfolio-page pb-10">
+        <article className="portfolio-article">
           <div
-            className={`prose prose-invert mt-8 max-w-none ${styles.wpContent}`}
-            dangerouslySetInnerHTML={{ __html: data.bodyHtml }}
+            className="portfolio-content elementor-content m-0"
+            ref={contentRef}
+            dangerouslySetInnerHTML={{ __html: post.content.rendered }}
           />
-        ) : (
-          <p className="mt-8 text-white/70">No content available.</p>
-        )}
-      </article>
-    </main>
-  )
+        </article>
+      </div>
+
+      <CaseStudy caseStudies={caseStudies} />
+      <BlogSection />
+    </>
+  );
 }

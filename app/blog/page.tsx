@@ -1,10 +1,30 @@
 "use client"
+import { Metadata } from "next";
 import Image from "next/image"
 import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useState } from "react"
 import BlogCard, { BlogData } from "components/Blogmain/BlogCards"
 import TechCard from "components/Blogmain/TechCards"
 import { WPPost } from "components/BlogSidebar/BlogSidebar"
+
+const metadata: Metadata = {
+  title: "IGNEK : Liferay, ReactJS, Healthcare More Blogs",
+  description:
+    "IGNEK relentlessly writes blogs/articles to cover important concept/topics of Liferay, Java, ReactJS, VueJS & JavaScript",
+
+  openGraph: {
+    url: "https://www.ignek.com/blog/",
+    title: "IGNEK : Liferay, ReactJS, Healthcare More Blogs",
+    description: "IGNEK relentlessly writes blogs/articles to cover important concept/topics of Liferay, Java, ReactJS, VueJS & JavaScript",
+    images: [
+      {
+        width: 1200,
+        height: 630,
+        url: "/og-image.png",
+      },
+    ],
+  },
+}
 
 const cardData = [
   {
@@ -76,6 +96,7 @@ export default function Blogs() {
 
       const formatted: BlogData[] = (data as WPPost[]).map((post) => ({
         id: post.id,
+        slug: post.slug,
         title: post.title?.rendered || "Untitled",
         author: post._embedded?.author?.[0]?.name || "Bhavin Panchani",
         date: post.date
@@ -161,7 +182,7 @@ export default function Blogs() {
           <div className="mx-auto grid h-[640px] w-[100%] gap-6">
             {blogs?.slice(0, 1).map((blog) => (
               <div key={blog.title} className="relative cursor-pointer overflow-hidden rounded-[22px] shadow-lg"
-                onClick={() => router.push(`/blog/${blog.id}`)}
+                onClick={() => router.push(`/blog/${blog.slug}`)}
               >
                 {/* Background Image */}
                 <div className="relative h-[640px] w-full">

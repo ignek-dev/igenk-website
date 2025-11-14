@@ -1,8 +1,29 @@
+import { Metadata } from "next"
 import ScheduleMeetingButton from "components/Button/ScheduleMeetingButton"
 import { BlogSection } from "components/Common"
 import TalkToExpert from "components/Common/TalkToExpert"
 import WhatMake from "components/Common/WhatMake"
 import { expoerAdvices, featureTabs, LiferayExpertAdviceData, LiferayExpertAdviceSubContent, LiferayExpertAdviceTitle1, LiferayExpertAdviceTitle2, solutions } from "data/liferayExpert"
+
+ const metadata: Metadata = {
+  title: "Liferay Expert Advice | Optimize Your Digital Experience - IGNEK",
+  description:
+    "Discover unparalleled Liferay expert advice and services to enhance your digital experience platform. Contact us to elevate your Liferay environment.",
+
+  openGraph: {
+    url: "https://www.ignek.com/services/liferay-expert-advice/",
+    title: "Liferay Expert Advice | Optimize Your Digital Experience - IGNEK",
+    description: "Discover unparalleled Liferay expert advice and services to enhance your digital experience platform. Contact us to elevate your Liferay environment.",
+    images: [
+      {
+        width: 1200,
+        height: 630,
+        url: "/og-image.png",
+      },
+    ],
+  },
+}
+
 
 export default function LiferayExpertAdvicePage() {
   return (
@@ -16,17 +37,14 @@ export default function LiferayExpertAdvicePage() {
               <div className="inline-flex items-center rounded-full border border-white/30 px-4 py-2 text-lg text-white">
                 Liferay Services
               </div>
-              <h1 className="mt-9 text-4xl leading-tight font-semibold sm:text-5xl md:text-6xl">
+              <h1 className="mt-9 text-4xl leading-tight font-semibold sm:text-5xl md:text-7xl">
                 Liferay
                 <br />
                 <span className="block">Expert Advice</span>
               </h1>
             </div>
             <p className="absolute bottom-0 max-w-2xl text-right text-lg text-white sm:text-lg md:mt-16 md:justify-self-end">
-              Our Liferay Expert Advice Services are here to provide you with the guidance and expertise you need to
-              ensure your digital experience platform performs at its best. Whether you are just starting with Liferay
-              or looking to optimize and scale your existing setup, our team of seasoned professionals is ready to
-              assist you every step of the way.
+              Our Liferay Expert Advice Services are here to provide you with the guidance and expertise you need to ensure your digital experience platform performs at its best.
             </p>
           </div>
 

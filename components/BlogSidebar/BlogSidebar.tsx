@@ -20,6 +20,7 @@ export interface WPPost {
         ["wp:featuredmedia"]?: Array<{ source_url: string }>;
         ["wp:term"]?: Array<Array<{ name: string }>>;
     };
+    slug: string;
 
 }
 // const PER_PAGE = 3;
@@ -73,6 +74,7 @@ const BlogSidebar = ({ categoryId }: BlogSidebarProps) => {
 
                 const formatted: BlogData[] = filteredData.map((post) => ({
                     id: post.id,
+                    slug: post.slug,
                     title: post.title?.rendered || "Untitled",
                     author: post._embedded?.author?.[0]?.name || "Bhavin Panchani",
                     date: post.date
@@ -167,7 +169,7 @@ const BlogSidebar = ({ categoryId }: BlogSidebarProps) => {
                                 {blog?.title}
                             </h3>
                             <div
-                                onClick={() => router.push(`/blog/${blog.id}`)}
+                                onClick={() => router.push(`/blog/${blog.slug}`)}
                                 className="text-indigo-600 font-medium text-sm flex items-center gap-1 cursor-pointer"
                             >
                                 Read Now →

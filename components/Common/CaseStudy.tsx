@@ -117,7 +117,7 @@ const CaseStudy: React.FC<CaseStudyCarouselProps> = ({ caseStudies }) => {
                     dangerouslySetInnerHTML={{ __html: item.excerpt.rendered }}
                   />
                   <button className="w-[max-content] rounded-2xl border border-cyan-400 px-4 py-2 text-sm font-medium text-white transition-all hover:text-cyan-400 cursor-pointer"
-                    onClick={() => router.push(`/case-study/id/${item.id}`)}
+                    onClick={() => router.push(`/case-study/${item.slug}`)}
                   >
                     Read case study
                   </button>

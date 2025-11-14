@@ -1,4 +1,5 @@
 "use client"
+import { Metadata } from "next"
 import { useEffect, useRef, useState } from "react"
 import { BlogSection } from "components/Common"
 import CaseStudy from "components/Common/CaseStudy"
@@ -17,6 +18,26 @@ import {
   supprotAndMaintanceServices,
   upgradePhases,
 } from "data/liferay-upgrade"
+
+const metadata: Metadata = {
+  title: "Liferay DXP 7.4 Upgrade Services | Seamless Migration",
+  description:
+    "Liferay DXP 7.4 Upgrade  for seamless migration and enhanced performance. Experience full support for new features transform your digital journey today!	",
+
+  openGraph: {
+    url: "https://www.ignek.com/services/liferay-dxp-7-4-upgrade/",
+    title: "Liferay DXP 7.4 Upgrade Services | Seamless Migration",
+    description: "Liferay DXP 7.4 Upgrade  for seamless migration and enhanced performance. Experience full support for new features transform your digital journey today!	",
+    images: [
+      {
+        width: 1200,
+        height: 630,
+        url: "/og-image.png",
+      },
+    ],
+  },
+}
+
 
 export default function LiferayUpgradePage() {
   const containerRef = useRef<HTMLDivElement | null>(null)
@@ -82,10 +103,7 @@ export default function LiferayUpgradePage() {
               </h1>
             </div>
             <p className="absolute bottom-0 max-w-xl text-right text-white md:mt-16 md:justify-self-end [@media(min-width:1440px)]:text-sm [@media(min-width:1500px)]:text-base">
-              Liferay DXP 7.4 introduces advanced features, enhanced performance, and stronger security for a more
-              powerful digital experience. Our upgrade services cover database optimization, workspace setup, module
-              updates, and theme enhancements, ensuring a smooth transition. Maximize the benefits of Liferay DXP 7.4
-              Upgrade with our seamless upgrade process, designed to meet your business needs.
+              Liferay DXP 7.4 introduces advanced features, enhanced performance, and stronger security for a more powerful digital experience.
             </p>
           </div>
 

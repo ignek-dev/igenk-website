@@ -1,15 +1,28 @@
 import type { Metadata } from "next"
 import PortfolioList from "components/PortfolioList/PortfolioList"
 
-export const metadata: Metadata = {
-  title: "Portfolio | IGNEK",
-  description: "Explore our portfolio of projects and case studies.",
-}
+ const metadata: Metadata = {
+  title: "IGNEK Portfolios : Liferay, ReactJS, Healthcare &amp; More",
+  description:
+    "Discover IGNEK’s portfolios featuring Liferay, ReactJS, Healthcare, and more. Explore our successful projects and innovative solutions.",
 
+  openGraph: {
+    url: "https://www.ignek.com/case-study/",
+    title: "IGNEK Portfolios : Liferay, ReactJS, Healthcare &amp; More",
+    description: "Discover IGNEK’s portfolios featuring Liferay, ReactJS, Healthcare, and more. Explore our successful projects and innovative solutions.",
+    images: [
+      {
+        width: 1200,
+        height: 630,
+        url: "/og-image.png",
+      },
+    ],
+  },
+}
 export const revalidate = 60
 
 export default async function PortfolioPage() {
-  
+
   return (
     <main className="pb-0" >
       {/* Hero */}
@@ -18,7 +31,7 @@ export default async function PortfolioPage() {
         <div className="mx-auto w-full px-4 pt-12 pb-16 md:px-8 md:pt-20 md:pb-28 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
           <div className="relative grid items-start gap-10 md:grid-cols-2">
             <div>
-              <h1 className="mt-9 text-4xl leading-tight font-semibold sm:text-5xl md:text-6xl">
+              <h1 className="mt-9 text-4xl leading-tight font-semibold sm:text-5xl md:text-7xl">
                 Our Latest
                 <br />
                 <span className="block">Case Study</span>
@@ -37,11 +50,11 @@ export default async function PortfolioPage() {
         </section> */}
 
         {/* <div className="flex flex-col md:flex-row gap-6 p-[50px] pt-0 pb-0"> */}
-        
-          <PortfolioList />
+
+        <PortfolioList />
         {/* </div> */}
       </div>
-        {/* <PortfolioRenderer/> */}
+      {/* <PortfolioRenderer/> */}
     </main>
   )
 }

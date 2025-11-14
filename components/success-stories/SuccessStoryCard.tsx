@@ -8,6 +8,7 @@ import TechnologyChip from "./TechnologyChip"
 
 export interface Story {
   id: number
+  slug: string
   imageSrc: string
   tag: string
   title: string
@@ -44,7 +45,7 @@ const SuccessStoryCard: React.FC<{ story: Story }> = ({ story }) => {
             dangerouslySetInnerHTML={{ __html: story.description }}
           />
           <Link
-            href={`/case-study/id/${story.id}`}
+            href={`/case-study/${story.slug}`}
             className="mb-8 inline-flex items-center gap-1 rounded-full border border-[#00979E] bg-white px-5 py-2 text-sm font-semibold text-gray-800 transition-all hover:bg-gray-50"
             style={{ boxShadow: "0px 0px 12px -2px #00979E" }}
           >

@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import CEOSection from "components/About/CEOSection";
 import Journey from "components/About/CompanyTimeline/CompanyTimeline";
 import CoreValues from "components/About/CoreValues";
@@ -6,6 +7,25 @@ import Team from "components/About/Team";
 import { Testimonial } from "components/About/Testimonial";
 import { BackgroundLines } from "components/Common/BackgroundLines";
 
+
+export const metadata: Metadata = {
+    title: "Learn About Our Team  - IGNEK Architecture Design Services - IGNEK",
+    description:
+        "Serving large organizations and start-ups for over 5 years, IGNEK is an expert in developing and deploying business solutions powered by cutting-edge technology.",
+
+    openGraph: {
+        url: "https://www.ignek.com/about-us/",
+        title: "Learn About Our Team  - IGNEK Architecture Design Services - IGNEK",
+        description: "Serving large organizations and start-ups for over 5 years, IGNEK is an expert in developing and deploying business solutions powered by cutting-edge technology.",
+        images: [
+            {
+                width: 1200,
+                height: 630,
+                url: "/og-image.png",
+            },
+        ],
+    },
+}
 // const partners = [
 //     {
 //         name: "Youngsoft India",
@@ -106,7 +126,7 @@ export default function AboutUs() {
                         <div className="space-y-8">
                             {/* Introductory Paragraph */}
 
-                            
+
                             {/* Section 1: Digital Excellence */}
                             <div className="space-y-3">
                                 <h3 className="text-xl font-bold text-black">

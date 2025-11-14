@@ -1,4 +1,5 @@
 "use client"
+import { Metadata } from "next"
 import Image from "next/image"
 import React, { useState } from "react"
 import ScheduleMeetingButton from "components/Button/ScheduleMeetingButton"
@@ -22,6 +23,25 @@ import {
   liferaySolutions,
 } from "data/liferay-consulting-and-implementation-services"
 import { useInView } from "hooks/useInView"
+
+const metadata: Metadata = {
+  title: "Liferay Consulting Company - IGNEK",
+  description:
+    "Get expert guidance and seamless integration with our Liferay Consulting & Implementation Services. Elevate your digital platform effortlessly.",
+
+  openGraph: {
+    url: "https://ignek.com/services/liferay-consulting-and-implementation-services",
+    title: "Liferay Consulting Company - IGNEK",
+    description: "Get expert guidance and seamless integration with our Liferay Consulting & Implementation Services. Elevate your digital platform effortlessly.",
+    images: [
+      {
+        width: 1200,
+        height: 630,
+        url: "/og-image.png",
+      },
+    ],
+  },
+}
 
 export default function LiferayConsultationPage() {
   const [hoveredCard, setHoveredCard] = useState<string | null>(null)
@@ -146,7 +166,7 @@ export default function LiferayConsultationPage() {
               <div className="inline-flex w-fit items-center rounded-full border border-white px-8.5 py-[8.8px] text-lg font-normal">
                 Liferay Services
               </div>
-              <h1 className="line-height-[88px] letter-spacing-[-0.02em] mt-13 text-7xl leading-tight font-bold sm:text-5xl md:text-6xl [@media(min-width:1440px)]:text-5xl [@media(min-width:1800px)]:text-6xl">
+              <h1 className="line-height-[88px] letter-spacing-[-0.02em] mt-13 text-7xl leading-tight font-bold sm:text-5xl md:text-7xl [@media(min-width:1440px)]:text-5xl [@media(min-width:1800px)]:text-6xl">
                 Liferay Consulting &
                 <br />
                 <span className="block">Implementation Services</span>
@@ -218,10 +238,10 @@ export default function LiferayConsultationPage() {
 
             {/* Heading and Description Block - Positioned below with a top margin */}
             <div className="mt-24">
-              <h2 className="text-[40px] leading-[52px] font-bold text-gray-900">
+              <h2 className="text-5xl leading-[52px] font-bold text-gray-900">
                 Your Digital Edge for Transformation Always Evolving with Liferay Consulting
               </h2>
-              <p className="mt-6 max-w-[500px] text-[16px] leading-[26px] text-gray-600">
+              <p className="mt-6 max-w-[500px] text-xl leading-[26px] text-gray-600">
                 Simplifying complexity and driving transformation with expert Liferay Consulting services.
               </p>
             </div>
@@ -284,13 +304,12 @@ export default function LiferayConsultationPage() {
                     <div
                       ref={ref as React.RefObject<HTMLDivElement>}
                       key={index}
-                      className={`sticky mb-16 transition-opacity duration-500 ${
-                        isInView ? "animate-stack-in" : "opacity-0"
-                      }`}
+                      className={`sticky mb-16 transition-opacity duration-500 ${isInView ? "animate-stack-in" : "opacity-0"
+                        }`}
                       style={{ top: `calc(6rem + ${index * 4}rem)` }}
                     >
                       <div className="flex w-full flex-col justify-center rounded-2xl border border-gray-700 bg-[#0C0C0C] p-9 pt-6 backdrop-blur-md transition-all duration-300 hover:border-[#00AEEF] md:min-h-[196px]">
-                        <h3 className="mb-3 text-2xl leading-tight font-semibold text-white">{item.title}</h3>
+                        <h3 className="mb-4 text-2xl leading-tight font-semibold text-white">{item.title}</h3>
                         <div className="mb-4 h-[1px] bg-gray-700" />
                         <p className="text-lg leading-relaxed text-gray-300">{item.desc}</p>
                       </div>
@@ -334,18 +353,17 @@ export default function LiferayConsultationPage() {
                   key={solution.id}
                   onMouseEnter={() => setHoveredCard(solution.id)}
                   onMouseLeave={() => setHoveredCard(null)}
-                  className={`flex h-[340px] items-center rounded-lg p-8 transition-all duration-300 ease-in-out ${
-                    isCurrentPrimary
+                  className={`flex h-[340px] items-center rounded-lg p-8 transition-all duration-300 ease-in-out ${isCurrentPrimary
                       ? "w-full flex-grow-[2] basis-0 flex-row justify-between gap-8 bg-[#0B63CE] text-white [@media(min-width:1440px)]:flex-grow-[3] [@media(min-width:1800px)]:flex-grow-[2]"
                       : "w-full flex-grow basis-0 flex-col justify-center border border-gray-200 bg-white text-gray-800 shadow-sm"
-                  } `}
+                    } `}
                 >
                   {isCurrentPrimary ? (
                     // Layout for the active (primary) card
                     <>
                       <div className="text-left">
                         <h3 className="text-3xl font-semibold">{solution.title}</h3>
-                        <hr className="my-4 max-w-[120px] border-t border-white/50" />
+                        <hr className="my-7 max-w-[120px] border-t border-white/50" />
                         <p className="text-base leading-relaxed">{solution.description}</p>
                       </div>
                       <Image
@@ -528,11 +546,10 @@ export default function LiferayConsultationPage() {
               <button
                 key={tab}
                 onClick={() => setActiveServiceTab(tab)}
-                className={`flex-1 cursor-pointer rounded-full px-8 py-4 text-center text-2xl font-medium transition-colors duration-300 md:whitespace-pre ${
-                  activeServiceTab === tab
+                className={`flex-1 cursor-pointer rounded-full px-8 py-4 text-center text-2xl font-medium transition-colors duration-300 md:whitespace-pre ${activeServiceTab === tab
                     ? "border border-blue-600 bg-blue-600 text-white"
                     : "border border-white text-white hover:border-blue-600 hover:text-white"
-                }`}
+                  }`}
               >
                 {tab}
               </button>
@@ -541,7 +558,7 @@ export default function LiferayConsultationPage() {
 
           <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
             {liferayConsultingServicesData[activeServiceTab]?.map((service: string, index: number) => (
-              <div key={index} className="border-b border-gray-700 px-6">
+              <div key={index} className="border-b border-gray-700">
                 <div className="flex items-start gap-4 py-[40px]">
                   <Image
                     src="/images/liferay-pages-image/liferay-consultation-page/checkmark-icon.svg"
@@ -582,14 +599,13 @@ export default function LiferayConsultationPage() {
                 <div key={index} className="py-6">
                   <div
                     onMouseEnter={() => setActivePillar(index)}
-                    className={`inline-block cursor-pointer border-b-1 transition-all duration-300 ${
-                      activePillar === index
+                    className={`inline-block cursor-pointer border-b-1 transition-all duration-300 ${activePillar === index
                         ? "border-black font-semibold text-black"
                         : "border-transparent text-gray-500 hover:text-black"
-                    }`}
+                      }`}
                   >
-                    <span className="mr-4 text-2xl font-semibold">{service.number})</span>
-                    <span className="text-2xl font-semibold">{service.name}</span>
+                    <span className="mr-4 text-3xl font-semibold">{service.number})</span>
+                    <span className="text-3xl font-semibold">{service.name}</span>
                   </div>
                 </div>
               ))}
@@ -600,18 +616,16 @@ export default function LiferayConsultationPage() {
               {endToEndServices.map((service, index) => (
                 <div
                   key={index}
-                  className={`flex h-full flex-col justify-between rounded-lg p-6 transition-all duration-300 ease-in-out ${
-                    activePillar === index
+                  className={`flex h-full flex-col justify-between rounded-lg p-6 transition-all duration-300 ease-in-out ${activePillar === index
                       ? "w-full flex-grow bg-[#0B63CE] text-white shadow-xl"
                       : "w-[20%] flex-grow-0 border border-[#E5E7EB] bg-white text-gray-400"
-                  }`}
+                    }`}
                 >
                   {/* Rotated Number */}
                   <div className="h-16">
                     <span
-                      className={`block w-min -rotate-90 transform text-5xl font-medium transition-colors duration-300 ${
-                        activePillar === index ? "text-white" : "text-gray-400"
-                      }`}
+                      className={`block w-min -rotate-90 transform text-5xl font-medium transition-colors duration-300 ${activePillar === index ? "text-white" : "text-gray-400"
+                        }`}
                     >
                       {service.number}
                     </span>
@@ -621,7 +635,7 @@ export default function LiferayConsultationPage() {
                   {activePillar === index && (
                     <div className="pt-4">
                       <h3 className="min-w-[220px] text-3xl font-bold">{service.name}</h3>
-                      <hr className="my-4 w-full border-t-2 border-white/50" />
+                      <hr className="my-7 w-full border-t-2 border-white/50" />
                       <p className="text-base leading-relaxed">{service.description}</p>
                     </div>
                   )}

@@ -1,3 +1,4 @@
+import { Metadata } from "next"
 import { BlogSection } from "components/Common"
 import TalkToExpert from "components/Common/TalkToExpert"
 import WhatMake from "components/Common/WhatMake"
@@ -12,6 +13,26 @@ import {
   supportChecklist,
 } from "data/liferay-support-and-maintenance"
 
+const metadata: Metadata = {
+  title: "Liferay Support And Maintenance Services - IGNEK",
+  description:
+    "Keep your Liferay platform running smoothly with our Liferay Support And Maintenance Services. Get expert assistance and ensure continuous operation!",
+
+  openGraph: {
+    url: "https://www.ignek.com/services/liferay-support-and-maintenance/",
+    title: "Liferay Support And Maintenance Services - IGNEK",
+    description: "Keep your Liferay platform running smoothly with our Liferay Support And Maintenance Services. Get expert assistance and ensure continuous operation!",
+    images: [
+      {
+        width: 1200,
+        height: 630,
+        url: "/og-image.png",
+      },
+    ],
+  },
+}
+
+
 export default function LiferaySupportMaintenancePage() {
   return (
     <main className="pb-0">
@@ -24,15 +45,14 @@ export default function LiferaySupportMaintenancePage() {
               <div className="inline-flex items-center rounded-full border border-white/30 px-4 py-2 text-lg text-white">
                 Liferay Services
               </div>
-              <h1 className="mt-9 text-4xl leading-tight font-semibold sm:text-5xl md:text-6xl">
+              <h1 className="mt-9 text-4xl leading-tight font-semibold sm:text-5xl md:text-7xl">
                 Liferay Support
                 <br />
                 <span className="block">And Maintenance</span>
               </h1>
             </div>
             <p className="absolute bottom-0 max-w-lg pl-0 text-right text-lg text-white sm:text-lg md:mt-16 md:justify-self-end">
-              Ensure your Liferay Portal runs smoothly with expert Liferay Support And Maintenance. Get proactive
-              monitoring, timely updates, and reliable technical support for continuous platform performance.
+              Get expert Liferay Support and Maintenance with proactive monitoring, timely updates, and dependable technical assistance for smooth platform performance.
             </p>
           </div>
 

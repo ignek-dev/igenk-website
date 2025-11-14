@@ -14,6 +14,7 @@ export interface WPPortfolioPost {
         ["wp:featuredmedia"]?: { source_url: string }[];
         ["wp:term"]?: Array<Array<{ name: string; slug: string; taxonomy: string }>>;
     };
+    slug: string
 }
 
 export default function PortfolioList() {
@@ -171,7 +172,7 @@ export default function PortfolioList() {
                                                             {/* Read More Button */}
                                                             <div className="transition-all duration-500 transform translate-y-5 opacity-0 group-hover:translate-y-0 group-hover:opacity-100">
                                                                 <button
-                                                                    onClick={() => router.push(`/case-study/id/${item.id}`)}
+                                                                    onClick={() => router.push(`/case-study/${item.slug}`)}
                                                                     className="bg-indigo-600 text-white px-6 py-2 rounded-full shadow-md hover:bg-indigo-700 transition w-full text-xl cursor-pointer"
                                                                 >
                                                                     Read More

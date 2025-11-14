@@ -183,7 +183,7 @@ const Team: React.FC = () => {
                 <p
                     className="text-right text-white/80"
                     style={{
-                        width: 450,
+                        width: 550,
                         height: 56,
                         fontFamily: "Poppins, ui-sans-serif, system-ui",
                         fontWeight: 400,
@@ -231,7 +231,7 @@ const Team: React.FC = () => {
                     </div>
                     <div className="absolute bottom-6 left-6 right-6 flex items-center justify-between">
                         <div>
-                            <div className="text-[20px] font-semibold leading-tight">
+                            <div className="text-4xl font-semibold leading-tight">
                                 {activeMember.name}
                             </div>
                             <div className="text-sm text-white/70">{activeMember.role}</div>

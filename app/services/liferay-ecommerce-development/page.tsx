@@ -1,4 +1,5 @@
 "use client"
+import { Metadata } from "next"
 import { useEffect, useRef, useState } from "react"
 import { BlogSection } from "components/Common"
 import CaseStudy from "components/Common/CaseStudy"
@@ -15,6 +16,26 @@ import {
   LiferayEcommerceDevelopmentTitle2,
   steps,
 } from "data/liferay-ecommerce-development"
+
+ const metadata: Metadata = {
+  title: "Liferay Ecommerce Development Company - IGNEK",
+  description:
+    "Get top-notch Liferay Ecommerce Development services tailored to your business needs. Boost sales, enhance user experience, and grow your online store efficiently.",
+
+  openGraph: {
+    url: "https://www.ignek.com/services/liferay-ecommerce-development/",
+    title: "Liferay Ecommerce Development Company - IGNEK",
+    description: "Get top-notch Liferay Ecommerce Development services tailored to your business needs. Boost sales, enhance user experience, and grow your online store efficiently.",
+    images: [
+      {
+        width: 1200,
+        height: 630,
+        url: "/og-image.png",
+      },
+    ],
+  },
+}
+
 
 export default function LiferayEcommerceDevelopmentPage() {
   const containerRef = useRef<HTMLDivElement | null>(null)
@@ -88,7 +109,7 @@ export default function LiferayEcommerceDevelopmentPage() {
               <div className="inline-flex items-center rounded-full border border-white/30 px-4 py-2 text-lg text-white">
                 Liferay Services
               </div>
-              <h1 className="mt-9 text-4xl leading-tight font-semibold sm:text-5xl md:text-6xl">
+              <h1 className="mt-9 text-4xl leading-tight font-semibold sm:text-5xl md:text-7xl">
                 Liferay
                 <br />
                 <span className="block">Ecommerce</span>
@@ -96,8 +117,7 @@ export default function LiferayEcommerceDevelopmentPage() {
               </h1>
             </div>
             <p className="absolute bottom-0 max-w-2xl text-right text-lg text-white sm:text-lg md:mt-16 md:justify-self-end">
-              Liferay Ecommerce Development empowers businesses to build integrated digital commerce platforms that
-              enhance customer experiences while optimizing transaction processes and content management.
+              Liferay Ecommerce Development empowers businesses to build integrated digital commerce platforms that enhance customer experiences.
             </p>
           </div>
 

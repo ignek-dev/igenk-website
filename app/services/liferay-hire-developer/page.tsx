@@ -1,4 +1,5 @@
 "use client"
+import { Metadata } from "next"
 import Image from "next/image"
 import React from "react"
 import { BlogSection } from "components/Common"
@@ -9,11 +10,32 @@ import WordsFromCEO from "components/Common/WordsFromCEO"
 import LiferayTechnologicalStacks from "components/LiferayTechnologicalStacks"
 import { easySteps, expertiseStats, teamOffersServices, whyHireFromIgnek } from "data/liferay-hire-developer"
 
+
+ const metadata: Metadata = {
+  title: "Hire Liferay Developer | 1-Week Risk-Free Trial - IGNEK",
+  description:
+    "Hire Liferay developer from us and set up your own Liferay Development team to elevate your Liferay portal development projects.",
+
+  openGraph: {
+    url: "https://www.ignek.com/hire-liferay-developer/",
+    title: "Hire Liferay Developer | 1-Week Risk-Free Trial - IGNEK",
+    description: "Hire Liferay developer from us and set up your own Liferay Development team to elevate your Liferay portal development projects.",
+    images: [
+      {
+        width: 1200,
+        height: 630,
+        url: "/og-image.png",
+      },
+    ],
+  },
+}
+
+
 export default function LiferayHireDeveloper() {
-const LiferayHireTitle1 = "Why Hire Liferay Developer"
-  const LiferayHireTitle2 ="From IGNEK?"
+  const LiferayHireTitle1 = "Why Hire Liferay Developer"
+  const LiferayHireTitle2 = "From IGNEK?"
   const LiferayHireSubContent = "At IGNEK, our Liferay Consultant bring over a decade of experience, crafting secure, scalable solutions across various industries. Hire Liferay developer for innovative problem-solving."
- 
+
   const LiferayHireData = [
     {
       title: "Certified Liferay Developer",
@@ -58,7 +80,7 @@ const LiferayHireTitle1 = "Why Hire Liferay Developer"
               <div className="inline-flex w-fit items-center rounded-full border border-white px-8.5 py-[8.8px] text-lg font-normal">
                 Hire Us
               </div>
-              <h1 className="line-height-[88px] letter-spacing-[-0.02em] mt-13 text-7xl leading-tight font-bold sm:text-5xl md:text-6xl">
+              <h1 className="line-height-[88px] letter-spacing-[-0.02em] mt-13 text-7xl leading-tight font-bold sm:text-5xl md:text-7xl">
                 Hire Liferay
                 <br />
                 <span className="block">Developer</span>
@@ -130,7 +152,7 @@ const LiferayHireTitle1 = "Why Hire Liferay Developer"
                 </div>
 
                 {/* Title Container with fixed height */}
-                <div className="mt-8.5">
+                <div className="mt-9">
                   <h3 className="line-height-[44px] letter-spacing-[-0.02em] text-4xl font-semibold whitespace-pre">
                     {/* Map over the title array to create line breaks */}
                     {item.title.map((line, lineIndex) => (
@@ -179,7 +201,7 @@ const LiferayHireTitle1 = "Why Hire Liferay Developer"
                     <div className="absolute top-35 left-[32px] h-[calc(100%+4.7rem)] w-[1.23px] bg-[#EAEAFF]"></div>
                   )}
                   {/* Step Number Circle */}
-                  <div className="z-10 flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-full bg-blue-700 text-xl font-bold">
+                  <div className="z-10 flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-full bg-blue-700 text-2xl font-bold">
                     {stepItem.step}
                   </div>
 
@@ -216,7 +238,7 @@ const LiferayHireTitle1 = "Why Hire Liferay Developer"
             <h2 className="text-5xl leading-tight font-bold tracking-tight">
               Services Our Liferay Development Team Offers
             </h2>
-            <p className="mt-4 text-lg text-white/80">
+            <p className="mt-4 text-xl text-white/80">
               Explore our expertise in Liferay! We’re experienced and ready to help with everything, from building
               user-friendly interfaces to managing backend systems. Whether you need a custom portal, smooth
               integration, or ongoing support, we’ve got you covered. Partner with us today and make the most of Liferay
@@ -226,7 +248,7 @@ const LiferayHireTitle1 = "Why Hire Liferay Developer"
           {/* Services Grid */}
           <div className="mt-16 grid auto-rows-[minmax(260px,auto)] grid-cols-1 md:grid-cols-2">
             {teamOffersServices.map((service, index) => (
-              <div key={index} className="flex h-full flex-col justify-between p-9">
+              <div key={index} className="flex h-full flex-col justify-between p-7">
                 {/* Inner Flex for Icon and Text */}
                 <div className="flex items-start gap-6">
                   {/* Icon */}
@@ -262,7 +284,7 @@ const LiferayHireTitle1 = "Why Hire Liferay Developer"
       {/* Words from CEO */}
       <WordsFromCEO />
       {/* <section className="bg-white text-black"></section> */}
-     <WhatMake WhatMakeData={LiferayHireData} titleText1={LiferayHireTitle1} titleText2={LiferayHireTitle2} subContext={LiferayHireSubContent}/>
+      <WhatMake WhatMakeData={LiferayHireData} titleText1={LiferayHireTitle1} titleText2={LiferayHireTitle2} subContext={LiferayHireSubContent} />
       <TalkToExpert />
       <BlogSection />
     </main>

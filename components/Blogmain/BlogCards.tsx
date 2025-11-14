@@ -11,7 +11,8 @@ export interface BlogData {
   category: string;
   image: string;
   authPic: string
-  desc?:string
+  desc?: string
+  slug?: string
 }
 
 interface BlogCardProps {
@@ -22,7 +23,7 @@ export default function BlogCard({ blog }: BlogCardProps) {
   const router = useRouter();
 
   const handleClick = () => {
-    router.push(`/blog/${blog.id}`); // ✅ navigate to dynamic route
+    router.push(`/blog/${blog.slug}`);
   };
   return (
     <div className="bg-white rounded-[19px] h-[480px] cursor-pointer"

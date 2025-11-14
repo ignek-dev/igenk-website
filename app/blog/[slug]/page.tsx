@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useParams } from "next/navigation";
 import Prism from "prismjs";
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "../../../components/Blog/BlogRenderer.css";
 
 import "prismjs/components/prism-javascript";
@@ -21,6 +21,21 @@ import "prismjs/plugins/line-numbers/prism-line-numbers";
 import BlogSidebar from "components/BlogSidebar/BlogSidebar";
 import ExploreServices from "components/ExploreServices/ExploreServices";
 import { blogCSSLink } from "data/blogCss";
+
+interface WPPost {
+    id: number;
+    title: { rendered: string };
+    content: { rendered: string };
+    date?: string;
+    _embedded?: {
+        ["wp:featuredmedia"]?: Array<{ source_url: string }>;
+        author?: Array<{
+            name: string;
+            avatar_urls?: Record<string, string>;
+        }>;
+    };
+    categories?: number[];
+}
 
 function unindentCode(codeString: string): string {
     if (!codeString) return "";
@@ -48,29 +63,16 @@ function unindentCode(codeString: string): string {
         .join("\n");
 }
 
-
-// TypeScript types
-interface WPPost {
-    id: number;
-    title: { rendered: string };
-    content: { rendered: string };
-    date?: string;
-    _embedded?: {
-        ["wp:featuredmedia"]?: Array<{ source_url: string }>;
-        author?: Array<{
-            name: string;
-            avatar_urls?: Record<string, string>; // avatar sizes like "24", "48", "96"
-        }>;
-    };
-    categories?: number[];
-}
-
 export default function BlogDetails() {
-    const { id } = useParams(); // ✅ Get ID from route
+    // ✅ The correct way to get slug
+    const params = useParams();
+    const slug = params.slug as string;
+
     const [post, setPost] = useState<WPPost | null>(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
     const contentRef = useRef<HTMLDivElement>(null);
+
 
     useEffect(() => {
 
@@ -91,15 +93,17 @@ export default function BlogDetails() {
 
     // Fetch post by ID
     useEffect(() => {
-        if (!id) return;
+        if (!slug) return;
 
         async function fetchPost() {
             try {
                 setLoading(true);
-                const res = await fetch(`https://insights.ignek.com/wp-json/wp/v2/posts/${id}?_embed`);
+                const res = await fetch(
+                    `https://insights.ignek.com/wp-json/wp/v2/posts?slug=${slug}&_embed`
+                );
                 if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
-                const data = (await res.json()) as WPPost;
-                setPost(data);
+                const data = (await res.json()) as WPPost[];
+                setPost(data[0] ?? null);
             } catch (err: unknown) {
                 setError(err instanceof Error ? err.message : "Failed to fetch post");
             } finally {
@@ -108,7 +112,7 @@ export default function BlogDetails() {
         }
 
         fetchPost();
-    }, [id]);
+    }, [slug]);
 
     useEffect(() => {
         if (!post || !contentRef.current) return;
@@ -198,11 +202,7 @@ export default function BlogDetails() {
     if (error) return <p className="text-red-500">Error: {error}</p>;
     if (!post) return null;
 
-    const cleanHTML = post.content.rendered
-    // .replace(/\\\//g, "/")
-    // .replace(/<xmp>/g, "")
-    // .replace(/<\/xmp>/g, "")
-
+    const cleanHTML = post?.content?.rendered
     return (
         <>
             <section className="relative bg-black text-white">
@@ -210,7 +210,7 @@ export default function BlogDetails() {
                 <div className="mx-auto w-full px-4 pt-12 pb-16 md:px-8 md:pt-20 md:pb-22 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
                     <div className="text-center flex flex-col items-center justify-center px-6 py-16">
                         <h1 className="bg-[linear-gradient(0deg,#FFFFFF,#FFFFFF),linear-gradient(0deg,rgba(0,0,0,0.23),rgba(0,0,0,0.23))] bg-clip-text text-transparent text-5xl sm:text-6xl md:text-7xl font-bold leading-tight">
-                            {post.title?.rendered || "Untitled"}
+                            {post?.title?.rendered || "Untitled"}
                         </h1>
 
                         <div className="max-w-2xl mt-6 text-lg text-gray-200 sm:text-xl md:mt-10">
@@ -261,6 +261,5 @@ export default function BlogDetails() {
                 </div>
             </div>
         </>
-
     );
 }
