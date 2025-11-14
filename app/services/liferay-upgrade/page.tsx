@@ -253,7 +253,7 @@ export default function LiferayUpgradePage() {
         </div>
       </section>
 
-      <section className="bg-black py-20 text-white lg:py-24">
+      <section className="bg-black py-[64px] lg:py-[64px] text-white">
         <div className="mx-auto w-full items-start px-4 md:px-8 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
           <div className="relative grid items-start gap-10 md:grid-cols-2">
             <h2 className="text-3xl font-semibold [@media(min-width:1440px)]:text-3xl [@media(min-width:1500px)]:text-4xl">
