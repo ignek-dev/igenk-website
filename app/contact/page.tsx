@@ -57,30 +57,32 @@ const InstagramIcon = () => (
 type FormInputProps = {
   label: string
   placeholder: string
+  name: string
   type?: string
+  required?: boolean
 }
 
 type FormTextAreaProps = {
   label: string
   placeholder: string
+  name: string
   rows?: number
+  required?: boolean
 }
 
-const FormInput = ({
-  label,
-  placeholder: _placeholder,
-  type = "text",
-}: FormInputProps) => (
+const FormInput = ({ label, placeholder: _placeholder, name, type = "text", required = false }: FormInputProps) => (
   <div className="relative z-0 w-full">
     <input
       type={type}
       id={label}
-      className="peer block w-full appearance-none border-0 border-b-2 border-gray-600 bg-transparent py-3.5 px-0 text-lg text-white focus:border-white focus:outline-none focus:ring-0"
+      name={name}
+      required={required}
+      className="peer block w-full appearance-none border-0 border-b-2 border-gray-600 bg-transparent px-0 py-3.5 text-lg text-white focus:border-white focus:ring-0 focus:outline-none"
       placeholder=" " // Required for the floating label to work
     />
     <label
       htmlFor={label}
-      className="absolute top-1 -z-10 origin-[0] -translate-y-8 scale-75 transform text-3xl text-medium text-[#FFFFFF] duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-8 peer-focus:scale-75 peer-focus:text-white"
+      className="text-medium absolute top-1 -z-10 origin-[0] -translate-y-8 scale-75 transform text-3xl text-[#FFFFFF] duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-8 peer-focus:scale-75 peer-focus:text-white"
     >
       {label}
     </label>
@@ -88,21 +90,19 @@ const FormInput = ({
   </div>
 )
 
-const FormTextArea = ({
-  label,
-  placeholder: _placeholder,
-  rows = 6,
-}: FormTextAreaProps) => (
+const FormTextArea = ({ label, placeholder: _placeholder, name, rows = 6, required = false }: FormTextAreaProps) => (
   <div className="relative z-0 w-full">
     <textarea
       id={label}
+      name={name}
+      required={required}
       rows={rows}
-      className="peer block w-full appearance-none border-0 border-b-2 border-gray-600 bg-transparent py-3.5 px-0 text-lg text-white focus:border-white focus:outline-none focus:ring-0"
+      className="peer block w-full appearance-none border-0 border-b-2 border-gray-600 bg-transparent px-0 py-3.5 text-lg text-white focus:border-white focus:ring-0 focus:outline-none"
       placeholder=" " // This space is required for the floating label to work
     />
     <label
       htmlFor={label}
-      className="absolute top-1 -z-10 origin-[0] -translate-y-8 scale-75 transform text-3xl text-medium text-[#FFFFFF] duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-8 peer-focus:scale-75 peer-focus:text-white"
+      className="text-medium absolute top-1 -z-10 origin-[0] -translate-y-8 scale-75 transform text-3xl text-[#FFFFFF] duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-8 peer-focus:scale-75 peer-focus:text-white"
     >
       {label}
     </label>
@@ -111,6 +111,38 @@ const FormTextArea = ({
 )
 
 export default function ContactPage() {
+  const [loading, setLoading] = React.useState(false)
+  const [status, setStatus] = React.useState<{ type: "idle" | "success" | "error"; message: string }>({
+    type: "idle",
+    message: "",
+  })
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    if (loading) return
+    setLoading(true)
+    setStatus({ type: "idle", message: "" })
+    const form = e.currentTarget
+    const formData = new FormData(form)
+    formData.append("access_key", "f4dec7fc-2afe-4db7-9612-886b779847e9")
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      })
+      await response.json()
+      if (response.ok) {
+        setStatus({ type: "success", message: "Thanks for your message. We will get back to you soon." })
+        form.reset()
+      } else {
+        setStatus({ type: "error", message: "Failed to send message." })
+      }
+    } catch (err) {
+      setStatus({ type: "error", message: "Network error. Please try again later." })
+    } finally {
+      setLoading(false)
+    }
+  }
   return (
     <main className="bg-black text-white">
       <section className="relative pt-25 pb-20 md:pb-32">
@@ -160,16 +192,36 @@ export default function ContactPage() {
               <div className="mt-9.5 flex flex-col gap-8 sm:flex-row sm:items-center sm:gap-32">
                 <h3 className="text-lg text-[#FFFFFF]">Follow us on</h3>
                 <div className="flex space-x-5">
-                  <a href="https://www.facebook.com/ignekinfo/" className="text-white/80 hover:text-white" aria-label="Facebook" target="blank">
+                  <a
+                    href="https://www.facebook.com/ignekinfo/"
+                    className="text-white/80 hover:text-white"
+                    aria-label="Facebook"
+                    target="blank"
+                  >
                     <FacebookIcon />
                   </a>
-                  <a href="https://x.com/ignekinfotech" className="text-white/80 hover:text-white" aria-label="X" target="blank">
+                  <a
+                    href="https://x.com/ignekinfotech"
+                    className="text-white/80 hover:text-white"
+                    aria-label="X"
+                    target="blank"
+                  >
                     <XIcon />
                   </a>
-                  <a href="https://www.linkedin.com/company/ignek-infotech/about/" className="text-white/80 hover:text-white" aria-label="LinkedIn" target="blank">
+                  <a
+                    href="https://www.linkedin.com/company/ignek-infotech/about/"
+                    className="text-white/80 hover:text-white"
+                    aria-label="LinkedIn"
+                    target="blank"
+                  >
                     <LinkedInIcon />
                   </a>
-                  <a href="https://www.instagram.com/_ignek/" className="text-white/80 hover:text-white" aria-label="Instagram" target="blank">
+                  <a
+                    href="https://www.instagram.com/_ignek/"
+                    className="text-white/80 hover:text-white"
+                    aria-label="Instagram"
+                    target="blank"
+                  >
                     <InstagramIcon />
                   </a>
                 </div>
@@ -177,28 +229,45 @@ export default function ContactPage() {
             </div>
             {/* Right Side: Form */}
             <div className="w-full">
-              <form action="#" method="POST">
+              <form action="#" method="POST" onSubmit={handleSubmit}>
                 <div className="grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2">
                   {/* Form Inputs */}
-                  <FormInput label="Full Name" placeholder="John Carter" />
-                  <FormInput label="Email Address" placeholder="example@youremail.com" type="email" />
-                  <FormInput label="Phone Number" placeholder="(123) 456 - 7890" type="tel" />
-                  <FormInput label="Service" placeholder="ex. Liferay Consulting" />
+                  <FormInput label="Full Name" placeholder="John Carter" name="name" required />
+                  <FormInput
+                    label="Email Address"
+                    placeholder="example@youremail.com"
+                    name="email"
+                    type="email"
+                    required
+                  />
+                  <FormInput label="Phone Number" placeholder="(123) 456 - 7890" name="phone" type="tel" />
+                  <FormInput label="Service" placeholder="ex. Liferay Consulting" name="service" />
                 </div>
 
                 {/* Message Textarea */}
                 <div className="mt-12">
-                  <FormTextArea label="Message" placeholder="Type your message here..." rows={3} />
+                  <FormTextArea
+                    label="Message"
+                    placeholder="Type your message here..."
+                    name="message"
+                    rows={3}
+                    required
+                  />
                 </div>
 
                 {/* Submit Button */}
                 <div className="mt-16">
                   <button
                     type="submit"
-                    className="rounded-full bg-white px-10 py-4 text-lg font-semibold text-black transition-transform hover:scale-105"
+                    disabled={loading}
+                    className="rounded-full bg-white px-10 py-4 text-lg font-semibold text-black transition-transform hover:scale-105 disabled:cursor-not-allowed disabled:opacity-50"
                   >
-                    Send message
+                    {loading ? "Sending..." : "Send message"}
                   </button>
+                  <div className="mt-4 text-sm" aria-live="polite">
+                    {status.type === "success" && <span className="text-green-400">{status.message}</span>}
+                    {status.type === "error" && <span className="text-red-400">{status.message}</span>}
+                  </div>
                 </div>
               </form>
             </div>
@@ -220,7 +289,8 @@ export default function ContactPage() {
             </div>
             <div className="flex h-full items-end justify-end">
               <p className="text-normal line-height-[30px] w-full text-right text-xl text-[#374151]">
-                We have offices in India and the United Arab Emirates, providing seamless regional support and collaboration for our global clients.{" "}
+                We have offices in India and the United Arab Emirates, providing seamless regional support and
+                collaboration for our global clients.{" "}
               </p>
             </div>
           </div>
@@ -237,20 +307,22 @@ export default function ContactPage() {
                   width={853}
                   height={341}
                   objectFit="contain"
-                  className="w-[853px] h-[341px]"
+                  className="h-[341px] w-[853px]"
                 />
               </div>
               {/* Right Side: Details (Flex container for content and divider) */}
-              <div className="mt-6 md:mt-0 md:w-1/2 md:pl-3.5 flex flex-col">
-                <div> {/* Wrapper for the actual details */}
-                  <h3 className="text-4xl font-semibold text-[#151314] letter-spacing-[-0.02em]">Ahmedabad, India</h3>
+              <div className="mt-6 flex flex-col md:mt-0 md:w-1/2 md:pl-3.5">
+                <div>
+                  {" "}
+                  {/* Wrapper for the actual details */}
+                  <h3 className="letter-spacing-[-0.02em] text-4xl font-semibold text-[#151314]">Ahmedabad, India</h3>
                   <p className="mt-4 text-lg text-[#4D464A]">
                     E 910- 912, Ganesh Glory 11, Jagatpur Road, SG Highway,
                     <br />
                     Ahmedabad, Gujarat – 382470
                   </p>
                   <div className="mt-24 flex flex-col gap-8 sm:flex-row sm:items-center sm:gap-16">
-                    <div className="flex flex-col gap-1 min-w-[232px]">
+                    <div className="flex min-w-[232px] flex-col gap-1">
                       <h4 className="text-xl font-medium text-[#766C72]">Email address</h4>
                       <a
                         href="mailto:sales@ignek.com"
@@ -261,10 +333,7 @@ export default function ContactPage() {
                     </div>
                     <div className="flex flex-col gap-1">
                       <h4 className="text-xl font-medium text-[#766C72]">Phone number</h4>
-                      <a
-                        href="tel:+916351578580"
-                        className="text-lg font-medium text-[#151314] hover:text-blue-600"
-                      >
+                      <a href="tel:+916351578580" className="text-lg font-medium text-[#151314] hover:text-blue-600">
                         (+91) 635 157 8580
                       </a>
                     </div>
@@ -272,7 +341,7 @@ export default function ContactPage() {
                 </div>
 
                 {/* --- Divider now *inside* the right-hand details column --- */}
-                <hr className="mt-25 border-t border-[#DBD3D3] w-full" />
+                <hr className="mt-25 w-full border-t border-[#DBD3D3]" />
               </div>
             </div>
 
@@ -286,14 +355,14 @@ export default function ContactPage() {
                   width={853}
                   height={341}
                   objectFit="contain"
-                  className="w-[853px] h-[341px]"
+                  className="h-[341px] w-[853px]"
                 />
               </div>
               {/* Right Side: Details (no divider here as it's the last location) */}
               <div className="mt-6 md:mt-4 md:w-1/2 md:pl-3.5">
                 <h3 className="text-4xl font-semibold text-black">United Arab Emirates</h3>
                 <p className="mt-4 text-lg text-[#4D464A]">
-                  office Number : 09-106, Arabian Sky Business center , 
+                  office Number : 09-106, Arabian Sky Business center ,
                   <br />
                   Umm Hurrair 2 Dubai UAE
                 </p>
@@ -309,10 +378,7 @@ export default function ContactPage() {
                   </div>
                   <div className="flex flex-col gap-1">
                     <h4 className="text-xl font-medium text-[#766C72]">Phone number</h4>
-                    <a
-                      href="tel:+4146781903"
-                      className="text-lg font-medium text-[#151314] hover:text-blue-600"
-                    >
+                    <a href="tel:+4146781903" className="text-lg font-medium text-[#151314] hover:text-blue-600">
                       +97 154 219 8252
                     </a>
                   </div>
