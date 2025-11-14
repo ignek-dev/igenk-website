@@ -124,18 +124,14 @@ export default function ContactPage() {
     setStatus({ type: "idle", message: "" })
     const form = e.currentTarget
     const formData = new FormData(form)
-    formData.append("access_key", "f4dec7fc-2afe-4db7-9612-886b779847e9")
     try {
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        body: formData,
-      })
-      await response.json()
+      const response = await fetch("/api/contact", { method: "POST", body: formData })
+      const result: any = await response.json()
       if (response.ok) {
-        setStatus({ type: "success", message: "Thanks for your message. We will get back to you soon." })
+        setStatus({ type: "success", message: "Your message has been sent successfully." })
         form.reset()
       } else {
-        setStatus({ type: "error", message: "Failed to send message." })
+        setStatus({ type: "error", message: result?.message ?? "Failed to send message." })
       }
     } catch (err) {
       setStatus({ type: "error", message: "Network error. Please try again later." })
