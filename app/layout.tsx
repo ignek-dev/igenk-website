@@ -11,6 +11,17 @@ const poppins = Poppins({
   variable: "--font-poppins",
 })
 
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Ignek - Transform Your Digital Experience',
+  description: 'Leading digital transformation company...',
+  icons: {
+    icon: '/images/Favicon.png', // your favicon
+    apple: '/images/blogs/liferayIcon.png', // optional
+  },
+}
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${poppins.variable} font-sans`}>

@@ -23,7 +23,7 @@ const FlexiblePlatforms = () => {
   const [sectionRef, isInView] = useInView({ threshold: 0.2, triggerOnce: true })
   return (
     <section ref={sectionRef} className="overflow-hidden bg-[#F9FAF7] py-20 text-black lg:py-16">
-      <div className="mx-auto grid w-full items-start  px-4 md:px-6 lg:grid-cols-2  [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
+      <div className="mx-auto grid w-full items-start gap-12 px-4 md:px-6 lg:grid-cols-2  [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
         {/* Left Column: Title and Description */}
         <div
           className={`transition-all duration-[1500ms] ease-out ${
