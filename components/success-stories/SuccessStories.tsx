@@ -55,6 +55,7 @@ const SuccessStories: React.FC = () => {
           : data;
         const mappedStories: Story[] = filteredPosts.map((post) => ({
           id: post?.id,
+          slug: post?.slug,
           imageSrc:
             post._embedded?.["wp:featuredmedia"]?.[0]?.source_url ||
             "/images/portfolio/portfolioImg.png",

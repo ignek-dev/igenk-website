@@ -76,6 +76,7 @@ export default function Blogs() {
 
       const formatted: BlogData[] = (data as WPPost[]).map((post) => ({
         id: post.id,
+        slug: post.slug,
         title: post.title?.rendered || "Untitled",
         author: post._embedded?.author?.[0]?.name || "Bhavin Panchani",
         date: post.date
@@ -161,7 +162,7 @@ export default function Blogs() {
           <div className="mx-auto grid h-[640px] w-[100%] gap-6">
             {blogs?.slice(0, 1).map((blog) => (
               <div key={blog.title} className="relative cursor-pointer overflow-hidden rounded-[22px] shadow-lg"
-                onClick={() => router.push(`/blog/${blog.id}`)}
+                onClick={() => router.push(`/blog/${blog.slug}`)}
               >
                 {/* Background Image */}
                 <div className="relative h-[640px] w-full">
