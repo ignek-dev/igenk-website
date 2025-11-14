@@ -97,10 +97,7 @@ export default function LiferayArchitectureDesignPage() {
               </h1>
             </div>
             <p className="absolute bottom-0 text-right text-white md:mt-16 md:justify-self-end [@media(min-width:1440px)]:max-w-xl [@media(min-width:1440px)]:text-base [@media(min-width:1500px)]:max-w-3xl [@media(min-width:1500px)]:text-lg">
-              Liferay Architecture Design Services provides tailored solutions for designing and optimizing Liferay
-              applications. We focus on aligning architecture with business needs for enhanced performance and
-              scalability. Our services offer strategic guidance from concept to implementation, covering security,
-              integrations, and user experience.
+              Get Liferay architecture design and optimization services that enhance performance, scalability, security, integrations, and user experience.
             </p>
           </div>
 

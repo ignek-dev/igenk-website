@@ -238,7 +238,7 @@ export default function LiferayHireDeveloper() {
             <h2 className="text-5xl leading-tight font-bold tracking-tight">
               Services Our Liferay Development Team Offers
             </h2>
-            <p className="mt-4 text-lg text-white/80">
+            <p className="mt-4 text-xl text-white/80">
               Explore our expertise in Liferay! We’re experienced and ready to help with everything, from building
               user-friendly interfaces to managing backend systems. Whether you need a custom portal, smooth
               integration, or ongoing support, we’ve got you covered. Partner with us today and make the most of Liferay
@@ -248,7 +248,7 @@ export default function LiferayHireDeveloper() {
           {/* Services Grid */}
           <div className="mt-16 grid auto-rows-[minmax(260px,auto)] grid-cols-1 md:grid-cols-2">
             {teamOffersServices.map((service, index) => (
-              <div key={index} className="flex h-full flex-col justify-between p-9">
+              <div key={index} className="flex h-full flex-col justify-between p-7">
                 {/* Inner Flex for Icon and Text */}
                 <div className="flex items-start gap-6">
                   {/* Icon */}

@@ -52,9 +52,7 @@ export default function LiferayProofOfConceptPage() {
               </h1>
             </div>
             <p className="absolute bottom-0 max-w-xl text-right text-lg text-white sm:text-lg md:mt-16 md:justify-self-end">
-              Liferay Proof of Concept (PoC) Services serve as a trial to assess if Liferay technology is suitable for a
-              specific project or solution. We demonstrate how Liferay’s portal features can be customized to meet the
-              client's unique requirements and validate before full implementation.
+              Liferay Proof of Concept (PoC) Services help evaluate whether Liferay is the right fit for your project by showcasing customizable portal features your requirements.
             </p>
           </div>
 
@@ -77,7 +75,7 @@ export default function LiferayProofOfConceptPage() {
           <h2 className="text-5xl leading-tight font-semibold sm:text-4xl md:text-5xl">
             What We Do With Liferay POC Services
           </h2>
-          <p className="mt-4 justify-self-center text-lg leading-relaxed text-[#101012] text-gray-700">
+          <p className="mt-7 justify-self-center text-lg leading-relaxed text-[#101012] text-gray-700">
             Our Liferay PoC services align your needs with Liferay’s out-of-the-box capabilities. We provide a
             functional prototype to gauge if Liferay Proof of Concept meets your objectives, document feature
             comparisons, highlight time-to-market reductions, and assess future project risks.

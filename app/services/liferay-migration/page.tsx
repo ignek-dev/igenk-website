@@ -59,7 +59,7 @@ export default function LiferayMigrationPage() {
               </h1>
             </div>
             <p className="absolute bottom-0 max-w-xl text-lg text-white sm:text-lg md:mt-16 md:justify-self-end text-right">
-              Upgrade smoothly to the latest Liferay version with expert Liferay Migration. Our Liferay Portal Migration ensures secure data transfer, minimal downtime, and optimized platform performance.
+              Upgrade smoothly to the latest Liferay version with expert Liferay Migration to ensures secure data transfer, minimal downtime, and optimized platform performance.
             </p>
           </div>
 

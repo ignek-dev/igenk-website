@@ -44,7 +44,7 @@ export default function EngagementModels({ title, description }: EngagementModel
     <section className="bg-white py-[64px] text-black">
       <div className="mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
         {/* Section Header - Now uses props for dynamic content */}
-        <div className="mb-16 grid grid-cols-1 items-end gap-8 md:grid-cols-2">
+        <div className="mb-14 grid grid-cols-1 items-end gap-8 md:grid-cols-2">
           <div>
             <h2 className="text-5xl leading-tight font-semibold tracking-tight text-[#000000] [@media(min-width:1440px)]:text-4xl [@media(min-width:1800px)]:text-5xl">{title}</h2>
           </div>

@@ -53,8 +53,7 @@ export default function LiferayDevelopmentAndCustomizationPage() {
               </h1>
             </div>
             <p className="absolute bottom-0 max-w-lg text-right text-lg text-white sm:text-lg md:mt-16 md:justify-self-end">
-              With our Liferay Development and customization, we simplify digital transformation for businesses. We
-              specialize in web portals, intranets, and collaboration tools to fit your needs.
+              With our Liferay Development and customization, we simplify digital transformation for businesses to fit your needs.
             </p>
           </div>
 
@@ -109,7 +108,7 @@ export default function LiferayDevelopmentAndCustomizationPage() {
                       />
                     </svg>
                   </span>
-                  <span className="p-3 text-sm text-[18px] font-medium text-black">{txt}</span>
+                  <span className="p-3 text-sm text-[20px] font-medium text-black">{txt}</span>
                 </div>
               ))}
             </div>

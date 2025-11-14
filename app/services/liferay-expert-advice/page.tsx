@@ -44,10 +44,7 @@ export default function LiferayExpertAdvicePage() {
               </h1>
             </div>
             <p className="absolute bottom-0 max-w-2xl text-right text-lg text-white sm:text-lg md:mt-16 md:justify-self-end">
-              Our Liferay Expert Advice Services are here to provide you with the guidance and expertise you need to
-              ensure your digital experience platform performs at its best. Whether you are just starting with Liferay
-              or looking to optimize and scale your existing setup, our team of seasoned professionals is ready to
-              assist you every step of the way.
+              Our Liferay Expert Advice Services are here to provide you with the guidance and expertise you need to ensure your digital experience platform performs at its best.
             </p>
           </div>
 
