@@ -29,6 +29,36 @@
 
 @layer utilities {
 
+  /* Gloal padding across website */
+  .global-container {
+    padding-left: 1rem !important;  /* default mobile */
+    padding-right: 1rem !important;
+  }
+
+  /* ≥ 1440px → 100px */
+  @media (min-width: 1440px) {
+    .global-container {
+      padding-left: 100px !important;
+      padding-right: 100px !important;
+    }
+  }
+
+  /* ≥ 1536px → 100px */
+  @media (min-width: 1536px) {
+    .global-container {
+      padding-left: 100px !important;
+      padding-right: 100px !important;
+    }
+  }
+
+  /* ≥ 1920px → 192px */
+  @media (min-width: 1920px) {
+    .global-container {
+      padding-left: 192px !important;
+      padding-right: 192px !important;
+    }
+  }
+
   .hero-heading {
     font-size: theme('fontSize.6xl');
 
