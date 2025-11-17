@@ -26,7 +26,7 @@ export default function BlogCard({ blog }: BlogCardProps) {
     router.push(`/blog/${blog.slug}`);
   };
   return (
-    <div className="bg-white rounded-[19px] h-[480px] cursor-pointer"
+    <div className="bg-white rounded-[19px] h-[480px] cursor-pointer relative"
       onClick={handleClick}
 
     >
@@ -54,7 +54,7 @@ export default function BlogCard({ blog }: BlogCardProps) {
           {blog.title}
         </h3>
 
-        <div className="flex items-center mt-4 space-x-2 text-sm text-gray-600">
+        <div className="flex items-center mt-4 space-x-2 text-sm text-gray-600 absolute bottom-5">
           <Image
             src={blog.authPic}
             alt={blog.author}

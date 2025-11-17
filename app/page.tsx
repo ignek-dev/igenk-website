@@ -102,8 +102,8 @@ export default function HomePage() {
 
       <ScrollContextProvider>
         <WhatWeBring />
-        <SuccessStories />
       </ScrollContextProvider>
+      <SuccessStories />
 
       <Achievements />
       <BlogSection />
