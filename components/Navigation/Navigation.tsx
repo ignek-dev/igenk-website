@@ -22,37 +22,37 @@ export default function Navigation() {
   const [activeMenu, setActiveMenu] = useState<string | null>(null)
   const pathname = usePathname() // Get the current path
   const isCareerPage = pathname === "/career" // Check if it's the career page
-  const isAboutUsPage = pathname === '/about-us'
+  const isAboutUsPage = pathname === "/about-us"
   const isConsultingPage = pathname === "/services/liferay-consulting-and-implementation-services"
   const isHireDeveloperPage = pathname === "/services/liferay-hire-developer"
   const [isHeaderHovered, setIsHeaderHovered] = useState(false)
-  const router = useRouter();
+  const router = useRouter()
 
   const handleMouseEnter = (label: string) => {
     setActiveMenu(label)
     setIsHeaderHovered(true)
   }
   const handleMouseLeave = () => setActiveMenu(null)
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false)
 
   // Scroll listener
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50); // when scrolled 50px from top
-    };
+      setIsScrolled(window.scrollY > 50) // when scrolled 50px from top
+    }
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
   const backgroundClass = isHeaderHovered
     ? "bg-black"
     : isScrolled
-      ? "bg-black sticky"
-      : isCareerPage || isAboutUsPage
-        ? "bg-transparent"
-        : isConsultingPage || isHireDeveloperPage
-          ? "bg-[#0B63CE]"
-          : "bg-black"
+    ? "bg-black sticky"
+    : isCareerPage || isAboutUsPage
+    ? "bg-transparent"
+    : isConsultingPage || isHireDeveloperPage
+    ? "bg-[#0B63CE]"
+    : "bg-black"
 
   return (
     <>
@@ -117,16 +117,14 @@ export default function Navigation() {
                 </div>
               </button> */}
               <CalendlyButton />
-              <button
-                type="button"
-                aria-label="Go"
-                className="nav-round-btn"
-                onClick={() => router.push("/contact")}
-              >
-                <div className="nav-round-btn-inner">
-                  <Image src="/images/icon/arrow-tr.png" alt="arrow-top-right" width={28} height={28} />
-                </div>
-              </button>
+              <div className="nav-fancy-button">
+                <div className="nav-fancy-glow"></div>
+                <button type="button" aria-label="Go" className="nav-round-btn" onClick={() => router.push("/contact")}>
+                  <div className="nav-round-btn-inner">
+                    <Image src="/images/icon/arrow-tr.png" alt="arrow-top-right" width={28} height={28} />
+                  </div>
+                </button>
+              </div>
             </div>
           </nav>
         </header>
@@ -157,7 +155,14 @@ export default function Navigation() {
               )}{" "}
               <nav className="global-container mx-auto flex w-full items-center px-4 py-6 md:px-8">
                 <Link href="/" className="flex items-center gap-3" aria-label="Home">
-                  <Image src="/images/logo.svg" alt="Ignek logo" width={182} height={86} priority className="logo-responsive" />
+                  <Image
+                    src="/images/logo.svg"
+                    alt="Ignek logo"
+                    width={182}
+                    height={86}
+                    priority
+                    className="logo-responsive"
+                  />
                 </Link>
 
                 <div className="flex-1" />
@@ -186,16 +191,19 @@ export default function Navigation() {
 
                 <div className="flex items-center gap-4">
                   <CalendlyButton />
-                  <button
-                    type="button"
-                    aria-label="Go"
-                    className="nav-round-btn"
-                    onClick={() => router.push("/contact")}
-                  >
-                    <div className="nav-round-btn-inner">
-                      <Image src="/images/icon/arrow-tr.png" alt="arrow-top-right" width={46} height={46} />
-                    </div>
-                  </button>
+                  <div className="nav-fancy-button">
+                    <div className="nav-fancy-glow"></div>
+                    <button
+                      type="button"
+                      aria-label="Go"
+                      className="nav-round-btn"
+                      onClick={() => router.push("/contact")}
+                    >
+                      <div className="nav-round-btn-inner">
+                        <Image src="/images/icon/arrow-tr.png" alt="arrow-top-right" width={46} height={46} />
+                      </div>
+                    </button>
+                  </div>
                 </div>
               </nav>
               {activeMenu === "Company" && <CompanyMegaMenu />}

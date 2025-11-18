@@ -87,51 +87,114 @@
   }
 
   /* Default → 1920px */
-.nav-round-btn {
+  .nav-round-btn {
+    width: 64px;
+    height: 64px;
+    padding: 0;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .nav-round-btn-inner {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .nav-round-btn-inner img {
+    width: 28px !important;
+    height: 28px !important;
+  }
+
+  /* ≤ 1536px */
+  @media (max-width: 1536px) {
+    .nav-round-btn {
+      width: 56px;
+      height: 56px;
+    }
+    .nav-round-btn-inner {
+      width: 56px;
+      height: 56px;
+    }
+  }
+
+  /* ≤ 1440px */
+  @media (max-width: 1440px) {
+    .nav-round-btn {
+      width: 50px;
+      height: 50px;
+    }
+    .nav-round-btn-inner {
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  
+.nav-fancy-button {
+  position: relative;
   width: 64px;
   height: 64px;
-  padding: 0; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  overflow: visible; /* IMPORTANT FIX */
+  isolation: isolate; /* ensures stacking context */
+}
+
+/* GLOW BORDER BEHIND CONTENT */
+.nav-fancy-glow {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  z-index: -1; /* ALWAYS behind */
+  overflow: hidden;
+}
+
+.nav-fancy-glow::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: conic-gradient(transparent 260deg, #00ffff);
+  animation: rotate 2s linear infinite;
+}
+
+.nav-fancy-glow::after {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  border-radius: 50%;
+  background: #000;
+}
+
+/* REAL BUTTON CONTENT */
+.nav-fancy-content {
+  z-index: 10; /* FORCE ABOVE GLOW */
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 
-.nav-round-btn-inner {
-  width: 64px;
-  height: 64px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.nav-round-btn-inner img {
+.nav-fancy-content img {
   width: 28px !important;
   height: 28px !important;
 }
 
-/* ≤ 1536px */
-@media (max-width: 1536px) {
-  .nav-round-btn {
-    width: 56px;
-    height: 56px;
-  }
-  .nav-round-btn-inner {
-    width: 56px;
-    height: 56px;
-  }
+/* RESPONSIVE */
+@media (max-width:1536px) {
+  .nav-fancy-button { width:56px; height:56px; }
 }
-
-/* ≤ 1440px */
-@media (max-width: 1440px) {
-  .nav-round-btn {
-    width: 50px;
-    height: 50px;
-  }
-  .nav-round-btn-inner {
-    width: 50px;
-    height: 50px;
-  }
+@media (max-width:1440px) {
+  .nav-fancy-button { width:50px; height:50px; }
 }
 
   .hero-heading {

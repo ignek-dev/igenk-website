@@ -55,20 +55,23 @@ export default function CalendlyButton({
   }
 
   return (
+    <div className="nav-fancy-button">
+  <div className="nav-fancy-glow"></div>
     <button
       type="button"
       aria-label="Calendar"
       onClick={handleOpenCalendly}
       className="nav-round-btn"
-    >
+      >
       <div className="nav-round-btn-inner">
         <Image
           src="/images/icon/calendar.png"
           alt="calendar"
           width={28}
           height={28}
-        />
+          />
       </div>
     </button>
+    </div>
   );
 }
