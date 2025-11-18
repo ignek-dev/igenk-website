@@ -98,7 +98,8 @@ export default function Blogs() {
         id: post.id,
         slug: post.slug,
         title: post.title?.rendered || "Untitled",
-        author: post._embedded?.author?.[0]?.name || "Bhavin Panchani",
+        // author: post._embedded?.author?.[0]?.name || "Bhavin Panchani",
+        author: "Bhavin Panchani",
         date: post.date
           ? new Date(post.date).toLocaleDateString("en-US", {
             month: "short",
@@ -116,7 +117,7 @@ export default function Blogs() {
           post._embedded?.["wp:featuredmedia"]?.[0]?.source_url ||
           "/images/blogs/blogImage.png",
         authPic:
-          post._embedded?.author?.[0]?.avatar_urls?.["96"] ||
+          // post._embedded?.author?.[0]?.avatar_urls?.["96"] ||
           "/images/blogs/blogAuthor.png",
       }));
 
@@ -141,7 +142,7 @@ export default function Blogs() {
       {/* Hero */}
       <section className="relative bg-black text-white">
         <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_10%_0%,#0E7BF8_0%,#00979E_40%,transparent_65%)] opacity-25" />
-        <div className="mx-auto w-full px-4 pt-12 pb-16 md:px-8 md:pt-20 md:pb-22 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
+        <div className="mx-auto w-full px-4 pt-12 pb-16 md:px-8 md:pt-20 md:pb-22 global-container">
           <div className="relative grid items-start gap-10 md:grid-cols-2">
             <div>
               <h1 className="mt-9 bg-[linear-gradient(0deg,#FFFFFF,#FFFFFF),linear-gradient(0deg,rgba(0,0,0,0.23),rgba(0,0,0,0.23))] bg-clip-text text-7xl leading-tight font-bold text-transparent sm:text-5xl md:text-7xl">
@@ -150,7 +151,7 @@ export default function Blogs() {
                 Tech Blogs
               </h1>
             </div>
-            <p className="absolute bottom-0 max-w-2xl text-right text-lg text-white sm:text-lg md:mt-16 md:justify-self-end">
+            <p className="absolute bottom-0 max-w-2xl text-right font-normal text-lg text-white sm:text-lg md:mt-16 md:justify-self-end">
               Explore our latest tech blogs to stay informed on trends, innovations, and best practices across industries, helping you leverage technology effectively for business growth and operational excellence.
             </p>
           </div>
@@ -158,7 +159,7 @@ export default function Blogs() {
       </section>
 
       <section className="bg-[#F9FAF7] py-[64px] text-black">
-        <div className="mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
+        <div className="mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[80px] [@media(min-width:1920px)]:px-[100px]">
           {/* Header part */}
           <div className="mb-16 grid grid-cols-1 items-end gap-8 md:grid-cols-2">
             <div>
@@ -169,8 +170,8 @@ export default function Blogs() {
               </h2>
             </div>
 
-            <div className="flex h-full items-end justify-end">
-              <p className="text-normal line-height-[30px] w-full text-right text-xl text-[#374151]">
+            <div className="flex h-full  items-center">
+              <p className="text-normal line-height-[30px] w-full text-right font-normal text-lg text-[#374151]">
                 Stay updated with our newly written tech blogs, covering trends, insights, and innovations to help your business stay ahead.
               </p>
             </div>
@@ -198,19 +199,16 @@ export default function Blogs() {
 
                 {/* Overlay Content */}
                 <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/70 via-black/30 to-transparent p-5 text-white">
-                  <div className="mb-[1.125rem] flex items-center space-x-2 text-sm opacity-90">
+                  <div className="mb-[1.125rem] flex items-center space-x-2 font-normal text-lg opacity-90">
                     <span className="rounded-full bg-white/20 px-3 py-1 backdrop-blur-md">{blog.category}</span>
                     <span>• {blog?.date}</span>
                   </div>
 
-                  <h2 className="mb-[1.125rem] text-lg leading-snug font-semibold">{blog.title}</h2>
-                  <div className="flex items-center space-x-2 text-sm">
+                  <h2 className="mb-[1.125rem] text-3xl leading-snug font-semibold">{blog.title}</h2>
+                  <div className="flex items-center space-x-2 font-normal text-xl">
                     <Image
                       src={blog?.authPic}
                       alt={"pic"}
-                      // width={40}
-                      // height={40}
-                      // className="rounded-[50%] border-2 border-white/80"
                       width={40}
                       height={40}
                       className="w-10 h-10 object-cover rounded-full border-2 border-white/80"

@@ -16,7 +16,7 @@ const config: NextConfig = {
         protocol: "https",
         hostname: "cdn.sanity.io",
       },
-       {
+      {
         protocol: "https",
         hostname: "insights.ignek.com",
         pathname: "/wp-content/uploads/**",
@@ -26,6 +26,11 @@ const config: NextConfig = {
         hostname: "www.ignek.com",
         pathname: "/wp-content/uploads/**",
       },
+      {
+        protocol: "https",
+        hostname: "secure.gravatar.com",
+        pathname: "/avatar/**",
+      }
     ],
   },
   rewrites: async () => [
