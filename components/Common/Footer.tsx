@@ -137,7 +137,7 @@ export default function Footer() {
             </div>
             <div>
              <h5 className="text-2xl leading-[2rem] font-semibold text-white">Office</h5>
-              <p className="whitespace-wrap mt-4 max-w-xl text-xl leading-[1.8rem] font-semibold text-white mb-3">
+              <p className="mt-4 max-w-xl text-xl leading-[1.8rem] font-semibold text-white mb-3 whitespace-wrap">
                 E 910-912, Ganesh Glory 11, Jagatpur Road, SG Highway, Ahmedabad, Gujarat - 382470 (Headquarter) <br />
               </p>
               <span className="whitespace-wrap mt-4 max-w-xl text-xl leading-[1.8rem] font-semibold text-white">Dubai, United Arab Emirates <br/> (UAE Branch)</span>

@@ -203,7 +203,7 @@ export default function ContactPage() {
                 <div className="flex max-w-[304px] flex-col gap-2">
                   <h3 className="text-lg text-[#DBD3D3]">Phone number</h3>
                   <a href="tel:+016351575560" className="mt-0.5 text-base text-white hover:text-blue-400">
-                    +01 63515 75560
+                    +91 63515 75560
                   </a>
                 </div>
               </div>
