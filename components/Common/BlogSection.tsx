@@ -95,13 +95,13 @@ export default function BlogSection() {
         <div className="grid items-end gap-10 md:grid-cols-2 "
         >
           <h2
-            className={`text-5xl leading-tight font-semibold sm:text-4xl md:text-5xl [@media(min-width:1440px)]:text-4xl [@media(min-width:1520px)]:text-5xl ${isInView ? "animate-when-visible animate-slide-left animation-delay-200" : "opacity-0"
+            className={`text-[2.5vw] leading-tight font-semibold   ${isInView ? "animate-when-visible animate-slide-left animation-delay-200" : "opacity-0"
               }`}
           >
             Explore What's Shaping <br /> Digital Today
           </h2>
           <p
-            className={`max-w-[100%] justify-self-center text-right text-xl leading-relaxed text-[#101012] text-gray-700 ${isInView ? "animate-when-visible animate-slide-right animation-delay-200" : "opacity-0"
+            className={`max-w-[100%] justify-self-center text-right text-[0.938vw] leading-relaxed text-[#101012] text-gray-700 ${isInView ? "animate-when-visible animate-slide-right animation-delay-200" : "opacity-0"
               }`}
           >
             Explore our blogs for expert insights, trends, and innovations driving digital transformation and shaping the future.
@@ -120,10 +120,10 @@ export default function BlogSection() {
                 alt={main?.title || "Blog Post"}
                 width={856}
                 height={459}
-                className="h-auto object-cover max-h-[459px]"
+                className="h-auto w-[44.583vw] object-cover max-h-[459px]"
               />
             </div>
-            <h3 className="line-height-[44px] pt-2 text-4xl font-semibold text-[#101012] md:text-3xl [@media(min-width:1440px)]:pt-15 [@media(min-width:1520px)]:pt-17 [@media(min-width:1800px)]:pt-2">
+            <h3 className="line-height-[44px] pt-2 text-[1.875vw] font-semibold text-[#101012]  [@media(min-width:1440px)]:pt-15 [@media(min-width:1520px)]:pt-17 [@media(min-width:1800px)]:pt-2">
               {blogs[0]?.title || "Blog Post"}
             </h3>
             <p className="mt-2 text-lg text-[#101012] text-gray-700 line-clamp-1  "

@@ -27,7 +27,7 @@ export default function BlogCard({ blog }: BlogCardProps) {
   };
   return (
   <div
-  className="cursor-pointer relative transition p-4 flex flex-col"
+  className="cursor-pointer w-auto relative transition flex flex-col"
   onClick={handleClick}
 >
   {/* Image */}
@@ -42,7 +42,7 @@ export default function BlogCard({ blog }: BlogCardProps) {
   </div>
 
   {/* Category */}
-  <div className="flex flex-wrap items-center gap-2 text-gray-500 text-base font-normal mt-4">
+  <div className="flex flex-wrap items-center gap-2 text-gray-500 text-lg font-normal mt-4">
     <span className="px-6 py-3 border rounded-full text-gray-600 font-medium">
       {blog.category}
     </span>
@@ -56,7 +56,7 @@ export default function BlogCard({ blog }: BlogCardProps) {
   </h3>
 
   {/* Author Section fixed at bottom */}
-  <div className="flex items-center gap-3 text-lg font-normal text-gray-600 mt-auto pt-4">
+  <div className="flex items-center gap-3 text-lg font-normal text-gray-600 mt-auto pt-6">
     <Image
       src={blog.authPic}
       alt={blog.author}

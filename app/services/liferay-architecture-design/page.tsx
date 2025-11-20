@@ -83,20 +83,20 @@ export default function LiferayArchitectureDesignPage() {
       {/* Hero */}
       <section className="relative bg-black text-white">
         <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_10%_0%,#0E7BF8_0%,#00979E_40%,transparent_65%)] opacity-25" />
-        <div className="mx-auto w-full px-4 pt-12 pb-16 md:px-8 md:pt-20 md:pb-28 global-container ">
-          <div className="relative grid items-start gap-10 md:grid-cols-2">
+        <div className="mx-auto w-full px-4 pt-12  md:px-8  md:pb-[72px] global-container ">
+          <div className="relative text-[3.75vw] grid items-start gap-10 md:grid-cols-2">
             <div>
-              <div className="inline-flex items-center rounded-full border border-white/30 px-[1.813rem] py-[0.625rem] text-lg text-white">
+              <div className="inline-flex items-center rounded-full border border-white/30 px-[1.813rem] py-[0.625rem] text-[0.938vw] text-white">
                 Liferay Services
               </div>
-              <h1 className="mt-9 text-4xl leading-tight font-semibold sm:text-5xl md:text-5xl">
+              <h1 className="mt-9 leading-tight font-semibold ">
                 Liferay
                 <br />
                 <span className="block">Architecture</span>
                 <span className="block">Design</span>
               </h1>
             </div>
-            <p className="absolute bottom-0 text-right text-white md:mt-16 md:justify-self-end [@media(min-width:1440px)]:max-w-xl [@media(min-width:1440px)]:text-base [@media(min-width:1500px)]:max-w-3xl [@media(min-width:1500px)]:text-lg">
+            <p className="absolute bottom-0 text-right text-[0.938vw] text-white md:mt-16 md:justify-self-end [@media(min-width:1440px)]:max-w-xl  [@media(min-width:1500px)]:max-w-3xl ">
               Get Liferay architecture design and optimization services that enhance performance, scalability, security, integrations, and user experience.
             </p>
           </div>
@@ -106,7 +106,7 @@ export default function LiferayArchitectureDesignPage() {
             {featureTabs.map((label, index) => (
               <span
                 key={index}
-                className="inline-flex font-semibold items-center rounded-full border border-white/30 px-[16px] py-[20px] text-xl text-white transition-colors hover:border-white hover:text-white"
+                className="inline-flex font-semibold items-center rounded-full border border-white/30 px-[16px] py-[20px] text-[1.042vw] text-white transition-colors hover:border-white hover:text-white"
               >
                 {label}
               </span>
@@ -115,18 +115,10 @@ export default function LiferayArchitectureDesignPage() {
         </div>
       </section>
       <section>
-        <div className="mx-auto w-full px-4 py-[64px] md:px-8 md:py-[64px] lg:py-[64px] global-container ">
-          <div className="relative mb-[47px] grid items-start gap-10 md:grid-cols-2">
-            <h2 className="text-3xl font-semibold [@media(min-width:1440px)]:text-3xl [@media(min-width:1440px)]:leading-[40px] [@media(min-width:1500px)]:text-4xl [@media(min-width:1500px)]:leading-[50px]">
-              Key Deliverables of Our Liferay Architecture Design Services
-            </h2>
-            <p className="absolute bottom-0 max-w-xl text-right text-black md:justify-self-end text-lg">
-              Our Liferay Architecture Design Services deliver clear, actionable outputs that guide your technical and
-              business teams toward successful implementation.
-            </p>
-          </div>
+        <div className="mx-auto w-full px-4 py-[64px] md:px-8 md:py-[53px] lg:py-[64px] global-container ">
+
           <div
-            className="flex cursor-grab gap-10 overflow-x-hidden"
+            className="flex cursor-grab  overflow-x-hidden"
             onMouseDown={handleMouseDown}
             onMouseLeave={handleMouseLeave}
             onMouseUp={handleMouseUp}
@@ -136,10 +128,10 @@ export default function LiferayArchitectureDesignPage() {
             {systemArchitecure.map((item, index) => (
               <div
                 key={index}
-                className={`max-w-[22%] flex-shrink-0 pr-10  gap-[5rem] flex flex-col ${index !== systemArchitecure.length - 1 ? "border-r border-[#E5E7EB]" : ""}`}
+                className={`max-w-[22%] flex-shrink-0 px-[32px]  gap-[70px] flex flex-col ${index !== systemArchitecure.length - 1 ? "border-r border-[#E5E7EB]" : ""}`}
               >
-                <h3 className="mt-[20px] mb-3 text-[36px]   w-[317px] max-w-[317px] text-wrap leading-normal font-semibold text-gray-600 [@media(min-width:1440px)]:text-[1.875rem] [@media(min-width:1500px)]:text-4xl [@media(min-width:1800px)]:text-4xl [@media(min-width:1440px)]:w-[280px] [@media(min-width:1500px)]:w-[280px]">{item.text}</h3>
-                <p className="mt-auto text-base  w-[302px] 2xl:text-4xl  text-wrap leading-relaxed text-gray-500 [@media(min-width:1440px)]:text-[0.875rem] [@media(min-width:1500px)]:text-[1rem] [@media(min-width:1440px)]:w-[300px] [@media(min-width:1500px)]:w-[300px]">{item.description}</p>
+                <h3 className="mt-[20px] mb-3 text-[1.875vw]   w-[16.51vw]  text-wrap leading-normal font-semibold text-gray-600  ">{item.text}</h3>
+                <p className="mt-auto text-[1.042vw]  w-[15.729vw]   text-wrap leading-relaxed text-gray-500   ">{item.description}</p>
               </div>
 
             ))}
@@ -150,26 +142,30 @@ export default function LiferayArchitectureDesignPage() {
       <section className="bg-black text-white">
         <div className="mx-auto w-full px-4 py-16 md:px-8 md:py-20 lg:py-24 global-container ">
           <div className="relative grid items-start gap-10 md:grid-cols-2">
-            <h2 className="text-5xl font-semibold   [@media(min-width:1440px)]:leading-[50px] [@media(min-width:1500px)]:leading-[60px] [@media(min-width:1440px)]:text-[2.5rem] [@media(min-width:1536px)]:text-[2.75rem] [@media(min-width:1800px)]:text-[3rem]">
+            <h2 className="text-[2.5vw] font-semibold   [@media(min-width:1440px)]:leading-[50px] [@media(min-width:1500px)]:leading-[60px] ">
               Key Activities Under Our Liferay Architecture Design Services
             </h2>
-            <p className="text-white font-normal text-lg md:justify-self-end md:text-right md:self-end">
+            <p className="text-white font-normal text-[0.938vw] md:justify-self-end md:text-right md:self-end">
               We offer design documents for Liferay Portal Architecture, covering system components, security, load
               balancing, backup, user management, site structure, content management, integrations, caching, and
               monitoring.
             </p>
           </div>
 
-          <div className="mt-12 grid grid-cols-1 gap-6 md:mt-16 lg:gap-8">
+          <div className="mt-12 grid grid-cols-1 gap-[1.875vw] md:mt-16 ">
             {keyActivityArchitecureSystem.map((item, index) => (
-              <div key={index} className="flex flex-col  pb-6 md:flex-row md:items-center md:gap-8 lg:gap-12 lg:pb-8">
-                <div className="mb-4 flex w-[22rem] min-w-[22rem]  font-semibold md:mb-0  md:pr-8 text-3xl  ">
+              <div key={index} className="flex flex-col  md:flex-row md:items-center md:gap-[2vw] lg:gap-[3vw] ">
+                {/* Left Text */}
+                <div className="flex w-[16.406vw] min-w-[16.406vw] font-semibold md:mb-0 md:pr-[1.5vw] text-[1.563vw]">
                   {item.text}
                 </div>
-                <div className="flex items-center rounded-lg border border-[#1F2937] p-4  md:p-6 [@media(min-width:1440px)]:text-base [@media(min-width:1500px)]:text-xl">
+
+                {/* Description */}
+                <div className="flex items-center rounded-lg border border-[#1F2937] px-[1.875vw] py-[1.146vw]  text-[1.042vw]">
                   {item.description}
                 </div>
               </div>
+
             ))}
           </div>
         </div>

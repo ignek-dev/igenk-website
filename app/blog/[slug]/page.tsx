@@ -213,7 +213,7 @@ export default function BlogDetails() {
                             {post?.title?.rendered || "Untitled"}
                         </h1>
 
-                        <div className="max-w-2xl mt-6 text-2xl font-normal text-gray-200 sm:text-xl md:mt-10">
+                        <div className="max-w-2xl mt-6 text-2xl font-normal text-gray-200 sm:text-xl md:mt-[3.438rem]">
                             <div className="flex items-center mt-4 space-x-2  text-white">
                                 <Image
                                     src={post._embedded?.author?.[0]?.avatar_urls?.["96"] || "/images/blogs/blogAuthor.png"}
@@ -222,7 +222,7 @@ export default function BlogDetails() {
                                     height={40}
                                     className="w-10 h-10 object-cover rounded-full border border-gray-200"
                                 />
-                                <span className="">{post._embedded?.author?.[0]?.name || "Bhavin Panchani"}</span>
+                                <span className=" text-2xl">{post._embedded?.author?.[0]?.name || "Bhavin Panchani"}</span>
                                 <span>•</span>
                                 <span>{post.date
                                     ? new Date(post.date).toLocaleDateString("en-US", {
@@ -236,7 +236,7 @@ export default function BlogDetails() {
                     </div>
                 </div>
             </section>
-            <div className="blog-section">
+            <div className="blog-section bg-[#F9FAF7]">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
                     {/* MAIN CONTENT */}
                     <div className="lg:col-span-8 border-r border-[#E3E3E3]">

@@ -45,16 +45,19 @@ const WhatMake: React.FC<WhatMakeProps> = ({ WhatMakeData, titleText1, titleText
   }, []);
 
   return (
-    <section className="py-[64px] lg:py-[64px]">
+    <section className="py-16 lg:py-16">
       <div className="mx-auto w-full px-4 md:px-8 global-container">
         <div className="flex flex-col gap-16 md:flex-row md:items-start md:justify-between">
+
           {/* Left Column */}
-          <div className="flex-1 space-y-[26px] pt-[4px] md:sticky md:top-[200px] lg:top[140px]">
-            <h1 className="text-5xl leading-[64px] font-bold tracking-[-0.02em] [@media(min-width:1440px)]:text-[2.5rem] [@media(min-width:1536px)]:text-[2.75rem] [@media(min-width:1800px)]:text-[3rem]">
+          <div className="flex-1 space-y-6 pt-1 md:sticky md:top-48 lg:top-36">
+            <h1 className="text-4xl md:text-5xl lg:text-[2.5rem] xl:text-[2.75rem] 2xl:text-[3rem] leading-tight font-bold tracking-tight">
               {titleText1}
-              <br />{titleText2}
+              <br />
+              {titleText2}
             </h1>
-            <p className="leading-[28px] max-w-[658px] text-gray/500 text-[18px]">
+
+            <p className="text-base md:text-lg leading-7 max-w-[658px] text-gray-500">
               {subContext}
             </p>
           </div>
@@ -71,10 +74,11 @@ const WhatMake: React.FC<WhatMakeProps> = ({ WhatMakeData, titleText1, titleText
                     key={index}
                     className={`sticky ${stuck?.get(index) ? "stuck" : ""} mb-16 transition-opacity duration-500 ${isInView ? "animate-stack-in" : "opacity-0"
                       }`}
-                    style={{ top: `200px` }}>
-                    <div className="whatsmake-card flex w-full flex-col justify-center rounded-2xl border border-[#E5E7EB] bg-[#ffffff] p-9 pt-6 backdrop-blur-md md:min-h-[196px]">
+                    style={{ top: "200px" }}
+                  >
+                    <div className="whatsmake-card flex w-full flex-col justify-center rounded-2xl border border-[#E5E7EB] bg-white p-9 pt-6 backdrop-blur-md md:min-h-[196px]">
                       <h3 className="mb-3 text-2xl leading-tight font-semibold">{item.title}</h3>
-                      <div className="mb-4 h-[1.8px] bg-[#E5E7EB]" />
+                      <div className="mb-4 h-[1.5px] bg-[#E5E7EB]" />
                       <p className="text-lg leading-relaxed">{item.desc}</p>
                     </div>
                   </div>
@@ -85,6 +89,7 @@ const WhatMake: React.FC<WhatMakeProps> = ({ WhatMakeData, titleText1, titleText
         </div>
       </div>
     </section>
+
   )
 }
 
