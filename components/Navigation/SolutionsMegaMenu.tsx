@@ -15,7 +15,11 @@ const solutionsLinks = [
 
 const integrationsLinks = [
   { text: "Matomo Integration with Liferay", href: "/blog/35704", icon: "/images/mega-menu/Integartion-e1.png" },
-  { text: "Microsoft Teams Integration with Liferay", href: "/blog/2379", icon: "/images/mega-menu/Integration-e2.png" },
+  {
+    text: "Microsoft Teams Integration with Liferay",
+    href: "/blog/2379",
+    icon: "/images/mega-menu/Integration-e2.png",
+  },
   { text: "Jira Integration with Liferay", href: "/blog/21796", icon: "/images/mega-menu/Integration-e3.png" },
   { text: "Twilio Integration with Liferay", href: "/blog/29103", icon: "/images/mega-menu/Integration-e4.png" },
   { text: "ZOOM Integration with Liferay", href: "/blog/18883", icon: "/images/mega-menu/Integration-e5.png" },
@@ -23,9 +27,21 @@ const integrationsLinks = [
 ]
 
 const marketplaceLinks = [
-  { text: "AI Blog Workspace", href: "https://marketplace.liferay.com/p/ai-blog-workspace", icon: "/images/mega-menu/marketplace-e1.png" },
-  { text: "Batch Client Extension Generator", href: "https://marketplace.liferay.com/p/batch-client-extension-generator", icon: "/images/mega-menu/marketplace-e2.png" },
-  { text: "Email OTP Authentication for Community Edition Of Liferay", href: "https://marketplace.liferay.com/p/email-otp-authentication-for-community-edition-of-liferay", icon: "/images/mega-menu/marketplace-e3.png" },
+  {
+    text: "AI Blog Workspace",
+    href: "https://marketplace.liferay.com/p/ai-blog-workspace",
+    icon: "/images/mega-menu/marketplace-e1.png",
+  },
+  {
+    text: "Batch Client Extension Generator",
+    href: "https://marketplace.liferay.com/p/batch-client-extension-generator",
+    icon: "/images/mega-menu/marketplace-e2.png",
+  },
+  {
+    text: "Email OTP Authentication for Community Edition Of Liferay",
+    href: "https://marketplace.liferay.com/p/email-otp-authentication-for-community-edition-of-liferay",
+    icon: "/images/mega-menu/marketplace-e3.png",
+  },
 ]
 
 const aiLinks = [
@@ -45,25 +61,27 @@ const aiLinks = [
 export default function SolutionsMegaMenu() {
   return (
     <>
-      <div className="mx-auto w-full px-4 py-12 md:px-8 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px]">
+      <div className="global-container mx-auto w-full px-4 py-12 md:px-8">
         <div className="flex w-full justify-between gap-18">
           {/* Left Group (Solutions & Integrations) */}
           <div className="flex gap-x-8 [@media(min-width:1440px)]:gap-x-14">
             <div>
-              <h3 className="mb-6 text-2xl font-semibold">Solutions</h3>
-              <ul className="space-y-4">
+              <h3 className="mb-6 text-[1.875rem] leading-[2.375rem] font-medium [@media(min-width:1440px)]:text-[1.5rem] [@media(min-width:1920px)]:text-[1.75rem]">
+                Solutions
+              </h3>
+              <ul className="space-y-6">
                 {solutionsLinks.map((link, index) => (
                   <li key={`sol-${index}`}>
                     <Link
                       href={link.href}
-                      className="flex items-center gap-4 text-lg text-white/100 transition-colors hover:text-white"
+                      className="flex items-center gap-4 text-white/100 transition-colors hover:text-white [@media(min-width:1440px)]:text-base [@media(min-width:1920px)]:text-xl"
                     >
                       <Image
                         src={link.icon}
                         alt={link.text}
                         width={60}
                         height={60}
-                        className="flex-shrink-0 rounded-lg bg-[#FFFFFF]"
+                        className="h-10 w-10 flex-shrink-0 rounded-lg bg-white [@media(min-width:1440px)]:h-12 [@media(min-width:1440px)]:w-12 [@media(min-width:1536px)]:h-[52px] [@media(min-width:1536px)]:w-[52px] [@media(min-width:1920px)]:h-[60px] [@media(min-width:1920px)]:w-[60px]"
                       />
                       {/* CHANGE: Removed whitespace-pre and used dangerouslySetInnerHTML for line breaks */}
                       <span dangerouslySetInnerHTML={{ __html: link.text }} />
@@ -73,20 +91,22 @@ export default function SolutionsMegaMenu() {
               </ul>
             </div>
             <div>
-              <h3 className="mb-6 text-2xl font-semibold">Integrations</h3>
-              <ul className="space-y-4">
+              <h3 className="mb-6 text-[1.875rem] leading-[2.375rem] font-medium [@media(min-width:1440px)]:text-[1.5rem] [@media(min-width:1920px)]:text-[1.75rem]">
+                Integrations
+              </h3>
+              <ul className="space-y-6">
                 {integrationsLinks.map((link, index) => (
                   <li key={`int-${index}`}>
-                   <Link
+                    <Link
                       href={link.href}
-                      className="flex items-center gap-4 text-lg text-white/100 transition-colors hover:text-white"
+                      className="flex items-center gap-4 text-white/100 transition-colors hover:text-white [@media(min-width:1440px)]:text-base [@media(min-width:1920px)]:text-xl"
                     >
                       <Image
                         src={link.icon}
                         alt={link.text}
                         width={60}
                         height={60}
-                        className="flex-shrink-0 rounded-lg"
+                        className="h-10 w-10 flex-shrink-0 rounded-lg bg-white [@media(min-width:1440px)]:h-12 [@media(min-width:1440px)]:w-12 [@media(min-width:1536px)]:h-[52px] [@media(min-width:1536px)]:w-[52px] [@media(min-width:1920px)]:h-[60px] [@media(min-width:1920px)]:w-[60px]"
                       />
                       <span dangerouslySetInnerHTML={{ __html: link.text }} />
                     </Link>
@@ -98,20 +118,22 @@ export default function SolutionsMegaMenu() {
 
           <div className="flex gap-x-8">
             <div>
-              <h3 className="mb-6 text-2xl font-semibold">Liferay Marketplace</h3>
-              <ul className="space-y-4">
+              <h3 className="mb-6 text-[1.875rem] leading-[2.375rem] font-medium [@media(min-width:1440px)]:text-[1.5rem] [@media(min-width:1920px)]:text-[1.75rem]">
+                Liferay Marketplace
+              </h3>
+              <ul className="space-y-6">
                 {marketplaceLinks.map((link, index) => (
                   <li key={`mp-${index}`}>
                     <Link
                       href={link.href}
-                      className="flex items-center gap-4 text-lg text-white/100 transition-colors hover:text-white"
+                      className="flex items-center gap-4 text-white/100 transition-colors hover:text-white [@media(min-width:1440px)]:text-base [@media(min-width:1920px)]:text-xl"
                     >
                       <Image
                         src={link.icon}
                         alt={link.text}
                         width={60}
                         height={60}
-                        className="flex-shrink-0 rounded-lg"
+                        className="h-10 w-10 flex-shrink-0 rounded-lg bg-white [@media(min-width:1440px)]:h-12 [@media(min-width:1440px)]:w-12 [@media(min-width:1536px)]:h-[52px] [@media(min-width:1536px)]:w-[52px] [@media(min-width:1920px)]:h-[60px] [@media(min-width:1920px)]:w-[60px]"
                       />
                       <span dangerouslySetInnerHTML={{ __html: link.text }} />
                     </Link>
@@ -120,20 +142,22 @@ export default function SolutionsMegaMenu() {
               </ul>
             </div>
             <div>
-              <h3 className="mb-6 text-2xl font-semibold">Liferay + AI</h3>
-              <ul className="space-y-4">
+              <h3 className="mb-6 text-[1.875rem] leading-[2.375rem] font-medium [@media(min-width:1440px)]:text-[1.5rem] [@media(min-width:1920px)]:text-[1.75rem]">
+                Liferay + AI
+              </h3>
+              <ul className="space-y-6">
                 {aiLinks.map((link, index) => (
                   <li key={`ai-${index}`}>
                     <Link
                       href={link.href}
-                      className="flex items-center gap-4 text-lg text-white/100 transition-colors hover:text-white"
+                      className="flex items-center gap-4 text-white/100 transition-colors hover:text-white [@media(min-width:1440px)]:text-base [@media(min-width:1920px)]:text-xl"
                     >
                       <Image
                         src={link.icon}
                         alt={link.text}
                         width={60}
                         height={60}
-                        className="flex-shrink-0 rounded-lg bg-[#FFFFFF]"
+                        className="h-10 w-10 flex-shrink-0 rounded-lg bg-white [@media(min-width:1440px)]:h-12 [@media(min-width:1440px)]:w-12 [@media(min-width:1536px)]:h-[52px] [@media(min-width:1536px)]:w-[52px] [@media(min-width:1920px)]:h-[60px] [@media(min-width:1920px)]:w-[60px]"
                       />{" "}
                       <span dangerouslySetInnerHTML={{ __html: link.text }} />
                     </Link>

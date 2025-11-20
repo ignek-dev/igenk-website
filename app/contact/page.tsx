@@ -11,7 +11,8 @@ const metadata: Metadata = {
   openGraph: {
     url: "https://www.ignek.com/contact-us/",
     title: "Contact Us | Liferay Development, Customization & Consulting Experts",
-    description: "Contact our team for Liferay development, customization, support, and digital transformation services tailored to your business needs.",
+    description:
+      "Contact our team for Liferay development, customization, support, and digital transformation services tailored to your business needs.",
     images: [
       {
         width: 1200,
@@ -22,52 +23,37 @@ const metadata: Metadata = {
   },
 }
 const FacebookIcon = () => (
-  <svg
-    className="h-6 w-6"
-    fill="currentColor"
-    viewBox="0 0 24 24"
-    aria-hidden="true"
-  >
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path
-      fillRule="evenodd"
-      d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
-      clipRule="evenodd"
+      d="M13.9234 1.28401C11.6302 1.63801 10.153 3.15481 9.8746 5.43961C9.8482 5.65441 9.8278 6.52801 9.8278 7.46521V9.11401H6.3418V12.936H9.8278V22.806H13.9858V12.936H15.7294C16.687 12.936 17.4718 12.9288 17.4718 12.9204L17.7238 11.0532C17.863 10.0344 17.9758 9.18121 17.9758 9.15721C17.9758 9.12841 17.329 9.11401 15.9814 9.11401H13.9858V7.79401C13.9858 6.00721 14.0386 5.68081 14.389 5.29201C14.563 5.10001 14.7286 5.00401 15.0778 4.89001C15.2734 4.82761 15.5266 4.81201 16.7158 4.79161L18.1234 4.76761L18.1342 3.06001L18.145 1.35361L17.8822 1.32721C16.7026 1.20841 14.5654 1.18561 13.9234 1.28401Z"
+      fill="white"
     />
   </svg>
 )
 
 const XIcon = () => (
-  <svg
-    className="h-6 w-6"
-    fill="currentColor"
-    viewBox="0 0 24 24"
-    aria-hidden="true"
-  >
-    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path
+      d="M1.03823 1.85883C2.59463 3.85443 9.36503 12.7908 9.35063 12.8304C9.33263 12.876 2.41583 21.0312 1.64543 21.9132L1.41623 22.176H3.15383L4.89263 22.1748L7.89503 18.6456C8.91983 17.442 9.94343 16.2372 10.9634 15.03C11.027 14.9484 11.1482 15.1008 13.7918 18.5604L16.553 22.176H23.6918L23.507 21.9348C20.5118 18.0228 14.8526 10.596 14.8382 10.5564C14.8214 10.5156 18.3758 6.29883 21.7454 2.36283L22.2206 1.80603H20.4866L18.7526 1.80723L15.9662 5.08203C14.4338 6.88443 13.1678 8.35683 13.1522 8.35563C13.1366 8.35443 12.0014 6.87963 10.6286 5.07963L8.13383 1.80603H4.56503C1.71623 1.80603 1.00463 1.81683 1.03823 1.85883ZM13.2686 11.9916L19.4282 20.0556L18.5246 20.0664C17.633 20.0772 17.621 20.076 17.531 19.9824C17.4818 19.9296 14.7518 16.362 11.4638 12.054C8.17703 7.74603 5.43143 4.14963 5.36423 4.06323L5.24063 3.90483L6.17423 3.91563L7.10903 3.92763L13.2686 11.9916Z"
+      fill="white"
+    />
   </svg>
 )
 
 const LinkedInIcon = () => (
-  <svg
-    className="h-6 w-6"
-    fill="currentColor"
-    viewBox="0 0 24 24"
-    aria-hidden="true"
-  >
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path
-      fillRule="evenodd"
-      d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
-      clipRule="evenodd"
+      d="M3.38079 1.29481C2.65839 1.47841 2.08119 1.92841 1.76919 2.55001C1.56159 2.96401 1.49559 3.67321 1.61799 4.19041C1.81239 5.01721 2.48079 5.67601 3.36039 5.90881C3.73239 6.00721 4.54239 6.00721 4.91439 5.90881C6.47679 5.49601 7.19919 3.93481 6.49239 2.49721C6.23679 1.97881 5.75559 1.56601 5.16159 1.35601C4.74399 1.20841 3.83919 1.17721 3.38079 1.29481ZM16.9576 7.62241C16.2616 7.73641 15.634 7.98241 15.0676 8.36401C14.7268 8.59321 14.1616 9.14161 13.888 9.50881L13.672 9.79921L13.66 8.84761L13.6492 7.89601H9.00999V21.756H13.6504L13.6516 17.6292C13.6516 13.0632 13.6456 13.176 13.9216 12.6516C14.5144 11.5236 15.5584 11.0184 16.7692 11.2752C17.7736 11.4888 18.3364 12.2844 18.4804 13.692C18.5032 13.9176 18.5212 15.7584 18.5212 17.9232L18.5224 21.756H23.1424V17.4792C23.1424 14.766 23.1256 13.0344 23.098 12.744C22.942 11.154 22.4476 9.94321 21.592 9.05761C20.9008 8.33521 20.0008 7.84681 19.018 7.66321C18.5332 7.56721 17.428 7.54561 16.9576 7.62241ZM1.80639 14.826V21.756H6.46839V7.89601H1.80639V14.826Z"
+      fill="white"
     />
   </svg>
 )
 
 const InstagramIcon = () => (
-  <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path
-      fillRule="evenodd"
-      d="M7.75 2h8.5A5.76 5.76 0 0 1 22 7.75v8.5A5.76 5.76 0 0 1 16.25 22h-8.5A5.76 5.76 0 0 1 2 16.25v-8.5A5.76 5.76 0 0 1 7.75 2zm0 1.5A4.26 4.26 0 0 0 3.5 7.75v8.5A4.26 4.26 0 0 0 7.75 20.5h8.5A4.26 4.26 0 0 0 20.5 16.25v-8.5A4.26 4.26 0 0 0 16.25 3.5h-8.5zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.5A3.5 3.5 0 1 0 12 16a3.5 3.5 0 0 0 0-7zm4.75-.88a1.13 1.13 0 1 1 0 2.26 1.13 1.13 0 0 1 0-2.26z"
-      clipRule="evenodd"
+      d="M8.21081 1.26239C5.72921 1.40879 4.57841 1.82039 3.40001 2.98199C2.26001 4.10399 1.82441 5.20439 1.62881 7.45559C1.55081 8.34839 1.55081 15.6336 1.62881 16.5276C1.82441 18.7776 2.26001 19.8756 3.39881 21C4.59161 22.1772 5.73761 22.578 8.31521 22.7208C9.31481 22.776 15.3136 22.7772 16.3588 22.7208C18.9556 22.584 20.134 22.1616 21.3544 20.9328C22.5856 19.6932 22.9792 18.4848 23.098 15.582C23.1532 14.2536 23.1532 9.72839 23.098 8.39999C22.9792 5.49719 22.5856 4.28879 21.3544 3.04919C20.2384 1.92599 19.2472 1.52039 17.0728 1.29599C16.5112 1.23839 9.08681 1.20959 8.21081 1.26239ZM18.6148 4.89839C18.88 4.98359 19.2028 5.27999 19.3444 5.57039C19.672 6.23999 19.3228 7.08359 18.6088 7.35359C17.9968 7.58519 17.2948 7.30319 16.9744 6.69959C16.8796 6.51959 16.8628 6.43679 16.8628 6.13199C16.8616 5.71679 16.9588 5.46839 17.2252 5.20199C17.6032 4.82399 18.0628 4.72319 18.6148 4.89839ZM13.3384 6.49079C14.4388 6.68159 15.4636 7.22639 16.2964 8.06159C17.35 9.09719 17.9404 10.5144 17.9332 11.9916C17.9404 13.4676 17.35 14.8848 16.2964 15.9192C15.1984 17.0172 13.8832 17.5656 12.3472 17.5668C11.2336 17.5788 10.1416 17.25 9.21881 16.626C8.79521 16.3488 8.01521 15.576 7.73801 15.1608C6.24161 12.9192 6.47801 10.038 8.31281 8.13359C9.60161 6.77039 11.4928 6.15119 13.3384 6.49079ZM11.6356 8.35919C10.258 8.64479 9.15401 9.67319 8.76881 11.0256C8.62961 11.5116 8.62961 12.4704 8.76881 12.9576C9.11201 14.172 10.042 15.1332 11.2456 15.5148C12.5092 15.9132 13.8904 15.5964 14.854 14.6868C15.3544 14.2296 15.718 13.6416 15.9028 12.99C16.0036 12.66 16.0156 12.5544 16.0156 11.9916C16.0156 11.4276 16.0036 11.322 15.9028 10.992C15.718 10.3404 15.3544 9.75239 14.854 9.29519C14.4664 8.92559 14.0008 8.64719 13.4908 8.48159C13.1116 8.35439 13.036 8.34359 12.4528 8.33279C12.1804 8.32199 11.9068 8.33159 11.6356 8.35919Z"
+      fill="white"
     />
   </svg>
 )
@@ -89,43 +75,43 @@ type FormTextAreaProps = {
   required?: boolean
 }
 
-const FormInput = ({ label, placeholder: _placeholder, name, type = "text", required = false }: FormInputProps) => (
+const FormInput = ({ label, placeholder, name, type = "text", required = false }: FormInputProps) => (
   <div className="relative z-0 w-full">
     <input
       type={type}
       id={label}
       name={name}
       required={required}
-      className="peer block w-full appearance-none border-0 border-b-2 border-gray-600 bg-transparent px-0 py-3.5 text-lg text-white focus:border-white focus:ring-0 focus:outline-none"
-      placeholder=" " // Required for the floating label to work
+      className="peer block w-full appearance-none border-0 border-b-2 border-gray-600 bg-transparent px-0 py-3.5 text-xl text-white placeholder-transparent focus:border-white focus:placeholder-white focus:ring-0 focus:outline-none"
+      placeholder={placeholder} // visible only on focus
     />
+
     <label
       htmlFor={label}
-      className="text-medium absolute top-1 -z-10 origin-[0] -translate-y-8 scale-75 transform text-3xl text-[#FFFFFF] duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-8 peer-focus:scale-75 peer-focus:text-white"
+      className="text-medium absolute top-1 z-10 origin-[0] -translate-y-8 scale-75 transform text-3xl text-white duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-8 peer-focus:scale-75 peer-focus:text-white"
     >
       {label}
     </label>
-    {/* <span className="text-sm text-[#DBD3D3]">{placeholder}</span> */}
   </div>
 )
 
-const FormTextArea = ({ label, placeholder: _placeholder, name, rows = 6, required = false }: FormTextAreaProps) => (
+const FormTextArea = ({ label, placeholder, name, rows = 6, required = false }: FormTextAreaProps) => (
   <div className="relative z-0 w-full">
     <textarea
       id={label}
       name={name}
       required={required}
       rows={rows}
-      className="peer block w-full appearance-none border-0 border-b-2 border-gray-600 bg-transparent px-0 py-3.5 text-lg text-white focus:border-white focus:ring-0 focus:outline-none"
-      placeholder=" " // This space is required for the floating label to work
+      className="peer block w-full appearance-none border-0 border-b-2 border-gray-600 bg-transparent px-0 py-3.5 text-xl text-white placeholder-transparent focus:border-white focus:placeholder-white focus:ring-0 focus:outline-none"
+      placeholder={placeholder} // visible only on focus
     />
+
     <label
       htmlFor={label}
-      className="text-medium absolute top-1 -z-10 origin-[0] -translate-y-8 scale-75 transform text-3xl text-[#FFFFFF] duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-8 peer-focus:scale-75 peer-focus:text-white"
+      className="text-medium absolute top-1 z-10 origin-[0] -translate-y-8 scale-75 transform text-3xl text-white duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-8 peer-focus:scale-75 peer-focus:text-white"
     >
       {label}
     </label>
-    {/* The span is now removed. The 'placeholder' prop is no longer used. */}
   </div>
 )
 
@@ -153,8 +139,18 @@ export default function ContactPage() {
       if (response.ok) {
         setStatus({ type: "success", message: "Thanks for your message. We will get back to you soon." })
         form.reset()
+
+        // ⏳ Hide message after 4 seconds
+        setTimeout(() => {
+          setStatus({ type: "idle", message: "" })
+        }, 4000)
       } else {
         setStatus({ type: "error", message: "Failed to send message." })
+
+        // ⏳ Hide error after 4 seconds
+        setTimeout(() => {
+          setStatus({ type: "idle", message: "" })
+        }, 4000)
       }
     } catch (err) {
       console.log(err)
@@ -167,11 +163,13 @@ export default function ContactPage() {
     <main className="bg-black text-white">
       <section className="relative pt-16 pb-16 md:pb-16">
         {/* Main Content with standard padding */}
-        <div className="mx-auto w-full px-4 md:px-8 global-container">
+        <div className="global-container mx-auto w-full px-4 md:px-8">
           {/* Top Section: Title and Description */}
           <div className="grid grid-cols-1 items-center gap-3 md:grid-cols-5">
-            <h1 className="text-5xl leading-tight font-semibold sm:text-9xl md:col-span-2 md:text-8xl">Contact us</h1>
-            <p className="text-xl leading-[30px] font-normal tracking-normal text-[#FFFFFF] md:col-span-3 md:text-right">
+            <h1 className="text-[4.375rem] leading-[5.85rem] font-medium text-white md:col-span-2 [@media(min-width:1440px)]:text-[5.375rem] [@media(min-width:1536px)]:text-[5.5rem] [@media(min-width:1920px)]:text-[5.625rem]">
+              Contact Us
+            </h1>
+            <p className="font-regular text-xl tracking-normal text-[#FFFFFF] md:col-span-3 md:text-right [@media(min-width:1440px)]:text-lg [@media(min-width:1920px)]:text-xl">
               Get in touch for inquiries about our properties. We&apos;re here to offer expert <br />
               advice, personalized solutions, and exceptional service to meet all your needs effectively.
             </p>
@@ -184,10 +182,10 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 gap-16 md:grid-cols-2">
             {/* Left Side: "Lets Start Conversation" */}
             <div className="flex flex-col">
-              <h2 className="letter-spacing-[-0.02em] text-5xl font-semibold tracking-tight">
-                Lets Start Conversation
+              <h2 className="text-5xl leading-[3.75rem] font-semibold tracking-[-2%] [@media(min-width:1440px)]:text-4xl [@media(min-width:1920px)]:text-5xl">
+                Let's Start the Conversation
               </h2>
-              <p className="mt-6 max-w-lg text-lg text-[#FFFFFF]">
+              <p className="font-regular mt-3 max-w-lg text-lg leading-[1.75rem] text-[#FFFFFF]">
                 We at IGNEK appreciate your questions, comments, and teamwork. Whether you have enquiries about our
                 projects or would like to discuss our services.
               </p>
@@ -195,22 +193,28 @@ export default function ContactPage() {
               {/* Info Blocks */}
               <div className="mt-9 flex flex-col gap-8 sm:flex-row sm:gap-26">
                 <div className="flex max-w-[304px] flex-col gap-2">
-                  <h3 className="text-lg text-[#DBD3D3]">Email address</h3>
-                  <a href="mailto:sales@ignek.com" className="mt-0.5 text-base text-white hover:text-blue-400">
+                  <h3 className="text-lg leading-[1.25rem] font-medium text-[#DBD3D3]">Email Address</h3>
+                  <a
+                    href="mailto:sales@ignek.com"
+                    className="mt-1 text-base leading-[1.5rem] text-white hover:text-blue-400"
+                  >
                     sales@ignek.com
                   </a>
                 </div>
                 <div className="flex max-w-[304px] flex-col gap-2">
-                  <h3 className="text-lg text-[#DBD3D3]">Phone number</h3>
-                  <a href="tel:+016351575560" className="mt-0.5 text-base text-white hover:text-blue-400">
+                  <h3 className="text-lg leading-[1.25rem] font-medium text-[#DBD3D3]">Phone Number</h3>
+                  <a
+                    href="tel:+016351575560"
+                    className="mt-1 text-base leading-[1.5rem] text-white hover:text-blue-400"
+                  >
                     +91 63515 75560
                   </a>
                 </div>
               </div>
 
               {/* Follow Us */}
-              <div className="mt-9.5 flex flex-col gap-8 sm:flex-row sm:items-center sm:gap-32">
-                <h3 className="text-lg text-[#FFFFFF]">Follow us on</h3>
+              <div className="mt-9 flex flex-col gap-8 sm:flex-row sm:items-center sm:gap-32">
+                <h3 className="text-lg leading-[1.25rem] font-medium text-[#FFFFFF]">Follow Us On</h3>
                 <div className="flex space-x-5">
                   <a
                     href="https://www.facebook.com/ignekinfo/"
@@ -252,7 +256,7 @@ export default function ContactPage() {
               <form action="#" method="POST" onSubmit={handleSubmit}>
                 <div className="grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2">
                   {/* Form Inputs */}
-                  <FormInput label="Full Name" placeholder="John Carter" name="name" required />
+                  <FormInput label="Full Name" placeholder="ex. John Carter" name="name" required />
                   <FormInput
                     label="Email Address"
                     placeholder="example@youremail.com"
@@ -280,9 +284,9 @@ export default function ContactPage() {
                   <button
                     type="submit"
                     disabled={loading}
-                    className="rounded-full bg-white px-10 py-4 text-lg font-semibold text-black transition-transform hover:scale-105 disabled:cursor-not-allowed disabled:opacity-50"
+                    className="rounded-full bg-white px-8.5 py-5 text-lg leading-[1.25rem] font-medium text-black transition-transform hover:scale-105 disabled:cursor-not-allowed disabled:opacity-50"
                   >
-                    {loading ? "Sending..." : "Send message"}
+                    {loading ? "Sending..." : "Send Message"}
                   </button>
                   <div className="mt-4 text-sm" aria-live="polite">
                     {status.type === "success" && <span className="text-green-400">{status.message}</span>}
@@ -297,18 +301,18 @@ export default function ContactPage() {
 
       {/* --- NEW OFFICE SECTION --- */}
       <section className="bg-white py-[64px] text-black">
-        <div className="mx-auto w-full px-4 md:px-8 global-container">
+        <div className="global-container mx-auto w-full px-4 md:px-8">
           {/* Header part */}
-          <div className="mb-16 grid grid-cols-1 items-end gap-8 md:grid-cols-2">
+          <div className="mb-22.5 grid grid-cols-1 items-end gap-8 md:grid-cols-2">
             <div>
-              <h2 className="text-5xl leading-tight font-semibold tracking-tight text-[#000000]">
-                Our Offices locations in india
+              <h2 className="text-5xl leading-[3.75rem] font-semibold tracking-[-2%] text-[#000000]">
+                Our Offices Locations in India
                 <br />
-                and United Arab Emirates
+                and the United Arab Emirates
               </h2>
             </div>
-            <div className="flex h-full items-end justify-end">
-              <p className="text-normal line-height-[30px] w-full text-right text-xl text-[#374151]">
+            <div className="flex h-full items-center justify-center">
+              <p className="text-regular w-full text-right text-lg leading-[1.875rem] text-[#374151]">
                 We have offices in India and the United Arab Emirates, providing seamless regional support and
                 collaboration for our global clients.{" "}
               </p>
@@ -335,25 +339,30 @@ export default function ContactPage() {
                 <div>
                   {" "}
                   {/* Wrapper for the actual details */}
-                  <h3 className="letter-spacing-[-0.02em] text-4xl font-semibold text-[#151314]">Ahmedabad, India</h3>
-                  <p className="mt-4 text-lg text-[#4D464A]">
+                  <h3 className="traking-[-2%] text-4xl leading-[2.75rem] font-medium text-[#151314]">
+                    Ahmedabad, India
+                  </h3>
+                  <p className="mt-4 text-lg leading-[1.75] text-[#4D464A]">
                     E 910- 912, Ganesh Glory 11, Jagatpur Road, SG Highway,
                     <br />
                     Ahmedabad, Gujarat – 382470
                   </p>
-                  <div className="mt-24 flex flex-col gap-8 sm:flex-row sm:items-center sm:gap-16">
+                  <div className="mt-24 flex flex-col gap-8 sm:flex-row sm:items-center sm:gap-30">
                     <div className="flex min-w-[232px] flex-col gap-1">
-                      <h4 className="text-xl font-medium text-[#766C72]">Email address</h4>
+                      <h4 className="text-xl leading-[1.5rem] font-medium text-[#766C72]">Email Address</h4>
                       <a
                         href="mailto:sales@ignek.com"
-                        className="text-lg font-medium text-[#151314] hover:text-blue-600"
+                        className="text-lg leading-[1.5rem] font-medium text-[#151314] hover:text-blue-600"
                       >
                         sales@ignek.com
                       </a>
                     </div>
                     <div className="flex flex-col gap-1">
-                      <h4 className="text-xl font-medium text-[#766C72]">Phone number</h4>
-                      <a href="tel:+916351578580" className="text-lg font-medium text-[#151314] hover:text-blue-600">
+                      <h4 className="text-xl leading-[1.5rem] font-medium text-[#766C72]">Phone Number</h4>
+                      <a
+                        href="tel:+916351578580"
+                        className="text-lg leading-[1.5rem] font-medium text-[#151314] hover:text-blue-600"
+                      >
                         (+91) 635 157 8580
                       </a>
                     </div>
@@ -380,25 +389,30 @@ export default function ContactPage() {
               </div>
               {/* Right Side: Details (no divider here as it's the last location) */}
               <div className="mt-6 md:mt-4 md:w-1/2 md:pl-3.5">
-                <h3 className="text-4xl font-semibold text-black">United Arab Emirates</h3>
-                <p className="mt-4 text-lg text-[#4D464A]">
-                  office Number : 09-106, Arabian Sky Business center ,
+                <h3 className="traking-[-2%] text-4xl leading-[2.75rem] font-medium text-[#151314]">
+                  United Arab Emirates
+                </h3>
+                <p className="mt-4 text-lg leading-[1.75] text-[#4D464A]">
+                  Office Number: 09-106, Arabian Sky Business center ,
                   <br />
                   Umm Hurrair 2 Dubai UAE
                 </p>
-                <div className="mt-24 flex flex-col gap-8 sm:flex-row sm:gap-16">
-                  <div className="flex flex-col gap-1">
-                    <h4 className="text-xl font-medium text-[#766C72]">Email address</h4>
+                <div className="mt-24 flex flex-col gap-8 sm:flex-row sm:gap-30">
+                  <div className="flex min-w-[232px] flex-col gap-1">
+                    <h4 className="text-xl leading-[1.5rem] font-medium text-[#766C72]">Email Address</h4>
                     <a
                       href="mailto:newyork@konstruktion.com"
-                      className="text-lg font-medium text-[#151314] hover:text-blue-600"
+                      className="text-lg leading-[1.5rem] font-medium text-[#151314] hover:text-blue-600"
                     >
                       connect@ignek.com
                     </a>
                   </div>
                   <div className="flex flex-col gap-1">
-                    <h4 className="text-xl font-medium text-[#766C72]">Phone number</h4>
-                    <a href="tel:+4146781903" className="text-lg font-medium text-[#151314] hover:text-blue-600">
+                    <h4 className="text-xl leading-[1.5rem] font-medium text-[#766C72]">Phone Number</h4>
+                    <a
+                      href="tel:+4146781903"
+                      className="text-lg leading-[1.5rem] font-medium text-[#151314] hover:text-blue-600"
+                    >
                       +97 154 219 8252
                     </a>
                   </div>

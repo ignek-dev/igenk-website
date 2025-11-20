@@ -50,7 +50,7 @@ export default function ServicesMegaMenu() {
                 src={featuredService.imageSrc}
                 alt="Tech Experts"
                 width={521} // Base width from parent style
-                height={600} // Estimated height for aspect ratio
+                height={460} // Estimated height for aspect ratio
                 objectFit="cover"
                 className="h-auto w-full"
               />
@@ -93,7 +93,7 @@ export default function ServicesMegaMenu() {
           <div className="flex flex-grow">
             {/* Digital Experience Section */}
             <div className="w-1/3">
-              <h3 className="mb-6 text-3xl font-semibold md:text-2xl  whitespace-pre">Digital Experience</h3>
+              <h3 className="mb-6 [@media(min-width:1920px)]:text-[1.75rem] [@media(min-width:1440px)]:text-[1.5rem] text-2xl font-medium whitespace-pre">Digital Experience</h3>
               <ul className="space-y-4">
                 {digitalExperienceLinks.map((link) => (
                   <li key={link.text}>
@@ -101,8 +101,8 @@ export default function ServicesMegaMenu() {
                       href={link.href}
                       className="flex items-center gap-3 text-white/80 transition-colors hover:text-white"
                     >
-                      <Image src={link.iconUrl} alt={link.text} width={32} height={32} />
-                      <span className="text-xl md:text-lg">{link.text}</span>
+                      <Image src={link.iconUrl} alt={link.text} width={40} height={40} />
+                      <span className="text-lg [@media(min-width:1920px)]:text-xl [@media(min-width:1440px)]:text-lg">{link.text}</span>
                     </a>
                   </li>
                 ))}
@@ -114,14 +114,14 @@ export default function ServicesMegaMenu() {
 
             {/* Liferay Services Section */}
             <div className="w-1/2">
-              <h3 className="mb-6 text-3xl font-semibold md:text-2xl">Liferay Services</h3>
+              <h3 className="mb-6 [@media(min-width:1920px)]:text-[1.75rem] [@media(min-width:1440px)]:text-[1.5rem] text-2xl font-medium whitespace-pre">Liferay Services</h3>
               {/* Using a grid to create two columns */}
               <ul className="grid grid-cols-2 gap-x-32 gap-y-4 [@media(min-width:1440px)]:gap-x-62 [@media(min-width:1820px)]:gap-x-32">
                 {liferayServicesLinks.map((link) => (
                   <li key={link.text}>
                     <a
                       href={link.href}
-                      className="text-xl  md:text-lg whitespace-pre text-white/80 transition-colors hover:text-white"
+                      className="text-lg [@media(min-width:1920px)]:text-xl [@media(min-width:1440px)]:text-lg font-medium whitespace-pre text-white/80 transition-colors hover:text-white"
                     >
                       {link.text}
                     </a>
