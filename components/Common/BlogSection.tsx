@@ -91,8 +91,8 @@ export default function BlogSection() {
     return <div className="text-black">Loading.......</div>
   return (
     <section className="bg-white text-black">
-      <div className="mx-auto w-full px-4 py-[64px] md:px-8 md:py-[64px] lg:py-[64px] [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
-        <div className="grid items-center gap-10 md:grid-cols-2 "
+      <div className="mx-auto w-full px-4 py-[64px] md:px-8 md:py-[64px] lg:py-[64px] global-container ">
+        <div className="grid items-end gap-10 md:grid-cols-2 "
         >
           <h2
             className={`text-5xl leading-tight font-semibold sm:text-4xl md:text-5xl [@media(min-width:1440px)]:text-4xl [@media(min-width:1520px)]:text-5xl ${isInView ? "animate-when-visible animate-slide-left animation-delay-200" : "opacity-0"
@@ -126,7 +126,7 @@ export default function BlogSection() {
             <h3 className="line-height-[44px] pt-2 text-4xl font-semibold text-[#101012] md:text-3xl [@media(min-width:1440px)]:pt-15 [@media(min-width:1520px)]:pt-17 [@media(min-width:1800px)]:pt-2">
               {blogs[0]?.title || "Blog Post"}
             </h3>
-            <p className="mt-2 text-lg text-[#101012] text-gray-700 line-clamp-2"
+            <p className="mt-2 text-lg text-[#101012] text-gray-700 line-clamp-1  "
               dangerouslySetInnerHTML={{ __html: blogs[0]?.desc ?? "" }}
             />
             <div className="mt-6 w-full border-t border-gray-300" />

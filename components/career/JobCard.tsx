@@ -43,7 +43,7 @@ const JobCard = ({ job }: JobCardProps) => {
           <div className="mb-2 inline-flex items-center rounded-[8px] bg-[#309689]/10 px-2 py-1 text-sm font-medium text-[#309689]">
             {job.postedAgo}
           </div>
-          <h3 className="text-2xl font-semibold">{job.title}</h3>
+          <h3 className="text-[1.75rem] font-semibold">{job.title}</h3>
         </div>
         <button onClick={() => setIsOpen(!isOpen)} className="flex items-center gap-2 pr-3 pb-2 text-xl font-medium">
           View Details
@@ -98,25 +98,25 @@ const JobCard = ({ job }: JobCardProps) => {
             transition={{ duration: 0.3, ease: "easeOut" }}
             className="overflow-hidden"
           >
-            <div className="border-t border-gray-200 pt-6 text-gray-700">
-              <h4 className="font-bold">About the Role</h4>
+            <div className=" border-gray-200 text-lg font-noraml text-[#1F2937]">
+              <h4 className="">About the Role</h4>
               <p className="mt-2">{job.description.about}</p>
 
-              <h4 className="mt-4 font-bold">Key Responsibilities:</h4>
+              <h4 className="mt-4 ">Key Responsibilities:</h4>
               <ul className="mt-2 list-disc space-y-1 pl-5">
                 {job.description.responsibilities.map((item) => (
                   <li key={item}>{item}</li>
                 ))}
               </ul>
 
-              <h4 className="mt-4 font-bold">Requirements:</h4>
+              <h4 className="mt-4 ">Requirements:</h4>
               <ul className="mt-2 list-disc space-y-1 pl-5">
                 {job.description.requirements.map((item) => (
                   <li key={item}>{item}</li>
                 ))}
               </ul>
 
-              <h4 className="mt-4 font-bold">Preferred Skills:</h4>
+              <h4 className="mt-4 ">Preferred Skills:</h4>
               <ul className="mt-2 list-disc space-y-1 pl-5">
                 {job.description.preferred.map((item) => (
                   <li key={item}>{item}</li>

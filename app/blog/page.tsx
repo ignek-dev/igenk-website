@@ -78,7 +78,7 @@ export default function Blogs() {
     try {
       setLoading(true);
       // setError(null);
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      // window.scrollTo({ top: 0, behavior: "smooth" });
 
       // Prepare category filter query
       const categoryQuery = selectedCategory
@@ -227,15 +227,15 @@ export default function Blogs() {
             </h2>
 
             {/* Cards Grid */}
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4">
+            <div className="flex flex-wrap justify-between gap-4">
               {cardData.map((card, index) => {
-                const isSelected = selectedCategory === card.id; // ✅ compare id to id
+                const isSelected = selectedCategory === card.id;
+
                 return (
                   <div
                     key={index}
                     onClick={() => {
-                      setCurrentPage(1); // reset pagination
-                      // ✅ toggle select by id
+                      setCurrentPage(1);
                       setSelectedCategory(
                         selectedCategory === card.id ? null : card.id
                       );
@@ -251,6 +251,7 @@ export default function Blogs() {
                 );
               })}
             </div>
+
           </div>
           <div className="pb-16">
             <h2 className="mb-6 text-5xl leading-tight font-semibold tracking-tight text-[#000000]">Browse Latest Blog</h2>

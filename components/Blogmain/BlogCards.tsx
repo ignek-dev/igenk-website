@@ -26,47 +26,50 @@ export default function BlogCard({ blog }: BlogCardProps) {
     router.push(`/blog/${blog.slug}`);
   };
   return (
-    <div className="bg-white rounded-[19px] h-[480px] cursor-pointer relative"
-      onClick={handleClick}
+  <div
+  className="cursor-pointer relative transition p-4 flex flex-col"
+  onClick={handleClick}
+>
+  {/* Image */}
+  <div className="rounded-[19px] p-1 shadow overflow-hidden w-full">
+    <Image
+      src={blog.image}
+      alt={blog.title}
+      width={500}
+      height={300}
+      className="w-full rounded-[16px] h-auto object-cover"
+    />
+  </div>
 
-    >
-      <div className="bg-white rounded-[19px] p-4 h-[302px]">
-        <div className="rounded-[19px] overflow-hidden">
-          <Image
-            src={blog.image}
-            alt={blog.title}
-            width={475}
-            height={250}
-            className="w-full object-cover rounded-lg"
-          />
-        </div>
+  {/* Category */}
+  <div className="flex flex-wrap items-center gap-2 text-gray-500 text-base font-normal mt-4">
+    <span className="px-6 py-3 border rounded-full text-gray-600 font-medium">
+      {blog.category}
+    </span>
+    <span>•</span>
+    <span>{blog.readTime}</span>
+  </div>
 
-        <div className="flex items-center space-x-2 text-gray-500 text-sm mt-4">
-          <span className="px-3 py-1 border rounded-full text-gray-600 font-medium">
-            {blog.category}
-          </span>
-          <span>•</span>
-          <span>{blog.readTime}</span>
-        </div>
+  {/* Title */}
+  <h3 className="text-2xl md:text-3xl font-semibold text-gray-900 mt-3 ">
+    {blog.title}
+  </h3>
 
-        <h3 className="text-2xl font-semibold text-gray-900 mt-3">
-          {/* {blog.title.length > 35 ? `${blog.title.slice(0, 85)}...` : blog.title} */}
-          {blog.title}
-        </h3>
+  {/* Author Section fixed at bottom */}
+  <div className="flex items-center gap-3 text-lg font-normal text-gray-600 mt-auto pt-4">
+    <Image
+      src={blog.authPic}
+      alt={blog.author}
+      width={40}
+      height={40}
+      className="w-10 h-10 object-cover rounded-full border border-gray-200"
+    />
+    <span className="font-normal text-[1.222rem]">{blog.author}</span>
+    <span>•</span>
+    <span className="font-normal text-[1.125rem] text-[#535862]">{blog.date}</span>
+  </div>
+</div>
 
-        <div className="flex items-center mt-4 space-x-2 text-sm text-gray-600 absolute bottom-5">
-          <Image
-            src={blog.authPic}
-            alt={blog.author}
-            width={40}
-            height={40}
-            className="w-10 h-10 object-cover rounded-full border border-gray-200"
-          />
-          <span className="font-medium">{blog.author}</span>
-          <span>•</span>
-          <span>{blog.date}</span>
-        </div>
-      </div>
-    </div>
-  );
+);
+
 }
