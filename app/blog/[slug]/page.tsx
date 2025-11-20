@@ -207,14 +207,14 @@ export default function BlogDetails() {
         <>
             <section className="relative bg-black text-white">
                 <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_10%_0%,#0E7BF8_0%,#00979E_40%,transparent_65%)] opacity-25" />
-                <div className="mx-auto w-full px-4 pt-12 pb-16 md:px-8 md:pt-20 md:pb-22 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
+                <div className="mx-auto w-full px-4 pt-12 pb-16 md:px-8 md:pt-20 md:pb-22 .global-container">
                     <div className="text-center flex flex-col items-center justify-center px-6 py-16">
                         <h1 className="bg-[linear-gradient(0deg,#FFFFFF,#FFFFFF),linear-gradient(0deg,rgba(0,0,0,0.23),rgba(0,0,0,0.23))] bg-clip-text text-transparent text-5xl sm:text-6xl md:text-7xl font-bold leading-tight">
                             {post?.title?.rendered || "Untitled"}
                         </h1>
 
-                        <div className="max-w-2xl mt-6 text-lg text-gray-200 sm:text-xl md:mt-10">
-                            <div className="flex items-center mt-4 space-x-2 text-sm text-white">
+                        <div className="max-w-2xl mt-6 text-2xl font-normal text-gray-200 sm:text-xl md:mt-10">
+                            <div className="flex items-center mt-4 space-x-2  text-white">
                                 <Image
                                     src={post._embedded?.author?.[0]?.avatar_urls?.["96"] || "/images/blogs/blogAuthor.png"}
                                     alt={"authorI"}
@@ -222,7 +222,7 @@ export default function BlogDetails() {
                                     height={40}
                                     className="w-10 h-10 object-cover rounded-full border border-gray-200"
                                 />
-                                <span className="font-medium">{post._embedded?.author?.[0]?.name || "Bhavin Panchani"}</span>
+                                <span className="">{post._embedded?.author?.[0]?.name || "Bhavin Panchani"}</span>
                                 <span>•</span>
                                 <span>{post.date
                                     ? new Date(post.date).toLocaleDateString("en-US", {
