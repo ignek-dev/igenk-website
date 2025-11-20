@@ -1,6 +1,7 @@
 "use client";
 import { useParams } from "next/navigation";
 import Prism from "prismjs";
+import Image from "next/image"
 import React, { useEffect, useRef, useState } from "react";
 import "prismjs/themes/prism.css";
 import "prismjs/plugins/line-numbers/prism-line-numbers.css";
@@ -117,8 +118,64 @@ export default function PortfolioRenderer() {
                 className="text-lg text-white sm:text-lg md:mt-16"
                 dangerouslySetInnerHTML={{ __html: post.excerpt.rendered }}
               />
+
+              <div className="flex items-center justify-center gap-6 mt-[43px]">
+
+                <p className="text-lg text-white sm:text-lg">Share On</p>
+                <div className="flex items-center gap-4">
+                  <div className="w-[56px] h-[56px] rounded-full border-[1.2px] border-[#374151] shadow-[0_4.8px_12px_0_rgba(0,151,158,0.25)] flex items-center justify-center hover:opacity-80 active:scale-95 transition">
+                    <a href="https://www.linkedin.com/company/ignek-infotech/about/" aria-label="X" className="flex-shrink-0" target="blank">
+                      <img
+                        src="/images/case-studies/linkedin.png"
+                        alt="linkedin"
+                        className="w-[28.8px] h-[28.8px]"
+                      />
+                    </a>
+                  </div>
+                  <div className="w-[56px] h-[56px] rounded-full border-[1.2px] border-[#374151] shadow-[0_4.8px_12px_0_rgba(0,151,158,0.25)] flex items-center justify-center hover:opacity-80 active:scale-95 transition">
+                    <a href="https://x.com/ignekinfotech" aria-label="X" className="flex-shrink-0" target="blank">
+                      <img
+                        src="/images/case-studies/whatsapp.png"
+                        alt="linkedin"
+                        className="w-[28.8px] h-[28.8px]"
+                      />
+                    </a>
+                  </div>
+                  <div className="w-[56px] h-[56px] rounded-full border-[1.2px] border-[#374151] shadow-[0_4.8px_12px_0_rgba(0,151,158,0.25)] flex items-center justify-center hover:opacity-80 active:scale-95 transition">
+                    <a href="https://www.facebook.com/ignekinfo/" aria-label="X" className="flex-shrink-0" target="blank">
+                      <img
+                        src="/images/case-studies/facebook.png"
+                        alt="linkedin"
+                        className="w-[28.8px] h-[28.8px]"
+                      />
+                    </a>
+
+                  </div>
+                  <div className="w-[56px] h-[56px] rounded-full border-[1.2px] border-[#374151] shadow-[0_4.8px_12px_0_rgba(0,151,158,0.25)] flex items-center justify-center hover:opacity-80 active:scale-95 transition">
+                    <a href="https://x.com/ignekinfotech" aria-label="X" className="flex-shrink-0" target="blank">
+                      <img
+                        src="/images/case-studies/twitter.png"
+                        alt="linkedin"
+                        className="w-[28.8px] h-[28.8px]"
+                      />
+                    </a>
+
+                  </div>
+                  <div
+                    onClick={() => navigator.clipboard.writeText(window.location.href)}
+                    className="w-[56px] h-[56px] rounded-full border-[1.2px] border-[#374151] shadow-[0_4.8px_12px_0_rgba(0,151,158,0.25)] flex items-center justify-center cursor-pointer hover:opacity-80 active:scale-95 transition"
+                    title="Copy link"
+                  >
+                    <img
+                      src="/images/case-studies/link-fill.png"
+                      alt="copy link"
+                      className="w-[28.8px] h-[28.8px]"
+                    />
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
         </section>
       </main>
 
