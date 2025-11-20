@@ -167,7 +167,7 @@ export default function ContactPage() {
     <main className="bg-black text-white">
       <section className="relative pt-16 pb-16 md:pb-16">
         {/* Main Content with standard padding */}
-        <div className="mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
+        <div className="mx-auto w-full px-4 md:px-8 global-container">
           {/* Top Section: Title and Description */}
           <div className="grid grid-cols-1 items-center gap-3 md:grid-cols-5">
             <h1 className="text-5xl leading-tight font-semibold sm:text-9xl md:col-span-2 md:text-8xl">Contact us</h1>
@@ -203,7 +203,7 @@ export default function ContactPage() {
                 <div className="flex max-w-[304px] flex-col gap-2">
                   <h3 className="text-lg text-[#DBD3D3]">Phone number</h3>
                   <a href="tel:+016351575560" className="mt-0.5 text-base text-white hover:text-blue-400">
-                    +01 63515 75560
+                    +91 63515 75560
                   </a>
                 </div>
               </div>
@@ -297,7 +297,7 @@ export default function ContactPage() {
 
       {/* --- NEW OFFICE SECTION --- */}
       <section className="bg-white py-[64px] text-black">
-        <div className="mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
+        <div className="mx-auto w-full px-4 md:px-8 global-container">
           {/* Header part */}
           <div className="mb-16 grid grid-cols-1 items-end gap-8 md:grid-cols-2">
             <div>

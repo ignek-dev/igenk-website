@@ -53,7 +53,7 @@ const CardRail: React.FC<CardRailProps> = ({ cards, width = 417, height = 469 })
 
   return (
     <div
-      className={`absolute top-[297px] px-[192px] pl-0 right-0 h-[469px] overflow-hidden transition-all duration-300 ${
+      className={`pl-0 mt-[113px] h-[469px] overflow-hidden transition-all duration-300 ${
         isAtStart ? "left-[192px]" : "left-[192px]"
       }`}
     >

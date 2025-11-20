@@ -57,7 +57,7 @@ export default function InsightsMegaMenu() {
         <div className="grid grid-cols-12 items-start gap-8">
           {/* Left Side: Cards */}
           <div className="col-span-5">
-            <div className="flex w-full max-w-[588px] flex-col gap-5">
+            <div className="flex w-full max-w-[888px] flex-col gap-5">
               {insightLinks.map((link) => (
                 <a
                   href={link.href}
@@ -65,11 +65,19 @@ export default function InsightsMegaMenu() {
                   className="group flex h-[130px] items-center gap-4 rounded-lg bg-zinc-900/80 p-4 transition-colors duration-300 hover:bg-zinc-800/80"
                 >
                   <div className="text-white/70 transition-colors group-hover:text-white">
-                    <Image src={link.icon} alt={link.title} width={24} height={24} objectFit="contain" />
+                    <Image
+                      src={link.icon}
+                      alt={link.title}
+                      width={50}
+                      height={50}
+                      className="h-[32px] w-[32px] [@media(min-width:1440px)]:h-[32px] [@media(min-width:1440px)]:w-[32px] [@media(min-width:1536px)]:h-[34px] [@media(min-width:1536px)]:w-[34px] [@media(min-width:1920px)]:h-[38px] [@media(min-width:1920px)]:w-[38px]"
+                    />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-xl font-semibold text-white">{link.title}</h3>
-                    <p className="mt-1 text-base text-white/60">{link.description}</p>
+                    <h3 className="leading-[2rem] font-medium text-white [@media(min-width:1440px)]:text-[1.25rem] [@media(min-width:1920px)]:text-[1.75rem]">
+                      {link.title}
+                    </h3>
+                    <p className="mt-1 text-base text-white font-regular leading-[1.5rem]">{link.description}</p>
                   </div>
                   <IconArrowRight className="size-8 text-white/50 transition-transform duration-300 group-hover:translate-x-1 group-hover:text-white" />
                 </a>
@@ -79,7 +87,9 @@ export default function InsightsMegaMenu() {
 
           {/* Right Side: Featured Event */}
           <div className="col-span-7">
-            <h2 className="max-w-1xl mb-6 text-3xl leading-tight font-bold">{featuredEvent.title}</h2>
+            <h2 className="mb-6 max-w-4xl leading-[2.75rem] font-medium tracking-[-0.04rem] text-white [@media(min-width:1440px)]:text-[1.65rem] [@media(min-width:1920px)]:text-[2rem]">
+              {featuredEvent.title}
+            </h2>
             <Link href={featuredEvent.href} className="group block">
               <div className="overflow-hidden rounded-[14.35px] border-[1.2px] border-white/20 transition-all duration-300 group-hover:border-white/40">
                 <Image

@@ -14,7 +14,7 @@ export default function CareerPage() {
 
         <div className="absolute bottom-0 left-0 h-24 w-full bg-gradient-to-t from-black to-transparent" />
 
-        <div className="mx-auto w-full px-4 pt-16 pb-16 md:px-8 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
+        <div className="mx-auto w-full px-4 pt-16 pb-16 md:px-8 global-container">
           <div className="grid items-end gap-10 lg:grid-cols-2">
             <div>
               <div className="inline-flex items-center rounded-full border border-white/30 px-4 py-2 text-lg text-sm text-white/80">
@@ -37,7 +37,7 @@ export default function CareerPage() {
                 </video>
               </div>
             </div>
-            <p className="max-w-xl pb-12 text-right text-[20px] leading-[30px] font-normal tracking-[0] text-white/80 sm:text-[18px] sm:leading-[28px] md:justify-self-end">
+            <p className="max-w-xl pb-12 text-right text-[20px] leading-[30px] font-normal tracking-[0] text-white/80 sm:text-[20px] sm:leading-[28px] t md:justify-self-end">
               At IGNEK we value people and it include their growth, learning, and perks that help you succeed personally
               and professionally.
             </p>
@@ -47,7 +47,7 @@ export default function CareerPage() {
 
       {/* Perks & Benefits */}
       <section className="border-t border-white/20 bg-black text-white">
-        <div className="mx-auto w-full px-4 py-16 md:px-8 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
+        <div className="mx-auto w-full px-4 py-16 md:px-8 global-container">
           <div className="grid items-start gap-10 md:grid-cols-2">
             <h2 className="text-2xl font-semibold sm:text-3xl md:text-5xl">More Than Just a Job</h2>
             <p className="max-w-xl pb-12 text-right text-[20px] leading-[30px] font-normal tracking-[0] text-white/80 sm:text-[18px] sm:leading-[28px] md:justify-self-end">
@@ -84,7 +84,7 @@ export default function CareerPage() {
 
       {/* Open Roles */}
       <section className="bg-[#F6F6F6] pb-0 text-black">
-        <div className="mx-auto w-full px-4 py-16 md:px-8 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
+        <div className="mx-auto w-full px-4 py-16 md:px-8 global-container">
           <div className="grid items-start gap-10 md:grid-cols-2">
             <h2 className="text-4xl leading-tight font-semibold tracking-[-0.02em] text-balance sm:text-3xl md:text-5xl">
               <span className="block">Apply at IGNEK</span>

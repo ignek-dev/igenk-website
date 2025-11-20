@@ -1,0 +1,38 @@
+/* For 1920px screens */
+@media (min-width: 1920px) {
+  .arrow-responsive {
+    width: 24px !important;
+    height: 48px !important;
+  }
+
+  .arrow-responsive path {
+    transform: scale(1.7); /* adjust inner arrow proportion */
+    transform-origin: center;
+  }
+}
+
+/* For 1536px screens */
+@media (min-width: 1536px) and (max-width: 1919px) {
+  .arrow-responsive {
+    width: 20px !important;
+    height: 40px !important;
+  }
+
+  .arrow-responsive path {
+    transform: scale(1.45);
+    transform-origin: center;
+  }
+}
+
+/* For 1440px screens */
+@media (min-width: 1440px) and (max-width: 1535px) {
+  .arrow-responsive {
+    width: 18px !important;
+    height: 36px !important;
+  }
+
+  .arrow-responsive path {
+    transform: scale(1.3);
+    transform-origin: center;
+  }
+}

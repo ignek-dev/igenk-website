@@ -1,8 +1,6 @@
 // components/SuccessStories.tsx
 "use client"
-import { motion, useTransform } from "framer-motion"
 import React, { useCallback, useEffect, useState } from "react"
-import { useSharedScroll } from "components/Common/ScrollContextProvider"
 import { WPPortfolioPost } from "components/PortfolioList/PortfolioList"
 import SuccessStoryCard, { Story } from "./SuccessStoryCard"
 
@@ -79,40 +77,72 @@ const SuccessStories: React.FC = () => {
     fetchPosts(categoryIds);
   }, [fetchPosts]);
   // Use the context hook here as well
-  const sharedScrollYProgress = useSharedScroll()
 
-  // This animation starts after the horizontal scroll is 75% complete
-  const sectionY = useTransform(sharedScrollYProgress, [0.75, 1], ["100%", "0%"])
+
+  const [stuck, setStuck] = useState<Map<number, boolean>>(new Map());
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const stickyCards = document.querySelectorAll(".success-sticky") as NodeListOf<HTMLElement>;
+      const map = new Map<number, boolean>();
+
+      stickyCards.forEach((card, index) => {
+        const rect = card.getBoundingClientRect();
+
+        // ⭐ SAME logic as your WhatMake component
+        if (rect.top <= 200) {
+          map.set(index, true);
+        }
+      });
+
+      setStuck(map);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <motion.section
-      style={{ y: sectionY }}
+    <div
       id="success-stories"
-      className="stack-clip sticky top-0 z-20 h-max w-full rounded-t-[5rem] bg-white text-black shadow-xl"
+      className="stack-clip z-20 h-max w-full rounded-t-[5rem] bg-white text-black shadow-xl"
     >
       <div className="mx-auto w-full px-4 py-12 md:px-6 md:py-16 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
         <div className="w-full px-0">
           {/* Header */}
-          <div className="mx-auto mb-8 max-w-3xl text-center">
-            <h2 className="mb-4 text-center text-4xl font-semibold md:text-5xl">Success Stories</h2>
-            <p className="mt-1 text-lg text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-          </div>
+
           {/* Cards Container */}
-          <div className="space-y-8">
+          <div className="card-stack relative flex flex-col space-y-10">
             {posts.map((story, index) => (
-              <div
-                key={index}
-                // className="sticky"
-                // The style attribute creates the stacking offset for each card
-                style={{ top: `calc(6rem + ${index * 2}rem)` }}
-              >
-                <SuccessStoryCard story={story} />
-              </div>
+              <React.Fragment key={index}>
+
+                {index === 0 && (
+                  <div className="mx-auto mb-8 max-w-3xl text-center">
+                    <h2 className="mb-4 text-center text-4xl font-semibold md:text-5xl">
+                      Success Stories
+                    </h2>
+                    <p className="mt-1 text-lg text-gray-600">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+                    </p>
+                  </div>
+                )}
+
+                <div
+                  className={`success-sticky sticky transition-all duration-500 ${stuck.get(index) ? "stuck" : ""
+                    }`}
+                  style={{ top: `${200 + (index + 1) * 100}px` }}
+                >
+                  <SuccessStoryCard story={story} />
+                </div>
+
+              </React.Fragment>
             ))}
           </div>
+
+
         </div>
       </div>
-    </motion.section>
+    </div >
   )
 }
 

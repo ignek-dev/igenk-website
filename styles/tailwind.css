@@ -3,7 +3,6 @@
 @tailwind components;
 @tailwind utilities; */
 
-
 /*
   The default border color has changed to `currentColor` in Tailwind CSS v4,
   so we've added these compatibility styles to make sure everything still
@@ -28,20 +27,189 @@
 }
 
 @layer utilities {
+  /* Gloal padding across website */
+  .global-container {
+    padding-left: 1rem !important; /* default mobile */
+    padding-right: 1rem !important;
+  }
+
+  /* ≥ 1440px → 100px */
+  @media (min-width: 1440px) {
+    .global-container {
+      padding-left: 100px !important;
+      padding-right: 100px !important;
+    }
+  }
+
+  /* ≥ 1536px → 100px */
+  @media (min-width: 1536px) {
+    .global-container {
+      padding-left: 100px !important;
+      padding-right: 100px !important;
+    }
+  }
+
+  /* ≥ 1920px → 192px */
+  @media (min-width: 1920px) {
+    .global-container {
+      padding-left: 192px !important;
+      padding-right: 192px !important;
+    }
+  }
+
+  /* Logo responsive sizes */
+  .logo-responsive {
+    width: 182px;
+    height: 86px;
+    flex-shrink: 0;
+    aspect-ratio: 91 / 43;
+  }
+
+  @media (max-width: 1536px) {
+    .logo-responsive {
+      width: 160px;
+      height: calc(160px * 43 / 91);
+    }
+  }
+
+  @media (max-width: 1440px) {
+    .logo-responsive {
+      width: 150px;
+      height: calc(150px * 43 / 91);
+    }
+  }
+
+  @media (max-width: 1280px) {
+    .logo-responsive {
+      width: 140px;
+      height: calc(140px * 43 / 91);
+    }
+  }
+
+  /* Default → 1920px */
+  .nav-round-btn {
+    width: 64px;
+    height: 64px;
+    padding: 0;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .nav-round-btn-inner {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .nav-round-btn-inner img {
+    width: 28px !important;
+    height: 28px !important;
+  }
+
+  /* ≤ 1536px */
+  @media (max-width: 1536px) {
+    .nav-round-btn {
+      width: 56px;
+      height: 56px;
+    }
+    .nav-round-btn-inner {
+      width: 56px;
+      height: 56px;
+    }
+  }
+
+  /* ≤ 1440px */
+  @media (max-width: 1440px) {
+    .nav-round-btn {
+      width: 50px;
+      height: 50px;
+    }
+    .nav-round-btn-inner {
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  
+.nav-fancy-button {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  overflow: visible; /* IMPORTANT FIX */
+  isolation: isolate; /* ensures stacking context */
+}
+
+/* GLOW BORDER BEHIND CONTENT */
+.nav-fancy-glow {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  z-index: -1; /* ALWAYS behind */
+  overflow: hidden;
+}
+
+.nav-fancy-glow::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: conic-gradient(transparent 260deg, #00ffff);
+  animation: rotate 2s linear infinite;
+}
+
+.nav-fancy-glow::after {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  border-radius: 50%;
+  background: #000;
+}
+
+/* REAL BUTTON CONTENT */
+.nav-fancy-content {
+  z-index: 10; /* FORCE ABOVE GLOW */
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-fancy-content img {
+  width: 28px !important;
+  height: 28px !important;
+}
+
+/* RESPONSIVE */
+@media (max-width:1536px) {
+  .nav-fancy-button { width:56px; height:56px; }
+}
+@media (max-width:1440px) {
+  .nav-fancy-button { width:50px; height:50px; }
+}
 
   .hero-heading {
-    font-size: theme('fontSize.6xl');
+    font-size: theme("fontSize.6xl");
 
-   @media (min-width: 768px) {
-      font-size: theme('fontSize.6xl'); /* 'md:text-6xl' */
+    @media (min-width: 768px) {
+      font-size: theme("fontSize.6xl"); /* 'md:text-6xl' */
     }
     /* @screen lg */
     @media (min-width: 1024px) {
-      font-size: theme('fontSize.7xl'); /* 'lg:text-7xl' */
+      font-size: theme("fontSize.7xl"); /* 'lg:text-7xl' */
     }
     /* @screen xl */
     @media (min-width: 1280px) {
-      font-size: theme('fontSize.8xl'); /* 'xl:text-8xl' */
+      font-size: theme("fontSize.8xl"); /* 'xl:text-8xl' */
     }
 
     /* 3. These are your custom breakpoints */
@@ -64,7 +232,7 @@
     }
   }
 
-    /* --- START: STYLES FOR ON-SCROLL SECTION ANIMATIONS --- */
+  /* --- START: STYLES FOR ON-SCROLL SECTION ANIMATIONS --- */
   @keyframes slide-in-from-top {
     from {
       opacity: 0;
@@ -110,7 +278,7 @@
     }
   }
 
-   @keyframes fade-in {
+  @keyframes fade-in {
     from {
       opacity: 0;
     }
@@ -145,9 +313,15 @@
   }
 
   /* Delay utilities (no change here) */
-  .animation-delay-200 { animation-delay: 0.2s; }
-  .animation-delay-400 { animation-delay: 0.4s; }
-  .animation-delay-600 { animation-delay: 0.6s; }
+  .animation-delay-200 {
+    animation-delay: 0.2s;
+  }
+  .animation-delay-400 {
+    animation-delay: 0.4s;
+  }
+  .animation-delay-600 {
+    animation-delay: 0.6s;
+  }
   /* --- END: STYLES FOR ON-SCROLL SECTION ANIMATIONS --- */
 
   /* Create a utility class to apply the animation */
@@ -163,29 +337,29 @@
     animation: marquee 10s linear infinite;
   }
 
- .text-mask-container {
-  position: relative;
-  width: 100%;
-  max-width: 800px; /* Adjust this to fit your design */
-  aspect-ratio: 1200 / 400; /* Use the same aspect ratio as your PNG image */
-}
+  .text-mask-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px; /* Adjust this to fit your design */
+    aspect-ratio: 1200 / 400; /* Use the same aspect ratio as your PNG image */
+  }
 
-.masked-hero-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  .masked-hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 
-  /* The key part: using the new image as a stencil */
- mask-image: var(--mask-image);  
- mask-repeat: no-repeat;
-  mask-position: center;
-  mask-size: contain;
-}
+    /* The key part: using the new image as a stencil */
+    mask-image: var(--mask-image);
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: contain;
+  }
 
- /* --- START: STYLES FOR IMAGE CARD COLLAGE --- */
+  /* --- START: STYLES FOR IMAGE CARD COLLAGE --- */
   .collage-container {
     position: relative;
     width: 100%;
@@ -201,12 +375,14 @@
   .card-wrapper {
     position: absolute;
     width: 35%;
-    max-width: 480px; 
+    max-width: 480px;
     height: 65%;
     /* This makes the 3D transforms look smooth */
     transform-style: preserve-3d;
     /* This is the animation for when the card's position changes */
-    transition: transform 0.8s ease, opacity 0.8s ease;
+    transition:
+      transform 0.8s ease,
+      opacity 0.8s ease;
   }
 
   .collage-card {
@@ -220,7 +396,7 @@
   }
 
   /* Card Positions */
-   .card-center {
+  .card-center {
     transform: translateX(0) translateZ(0) rotateY(0deg) scale(1);
     opacity: 1;
     z-index: 50;
@@ -284,7 +460,7 @@
   /* Responsive adjustments for the heading font size */
   @media (max-width: 768px) {
     .text-mask-heading {
-      font-size: 4rem; 
+      font-size: 4rem;
     }
   }
 
@@ -308,7 +484,7 @@
 
   .animate-stack-in {
     /* Start with the card hidden */
-    opacity: 0; 
+    opacity: 0;
     /* Point to the animation name */
     animation-name: stack-in;
     /* Common properties for the animation */
@@ -319,20 +495,27 @@
   /* --- END: STYLES FOR CARD STACKING ANIMATION --- */
 
   /* Prevent shadow/edges from bleeding out while maintaining rounded corners */
-.stack-clip {
-  overflow: clip;
-}
+  .stack-clip {
+    overflow: clip;
+  }
 
-@supports not (overflow: clip) {
-  .stack-clip { overflow: hidden; }
-}
+  @supports not (overflow: clip) {
+    .stack-clip {
+      overflow: hidden;
+    }
+  }
 
-/* Responsive fallback: disable sticky stacking on small screens for usability */
-@media (max-width: 768px) {
-  .stack-clip { overflow: visible; }
-  /* Scoped via JSX: only affects the cards rendered in this section */
-  .sticky { position: relative !important; top: 0 !important; }
-}
+  /* Responsive fallback: disable sticky stacking on small screens for usability */
+  @media (max-width: 768px) {
+    .stack-clip {
+      overflow: visible;
+    }
+    /* Scoped via JSX: only affects the cards rendered in this section */
+    .sticky {
+      position: relative !important;
+      top: 0 !important;
+    }
+  }
 }
 
 .scrollbar-hide::-webkit-scrollbar {
@@ -368,7 +551,7 @@
 /* Custom grid logic for Liferay Tech Stacks */
 .tech-grid-card {
   /* Base border for all items, using the color from the design */
-  border: 1px solid #D1D5DB; /* This is Tailwind's gray-200 */
+  border: 1px solid #d1d5db; /* This is Tailwind's gray-200 */
 }
 
 /* --- Remove outer borders --- */
@@ -395,38 +578,38 @@
 }
 
 .fancy {
-    --offset: 3px;
-    background: black;
-    border-radius: 50px;
-    position: relative;
-    height: 60px;
-    /* width:max-content; */
-    /* max-width: auto; */
-    overflow: hidden;
+  --offset: 3px;
+  background: black;
+  border-radius: 50px;
+  position: relative;
+  height: 60px;
+  /* width:max-content; */
+  /* max-width: auto; */
+  overflow: hidden;
 }
 
 /* Conic gradient */
-.fancy::before { 
-    content: '';
-    background: conic-gradient(transparent 270deg, #00ffff, #00ffff, #00ffff);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    aspect-ratio: 1;
-    width: 100%;
-    animation: rotate 3s linear infinite;
+.fancy::before {
+  content: "";
+  background: conic-gradient(transparent 270deg, #00ffff, #00ffff, #00ffff);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  aspect-ratio: 1;
+  width: 100%;
+  animation: rotate 3s linear infinite;
 }
 
 /* Overlay */
 .fancy::after {
-    content: '';
-    background: inherit;
-    border-radius: inherit;
-    position: absolute;
-    inset: var(--offset);
-    height: calc(100% - 2 * var(--offset));
-    width: calc(100% - 2 * var(--offset));
+  content: "";
+  background: inherit;
+  border-radius: inherit;
+  position: absolute;
+  inset: var(--offset);
+  height: calc(100% - 2 * var(--offset));
+  width: calc(100% - 2 * var(--offset));
 }
 
 @keyframes rotate {
@@ -450,7 +633,7 @@
 /* Custom grid logic for Liferay Tech Stacks */
 .tech-grid-card {
   /* Base border for all items, using the color from the design */
-  border: 1px solid #D1D5DB; /* This is Tailwind's gray-200 */
+  border: 1px solid #d1d5db; /* This is Tailwind's gray-200 */
 }
 
 /* --- Remove outer borders --- */
@@ -477,38 +660,38 @@
 }
 
 .fancy {
-    --offset: 3px;
-    background: black;
-    border-radius: 50px;
-    position: relative;
-    height: 60px;
-    /* width:max-content; */
-    /* max-width: auto; */
-    overflow: hidden;
+  --offset: 3px;
+  background: black;
+  border-radius: 50px;
+  position: relative;
+  height: 60px;
+  /* width:max-content; */
+  /* max-width: auto; */
+  overflow: hidden;
 }
 
 /* Conic gradient */
-.fancy::before { 
-    content: '';
-    background: conic-gradient(transparent 270deg, #00ffff, #00ffff, #00ffff);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    aspect-ratio: 1;
-    width: 100%;
-    animation: rotate 3s linear infinite;
+.fancy::before {
+  content: "";
+  background: conic-gradient(transparent 270deg, #00ffff, #00ffff, #00ffff);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  aspect-ratio: 1;
+  width: 100%;
+  animation: rotate 3s linear infinite;
 }
 
 /* Overlay */
 .fancy::after {
-    content: '';
-    background: inherit;
-    border-radius: inherit;
-    position: absolute;
-    inset: var(--offset);
-    height: calc(100% - 2 * var(--offset));
-    width: calc(100% - 2 * var(--offset));
+  content: "";
+  background: inherit;
+  border-radius: inherit;
+  position: absolute;
+  inset: var(--offset);
+  height: calc(100% - 2 * var(--offset));
+  width: calc(100% - 2 * var(--offset));
 }
 
 @keyframes rotate {
@@ -521,11 +704,12 @@
   }
 }
 
-
 /* WhatsMake Animation CSS */
 
 .whatsmake-card {
-  transition: background-color 0.8s ease-in-out, color 0.8s ease-in-out;
+  transition:
+    background-color 0.8s ease-in-out,
+    color 0.8s ease-in-out;
 }
 
 /* Define the hover animation using keyframes */
@@ -535,14 +719,14 @@
 }
 
 /* Optional: reverse animation when hover ends */
-.whatsmake-card{
+.whatsmake-card {
   animation: bgFadeReverse 0.8s ease-in forwards;
-  background-color: #FFF;
+  background-color: #fff;
 }
 
 .card-stack .stuck .whatsmake-card {
   background-color: #000;
-  color: #FFF;
+  color: #fff;
 }
 
 /* @keyframes bgFadeReverse {
@@ -556,3 +740,8 @@
     background-color: #ffffff;
   }
 } */
+@media screen and (min-width: 1440px ) and (max-width: 1839px) {
+  .footer-sidebar {
+    padding-right: 124px !important;
+  }
+}

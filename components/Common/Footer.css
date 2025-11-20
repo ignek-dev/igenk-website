@@ -83,12 +83,36 @@ text {
 /* Large screens (desktops and above) */
 @media screen and (min-width: 1440px) {
   .gradient-box {
-    height: 25rem;
-    padding-top: 10rem;
+    height: 26rem;
+    padding-top: 8rem;
   }
 
   text {
-    font-size: clamp(200px, 18vw, 400px);
+    font-size: clamp(200px, 22vw, 400px);
+    transition: fill 0.8s ease-in-out;
+  }
+}
+
+@media screen and (min-width: 1536px) {
+  .gradient-box {
+    height: 26rem;
+    padding-top: 8rem;
+  }
+
+  text {
+    font-size: clamp(200px, 22vw, 400px);
+    transition: fill 0.8s ease-in-out;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  .gradient-box {
+    height: 29rem;
+    padding-top: 8rem;
+  }
+
+  text {
+    font-size: clamp(200px, 23vw, 400px);
     transition: fill 0.8s ease-in-out;
   }
 }
@@ -108,21 +132,21 @@ text {
 /* Large desktops (1440px and above) */
 @media screen and (min-width: 1440px) {
   .gradient-box + p {
-    margin-top: 0.5rem; /* slightly smaller margin */
+    margin-top: 0rem /* slightly smaller margin */
   }
 }
 
 /* Extra large (1536px and above) */
 @media screen and (min-width: 1536px) {
   .gradient-box + p {
-    margin-top: 0.3rem; /* less space for wide layouts */
+    margin-top: 0rem; /* less space for wide layouts */
   }
 }
 
 /* 4K and ultra-wide screens */
 @media screen and (min-width: 1920px) {
   .gradient-box + p {
-    margin-top: 0.2rem;
+    margin-top: 0rem;
   }
 }
 

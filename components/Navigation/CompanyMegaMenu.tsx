@@ -1,11 +1,19 @@
 import Image from "next/image"
 import Link from "next/link"
+import "../../styles/icon-arrow.css"
 
 // --- Data for the Mega Menu ---
 // --- Icon Components (can be in their own file or here) ---
 
 const IconArrowRight = ({ className }: { className?: string }) => (
-  <svg className={className} width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <svg
+    className={`arrow-responsive ${className}`}
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
     <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 )
@@ -125,7 +133,7 @@ export default function CompanyMegaMenu() {
       {/* Background Gradient */}
       {/* <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_14%_0%,#00979E_0%,#0E7BF800_60%)] opacity-40" /> */}
 
-      <div className="mx-auto w-full px-4 py-12 md:px-8 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px]">
+      <div className="global-container mx-auto w-full px-4 py-12 md:px-8">
         <div className="grid grid-cols-12 items-start gap-8">
           {/* Left Side: Cards */}
           <div className="col-span-5">
@@ -134,7 +142,7 @@ export default function CompanyMegaMenu() {
                 <Link
                   href={link.href}
                   key={link.title}
-                  className="group flex h-[174px] items-center gap-5 rounded-[20px] bg-[#0D0D0D] p-4 transition-all duration-300"
+                  className="group /* Default (below 1440px) */ /* 1440px screens */ /* 1536px screens */ /* 1920px screens (Figma) */ flex h-[150px] items-center gap-5 rounded-[16px] bg-[#0D0D0D] p-4 transition-all duration-300 [@media(min-width:1440px)]:h-[160px] [@media(min-width:1440px)]:rounded-[18px] [@media(min-width:1536px)]:h-[168px] [@media(min-width:1536px)]:rounded-[19px] [@media(min-width:1920px)]:h-[174px] [@media(min-width:1920px)]:rounded-[20px]"
                 >
                   <Image
                     src={link.image}
@@ -144,10 +152,12 @@ export default function CompanyMegaMenu() {
                     className="flex-shrink-0 rounded-lg object-cover"
                   />
                   <div className="flex-1">
-                    <h3 className="text-xl font-semibold text-white">{link.title}</h3>
-                    <p className="mt-1 text-lg text-white/70">{link.description}</p>
+                    <h3 className="font-medium text-white [@media(min-width:1440px)]:text-[1.25rem] [@media(min-width:1440px)]:leading-[2rem] [@media(min-width:1920px)]:text-[1.75rem] [@media(min-width:1920px)]:leading-[2.25rem]">
+                      {link.title}
+                    </h3>
+                    <p className="font-regular mt-1 text-base leading-[1.5rem] text-white">{link.description}</p>
                   </div>
-                  <IconArrowRight className="size-8 text-white/50 transition-transform duration-300 group-hover:translate-x-1 group-hover:text-white" />
+                  <IconArrowRight className="size-8 text-white transition-transform duration-300 group-hover:translate-x-1 group-hover:text-white" />
                 </Link>
               ))}
             </div>
@@ -155,64 +165,95 @@ export default function CompanyMegaMenu() {
 
           {/* Right Side: Content */}
           <div className="col-span-7">
-            <h2 className="max-w-1xl text-3xl leading-tight font-bold">
+            <h2 className="max-w-1xl font-bold [@media(min-width:1440px)]:text-[1.5rem] [@media(min-width:1440px)]:leading-[2rem] [@media(min-width:1920px)]:text-[2rem] [@media(min-width:1920px)]:leading-[2.75rem]">
               We&apos;re the Top #1 Digital experience development company contributing towards a smart World
             </h2>
-            <p className="mt-4 max-w-3xl text-lg text-white/70">
+            <p className="mt-4 max-w-3xl text-lg leading-[1.75rem] text-[#D1D5DB]">
               IGNEK delivers smart, high-quality digital experiences that transform businesses, improve efficiency, and
               accelerate growth through expert engineering, modern design, and reliable technology solutions.
             </p>
 
             <div className="mt-6 grid grid-cols-3 gap-x-8 gap-y-6 border-white/10 pt-8">
               <div className="relative pr-4">
-                <h4 className="mb-3 text-2xl font-semibold">General</h4>
+                <h4 className="mb-3 font-medium [@media(min-width:1440px)]:text-[1.25rem] [@media(min-width:1440px)]:leading-[1.75rem] [@media(min-width:1920px)]:text-[1.75rem] [@media(min-width:1920px)]:leading-[2rem]">
+                  General
+                </h4>
                 <ul className="space-y-2">
                   {contactDetails.general.map((item) => (
                     <li key={item.text}>
                       <a
                         href={item.href}
-                        className="flex items-center gap-2 text-xl text-white/80 transition-colors hover:text-white"
+                        className="flex items-center gap-2 text-white/80 transition-colors hover:text-white [@media(min-width:1440px)]:text-lg [@media(min-width:1920px)]:text-xl"
                       >
-                        <Image src={item.icon} alt={item.text} width={24} height={24} objectFit="contain" />
-                        {item.text}
+                        <Image
+                          src={item.icon}
+                          alt={item.text}
+                          width={41}
+                          height={41}
+                          objectFit="contain"
+                          className="h-[28px] w-[28px] [@media(min-width:1440px)]:h-[32px] [@media(min-width:1440px)]:w-[32px] [@media(min-width:1536px)]:h-[36px] [@media(min-width:1536px)]:w-[36px] [@media(min-width:1920px)]:h-[41px] [@media(min-width:1920px)]:w-[41px]"
+                        />
+                        <p className="whitespace-wrap">{item.text}</p>
                       </a>
                     </li>
                   ))}
                 </ul>
-                <div className="absolute top-0 right-0 h-full w-[1px] bg-white/10" />
+                <div className="absolute top-0 right-[-23] h-full w-[1px] bg-white/10" />
               </div>
 
               {/* Sales sections */}
               <div className="relative px-4">
-                <h4 className="mb-3 text-2xl font-semibold">Sales</h4>
+                <h4 className="mb-3 font-medium [@media(min-width:1440px)]:text-[1.25rem] [@media(min-width:1440px)]:leading-[1.75rem] [@media(min-width:1920px)]:text-[1.75rem] [@media(min-width:1920px)]:leading-[2rem]">
+                  Sales
+                </h4>
                 <ul className="space-y-2">
                   {contactDetails.sales.map((item) => (
                     <li key={item.text}>
                       <a
                         href={item.href}
-                        className="flex items-center gap-2 text-xl text-white/80 transition-colors hover:text-white"
+                        className="flex items-center gap-2 text-white/80 transition-colors hover:text-white [@media(min-width:1440px)]:text-lg [@media(min-width:1920px)]:text-xl"
                       >
-                        <Image src={item.icon} alt={item.text} width={24} height={24} objectFit="contain" />
+                        <Image
+                          src={item.icon}
+                          alt={item.text}
+                          width={41}
+                          height={41}
+                          objectFit="contain"
+                          className="h-[28px] w-[28px] [@media(min-width:1440px)]:h-[32px] [@media(min-width:1440px)]:w-[32px] [@media(min-width:1536px)]:h-[36px] [@media(min-width:1536px)]:w-[36px] [@media(min-width:1920px)]:h-[41px] [@media(min-width:1920px)]:w-[41px]"
+                        />
+                        <p>
                         {item.text}
+                        </p>
                       </a>
                     </li>
                   ))}
                 </ul>
-                <div className="absolute top-0 right-0 h-full w-[1px] bg-white/10" /> {/* Right border */}
+                <div className="absolute top-0 [@media(min-width:1440px)]:right-[-20] [@media(min-width:1920px)]:right-0 h-full w-[1px] bg-white/10" /> {/* Right border */}
               </div>
 
               {/* HR sections */}
               <div className="relative pl-4">
-                <h4 className="mb-3 text-2xl font-semibold">HR</h4>
+                <h4 className="mb-3 font-medium [@media(min-width:1440px)]:text-[1.25rem] [@media(min-width:1440px)]:leading-[1.75rem] [@media(min-width:1920px)]:text-[1.75rem] [@media(min-width:1920px)]:leading-[2rem]">
+                  HR
+                </h4>
                 <ul className="space-y-2">
                   {contactDetails.hr.map((item) => (
                     <li key={item.text}>
                       <a
                         href={item.href}
-                        className="flex items-center gap-2 text-xl text-white/80 transition-colors hover:text-white"
+                        className="flex items-center gap-2 text-white/80 transition-colors hover:text-white [@media(min-width:1440px)]:text-lg [@media(min-width:1920px)]:text-xl"
                       >
-                        <Image src={item.icon} alt={item.text} width={24} height={24} objectFit="contain" />
+                        <Image
+                          src={item.icon}
+                          alt={item.text}
+                          width={41}
+                          height={41}
+                          objectFit="contain"
+                          className="h-[28px] w-[28px] [@media(min-width:1440px)]:h-[32px] [@media(min-width:1440px)]:w-[32px] [@media(min-width:1536px)]:h-[36px] [@media(min-width:1536px)]:w-[36px] [@media(min-width:1920px)]:h-[41px] [@media(min-width:1920px)]:w-[41px]"
+                        />
+                        <p>
                         {item.text}
+                        </p>
                       </a>
                     </li>
                   ))}
@@ -221,7 +262,7 @@ export default function CompanyMegaMenu() {
             </div>
 
             <div className="mt-8 flex items-center gap-16 border-white/10 pt-8">
-              <div className="flex max-w-md items-center gap-3 text-xl leading-7 text-white/80">
+              <div className="flex max-w-xl items-center gap-3 [@media(min-width:1440px)]:text-lg [@media(min-width:1920px)]:text-xl leading-7 text-white/80">
                 <Image
                   src={"/images/icon/location.png"}
                   alt={"Location"}
@@ -230,15 +271,17 @@ export default function CompanyMegaMenu() {
                   objectFit="cover"
                   className="flex-shrink-0 rounded-md"
                 />
+                <p>
                 E 910-912, Ganesh Glory 11, Jagatpur Road, SG Highway, Ahmedabad, Gujarat - 382470
+                </p>
               </div>
-              <div className="flex items-center gap-3">
+              <div className="flex items-center [@media(min-width:1440px)]:gap-4 [@media(min-width:1920px)]:gap-5">
                 {socialLinks.map((social) => (
                   <a
                     href={social.href}
                     key={social.label}
                     aria-label={social.label}
-                    className="flex size-12 items-center justify-center rounded-full bg-white text-black/70 transition-colors hover:bg-gray-200"
+                    className="flex size-12.5 items-center justify-center rounded-full bg-white text-black/70 transition-colors hover:bg-gray-200"
                     target="blank"
                   >
                     {social.icon}
