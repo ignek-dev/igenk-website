@@ -142,11 +142,11 @@ export default function PortfolioList() {
                                                 className={index < posts.length - 1 ? "border-b border-gray-300 py-12" : "py-12"}
                                             >
                                                 <div
-                                                    className={`group bg-[#F9FAF7] p-5 pb-0 pt-0 flex flex-col md:flex-row gap-5 overflow-hidden transition-all duration-500 ${!isImageLeft ? "md:flex-row-reverse" : ""
+                                                    className={`group bg-[#F9FAF7] pb-0 pt-0 flex flex-col md:flex-row gap-[2.396vw] overflow-hidden transition-all duration-500 ${!isImageLeft ? "md:flex-row-reverse" : ""
                                                         }`}
-                                                >
+                                                >   
                                                     {/* Image */}
-                                                    <div className="md:w-1/2 w-full relative overflow-hidden rounded-xl h-[341px]">
+                                                    <div className="md:w-1/2 w-[29.896vw] relative overflow-hidden rounded-xl h-[17.76vw]">
                                                         <Image
                                                             src={imageUrl}
                                                             alt={item.title.rendered}
@@ -154,41 +154,47 @@ export default function PortfolioList() {
                                                             height={341}
                                                             width={574}
                                                         />
+                                                        <div className="absolute inset-0 bg-gradient-to-b from-transparent from-[46.19%] to-black/79 to-100% pointer-events-none rounded-xl" />
+
                                                         <MarqueeOverlay />
                                                     </div>
 
+
                                                     {/* Text */}
-                                                    <div className="flex flex-col justify-center md:w-1/2 w-full relative">
-                                                        <span className="text-lg bg-white px-4 py-1 rounded-full w-fit mb-2">
+                                                    <div className="flex flex-col gap-[0.729vw] justify-center md:w-1/2 w-full relative">
+
+                                                        <span className="text-[0.677vw] py-[0.4167vw] bg-white px-[0.833vw] rounded-full w-fit shadow-xl">
                                                             {item._embedded?.["wp:term"]?.[0]?.[0]?.name || "General"}
                                                         </span>
 
                                                         <h3
-                                                            className="text-3xl font-semibold leading-snug mb-2 max-[1536px]:text-[28px] max-[1440px]:text-[28px]"
+                                                            className="text-[1.563vw] font-semibold leading-[1.563vw]"
                                                             dangerouslySetInnerHTML={{ __html: item.title.rendered }}
                                                         />
 
                                                         <p
-                                                            className="text-base text-gray-600 mb-4 line-clamp-3"
+                                                            className="text-[0.833vw] text-gray-600 leading-[1.25vw] line-clamp-3"
                                                             dangerouslySetInnerHTML={{ __html: item.excerpt.rendered }}
                                                         />
 
                                                         <div className="transition-all duration-500 transform translate-y-5 opacity-0 group-hover:translate-y-0 group-hover:opacity-100">
                                                             <button
                                                                 onClick={() => router.push(`/case-study/${item.slug}`)}
-                                                                className="bg-[#0C64CE] text-white px-6 py-2.5 rounded-full shadow-md hover:bg-[#0C64CE] transition w-full text-xl cursor-pointer"
+                                                                className="bg-[#0C64CE] text-white px-[1.25vw] py-[0.52vw] rounded-full shadow-md hover:bg-[#0C64CE] transition w-full text-[1.0417vw] cursor-pointer"
                                                             >
                                                                 Read More
                                                             </button>
                                                         </div>
+
                                                     </div>
+
                                                 </div>
                                             </div>
                                         );
                                     })}
                                     {/* Pagination */}
                                     <div className="flex justify-left">
-                                        <ul className="flex items-center gap-2 text-base font-medium">
+                                        <ul className="flex items-center gap-2 text-[1.021vw] leading-[1.458vw] font-medium">
                                             {/* First */}
                                             <li
                                                 className={`px-4 py-2 border rounded-md cursor-pointer ${currentPage === 1

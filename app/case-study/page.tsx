@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import PortfolioList from "components/PortfolioList/PortfolioList"
 
- const metadata: Metadata = {
+const metadata: Metadata = {
   title: "IGNEK Portfolios : Liferay, ReactJS, Healthcare &amp; More",
   description:
     "Discover IGNEK’s portfolios featuring Liferay, ReactJS, Healthcare, and more. Explore our successful projects and innovative solutions.",
@@ -26,23 +26,28 @@ export default async function PortfolioPage() {
   return (
     <main className="pb-0" >
       {/* Hero */}
+
       <section className="relative bg-black text-white">
-        <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_10%_0%,#0E7BF8_0%,#00979E_40%,transparent_65%)] opacity-25" />
-        <div className="mx-auto w-full px-4 pt-12 pb-16 md:px-8 md:pt-20 md:pb-28 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
-          <div className="relative grid items-start gap-10 md:grid-cols-2">
-            <div>
-              <h1 className="mt-9 text-4xl leading-tight font-semibold sm:text-5xl md:text-7xl">
+        <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_10%_0%,#0E7BF8_0%,#00979E_40%,transparent_65%)] opacity-25"></div>
+
+        <div className="mx-auto w-full px-4 pt-[7.8125vw] pb-[4.427vw] global-container">
+          <div className="relative grid justify-between items-end gap-[2.083vw] md:grid-cols-2">
+
+              <h1 className="font-semibold leading-tight text-[3.75vw] sm:text-[2.5vw] md:text-[3.75vw]">
                 Our Latest
                 <br />
                 <span className="block">Case Study</span>
               </h1>
-            </div>
-            <p className="absolute bottom-0 max-w-xl text-lg text-white sm:text-lg md:mt-16 md:justify-self-end">
-              Explore our latest case studies, showcasing real-world solutions, success stories, and impactful results delivered to our clients.
+
+            <p className="text-right text-[0.938vw] ">
+              Explore our latest case studies, showcasing real-world solutions,
+              success stories, and impactful results delivered to our clients.
             </p>
+
           </div>
         </div>
       </section>
+
       <div className="px-[192px] py-12 md:px-[192px] bg-[#F9FAF7] global-container">
         {/* <section className="mb-8 text-center">
           <h1 className="text-3xl font-bold tracking-tight md:text-4xl">Our Portfolio</h1>

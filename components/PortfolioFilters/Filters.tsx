@@ -35,19 +35,22 @@ export default function Filters({
     const technologies = ["Liferay", "React", "Spring Boot"];
 
     return (
-        <aside className="w-auto max-w-fit bg-[#F1F5F5] p-5 rounded-2xl shadow-sm h-full pb-20">
-            <h2 className="font-semibold text-2xl mb-4">Filters</h2>
+        <aside className="w-auto max-w-fit bg-[#F1F5F5] px-[3.333vw] py-[1.719vw] rounded-2xl shadow-sm h-full">
+
+            <h2 className="font-semibold text-[1.5625vw] leading-[1.67vw] mb-[1.6667vw]">
+                Filters
+            </h2>
 
             {/* Search */}
-            <div className="mb-6">
-                <div className="flex items-center w-full bg-white rounded-full px-4 py-3 border border-gray-300">
+            <div className="mb-[1.6667vw]">
+                <div className="flex items-center w-full bg-white rounded-full px-[0.833vw] py-[0.625vw] border border-gray-300">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         viewBox="0 0 24 24"
                         strokeWidth="2"
                         stroke="#0C64CE"
-                        className="w-6 h-6 mr-3"
+                        className="w-[1.25vw] h-[1.25vw] mr-[0.625vw]"
                     >
                         <path
                             strokeLinecap="round"
@@ -61,22 +64,24 @@ export default function Filters({
                         placeholder="Search"
                         value={search}
                         onChange={(e) => setSearch(e.target.value)}
-                        className="w-full text-xl bg-transparent focus:outline-none text-gray-700 placeholder-gray-400"
+                        className="w-full text-[1.041vw] bg-transparent focus:outline-none text-gray-700 placeholder-gray-400"
                     />
                 </div>
             </div>
 
-
             {/* Industry */}
-            <div className="mb-6">
-                <h3 className="font-semibold text-xl text-black mb-2">Search By Industry</h3>
-                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-lg text-gray-600">
+            <div className="mb-[1.6667vw]">
+                <h3 className="font-semibold text-[1.25vw] text-black mb-[1.0417vw]">
+                    Search By Industry
+                </h3>
+
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-[0.52vw] text-[1.041vw] text-gray-600">
                     {industries.map((item) => (
                         <li
                             key={item}
                             className={`cursor-pointer transition ${selectedIndustry === item
-                                ? "font-semibold text-black"
-                                : "hover:font-semibold"
+                                    ? "font-semibold text-black"
+                                    : "hover:font-semibold"
                                 }`}
                             onClick={() =>
                                 setSelectedIndustry(selectedIndustry === item ? null : item)
@@ -90,14 +95,17 @@ export default function Filters({
 
             {/* Technology */}
             <div>
-                <h3 className="font-medium text-xl text-black mb-2">Search By Technology</h3>
-                <ul className="space-y-1 text-lg text-gray-600">
+                <h3 className="font-medium text-[1.25vw] text-black mb-[1.0417vw]">
+                    Search By Technology
+                </h3>
+
+                <ul className="space-y-[0.52vw] text-[1.041vw] text-gray-600">
                     {technologies.map((item) => (
                         <li
                             key={item}
                             className={`cursor-pointer transition ${selectedTechnology === item
-                                ? "font-semibold text-black"
-                                : "hover:font-semibold"
+                                    ? "font-semibold text-black"
+                                    : "hover:font-semibold"
                                 }`}
                             onClick={() =>
                                 setSelectedTechnology(selectedTechnology === item ? null : item)
@@ -108,7 +116,9 @@ export default function Filters({
                     ))}
                 </ul>
             </div>
+
         </aside>
+
 
 
     );
