@@ -5,7 +5,8 @@ import { commonProvidedServices } from "components/success-stories/SuccessStorie
 
 export default function MarqueeOverlay() {
     return (
-        <div className="absolute bottom-2 left-0 w-full h-[60px] overflow-hidden  backdrop-blur-sm">
+        <div className="absolute bottom-3 left-0 w-full  overflow-hidden">
+                <p className="text-[0.833vw] text-[#FFFFFF] mb-[0.26vw] leading-[1.5rem] ml-[1.438rem]">Provided Services</p>
             <div className="flex animate-marquee  whitespace-nowrap items-center h-full ">
                 {commonProvidedServices.map((service, i) => (
                     <div
@@ -18,7 +19,7 @@ export default function MarqueeOverlay() {
                                 alt={service.name}
                                 width={20}
                                 height={20}
-                                className="object-contain h-full max-h-[20px]"
+                                className="object-contain h-full h-[2.037vw]"
                             />
                         </div>
                         <span className="whitespace-nowrap">{service.name}</span>
