@@ -1,8 +1,6 @@
 // components/SuccessStories.tsx
 "use client"
-import { motion, useTransform } from "framer-motion"
 import React, { useCallback, useEffect, useState } from "react"
-import { useSharedScroll } from "components/Common/ScrollContextProvider"
 import { WPPortfolioPost } from "components/PortfolioList/PortfolioList"
 import SuccessStoryCard, { Story } from "./SuccessStoryCard"
 
