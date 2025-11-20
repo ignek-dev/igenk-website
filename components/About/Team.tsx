@@ -79,14 +79,7 @@ function MemberThumb({
             onMouseEnter={() => setActiveMember(m)}
             onFocus={() => setActiveMember(m)}
             className={`group overflow-hidden bg-[#111] ring-1 ring-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60
-                       w-[10rem] h-[170px]
-                       sm:w-[11.25rem] sm:h-[11.938px]
-                       md:w-[12.5rem] md:h-[13.25rem]
-                       lg:w-[13.75rem] lg:h-[14.563rem]
-                       xl:w-[13.75rem] xl:h-[14.563rem]
-                       2xl:w-[17.688rem] 2xl:h-[19rem]
-                       [@media(min-width:1536px)]:w-[15.313rem]
-                       [@media(min-width:1800px)]:w-[17.313rem]
+                       w-[13.229vw] h-[14.167vw]
                        ${className}`}
             style={{
                 borderRadius: 1,
@@ -139,8 +132,7 @@ const Team: React.FC = () => {
     );
 
     return (
-        <section className="relative isolate bg-black text-white global-container py-8 px-4 sm:py-12 md:px-8 lg:py-16 lg:px-12 xl:px-16 2xl:px-24 overflow-hidden">
-            <div className="max-w-[1920px] mx-auto">
+        <section className="relative isolate bg-black text-white global-container py-8 overflow-hidden">
                 {/* Heading + Description */}
                 <div className="mb-8 sm:mb-12 lg:mb-16">
                     <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6 lg:gap-12 xl:gap-16">
@@ -160,20 +152,11 @@ const Team: React.FC = () => {
 
                 {/* Main Content Area */}
                 <div className="w-full">
-                    <div className="flex justify-between flex-col lg:flex-row gap-6 lg:gap-6 xl:gap-8">
+                    <div className="flex flex-col lg:flex-row gap-[2.917vw]">
                         {/* Left large spotlight card */}
-                        <div 
+                        <div
                             className="relative overflow-hidden bg-[#0B0B0F] ring-1 ring-white/10 flex-shrink-0
-                                       w-[21.25rem] h-[27.688rem]
-                                       sm:w-[25rem] sm:h-[32.563rem]
-                                       md:w-[28.125rem] md:h-[36.625]
-                                       lg:w-[28.125rem] lg:h-[36.625]
-                                       xl:w-[31.25rem] xl:h-[43.75rem]
-                                       2xl:w-[38.125rem] 2xl:h-[51rem]
-                                       [@media(min-width:1536px)]:w-[28.125rem] [@media(min-width:1536px)]:h-[39.5rem]
-                                       [@media(min-width:1700px)]:w-[31.25rem] [@media(min-width:1700px)]:h-[40.688rem]
-                                       [@media(min-width:1800px)]:w-[39.375rem] [@media(min-width:1800px)]:h-[44.75rem]
-                                       [@media(min-width:1900px)]:w-[37.5rem] [@media(min-width:1900px)]h-[48.813rem]"
+                                       w-[32.656vw] h-[42.5vw]"
                             style={{
                                 borderRadius: 20,
                                 opacity: 1,
@@ -214,20 +197,8 @@ const Team: React.FC = () => {
 
                         {/* Right grid of thumbnails */}
                         <div className="w-full lg:w-auto flex-shrink-0">
-                            {/* Mobile: 2x3 grid */}
-                            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 lg:hidden">
-                                {MEMBERS.slice(1).map((member) => (
-                                    <MemberThumb
-                                        key={member.id}
-                                        m={member}
-                                        setActiveMember={setActiveMember}
-                                        className="!w-full !h-auto aspect-[254/272]"
-                                    />
-                                ))}
-                            </div>
-
                             {/* Desktop: Custom 2-1-2 layout */}
-                            <div className="hidden lg:flex lg:gap-4 xl:gap-5 2xl:gap-6 h-full">
+                            <div className="hidden lg:flex gap-[2.24vw] h-full">
                                 {/* Left column (2 images) */}
                                 <div className="flex flex-col justify-between h-full gap-4 xl:gap-5 2xl:gap-6">
                                     <MemberThumb
@@ -263,7 +234,6 @@ const Team: React.FC = () => {
                         </div>
                     </div>
                 </div>
-            </div>
         </section>
     );
 };

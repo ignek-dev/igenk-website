@@ -42,15 +42,15 @@ const VALUES: CoreValue[] = [
 const CoreValues = () => {
 
     return (
-        <section className="bg-[#F5F5F6] mx-h-[1078px] relative pb-[64px]">
+        <section className="bg-[#F5F5F6] mx-h-[1078px] relative pb-[64px] global-container">
 
     {/* Heading */}
     <div className="text-center">
-        <h2 className="font-poppins font-bold text-[48px] leading-[3.75rem] tracking-[-0.02em] text-[#0B0B0F] pt-16">
+        <h2 className="font-poppins font-bold text-5xl leading-[3.75rem] tracking-[-0.02em] text-[#000000] pt-16">
             Our Core Values
         </h2>
 
-        <p className="font-poppins font-normal text-[20px] leading-[30px] text-[#4B5563] mt-7 mb-[38px] max-w-[720px] mx-auto">
+        <p className="font-poppins font-normal text-lg leading-[1.875rem] text-[#4B5563] mt-7 mb-[38px] max-w-[720px] mx-auto">
             Our commitment to integrity, innovation, and teamwork drives us to deliver exceptional Liferay solutions globally.
         </p>
     </div>
@@ -61,8 +61,8 @@ const CoreValues = () => {
             <div
                 key={index}
                 className="
-                    group relative h-[191px] w-[calc(100%-384px)]  /* 192px left + 192px right */
-                    mx-[192px] rounded-[4px] bg-[#F5F5F6] 
+                    group  h-[191px] 
+                    rounded-[4px] bg-[#F5F5F6] 
                     transition-colors duration-300 hover:bg-white
                 "
             >

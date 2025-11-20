@@ -37,7 +37,7 @@ export default function Filters({
     return (
         <aside className="w-auto max-w-fit bg-[#F1F5F5] px-[3.333vw] py-[1.719vw] rounded-2xl shadow-sm h-full">
 
-            <h2 className="font-semibold text-[1.5625vw] leading-[1.67vw] mb-[1.6667vw]">
+            <h2 className="font-medium text-[1.5625vw] leading-[1.67vw] mb-[1.6667vw]">
                 Filters
             </h2>
 
@@ -71,16 +71,16 @@ export default function Filters({
 
             {/* Industry */}
             <div className="mb-[1.6667vw]">
-                <h3 className="font-semibold text-[1.25vw] text-black mb-[1.0417vw]">
+                <h3 className="font-medium text-[1.25vw] text-black mb-[1.0417vw]">
                     Search By Industry
                 </h3>
 
-                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-[0.52vw] text-[1.041vw] text-gray-600">
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-[0.52vw] text-[1.041vw] text-[#6B7280]">
                     {industries.map((item) => (
                         <li
                             key={item}
                             className={`cursor-pointer transition ${selectedIndustry === item
-                                    ? "font-semibold text-black"
+                                    ? "font-semibold text-[#374151]"
                                     : "hover:font-semibold"
                                 }`}
                             onClick={() =>

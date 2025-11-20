@@ -77,7 +77,7 @@ const StandoutSection = () => {
         <CardRail cards={cardsData} />
 
         {/* Four connected horizontal dividers */}
-       <div className="border border-[#6B7280] border-[0.125rem] mt-[3.875rem]"></div>
+       <div className="border-b border-[#6B7280] border-[0.125rem] mt-[3.875rem]"></div>
       </div>
     </section>
 
