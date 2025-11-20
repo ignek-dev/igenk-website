@@ -106,7 +106,7 @@ export default function AboutUs() {
 
 
             {/* About Company */}
-            <div className="bg-[#F8F8F8] py-16 px-48 md:px-48">
+            <div className="bg-[#F8F8F8] pt-16 pb-[5.25rem] global-container">
                 <div>
                     <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-12 lg:gap-16 items-start">
                         {/* Left Column - Main Heading */}
@@ -116,49 +116,44 @@ export default function AboutUs() {
                                 <br />
                                 Trust IGNEK
                             </h2>
-                            <p className="text-xl text-[#555555] leading-relaxed pt-5 text-left mb-12">
-                                Companies trust IGNEK for proven Liferay expertise, innovation, reliability, and transformative digital experience solutions.
-                            </p>
-
                         </div>
 
                         {/* Right Column - Content */}
                         <div className="space-y-8">
                             {/* Introductory Paragraph */}
-
+                            <p className="text-lg text-[#555555] leading-[1.875rem] pt-[30px] text-left mb-[20px]">
+                                Companies trust IGNEK for proven Liferay expertise, innovation, reliability, and transformative digital experience solutions.
+                            </p>
 
                             {/* Section 1: Digital Excellence */}
-                            <div className="space-y-3">
-                                <h3 className="text-xl font-bold text-black">
+                            <div className="mt-[4rem]">
+                                <h3 className="text-3xl leading-[2.25rem] font-bold text-black">
                                     Digital Excellence
                                 </h3>
-                                <p className="text-base text-[#555555] leading-relaxed">
+                                <div className="border-gray-[0.063rem] border mt-[1.25rem] mb-[1.25rem]"></div>
+                                <p className="text-xl text-[#555555] leading-[1.875rem]">
                                     We craft scalable, high-performing solutions that empower businesses to embrace innovation and achieve measurable results.
                                 </p>
                             </div>
 
-                            {/* Horizontal Divider */}
-                            <div className="border-t border-gray-300"></div>
-
                             {/* Section 2: Future-Ready Solutions */}
-                            <div className="space-y-3">
-                                <h3 className="text-xl font-bold text-black">
+                            <div className="mt-[4rem]">
+                                <h3 className="text-3xl leading-[2.25rem] font-bold text-black">
                                     Future-Ready Solutions
                                 </h3>
-                                <p className="text-base text-[#555555] leading-relaxed">
+                                <div className="border-gray-[0.063rem] border mt-[1.25rem] mb-[1.25rem]"></div>
+                                <p className="text-xl text-[#555555] leading-[1.875rem]">
                                     From modern web applications to enterprise platforms, we design systems built for adaptability, growth, and long-term success.
                                 </p>
                             </div>
 
-                            {/* Horizontal Divider */}
-                            <div className="border-t border-gray-300"></div>
-
                             {/* Section 3: Collaborative Approach */}
-                            <div className="space-y-3">
-                                <h3 className="text-xl font-bold text-black">
+                            <div className="mt-[4rem]">
+                                <h3 className="text-3xl leading-[2.25rem] font-bold text-black">
                                     Collaborative Approach
                                 </h3>
-                                <p className="text-base text-[#555555] leading-relaxed">
+                                <div className="border-gray-[0.063rem] border mt-[1.25rem] mb-[1.25rem]"></div>
+                                <p className="text-xl text-[#555555] leading-[1.875rem]">
                                     Our team works hand-in-hand with clients, ensuring every project reflects their vision while meeting the highest standards of quality.
                                 </p>
                             </div>

@@ -1,6 +1,7 @@
 "use client";
 import { useParams } from "next/navigation";
 import Prism from "prismjs";
+import Image from "next/image"
 import React, { useEffect, useRef, useState } from "react";
 import "prismjs/themes/prism.css";
 import "prismjs/plugins/line-numbers/prism-line-numbers.css";
@@ -117,8 +118,74 @@ export default function PortfolioRenderer() {
                 className="text-lg text-white sm:text-lg md:mt-16"
                 dangerouslySetInnerHTML={{ __html: post.excerpt.rendered }}
               />
+
+              <div className="flex items-center justify-center gap-6 mt-[43px]">
+
+                <p className="text-lg text-white sm:text-lg">Share On</p>
+                <div className="flex items-center gap-4">
+                  <div className="w-[3.5rem] h-[3.5rem] rounded-full border-[0.075rem] border-[#374151] shadow-[0_0.3rem_0.75rem_0_rgba(0,151,158,0.25)] flex items-center justify-center hover:opacity-80 active:scale-95 transition">
+                    <a href="https://www.linkedin.com/company/ignek-infotech/about/" aria-label="X" className="flex-shrink-0" target="blank">
+                      <Image
+                        src="/images/case-studies/linkedin.png"
+                        alt="linkedin"
+                        width={28.8}
+                        height={28.8}
+                        className="w-[1.8rem] h-[1.8rem]"
+                      />
+                    </a>
+                  </div>
+                  <div className="w-[3.5rem] h-[3.5rem] rounded-full border-[0.075rem] border-[#374151] shadow-[0_0.3rem_0.75rem_0_rgba(0,151,158,0.25)] flex items-center justify-center hover:opacity-80 active:scale-95 transition">
+                    <a href="https://x.com/ignekinfotech" aria-label="X" className="flex-shrink-0" target="blank">
+                      <Image
+                        src="/images/case-studies/whatsapp.png"
+                        alt="whatsapp"
+                        width={28.8}
+                        height={28.8}
+                        className="w-[1.8rem] h-[1.8rem]"
+                      />
+                    </a>
+                  </div>
+                  <div className="w-[3.5rem] h-[3.5rem] rounded-full border-[0.075rem] border-[#374151] shadow-[0_0.3rem_0.75rem_0_rgba(0,151,158,0.25)] flex items-center justify-center hover:opacity-80 active:scale-95 transition">
+                    <a href="https://www.facebook.com/ignekinfo/" aria-label="Facebook" className="flex-shrink-0" target="blank">
+                      <Image
+                        src="/images/case-studies/facebook.png"
+                        alt="facebook"
+                        width={28.8}
+                        height={28.8}
+                        className="w-[1.8rem] h-[1.8rem]"
+                      />
+                    </a>
+
+                  </div>
+                  <div className="w-[3.5rem] h-[3.5rem] rounded-full border-[0.075rem] border-[#374151] shadow-[0_0.3rem_0.75rem_0_rgba(0,151,158,0.25)] flex items-center justify-center hover:opacity-80 active:scale-95 transition">
+                    <a href="https://x.com/ignekinfotech" aria-label="X" className="flex-shrink-0" target="blank">
+                      <Image
+                        src="/images/case-studies/twitter.png"
+                        alt="twitter"
+                        width={28.8}
+                        height={28.8}
+                        className="w-[1.8rem] h-[1.8rem]"
+                      />
+                    </a>
+
+                  </div>
+                  <div
+                    onClick={() => navigator.clipboard.writeText(window.location.href)}
+                    className="w-[3.5rem] h-[3.5rem] rounded-full border-[0.075rem] border-[#374151] shadow-[0_0.3rem_0.75rem_0_rgba(0,151,158,0.25)] flex items-center justify-center cursor-pointer hover:opacity-80 active:scale-95 transition"
+                    title="Copy link"
+                  >
+                    <Image
+                      src="/images/case-studies/link-fill.png"
+                      alt="copy link"
+                      width={28.8}
+                      height={28.8}
+                      className="w-[1.8rem] h-[1.8rem]"
+                    />
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
         </section>
       </main>
 
