@@ -123,53 +123,63 @@ export default function PortfolioRenderer() {
 
                 <p className="text-lg text-white sm:text-lg">Share On</p>
                 <div className="flex items-center gap-4">
-                  <div className="w-[56px] h-[56px] rounded-full border-[1.2px] border-[#374151] shadow-[0_4.8px_12px_0_rgba(0,151,158,0.25)] flex items-center justify-center hover:opacity-80 active:scale-95 transition">
+                  <div className="w-[3.5rem] h-[3.5rem] rounded-full border-[0.075rem] border-[#374151] shadow-[0_0.3rem_0.75rem_0_rgba(0,151,158,0.25)] flex items-center justify-center hover:opacity-80 active:scale-95 transition">
                     <a href="https://www.linkedin.com/company/ignek-infotech/about/" aria-label="X" className="flex-shrink-0" target="blank">
-                      <img
+                      <Image
                         src="/images/case-studies/linkedin.png"
                         alt="linkedin"
-                        className="w-[28.8px] h-[28.8px]"
+                        width={28.8}
+                        height={28.8}
+                        className="w-[1.8rem] h-[1.8rem]"
                       />
                     </a>
                   </div>
-                  <div className="w-[56px] h-[56px] rounded-full border-[1.2px] border-[#374151] shadow-[0_4.8px_12px_0_rgba(0,151,158,0.25)] flex items-center justify-center hover:opacity-80 active:scale-95 transition">
+                  <div className="w-[3.5rem] h-[3.5rem] rounded-full border-[0.075rem] border-[#374151] shadow-[0_0.3rem_0.75rem_0_rgba(0,151,158,0.25)] flex items-center justify-center hover:opacity-80 active:scale-95 transition">
                     <a href="https://x.com/ignekinfotech" aria-label="X" className="flex-shrink-0" target="blank">
-                      <img
+                      <Image
                         src="/images/case-studies/whatsapp.png"
-                        alt="linkedin"
-                        className="w-[28.8px] h-[28.8px]"
+                        alt="whatsapp"
+                        width={28.8}
+                        height={28.8}
+                        className="w-[1.8rem] h-[1.8rem]"
                       />
                     </a>
                   </div>
-                  <div className="w-[56px] h-[56px] rounded-full border-[1.2px] border-[#374151] shadow-[0_4.8px_12px_0_rgba(0,151,158,0.25)] flex items-center justify-center hover:opacity-80 active:scale-95 transition">
-                    <a href="https://www.facebook.com/ignekinfo/" aria-label="X" className="flex-shrink-0" target="blank">
-                      <img
+                  <div className="w-[3.5rem] h-[3.5rem] rounded-full border-[0.075rem] border-[#374151] shadow-[0_0.3rem_0.75rem_0_rgba(0,151,158,0.25)] flex items-center justify-center hover:opacity-80 active:scale-95 transition">
+                    <a href="https://www.facebook.com/ignekinfo/" aria-label="Facebook" className="flex-shrink-0" target="blank">
+                      <Image
                         src="/images/case-studies/facebook.png"
-                        alt="linkedin"
-                        className="w-[28.8px] h-[28.8px]"
+                        alt="facebook"
+                        width={28.8}
+                        height={28.8}
+                        className="w-[1.8rem] h-[1.8rem]"
                       />
                     </a>
 
                   </div>
-                  <div className="w-[56px] h-[56px] rounded-full border-[1.2px] border-[#374151] shadow-[0_4.8px_12px_0_rgba(0,151,158,0.25)] flex items-center justify-center hover:opacity-80 active:scale-95 transition">
+                  <div className="w-[3.5rem] h-[3.5rem] rounded-full border-[0.075rem] border-[#374151] shadow-[0_0.3rem_0.75rem_0_rgba(0,151,158,0.25)] flex items-center justify-center hover:opacity-80 active:scale-95 transition">
                     <a href="https://x.com/ignekinfotech" aria-label="X" className="flex-shrink-0" target="blank">
-                      <img
+                      <Image
                         src="/images/case-studies/twitter.png"
-                        alt="linkedin"
-                        className="w-[28.8px] h-[28.8px]"
+                        alt="twitter"
+                        width={28.8}
+                        height={28.8}
+                        className="w-[1.8rem] h-[1.8rem]"
                       />
                     </a>
 
                   </div>
                   <div
                     onClick={() => navigator.clipboard.writeText(window.location.href)}
-                    className="w-[56px] h-[56px] rounded-full border-[1.2px] border-[#374151] shadow-[0_4.8px_12px_0_rgba(0,151,158,0.25)] flex items-center justify-center cursor-pointer hover:opacity-80 active:scale-95 transition"
+                    className="w-[3.5rem] h-[3.5rem] rounded-full border-[0.075rem] border-[#374151] shadow-[0_0.3rem_0.75rem_0_rgba(0,151,158,0.25)] flex items-center justify-center cursor-pointer hover:opacity-80 active:scale-95 transition"
                     title="Copy link"
                   >
-                    <img
+                    <Image
                       src="/images/case-studies/link-fill.png"
                       alt="copy link"
-                      className="w-[28.8px] h-[28.8px]"
+                      width={28.8}
+                      height={28.8}
+                      className="w-[1.8rem] h-[1.8rem]"
                     />
                     </div>
                   </div>
