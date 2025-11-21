@@ -24,7 +24,7 @@ export default function PortfolioList() {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
     const [searchTerm, setSearchTerm] = useState("");
-    const [selectedIndustry, setSelectedIndustry] = useState<string | null>(null);
+    const [selectedIndustry, setSelectedIndustry] = useState<string | null>("All Case Studies");
     const [selectedTechnology, setSelectedTechnology] = useState<string | null>(null);
     const [debouncedSearch, setDebouncedSearch] = useState(searchTerm);
     const router = useRouter();
@@ -146,7 +146,7 @@ export default function PortfolioList() {
                                                         }`}
                                                 >   
                                                     {/* Image */}
-                                                    <div className="relative overflow-hidden rounded-xl h-[17.76vw]">
+                                                    <div className="relative rounded-xl h-[17.76vw]">
                                                         <Image
                                                             src={imageUrl}
                                                             alt={item.title.rendered}

@@ -40,7 +40,7 @@ export default async function PortfolioPage() {
               </h1>
 
             <p className="text-right text-[0.938vw] ">
-              Explore our latest case studies, showcasing real-world solutions,
+              Explore our latest case studies, showcasing real-world solutions,<br />
               success stories, and impactful results delivered to our clients.
             </p>
 
