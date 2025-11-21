@@ -81,11 +81,14 @@ const JobCard = ({ job }: JobCardProps) => {
           </span>
         </div>
         <Link
-          href="#"
-          className="gap-8 rounded-full bg-black px-14 py-3.5 text-xl font-semibold text-white transition hover:bg-gray-800"
-        >
-          Apply Now
-        </Link>
+  href="#"
+  className="gap-8 rounded-full bg-black px-14 py-3.5 text-xl font-semibold text-white"
+>
+  <span className="inline-block transition-transform duration-300 hover:scale-110">
+    Apply Now
+  </span>
+</Link>
+
       </div>
 
       {/* Accordion Content */}
