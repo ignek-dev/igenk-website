@@ -26,6 +26,19 @@
   }
 }
 
+/* ---- Autofill Fix (Place Here) ---- */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
+  -webkit-text-fill-color: white !important;
+  transition: background-color 9999s ease-in-out 0s;
+}
+
 @layer utilities {
   /* Gloal padding across website */
   .global-container {
@@ -515,6 +528,15 @@
       position: relative !important;
       top: 0 !important;
     }
+  }
+
+  /*Gradient for Liferay pages heading*/
+  .text-gradient-liferay {
+    background: linear-gradient(0deg, #ffffff, #ffffff),
+                linear-gradient(0deg, rgba(0, 0, 0, 0.23), rgba(0, 0, 0, 0.23));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
   }
 }
 

@@ -77,41 +77,39 @@ type FormTextAreaProps = {
 
 const FormInput = ({ label, placeholder, name, type = "text", required = false }: FormInputProps) => (
   <div className="relative z-0 w-full">
+    <label
+      htmlFor={label}
+      className="text-medium top-1 z-10 origin-[0] -translate-y-8 scale-75 transform text-3xl text-white duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-8 peer-focus:scale-75 peer-focus:text-white"
+    >
+      {label}
+    </label>
     <input
       type={type}
       id={label}
       name={name}
       required={required}
-      className="peer block w-full appearance-none border-0 border-b-2 border-gray-600 bg-transparent px-0 py-3.5 text-xl text-white placeholder-transparent focus:border-white focus:placeholder-white focus:ring-0 focus:outline-none"
+      className="peer block w-full appearance-none border-0 border-b-2 border-gray-600 bg-transparent px-0 py-3.5 text-xl text-white focus:border-white placeholder-[#DBD3D3] focus:ring-0 focus:outline-none"
       placeholder={placeholder} // visible only on focus
     />
-
-    <label
-      htmlFor={label}
-      className="text-medium absolute top-1 z-10 origin-[0] -translate-y-8 scale-75 transform text-3xl text-white duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-8 peer-focus:scale-75 peer-focus:text-white"
-    >
-      {label}
-    </label>
   </div>
 )
 
 const FormTextArea = ({ label, placeholder, name, rows = 6, required = false }: FormTextAreaProps) => (
   <div className="relative z-0 w-full">
+    <label
+      htmlFor={label}
+      className="text-medium  top-1 z-10 origin-[0] -translate-y-8 scale-75 transform text-3xl text-white duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-8 peer-focus:scale-75 peer-focus:text-white"
+    >
+      {label}
+    </label>
     <textarea
       id={label}
       name={name}
       required={required}
       rows={rows}
-      className="peer block w-full appearance-none border-0 border-b-2 border-gray-600 bg-transparent px-0 py-3.5 text-xl text-white placeholder-transparent focus:border-white focus:placeholder-white focus:ring-0 focus:outline-none"
+      className="peer block w-full appearance-none border-0 border-b-2 border-gray-600 bg-transparent px-0 py-3.5 text-xl text-white  focus:border-white placeholder-[#DBD3D3] focus:ring-0 focus:outline-none"
       placeholder={placeholder} // visible only on focus
     />
-
-    <label
-      htmlFor={label}
-      className="text-medium absolute top-1 z-10 origin-[0] -translate-y-8 scale-75 transform text-3xl text-white duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-8 peer-focus:scale-75 peer-focus:text-white"
-    >
-      {label}
-    </label>
   </div>
 )
 
@@ -161,17 +159,17 @@ export default function ContactPage() {
   }
   return (
     <main className="bg-black text-white">
-      <section className="relative pt-16 pb-16 md:pb-16">
+      <section className="relative mt-[-1px] pt-44 pb-16 md:pb-16">
         {/* Main Content with standard padding */}
         <div className="global-container mx-auto w-full px-4 md:px-8">
           {/* Top Section: Title and Description */}
-          <div className="grid grid-cols-1 items-center gap-3 md:grid-cols-5">
+          <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-5">
             <h1 className="text-[4.375rem] leading-[5.85rem] font-medium text-white md:col-span-2 [@media(min-width:1440px)]:text-[5.375rem] [@media(min-width:1536px)]:text-[5.5rem] [@media(min-width:1920px)]:text-[5.625rem]">
               Contact Us
             </h1>
-            <p className="font-regular text-xl tracking-normal text-[#FFFFFF] md:col-span-3 md:text-right [@media(min-width:1440px)]:text-lg [@media(min-width:1920px)]:text-xl">
-              Get in touch for inquiries about our properties. We&apos;re here to offer expert <br />
-              advice, personalized solutions, and exceptional service to meet all your needs effectively.
+            <p className="font-regular text-xl right-0 tracking-normal text-[#FFFFFF] md:col-span-3 md:text-right [@media(min-width:1440px)]:text-lg [@media(min-width:1920px)]:text-xl">
+              Get in touch for inquiries about our properties. We&apos;re here to offer expert
+              advice,<br/> personalized solutions, and exceptional service to meet all your needs effectively.
             </p>
           </div>
 
@@ -185,7 +183,7 @@ export default function ContactPage() {
               <h2 className="text-5xl leading-[3.75rem] font-semibold tracking-[-2%] [@media(min-width:1440px)]:text-4xl [@media(min-width:1920px)]:text-5xl">
                 Let's Start the Conversation
               </h2>
-              <p className="font-regular mt-3 max-w-lg text-lg leading-[1.75rem] text-[#FFFFFF]">
+              <p className="font-regular mt-3 max-w-xl text-lg leading-[1.75rem] text-[#FFFFFF]">
                 We at IGNEK appreciate your questions, comments, and teamwork. Whether you have enquiries about our
                 projects or would like to discuss our services.
               </p>
@@ -196,7 +194,7 @@ export default function ContactPage() {
                   <h3 className="text-lg leading-[1.25rem] font-medium text-[#DBD3D3]">Email Address</h3>
                   <a
                     href="mailto:sales@ignek.com"
-                    className="mt-1 text-base leading-[1.5rem] text-white hover:text-blue-400"
+                    className="mt-1 text-lg leading-[1.5rem] text-white hover:text-blue-400"
                   >
                     sales@ignek.com
                   </a>
@@ -205,7 +203,7 @@ export default function ContactPage() {
                   <h3 className="text-lg leading-[1.25rem] font-medium text-[#DBD3D3]">Phone Number</h3>
                   <a
                     href="tel:+016351575560"
-                    className="mt-1 text-base leading-[1.5rem] text-white hover:text-blue-400"
+                    className="mt-1 text-lg leading-[1.5rem] text-white hover:text-blue-400"
                   >
                     +91 63515 75560
                   </a>
@@ -312,7 +310,7 @@ export default function ContactPage() {
               </h2>
             </div>
             <div className="flex h-full items-center justify-center">
-              <p className="text-regular w-full text-right text-lg leading-[1.875rem] text-[#374151]">
+              <p className="text-regular text-right text-lg leading-[1.875rem] text-[#374151]">
                 We have offices in India and the United Arab Emirates, providing seamless regional support and
                 collaboration for our global clients.{" "}
               </p>
@@ -352,7 +350,7 @@ export default function ContactPage() {
                       <h4 className="text-xl leading-[1.5rem] font-medium text-[#766C72]">Email Address</h4>
                       <a
                         href="mailto:sales@ignek.com"
-                        className="text-lg leading-[1.5rem] font-medium text-[#151314] hover:text-blue-600"
+                        className="text-xl leading-[1.5rem] font-medium text-[#151314] hover:text-blue-600"
                       >
                         sales@ignek.com
                       </a>
@@ -361,7 +359,7 @@ export default function ContactPage() {
                       <h4 className="text-xl leading-[1.5rem] font-medium text-[#766C72]">Phone Number</h4>
                       <a
                         href="tel:+916351578580"
-                        className="text-lg leading-[1.5rem] font-medium text-[#151314] hover:text-blue-600"
+                        className="text-xl leading-[1.5rem] font-medium text-[#151314] hover:text-blue-600"
                       >
                         (+91) 635 157 8580
                       </a>
@@ -402,7 +400,7 @@ export default function ContactPage() {
                     <h4 className="text-xl leading-[1.5rem] font-medium text-[#766C72]">Email Address</h4>
                     <a
                       href="mailto:newyork@konstruktion.com"
-                      className="text-lg leading-[1.5rem] font-medium text-[#151314] hover:text-blue-600"
+                      className="text-xl leading-[1.5rem] font-medium text-[#151314] hover:text-blue-600"
                     >
                       connect@ignek.com
                     </a>
@@ -411,7 +409,7 @@ export default function ContactPage() {
                     <h4 className="text-xl leading-[1.5rem] font-medium text-[#766C72]">Phone Number</h4>
                     <a
                       href="tel:+4146781903"
-                      className="text-lg leading-[1.5rem] font-medium text-[#151314] hover:text-blue-600"
+                      className="text-xl leading-[1.5rem] font-medium text-[#151314] hover:text-blue-600"
                     >
                       +97 154 219 8252
                     </a>
