@@ -47,7 +47,7 @@ export default function HomePage() {
         </div>
 
         <div className="mx-auto w-full px-4 py-16 pb-12 md:px-6 md:pb-16 lg:pb-16 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
-          <h1 className="text-6xl letter-spacing-[0.04em] font-extrabold hero-heading leading-[8rem]">
+          <h1 className="!text-[6.875vw] letter-spacing-[0.04em] font-extrabold !leading-[6.9vw]">
             Transform Your
             <br />
             <span className="italic">DIGITAL EXPERIENCE</span>
