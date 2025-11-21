@@ -45,23 +45,23 @@ const CoreValues = () => {
         <section className="bg-[#F5F5F6] mx-h-[1078px] relative pb-[64px] global-container">
 
     {/* Heading */}
-    <div className="text-center">
-        <h2 className="font-poppins font-bold text-5xl leading-[3.75rem] tracking-[-0.02em] text-[#000000] pt-16">
+    <div className="flex flex-col items-center">
+        <h2 className="text-[#000000] pt-[3.333vw]">
             Our Core Values
         </h2>
 
-        <p className="font-poppins font-normal text-lg leading-[1.875rem] text-[#4B5563] mt-7 mb-[38px] max-w-[720px] mx-auto">
+        <p className="text-[0.938vw] leading-[1.563vw] text-[#4B5563] pt-[1.458vw] w-[40.781vw] text-center">
             Our commitment to integrity, innovation, and teamwork drives us to deliver exceptional Liferay solutions globally.
         </p>
     </div>
 
     {/* Values Section */}
-    <div className=" mt-16">
+    <div className=" mt-[1.979vw]">
         {VALUES.map((v, index) => (
             <div
                 key={index}
                 className="
-                    group  h-[191px] 
+                    group  h-[9.948vw] 
                     rounded-[4px] bg-[#F5F5F6] 
                     transition-colors duration-300 hover:bg-white
                 "

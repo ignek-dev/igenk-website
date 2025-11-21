@@ -111,7 +111,7 @@ export default function AboutUs() {
                     <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-12 lg:gap-16 items-start">
                         {/* Left Column - Main Heading */}
                         <div className="">
-                            <h2 className="text-[2.5vw] font-bold text-black leading-[3.125vw]">
+                            <h2 className="font-bold text-black">
                                 Why Companies
                                 <br />
                                 Trust IGNEK
@@ -127,9 +127,9 @@ export default function AboutUs() {
 
                             {/* Section 1: Digital Excellence */}
                             <div className="mt-[3.333vw]">
-                                <h3 className="text-[1.563vw] leading-[1.875vw] font-bold text-black">
+                                <h4 className="text-[1.563vw] !font-semibold text-black">
                                     Digital Excellence
-                                </h3>
+                                </h4>
                                 <div className="border-gray-[0.052vw] border mt-[1.042vw] mb-[1.042vw]"></div>
                                 <p className="text-[1.042vw] text-[#374151] leading-[1.563vw]">
                                     We craft scalable, high-performing solutions that empower businesses to embrace innovation and achieve measurable results.
@@ -138,9 +138,9 @@ export default function AboutUs() {
 
                             {/* Section 2: Future-Ready Solutions */}
                             <div className="mt-[3.333vw]">
-                                <h3 className="text-[1.563vw] leading-[1.875vw] font-bold text-black">
+                                <h4 className="text-[1.563vw] !font-semibold text-black">
                                     Future-Ready Solutions
-                                </h3>
+                                </h4>
                                 <div className="border-gray-[0.052vw] border mt-[1.042vw] mb-[1.042vw]"></div>
                                 <p className="text-[1.042vw] text-[#374151] leading-[1.563vw]">
                                     From modern web applications to enterprise platforms, we design systems built for adaptability, growth, and long-term success.
@@ -149,9 +149,9 @@ export default function AboutUs() {
 
                             {/* Section 3: Collaborative Approach */}
                             <div className="mt-[3.333vw]">
-                                <h3 className="text-[1.563vw] leading-[1.875vw] font-bold text-black">
+                                <h4 className="text-[1.563vw] !font-semibold text-black">
                                     Collaborative Approach
-                                </h3>
+                                </h4>
                                 <div className="border-gray-[0.052vw] border mt-[1.042vw] mb-[1.042vw]"></div>
                                 <p className="text-[1.042vw] text-[#374151] leading-[1.563vw]">
                                     Our team works hand-in-hand with clients, ensuring every project reflects their vision while meeting the highest standards of quality.

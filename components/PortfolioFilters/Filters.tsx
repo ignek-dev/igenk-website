@@ -37,9 +37,9 @@ export default function Filters({
     return (
         <aside className="w-auto max-w-fit bg-[#F1F5F5] px-[3.333vw] py-[1.719vw] rounded-2xl shadow-sm h-full">
 
-            <h2 className="font-medium text-[1.5625vw] leading-[1.67vw] mb-[1.6667vw]">
+            <h4 className="font-medium text-[1.5625vw] leading-[1.67vw] mb-[1.6667vw]">
                 Filters
-            </h2>
+            </h4>
 
             {/* Search */}
             <div className="mb-[1.6667vw]">
@@ -71,7 +71,7 @@ export default function Filters({
 
             {/* Industry */}
             <div className="mb-[1.6667vw]">
-                <h3 className="font-medium text-[1.25vw] text-black mb-[1.0417vw]">
+                <h3 className="font-medium !font-medium !text-[1.25vw] text-black mb-[1.0417vw]">
                     Search By Industry
                 </h3>
 
@@ -95,7 +95,7 @@ export default function Filters({
 
             {/* Technology */}
             <div>
-                <h3 className="font-medium text-[1.25vw] text-black mb-[1.0417vw]">
+                <h3 className="font-medium !font-medium !text-[1.25vw] text-black mb-[1.0417vw]">
                     Search By Technology
                 </h3>
 
