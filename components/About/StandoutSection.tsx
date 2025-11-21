@@ -34,7 +34,7 @@ const cardsData: Card[] = [
 
 const StandoutSection = () => {
   return (
-    <section className="relative isolate overflow-hidden global-container h-[55.75rem]">
+    <section className="relative isolate overflow-hidden global-container h-[46.458vw]">
       {/* Background */}
       <div className="absolute inset-0 -z-10">
         <Image

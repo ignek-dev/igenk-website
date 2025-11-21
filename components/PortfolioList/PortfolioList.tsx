@@ -150,7 +150,7 @@ export default function PortfolioList() {
                                                         <Image
                                                             src={imageUrl}
                                                             alt={item.title.rendered}
-                                                            className="object-fill h-full rounded-xl transition-transform duration-500 group-hover:scale-105 w-[29.896vw]"
+                                                            className="object-fill h-full rounded-xl transition-transform duration-500 group-hover:scale-105 max-w-[29.896vw] w-[29.896vw]"
                                                             height={341}
                                                             width={574}
                                                         />
@@ -168,7 +168,7 @@ export default function PortfolioList() {
                                                         </span>
 
                                                         <h3
-                                                            className="text-[1.563vw] font-semibold leading-[1.563vw]"
+                                                            className="!text-[1.563vw] !font-semibold leading-[1.563vw]"
                                                             dangerouslySetInnerHTML={{ __html: item.title.rendered }}
                                                         />
 
