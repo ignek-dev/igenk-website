@@ -130,96 +130,100 @@ const BlogSidebar = ({ categoryId }: BlogSidebarProps) => {
     const router = useRouter();
 
     return (
-        <div className="max-w-[1440px] grid gap-10 mx-auto p-4 pr-[50px]">
-    {/* --- Social Icons --- */}
-    <div>
-        <h2 className="text-black font-medium text-[2rem] mb-4 mt-8">Share On</h2>
-        <div className="flex gap-6 mt-0">
-            {socialLinks.map((social) => (
-                <a
-                    href={social.href}
-                    key={social.label}
-                    aria-label={social.label}
-                    className="flex size-12 items-center justify-center rounded-full bg-black text-white"
-                >
-                    {social.icon}
-                </a>
-            ))}
-        </div>
-    </div>
-
-    {/* --- Related Blog Cards --- */}
-    <div className="grid gap-4">
-        <h2 className="text-black font-medium text-[2rem] mb-4 ">Related Blogs</h2>
-
-        {blogs?.map((blog, index) => (
-            <div key={blog?.id}>
-                <div className="flex bg-white items-center overflow-hidden transition pb-7">
-                    <Image
-                        src={blog?.image}
-                        alt="Blog thumbnail"
-                        width={200}
-                        height={130}
-                        className=" w-full max-w-[200px] rounded-[15px] h-[130px]"
-                    />
-                    <div className="flex flex-col gap-2 justify-center p-4">
-                        <h3 className="text-lg font-medium text-[#101012] mb-2">
-                            {blog?.title}
-                        </h3>
-
-                        <div
-                            onClick={() => router.push(`/blog/${blog.slug}`)}
-                            className="font-medium flex items-center gap-2 cursor-pointer text-[#4A3AFF]
-             text-[16px] leading-[24px]"
+        <div className="max-w-[1440px] grid gap-9 mx-auto p-4 pr-[50px]">
+            {/* --- Social Icons --- */}
+            <div>
+                <h2 className="text-black font-medium text-[2rem] mb-4 mt-8">Share On</h2>
+                <div className="flex gap-[0.625rem] mt-0">
+                    {socialLinks.map((social) => (
+                        <a
+                            href={social.href}
+                            key={social.label}
+                            aria-label={social.label}
+                            className="flex w-[54px] h-[54px] items-center justify-center rounded-full bg-black text-white"
                         >
-                            Read Now
-                            <ArrowRight size={18} />
-                        </div>
-                    </div>
+                            {social.icon}
+                        </a>
+
+                    ))}
+                </div>
+                 <h2 className="text-black font-medium text-[2rem] mt-9 ">Related Blogs</h2>
+            </div>
+
+            {/* --- Related Blog Cards --- */}
+           <div className="grid gap-[31.5px] bg-white">
+  {blogs?.map((blog, index) => (
+    <div key={blog?.id}>
+      <div className="flex bg-white items-center overflow-hidden transition">
+        
+        {/* Image */}
+        <Image
+          src={blog?.image}
+          alt="Blog thumbnail"
+          width={200}
+          height={130}
+          className="w-full max-w-[200px] rounded-[15px] h-[130px]"
+        />
+
+        {/* Text Container */}
+        <div className="flex flex-col gap-2  justify-center ml-[14px] flex-1 h-[82px]">
+  <h3 className="text-lg w-[297px] mt-[11px] font-medium text-[#101012] mb-2 leading-snug">
+    {blog?.title}
+  </h3>
+
+  <div
+    onClick={() => router.push(`/blog/${blog.slug}`)}
+    className="font-medium flex items-center gap-2 cursor-pointer text-[#4A3AFF] text-[16px] leading-[24px] mt-auto"
+  >
+    Read Now <ArrowRight size={20} />
+  </div>
+</div>
+
+      </div>
+
+      {index !== blogs.length - 1 && (
+        <hr className="border-gray-300 mt-[31.5px]" />
+      )}
+    </div>
+  ))}
+</div>
+
+
+            {/* --- Author Card --- */}
+            <div className="bg-white rounded-[20px]  border-[#E5E7EB] border-[1.7px] shadow p-[2.375rem] text-center">
+                <h2 className="text-4xl font-semibold font-bold tracking-wide mb-10">AUTHOR</h2>
+                <h3 className="text-3xl font-semibold text-gray-900 mb-1">Bhavin Panchani</h3>
+                <p className="text-base text-[#121416] mb-7">CEO, IGNEK</p>
+
+                <div className="flex justify-center mb-6">
+                    <Image
+                        src={"/images/blog/authorImg.png"}
+                        alt="Author"
+                        width={186}
+                        height={186}
+                        className="rounded-full object-cover max-h-[186px]"
+                    />
                 </div>
 
-                {index !== blogs.length - 1 && (
-                    <hr className="border-gray-300 my-4" />
-                )}
+                <p className="text-[#374151] font-normal text-base leading-relaxed mb-6">
+                    Bhavin Panchani. Founder & Director. We were set up in early 2019 and
+                    are passionate about driving innovation through digital transformation.
+                </p>
+
+                <div className="flex justify-center gap-[1.25rem]">
+                    {authorSocialLinks.map((social) => (
+                        <a
+                            href={social.href}
+                            key={social.label}
+                            aria-label={social.label}
+                            className="flex size-[2.5rem] items-center justify-center rounded-full bg-black text-white"
+                        >
+                            {social.icon}
+                        </a>
+                    ))}
+                </div>
             </div>
-        ))}
-    </div>
-
-    {/* --- Author Card --- */}
-    <div className="bg-white rounded-3xl shadow p-8 text-center">
-        <h2 className="text-4xl font-semibold font-bold tracking-wide mb-10">AUTHOR</h2>
-        <h3 className="text-3xl font-semibold text-gray-900 mb-1">Bhavin Panchani</h3>
-        <p className="text-base text-[#121416] mb-7">CEO, IGNEK</p>
-
-        <div className="flex justify-center mb-6">
-            <Image
-                src={"/images/blog/authorImg.png"}
-                alt="Author"
-                width={186}
-                height={186}
-                className="rounded-full object-cover max-h-[186px]"
-            />
         </div>
-
-        <p className="text-[#374151] font-normal text-sm leading-relaxed mb-6">
-            Bhavin Panchani. Founder & Director. We were set up in early 2019 and
-            are passionate about driving innovation through digital transformation.
-        </p>
-
-        <div className="flex justify-center gap-5">
-            {authorSocialLinks.map((social) => (
-                <a
-                    href={social.href}
-                    key={social.label}
-                    aria-label={social.label}
-                    className="flex size-12 items-center justify-center rounded-full bg-black text-white"
-                >
-                    {social.icon}
-                </a>
-            ))}
-        </div>
-    </div>
-</div>
 
     );
 };

@@ -161,7 +161,7 @@ export default function Blogs() {
       <section className="bg-[#F9FAF7] py-[64px] text-black">
         <div className="mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[80px] [@media(min-width:1920px)]:px-[100px]">
           {/* Header part */}
-          <div className="mb-16 grid grid-cols-1 items-end gap-8 md:grid-cols-2">
+          <div className="mb-[2.25rem] grid grid-cols-1 items-end gap-8 md:grid-cols-2">
             <div>
               <h2 className="text-5xl leading-tight font-semibold tracking-tight text-[#000000]">
                 Check Out Our Newly
@@ -170,7 +170,7 @@ export default function Blogs() {
               </h2>
             </div>
 
-            <div className="flex h-full  items-center">
+            <div className="flex h-full  items-end">
               <p className="text-normal line-height-[30px] w-full text-right font-normal text-lg text-[#374151]">
                 Stay updated with our newly written tech blogs, covering trends, insights, and innovations to help your business stay ahead.
               </p>
@@ -198,10 +198,10 @@ export default function Blogs() {
                 </div>
 
                 {/* Overlay Content */}
-                <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/70 via-black/30 to-transparent p-5 text-white">
+                <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/70 via-black/30 to-transparent pl-[4.375rem] pb-[3rem] text-white">
                   <div className="mb-[1.125rem] flex items-center space-x-2 font-normal text-lg opacity-90">
-                    <span className="rounded-full bg-white/20 px-3 py-1 backdrop-blur-md">{blog.category}</span>
-                    <span>• {blog?.date}</span>
+                    <span className="rounded-full bg-white/20 px-[20px] py-[10] backdrop-blur-md">{blog.category}</span>
+                    <span>• {blog?.readTime}</span>
                   </div>
 
                   <h2 className="mb-[1.125rem] text-3xl leading-snug font-semibold">{blog.title}</h2>
@@ -213,8 +213,8 @@ export default function Blogs() {
                       height={40}
                       className="w-10 h-10 object-cover rounded-full border-2 border-white/80"
                     />
-                    <span className="font-medium">{blog?.author}</span>
-                    <span className="opacity-80">• {blog.date}</span>
+                    <span className="font-medium text-[1.222rem]">{blog?.author}</span>
+                    <span className="opacity-80 text-lg">• {blog.date}</span>
                   </div>
                 </div>
               </div>
@@ -222,7 +222,7 @@ export default function Blogs() {
           </div>
           <div className="flex flex-col py-16">
             {/* Section Title */}
-            <h2 className="mb-6 text-5xl leading-tight font-semibold tracking-tight text-[#000000]">
+            <h2 className="mb-9 text-5xl leading-tight font-semibold tracking-tight text-[#000000]">
               Browse By Category
             </h2>
 
@@ -254,8 +254,8 @@ export default function Blogs() {
 
           </div>
           <div className="pb-16">
-            <h2 className="mb-6 text-5xl leading-tight font-semibold tracking-tight text-[#000000]">Browse Latest Blog</h2>
-            <div className="grid grid-cols-1 gap-11 md:grid-cols-2 lg:grid-cols-3">
+            <h2 className="mb-9 text-5xl leading-tight font-semibold tracking-tight text-[#000000]">Browse Latest Blog</h2>
+            <div className="grid grid-cols-1 gap-[3.375rem] md:grid-cols-2 lg:grid-cols-3">
               {
                 loading ? (
                   <p>Loading post…</p>
@@ -268,8 +268,8 @@ export default function Blogs() {
 
             </div>
 
-            <div className="flex justify-left mt-10">
-              <ul className="flex items-center gap-2 text-base font-medium">
+            <div className="flex justify-left mt-[2.063rem]">
+              <ul className="flex items-center gap-2 text-xl font-medium">
                 {/* First */}
                 <li
                   className={`px-4 py-2 border rounded-md cursor-pointer ${currentPage === 1
