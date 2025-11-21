@@ -86,7 +86,7 @@ export default function LiferayArchitectureDesignPage() {
         <div className="mx-auto w-full px-4 pt-12  md:px-8  md:pb-[72px] global-container ">
           <div className="relative text-[3.75vw] grid items-start gap-10 md:grid-cols-2">
             <div>
-              <div className="inline-flex items-center rounded-full border border-white/30 px-[1.813rem] py-[0.625rem] text-[0.938vw] text-white">
+              <div className="p18 banner-tab">
                 Liferay Services
               </div>
               <h1 className="mt-9 leading-tight font-semibold ">
