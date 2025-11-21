@@ -52,7 +52,7 @@ export default function LiferayMigrationPage() {
               <div className="inline-flex items-center rounded-full border border-white/30 px-4 py-2 text-lg text-white">
                 Liferay Services
               </div>
-              <h1 className="mt-9 text-4xl leading-tight font-semibold sm:text-5xl md:text-7xl">
+              <h1 className="mt-9 text-4xl leading-tight font-semibold sm:text-5xl md:text-7xl text-gradient-liferay">
                 Liferay
                 <br />
                 <span className="block">Migration</span>
