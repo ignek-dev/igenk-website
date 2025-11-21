@@ -145,13 +145,13 @@ export default function Blogs() {
         <div className="mx-auto w-full px-4 pt-12 pb-16 md:px-8 md:pt-20 md:pb-22 global-container">
           <div className="relative grid items-start gap-10 md:grid-cols-2">
             <div>
-              <h1 className="mt-9 bg-[linear-gradient(0deg,#FFFFFF,#FFFFFF),linear-gradient(0deg,rgba(0,0,0,0.23),rgba(0,0,0,0.23))] bg-clip-text text-7xl leading-tight font-bold text-transparent sm:text-5xl md:text-7xl">
+              <h1 className="mt-9 bg-[linear-gradient(0deg,#FFFFFF,#FFFFFF),linear-gradient(0deg,rgba(0,0,0,0.23),rgba(0,0,0,0.23))] bg-clip-text  text-transparent">
                 Our Latest
                 <br />
                 Tech Blogs
               </h1>
             </div>
-            <p className="absolute bottom-0 max-w-2xl text-right font-normal text-lg text-white sm:text-lg md:mt-16 md:justify-self-end">
+            <p className="absolute bottom-0 max-w-2xl text-right  text-white p18 md:mt-16 md:justify-self-end">
               Explore our latest tech blogs to stay informed on trends, innovations, and best practices across industries, helping you leverage technology effectively for business growth and operational excellence.
             </p>
           </div>
@@ -163,7 +163,7 @@ export default function Blogs() {
           {/* Header part */}
           <div className="mb-[2.25rem] grid grid-cols-1 items-end gap-8 md:grid-cols-2">
             <div>
-              <h2 className="text-5xl leading-tight font-semibold tracking-tight text-[#000000]">
+              <h2 className=" tracking-tight text-[#000000]">
                 Check Out Our Newly
                 <br />
                 Written Tech Blogs
@@ -171,7 +171,7 @@ export default function Blogs() {
             </div>
 
             <div className="flex h-full  items-end">
-              <p className="text-normal line-height-[30px] w-full text-right font-normal text-lg text-[#374151]">
+              <p className=" w-full text-right  text-[#374151]">
                 Stay updated with our newly written tech blogs, covering trends, insights, and innovations to help your business stay ahead.
               </p>
             </div>
@@ -199,12 +199,12 @@ export default function Blogs() {
 
                 {/* Overlay Content */}
                 <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/70 via-black/30 to-transparent pl-[4.375rem] pb-[3rem] text-white">
-                  <div className="mb-[1.125rem] flex items-center space-x-2 font-normal text-lg opacity-90">
-                    <span className="rounded-full bg-white/20 px-[20px] py-[10] backdrop-blur-md">{blog.category}</span>
+                  <div className="mb-[0.938vw] flex items-center space-x-2 font-normal p18 opacity-90">
+                    <span className="rounded-full bg-white/20 px-[1.042vw] py-[0.521vw] backdrop-blur-md">{blog.category}</span>
                     <span>• {blog?.readTime}</span>
                   </div>
 
-                  <h2 className="mb-[1.125rem] text-3xl leading-snug font-semibold">{blog.title}</h2>
+                  <h2 className="mb-[0.938vw]">{blog.title}</h2>
                   <div className="flex items-center space-x-2 font-normal text-xl">
                     <Image
                       src={blog?.authPic}
@@ -213,8 +213,8 @@ export default function Blogs() {
                       height={40}
                       className="w-10 h-10 object-cover rounded-full border-2 border-white/80"
                     />
-                    <span className="font-medium text-[1.222rem]">{blog?.author}</span>
-                    <span className="opacity-80 text-lg">• {blog.date}</span>
+                    <span className="font-medium p20">{blog?.author}</span>
+                    <span className="opacity-80 p18">• {blog.date}</span>
                   </div>
                 </div>
               </div>
@@ -254,7 +254,7 @@ export default function Blogs() {
 
           </div>
           <div className="pb-16">
-            <h2 className="mb-9 text-5xl leading-tight font-semibold tracking-tight text-[#000000]">Browse Latest Blog</h2>
+            <h2 className="mb-9 tracking-tight text-[#000000]">Browse Latest Blog</h2>
             <div className="grid grid-cols-1 gap-[3.375rem] md:grid-cols-2 lg:grid-cols-3">
               {
                 loading ? (
@@ -269,27 +269,48 @@ export default function Blogs() {
             </div>
 
             <div className="flex justify-left mt-[2.063rem]">
-              <ul className="flex items-center gap-2 text-xl font-medium">
+              <ul className="flex items-center gap-2 p20 font-medium">
                 {/* First */}
                 <li
-                  className={`px-4 py-2 border rounded-md cursor-pointer ${currentPage === 1
-                    ? "text-gray-400 border-gray-300 cursor-not-allowed"
+                  className={`px-4 py-2 flex items-center border rounded-md cursor-pointer ${currentPage === 1
+                    ? "cursor-not-allowed border-gray-300"
                     : "hover:bg-gray-100"
                     }`}
                   onClick={() => currentPage > 1 && setCurrentPage(1)}
                 >
-                  « First
+                  <svg
+                    className="w-[1.146vw] h-[1.146vw] inline-block mr-1"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M11 17l-5-5 5-5M17 17l-5-5 5-5"></path>
+                  </svg>
+
+                  First
                 </li>
 
                 {/* Back */}
                 <li
-                  className={`px-4 py-2 border rounded-md cursor-pointer ${currentPage === 1
-                    ? "text-gray-400 border-gray-300 cursor-not-allowed"
+                  className={`px-4 flex items-center py-2 border rounded-md cursor-pointer ${currentPage === 1
+                    ? "border-gray-300 cursor-not-allowed"
                     : "hover:bg-gray-100"
                     }`}
                   onClick={() => currentPage > 1 && setCurrentPage((p) => Math.max(1, p - 1))}
                 >
-                  ‹ Back
+                  <svg
+                    className="w-[1.146vw] h-[1.146vw] inline-block mr-1"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7"></path>
+                  </svg>
+                  Back
                 </li>
 
                 {/* Dynamic Pages */}
@@ -311,8 +332,16 @@ export default function Blogs() {
                         1
                       </li>
                     );
+
                     if (start > 2)
-                      pages.push(<li key="dots-start" className="px-2 text-gray-500 select-none">...</li>);
+                      pages.push(
+                        <li
+                          key="dots-start"
+                          className="px-4 py-2 border rounded-md cursor-default text-gray-500 select-none"
+                        >
+                          ...
+                        </li>
+                      );
                   }
 
                   for (let i = start; i <= end; i++) {
@@ -331,8 +360,7 @@ export default function Blogs() {
                   }
 
                   if (end < totalPages) {
-                    if (end < totalPages - 1)
-                      pages.push(<li key="dots-end" className="px-2 text-gray-500 select-none">...</li>);
+                    if (end < totalPages - 1) pages.push(<li key="dots-end" className="px-2 text-gray-500 select-none">...</li>);
                     pages.push(
                       <li
                         key={totalPages}
@@ -350,27 +378,49 @@ export default function Blogs() {
 
                 {/* Next */}
                 <li
-                  className={`px-4 py-2 border rounded-md cursor-pointer ${currentPage === totalPages
-                    ? "text-gray-400 border-gray-300 cursor-not-allowed"
+                  className={`px-4 py-2 flex items-center border rounded-md cursor-pointer ${currentPage === totalPages
+                    ? "border-gray-300 cursor-not-allowed"
                     : "hover:bg-gray-100"
                     }`}
                   onClick={() => currentPage < totalPages && setCurrentPage((p) => Math.min(totalPages, p + 1))}
                 >
-                  Next ›
+                  <svg
+                    className="w-[1.146vw] h-[1.146vw] inline-block mr-1"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"></path>
+                  </svg>
+                  Next
                 </li>
 
                 {/* Last */}
                 <li
-                  className={`px-4 py-2 border rounded-md cursor-pointer ${currentPage === totalPages
-                    ? "text-gray-400 border-gray-300 cursor-not-allowed"
+                  className={`px-4 py-2 flex items-center border rounded-md cursor-pointer ${currentPage === totalPages
+                    ? "border-gray-300 cursor-not-allowed"
                     : "hover:bg-gray-100"
                     }`}
                   onClick={() => currentPage < totalPages && setCurrentPage(totalPages)}
                 >
-                  Last »
+                  <svg
+                    className="w-[1.146vw] h-[1.146vw] inline-block mr-1"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5-5 5M7 7l5 5-5 5"></path>
+                  </svg>
+
+                  Last
                 </li>
               </ul>
             </div>
+
 
 
 

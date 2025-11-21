@@ -95,7 +95,7 @@ export default function BlogSection() {
         <div className="grid items-end gap-10 md:grid-cols-2 "
         >
           <h2
-            className={`text-[2.5vw] leading-tight font-semibold   ${isInView ? "animate-when-visible animate-slide-left animation-delay-200" : "opacity-0"
+            className={`  ${isInView ? "animate-when-visible animate-slide-left animation-delay-200" : "opacity-0"
               }`}
           >
             Explore What's Shaping <br /> Digital Today
@@ -123,10 +123,10 @@ export default function BlogSection() {
                 className="h-auto w-[44.583vw] object-cover max-h-[459px]"
               />
             </div>
-            <h3 className="line-height-[44px] pt-2 text-[1.875vw] font-semibold text-[#101012]  [@media(min-width:1440px)]:pt-15 [@media(min-width:1520px)]:pt-17 [@media(min-width:1800px)]:pt-2">
+            <h3 className="pt-[2.292vw] text-[#101012] ">
               {blogs[0]?.title || "Blog Post"}
             </h3>
-            <p className="mt-2 text-lg text-[#101012] text-gray-700 line-clamp-1  "
+            <p className="mt-[0.885vw] p18 text-[#101012] line-clamp-1  "
               dangerouslySetInnerHTML={{ __html: blogs[0]?.desc ?? "" }}
             />
             <div className="mt-6 w-full border-t border-gray-300" />
@@ -155,9 +155,9 @@ export default function BlogSection() {
                     className="h-full w-full object-cover"
                   />
                 </div>
-                <div className="[@media(min-width:1800px)]:pb-0">
-                  <h4 className="line-height-[24px] text-xl font-semibold [@media(min-width:1440px)]:text-lg [@media(min-width:1520px)]:text-xl [@media(min-width:1820px)]:text-xl">{item.title}</h4>
-                  <p className="line-height-[24px] mt-1 line-clamp-2 text-base text-gray-700"
+                <div className="">
+                  <h4 className="">{item.title}</h4>
+                  <p className="p16 mt-[10px] line-clamp-2  text-gray-700"
                     dangerouslySetInnerHTML={{ __html: item.desc ?? "" }}
                   />
                 </div>

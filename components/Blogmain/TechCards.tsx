@@ -31,8 +31,8 @@ export default function TechCard({ icon, title, description, isSelected }: TechC
           <Image src={icon} alt={title} width={95} height={95} className="transition-transform duration-300" />
         </div>
 
-        <h3 className="text-3xl font-semibold mb-2 text-gray-900 group-hover:text-white transition-colors duration-300">{title}</h3>
-        <p className="text-xl font-normal text-gray-600 group-hover:text-gray-300 transition-colors duration-300">{description}</p>
+        <h3 className="  mb-2 text-gray-900 group-hover:text-white transition-colors duration-300">{title}</h3>
+        <p className="p20 font-normal text-gray-600 group-hover:text-gray-300 transition-colors duration-300">{description}</p>
       </div>
     </div>
   );
