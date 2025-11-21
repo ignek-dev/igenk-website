@@ -64,13 +64,13 @@ export const metadata: Metadata = {
 export default function AboutUs() {
     return (
         <div className="relative bg-[#0B0B0F] text-white">
-            <BackgroundLines className="relative flex flex-col justify-center bg-black text-white overflow-hidden">
-                <section className="relative top-[60px] w-full h-[670px] px-4 pt-20  pb-16 md:px-8 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
+            <BackgroundLines className="relative flex flex-col justify-center global-container items-start bg-black text-white overflow-hidden">
+                <section className="relative w-full pt-20  mb-[6.406vw]">
                     <div className="grid items-end mt-[64px] lg:grid-cols-2">
                         {/* Left Column */}
                         <div className="flex flex-col justify-center">
                             {/* Tag */}
-                            <div className="inline-flex items-center rounded-full border border-white/30 px-[29px] py-[10px] text-sm text-white/80 self-start">
+                            <div className="inline-flex items-center rounded-full border border-[0.052vw]  border-white px-[1.51vw] py-[0.521vw] text-[0.938vw] leading-[1.458vw] text-white self-start">
                                 About IGNEK
                             </div>
 
@@ -106,12 +106,12 @@ export default function AboutUs() {
 
 
             {/* About Company */}
-            <div className="bg-[#F8F8F8] pt-16 pb-[5.25rem] global-container">
+            <div className="bg-[#F8F8F8] pt-[3.333vw] pb-[4.479vw] global-container">
                 <div>
                     <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-12 lg:gap-16 items-start">
                         {/* Left Column - Main Heading */}
-                        <div className="lg:pt-0 w-[492px]">
-                            <h2 className="text-4xl lg:text-5xl font-bold text-black leading-tight">
+                        <div className="">
+                            <h2 className="text-[2.5vw] font-bold text-black leading-[3.125vw]">
                                 Why Companies
                                 <br />
                                 Trust IGNEK
@@ -121,39 +121,39 @@ export default function AboutUs() {
                         {/* Right Column - Content */}
                         <div className="space-y-8">
                             {/* Introductory Paragraph */}
-                            <p className="text-lg text-[#555555] leading-[1.875rem] pt-[30px] text-left mb-[20px]">
+                            <p className="text-[0.938vw] text-[#374151] leading-[1.563vw] pt-[1.563vw] text-left mb-[1.042vw]">
                                 Companies trust IGNEK for proven Liferay expertise, innovation, reliability, and transformative digital experience solutions.
                             </p>
 
                             {/* Section 1: Digital Excellence */}
-                            <div className="mt-[4rem]">
-                                <h3 className="text-3xl leading-[2.25rem] font-bold text-black">
+                            <div className="mt-[3.333vw]">
+                                <h3 className="text-[1.563vw] leading-[1.875vw] font-bold text-black">
                                     Digital Excellence
                                 </h3>
-                                <div className="border-gray-[0.063rem] border mt-[1.25rem] mb-[1.25rem]"></div>
-                                <p className="text-xl text-[#555555] leading-[1.875rem]">
+                                <div className="border-gray-[0.052vw] border mt-[1.042vw] mb-[1.042vw]"></div>
+                                <p className="text-[1.042vw] text-[#374151] leading-[1.563vw]">
                                     We craft scalable, high-performing solutions that empower businesses to embrace innovation and achieve measurable results.
                                 </p>
                             </div>
 
                             {/* Section 2: Future-Ready Solutions */}
-                            <div className="mt-[4rem]">
-                                <h3 className="text-3xl leading-[2.25rem] font-bold text-black">
+                            <div className="mt-[3.333vw]">
+                                <h3 className="text-[1.563vw] leading-[1.875vw] font-bold text-black">
                                     Future-Ready Solutions
                                 </h3>
-                                <div className="border-gray-[0.063rem] border mt-[1.25rem] mb-[1.25rem]"></div>
-                                <p className="text-xl text-[#555555] leading-[1.875rem]">
+                                <div className="border-gray-[0.052vw] border mt-[1.042vw] mb-[1.042vw]"></div>
+                                <p className="text-[1.042vw] text-[#374151] leading-[1.563vw]">
                                     From modern web applications to enterprise platforms, we design systems built for adaptability, growth, and long-term success.
                                 </p>
                             </div>
 
                             {/* Section 3: Collaborative Approach */}
-                            <div className="mt-[4rem]">
-                                <h3 className="text-3xl leading-[2.25rem] font-bold text-black">
+                            <div className="mt-[3.333vw]">
+                                <h3 className="text-[1.563vw] leading-[1.875vw] font-bold text-black">
                                     Collaborative Approach
                                 </h3>
-                                <div className="border-gray-[0.063rem] border mt-[1.25rem] mb-[1.25rem]"></div>
-                                <p className="text-xl text-[#555555] leading-[1.875rem]">
+                                <div className="border-gray-[0.052vw] border mt-[1.042vw] mb-[1.042vw]"></div>
+                                <p className="text-[1.042vw] text-[#374151] leading-[1.563vw]">
                                     Our team works hand-in-hand with clients, ensuring every project reflects their vision while meeting the highest standards of quality.
                                 </p>
                             </div>

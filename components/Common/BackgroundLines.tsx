@@ -88,7 +88,7 @@ export const BackgroundLines: React.FC<BackgroundLinesProps> = ({
       </div>
 
       {/* Foreground content */}
-      <div className="relative z-10 text-center px-4">{children}</div>
+      <div className="relative z-10 text-center">{children}</div>
     </div>
   );
 };
