@@ -113,7 +113,7 @@ export default function PortfolioList() {
 
     console.log(error)
     return (
-        <div className="flex flex-col md:flex-row gap-12 pt-0 pb-0 bg-[#F9FAF7]">
+        <div className="flex flex-col md:flex-row gap-[3.073vw] pt-0 pb-0 bg-[#F9FAF7]">
             <Filters
                 search={searchTerm}
                 setSearch={setSearchTerm}
@@ -146,11 +146,11 @@ export default function PortfolioList() {
                                                         }`}
                                                 >   
                                                     {/* Image */}
-                                                    <div className="md:w-1/2 w-[29.896vw] relative overflow-hidden rounded-xl h-[17.76vw]">
+                                                    <div className="relative overflow-hidden rounded-xl h-[17.76vw]">
                                                         <Image
                                                             src={imageUrl}
                                                             alt={item.title.rendered}
-                                                            className="object-fill w-full h-full rounded-xl transition-transform duration-500 group-hover:scale-105"
+                                                            className="object-fill h-full rounded-xl transition-transform duration-500 group-hover:scale-105 w-[29.896vw]"
                                                             height={341}
                                                             width={574}
                                                         />
@@ -173,7 +173,7 @@ export default function PortfolioList() {
                                                         />
 
                                                         <p
-                                                            className="text-[0.833vw] text-gray-600 leading-[1.25vw] line-clamp-3"
+                                                            className="text-[0.833vw] text-[#4B5563] leading-[1.25vw] line-clamp-3"
                                                             dangerouslySetInnerHTML={{ __html: item.excerpt.rendered }}
                                                         />
 
@@ -194,7 +194,7 @@ export default function PortfolioList() {
                                     })}
                                     {/* Pagination */}
                                     <div className="flex justify-left">
-                                        <ul className="flex items-center gap-2 text-[1.021vw] leading-[1.458vw] font-medium">
+                                        <ul className="flex items-center gap-2 text-[1.021vw] leading-[1.458vw]">
                                             {/* First */}
                                             <li
                                                 className={`px-4 py-2 border rounded-md cursor-pointer ${currentPage === 1
