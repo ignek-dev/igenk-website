@@ -17,7 +17,7 @@ export default function CareerPage() {
         <div className="mx-auto w-full px-4 pt-16 pb-16 md:px-8 global-container">
           <div className="grid items-end gap-10 lg:grid-cols-2">
             <div>
-              <div className="inline-flex items-center rounded-full border border-white/30 px-4 py-2 text-lg text-sm text-white/80">
+              <div className="inline-flex items-center rounded-full border border-white/30 px-[1.51vw] py-[0.521vw] text-lg text-sm text-white/80">
                 Career at IGNEK
               </div>
 
@@ -37,7 +37,7 @@ export default function CareerPage() {
                 </video>
               </div>
             </div>
-            <p className="max-w-xl pb-12 text-right text-[20px] leading-[30px] font-normal tracking-[0] text-white/80 sm:text-[20px] sm:leading-[28px] t md:justify-self-end">
+            <p className="max-w-xl pb-12 text-right text-[1.042vw] leading-[30px] font-normal tracking-[0] text-white/80  sm:leading-[28px] t md:justify-self-end">
               At IGNEK we value people and it include their growth, learning, and perks that help you succeed personally
               and professionally.
             </p>
@@ -47,10 +47,10 @@ export default function CareerPage() {
 
       {/* Perks & Benefits */}
       <section className="border-t border-white/20 bg-black text-white">
-        <div className="mx-auto w-full px-4 py-16 md:px-8 global-container">
+        <div className="mx-auto w-full px-4 py-[2.865vw] md:px-8 global-container">
           <div className="grid items-start gap-10 md:grid-cols-2">
-            <h2 className="text-2xl font-semibold sm:text-3xl md:text-5xl">More Than Just a Job</h2>
-            <p className="max-w-xl pb-12 text-right text-[20px] leading-[30px] font-normal tracking-[0] text-white/80 sm:text-[18px] sm:leading-[28px] md:justify-self-end">
+            <h2 className="text-[2.5vw] font-semibold leading-[3.125vw]">More Than Just a Job</h2>
+            <p className="max-w-xl pb-12 text-right text-[0.938vw] leading-[1.563vw] font-normal tracking-[0] text-white/80  md:justify-self-end">
               At IGNEK to enjoy perks that inspire—learning, flexibility, and a workplace that values your well-being.
             </p>
           </div>
@@ -59,7 +59,7 @@ export default function CareerPage() {
             {perks.map((p, idx) => (
               <div
                 key={`${p.title[0]}-${idx}`}
-                className={`border-r border-[#1F2937] p-8 text-center ${idx < perks.length - 5 ? "border-b border-[#1F2937]" : ""
+                className={`border-r flex flex-col gap-[0.99vw]  border-[#1F2937] p-8 text-center ${idx < perks.length - 5 ? "border-b border-[#1F2937]" : ""
                   } career-card`}
               >
                 {" "}
@@ -69,9 +69,9 @@ export default function CareerPage() {
                   width={188}
                   height={127}
                   className="mx-auto max-h-[127px] max-w-[188px] object-cover"
-                  style={{ height: "auto", width: "auto" }}
+                  style={{ height: "auto", width: "189px" }}
                 />
-                <div className="mt-4 text-2xl leading-tight font-semibold">
+                <div className="mt-[1.875vw] text-[1.25vw] leading-[1.667vw] font-semibold">
                   {p.title[0]}
                   <br />
                   {p.title[1]}
@@ -84,7 +84,7 @@ export default function CareerPage() {
 
       {/* Open Roles */}
       <section className="bg-[#F6F6F6] pb-0 text-black">
-        <div className="mx-auto w-full px-4 py-16 md:px-8 global-container">
+        <div className="mx-auto w-full px-4 py-[2.865vw] md:px-8 global-container">
           <div className="grid items-start gap-10 md:grid-cols-2">
             <h2 className="text-4xl leading-tight font-semibold tracking-[-0.02em] text-balance sm:text-3xl md:text-5xl">
               <span className="block">Apply at IGNEK</span>

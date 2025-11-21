@@ -48,7 +48,7 @@ export default function CalendlyButton({
 
   if (customButton && customButtonContent) {
     return (
-      <div onClick={handleOpenCalendly} className="inline-block cursor-pointer">
+      <div onClick={handleOpenCalendly} className="cursor-pointer">
         {customButtonContent}
       </div>
     );

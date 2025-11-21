@@ -51,13 +51,13 @@ const WhatMake: React.FC<WhatMakeProps> = ({ WhatMakeData, titleText1, titleText
 
           {/* Left Column */}
           <div className="flex-1 space-y-6 pt-1 md:sticky md:top-48 lg:top-36">
-            <h1 className="text-4xl md:text-5xl lg:text-[2.5rem] xl:text-[2.75rem] 2xl:text-[3rem] leading-tight font-bold tracking-tight">
+            <h1 className="text-[2.5vw] mb-7  leading-tight font-bold tracking-tight">
               {titleText1}
               <br />
               {titleText2}
             </h1>
 
-            <p className="text-base md:text-lg leading-7 max-w-[658px] text-gray-500">
+            <p className="text-[0.938vw] leading-7 max-w-[658px] text-gray-500">
               {subContext}
             </p>
           </div>
@@ -76,10 +76,10 @@ const WhatMake: React.FC<WhatMakeProps> = ({ WhatMakeData, titleText1, titleText
                       }`}
                     style={{ top: "200px" }}
                   >
-                    <div className="whatsmake-card flex w-full flex-col justify-center rounded-2xl border border-[#E5E7EB] bg-white p-9 pt-6 backdrop-blur-md md:min-h-[196px]">
-                      <h3 className="mb-3 text-2xl leading-tight font-semibold">{item.title}</h3>
-                      <div className="mb-4 h-[1.5px] bg-[#E5E7EB]" />
-                      <p className="text-lg leading-relaxed">{item.desc}</p>
+                    <div className="whatsmake-card flex w-full flex-col justify-center rounded-[1.563vw] border border-[#E5E7EB] bg-white py-10 px-[30px] backdrop-blur-md md:min-h-[196px]">
+                      <h3 className="mb-[20] text-[1.563vw] leading-tight font-semibold">{item.title}</h3>
+                      <div className=" h-[1.5px] bg-[#E5E7EB]" />
+                      <p className="text-[0.938vw] mt-[20px] leading-relaxed">{item.desc}</p>
                     </div>
                   </div>
                 )
