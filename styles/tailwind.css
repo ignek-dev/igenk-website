@@ -93,8 +93,17 @@ h4 {
   letter-spacing: 0%;
 }
 
+.p24 {
+  font-family: Poppins;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.25vw;
+  line-height: 1.667vw;
+  letter-spacing: 0%;
+}
+
 .p20 {
-  font-family: Plus Jakarta Sans;
+  font-family: Poppins;
   font-weight: 400;
   font-style: regular;
   font-size: 1.041vw;
@@ -109,17 +118,23 @@ h4 {
   font-size: 0.9375vw;
   line-height: 1.458vw;
   letter-spacing: 0%;
-  text-align: right;
 }
 
 .p16 {
-  font-family: Plus Jakarta Sans;
+  font-family: Poppins;
   font-weight: 400;
   font-style: regular;
   font-size: 0.833vw;
   line-height: 1.25vw;
   letter-spacing: 0%;
   vertical-align: middle;
+}
+
+.banner-tab {
+  border: 1px solid white;
+  border-radius: 2.083vw;
+  padding: 0.521vw 1.51vw;
+  width: fit-content;
 }
 
 /* Default → 1920px */
