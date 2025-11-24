@@ -91,11 +91,11 @@ export default function BlogSection() {
     return <div className="text-black">Loading.......</div>
   return (
     <section className="bg-white text-black">
-      <div className="mx-auto w-full px-4 py-[64px] md:px-8 md:py-[64px] lg:py-[64px] global-container ">
+      <div className="py-12 md:py-16 global-container">
         <div className="grid items-end gap-10 md:grid-cols-2 "
         >
           <h2
-            className={`text-[2.5vw] leading-tight font-semibold   ${isInView ? "animate-when-visible animate-slide-left animation-delay-200" : "opacity-0"
+            className={`${isInView ? "animate-when-visible animate-slide-left animation-delay-200" : "opacity-0"
               }`}
           >
             Explore What's Shaping <br /> Digital Today
@@ -129,7 +129,7 @@ export default function BlogSection() {
             <p className="mt-2 text-lg text-[#101012] text-gray-700 line-clamp-1  "
               dangerouslySetInnerHTML={{ __html: blogs[0]?.desc ?? "" }}
             />
-            <div className="mt-6 w-full border-t border-gray-300" />
+            <div className="mt-3 w-full border-t border-gray-300" />
           </div>
 
           {/* Right: three small cards */}
@@ -142,11 +142,11 @@ export default function BlogSection() {
               <div
                 key={item.id}
                 className={`grid grid-cols-[260px_1fr] items-center gap-5 cursor-pointer 
-                 ${index == blogs?.length - 2 ? "mb-0" : "mb-6"}
+                 ${index == blogs?.length - 2 ? "mb-0" : "mb-8"}
                   }`}
                 onClick={() => router.push(`/blog/${item?.slug}`)}
               >
-                <div className="overflow-hidden rounded-lg bg-gray-100">
+                <div className="overflow-hidden rounded-lg bg-gray-100 mb-2">
                   <Image
                     src={item.image}
                     alt={item.title}
@@ -156,7 +156,7 @@ export default function BlogSection() {
                   />
                 </div>
                 <div className="[@media(min-width:1800px)]:pb-0">
-                  <h4 className="line-height-[24px] text-xl font-semibold [@media(min-width:1440px)]:text-lg [@media(min-width:1520px)]:text-xl [@media(min-width:1820px)]:text-xl">{item.title}</h4>
+                  <p className="line-height-[24px] text-[1.25vw] font-semibold">{item.title}</p>
                   <p className="line-height-[24px] mt-1 line-clamp-2 text-base text-gray-700"
                     dangerouslySetInnerHTML={{ __html: item.desc ?? "" }}
                   />

@@ -37,17 +37,17 @@ const Achievements = () => {
 
   return (
     <section ref={sectionRef} className="overflow-x-hidden bg-black py-16 text-white">
-      <div className="mx-auto grid w-full items-start gap-16 px-4 md:px-6 lg:grid-cols-2 lg:gap-16 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
+      <div className="global-container grid items-start gap-16 lg:grid-cols-2 lg:gap-16">
         {/* Left Column: Title, Description, Button */}
         <div
           className={`flex flex-col items-start ${isInView ? "animate-when-visible animate-slide-left" : "opacity-0"}`}
         >
-          <h2 className="mb-8 max-w-lg text-5xl leading-tight font-bold">
+          <h2 className="mb-8 max-w-[658px]">
             Delivering Impact,
             <br />
             Defined by Liferay Success
           </h2>
-          <p className="mb-7 max-w-md text-lg text-gray-300">
+          <p className="mb-7 max-w-[588px] text-lg text-gray-300">
             We design and develop digital solutions that adapt and grow with your business needs. Our platforms are built to deliver seamless performance, exceptional user experiences, and long-term scalability.
           </p>
           <ScheduleMeetingButton isFullWidth={false} btnName="Schedule Meeting" />

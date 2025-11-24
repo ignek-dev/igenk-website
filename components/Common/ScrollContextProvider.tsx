@@ -27,7 +27,7 @@ export const ScrollContextProvider = ({ children }: { children: ReactNode }) => 
 
   return (
     // This div creates the "scroll runway" for the animation
-    <div ref={scrollContainerRef} className="relative h-[400vh] bg-black">
+    <div ref={scrollContainerRef} className="relative bg-black">
       {/* The scroll progress is provided to any children */}
       <ScrollContext.Provider value={scrollYProgress}>{children}</ScrollContext.Provider>
     </div>
