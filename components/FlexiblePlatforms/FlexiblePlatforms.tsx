@@ -36,7 +36,7 @@ const FlexiblePlatforms = () => {
             Flexible Platforms.
             <span className="block">Scalable Experiences.</span>
           </h2>
-          <p className="mt-6 text-lg text-gray-600">
+          <p className="mt-6 p18 text-gray-600">
             We specialize in Liferay DXP framework development, offering expert Liferay Consulting, Liferay Implementation, and Liferay Portal Development Services that help enterprises create connected, scalable, and high-performing digital ecosystems built for the future. Our team ensures seamless integration, optimized performance, and personalized user experiences that accelerate digital transformation and business growth.
           </p>
         </div>
@@ -63,7 +63,7 @@ const FlexiblePlatforms = () => {
           {/* 3. Text Overlay (Visible on Hover) */}
           <div className="absolute inset-0 flex flex-col justify-end bg-black/40 p-6 text-white opacity-0 transition-opacity duration-500 group-hover:opacity-100 md:p-10">
             <h3 className="text-4xl font-bold">{platformsData[0]?.platformName}</h3>
-            <div className="mt-4 max-w-2xl text-lg leading-relaxed text-gray-200">
+            <div className="mt-4 max-w-2xl p18 leading-relaxed text-gray-200">
               {platformsData[0]?.hoverDescription}
             </div>
           </div>

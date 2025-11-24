@@ -35,12 +35,12 @@ const SuccessStoryCard: React.FC<{ story: Story }> = ({ story }) => {
         {/* Right Column: Content */}
         <div>
           <span
-            className="mb-4 inline-block rounded-full border border-[#00979E] bg-white px-4 py-1.5 text-sm font-semibold text-gray-800"
+            className="mb-4 inline-block rounded-full border border-[#00979E] bg-white px-4 py-1.5 text-[0.729vw] font-semibold text-gray-800"
             style={{ boxShadow: "0px 0px 12px -2px #00979E" }}
           >
             {story.tag}
           </span>
-          <h3 className="mb-4 text-3xl font-bold text-gray-900">{story.title}</h3>
+          <h3 className="mb-4 text-[1.563vw] font-bold text-gray-900">{story.title}</h3>
           <p className="mb-6 leading-relaxed text-gray-600 line-clamp-3"
             dangerouslySetInnerHTML={{ __html: story.description }}
           />
@@ -51,7 +51,7 @@ const SuccessStoryCard: React.FC<{ story: Story }> = ({ story }) => {
           >
             Read case study
           </Link>
-          <p className="mb-4 text-[20px] font-semibold text-gray-800">Provided Services</p>
+          <p className="mb-4 text-[1.041vw] font-semibold text-gray-800">Provided Services</p>
           <div className="flex flex-wrap gap-3">
             {commonProvidedServices.map((service, idx) => (
               <TechnologyChip key={idx} iconSrc={service.iconSrc} name={service.name} />

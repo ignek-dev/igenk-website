@@ -13,7 +13,7 @@ const CapabilityCard: React.FC<CapabilityCardProps> = ({ iconSrc, title, descrip
       {/* Icon and Title */}
       <div className="mb-3 flex items-center space-x-3">
         <Image src={iconSrc} alt={`${title} icon`} width={48} height={48} className="object-contain" />
-        <p className="text-[32px] font-semibold text-white whitespace-pre [@media(min-width:1440px)]:text-2xl  [@media(min-width:1800px)]:text-3xl">{title}</p>
+        <p className="text-[1.667vw] font-semibold text-white whitespace-pre">{title}</p>
       </div>
 
       {/* "Progress Bar" */}
@@ -29,7 +29,7 @@ const CapabilityCard: React.FC<CapabilityCardProps> = ({ iconSrc, title, descrip
         Your browser does not support the video tag.
       </video>
       {/* Description */}
-      <p className="text-base leading-relaxed text-gray-300">{description}</p>
+      <p className="p16 leading-relaxed text-gray-300">{description}</p>
     </div>
   )
 }

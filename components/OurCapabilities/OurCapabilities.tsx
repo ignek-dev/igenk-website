@@ -90,7 +90,7 @@ const OurCapabilities: React.FC = () => {
             Our Capabilities
           </h2>
           <p
-            className={`max-w-3xl text-right text-lg text-gray-300 ${
+            className={`max-w-3xl text-right p18 text-gray-300 ${
               isInView ? "animate-when-visible animate-slide-top" : "opacity-0"
             }`}
           >

@@ -19,7 +19,7 @@ const AccordionItem: React.FC<AccordionItemProps> = ({ title, content }) => {
         className="flex w-full items-center justify-between py-6 text-left text-xl font-semibold text-white focus:outline-none"
         onClick={() => setIsOpen(!isOpen)}
       >
-        <span className="text-2xl leading-[36px]">{title}</span>
+        <span className="p24 leading-[36px]">{title}</span>
         <motion.span
           initial={false}
           animate={{ rotate: isOpen ? 0 : 45}}
@@ -40,7 +40,7 @@ const AccordionItem: React.FC<AccordionItemProps> = ({ title, content }) => {
             transition={{ duration: 0.3, ease: "easeOut" }}
             className="overflow-hidden"
           >
-            <div className="pr-8 pb-6 text-[16px] leading-[25px] text-gray-400">{content}</div>
+            <div className="pr-8 pb-6 p16 leading-[25px] text-gray-400">{content}</div>
           </motion.div>
         )}
       </AnimatePresence>
