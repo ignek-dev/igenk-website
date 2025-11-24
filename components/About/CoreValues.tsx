@@ -42,57 +42,55 @@ const VALUES: CoreValue[] = [
 const CoreValues = () => {
 
     return (
-        <section className="bg-[#F5F5F6] mx-h-[1078px] relative pb-[64px] global-container">
+        <section className="bg-[#F5F5F6] mx-h-[1078px]  py-[3.333vw] relative pb-[64px] global-container">
 
     {/* Heading */}
-    <div className="text-center">
-        <h2 className="font-poppins font-bold text-5xl leading-[3.75rem] tracking-[-0.02em] text-[#000000] pt-16">
+    <div className="flex flex-col items-center">
+        <h2 className="text-[#000000]">
             Our Core Values
         </h2>
 
-        <p className="font-poppins font-normal text-lg leading-[1.875rem] text-[#4B5563] mt-7 mb-[38px] max-w-[720px] mx-auto">
+        <p className="text-[0.938vw] leading-[1.563vw] text-[#4B5563] pt-[1.458vw] w-[40.781vw] text-center">
             Our commitment to integrity, innovation, and teamwork drives us to deliver exceptional Liferay solutions globally.
         </p>
     </div>
 
     {/* Values Section */}
-    <div className=" mt-16">
+    <div className=" mt-[1.979vw]">
         {VALUES.map((v, index) => (
             <div
                 key={index}
                 className="
-                    group  h-[191px] 
-                    rounded-[4px] bg-[#F5F5F6] 
-                    transition-colors duration-300 hover:bg-white
+                    group  h-[9.948vw] pl-[1.979vw] pr-[2.188vw]
+                    bg-[#F5F5F6] pr-[2.188vw]
+                    duration-300 hover:bg-white
                 "
             >
                 <div className="relative flex h-full items-center px-0">
                     {/* Number */}
-                    <span
-                        className="inline-block h-[36px] w-[41px] text-[30px] font-medium leading-[36px] text-[#0B0B0F]"
-                        style={{ fontFamily: "'Plus Jakarta Sans', ui-sans-serif, system-ui" }}
+                    <p
+                        className="text-[1.563vw] text-[#000000] leading-[1.875vw] font-medium"
                     >
                         {v.number}
-                    </span>
+                    </p>
 
                     {/* Title */}
-                    <h3
+                    <h2
                         className="
-                            truncate pl-[132px] text-[48px] font-normal 
-                            leading-[72px] tracking-[-0.02em] text-[#0B0B0F] 
+                            truncate pl-[132px] !leading-[3.75vw] !font-normal
+                            text-[#000000] 
                             transition-transform duration-300 
-                            group-hover:translate-x-[150px]
+                            group-hover:translate-x-[8.906vw]
+                            group-hover:pl-[4.135vw]
                         "
-                        style={{ fontFamily: "Poppins, ui-sans-serif, system-ui" }}
                     >
                         {v.title}
-                    </h3>
+                    </h2>
 
                     {/* Description */}
                     <div className="ml-auto">
                         <p
-                            className="w-[769px] text-right text-[#4B5563] font-normal text-[24px] leading-[32px]"
-                            style={{ fontFamily: "Poppins, ui-sans-serif, system-ui" }}
+                            className="w-[38.177vw] text-right text-[#4B5563] font-normal text-[1.25vw] leading-[1.667vw]"
                         >
                             {v.description}
                         </p>
@@ -101,9 +99,9 @@ const CoreValues = () => {
                     {/* Hover image */}
                     <div
                         className="
-                            pointer-events-none absolute left-[211px] top-1/2 z-10 
-                            h-[112px] w-[112px] -translate-y-1/2 -translate-x-2 
-                            overflow-hidden rounded-[6px] opacity-0 
+                            pointer-events-none absolute left-[6.875vw] top-1/2 z-10 
+                            h-[6.25vw] w-[6.25vw] -translate-y-1/2 -translate-x-2 
+                            overflow-hidden rounded-[0.313vw] opacity-0 
                             transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100
                         "
                     >

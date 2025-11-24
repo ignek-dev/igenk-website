@@ -117,30 +117,30 @@ export default function LiferayPerformanceTuningPage() {
     <main className="pb-0">
       <section className="relative bg-black text-white">
         <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_10%_0%,#0E7BF8_0%,#00979E_40%,transparent_65%)] opacity-25" />
-        <div className="mx-auto w-full px-4 pt-12 pb-16 md:px-8 md:pt-16 md:pb-16 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
+        <div className="mx-auto w-full   pb-16  pt-[7.865vw] global-container">
           <div className="relative grid items-start gap-10 md:grid-cols-2">
             <div className="">
-              <div className="inline-flex items-center rounded-full border border-white/30 px-4 py-2 text-lg text-white">
+              <div className="p18 banner-tab">
                 Liferay Services
               </div>
-              <h1 className="mt-9 text-4xl leading-tight font-semibold sm:text-5xl md:text-5xl">
+              <h1 className="mt-[2.552vw] ">
                 Liferay
                 <br />
                 <span className="block">Performance Tuning</span>
               </h1>
             </div>
-            <p className="absolute bottom-0 max-w-xl text-right text-base text-white sm:text-base md:mt-16 md:justify-self-end">
+            <p className="absolute bottom-0 max-w-xl p18 mt-[3.177vw] md:justify-self-end">
               Optimize your Liferay Portal with specialized Liferay Performance Tuning, improving speed, stability, and
               resource efficiency for superior user experience.
             </p>
           </div>
 
           {/* Feature tabs */}
-          <div className="mt-15 flex flex-wrap gap-6 [@media(min-width:1500px)]:gap-8 [@media(min-width:1800px)]:gap-5">
+          <div className="mt-15 flex flex-wrap gap-[0.521vw] ">
             {featureTabs.map((label, index) => (
               <span
                 key={index}
-                className="inline-flex items-center rounded-full border border-white/30 py-5 text-lg text-white transition-colors hover:border-white hover:text-white [@media(min-width:1440px)]:px-11 [@media(min-width:1500px)]:px-13 [@media(min-width:1800px)]:px-13"
+                className="inline-flex items-center rounded-full border border-white/30 py-[0.833vw] px-[1.458vw] p20 text-white transition-colors hover:border-white hover:text-white "
               >
                 {label}
               </span>

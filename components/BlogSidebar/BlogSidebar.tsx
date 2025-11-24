@@ -147,46 +147,46 @@ const BlogSidebar = ({ categoryId }: BlogSidebarProps) => {
 
                     ))}
                 </div>
-                 <h2 className="text-black font-medium text-[2rem] mt-9 ">Related Blogs</h2>
+                <h2 className="text-black font-medium text-[2rem] mt-9 ">Related Blogs</h2>
             </div>
 
             {/* --- Related Blog Cards --- */}
-           <div className="grid gap-[31.5px] bg-white">
-  {blogs?.map((blog, index) => (
-    <div key={blog?.id}>
-      <div className="flex bg-white items-center overflow-hidden transition">
-        
-        {/* Image */}
-        <Image
-          src={blog?.image}
-          alt="Blog thumbnail"
-          width={200}
-          height={130}
-          className="w-full max-w-[200px] rounded-[15px] h-[130px]"
-        />
+            <div className="grid gap-[31.5px] bg-white">
+                {blogs?.map((blog, index) => (
+                    <div key={blog?.id}>
+                        <div className="flex bg-white items-center overflow-hidden transition">
 
-        {/* Text Container */}
-        <div className="flex flex-col gap-2  justify-center ml-[14px] flex-1 h-[82px]">
-  <h3 className="text-lg w-[297px] mt-[11px] font-medium text-[#101012] mb-2 leading-snug">
-    {blog?.title}
-  </h3>
+                            {/* Image */}
+                            <Image
+                                src={blog?.image}
+                                alt="Blog thumbnail"
+                                width={200}
+                                height={130}
+                                className="w-full max-w-[200px] rounded-[15px] h-[130px]"
+                            />
 
-  <div
-    onClick={() => router.push(`/blog/${blog.slug}`)}
-    className="font-medium flex items-center gap-2 cursor-pointer text-[#4A3AFF] text-[16px] leading-[24px] mt-auto"
-  >
-    Read Now <ArrowRight size={20} />
-  </div>
-</div>
+                            {/* Text Container */}
+                            <div className="flex flex-col gap-2  justify-center ml-[14px] flex-1 h-[82px]">
+                                <div className="!p18 w-[297px] mt-[11px] text-[#101012] mb-2 leading-snug">
+                                    {blog?.title}
+                                </div>
 
-      </div>
+                                <div
+                                    onClick={() => router.push(`/blog/${blog.slug}`)}
+                                    className="font-medium flex items-center gap-2 cursor-pointer text-[#4A3AFF] text-[16px] leading-[24px] mt-auto"
+                                >
+                                    Read Now <ArrowRight size={20} />
+                                </div>
+                            </div>
 
-      {index !== blogs.length - 1 && (
-        <hr className="border-gray-300 mt-[31.5px]" />
-      )}
-    </div>
-  ))}
-</div>
+                        </div>
+
+                        {index !== blogs.length - 1 && (
+                            <hr className="border-gray-300 mt-[31.5px]" />
+                        )}
+                    </div>
+                ))}
+            </div>
 
 
             {/* --- Author Card --- */}

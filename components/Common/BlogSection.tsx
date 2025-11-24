@@ -95,7 +95,7 @@ export default function BlogSection() {
         <div className="grid items-end gap-10 md:grid-cols-2 "
         >
           <h2
-            className={`${isInView ? "animate-when-visible animate-slide-left animation-delay-200" : "opacity-0"
+            className={`  ${isInView ? "animate-when-visible animate-slide-left animation-delay-200" : "opacity-0"
               }`}
           >
             Explore What's Shaping <br /> Digital Today
@@ -123,10 +123,10 @@ export default function BlogSection() {
                 className="h-auto w-[44.583vw] object-cover max-h-[459px]"
               />
             </div>
-            <h3 className="line-height-[44px] pt-2 text-[1.875vw] font-semibold text-[#101012]  [@media(min-width:1440px)]:pt-15 [@media(min-width:1520px)]:pt-17 [@media(min-width:1800px)]:pt-2">
+            <h3 className="pt-[2.292vw] text-[#101012] ">
               {blogs[0]?.title || "Blog Post"}
             </h3>
-            <p className="mt-2 text-lg text-[#101012] text-gray-700 line-clamp-1  "
+            <p className="mt-[0.885vw] p18 text-[#101012] line-clamp-1  "
               dangerouslySetInnerHTML={{ __html: blogs[0]?.desc ?? "" }}
             />
             <div className="mt-3 w-full border-t border-gray-300" />

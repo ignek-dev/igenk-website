@@ -32,7 +32,8 @@ const metadata: Metadata = {
   openGraph: {
     url: "https://ignek.com/services/liferay-consulting-and-implementation-services",
     title: "Liferay Consulting Company - IGNEK",
-    description: "Get expert guidance and seamless integration with our Liferay Consulting & Implementation Services. Elevate your digital platform effortlessly.",
+    description:
+      "Get expert guidance and seamless integration with our Liferay Consulting & Implementation Services. Elevate your digital platform effortlessly.",
     images: [
       {
         width: 1200,
@@ -159,19 +160,19 @@ export default function LiferayConsultationPage() {
       {/* Hero */}
       <section className="relative bg-[#0B63CE] text-white">
         <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_10%_0%,#0E7BF8_0%,#00979E_40%,transparent_65%)] opacity-25" />
-        <div className="mx-auto w-full px-4 pt-40 pb-16 md:px-8 md:pt-48 md:pb-20 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
+        <div className="global-container pt-40 pb-16 md:pt-48 md:pb-20">
           <div className="grid grid-cols-1 items-center gap-6 md:grid-cols-5">
             {/* Left Side: Text Content */}
             <div className="col-span-3">
-              <div className="inline-flex w-fit items-center rounded-full border border-white px-8.5 py-[8.8px] text-lg font-normal">
+              <div className="p18 banner-tab">
                 Liferay Services
               </div>
-              <h1 className="line-height-[88px] letter-spacing-[-0.02em] mt-13 text-7xl leading-tight font-bold sm:text-5xl md:text-7xl [@media(min-width:1440px)]:text-5xl [@media(min-width:1800px)]:text-6xl">
+              <h1 className="mt-[2.031vw]">
                 Liferay Consulting &
                 <br />
                 <span className="block">Implementation Services</span>
               </h1>
-              <p className="line-height-[28px] mt-10 max-w-xl text-lg font-normal">
+              <p className="p18 mt-[2.813vw] max-w-xl">
                 Optimize your digital ecosystem through tailored Liferay Consulting for seamless implementation,
                 customization, and dedicated support.
               </p>
@@ -211,7 +212,7 @@ export default function LiferayConsultationPage() {
 
       {/* Digital Edge Section */}
       <section className="bg-[#F9FAFB] py-[64px]">
-        <div className="mx-auto flex flex-col items-center justify-between px-4 md:flex-row md:px-8 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
+        <div className="global-container flex items-center">
           {/* Left Content */}
           <div className="flex flex-1 flex-col justify-between gap-25">
             {/* Stats Row */}
@@ -219,12 +220,12 @@ export default function LiferayConsultationPage() {
               {/* Stat 1 */}
               <div className="flex gap-3">
                 <p className="text-5xl font-bold text-gray-900">30%</p>
-                <p className="text-lg leading-tight text-gray-600">Project Success</p>
+                <p className="p20 text-gray-600">Project Success</p>
               </div>
               {/* Stat 2 */}
               <div className="flex gap-3">
                 <p className="text-5xl font-bold text-gray-900">20%</p>
-                <p className="text-lg leading-tight whitespace-nowrap text-gray-600">
+                <p className="p20 whitespace-nowrap text-gray-600">
                   Cost <br />
                   Efficiency
                 </p>
@@ -232,16 +233,16 @@ export default function LiferayConsultationPage() {
               {/* Stat 3 */}
               <div className="flex gap-3">
                 <p className="text-5xl font-bold text-gray-900">10%</p>
-                <p className="text-lg leading-tight text-gray-600">Revenue Growth</p>
+                <p className="p20 text-gray-600">Revenue Growth</p>
               </div>
             </div>
 
             {/* Heading and Description Block - Positioned below with a top margin */}
             <div className="mt-24">
-              <h2 className="text-5xl leading-[52px] font-bold text-gray-900">
+              <h2 className="text-gray-900">
                 Your Digital Edge for Transformation Always Evolving with Liferay Consulting
               </h2>
-              <p className="mt-6 max-w-[500px] text-xl leading-[26px] text-gray-600">
+              <p className="p20 mt-[1.927vw] max-w-[500px] text-gray-600">
                 Simplifying complexity and driving transformation with expert Liferay Consulting services.
               </p>
             </div>
@@ -277,15 +278,15 @@ export default function LiferayConsultationPage() {
 
       {/* Consulting Services */}
       <section className="bg-black py-[64px] text-white lg:py-[64px]">
-        <div className="mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
+        <div className="global-container">
           <div className="flex flex-col gap-16 md:flex-row md:items-start md:justify-between">
             {/* Left Column */}
             <div className="max-w-[520px] flex-1 space-y-[26px] pt-[4px] md:sticky md:top-24">
-              <h1 className="text-5xl leading-[64px] font-bold tracking-[-0.02em] text-white">
+              <h2 className="text-white">
                 Our Liferay
                 <span className="block">Consulting Services</span>
-              </h1>
-              <p className="max-w-[520px] text-[18px] leading-[28px] text-[#D1D5DB]">
+              </h2>
+              <p className="p18 max-w-[520px] text-[#D1D5DB]">
                 Our Liferay Consulting Services help you maximize the potential of the Liferay platform. From
                 development to support, we’re here to ensure you create top-notch digital experiences for your users.
               </p>
@@ -304,14 +305,15 @@ export default function LiferayConsultationPage() {
                     <div
                       ref={ref as React.RefObject<HTMLDivElement>}
                       key={index}
-                      className={`sticky mb-16 transition-opacity duration-500 ${isInView ? "animate-stack-in" : "opacity-0"
-                        }`}
+                      className={`sticky mb-16 transition-opacity duration-500 ${
+                        isInView ? "animate-stack-in" : "opacity-0"
+                      }`}
                       style={{ top: `calc(6rem + ${index * 4}rem)` }}
                     >
                       <div className="flex w-full flex-col justify-center rounded-2xl border border-gray-700 bg-[#0C0C0C] p-9 pt-6 backdrop-blur-md transition-all duration-300 hover:border-[#00AEEF] md:min-h-[196px]">
-                        <h3 className="mb-4 text-2xl leading-tight font-semibold text-white">{item.title}</h3>
+                        <h4 className="mb-4 text-white">{item.title}</h4>
                         <div className="mb-4 h-[1px] bg-gray-700" />
-                        <p className="text-lg leading-relaxed text-gray-300">{item.desc}</p>
+                        <p className="p16 text-gray-300">{item.desc}</p>
                       </div>
                     </div>
                   )
@@ -324,17 +326,17 @@ export default function LiferayConsultationPage() {
 
       {/* Liferay Solutions */}
       <section className="bg-white py-[64px]">
-        <div className="mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
+        <div className="global-container">
           {/* Section Header */}
           <div className="grid grid-cols-1 items-start gap-8 md:grid-cols-2">
             <div>
-              <h2 className="text-5xl leading-tight font-bold tracking-tight text-black">
+              <h2 className="text-black">
                 We Provide Top-Notch
                 <span className="block">Liferay Solutions</span>
               </h2>
             </div>
             <div className="flex h-full items-end">
-              <p className="text-xl leading-relaxed text-gray-500 md:text-right">
+              <p className="p18 text-gray-500">
                 We deliver top-quality Liferay Consulting Services. From setup to support, we’ve got you covered for all
                 your digital needs.
               </p>
@@ -353,18 +355,19 @@ export default function LiferayConsultationPage() {
                   key={solution.id}
                   onMouseEnter={() => setHoveredCard(solution.id)}
                   onMouseLeave={() => setHoveredCard(null)}
-                  className={`flex h-[340px] items-center rounded-lg p-8 transition-all duration-300 ease-in-out ${isCurrentPrimary
+                  className={`flex h-[340px] items-center rounded-lg p-8 transition-all duration-300 ease-in-out ${
+                    isCurrentPrimary
                       ? "w-full flex-grow-[2] basis-0 flex-row justify-between gap-8 bg-[#0B63CE] text-white [@media(min-width:1440px)]:flex-grow-[3] [@media(min-width:1800px)]:flex-grow-[2]"
                       : "w-full flex-grow basis-0 flex-col justify-center border border-gray-200 bg-white text-gray-800 shadow-sm"
-                    } `}
+                  } `}
                 >
                   {isCurrentPrimary ? (
                     // Layout for the active (primary) card
                     <>
                       <div className="text-left">
-                        <h3 className="text-3xl font-semibold">{solution.title}</h3>
+                        <h4>{solution.title}</h4>
                         <hr className="my-7 max-w-[120px] border-t border-white/50" />
-                        <p className="text-base leading-relaxed">{solution.description}</p>
+                        <p className="p18">{solution.description}</p>
                       </div>
                       <Image
                         src={solution.icon}
@@ -384,7 +387,7 @@ export default function LiferayConsultationPage() {
                         height={120}
                         className="h-30 w-30 object-contain transition-all duration-300 ease-in-out"
                       />
-                      <h3 className="mt-6 text-center text-xl font-semibold">{solution.title}</h3>
+                      <h4 className="mt-6 text-center">{solution.title}</h4>
                     </>
                   )}
                 </div>
@@ -396,13 +399,11 @@ export default function LiferayConsultationPage() {
 
       {/* Why Liferay Can Be Best Choice For Your Project ? */}
       <section className="bg-black py-[64px] text-white">
-        <div className="mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
+        <div className="global-container">
           {/* Section Header */}
           <div className="w-full">
-            <h2 className="text-5xl leading-tight font-bold tracking-tight md:whitespace-pre">
-              Why Liferay Can Be Best Choice For Your Project ?
-            </h2>
-            <p className="mt-4 text-lg text-white/80">
+            <h2>Why Liferay Can Be Best Choice For Your Project ?</h2>
+            <p className="p18 mt-4 text-white/80">
               Explore our expertise in Liferay! We’re experienced and ready to help with everything, from building
               user-friendly interfaces to managing backend systems. Whether you need a custom portal, smooth
               integration, or ongoing support, we’ve got you covered. Partner with us today and make the most of Liferay
@@ -422,12 +423,12 @@ export default function LiferayConsultationPage() {
 
                   {/* Title */}
                   <div className="w-full flex-shrink-0 md:w-[235px]">
-                    <h3 className="text-3xl font-semibold">{feature.title}</h3>
+                    <h4>{feature.title}</h4>
                   </div>
 
                   {/* Description */}
                   <div className="flex-1">
-                    <p className="text-lg leading-relaxed text-white">{feature.description}</p>
+                    <p className="p18 text-white">{feature.description}</p>
                   </div>
                 </div>
                 {/* Divider */}
@@ -440,16 +441,14 @@ export default function LiferayConsultationPage() {
 
       {/* Industries We Serve Section */}
       <section className="bg-white py-[64px] text-black">
-        <div className="mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
+        <div className="global-container">
           {/* Section Header */}
           <div className="mb-16 grid grid-cols-1 items-end gap-8 md:grid-cols-2">
             <div>
-              <h2 className="letter-spacing-[-0.02em] line-height-[60px] text-5xl leading-tight font-semibold text-black">
-                Industries We Serve
-              </h2>
+              <h2 className="text-black">Industries We Serve</h2>
             </div>
             <div className="flex h-full items-end justify-end">
-              <p className="line-height-[30px] w-full text-right text-xl font-normal text-gray-600">
+              <p className="p18 w-full text-right text-gray-600">
                 We help every industry grow digitally through tailored Liferay Consulting and innovative technology
                 solutions.
               </p>
@@ -467,14 +466,12 @@ export default function LiferayConsultationPage() {
               >
                 {/* Column 1: Title */}
                 <div className="w-1/3 flex-shrink-0">
-                  <h3 className="line-height-[36px] text-3xl font-semibold text-black transition-colors duration-300 group-hover:text-white">
-                    {industry.title}
-                  </h3>
+                  <h4 className="text-black transition-colors duration-300 group-hover:text-white">{industry.title}</h4>
                 </div>
 
                 {/* Column 2: Description */}
                 <div className="flex-1 pr-8">
-                  <p className="text-rgb(0, 0, 0, 0.85) line-height-[30px] max-w-[450px] text-lg transition-colors duration-300 group-hover:text-white/80">
+                  <p className="text-rgb(0, 0, 0, 0.85) p20 max-w-[450px] transition-colors duration-300 group-hover:text-white/80">
                     {industry.description}
                   </p>
                   <div
@@ -523,17 +520,17 @@ export default function LiferayConsultationPage() {
 
       {/* Our Liferay Consulting Services Section */}
       <section className="bg-black py-[64px] text-white">
-        <div className="mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
+        <div className="global-container">
           {/* Section Header */}
           <div className="grid grid-cols-1 items-end gap-8 pb-16 md:grid-cols-2">
             <div>
-              <h2 className="text-5xl leading-tight font-bold tracking-tight">
+              <h2>
                 Our Liferay
                 <span className="block">Consulting Services</span>
               </h2>
             </div>
             <div className="flex h-full items-end justify-end">
-              <p className="w-full text-right text-xl text-white/80">
+              <p className="p18 w-full text-right text-white/80">
                 Through expert Liferay Consulting, we design and implement secure, flexible, and user-centric digital
                 platforms for every business need.
               </p>
@@ -546,10 +543,11 @@ export default function LiferayConsultationPage() {
               <button
                 key={tab}
                 onClick={() => setActiveServiceTab(tab)}
-                className={`flex-1 cursor-pointer rounded-full px-8 py-4 text-center text-2xl font-medium transition-colors duration-300 md:whitespace-pre ${activeServiceTab === tab
+                className={`flex-1 cursor-pointer rounded-full px-8 py-4 text-center text-2xl font-medium transition-colors duration-300 md:whitespace-pre ${
+                  activeServiceTab === tab
                     ? "border border-blue-600 bg-blue-600 text-white"
                     : "border border-white text-white hover:border-blue-600 hover:text-white"
-                  }`}
+                }`}
               >
                 {tab}
               </button>
@@ -567,9 +565,7 @@ export default function LiferayConsultationPage() {
                     height={40}
                     className="h-10 w-10 flex-shrink-0"
                   />
-                  <p className="text-2xl font-medium [@media(min-width:1440px)]:text-xl [@media(min-width:1800px)]:text-2xl">
-                    {service}
-                  </p>
+                  <p className="p24">{service}</p>
                 </div>
               </div>
             ))}
@@ -579,13 +575,11 @@ export default function LiferayConsultationPage() {
 
       {/* NEW: End-to-End Liferay Consulting Services Section */}
       <section className="bg-[#F6F6F6] py-[64px] text-black">
-        <div className="mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
+        <div className="global-container">
           {/* Section Header */}
           <div className="mb-16">
-            <h2 className="text-5xl leading-tight font-semibold tracking-tight text-black">
-              We Offer end-to-end Liferay Consulting Services
-            </h2>
-            <p className="mt-4 text-lg text-gray-600">
+            <h2 className="text-black">We Offer end-to-end Liferay Consulting Services</h2>
+            <p className="p18 mt-4 text-gray-600">
               Delivering complete Liferay Consulting solutions from planning to maintenance for seamless digital
               transformation and growth.
             </p>
@@ -599,13 +593,14 @@ export default function LiferayConsultationPage() {
                 <div key={index} className="py-6">
                   <div
                     onMouseEnter={() => setActivePillar(index)}
-                    className={`inline-block cursor-pointer border-b-1 transition-all duration-300 ${activePillar === index
+                    className={`flex w-fit cursor-pointer border-b-1 transition-all duration-300 ${
+                      activePillar === index
                         ? "border-black font-semibold text-black"
                         : "border-transparent text-gray-500 hover:text-black"
-                      }`}
+                    }`}
                   >
-                    <span className="mr-4 text-3xl font-semibold">{service.number})</span>
-                    <span className="text-3xl font-semibold">{service.name}</span>
+                    <h4 className="mr-4">{service.number})</h4>
+                    <h4>{service.name}</h4>
                   </div>
                 </div>
               ))}
@@ -616,16 +611,18 @@ export default function LiferayConsultationPage() {
               {endToEndServices.map((service, index) => (
                 <div
                   key={index}
-                  className={`flex h-full flex-col justify-between rounded-lg p-6 transition-all duration-300 ease-in-out ${activePillar === index
+                  className={`flex h-full flex-col justify-between rounded-lg p-6 transition-all duration-300 ease-in-out ${
+                    activePillar === index
                       ? "w-full flex-grow bg-[#0B63CE] text-white shadow-xl"
                       : "w-[20%] flex-grow-0 border border-[#E5E7EB] bg-white text-gray-400"
-                    }`}
+                  }`}
                 >
                   {/* Rotated Number */}
                   <div className="h-16">
                     <span
-                      className={`block w-min -rotate-90 transform text-5xl font-medium transition-colors duration-300 ${activePillar === index ? "text-white" : "text-gray-400"
-                        }`}
+                      className={`block w-min -rotate-90 transform text-5xl font-medium transition-colors duration-300 ${
+                        activePillar === index ? "text-white" : "text-gray-400"
+                      }`}
                     >
                       {service.number}
                     </span>
@@ -634,9 +631,9 @@ export default function LiferayConsultationPage() {
                   {/* Content for Active Pillar */}
                   {activePillar === index && (
                     <div className="pt-4">
-                      <h3 className="min-w-[220px] text-3xl font-bold">{service.name}</h3>
+                      <h4 className="min-w-[220px]">{service.name}</h4>
                       <hr className="my-7 w-full border-t-2 border-white/50" />
-                      <p className="text-base leading-relaxed">{service.description}</p>
+                      <p className="p18">{service.description}</p>
                     </div>
                   )}
                 </div>
