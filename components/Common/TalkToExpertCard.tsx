@@ -11,7 +11,7 @@ const TalkToExpertCard: React.FC<TalkToExpertCardProps> = ({ title }) => {
    <div className="flex flex-col gap-[2vw] rounded-[1.25vw] bg-[#1C1C1C] px-[1.5vw] py-[2vw]">
   
   {/* Title */}
-  <h3 className="text-[1.563vw] leading-[1.875vw] font-bold text-white">
+  <h3 className="text-[1.563vw]! leading-[1.875vw] font-bold text-white">
     {title}
   </h3>
 

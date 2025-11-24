@@ -65,41 +65,41 @@ export default function AboutUs() {
     return (
         <div className="relative bg-[#0B0B0F] text-white">
             <BackgroundLines className="relative flex flex-col justify-center global-container items-start bg-black text-white overflow-hidden">
-                <section className="relative w-full pt-20  mb-[6.406vw]">
-                    <div className="grid items-end mt-[64px] lg:grid-cols-2">
-                        {/* Left Column */}
-                        <div className="flex flex-col justify-center">
-                            {/* Tag */}
-                            <div className="inline-flex items-center rounded-full border border-[0.052vw]  border-white px-[1.51vw] py-[0.521vw] text-[0.938vw] leading-[1.458vw] text-white self-start">
-                                About IGNEK
-                            </div>
+                <section className="relative w-full mb-[6.406vw] mt-[12.031vw]">
+                    <div className="grid items-end">
+    {/* Left Column */}
+    <div className="flex flex-col justify-center">
+        {/* Tag */}
+        <div className="inline-flex items-center rounded-full border border-[0.052vw] border-white px-[1.51vw] py-[0.521vw] text-[0.938vw] leading-[1.458vw] text-white self-start">
+            About IGNEK
+        </div>
 
-                            {/* Masked Text Video */}
-                            <div
-                                className="relative mt-6 w-[881px] h-[336px] overflow-hidden"
-                                style={{
-                                    WebkitMaskImage: "url(/images/about/about-us-text.svg)",
-                                    maskImage: "url(/images/about/about-us-text.svg)",
-                                    WebkitMaskSize: "100% 100%",
-                                    maskSize: "100% 100%",
-                                    WebkitMaskRepeat: "no-repeat",
-                                    maskRepeat: "no-repeat",
-                                    WebkitMaskPosition: "bottom left",
-                                    maskPosition: "bottom left",
-                                }}
-                            >
-                                <video
-                                    autoPlay
-                                    loop
-                                    muted
-                                    playsInline
-                                    className="absolute top-0 left-0 h-[336px] w-[881px] object-cover"
-                                >
-                                    <source src="/images/career/multi-color-bg.mp4" type="video/mp4" />
-                                </video>
-                            </div>
-                        </div>
-                    </div>
+        {/* Masked Text Video */}
+        <div
+            className="relative mt-[1.25vw] w-[45.885vw] h-[17.5vw] overflow-hidden self-start"
+            style={{
+                WebkitMaskImage: "url(/images/about/about-us-text.svg)",
+                maskImage: "url(/images/about/about-us-text.svg)",
+                WebkitMaskSize: "100% 100%",
+                maskSize: "100% 100%",
+                WebkitMaskRepeat: "no-repeat",
+                maskRepeat: "no-repeat",
+                WebkitMaskPosition: "bottom left",
+                maskPosition: "bottom left",
+            }}
+        >
+            <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="absolute top-0 left-0 w-[45.885vw] h-[17.5vw] object-cover"
+            >
+                <source src="/images/career/multi-color-bg.mp4" type="video/mp4" />
+            </video>
+        </div>
+    </div>
+</div>
 
                 </section>
             </BackgroundLines>
@@ -121,12 +121,12 @@ export default function AboutUs() {
                         {/* Right Column - Content */}
                         <div className="space-y-8">
                             {/* Introductory Paragraph */}
-                            <p className="text-[0.938vw] text-[#374151] leading-[1.563vw] pt-[1.563vw] text-left mb-[1.042vw]">
+                            <p className="text-[0.938vw] text-[#374151] leading-[1.563vw] pt-[1.563vw] text-right mb-[1.042vw]">
                                 Companies trust IGNEK for proven Liferay expertise, innovation, reliability, and transformative digital experience solutions.
                             </p>
 
                             {/* Section 1: Digital Excellence */}
-                            <div className="mt-[3.333vw]">
+                            <div className="mt-[4.375vw]">
                                 <h4 className="text-[1.563vw] !font-semibold text-black">
                                     Digital Excellence
                                 </h4>
