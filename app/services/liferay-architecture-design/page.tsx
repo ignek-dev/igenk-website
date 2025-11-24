@@ -78,6 +78,33 @@ export default function LiferayArchitectureDesignPage() {
     const walk = (x - startX) * 2.8 // reduced scroll speed
     setTargetScroll(scrollStart - walk)
   }
+  const handleWheelScroll = (e) => {
+    e.preventDefault();
+    const container = containerRef.current;
+    if (container) {
+      container.scrollLeft += e.deltaY;
+    }
+  };
+  useEffect(() => {
+    const handlePageScroll = () => {
+      const container = containerRef.current;
+      if (container) {
+        // Calculate scroll position based on page scroll
+        const scrollY = window.scrollY;
+        const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+        const scrollPercentage = scrollY / maxScroll;
+
+        const maxHorizontalScroll = container.scrollWidth - container.clientWidth;
+        container.scrollLeft = scrollPercentage * maxHorizontalScroll;
+      }
+    };
+
+    window.addEventListener('scroll', handlePageScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handlePageScroll);
+    };
+  }, []);
   return (
     <main className="">
       {/* Hero */}
@@ -97,7 +124,7 @@ export default function LiferayArchitectureDesignPage() {
               </h1>
             </div>
             <p className="absolute bottom-0 text-right text-[0.938vw] text-white md:mt-16 md:justify-self-end [@media(min-width:1440px)]:max-w-xl  [@media(min-width:1500px)]:max-w-3xl ">
-              Get Liferay architecture design and optimization services that enhance performance, scalability, security, integrations, and user experience.
+              Get Liferay architecture design and optimization services that enhance <br />performance, scalability, security, integrations, and user experience.
             </p>
           </div>
 
@@ -114,54 +141,56 @@ export default function LiferayArchitectureDesignPage() {
           </div>
         </div>
       </section>
+
+     
       <section>
-  <div className="mx-auto w-full px-4 py-[64px] md:px-8 md:py-[53px] lg:py-[64px] global-container">
-    <div
-      className="flex cursor-grab overflow-x-hidden"
-      onMouseDown={handleMouseDown}
-      onMouseLeave={handleMouseLeave}
-      onMouseUp={handleMouseUp}
-      onMouseMove={handleMouseMove}
-      ref={containerRef}
-    >
-      {systemArchitecure.map((item, index) => (
-        <div
-          key={index}
-          className={`flex-shrink-0 px-8 ${index === 0 ? "pl-0" : ""} ${index === systemArchitecure.length - 1 ? "pr-0" : ""} ${index !== systemArchitecure.length - 1 ? "border-r border-[#E5E7EB]" : ""}`}
-          style={{ width: '22%' }}
-        >
-          <div className="flex flex-col gap-[4.688vw] py-4">
-            <h3 className="text-[1.875vw] font-semibold text-gray-600 leading-normal">
-              {item.text}
-            </h3>
-            <p className="text-gray-500 p16 leading-relaxed mt-auto">
-              {item.description}
-            </p>
+        <div className="mx-auto w-full px-4 py-[64px] lg:py-[64px] global-container">
+          <div
+            className="flex cursor-grab overflow-x-hidden"
+            onMouseDown={handleMouseDown}
+            onMouseLeave={handleMouseLeave}
+            onMouseUp={handleMouseUp}
+            onMouseMove={handleMouseMove}
+            onWheel={handleWheelScroll}
+            ref={containerRef}
+          >
+            {systemArchitecure.map((item, index) => (
+              <div
+                key={index}
+                className={`flex-shrink-0 px-16 ${index === 0 ? "pl-0" : ""} ${index === systemArchitecure.length - 1 ? "pr-0" : ""} ${index !== systemArchitecure.length - 1 ? "border-r border-[#E5E7EB]" : ""}`}
+                style={{ width: '22%' }}
+              >
+                <div className="flex flex-col gap-[4.688vw] py-4">
+                  <h3 className="text-[1.875vw] font-semibold text-gray-600 leading-normal">
+                    {item.text}
+                  </h3>
+                  <p className="text-gray-500 p16 leading-relaxed mt-auto">
+                    {item.description}
+                  </p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
-      ))}
-    </div>
-  </div>
-</section>
+      </section>
       <section className="bg-black text-white">
-        <div className="mx-auto w-full px-4 py-16 md:px-8 md:py-20 lg:py-24 global-container ">
+        <div className="mx-auto w-full px-4 py-16 md:px-8  global-container ">
           <div className="relative grid items-start gap-10 md:grid-cols-2">
-            <h2 className="text-[2.5vw] font-semibold  ">
+            <h2 className="text-[2.5vw] w-[41.25vw] font-semibold  ">
               Key Activities Under Our Liferay Architecture Design Services
             </h2>
             <p className="text-white font-normal text-[0.938vw] md:justify-self-end md:text-right md:self-end">
-              We offer design documents for Liferay Portal Architecture, covering system components, security, load
-              balancing, backup, user management, site structure, content management, integrations, caching, and
-              monitoring.
+              We offer design documents for Liferay Portal Architecture,<br />  covering system components, security, load
+              balancing, backup,
             </p>
           </div>
 
-        <div className="mt-12 grid grid-cols-1 gap-[1.875vw] md:mt-16">
-  {keyActivityArchitecureSystem.map((item, index) => (
-    <div
-      key={index}
-      className="
-        md:sticky 
+          <div className="mt-12 grid grid-cols-1 gap-[1.875vw] md:mt-16">
+            {keyActivityArchitecureSystem.map((item, index) => (
+              <div
+                key={index}
+                className="
+      
         top-32 
         z-10 
         bg-black 
@@ -172,19 +201,19 @@ export default function LiferayArchitectureDesignPage() {
         lg:gap-[3vw]
         py-[1vw]
       "
-    >
-      {/* Left Text */}
-      <div className="flex w-[16.406vw] min-w-[16.406vw] font-semibold md:pr-[1.5vw] text-[1.563vw]">
-        {item.text}
-      </div>
+              >
+                {/* Left Text */}
+                <div className="flex w-[16.406vw] min-w-[16.406vw] font-semibold md:pr-[1.5vw] text-[1.563vw]">
+                  {item.text}
+                </div>
 
-      {/* Description */}
-      <div className="flex items-center rounded-lg border border-[#1F2937] px-[1.875vw] py-[1.146vw] text-[1.042vw]">
-        {item.description}
-      </div>
-    </div>
-  ))}
-</div>
+                {/* Description */}
+                <div className="flex items-center rounded-lg border border-[#1F2937] px-[1.875vw] py-[1.146vw] text-[1.042vw]">
+                  {item.description}
+                </div>
+              </div>
+            ))}
+          </div>
 
         </div>
       </section>

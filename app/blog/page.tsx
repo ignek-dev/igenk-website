@@ -185,129 +185,162 @@ export default function Blogs() {
             </div>
           </div>
 
-          {/* Carousel Section */}
-          <div className="mx-auto w-[100%] relative mb-16">
-            {/* Carousel Container */}
-            <div className="relative h-[640px] overflow-hidden rounded-[22px] shadow-lg">
-              {featuredBlogs.length > 0 ? (
-                featuredBlogs.map((blog, index) => (
-                  <div
-                    key={blog.id}
-                    className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
-                      index === currentSlide ? 'opacity-100' : 'opacity-0 pointer-events-none'
-                    }`}
-                  >
-                    {/* Background Image */}
-                    <div className="relative h-full w-full">
-                      <Image
-                        src={blog?.image}
-                        alt={blog.title}
-                        fill
-                        sizes="(max-width: 768px) 100vw, 50vw"
-                        className="object-cover brightness-75"
-                        priority={index === 0}
-                      />
-                    </div>
-
-                    {/* Overlay Content */}
-                    <div 
-                      className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/70 via-black/30 to-transparent pl-[4.375rem] pb-[3rem] text-white cursor-pointer"
-                      onClick={() => router.push(`/blog/${blog.slug}`)}
-                      onMouseEnter={() => setIsHovering(true)}
-                      onMouseLeave={() => setIsHovering(false)}
-                    >
-                      <div className="mb-[0.938vw] flex items-center space-x-2 font-normal p18 opacity-90">
-                        <span className="rounded-full bg-white/20 px-[1.042vw] py-[0.521vw] backdrop-blur-md">
-                          {blog.category}
-                        </span>
-                        <span>• {blog?.readTime}</span>
-                      </div>
-
-                      <h2 className="mb-[0.938vw] max-w-3xl">{blog.title}</h2>
-                      <div className="flex items-center space-x-2 font-normal text-xl">
-                        <Image
-                          src={blog?.authPic}
-                          alt={"Author"}
-                          width={40}
-                          height={40}
-                          className="w-10 h-10 object-cover rounded-full border-2 border-white/80"
-                        />
-                        <span className="font-medium p20">{blog?.author}</span>
-                        <span className="opacity-80 p18">• {blog.date}</span>
-                      </div>
-                      
-                      {/* Description on Hover */}
-                      <div className={`mt-4 transition-all duration-300 ease-in-out ${
-                        isHovering ? 'opacity-100 max-h-20' : 'opacity-0 max-h-0'
-                      } overflow-hidden`}>
-                        <p className="text-white/90 text-lg leading-relaxed line-clamp-2">
-                          {blog.desc ? blog.desc.replace(/<[^>]*>/g, '') : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna."}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                ))
-              ) : (
-                !loading && (
-                  <div className="absolute inset-0 flex items-center justify-center bg-gray-200 rounded-[22px]">
-                    <p className="text-gray-500 text-lg">No featured blogs available</p>
-                  </div>
-                )
-              )}
-            </div>
-
-            {/* Navigation Arrows - Only show if there are multiple slides */}
-            {featuredBlogs.length > 1 && (
-              <>
-                {/* Previous Arrow */}
-                <button
-                  onClick={prevSlide}
-                  className="absolute left-[53px] top-[210px] w-16 h-16 bg-white/20 backdrop-blur-sm border-2 border-white/30 rounded-[40px] flex items-center justify-center transition-all duration-200 hover:bg-white/30 hover:border-white/50 z-10"
-                  style={{
-                    padding: '16px 10px 16px 10px',
-                    gap: '10px'
-                  }}
-                  aria-label="Previous slide"
-                >
-                  <svg 
-                    className="w-9 h-9 text-white" 
-                    fill="currentColor" 
-                    viewBox="0 0 16 16"
-                  >
-                    <path 
-                      fillRule="evenodd" 
-                      d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5"
-                    />
-                  </svg>
-                </button>
-
-                {/* Next Arrow */}
-                <button
-                  onClick={nextSlide}
-                  onMouseEnter={() => setIsHovering(true)}
-                      onMouseLeave={() => setIsHovering(false)}
-                  className="absolute right-[53px] top-[210px] w-16 h-16 bg-white/20 backdrop-blur-sm border-2 border-white/30 rounded-[40px] flex items-center justify-center transition-all duration-200 hover:bg-white/30 hover:border-white/50 z-10"
-                  style={{
-                    padding: '16px 10px 16px 10px',
-                    gap: '10px'
-                  }}
-                  aria-label="Next slide"
-                >
-                  <svg 
-                    className="w-9 h-9 text-white" 
-                    fill="currentColor" 
-                    viewBox="0 0 16 16"
-                  >
-                    <path 
-                      fillRule="evenodd" 
-                      d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"
-                    />
-                  </svg>
-                </button>
-              </>
-            )}
+         
+{/* Carousel Section */}
+<div className="mx-auto w-[100%] relative mb-16 group">
+  {/* Carousel Container */}
+  <div className="relative h-[640px] overflow-hidden rounded-[22px] shadow-lg">
+    {featuredBlogs.length > 0 ? (
+      featuredBlogs.map((blog, index) => (
+        <div
+          key={blog.id}
+          className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
+            index === currentSlide ? 'opacity-100' : 'opacity-0 pointer-events-none'
+          }`}
+          onMouseEnter={() => setIsHovering(true)}
+          onMouseLeave={() => setIsHovering(false)}
+        >
+          {/* Background Image */}
+          <div className="relative h-full w-full">
+            <Image
+              src={blog?.image}
+              alt={blog.title}
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-cover brightness-75"
+              priority={index === 0}
+            />
           </div>
 
+          {/* Overlay Content */}
+          <div 
+            className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/70 via-black/30 to-transparent px-[4.375rem] pb-[3rem] text-white cursor-pointer"
+            onClick={() => router.push(`/blog/${blog.slug}`)}
+          >
+           <div className="inset-0 mb-[4.896vw] flex items-center justify-between">
+  {featuredBlogs.length > 1 && (
+    <>
+      {/* Previous Arrow */}
+      <button
+        onClick={(e) => {
+          e.stopPropagation();
+          prevSlide();
+        }}
+        className={`
+          nav-round-btn top-1/2 transform -translate-y-1/2 
+          w-16 h-16 flex items-center justify-center 
+          transition-all duration-300 hover:bg-black z-20 
+          relative overflow-hidden
+          ${isHovering ? 'opacity-100' : 'opacity-0'}
+        `}
+        aria-label="Previous slide"
+      >
+        {/* Half Circle Rotating Border */}
+        <div className="
+          absolute top-1/2 left-1/2 
+          w-[calc(100%+4px)] h-[calc(100%+4px)]
+          bg-[conic-gradient(transparent_180deg,#00ffff_180deg,#00ffff_270deg,transparent_270deg)]
+          rounded-[42px] animate-spin
+          transform -translate-x-1/2 -translate-y-1/2
+        "></div>
+        
+        {/* Inner background */}
+        <div className="absolute inset-0.5 bg-black rounded-[38px]"></div>
+        
+        <svg 
+          className="w-9 h-9 text-white relative z-10" 
+          fill="currentColor" 
+          viewBox="0 0 16 16"
+        >
+          <path 
+            fillRule="evenodd" 
+            d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5"
+          />
+        </svg>
+      </button>
+
+      {/* Next Arrow */}
+      <button
+        onClick={(e) => {
+          e.stopPropagation();
+          nextSlide();
+        }}
+        className={`
+          nav-round-btn top-1/2 transform -translate-y-1/2 
+          w-16 h-16 flex items-center justify-center 
+          transition-all duration-300 hover:bg-black z-20 
+          relative overflow-hidden
+          ${isHovering ? 'opacity-100' : 'opacity-0'}
+        `}
+        aria-label="Next slide"
+      >
+        {/* Half Circle Rotating Border */}
+        <div className="
+          absolute top-1/2 left-1/3 
+          w-[calc(100%+4px)] h-[calc(100%+4px)]
+          bg-[conic-gradient(transparent_180deg,#00ffff_180deg,#00ffff_270deg,transparent_270deg)]
+          rounded-[42px] animate-spin  delay-1000
+          transform -translate-x-1/2 -translate-y-1/2
+        "></div>
+        
+        {/* Inner background */}
+        <div className="absolute inset-0.5 bg-black rounded-[38px]"></div>
+        
+        <svg 
+          className="w-9 h-9 text-white relative z-10" 
+          fill="currentColor" 
+          viewBox="0 0 16 16"
+        >
+          <path 
+            fillRule="evenodd" 
+            d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"
+          />
+        </svg>
+      </button>
+    </>
+  )}
+</div>
+
+            <div className="mb-[0.938vw] text-[#E5E7EB] flex items-center space-x-2 font-normal p18 opacity-90">
+              <span className="rounded-full border border-[] px-[1.042vw] py-[0.521vw] backdrop-blur-md">
+                {blog.category}
+              </span>
+              <span>• {blog?.readTime}</span>
+            </div>
+
+            <h2 className="mb-[0.938vw] ">{blog.title}</h2>
+            <div className="flex items-center space-x-2 font-normal text-xl">
+              <Image
+                src={blog?.authPic}
+                alt={"Author"}
+                width={40}
+                height={40}
+                className="w-10 h-10 object-cover rounded-full border-2 border-white/80"
+              />
+              <span className="font-medium p20">{blog?.author}</span>
+              <span className="opacity-80 p18">• {blog.date}</span>
+            </div>
+            
+            {/* Description on Hover */}
+            <div className={`mt-4 transition-all duration-300 ease-in-out ${
+              isHovering ? 'opacity-100 max-h-20' : 'opacity-0 max-h-0'
+            } overflow-hidden`}>
+              <p className="text-white/90 text-lg leading-relaxed line-clamp-2">
+                {blog.desc ? blog.desc.replace(/<[^>]*>/g, '') : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna."}
+              </p>
+            </div>
+          </div>
+        </div>
+      ))
+    ) : (
+      !loading && (
+        <div className="absolute inset-0 flex items-center justify-center bg-gray-200 rounded-[22px]">
+          <p className="text-gray-500 text-lg">No featured blogs available</p>
+        </div>
+      )
+    )}
+  </div>
+</div>
           {/* Rest of the code remains exactly the same */}
           {/* Category Section */}
           <div className="flex flex-col py-16">

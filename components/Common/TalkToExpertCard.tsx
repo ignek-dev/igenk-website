@@ -22,7 +22,7 @@ const TalkToExpertCard: React.FC<TalkToExpertCardProps> = ({ title }) => {
       alt="Bhavin Panchani"
       width={110}
       height={110}
-      className="rounded-full border-[0.25vw] border-[#00979E] object-cover"
+      className="rounded-full object-cover"
     />
     <div className="flex flex-col gap-[0.5vw]">
       <p className="text-[1.563vw] font-semibold text-white">Bhavin Panchani</p>
