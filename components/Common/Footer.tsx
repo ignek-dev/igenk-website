@@ -94,7 +94,7 @@ export default function Footer() {
             </>
           </div>
         </div>
-        <div className="animate-drawLine border-l [@media(min-width:1440px)]:w-[13.7%] [@media(min-width:1536px)]:w-[13.5%] [@media(min-width:1839px)]:w-[13.3%] [@media(min-width:1920px)]:w-[13.2%]"></div>
+        <div className="animate-drawLine border-l [@media(min-width:1440px)]:w-[16%] [@media(min-width:1536px)]:w-[15.7%] [@media(min-width:1839px)]:w-[15.7%] [@media(min-width:1920px)]:w-[15.7%]"></div>
       </div>
 
       {/* Bottom section: contacts + big logo + motto + bottom bar */}

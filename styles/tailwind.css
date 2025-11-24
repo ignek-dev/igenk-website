@@ -88,7 +88,7 @@ h4 {
   font-family: Poppins;
   font-weight: 500;
   font-style: medium;
-  font-size: 1.5625vw;
+  font-size: 1.458vw;
   line-height: 1.875vw;
   letter-spacing: 0%;
 }
@@ -190,9 +190,26 @@ h4 {
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  background: conic-gradient(transparent 260deg, #00ffff);
-  animation: rotate 2s linear infinite;
+  background: conic-gradient(
+    transparent 0deg,
+    #00ffff 90deg,
+    transparent 200deg
+  );
+  animation: fullSweep 3s ease-in-out infinite;
 }
+
+@keyframes fullSweep {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% { 
+    transform: rotate(180deg); 
+  }
+  100% {
+    transform: rotate(360deg); 
+  }
+}
+
 
 .nav-fancy-glow::after {
   content: "";
