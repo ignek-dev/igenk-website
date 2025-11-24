@@ -18,14 +18,14 @@ export default function EndToEndSection() {
   return (
     // Attach the ref from the hook to the section
     <section ref={sectionRef} className="relative bg-black text-white">
-      <div className="mx-auto w-full overflow-x-hidden px-4 py-12 md:px-6 md:py-16 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
+      <div className="w-full py-12 md:py-16 global-container">
         {/* Top Heading */}
         <div className="grid gap-10 md:grid-cols-2 md:gap-12 lg:gap-0">
           <div>
             <h2
               className={`${getAnimationClass(
                 "animate-slide-top"
-              )} leading-[60px] letter-spacing-[-0.02em] text-5xl font-semibold sm:text-4xl md:text-5xl [@media(min-width:1440px)]:text-4xl [@media(min-width:1520px)]:text-5xl `}
+              )}`}
             >
               Your End-to-End Digital Transformation Partner
             </h2>
@@ -33,7 +33,7 @@ export default function EndToEndSection() {
           <p
             className={`${getAnimationClass(
               "animate-slide-top"
-            )} line-height-[30px] max-w-3xl pt-6.5 text-right text-lg text-white/80`}
+            )} line-height-[30px] max-w-4xl pt-6.5 text-right text-lg text-white/80`}
           >
             We empower enterprises to innovate and scale with comprehensive Liferay DXP solutions, combining strategy, design, and technology for seamless digital transformation success.
           </p>
@@ -43,7 +43,7 @@ export default function EndToEndSection() {
         <div className="mt-21 grid gap-12 md:mt-24 md:grid-cols-2 md:gap-14 lg:gap-16">
           <div className={getAnimationClass("animate-slide-left", "animation-delay-200")}>
             <div className="mt-6.5">
-              <h3 className="text-2xl font-semibold md:text-[40px]">Digital Experience</h3>
+              <p className="text-2xl font-semibold md:text-[40px]">Digital Experience</p>
               <p className="mt-3 max-w-xl text-lg text-white/80">
                 We craft unified and personalized digital experiences using Liferay DXP, ensuring customer engagement, consistency, and business growth across all digital touchpoints.
               </p>
@@ -82,7 +82,7 @@ export default function EndToEndSection() {
         {/* Staff Augmentation */}
         <div className="mt-20 grid gap-12 md:grid-cols-2 md:gap-14 lg:mt-24 lg:gap-16">
           <div className={getAnimationClass("animate-slide-left", "animation-delay-200")}>
-            <h3 className="text-2xl font-semibold md:text-[40px]">Staff augmentation</h3>
+            <p className="text-2xl font-semibold md:text-[40px]">Staff augmentation</p>
             <p className="mt-3 max-w-xl text-lg text-white/80">
               We provide expert Liferay developers and consultants through flexible staff augmentation models, ensuring rapid scalability, domain expertise, and seamless project delivery.
             </p>

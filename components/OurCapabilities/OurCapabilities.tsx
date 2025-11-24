@@ -79,18 +79,18 @@ const OurCapabilities: React.FC = () => {
 
   return (
     <section ref={sectionRef} className="bg-black py-16 text-white pb-10">
-      <div className="mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
+      <div className="w-full global-container">
         {/* Header Section */}
         <div className="mb-12 flex flex-col lg:mb-20 lg:flex-row lg:items-end lg:justify-between">
           <h2
-            className={`mb-4 text-4xl font-bold sm:text-5xl lg:mb-0 ${
+            className={`mb-4 lg:mb-0 ${
               isInView ? "animate-when-visible animate-slide-top" : "opacity-0"
             }`}
           >
             Our Capabilities
           </h2>
           <p
-            className={`max-w-xl text-right text-lg text-gray-300 ${
+            className={`max-w-3xl text-right text-lg text-gray-300 ${
               isInView ? "animate-when-visible animate-slide-top" : "opacity-0"
             }`}
           >

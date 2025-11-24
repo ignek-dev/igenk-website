@@ -61,15 +61,15 @@ const HeroCTASection: React.FC = () => {
 
   return (
     <section ref={sectionRef} className="bg-black py-16 text-white lg:py-16">
-      <div className="mx-auto grid w-full items-start gap-12 px-4 md:px-6 lg:grid-cols-2 lg:gap-16 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
+      <div className="grid items-start gap-12 lg:grid-cols-2 lg:gap-16 global-container xl:gap-20">
         {/* Left Column: FAQ Section */}
         <div className={isInView ? "animate-when-visible animate-slide-left" : "opacity-0"}>
           {/* Main Title and Description */}
-          <h2 className="mb-8 text-5xl leading-tight font-bold">
+          <h2 className="mb-8">
             Flexible Platforms.
             <span className="block">Scalable Experiences.</span>
           </h2>
-          <p className="mt-6 mb-12 max-w-md text-lg text-gray-400">
+          <p className="mt-6 mb-12 text-lg text-gray-400">
             We design and develop digital solutions that adapt and grow with your business needs. Our platforms are built to deliver seamless performance, exceptional user experiences, and long-term scalability.
           </p>
 

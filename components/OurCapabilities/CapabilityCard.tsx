@@ -11,9 +11,9 @@ const CapabilityCard: React.FC<CapabilityCardProps> = ({ iconSrc, title, descrip
   return (
     <div className="flex flex-col p-6 pl-0">
       {/* Icon and Title */}
-      <div className="mb-2 flex items-center space-x-3">
+      <div className="mb-3 flex items-center space-x-3">
         <Image src={iconSrc} alt={`${title} icon`} width={48} height={48} className="object-contain" />
-        <h3 className="text-3xl font-semibold text-white whitespace-pre [@media(min-width:1440px)]:text-2xl  [@media(min-width:1800px)]:text-3xl">{title}</h3>
+        <p className="text-[32px] font-semibold text-white whitespace-pre [@media(min-width:1440px)]:text-2xl  [@media(min-width:1800px)]:text-3xl">{title}</p>
       </div>
 
       {/* "Progress Bar" */}

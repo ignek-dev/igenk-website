@@ -8,10 +8,10 @@ const ExpertCard: React.FC = () => {
   return (
     <div className="flex flex-col gap-8 rounded-2xl bg-[#1C1C1C] px-6 py-8 md:px-8 md:py-10">
       {/* Top Heading */}
-      <h3 className="text-3xl leading-snug font-bold text-white">
+      <p className="text-[1.458vw] leading-snug font-bold text-white">
         Connect directly with our CEO to <br />
         fast-track your <span className="text-[#00979E]">Digital Journey.</span>
-      </h3>
+      </p>
 
       {/* Expert Details */}
       <div className="flex items-center gap-3">
