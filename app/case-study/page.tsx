@@ -48,7 +48,7 @@ export default async function PortfolioPage() {
         </div>
       </section>
 
-      <div className="py-12 bg-[#F9FAF7] px-[83px]">
+      <div className="pt-[1.875vw] bg-[#F9FAF7] px-[4.323vw] pb-[4.094vw]">
         {/* <section className="mb-8 text-center">
           <h1 className="text-3xl font-bold tracking-tight md:text-4xl">Our Portfolio</h1>
           <p className="mt-2 text-white/70">A curated list of our recent work and success stories.</p>
