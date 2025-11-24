@@ -81,6 +81,7 @@ const CoreValues = () => {
                             text-[#000000] 
                             transition-transform duration-300 
                             group-hover:translate-x-[8.906vw]
+                            group-hover:pl-[4.135vw]
                         "
                     >
                         {v.title}
@@ -98,7 +99,7 @@ const CoreValues = () => {
                     {/* Hover image */}
                     <div
                         className="
-                            pointer-events-none absolute left-[10.99vw] top-1/2 z-10 
+                            pointer-events-none absolute left-[6.875vw] top-1/2 z-10 
                             h-[6.25vw] w-[6.25vw] -translate-y-1/2 -translate-x-2 
                             overflow-hidden rounded-[0.313vw] opacity-0 
                             transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100
