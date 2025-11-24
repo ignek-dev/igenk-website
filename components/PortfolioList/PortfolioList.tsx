@@ -24,7 +24,7 @@ export default function PortfolioList() {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
     const [searchTerm, setSearchTerm] = useState("");
-    const [selectedIndustry, setSelectedIndustry] = useState<string | null>(null);
+    const [selectedIndustry, setSelectedIndustry] = useState<string | null>("All Case Studies");
     const [selectedTechnology, setSelectedTechnology] = useState<string | null>(null);
     const [debouncedSearch, setDebouncedSearch] = useState(searchTerm);
     const router = useRouter();
@@ -139,14 +139,15 @@ export default function PortfolioList() {
                                         return (
                                             <div
                                                 key={item.id}
-                                                className={index < posts.length - 1 ? "border-b border-gray-300 py-12" : "py-12"}
+                                                className={`py-12 ${index === 0 ? "pt-0" : ""} ${index < posts.length - 1 ? "border-b border-gray-300" : ""
+                                                    }`}
                                             >
                                                 <div
                                                     className={`group bg-[#F9FAF7] pb-0 pt-0 flex flex-col md:flex-row gap-[2.396vw] overflow-hidden transition-all duration-500 ${!isImageLeft ? "md:flex-row-reverse" : ""
                                                         }`}
-                                                >   
+                                                >
                                                     {/* Image */}
-                                                    <div className="relative overflow-hidden rounded-xl h-[17.76vw]">
+                                                    <div className="relative rounded-xl h-[17.76vw]">
                                                         <Image
                                                             src={imageUrl}
                                                             alt={item.title.rendered}

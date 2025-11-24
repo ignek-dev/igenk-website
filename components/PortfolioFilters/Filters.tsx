@@ -16,8 +16,9 @@ export default function Filters({
     setSelectedTechnology,
 }: FiltersProps) {
     const industries = [
+        "All Case Studies",
         "Telecom",
-        // "Enterprise Website",
+        "Enterprise Website",
         "Communication",
         "Fintech",
         "Manufacturing",
@@ -80,8 +81,8 @@ export default function Filters({
                         <li
                             key={item}
                             className={`cursor-pointer transition ${selectedIndustry === item
-                                    ? "font-semibold text-[#374151]"
-                                    : "hover:font-semibold"
+                                    ? " text-[#374151] "
+                                    : "hover:text-[#374151]"
                                 }`}
                             onClick={() =>
                                 setSelectedIndustry(selectedIndustry === item ? null : item)
