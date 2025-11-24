@@ -75,12 +75,12 @@ export default function Footer() {
             viewport={{ amount:0.2}}
             transition={{ duration: 0.9, ease: "easeIn" }}
           />
-          <div className="grid grid-cols-2 gap-10 md:grid-cols-3 lg:grid-cols-4">
+          <div className="grid grid-cols-2 gap-10 md:grid-cols-3 lg:grid-cols-5">
             <>
               {menus.map((menu) => (
                 <div key={menu.title}>
-                  <p className="text-2xl font-semibold text-white leading-[1.9rem]">{menu.title}</p>
-                  <ul className="mt-5 space-y-8 font-regular text-xl text-white leading-[1.8rem] tracking-[2%] ">
+                  <p className="text-2xl font-semibold! text-white leading-[1.9rem]">{menu.title}</p>
+                  <ul className="mt-5 space-y-8 p20 text-white tracking-[2%] ">
                     {menu.items.map((it) => (
                       <li key={it.label}>
                         <Link href={it.href} className="cursor-pointer hover:text-white">
@@ -94,53 +94,53 @@ export default function Footer() {
             </>
           </div>
         </div>
-        <div className="animate-drawLine border-l [@media(min-width:1440px)]:w-[21.8%] [@media(min-width:1536px)]:w-[21%] [@media(min-width:1839px)]:w-[18.8%] [@media(min-width:1920px)]:w-[12.5%]"></div>
+        <div className="animate-drawLine border-l [@media(min-width:1440px)]:w-[13.7%] [@media(min-width:1536px)]:w-[13.5%] [@media(min-width:1839px)]:w-[13.3%] [@media(min-width:1920px)]:w-[13.2%]"></div>
       </div>
 
       {/* Bottom section: contacts + big logo + motto + bottom bar */}
       <div className="global-container mx-auto flex w-full pl-4 md:pl-8" style={{ paddingRight: "0px !important" }}>
         <div className="w-[80%] pt-12 pr-4 pb-20 md:pt-16 md:pr-8 md:pb-4">
-          <div className="grid  sm:grid-cols-2 md:grid-cols-3">
+          <div className="grid  sm:grid-cols-2 md:grid-cols-4">
             <div>
-              <h5 className="text-2xl font-semibold leading-[2rem] text-white">Emails</h5>
-              <div className="mt-4 space-y-3 text-xl font-semibold leading-[1.8rem] text-white">
+              <p className="text-2xl font-semibold text-white leading-[1.9rem]">Emails</p>
+              <div className="mt-4 space-y-3 text-white">
                 <div>
-                  <Link href="mailto:sales@ignek.com" className="hover:text-white">
+                  <Link href="mailto:sales@ignek.com" className="hover:text-white p20 font-semibold!">
                     sales@ignek.com
                   </Link>
-                  <div className="text-base text-[#9CA3AF] leading-[1.5rem]">(For sales inquiry)</div>
+                  <div className="text-[#9CA3AF] p16">(For sales inquiry)</div>
                 </div>
                 <div>
-                  <Link href="mailto:hr@ignek.com" className="hover:text-white">
+                  <Link href="mailto:hr@ignek.com" className="hover:text-white p20 font-semibold!">
                     hr@ignek.com
                   </Link>
-                  <div className="text-base text-[#9CA3AF] leading-[1.5rem]">(For hiring inquiry)</div>
+                  <div className="text-[#9CA3AF] p16">(For hiring inquiry)</div>
                 </div>
               </div>
             </div>
             <div>
-              <h5 className="text-2xl font-semibold">Call</h5>
-              <div className="mt-4 space-y-3 text-xl font-semibold leading-[1.8rem] text-white">
+              <p className="text-2xl font-semibold text-white leading-[1.9rem]">Call</p>
+              <div className="mt-4 space-y-3 text-white">
                 <div>
-                  <Link href="tel:+916351576580" className="hover:text-white">
+                  <Link href="tel:+916351576580" className="hover:text-white p20 font-semibold!">
                     (+91) 635 157 6580
                   </Link>
-                  <div className="text-base text-[#9CA3AF] leading-[1.5rem]">(For sales inquiry)</div>
+                  <div className="text-[#9CA3AF] p16">(For sales inquiry)</div>
                 </div>
                 <div>
-                  <Link href="tel:+919328495160" className="hover:text-white">
+                  <Link href="tel:+919328495160" className="hover:text-white p20 font-semibold!">
                     (+91) 932 849 5160
                   </Link>
-                  <div className="text-base text-[#9CA3AF] leading-[1.5rem]">(For hiring inquiry)</div>
+                  <div className="text-[#9CA3AF] p16">(For hiring inquiry)</div>
                 </div>
               </div>
             </div>
             <div>
-             <h5 className="text-2xl leading-[2rem] font-semibold text-white">Office</h5>
-              <p className="mt-4 max-w-xl text-xl leading-[1.8rem] font-semibold text-white mb-3 whitespace-wrap">
+             <p className="text-2xl font-semibold text-white leading-[1.9rem]">Office</p>
+              <p className="mt-4 min-w-xl p20 font-semibold! text-white mb-3 whitespace-wrap [@media(max-width:1700px)]:min-w-auto">
                 E 910-912, Ganesh Glory 11, Jagatpur Road, SG Highway, Ahmedabad, Gujarat - 382470 (Headquarter) <br />
               </p>
-              <span className="whitespace-wrap mt-4 max-w-xl text-xl leading-[1.8rem] font-semibold text-white">Dubai, United Arab Emirates <br/> (UAE Branch)</span>
+              <span className="whitespace-nowrap mt-4 min-w-3xl p20 font-semibold! text-white">Dubai, United Arab Emirates (UAE Branch)</span>
             </div>
           </div>
           {/* Big brand logo */}

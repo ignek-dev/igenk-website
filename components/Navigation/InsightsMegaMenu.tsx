@@ -62,7 +62,7 @@ export default function InsightsMegaMenu() {
                 <a
                   href={link.href}
                   key={link.title}
-                  className="group /* 1440px → use vw scaling */ /* 1920px → match the design exactly */ flex h-[150px] items-center gap-[1.041vw] rounded-[16px] bg-[#0D0D0D] p-4 transition-all duration-300 [@media(min-width:1440px)]:h-[8.333vw] [@media(min-width:1440px)]:rounded-[0.937vw] [@media(min-width:1920px)]:h-[174px] [@media(min-width:1920px)]:rounded-[20px]"
+                  className="group /* 1440px → use vw scaling */ /* 1920px → match the design exactly */ flex h-[130px] items-center gap-[1.041vw] rounded-[16px] bg-[#0D0D0D] p-4 transition-all duration-300 [@media(min-width:1440px)]:h-[8.333vw] [@media(min-width:1440px)]:rounded-[0.937vw] [@media(min-width:1920px)]:h-[129px] [@media(min-width:1920px)]:rounded-[20px]"
                 >
                   {/* Icon container */}
                   <div className="/* At 1440px+ scale using vw */ h-[40px] w-[40px] text-white/70 transition-colors group-hover:text-white sm:h-[44px] sm:w-[44px] md:h-[48px] md:w-[48px] xl:h-[2.604vw] xl:w-[2.604vw]">
