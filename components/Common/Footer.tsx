@@ -79,7 +79,7 @@ export default function Footer() {
             <>
               {menus.map((menu) => (
                 <div key={menu.title}>
-                  <h4 className="text-2xl font-semibold text-white leading-[1.8rem]">{menu.title}</h4>
+                  <p className="text-2xl font-semibold text-white leading-[1.9rem]">{menu.title}</p>
                   <ul className="mt-5 space-y-8 font-regular text-xl text-white leading-[1.8rem] tracking-[2%] ">
                     {menu.items.map((it) => (
                       <li key={it.label}>
