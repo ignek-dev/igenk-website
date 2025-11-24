@@ -79,7 +79,7 @@ export default function LiferayArchitectureDesignPage() {
     setTargetScroll(scrollStart - walk)
   }
   return (
-    <main className="pb-16">
+    <main className="">
       {/* Hero */}
       <section className="relative bg-black text-white">
         <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_10%_0%,#0E7BF8_0%,#00979E_40%,transparent_65%)] opacity-25" />
@@ -115,34 +115,38 @@ export default function LiferayArchitectureDesignPage() {
         </div>
       </section>
       <section>
-        <div className="mx-auto w-full px-4 py-[64px] md:px-8 md:py-[53px] lg:py-[64px] global-container ">
-
-          <div
-            className="flex cursor-grab  overflow-x-hidden"
-            onMouseDown={handleMouseDown}
-            onMouseLeave={handleMouseLeave}
-            onMouseUp={handleMouseUp}
-            onMouseMove={handleMouseMove}
-            ref={containerRef}
-          >
-            {systemArchitecure.map((item, index) => (
-              <div
-                key={index}
-                className={`max-w-[22%] flex-shrink-0 px-[32px]  gap-[70px] flex flex-col ${index !== systemArchitecure.length - 1 ? "border-r border-[#E5E7EB]" : ""}`}
-              >
-                <h3 className="mt-[20px] mb-3 text-[1.875vw]   w-[16.51vw]  text-wrap leading-normal font-semibold text-gray-600  ">{item.text}</h3>
-                <p className="mt-auto text-[1.042vw]  w-[15.729vw]   text-wrap leading-relaxed text-gray-500   ">{item.description}</p>
-              </div>
-
-            ))}
+  <div className="mx-auto w-full px-4 py-[64px] md:px-8 md:py-[53px] lg:py-[64px] global-container">
+    <div
+      className="flex cursor-grab overflow-x-hidden"
+      onMouseDown={handleMouseDown}
+      onMouseLeave={handleMouseLeave}
+      onMouseUp={handleMouseUp}
+      onMouseMove={handleMouseMove}
+      ref={containerRef}
+    >
+      {systemArchitecure.map((item, index) => (
+        <div
+          key={index}
+          className={`flex-shrink-0 px-8 ${index === 0 ? "pl-0" : ""} ${index === systemArchitecure.length - 1 ? "pr-0" : ""} ${index !== systemArchitecure.length - 1 ? "border-r border-[#E5E7EB]" : ""}`}
+          style={{ width: '22%' }}
+        >
+          <div className="flex flex-col gap-[4.688vw] py-4">
+            <h3 className="text-[1.875vw] font-semibold text-gray-600 leading-normal">
+              {item.text}
+            </h3>
+            <p className="text-gray-500 p16 leading-relaxed mt-auto">
+              {item.description}
+            </p>
           </div>
         </div>
-      </section>
-
+      ))}
+    </div>
+  </div>
+</section>
       <section className="bg-black text-white">
         <div className="mx-auto w-full px-4 py-16 md:px-8 md:py-20 lg:py-24 global-container ">
           <div className="relative grid items-start gap-10 md:grid-cols-2">
-            <h2 className="text-[2.5vw] font-semibold   [@media(min-width:1440px)]:leading-[50px] [@media(min-width:1500px)]:leading-[60px] ">
+            <h2 className="text-[2.5vw] font-semibold  ">
               Key Activities Under Our Liferay Architecture Design Services
             </h2>
             <p className="text-white font-normal text-[0.938vw] md:justify-self-end md:text-right md:self-end">
@@ -152,22 +156,36 @@ export default function LiferayArchitectureDesignPage() {
             </p>
           </div>
 
-          <div className="mt-12 grid grid-cols-1 gap-[1.875vw] md:mt-16 ">
-            {keyActivityArchitecureSystem.map((item, index) => (
-              <div key={index} className="flex flex-col  md:flex-row md:items-center md:gap-[2vw] lg:gap-[3vw] ">
-                {/* Left Text */}
-                <div className="flex w-[16.406vw] min-w-[16.406vw] font-semibold md:mb-0 md:pr-[1.5vw] text-[1.563vw]">
-                  {item.text}
-                </div>
+        <div className="mt-12 grid grid-cols-1 gap-[1.875vw] md:mt-16">
+  {keyActivityArchitecureSystem.map((item, index) => (
+    <div
+      key={index}
+      className="
+        md:sticky 
+        top-32 
+        z-10 
+        bg-black 
+        flex flex-col 
+        md:flex-row 
+        md:items-center 
+        md:gap-[2vw] 
+        lg:gap-[3vw]
+        py-[1vw]
+      "
+    >
+      {/* Left Text */}
+      <div className="flex w-[16.406vw] min-w-[16.406vw] font-semibold md:pr-[1.5vw] text-[1.563vw]">
+        {item.text}
+      </div>
 
-                {/* Description */}
-                <div className="flex items-center rounded-lg border border-[#1F2937] px-[1.875vw] py-[1.146vw]  text-[1.042vw]">
-                  {item.description}
-                </div>
-              </div>
+      {/* Description */}
+      <div className="flex items-center rounded-lg border border-[#1F2937] px-[1.875vw] py-[1.146vw] text-[1.042vw]">
+        {item.description}
+      </div>
+    </div>
+  ))}
+</div>
 
-            ))}
-          </div>
         </div>
       </section>
 
