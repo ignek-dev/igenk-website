@@ -43,7 +43,7 @@ const JobCard = ({ job }: JobCardProps) => {
           <div className="mb-2 inline-flex items-center rounded-[8px] bg-[#309689]/10 px-2 py-1 text-sm font-medium text-[#309689]">
             {job.postedAgo}
           </div>
-          <h3 className="text-[1.75rem] font-semibold">{job.title}</h3>
+          <h3 className="text-[1.458vw]! font-semibold">{job.title}</h3>
         </div>
         <button onClick={() => setIsOpen(!isOpen)} className="flex items-center gap-2 pr-3 pb-2 text-xl font-medium">
           View Details
@@ -82,9 +82,9 @@ const JobCard = ({ job }: JobCardProps) => {
         </div>
         <Link
   href="#"
-  className="gap-8 rounded-full bg-black px-14 py-3.5 text-xl font-semibold text-white"
+  className="gap-8 rounded-full bg-black px-14 py-3.5 p20 text-white"
 >
-  <span className="inline-block transition-transform duration-300 hover:scale-110">
+  <span className="inline-block  transition-transform duration-300 hover:scale-110">
     Apply Now
   </span>
 </Link>
