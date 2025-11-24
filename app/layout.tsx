@@ -25,6 +25,12 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${poppins.variable} font-sans`}>
+      <head>
+        <link
+          href="https://fonts.cdnfonts.com/css/rage-italic"
+          rel="stylesheet"
+        />
+      </head>
       <body className="min-h-screen bg-white text-black">
         <Navigation />
         {children}

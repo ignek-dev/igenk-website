@@ -24,8 +24,8 @@ export default function PortfolioList() {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
     const [searchTerm, setSearchTerm] = useState("");
-    const [selectedIndustry, setSelectedIndustry] = useState<string | null>("All Case Studies");
-    const [selectedTechnology, setSelectedTechnology] = useState<string | null>(null);
+    const [selectedIndustry, setSelectedIndustry] = useState<number | null>(0);
+    const [selectedTechnology, setSelectedTechnology] = useState<number | null>(0);
     const [debouncedSearch, setDebouncedSearch] = useState(searchTerm);
     const router = useRouter();
     const PER_PAGE = 6;
@@ -77,8 +77,13 @@ export default function PortfolioList() {
             });
 
             if (debouncedSearch) params.append("search", debouncedSearch);
-            if (selectedIndustry) params.append("industry", selectedIndustry);
-            if (selectedTechnology) params.append("technology", selectedTechnology);
+            if (selectedIndustry !== null && selectedIndustry !== 0) {
+                params.append("case-study-category", String(selectedIndustry));
+            }
+
+            if (selectedTechnology !== null && selectedTechnology !== 0) {
+                params.append("case-study-category", String(selectedTechnology));
+            }
 
             const res = await fetch(`${API_BASE}?${params.toString()}`, {
                 cache: "no-store",
@@ -151,7 +156,7 @@ export default function PortfolioList() {
                                                         <Image
                                                             src={imageUrl}
                                                             alt={item.title.rendered}
-                                                            className="object-fill h-full rounded-xl transition-transform duration-500 group-hover:scale-105 max-w-[29.896vw] w-[29.896vw]"
+                                                            className="object-fill h-full rounded-xl transition-transform duration-500 max-w-[29.896vw] w-[29.896vw]"
                                                             height={341}
                                                             width={574}
                                                         />
