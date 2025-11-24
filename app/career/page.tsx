@@ -37,7 +37,7 @@ export default function CareerPage() {
                 </video>
               </div>
             </div>
-            <p className="max-w-xl pb-12 text-right text-[1.042vw] leading-[30px] font-normal tracking-[0] text-white/80  sm:leading-[28px] t md:justify-self-end">
+            <p className="pb-12 text-right text-[1.042vw] leading-[30px] font-normal tracking-[0] text-white/80  sm:leading-[28px] t md:justify-self-end">
               At IGNEK we value people and it include their growth, learning, and perks that help you succeed personally
               and professionally.
             </p>

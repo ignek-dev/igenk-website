@@ -45,22 +45,7 @@ const cardData = [
     title: "Spring Boot",
     description: "Explore strategies, leadership skills, and growth tactics for",
   },
-  // {
-  //   icon: "/images/blogs/liferayIcon.png",
-  //   title: "Node Js",
-  //   description: "Explore strategies, leadership skills, and growth tactics for",
-  // },
 ]
-// interface WPBlogPost {
-//   id: number;
-//   title: { rendered: string };
-//   excerpt: { rendered: string };
-//   date: string;
-//   _embedded?: {
-//     author?: { name: string }[];
-//     "wp:featuredmedia"?: { source_url: string }[];
-//   };
-// }
 
 const PER_PAGE = 9;
 const API_URL = "https://insights.ignek.com/wp-json/wp/v2/posts";
@@ -68,19 +53,46 @@ const API_URL = "https://insights.ignek.com/wp-json/wp/v2/posts";
 export default function Blogs() {
   const [blogs, setBlogs] = useState<BlogData[]>([]);
   const [loading, setLoading] = useState(true);
-  // const [error, setError] = useState<string | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const [selectedCategory, setSelectedCategory] = useState<number | null>(15);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isHovering, setIsHovering] = useState(false);
 
-  // --- Fetch posts dynamically from WordPress API ---
+  const router = useRouter();
+
+  // Featured blogs for carousel (last 3 blogs)
+  const featuredBlogs = blogs?.slice(-3) || [];
+
+  // Carousel navigation functions
+  const nextSlide = () => {
+    if (featuredBlogs.length > 0) {
+      setCurrentSlide((prev) => (prev + 1) % featuredBlogs.length);
+    }
+  };
+
+  const prevSlide = () => {
+    if (featuredBlogs.length > 0) {
+      setCurrentSlide((prev) => (prev - 1 + featuredBlogs.length) % featuredBlogs.length);
+    }
+  };
+
+  // Auto-play functionality - Changed speed to 7 seconds
+  useEffect(() => {
+    if (featuredBlogs.length <= 1 || isHovering) return;
+    
+    const interval = setInterval(() => {
+      nextSlide();
+    }, 7000); // Changed from 5000 to 7000ms
+
+    return () => clearInterval(interval);
+  }, [featuredBlogs.length, isHovering]);
+
+  // Fetch posts dynamically from WordPress API
   const fetchBlogs = useCallback(async () => {
     try {
       setLoading(true);
-      // setError(null);
-      // window.scrollTo({ top: 0, behavior: "smooth" });
-
-      // Prepare category filter query
+      
       const categoryQuery = selectedCategory
         ? `&categories=${selectedCategory}`
         : "";
@@ -98,7 +110,6 @@ export default function Blogs() {
         id: post.id,
         slug: post.slug,
         title: post.title?.rendered || "Untitled",
-        // author: post._embedded?.author?.[0]?.name || "Bhavin Panchani",
         author: "Bhavin Panchani",
         date: post.date
           ? new Date(post.date).toLocaleDateString("en-US", {
@@ -116,16 +127,14 @@ export default function Blogs() {
         image:
           post._embedded?.["wp:featuredmedia"]?.[0]?.source_url ||
           "/images/blogs/blogImage.png",
-        authPic:
-          // post._embedded?.author?.[0]?.avatar_urls?.["96"] ||
-          "/images/blogs/blogAuthor.png",
+        authPic: "/images/blogs/blogAuthor.png",
+        desc: post.excerpt?.rendered || "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris."
       }));
 
       setBlogs(formatted);
       setTotalPages(total);
+      setCurrentSlide(0);
     } catch (err: unknown) {
-      // if (err instanceof Error) setError(err.message);
-      // else setError("Failed to fetch blogs");
       console.log(err)
     } finally {
       setLoading(false);
@@ -135,7 +144,6 @@ export default function Blogs() {
   useEffect(() => {
     fetchBlogs();
   }, [fetchBlogs]);
-  const router = useRouter();
 
   return (
     <main className="pb-5">
@@ -145,13 +153,13 @@ export default function Blogs() {
         <div className="mx-auto w-full px-4 pt-12 pb-16 md:px-8 md:pt-20 md:pb-22 global-container">
           <div className="relative grid items-start gap-10 md:grid-cols-2">
             <div>
-              <h1 className="mt-9 bg-[linear-gradient(0deg,#FFFFFF,#FFFFFF),linear-gradient(0deg,rgba(0,0,0,0.23),rgba(0,0,0,0.23))] bg-clip-text  text-transparent">
+              <h1 className="mt-9 bg-[linear-gradient(0deg,#FFFFFF,#FFFFFF),linear-gradient(0deg,rgba(0,0,0,0.23),rgba(0,0,0,0.23))] bg-clip-text text-transparent">
                 Our Latest
                 <br />
                 Tech Blogs
               </h1>
             </div>
-            <p className="absolute bottom-0 max-w-2xl text-right  text-white p18 md:mt-16 md:justify-self-end">
+            <p className="absolute bottom-0 max-w-2xl text-right text-white p18 justify-self-end">
               Explore our latest tech blogs to stay informed on trends, innovations, and best practices across industries, helping you leverage technology effectively for business growth and operational excellence.
             </p>
           </div>
@@ -159,74 +167,154 @@ export default function Blogs() {
       </section>
 
       <section className="bg-[#F9FAF7] py-[64px] text-black">
-        <div className="mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[80px] [@media(min-width:1920px)]:px-[100px]">
+        <div className="mx-auto w-full px-4 md:px-8 global-container">
           {/* Header part */}
           <div className="mb-[2.25rem] grid grid-cols-1 items-end gap-8 md:grid-cols-2">
             <div>
-              <h2 className=" tracking-tight text-[#000000]">
+              <h2 className="tracking-tight text-[#000000]">
                 Check Out Our Newly
                 <br />
                 Written Tech Blogs
               </h2>
             </div>
 
-            <div className="flex h-full  items-end">
-              <p className=" w-full text-right  text-[#374151]">
+            <div className="flex h-full items-end">
+              <p className="w-full text-right text-[#374151]">
                 Stay updated with our newly written tech blogs, covering trends, insights, and innovations to help your business stay ahead.
               </p>
             </div>
           </div>
-          {/* <main className="p-6">
-      <BlogCarousel />
-    </main> */}
 
-          <div className="mx-auto grid h-[640px] w-[100%] gap-6">
-            {blogs?.slice(0, 1).map((blog) => (
-              <div key={blog.title} className="relative cursor-pointer overflow-hidden rounded-[22px] shadow-lg"
-                onClick={() => router.push(`/blog/${blog.slug}`)}
-              >
-                {/* Background Image */}
-                <div className="relative h-[640px] w-full">
-                  <Image
-                    src={blog?.image}
-                    alt={blog.title}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    className="object-cover brightness-75"
-                    priority
-                  />
-                </div>
+          {/* Carousel Section */}
+          <div className="mx-auto w-[100%] relative mb-16">
+            {/* Carousel Container */}
+            <div className="relative h-[640px] overflow-hidden rounded-[22px] shadow-lg">
+              {featuredBlogs.length > 0 ? (
+                featuredBlogs.map((blog, index) => (
+                  <div
+                    key={blog.id}
+                    className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
+                      index === currentSlide ? 'opacity-100' : 'opacity-0 pointer-events-none'
+                    }`}
+                  >
+                    {/* Background Image */}
+                    <div className="relative h-full w-full">
+                      <Image
+                        src={blog?.image}
+                        alt={blog.title}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        className="object-cover brightness-75"
+                        priority={index === 0}
+                      />
+                    </div>
 
-                {/* Overlay Content */}
-                <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/70 via-black/30 to-transparent pl-[4.375rem] pb-[3rem] text-white">
-                  <div className="mb-[0.938vw] flex items-center space-x-2 font-normal p18 opacity-90">
-                    <span className="rounded-full bg-white/20 px-[1.042vw] py-[0.521vw] backdrop-blur-md">{blog.category}</span>
-                    <span>• {blog?.readTime}</span>
+                    {/* Overlay Content */}
+                    <div 
+                      className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/70 via-black/30 to-transparent pl-[4.375rem] pb-[3rem] text-white cursor-pointer"
+                      onClick={() => router.push(`/blog/${blog.slug}`)}
+                      onMouseEnter={() => setIsHovering(true)}
+                      onMouseLeave={() => setIsHovering(false)}
+                    >
+                      <div className="mb-[0.938vw] flex items-center space-x-2 font-normal p18 opacity-90">
+                        <span className="rounded-full bg-white/20 px-[1.042vw] py-[0.521vw] backdrop-blur-md">
+                          {blog.category}
+                        </span>
+                        <span>• {blog?.readTime}</span>
+                      </div>
+
+                      <h2 className="mb-[0.938vw] max-w-3xl">{blog.title}</h2>
+                      <div className="flex items-center space-x-2 font-normal text-xl">
+                        <Image
+                          src={blog?.authPic}
+                          alt={"Author"}
+                          width={40}
+                          height={40}
+                          className="w-10 h-10 object-cover rounded-full border-2 border-white/80"
+                        />
+                        <span className="font-medium p20">{blog?.author}</span>
+                        <span className="opacity-80 p18">• {blog.date}</span>
+                      </div>
+                      
+                      {/* Description on Hover */}
+                      <div className={`mt-4 transition-all duration-300 ease-in-out ${
+                        isHovering ? 'opacity-100 max-h-20' : 'opacity-0 max-h-0'
+                      } overflow-hidden`}>
+                        <p className="text-white/90 text-lg leading-relaxed line-clamp-2">
+                          {blog.desc ? blog.desc.replace(/<[^>]*>/g, '') : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna."}
+                        </p>
+                      </div>
+                    </div>
                   </div>
+                ))
+              ) : (
+                !loading && (
+                  <div className="absolute inset-0 flex items-center justify-center bg-gray-200 rounded-[22px]">
+                    <p className="text-gray-500 text-lg">No featured blogs available</p>
+                  </div>
+                )
+              )}
+            </div>
 
-                  <h2 className="mb-[0.938vw]">{blog.title}</h2>
-                  <div className="flex items-center space-x-2 font-normal text-xl">
-                    <Image
-                      src={blog?.authPic}
-                      alt={"pic"}
-                      width={40}
-                      height={40}
-                      className="w-10 h-10 object-cover rounded-full border-2 border-white/80"
+            {/* Navigation Arrows - Only show if there are multiple slides */}
+            {featuredBlogs.length > 1 && (
+              <>
+                {/* Previous Arrow */}
+                <button
+                  onClick={prevSlide}
+                  className="absolute left-[53px] top-[210px] w-16 h-16 bg-white/20 backdrop-blur-sm border-2 border-white/30 rounded-[40px] flex items-center justify-center transition-all duration-200 hover:bg-white/30 hover:border-white/50 z-10"
+                  style={{
+                    padding: '16px 10px 16px 10px',
+                    gap: '10px'
+                  }}
+                  aria-label="Previous slide"
+                >
+                  <svg 
+                    className="w-9 h-9 text-white" 
+                    fill="currentColor" 
+                    viewBox="0 0 16 16"
+                  >
+                    <path 
+                      fillRule="evenodd" 
+                      d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5"
                     />
-                    <span className="font-medium p20">{blog?.author}</span>
-                    <span className="opacity-80 p18">• {blog.date}</span>
-                  </div>
-                </div>
-              </div>
-            ))}
+                  </svg>
+                </button>
+
+                {/* Next Arrow */}
+                <button
+                  onClick={nextSlide}
+                  onMouseEnter={() => setIsHovering(true)}
+                      onMouseLeave={() => setIsHovering(false)}
+                  className="absolute right-[53px] top-[210px] w-16 h-16 bg-white/20 backdrop-blur-sm border-2 border-white/30 rounded-[40px] flex items-center justify-center transition-all duration-200 hover:bg-white/30 hover:border-white/50 z-10"
+                  style={{
+                    padding: '16px 10px 16px 10px',
+                    gap: '10px'
+                  }}
+                  aria-label="Next slide"
+                >
+                  <svg 
+                    className="w-9 h-9 text-white" 
+                    fill="currentColor" 
+                    viewBox="0 0 16 16"
+                  >
+                    <path 
+                      fillRule="evenodd" 
+                      d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"
+                    />
+                  </svg>
+                </button>
+              </>
+            )}
           </div>
+
+          {/* Rest of the code remains exactly the same */}
+          {/* Category Section */}
           <div className="flex flex-col py-16">
-            {/* Section Title */}
             <h2 className="mb-9 text-5xl leading-tight font-semibold tracking-tight text-[#000000]">
               Browse By Category
             </h2>
 
-            {/* Cards Grid */}
             <div className="flex flex-wrap justify-between gap-4">
               {cardData.map((card, index) => {
                 const isSelected = selectedCategory === card.id;
@@ -251,179 +339,192 @@ export default function Blogs() {
                 );
               })}
             </div>
-
           </div>
+
+          {/* Blog Grid Section */}
           <div className="pb-16">
             <h2 className="mb-9 tracking-tight text-[#000000]">Browse Latest Blog</h2>
-            <div className="grid grid-cols-1 gap-[3.375rem] md:grid-cols-2 lg:grid-cols-3">
-              {
-                loading ? (
-                  <p>Loading post…</p>
-                ) : (
-                  blogs.map((blog, index) => (
-                    <BlogCard key={index} blog={blog} />
-                  ))
-                )
-              }
+            
+            {loading ? (
+              <div className="flex justify-center items-center py-12">
+                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-black"></div>
+              </div>
+            ) : blogs.length === 0 ? (
+              <div className="text-center py-12">
+                <p className="text-gray-500 text-lg">No blogs found for the selected category.</p>
+              </div>
+            ) : (
+              <>
+                <div className="grid grid-cols-1 gap-[3.375rem] md:grid-cols-2 lg:grid-cols-3">
+                  {blogs.map((blog, index) => (
+                    <BlogCard key={`${blog.id}-${index}`} blog={blog} />
+                  ))}
+                </div>
 
-            </div>
-
-            <div className="flex justify-left mt-[2.063rem]">
-              <ul className="flex items-center gap-2 p20 font-medium">
-                {/* First */}
-                <li
-                  className={`px-4 py-2 flex items-center border rounded-md cursor-pointer ${currentPage === 1
-                    ? "cursor-not-allowed border-gray-300"
-                    : "hover:bg-gray-100"
-                    }`}
-                  onClick={() => currentPage > 1 && setCurrentPage(1)}
-                >
-                  <svg
-                    className="w-[1.146vw] h-[1.146vw] inline-block mr-1"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M11 17l-5-5 5-5M17 17l-5-5 5-5"></path>
-                  </svg>
-
-                  First
-                </li>
-
-                {/* Back */}
-                <li
-                  className={`px-4 flex items-center py-2 border rounded-md cursor-pointer ${currentPage === 1
-                    ? "border-gray-300 cursor-not-allowed"
-                    : "hover:bg-gray-100"
-                    }`}
-                  onClick={() => currentPage > 1 && setCurrentPage((p) => Math.max(1, p - 1))}
-                >
-                  <svg
-                    className="w-[1.146vw] h-[1.146vw] inline-block mr-1"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7"></path>
-                  </svg>
-                  Back
-                </li>
-
-                {/* Dynamic Pages */}
-                {(() => {
-                  const pages = [];
-                  const maxVisible = 5;
-                  let start = Math.max(1, currentPage - 2);
-                  const end = Math.min(totalPages, start + maxVisible - 1);
-                  if (end - start < maxVisible - 1) start = Math.max(1, end - maxVisible + 1);
-
-                  if (start > 1) {
-                    pages.push(
+                {/* Pagination */}
+                {totalPages > 1 && (
+                  <div className="flex justify-left mt-[2.063rem]">
+                    <ul className="flex items-center gap-2 p20 font-medium">
+                      {/* First */}
                       <li
-                        key={1}
-                        onClick={() => setCurrentPage(1)}
-                        className={`px-4 py-2 border rounded-md cursor-pointer hover:bg-gray-100 ${currentPage === 1 ? "bg-black text-white" : ""
-                          }`}
+                        className={`px-4 py-2 flex items-center border rounded-md cursor-pointer ${
+                          currentPage === 1
+                            ? "cursor-not-allowed border-gray-300 text-gray-400"
+                            : "hover:bg-gray-100"
+                        }`}
+                        onClick={() => currentPage > 1 && setCurrentPage(1)}
                       >
-                        1
-                      </li>
-                    );
-
-                    if (start > 2)
-                      pages.push(
-                        <li
-                          key="dots-start"
-                          className="px-4 py-2 border rounded-md cursor-default text-gray-500 select-none"
+                        <svg
+                          className="w-5 h-5 inline-block mr-1"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          viewBox="0 0 24 24"
+                          xmlns="http://www.w3.org/2000/svg"
                         >
-                          ...
-                        </li>
-                      );
-                  }
-
-                  for (let i = start; i <= end; i++) {
-                    pages.push(
-                      <li
-                        key={i}
-                        onClick={() => setCurrentPage(i)}
-                        className={`px-4 py-2 border rounded-md cursor-pointer transition-all duration-200 ${currentPage === i
-                          ? "bg-black text-white border-black"
-                          : "hover:bg-gray-100"
-                          }`}
-                      >
-                        {i}
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M11 17l-5-5 5-5M17 17l-5-5 5-5"></path>
+                        </svg>
+                        First
                       </li>
-                    );
-                  }
 
-                  if (end < totalPages) {
-                    if (end < totalPages - 1) pages.push(<li key="dots-end" className="px-2 text-gray-500 select-none">...</li>);
-                    pages.push(
+                      {/* Back */}
                       <li
-                        key={totalPages}
-                        onClick={() => setCurrentPage(totalPages)}
-                        className={`px-4 py-2 border rounded-md cursor-pointer hover:bg-gray-100 ${currentPage === totalPages ? "bg-black text-white border-black" : ""
-                          }`}
+                        className={`px-4 flex items-center py-2 border rounded-md cursor-pointer ${
+                          currentPage === 1
+                            ? "border-gray-300 cursor-not-allowed text-gray-400"
+                            : "hover:bg-gray-100"
+                        }`}
+                        onClick={() => currentPage > 1 && setCurrentPage((p) => Math.max(1, p - 1))}
                       >
-                        {totalPages}
+                        <svg
+                          className="w-5 h-5 inline-block mr-1"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          viewBox="0 0 24 24"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7"></path>
+                        </svg>
+                        Back
                       </li>
-                    );
-                  }
 
-                  return pages;
-                })()}
+                      {/* Dynamic Pages */}
+                      {(() => {
+                        const pages = [];
+                        const maxVisible = 5;
+                        let start = Math.max(1, currentPage - 2);
+                        const end = Math.min(totalPages, start + maxVisible - 1);
+                        if (end - start < maxVisible - 1) start = Math.max(1, end - maxVisible + 1);
 
-                {/* Next */}
-                <li
-                  className={`px-4 py-2 flex items-center border rounded-md cursor-pointer ${currentPage === totalPages
-                    ? "border-gray-300 cursor-not-allowed"
-                    : "hover:bg-gray-100"
-                    }`}
-                  onClick={() => currentPage < totalPages && setCurrentPage((p) => Math.min(totalPages, p + 1))}
-                >
-                  <svg
-                    className="w-[1.146vw] h-[1.146vw] inline-block mr-1"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"></path>
-                  </svg>
-                  Next
-                </li>
+                        if (start > 1) {
+                          pages.push(
+                            <li
+                              key={1}
+                              onClick={() => setCurrentPage(1)}
+                              className={`px-4 py-2 border rounded-md cursor-pointer hover:bg-gray-100 ${
+                                currentPage === 1 ? "bg-black text-white" : ""
+                              }`}
+                            >
+                              1
+                            </li>
+                          );
 
-                {/* Last */}
-                <li
-                  className={`px-4 py-2 flex items-center border rounded-md cursor-pointer ${currentPage === totalPages
-                    ? "border-gray-300 cursor-not-allowed"
-                    : "hover:bg-gray-100"
-                    }`}
-                  onClick={() => currentPage < totalPages && setCurrentPage(totalPages)}
-                >
-                  <svg
-                    className="w-[1.146vw] h-[1.146vw] inline-block mr-1"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5-5 5M7 7l5 5-5 5"></path>
-                  </svg>
+                          if (start > 2)
+                            pages.push(
+                              <li
+                                key="dots-start"
+                                className="px-4 py-2 border rounded-md cursor-default text-gray-500 select-none"
+                              >
+                                ...
+                              </li>
+                            );
+                        }
 
-                  Last
-                </li>
-              </ul>
-            </div>
+                        for (let i = start; i <= end; i++) {
+                          pages.push(
+                            <li
+                              key={i}
+                              onClick={() => setCurrentPage(i)}
+                              className={`px-4 py-2 border rounded-md cursor-pointer transition-all duration-200 ${
+                                currentPage === i
+                                  ? "bg-black text-white border-black"
+                                  : "hover:bg-gray-100"
+                              }`}
+                            >
+                              {i}
+                            </li>
+                          );
+                        }
 
+                        if (end < totalPages) {
+                          if (end < totalPages - 1) pages.push(
+                            <li key="dots-end" className="px-4 py-2 text-gray-500 select-none">...</li>
+                          );
+                          pages.push(
+                            <li
+                              key={totalPages}
+                              onClick={() => setCurrentPage(totalPages)}
+                              className={`px-4 py-2 border rounded-md cursor-pointer hover:bg-gray-100 ${
+                                currentPage === totalPages ? "bg-black text-white border-black" : ""
+                              }`}
+                            >
+                              {totalPages}
+                            </li>
+                          );
+                        }
 
+                        return pages;
+                      })()}
 
+                      {/* Next */}
+                      <li
+                        className={`px-4 py-2 flex items-center border rounded-md cursor-pointer ${
+                          currentPage === totalPages
+                            ? "border-gray-300 cursor-not-allowed text-gray-400"
+                            : "hover:bg-gray-100"
+                        }`}
+                        onClick={() => currentPage < totalPages && setCurrentPage((p) => Math.min(totalPages, p + 1))}
+                      >
+                        Next
+                        <svg
+                          className="w-5 h-5 inline-block ml-1"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          viewBox="0 0 24 24"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                      </li>
 
+                      {/* Last */}
+                      <li
+                        className={`px-4 py-2 flex items-center border rounded-md cursor-pointer ${
+                          currentPage === totalPages
+                            ? "border-gray-300 cursor-not-allowed text-gray-400"
+                            : "hover:bg-gray-100"
+                        }`}
+                        onClick={() => currentPage < totalPages && setCurrentPage(totalPages)}
+                      >
+                        Last
+                        <svg
+                          className="w-5 h-5 inline-block ml-1"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          viewBox="0 0 24 24"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5-5 5M7 7l5 5-5 5"></path>
+                        </svg>
+                      </li>
+                    </ul>
+                  </div>
+                )}
+              </>
+            )}
           </div>
         </div>
       </section>

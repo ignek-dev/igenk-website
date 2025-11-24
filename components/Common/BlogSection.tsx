@@ -156,7 +156,7 @@ export default function BlogSection() {
                   />
                 </div>
                 <div className="">
-                  <h4 className="">{item.title}</h4>
+                  <div className="text-[1.25vw]">{item.title}</div>
                   <p className="p16 mt-[10px] line-clamp-2  text-gray-700"
                     dangerouslySetInnerHTML={{ __html: item.desc ?? "" }}
                   />
