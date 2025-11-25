@@ -214,7 +214,7 @@ export default function Blogs() {
                       <div
                         className="absolute inset-0 flex cursor-pointer flex-col justify-end px-[4.375rem] pb-[3rem] text-white"
                         style={{
-                          background: "linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.81) 100%)",
+                          background: "linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,100) 100%)",
                         }}
                         onClick={() => router.push(`/blog/${blog.slug}`)}
                       >

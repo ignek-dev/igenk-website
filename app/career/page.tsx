@@ -81,7 +81,7 @@ export default function CareerPage() {
           alt={p.title.join(" ")}
           width={188}
           height={127}
-          className="mx-auto max-h-[6.615vw] max-w-[9.792vw] "
+          className="mx-auto max-h-[6.615vw] object-contain max-w-[9.792vw] "
           style={{ height: "auto", width: "189px" }}
         />
         <div className="text-[1.25vw] leading-[1.667vw] font-semibold">
