@@ -123,13 +123,13 @@ export default function LiferayPerformanceTuningPage() {
               <div className="p18 banner-tab">
                 Liferay Services
               </div>
-              <h1 className="mt-[2.552vw] ">
+              <h1 className="mt-[2.552vw] w-[40.156vw]">
                 Liferay
                 <br />
                 <span className="block">Performance Tuning</span>
               </h1>
             </div>
-            <p className="absolute bottom-0 max-w-xl p18 mt-[3.177vw] md:justify-self-end">
+            <p className="absolute bottom-0 w-[24.479vw] p18 mt-[3.177vw] md:justify-self-end">
               Optimize your Liferay Portal with specialized Liferay Performance Tuning, improving speed, stability, and
               resource efficiency for superior user experience.
             </p>
