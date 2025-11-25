@@ -91,8 +91,18 @@ export default function PortfolioList() {
 
             if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
 
-            const data = (await res.json()) as WPPortfolioPost[];
+            let data = (await res.json()) as WPPortfolioPost[];
             const total = Number(res.headers.get("x-wp-totalpages")) || 1;
+
+            if (data.length > 0 && debouncedSearch) {
+                data = [...data].sort((a, b) => {
+                    const s = debouncedSearch.toLowerCase();
+                    const aMatch = a.title.rendered.toLowerCase().includes(s) ? 1 : 0;
+                    const bMatch = b.title.rendered.toLowerCase().includes(s) ? 1 : 0;
+
+                    return bMatch - aMatch;
+                });
+            }
             setPosts(data);
             setTotalPages(total);
         } catch (err: unknown) {
