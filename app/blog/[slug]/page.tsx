@@ -214,13 +214,13 @@ export default function BlogDetails() {
                         </h1>
 
                         <div className="max-w-2xl mt-6 text-[1.25vw] font-normal text-gray-200 sm:text-xl md:mt-[3.438rem]">
-                            <div className="flex items-center mt-4 space-x-2  text-white">
+                            <div className="flex items-center p24 mt-4 space-x-2  text-white">
                                 <Image
                                     src={post._embedded?.author?.[0]?.avatar_urls?.["96"] || "/images/blogs/blogAuthor.png"}
                                     alt={"authorI"}
-                                    width={40}
-                                    height={40}
-                                    className="w-10 h-10 object-cover rounded-full border border-gray-200"
+                                    width={58}
+                                    height={58}
+                                    className="w-[3.021vw] h-[3.021vw] object-cover rounded-full border border-gray-200"
                                 />
                                 <span className="">{post._embedded?.author?.[0]?.name || "Bhavin Panchani"}</span>
                                 <span>•</span>
