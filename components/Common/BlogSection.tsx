@@ -108,19 +108,19 @@ export default function BlogSection() {
           </p>
         </div>
 
-        <div className="mt-16 grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16  xl:gap-20">
+        <div className="mt-16 grid grid-cols-1 gap-[1.719vw] lg:grid-cols-2  ">
           <div
-            className={`flex flex-col space-y-2 cursor-pointer ${isInView ? "animate-when-visible animate-slide-left animation-delay-200" : "opacity-0"
+            className={`flex flex-col  cursor-pointer ${isInView ? "animate-when-visible animate-slide-left animation-delay-200" : "opacity-0"
               }`}
             onClick={() => router.push(`/blog/${blogs[0]?.slug}`)}
           >
-            <div className="overflow-hidden rounded-xl bg-white">
+            <div className="overflow-hidden rounded-[1.042vw] bg-white">
               <Image
                 src={blogs[0]?.image || "/images/blog.svg"}
                 alt={main?.title || "Blog Post"}
                 width={856}
                 height={459}
-                className="h-auto w-[44.583vw] object-cover max-h-[459px]"
+                className=" object-cover max-h-[459px]"
               />
             </div>
             <h3 className="pt-[2.292vw] text-[#101012] ">
@@ -135,18 +135,18 @@ export default function BlogSection() {
           {/* Right: three small cards */}
           <div
             ref={sectionRef}
-            className={`space-y-4 transition-all duration-[1500ms] ease-out ${isInView ? "translate-x-0 opacity-100" : "translate-x-20 opacity-0"
+            className={` transition-all duration-[1500ms] ease-out ${isInView ? "translate-x-0 opacity-100" : "translate-x-20 opacity-0"
               }`}
           >
             {blogs?.slice(1).map((item, index) => (
               <div
                 key={item.id}
-                className={`grid grid-cols-[260px_1fr] items-center gap-5 cursor-pointer 
-                 ${index == blogs?.length - 2 ? "mb-0" : "mb-8"}
+                className={`grid grid-cols-[260px_1fr] m-0 items-center cursor-pointer 
+                
                   }`}
                 onClick={() => router.push(`/blog/${item?.slug}`)}
               >
-                <div className="overflow-hidden rounded-lg bg-gray-100 mb-2">
+                <div className="overflow-hidden rounded-[1.042vw] bg-gray-100">
                   <Image
                     src={item.image}
                     alt={item.title}
@@ -155,13 +155,13 @@ export default function BlogSection() {
                     className="h-full w-full object-cover"
                   />
                 </div>
-                <div className="[@media(min-width:1800px)]:pb-0">
-                  <p className="line-height-[24px] text-[1.25vw] font-semibold">{item.title}</p>
-                  <p className="line-height-[24px] mt-1 line-clamp-2 text-base text-gray-700"
+                <div className=" ml-5">
+                  <div className="text-[1.25vw]">{item.title}</div>
+                  <p className="p16 mt-[10px] line-clamp-2  text-gray-700"
                     dangerouslySetInnerHTML={{ __html: item.desc ?? "" }}
                   />
                 </div>
-                <div className="col-span-2 mt-1 w-full border-t border-gray-300" />
+                <div className="col-span-2 mt-[2.031vw] mb-[2.448vw] w-full border-t border-gray-300" />
               </div>
             ))}
           </div>
