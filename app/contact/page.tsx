@@ -311,7 +311,7 @@ export default function ContactPage() {
             </div>
             <div className="flex h-full items-center justify-center">
               <p className="text-right p18 text-[#374151]">
-                We have offices in India and the United Arab Emirates, providing seamless regional support and
+                We have offices in India and the United Arab Emirates, providing <br/> seamless regional support and
                 collaboration for our global clients.{" "}
               </p>
             </div>
