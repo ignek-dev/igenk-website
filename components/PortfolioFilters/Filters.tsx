@@ -41,7 +41,7 @@ export default function Filters({
     ];
 
     return (
-        <aside className="sticky top-[8vw] w-auto max-w-fit bg-[#F1F5F5] px-[3.333vw] py-[1.719vw] rounded-2xl shadow-sm h-full">
+        <aside className="sticky top-[8vw] w-auto max-w-fit bg-[#F1F5F5] px-[3.125vw] py-[1.719vw] rounded-2xl shadow-sm h-full">
 
             <h4 className="font-medium text-[1.5625vw] leading-[1.67vw] mb-[1.6667vw]">
                 Filters
@@ -81,7 +81,7 @@ export default function Filters({
                     Search By Industry
                 </h3>
 
-                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-[0.52vw] text-[1.041vw]">
+                <ul className="grid grid-cols-2 gap-[0.52vw] text-[1.041vw]">
                     {industries.map((item) => (
                         <li
                             key={item.id}

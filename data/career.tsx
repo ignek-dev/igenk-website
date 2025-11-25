@@ -9,7 +9,7 @@ export const perks = [
     { title: ["Training &", "Development"], icon: "/images/career/gibly-images/training-development.png" },
     { title: ["Enterprise", "Projects"], icon: "/images/career/gibly-images/enterprise-project.png" },
     { title: ["Leave Carry", "Forward"], icon: "/images/career/gibly-images/leave-carry-forward.png" },
-    { title: ["Yearly Domenstic", "Trip"], icon: "/images/career/gibly-images/yearly-trip.png" },
+    { title: ["Yearly ", "Domenstic Trip"], icon: "/images/career/gibly-images/yearly-trip.png" },
     { title: ["WFH", "Benefits"], icon: "/images/career/gibly-images/hybrid-work.png" },
     { title: ["Fun", "Activities"], icon: "/images/career/gibly-images/fun-activities.png" },
     { title: ["Flexible", "Timing"], icon: "/images/career/gibly-images/flexible-timing.png" },
