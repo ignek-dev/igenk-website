@@ -40,8 +40,7 @@ select:-webkit-autofill {
 }
 
 @layer utilities {
-
-  /* Gloal padding across website */
+  /* Global padding across website */
   .global-container {
     padding-left: 10vw !important;
     /* default mobile */
@@ -56,7 +55,14 @@ select:-webkit-autofill {
     aspect-ratio: 91 / 43;
   }
 }
-/* From Uiverse.io by pradipkaityuiux */ 
+/* From Uiverse.io by pradipkaityuiux */
+/* Styles for PhoneInput country select */
+.PhoneInputCountrySelect {
+  background-color: black !important;
+  color: white; /* Make the text visible */
+  border: none;
+  font-size: 1rem; 
+}
 
 /* Global fonts*/
 h1 {
@@ -191,11 +197,7 @@ h4 {
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  background: conic-gradient(
-    transparent 0deg,
-    #00ffff 90deg,
-    transparent 200deg
-  );
+  background: conic-gradient(transparent 0deg, #00ffff 90deg, transparent 200deg);
   animation: fullSweep 3s ease-in-out infinite;
 }
 
@@ -203,14 +205,13 @@ h4 {
   0% {
     transform: rotate(0deg);
   }
-  50% { 
-    transform: rotate(180deg); 
+  50% {
+    transform: rotate(180deg);
   }
   100% {
-    transform: rotate(360deg); 
+    transform: rotate(360deg);
   }
 }
-
 
 .nav-fancy-glow::after {
   content: "";
@@ -238,14 +239,14 @@ h4 {
 }
 
 /* RESPONSIVE */
-@media (max-width:1536px) {
+@media (max-width: 1536px) {
   .nav-fancy-button {
     width: 56px;
     height: 56px;
   }
 }
 
-@media (max-width:1440px) {
+@media (max-width: 1440px) {
   .nav-fancy-button {
     width: 50px;
     height: 50px;
@@ -607,13 +608,11 @@ h4 {
 
 /*Gradient for Liferay pages heading*/
 .text-gradient-liferay {
-  background: linear-gradient(0deg, #ffffff, #ffffff),
-    linear-gradient(0deg, rgba(0, 0, 0, 0.23), rgba(0, 0, 0, 0.23));
+  background: linear-gradient(0deg, #ffffff, #ffffff), linear-gradient(0deg, rgba(0, 0, 0, 0.23), rgba(0, 0, 0, 0.23));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
-
 
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
