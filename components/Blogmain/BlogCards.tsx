@@ -31,13 +31,13 @@ export default function BlogCard({ blog }: BlogCardProps) {
   onClick={handleClick}
 >
   {/* Image */}
-  <div className="rounded-[19px] p-1 shadow overflow-hidden w-full">
+  <div className="rounded-[19px] h-[291px] w-[464px] p-1 shadow overflow-hidden w-full">
     <Image
       src={blog.image}
       alt={blog.title}
       width={500}
-      height={300}
-      className="w-full rounded-[16px] h-auto object-cover"
+      height={291}
+      className="w-full h-[291px]  rounded-[16px] "
     />
   </div>
 
@@ -51,7 +51,7 @@ export default function BlogCard({ blog }: BlogCardProps) {
   </div>
 
   {/* Title */}
-  <h3 className=" text-gray-900 mt-3 ">
+  <h3 className="text-[1.563vw]! loading-[1.875vw] text-gray-900 mt-3 ">
     {blog.title}
   </h3>
 

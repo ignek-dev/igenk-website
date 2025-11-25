@@ -140,7 +140,7 @@ const handleWheelScroll = () => {
         </div>
       </section>
      <section>
-  <div className="mx-auto w-full px-4 py-[64px] lg:py-[64px] global-container">
+  <div className="mx-auto w-full px-4   global-container">
     <div
       className="flex cursor-grab overflow-x-hidden"
       onMouseDown={handleMouseDown}
@@ -156,11 +156,11 @@ const handleWheelScroll = () => {
           className={`flex-shrink-0 px-16 ${index === 0 ? "pl-0" : ""} ${index === systemArchitecure.length - 1 ? "pr-0" : ""} ${index !== systemArchitecure.length - 1 ? "border-r border-[#E5E7EB]" : ""}`}
           style={{ width: '22%' }}
         >
-          <div className="flex flex-col gap-[4.688vw] py-4">
-            <h3 className="text-[1.875vw] font-semibold text-gray-600 leading-normal">
+          <div className="flex flex-col  gap-[4.688vw] py-4">
+            <h3 className="text-[1.875vw] mt-[64px] h-[88px] font-semibold text-gray-600 leading-normal">
               {item.text}
             </h3>
-            <p className="text-gray-500 p16 leading-relaxed mt-auto">
+            <p className="text-gray-500 mb-[64px] p16 leading-relaxed mt-auto">
               {item.description}
             </p>
           </div>
