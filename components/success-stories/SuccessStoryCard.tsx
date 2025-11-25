@@ -51,7 +51,7 @@ const SuccessStoryCard: React.FC<{ story: Story }> = ({ story }) => {
           >
             Read case study
           </Link>
-          <h4 className="mb-4 text-lg font-semibold text-gray-800">Provided Services</h4>
+          <p className="mb-4 text-[20px] font-semibold text-gray-800">Provided Services</p>
           <div className="flex flex-wrap gap-3">
             {commonProvidedServices.map((service, idx) => (
               <TechnologyChip key={idx} iconSrc={service.iconSrc} name={service.name} />

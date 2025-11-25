@@ -159,17 +159,17 @@ export default function ContactPage() {
   }
   return (
     <main className="bg-black text-white">
-      <section className="relative mt-[-1px] pt-44 pb-16 md:pb-16">
+      <section className="relative -mt-px pt-44 pb-16 md:pb-16">
         {/* Main Content with standard padding */}
-        <div className="global-container mx-auto w-full px-4 md:px-8">
+        <div className="global-container mx-auto w-full">
           {/* Top Section: Title and Description */}
           <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-5">
-            <h1 className="text-[4.375rem] leading-[5.85rem] font-medium text-white md:col-span-2 [@media(min-width:1440px)]:text-[5.375rem] [@media(min-width:1536px)]:text-[5.5rem] [@media(min-width:1920px)]:text-[5.625rem]">
+            <h1 className="font-medium text-white md:col-span-2">
               Contact Us
             </h1>
-            <p className="font-regular text-xl right-0 tracking-normal text-[#FFFFFF] md:col-span-3 md:text-right [@media(min-width:1440px)]:text-lg [@media(min-width:1920px)]:text-xl">
-              Get in touch for inquiries about our properties. We&apos;re here to offer expert
-              advice,<br/> personalized solutions, and exceptional service to meet all your needs effectively.
+            <p className="font-regular p20 right-0 tracking-normal text-[#FFFFFF] md:col-span-3 md:text-right">
+              Get in touch for inquiries about our properties. We&apos;re here to offer expert <br/>
+              advice, personalized solutions, and exceptional service to meet all your needs effectively.
             </p>
           </div>
 
@@ -180,10 +180,10 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 gap-16 md:grid-cols-2">
             {/* Left Side: "Lets Start Conversation" */}
             <div className="flex flex-col">
-              <h2 className="text-5xl leading-[3.75rem] font-semibold tracking-[-2%] [@media(min-width:1440px)]:text-4xl [@media(min-width:1920px)]:text-5xl">
+              <h2 className="font-semibold">
                 Let's Start the Conversation
               </h2>
-              <p className="font-regular mt-3 max-w-xl text-lg leading-[1.75rem] text-[#FFFFFF]">
+              <p className="font-regular! mt-3 max-w-xl text-lg p18 text-left! text-[#FFFFFF]">
                 We at IGNEK appreciate your questions, comments, and teamwork. Whether you have enquiries about our
                 projects or would like to discuss our services.
               </p>
@@ -191,19 +191,19 @@ export default function ContactPage() {
               {/* Info Blocks */}
               <div className="mt-9 flex flex-col gap-8 sm:flex-row sm:gap-26">
                 <div className="flex max-w-[304px] flex-col gap-2">
-                  <h3 className="text-lg leading-[1.25rem] font-medium text-[#DBD3D3]">Email Address</h3>
+                  <h3 className="p18 font-medium! text-[#DBD3D3]">Email Address</h3>
                   <a
                     href="mailto:sales@ignek.com"
-                    className="mt-1 text-lg leading-[1.5rem] text-white hover:text-blue-400"
+                    className="p16 text-white hover:text-blue-400"
                   >
                     sales@ignek.com
                   </a>
                 </div>
                 <div className="flex max-w-[304px] flex-col gap-2">
-                  <h3 className="text-lg leading-[1.25rem] font-medium text-[#DBD3D3]">Phone Number</h3>
+                  <h3 className="p18 font-medium! text-[#DBD3D3]">Phone Number</h3>
                   <a
                     href="tel:+016351575560"
-                    className="mt-1 text-lg leading-[1.5rem] text-white hover:text-blue-400"
+                    className="p16 text-white hover:text-blue-400"
                   >
                     +91 63515 75560
                   </a>
@@ -212,7 +212,7 @@ export default function ContactPage() {
 
               {/* Follow Us */}
               <div className="mt-9 flex flex-col gap-8 sm:flex-row sm:items-center sm:gap-32">
-                <h3 className="text-lg leading-[1.25rem] font-medium text-[#FFFFFF]">Follow Us On</h3>
+                <p className="font-medium! p18 text-[#FFFFFF]">Follow Us On</p>
                 <div className="flex space-x-5">
                   <a
                     href="https://www.facebook.com/ignekinfo/"
@@ -303,14 +303,14 @@ export default function ContactPage() {
           {/* Header part */}
           <div className="mb-22.5 grid grid-cols-1 items-end gap-8 md:grid-cols-2">
             <div>
-              <h2 className="text-5xl leading-[3.75rem] font-semibold tracking-[-2%] text-[#000000]">
+              <h2 className="font-semibold text-[#000000]">
                 Our Offices Locations in India
                 <br />
                 and the United Arab Emirates
               </h2>
             </div>
             <div className="flex h-full items-center justify-center">
-              <p className="text-regular text-right text-lg leading-[1.875rem] text-[#374151]">
+              <p className="text-right text-[#374151]">
                 We have offices in India and the United Arab Emirates, providing seamless regional support and
                 collaboration for our global clients.{" "}
               </p>
@@ -337,29 +337,29 @@ export default function ContactPage() {
                 <div>
                   {" "}
                   {/* Wrapper for the actual details */}
-                  <h3 className="traking-[-2%] text-4xl leading-[2.75rem] font-medium text-[#151314]">
+                  <h3 className="text-[#151314]">
                     Ahmedabad, India
                   </h3>
-                  <p className="mt-4 text-lg leading-[1.75] text-[#4D464A]">
+                  <p className="mt-4 p18 text-left! text-[#4D464A]">
                     E 910- 912, Ganesh Glory 11, Jagatpur Road, SG Highway,
                     <br />
                     Ahmedabad, Gujarat – 382470
                   </p>
                   <div className="mt-24 flex flex-col gap-8 sm:flex-row sm:items-center sm:gap-30">
                     <div className="flex min-w-[232px] flex-col gap-1">
-                      <h4 className="text-xl leading-[1.5rem] font-medium text-[#766C72]">Email Address</h4>
+                      <p className="p20 text-[#766C72]">Email Address</p>
                       <a
                         href="mailto:sales@ignek.com"
-                        className="text-xl leading-[1.5rem] font-medium text-[#151314] hover:text-blue-600"
+                        className="p20 font-medium text-[#151314] hover:text-blue-600"
                       >
                         sales@ignek.com
                       </a>
                     </div>
                     <div className="flex flex-col gap-1">
-                      <h4 className="text-xl leading-[1.5rem] font-medium text-[#766C72]">Phone Number</h4>
+                      <p className="font-medium p20 text-[#766C72]">Phone Number</p>
                       <a
                         href="tel:+916351578580"
-                        className="text-xl leading-[1.5rem] font-medium text-[#151314] hover:text-blue-600"
+                        className="p20 font-medium text-[#151314] hover:text-blue-600"
                       >
                         (+91) 635 157 8580
                       </a>
@@ -381,35 +381,34 @@ export default function ContactPage() {
                   alt="United Arab Emirates Office Location"
                   width={853}
                   height={341}
-                  objectFit="contain"
-                  className="h-[341px] w-[853px]"
+                  className="h-[341px]"
                 />
               </div>
               {/* Right Side: Details (no divider here as it's the last location) */}
               <div className="mt-6 md:mt-4 md:w-1/2 md:pl-3.5">
-                <h3 className="traking-[-2%] text-4xl leading-[2.75rem] font-medium text-[#151314]">
+                <h3 className="text-[#151314]">
                   United Arab Emirates
                 </h3>
-                <p className="mt-4 text-lg leading-[1.75] text-[#4D464A]">
+                <p className="mt-4 p18 text-left! text-[#4D464A]">
                   Office Number: 09-106, Arabian Sky Business center ,
                   <br />
                   Umm Hurrair 2 Dubai UAE
                 </p>
                 <div className="mt-24 flex flex-col gap-8 sm:flex-row sm:gap-30">
                   <div className="flex min-w-[232px] flex-col gap-1">
-                    <h4 className="text-xl leading-[1.5rem] font-medium text-[#766C72]">Email Address</h4>
+                    <p className="font-medium p20 text-[#766C72]">Email Address</p>
                     <a
                       href="mailto:newyork@konstruktion.com"
-                      className="text-xl leading-[1.5rem] font-medium text-[#151314] hover:text-blue-600"
+                      className="p20 font-medium text-[#151314] hover:text-blue-600"
                     >
                       connect@ignek.com
                     </a>
                   </div>
                   <div className="flex flex-col gap-1">
-                    <h4 className="text-xl leading-[1.5rem] font-medium text-[#766C72]">Phone Number</h4>
+                    <p className="font-medium p20 text-[#766C72]">Phone Number</p>
                     <a
                       href="tel:+4146781903"
-                      className="text-xl leading-[1.5rem] font-medium text-[#151314] hover:text-blue-600"
+                      className="p20 font-medium text-[#151314] hover:text-blue-600"
                     >
                       +97 154 219 8252
                     </a>

@@ -62,19 +62,19 @@ export default function SolutionsMegaMenu() {
   return (
     <>
       <div className="global-container mx-auto w-full px-4 py-12 md:px-8">
-        <div className="flex w-full justify-between gap-18">
+        <div className="flex w-full justify-between gap-[5.21vw]">
           {/* Left Group (Solutions & Integrations) */}
-          <div className="flex gap-x-8 [@media(min-width:1440px)]:gap-x-14">
+          <div className="flex gap-[5.21vw]">
             <div>
-              <h3 className="mb-6 text-[1.875rem] leading-[2.375rem] font-medium [@media(min-width:1440px)]:text-[1.5rem] [@media(min-width:1920px)]:text-[1.75rem]">
+              <h4 className="mb-6">
                 Solutions
-              </h3>
+              </h4>
               <ul className="space-y-6">
                 {solutionsLinks.map((link, index) => (
                   <li key={`sol-${index}`}>
                     <Link
                       href={link.href}
-                      className="flex items-center gap-4 text-white/100 transition-colors hover:text-white [@media(min-width:1440px)]:text-base [@media(min-width:1920px)]:text-xl"
+                      className="flex items-center gap-5 text-white p20"
                     >
                       <Image
                         src={link.icon}
@@ -84,22 +84,22 @@ export default function SolutionsMegaMenu() {
                         className="h-10 w-10 flex-shrink-0 rounded-lg bg-white [@media(min-width:1440px)]:h-12 [@media(min-width:1440px)]:w-12 [@media(min-width:1536px)]:h-[52px] [@media(min-width:1536px)]:w-[52px] [@media(min-width:1920px)]:h-[60px] [@media(min-width:1920px)]:w-[60px]"
                       />
                       {/* CHANGE: Removed whitespace-pre and used dangerouslySetInnerHTML for line breaks */}
-                      <span dangerouslySetInnerHTML={{ __html: link.text }} />
+                      <span className="max-w-[160px] whitespace-wrap" dangerouslySetInnerHTML={{ __html: link.text }} />
                     </Link>
                   </li>
                 ))}
               </ul>
             </div>
             <div>
-              <h3 className="mb-6 text-[1.875rem] leading-[2.375rem] font-medium [@media(min-width:1440px)]:text-[1.5rem] [@media(min-width:1920px)]:text-[1.75rem]">
+              <h4 className="mb-6">
                 Integrations
-              </h3>
+              </h4>
               <ul className="space-y-6">
                 {integrationsLinks.map((link, index) => (
                   <li key={`int-${index}`}>
                     <Link
                       href={link.href}
-                      className="flex items-center gap-4 text-white/100 transition-colors hover:text-white [@media(min-width:1440px)]:text-base [@media(min-width:1920px)]:text-xl"
+                      className="flex items-center gap-5 text-white p20"
                     >
                       <Image
                         src={link.icon}
@@ -108,7 +108,7 @@ export default function SolutionsMegaMenu() {
                         height={60}
                         className="h-10 w-10 flex-shrink-0 rounded-lg bg-white [@media(min-width:1440px)]:h-12 [@media(min-width:1440px)]:w-12 [@media(min-width:1536px)]:h-[52px] [@media(min-width:1536px)]:w-[52px] [@media(min-width:1920px)]:h-[60px] [@media(min-width:1920px)]:w-[60px]"
                       />
-                      <span dangerouslySetInnerHTML={{ __html: link.text }} />
+                      <span className="max-w-[280px]" dangerouslySetInnerHTML={{ __html: link.text }} />
                     </Link>
                   </li>
                 ))}
@@ -116,17 +116,17 @@ export default function SolutionsMegaMenu() {
             </div>
           </div>
 
-          <div className="flex gap-x-8">
+          <div className="flex gap-[5.21vw]">
             <div>
-              <h3 className="mb-6 text-[1.875rem] leading-[2.375rem] font-medium [@media(min-width:1440px)]:text-[1.5rem] [@media(min-width:1920px)]:text-[1.75rem]">
+              <h4 className="mb-6">
                 Liferay Marketplace
-              </h3>
+              </h4>
               <ul className="space-y-6">
                 {marketplaceLinks.map((link, index) => (
                   <li key={`mp-${index}`}>
                     <Link
                       href={link.href}
-                      className="flex items-center gap-4 text-white/100 transition-colors hover:text-white [@media(min-width:1440px)]:text-base [@media(min-width:1920px)]:text-xl"
+                      className="flex items-center gap-5 text-white p20"
                     >
                       <Image
                         src={link.icon}
@@ -135,22 +135,22 @@ export default function SolutionsMegaMenu() {
                         height={60}
                         className="h-10 w-10 flex-shrink-0 rounded-lg bg-white [@media(min-width:1440px)]:h-12 [@media(min-width:1440px)]:w-12 [@media(min-width:1536px)]:h-[52px] [@media(min-width:1536px)]:w-[52px] [@media(min-width:1920px)]:h-[60px] [@media(min-width:1920px)]:w-[60px]"
                       />
-                      <span dangerouslySetInnerHTML={{ __html: link.text }} />
+                      <span className="max-w-[280px]" dangerouslySetInnerHTML={{ __html: link.text }} />
                     </Link>
                   </li>
                 ))}
               </ul>
             </div>
             <div>
-              <h3 className="mb-6 text-[1.875rem] leading-[2.375rem] font-medium [@media(min-width:1440px)]:text-[1.5rem] [@media(min-width:1920px)]:text-[1.75rem]">
+              <h4 className="mb-6">
                 Liferay + AI
-              </h3>
+              </h4>
               <ul className="space-y-6">
                 {aiLinks.map((link, index) => (
                   <li key={`ai-${index}`}>
                     <Link
                       href={link.href}
-                      className="flex items-center gap-4 text-white/100 transition-colors hover:text-white [@media(min-width:1440px)]:text-base [@media(min-width:1920px)]:text-xl"
+                      className="flex items-center gap-5 text-white p20"
                     >
                       <Image
                         src={link.icon}
@@ -159,7 +159,7 @@ export default function SolutionsMegaMenu() {
                         height={60}
                         className="h-10 w-10 flex-shrink-0 rounded-lg bg-white [@media(min-width:1440px)]:h-12 [@media(min-width:1440px)]:w-12 [@media(min-width:1536px)]:h-[52px] [@media(min-width:1536px)]:w-[52px] [@media(min-width:1920px)]:h-[60px] [@media(min-width:1920px)]:w-[60px]"
                       />{" "}
-                      <span dangerouslySetInnerHTML={{ __html: link.text }} />
+                      <span className="max-w-[280px]" dangerouslySetInnerHTML={{ __html: link.text }} />
                     </Link>
                   </li>
                 ))}

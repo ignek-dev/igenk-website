@@ -40,31 +40,32 @@ const liferayServicesLinks = [
 export default function ServicesMegaMenu() {
   return (
     <>
-      <div className="mx-auto w-full px-4 py-12 md:px-8 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px]">
-        <div className="flex items-start gap-16">
+      <div className="global-container mx-auto w-full px-[2.083vw] py-[3.125vw]">
+        <div className="flex items-start gap-[2.083vw]">
           {/* Left Side: Image Card */}
-          <div className="flex-shrink-0" style={{ maxWidth: "521px" }}>
-            <div className="group relative w-full overflow-hidden rounded-xl">
+          <div className="flex-shrink-0" style={{ maxWidth: "27.135vw" }}>
+            <div className="group relative w-full overflow-hidden rounded-[1.041vw] border-[0.156vw] border-white">
               {/* Background Image */}
               <Image
                 src={featuredService.imageSrc}
                 alt="Tech Experts"
                 width={521} // Base width from parent style
                 height={460} // Estimated height for aspect ratio
-                objectFit="cover"
-                className="h-auto w-full"
+                className="h-auto w-full object-cover"
               />
 
               {/* Gradient Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent"></div>
+              {/* Bottom teal bar connected to button */}
+              <div
+                className="/* teal bar height */ absolute bottom-[1.40vw] left-0 h-[0.129vw] w-full"
+                style={{ backgroundColor: "#00979E" }}
+              ></div>
               {/* Dark Overlay */}
               <div className="absolute inset-0 flex flex-col justify-end text-white">
                 {/* Container for the text with its own padding */}
-                <div className="mr-4 px-8 pb-2">
-                  <h2
-                    className="text-3xl leading-tight font-bold"
-                    dangerouslySetInnerHTML={{ __html: featuredService.title }}
-                  ></h2>
+                <div className="mr-[0.833vw] px-[1.667vw] pb-[0.417vw]">
+                  <h4 className="font-bold" dangerouslySetInnerHTML={{ __html: featuredService.title }}></h4>
                 </div>
 
                 {/* Button is now a full-width block at the bottom */}
@@ -78,10 +79,11 @@ export default function ServicesMegaMenu() {
                 <CalendlyButton
                   customButton
                   customButtonContent={
-                    <button  className="mb-3 flex max-h-[47px] w-70 items-center justify-center text-center align-middle text-lg font-semibold text-white transition-opacity hover:opacity-90 cursor-pointer"
+                    <button
+                      className="mb-[0.833vw] flex cursor-pointer items-center justify-start text-center align-middle text-[0.938vw] font-semibold text-white transition-opacity hover:opacity-90 px-[1.25vw]"
                       style={{ backgroundColor: "#00979E" }}
                     >
-                       {featuredService.buttonText}
+                      {featuredService.buttonText}
                     </button>
                   }
                 />
@@ -90,19 +92,19 @@ export default function ServicesMegaMenu() {
           </div>
 
           {/* Right Side: Service Links */}
-          <div className="flex flex-grow">
+          <div className="flex flex-grow gap-[1.042vw]">
             {/* Digital Experience Section */}
-            <div className="w-1/3">
-              <h3 className="mb-6 [@media(min-width:1920px)]:text-[1.75rem] [@media(min-width:1440px)]:text-[1.5rem] text-2xl font-medium whitespace-pre">Digital Experience</h3>
-              <ul className="space-y-4">
+            <div className="w-1/4">
+              <h4 className="mb-[1.25vw] font-medium whitespace-pre">Digital Experience</h4>
+              <ul className="space-y-[0.833vw]">
                 {digitalExperienceLinks.map((link) => (
                   <li key={link.text}>
                     <a
                       href={link.href}
-                      className="flex items-center gap-3 text-white/80 transition-colors hover:text-white"
+                      className="flex items-center gap-[0.625vw] text-white/80 transition-colors hover:text-white"
                     >
                       <Image src={link.iconUrl} alt={link.text} width={40} height={40} />
-                      <span className="text-lg [@media(min-width:1920px)]:text-xl [@media(min-width:1440px)]:text-lg">{link.text}</span>
+                      <span className="p20">{link.text}</span>
                     </a>
                   </li>
                 ))}
@@ -110,18 +112,18 @@ export default function ServicesMegaMenu() {
             </div>
 
             {/* Vertical Separator */}
-            <div className="mx-6 w-[1px] bg-white/10"></div>
+            <div className="mx-[2.083vw] w-[0.052vw] bg-white"></div>
 
             {/* Liferay Services Section */}
             <div className="w-1/2">
-              <h3 className="mb-6 [@media(min-width:1920px)]:text-[1.75rem] [@media(min-width:1440px)]:text-[1.5rem] text-2xl font-medium whitespace-pre">Liferay Services</h3>
+              <h4 className="mb-[1.25vw] font-medium">Liferay Services</h4>
               {/* Using a grid to create two columns */}
-              <ul className="grid grid-cols-2 gap-x-32 gap-y-4 [@media(min-width:1440px)]:gap-x-62 [@media(min-width:1820px)]:gap-x-32">
+              <ul className="grid grid-cols-2 gap-x-[3.5vw] gap-y-[0.833vw]">
                 {liferayServicesLinks.map((link) => (
                   <li key={link.text}>
                     <a
                       href={link.href}
-                      className="text-lg [@media(min-width:1920px)]:text-xl [@media(min-width:1440px)]:text-lg font-medium whitespace-pre text-white/80 transition-colors hover:text-white"
+                      className="p20 font-medium whitespace-pre text-white/80 transition-colors hover:text-white"
                     >
                       {link.text}
                     </a>

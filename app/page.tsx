@@ -46,7 +46,7 @@ export default function HomePage() {
           <div className="absolute right-[-150px] bottom-[-150px] h-[500px] w-[500px] rounded-full bg-[#0E7BF8] opacity-15 blur-[100px]" />
         </div>
 
-        <div className="mx-auto w-full px-4 py-16 pb-12 md:px-6 md:pb-16 lg:pb-16 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
+        <div className="global-container w-full py-16">
           <h1 className="!text-[6.875vw] letter-spacing-[0.04em] font-extrabold !leading-[6.9vw]">
             Transform Your
             <br />

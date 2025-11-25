@@ -34,7 +34,7 @@ const cardsData: Card[] = [
 
 const StandoutSection = () => {
   return (
-    <section className="relative isolate overflow-hidden global-container h-[46.458vw]">
+    <section className="relative isolate overflow-hidden global-container py-[3.333vw] ">
       {/* Background */}
       <div className="absolute inset-0 -z-10">
         <Image
@@ -48,18 +48,16 @@ const StandoutSection = () => {
       </div>
 
       {/* Canvas container */}
-      <div className="pt-[4rem] ">
+      <div>
 
         <div className="flex justify-between items-end">
           {/* H1 */}
           <h2
-            className="w-[38.938rem] h-[7.5rem] text-white capitalize"
+            className="leading-[3.125vw] text-white capitalize"
             style={{
-              fontFamily: "Poppins, ui-sans-serif, system-ui",
               fontWeight: 600,
               fontSize: 48,
-              lineHeight: "3.75rem",
-              letterSpacing: "-0.02em",
+              letterSpacing: "-2%",
             }}
           >
             What Makes Us Stand Out
@@ -67,7 +65,7 @@ const StandoutSection = () => {
             In A Crowded Market
           </h2>
 
-          <p className="text-right text-lg leading-[1.125rem]">Following standard serve as strong evidence of our position as the
+          <p className="text-right text-[0.938vw] leading-[1.563vw]">Following standard serve as strong evidence of our position as the
             <br/>
              experts in software development services.</p>
           {/* Right caption */}

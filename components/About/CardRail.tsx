@@ -8,11 +8,9 @@ export type Card = {
 
 interface CardRailProps {
   cards: Card[];
-  width?: number;
-  height?: number;
 }
 
-const CardRail: React.FC<CardRailProps> = ({ cards, width = 417, height = 469 }) => {
+const CardRail: React.FC<CardRailProps> = ({ cards}) => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
@@ -53,14 +51,13 @@ const CardRail: React.FC<CardRailProps> = ({ cards, width = 417, height = 469 })
 
   return (
     <div
-      className={`pl-0 mt-[113px] h-[469px] overflow-hidden transition-all duration-300 ${
-        isAtStart ? "left-[192px]" : "left-[192px]"
-      }`}
+      className={`pl-0 mt-[5.885vw] overflow-hidden transition-all duration-300 ${isAtStart ? "left-[10vw]" : "left-[10vw]"
+        }`}
     >
       <div
         ref={scrollRef}
-        className="flex h-full w-full gap-[64px] overflow-x-auto overflow-y-hidden 
-                   scrollbar-hide cursor-grab active:cursor-grabbing snap-x snap-mandatory px-[192px]"
+        className="flex h-full w-full gap-[3.333vw] overflow-x-auto overflow-y-hidden 
+                   scrollbar-hide cursor-grab active:cursor-grabbing snap-x snap-mandatory "
         onMouseDown={handleMouseDown}
         onMouseLeave={handleMouseLeave}
         onMouseUp={handleMouseUp}
@@ -69,41 +66,28 @@ const CardRail: React.FC<CardRailProps> = ({ cards, width = 417, height = 469 })
         {cards.map((c, i) => (
           <div
             key={i}
-            className="snap-start relative shrink-0 rounded-[30px] bg-[#00000094] 
-                       backdrop-blur-[2px] text-center text-white 
+            className="snap-start relative shrink-0 rounded-[1.563vw] bg-[#00000094] w-[21.719vw]
+                       backdrop-blur-[2px] text-center text-white px-[2.76vw] pt-[3.438vw] pb-[4.115vw]
                        shadow-[0_10px_30px_rgba(0,0,0,0.35)]"
-            style={{ width, height }}
+
           >
             {/* Title */}
             <div
-              className="absolute left-[51px] top-[66px] h-[100px] w-[299px] text-center capitalize"
-              style={{
-                fontFamily: "Poppins, ui-sans-serif, system-ui",
-                fontWeight: 500,
-                fontSize: 36,
-                lineHeight: "50px",
-                letterSpacing: "-0.02em",
-              }}
+              className="text-center capitalize text-[1.875vw] leading-[2.604vw] tracking-[-2%]"
+
             >
               {c.title}
             </div>
 
             {/* Description */}
             <div
-              className="absolute left-[51px] top-[209px] h-[120px] w-[316px] text-center"
-              style={{
-                fontFamily: "Poppins, ui-sans-serif, system-ui",
-                fontWeight: 400,
-                fontSize: 20,
-                lineHeight: "30px",
-                color: "#E5E7EB",
-              }}
+              className="text-center h-[6.25vw] text-[#E5E7EB] text-[1.042vw] leading-[1.563vw] mt-[2.24vw] overflow-hidden line-clamp-4"
             >
               {c.desc}
             </div>
 
             {/* Divider */}
-            <div className="absolute bottom-[70px] left-1/2 h-px w-[72%] -translate-x-1/2 bg-white/18" />
+            <div className="h-[0.052vw] bg-[#9CA3AF] mt-[3.177vw]" />
           </div>
         ))}
       </div>

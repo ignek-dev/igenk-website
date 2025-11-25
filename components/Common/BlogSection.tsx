@@ -91,7 +91,7 @@ export default function BlogSection() {
     return <div className="text-black">Loading.......</div>
   return (
     <section className="bg-white text-black">
-      <div className="mx-auto w-full px-4 py-[64px] md:px-8 md:py-[64px] lg:py-[64px] global-container ">
+      <div className="py-12 md:py-16 global-container">
         <div className="grid items-end gap-10 md:grid-cols-2 "
         >
           <h2
@@ -129,7 +129,7 @@ export default function BlogSection() {
             <p className="mt-[0.885vw] p18 text-[#101012] line-clamp-1  "
               dangerouslySetInnerHTML={{ __html: blogs[0]?.desc ?? "" }}
             />
-            <div className="mt-6 w-full border-t border-gray-300" />
+            <div className="mt-3 w-full border-t border-gray-300" />
           </div>
 
           {/* Right: three small cards */}
