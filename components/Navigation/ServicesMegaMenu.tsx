@@ -118,7 +118,7 @@ export default function ServicesMegaMenu() {
             <div className="w-1/2">
               <h4 className="mb-[1.25vw] font-medium">Liferay Services</h4>
               {/* Using a grid to create two columns */}
-              <ul className="grid grid-cols-2 gap-x-[3.5vw] gap-y-[0.833vw]">
+              <ul className="grid grid-cols-2 gap-x-[10.5vw] gap-y-[0.833vw]">
                 {liferayServicesLinks.map((link) => (
                   <li key={link.text}>
                     <a

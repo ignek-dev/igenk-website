@@ -164,11 +164,11 @@ export default function ContactPage() {
         <div className="global-container mx-auto w-full">
           {/* Top Section: Title and Description */}
           <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-5">
-            <h1 className="font-medium text-white md:col-span-2">
+            <h1 className="font-medium! text-[4.688vw]! leading-[4.875vw] text-white md:col-span-2">
               Contact Us
             </h1>
             <p className="font-regular p20 right-0 tracking-normal text-[#FFFFFF] md:col-span-3 md:text-right">
-              Get in touch for inquiries about our properties. We&apos;re here to offer expert <br/>
+              Get in touch for inquiries about our properties. We&apos;re here to offer expert
               advice, personalized solutions, and exceptional service to meet all your needs effectively.
             </p>
           </div>
@@ -310,7 +310,7 @@ export default function ContactPage() {
               </h2>
             </div>
             <div className="flex h-full items-center justify-center">
-              <p className="text-right text-[#374151]">
+              <p className="text-right p18 text-[#374151]">
                 We have offices in India and the United Arab Emirates, providing seamless regional support and
                 collaboration for our global clients.{" "}
               </p>
@@ -350,7 +350,7 @@ export default function ContactPage() {
                       <p className="p20 text-[#766C72]">Email Address</p>
                       <a
                         href="mailto:sales@ignek.com"
-                        className="p20 font-medium text-[#151314] hover:text-blue-600"
+                        className="p18 font-medium text-[#151314] hover:text-blue-600"
                       >
                         sales@ignek.com
                       </a>
@@ -359,7 +359,7 @@ export default function ContactPage() {
                       <p className="font-medium p20 text-[#766C72]">Phone Number</p>
                       <a
                         href="tel:+916351578580"
-                        className="p20 font-medium text-[#151314] hover:text-blue-600"
+                        className="p18 font-medium text-[#151314] hover:text-blue-600"
                       >
                         (+91) 635 157 8580
                       </a>
@@ -399,7 +399,7 @@ export default function ContactPage() {
                     <p className="font-medium p20 text-[#766C72]">Email Address</p>
                     <a
                       href="mailto:newyork@konstruktion.com"
-                      className="p20 font-medium text-[#151314] hover:text-blue-600"
+                      className="p18 font-medium text-[#151314] hover:text-blue-600"
                     >
                       connect@ignek.com
                     </a>
@@ -408,7 +408,7 @@ export default function ContactPage() {
                     <p className="font-medium p20 text-[#766C72]">Phone Number</p>
                     <a
                       href="tel:+4146781903"
-                      className="p20 font-medium text-[#151314] hover:text-blue-600"
+                      className="p18 font-medium text-[#151314] hover:text-blue-600"
                     >
                       +97 154 219 8252
                     </a>
