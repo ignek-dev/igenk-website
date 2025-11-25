@@ -64,10 +64,10 @@ export default function Footer() {
   ]
 
   return (
-    <footer className="relative bg-black text-white">
+   <footer className="relative bg-black text-white">
       {/* Top section: menus with right decorative lines and partial width */}
-      <div className="footer-sidebar global-container mx-auto flex w-full border-b border-white/100 pl-4 md:pl-8 ">
-        <div className="relative pt-12 pr-4 pb-20 md:pt-16 md:pb-24">
+      <div className="footer-sidebar global-container mx-auto flex w-full border-b border-white/100 pl-4 md:pl-8 " style={{ paddingRight: "0px !important" }}>
+        <div className="relative w-[80%] pt-12 pr-4 pb-20 md:pt-16 md:pr-8 md:pb-4">
           <motion.div
             className="pointer-events-none absolute right-0 bottom-0 h-full w-full rounded-br-[19rem] border-r-2 border-b-2 border-white/100"
             initial={{ width: 0 }}
@@ -75,14 +75,14 @@ export default function Footer() {
             viewport={{ amount:0.2}}
             transition={{ duration: 0.9, ease: "easeIn" }}
           />
-          <div className="grid grid-cols-2 gap-10 md:grid-cols-3 lg:grid-cols-5">
+          <div className="auto-grid">
             <>
               {menus.map((menu) => (
                 <div key={menu.title}>
                   <p className="text-2xl font-semibold! text-white leading-[1.9rem]">{menu.title}</p>
                   <ul className="mt-5 space-y-8 p20 text-white tracking-[2%] ">
                     {menu.items.map((it) => (
-                      <li key={it.label}>
+                      <li className="mb-2" key={it.label}>
                         <Link href={it.href} className="cursor-pointer hover:text-white">
                           {it.label}
                         </Link>
@@ -94,9 +94,9 @@ export default function Footer() {
             </>
           </div>
         </div>
-        <div className="animate-drawLine border-l [@media(min-width:1440px)]:w-[16%] [@media(min-width:1536px)]:w-[15.7%] [@media(min-width:1839px)]:w-[15.7%] [@media(min-width:1920px)]:w-[15.7%]"></div>
+        <div className="animate-drawLine border-l w-[20%]"></div>
       </div>
-
+ 
       {/* Bottom section: contacts + big logo + motto + bottom bar */}
       <div className="global-container mx-auto flex w-full pl-4 md:pl-8" style={{ paddingRight: "0px !important" }}>
         <div className="w-[80%] pt-12 pr-4 pb-20 md:pt-16 md:pr-8 md:pb-4">
@@ -152,7 +152,7 @@ export default function Footer() {
                   <stop offset="100%" stopColor="#00979E" />
                 </linearGradient>
               </defs>
-
+ 
               <text
                 x="50%"
                 y="50%"

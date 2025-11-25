@@ -150,3 +150,43 @@ text {
   }
 }
 
+.auto-grid {
+  display: grid;
+  margin: 0 auto;
+  gap: 40px;
+}
+ 
+.auto-grid ul li {
+  margin-bottom: 12px;
+  font-size: 20px;
+}
+ 
+/* Small screen (default): 1 column */
+@media (max-width: 639px) {
+  .auto-grid {
+    grid-template-columns: 1fr;
+  }
+  .auto-grid ul li {
+    font-size: 14px;
+  }
+}
+ 
+/* Medium: 2 content-based columns */
+@media (min-width: 640px) and (max-width: 1023px) {
+  .auto-grid {
+    grid-template-columns: repeat(2, max-content);
+    justify-content: space-between;
+  }
+  .auto-grid ul li {
+    font-size: 14px;
+  }
+}
+ 
+/* Large: 4 content-based columns */
+@media (min-width: 1024px) {
+  .auto-grid {
+    grid-template-columns: repeat(4, max-content);
+    justify-content: space-between;
+  }
+}
+

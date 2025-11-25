@@ -2,6 +2,8 @@
 import { Metadata } from "next"
 import Image from "next/image"
 import React from "react"
+import PhoneInput, { isValidPhoneNumber } from "react-phone-number-input"
+import "react-phone-number-input/style.css"
 
 const metadata: Metadata = {
   title: "Contact Us | Liferay Development, Customization & Consulting Experts",
@@ -88,7 +90,7 @@ const FormInput = ({ label, placeholder, name, type = "text", required = false }
       id={label}
       name={name}
       required={required}
-      className="peer block w-full appearance-none border-0 border-b-2 border-gray-600 bg-transparent px-0 py-3.5 text-xl text-white focus:border-white placeholder-[#DBD3D3] focus:ring-0 focus:outline-none"
+      className="peer block w-full appearance-none border-0 border-b-2 border-gray-600 bg-transparent px-0 py-3.5 text-xl text-white placeholder-[#DBD3D3] focus:border-white focus:ring-0 focus:outline-none"
       placeholder={placeholder} // visible only on focus
     />
   </div>
@@ -98,7 +100,7 @@ const FormTextArea = ({ label, placeholder, name, rows = 6, required = false }: 
   <div className="relative z-0 w-full">
     <label
       htmlFor={label}
-      className="text-medium  top-1 z-10 origin-[0] -translate-y-8 scale-75 transform text-3xl text-white duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-8 peer-focus:scale-75 peer-focus:text-white"
+      className="text-medium top-1 z-10 origin-[0] -translate-y-8 scale-75 transform text-3xl text-white duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-8 peer-focus:scale-75 peer-focus:text-white"
     >
       {label}
     </label>
@@ -107,7 +109,7 @@ const FormTextArea = ({ label, placeholder, name, rows = 6, required = false }: 
       name={name}
       required={required}
       rows={rows}
-      className="peer block w-full appearance-none border-0 border-b-2 border-gray-600 bg-transparent px-0 py-3.5 text-xl text-white  focus:border-white placeholder-[#DBD3D3] focus:ring-0 focus:outline-none"
+      className="peer block w-full appearance-none border-0 border-b-2 border-gray-600 bg-transparent px-0 py-3.5 text-xl text-white placeholder-[#DBD3D3] focus:border-white focus:ring-0 focus:outline-none"
       placeholder={placeholder} // visible only on focus
     />
   </div>
@@ -119,12 +121,20 @@ export default function ContactPage() {
     type: "idle",
     message: "",
   })
+  const [phone, setPhone] = React.useState<string | undefined>("")
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     if (loading) return
     setLoading(true)
     setStatus({ type: "idle", message: "" })
+
+    if (phone && !isValidPhoneNumber(phone)) {
+      setStatus({ type: "error", message: "Please enter a valid phone number." })
+      setLoading(false)
+      return
+    }
+
     const form = e.currentTarget
     const formData = new FormData(form)
     formData.append("access_key", "f4dec7fc-2afe-4db7-9612-886b779847e9")
@@ -137,6 +147,7 @@ export default function ContactPage() {
       if (response.ok) {
         setStatus({ type: "success", message: "Thanks for your message. We will get back to you soon." })
         form.reset()
+        setPhone("") 
 
         // ⏳ Hide message after 4 seconds
         setTimeout(() => {
@@ -164,12 +175,10 @@ export default function ContactPage() {
         <div className="global-container mx-auto w-full">
           {/* Top Section: Title and Description */}
           <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-5">
-            <h1 className="font-medium! text-[4.688vw]! leading-[4.875vw] text-white md:col-span-2">
-              Contact Us
-            </h1>
+            <h1 className="text-[4.688vw]! leading-[4.875vw] font-medium! text-white md:col-span-2">Contact Us</h1>
             <p className="font-regular p20 right-0 tracking-normal text-[#FFFFFF] md:col-span-3 md:text-right">
-              Get in touch for inquiries about our properties. We&apos;re here to offer expert
-              advice, personalized solutions, and exceptional service to meet all your needs effectively.
+              Get in touch for inquiries about our properties. We&apos;re here to offer expert advice, personalized
+              solutions, and exceptional service to meet all your needs effectively.
             </p>
           </div>
 
@@ -180,10 +189,8 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 gap-16 md:grid-cols-2">
             {/* Left Side: "Lets Start Conversation" */}
             <div className="flex flex-col">
-              <h2 className="font-semibold">
-                Let's Start the Conversation
-              </h2>
-              <p className="font-regular! mt-3 max-w-xl text-lg p18 text-left! text-[#FFFFFF]">
+              <h2 className="font-semibold">Let's Start the Conversation</h2>
+              <p className="font-regular! p18 mt-3 max-w-xl text-left! text-lg text-[#FFFFFF]">
                 We at IGNEK appreciate your questions, comments, and teamwork. Whether you have enquiries about our
                 projects or would like to discuss our services.
               </p>
@@ -192,27 +199,21 @@ export default function ContactPage() {
               <div className="mt-9 flex flex-col gap-8 sm:flex-row sm:gap-26">
                 <div className="flex max-w-[304px] flex-col gap-2">
                   <h3 className="p18 font-medium! text-[#DBD3D3]">Email Address</h3>
-                  <a
-                    href="mailto:sales@ignek.com"
-                    className="p16 text-white hover:text-blue-400"
-                  >
+                  <a href="mailto:sales@ignek.com" className="p16 text-white hover:text-blue-400">
                     sales@ignek.com
                   </a>
                 </div>
                 <div className="flex max-w-[304px] flex-col gap-2">
                   <h3 className="p18 font-medium! text-[#DBD3D3]">Phone Number</h3>
-                  <a
-                    href="tel:+016351575560"
-                    className="p16 text-white hover:text-blue-400"
-                  >
-                    +91 63515 75560
+                  <a href="tel:+016351575560" className="p16 text-white hover:text-blue-400">
+                    +91 63515 76580
                   </a>
                 </div>
               </div>
 
               {/* Follow Us */}
               <div className="mt-9 flex flex-col gap-8 sm:flex-row sm:items-center sm:gap-32">
-                <p className="font-medium! p18 text-[#FFFFFF]">Follow Us On</p>
+                <p className="p18 font-medium! text-[#FFFFFF]">Follow Us On</p>
                 <div className="flex space-x-5">
                   <a
                     href="https://www.facebook.com/ignekinfo/"
@@ -262,7 +263,28 @@ export default function ContactPage() {
                     type="email"
                     required
                   />
-                  <FormInput label="Phone Number" placeholder="(123) 456 - 7890" name="phone" type="tel" />
+                  <div className="relative z-0 w-full">
+                    <label
+                      htmlFor="Phone Number"
+                      className="text-medium top-1 z-10 origin-[0] -translate-y-8 scale-75 transform text-3xl text-white duration-300"
+                    >
+                      Phone Number
+                    </label>
+                    <PhoneInput
+                      international
+                      defaultCountry="IN" // default country
+                      value={phone}
+                      onChange={setPhone}
+                      id="Phone Number"
+                      name="phone"
+                      className="peer block w-full appearance-none border-0 border-b-2 border-gray-600 bg-black bg-transparent px-0 py-3.5 text-xl text-white placeholder-[#DBD3D3] focus:border-white focus:ring-0 focus:outline-none"
+                      placeholder="Enter phone number"
+                      countrySelectProps={{
+                        className: "PhoneInputCountrySelect", // <-- Apply your custom class here
+                      }}
+                    />
+                  </div>
+
                   <FormInput label="Service" placeholder="ex. Liferay Consulting" name="service" />
                 </div>
 
@@ -310,8 +332,8 @@ export default function ContactPage() {
               </h2>
             </div>
             <div className="flex h-full items-center justify-center">
-              <p className="text-right p18 text-[#374151]">
-                We have offices in India and the United Arab Emirates, providing <br/> seamless regional support and
+              <p className="p18 text-right text-[#374151]">
+                We have offices in India and the United Arab Emirates, providing <br /> seamless regional support and
                 collaboration for our global clients.{" "}
               </p>
             </div>
@@ -337,10 +359,8 @@ export default function ContactPage() {
                 <div>
                   {" "}
                   {/* Wrapper for the actual details */}
-                  <h3 className="text-[#151314]">
-                    Ahmedabad, India
-                  </h3>
-                  <p className="mt-4 p18 text-left! text-[#4D464A]">
+                  <h3 className="text-[#151314]">Ahmedabad, India</h3>
+                  <p className="p18 mt-4 text-left! text-[#4D464A]">
                     E 910- 912, Ganesh Glory 11, Jagatpur Road, SG Highway,
                     <br />
                     Ahmedabad, Gujarat – 382470
@@ -348,20 +368,14 @@ export default function ContactPage() {
                   <div className="mt-24 flex flex-col gap-8 sm:flex-row sm:items-center sm:gap-30">
                     <div className="flex min-w-[232px] flex-col gap-1">
                       <p className="p20 text-[#766C72]">Email Address</p>
-                      <a
-                        href="mailto:sales@ignek.com"
-                        className="p18 font-medium text-[#151314] hover:text-blue-600"
-                      >
+                      <a href="mailto:sales@ignek.com" className="p18 font-medium text-[#151314] hover:text-blue-600">
                         sales@ignek.com
                       </a>
                     </div>
                     <div className="flex flex-col gap-1">
-                      <p className="font-medium p20 text-[#766C72]">Phone Number</p>
-                      <a
-                        href="tel:+916351578580"
-                        className="p18 font-medium text-[#151314] hover:text-blue-600"
-                      >
-                        (+91) 635 157 8580
+                      <p className="p20 font-medium text-[#766C72]">Phone Number</p>
+                      <a href="tel:+916351578580" className="p18 font-medium text-[#151314] hover:text-blue-600">
+                        (+91) 63515 76580
                       </a>
                     </div>
                   </div>
@@ -386,30 +400,22 @@ export default function ContactPage() {
               </div>
               {/* Right Side: Details (no divider here as it's the last location) */}
               <div className="mt-6 md:mt-4 md:w-1/2 md:pl-3.5">
-                <h3 className="text-[#151314]">
-                  United Arab Emirates
-                </h3>
-                <p className="mt-4 p18 text-left! text-[#4D464A]">
+                <h3 className="text-[#151314]">United Arab Emirates</h3>
+                <p className="p18 mt-4 text-left! text-[#4D464A]">
                   Office Number: 09-106, Arabian Sky Business center ,
                   <br />
                   Umm Hurrair 2 Dubai UAE
                 </p>
                 <div className="mt-24 flex flex-col gap-8 sm:flex-row sm:gap-30">
                   <div className="flex min-w-[232px] flex-col gap-1">
-                    <p className="font-medium p20 text-[#766C72]">Email Address</p>
-                    <a
-                      href="mailto:newyork@konstruktion.com"
-                      className="p18 font-medium text-[#151314] hover:text-blue-600"
-                    >
+                    <p className="p20 font-medium text-[#766C72]">Email Address</p>
+                    <a href="mailto:connect@ignek.com" className="p18 font-medium text-[#151314] hover:text-blue-600">
                       connect@ignek.com
                     </a>
                   </div>
                   <div className="flex flex-col gap-1">
-                    <p className="font-medium p20 text-[#766C72]">Phone Number</p>
-                    <a
-                      href="tel:+4146781903"
-                      className="p18 font-medium text-[#151314] hover:text-blue-600"
-                    >
+                    <p className="p20 font-medium text-[#766C72]">Phone Number</p>
+                    <a href="tel:+4146781903" className="p18 font-medium text-[#151314] hover:text-blue-600">
                       +97 154 219 8252
                     </a>
                   </div>
