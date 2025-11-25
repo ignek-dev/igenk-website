@@ -31,40 +31,17 @@ export default function PortfolioList() {
     const PER_PAGE = 6;
     const API_BASE = "https://insights.ignek.com/wp-json/wp/v2/portfolio";
 
-    // useEffect(() => {
-    //     async function fetchPosts() {
-    //         try {
-    //             setLoading(true);
-    //             setError(null);
-    //             window.scrollTo({ top: 0, behavior: "smooth" });
-    //             const res = await fetch(`${API_BASE}?per_page=${PER_PAGE}&page=${currentPage}&_embed`, {
-    //                 cache: "no-store",
-    //             });
-
-    //             if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
-
-    //             const data = (await res.json()) as WPPortfolioPost[];
-    //             const total = Number(res.headers.get("x-wp-totalpages")) || 1;
-
-    //             setPosts(data);
-    //             setTotalPages(total);
-    //         } catch (err: unknown) {
-    //             if (err instanceof Error) setError(err.message);
-    //             else setError("Failed to fetch posts");
-    //         } finally {
-    //             setLoading(false);
-    //         }
-    //     }
-
-    //     fetchPosts();
-    // }, [currentPage]);
     useEffect(() => {
         const handler = setTimeout(() => setDebouncedSearch(searchTerm), 500);
         return () => clearTimeout(handler);
     }, [searchTerm]);
 
-    const fetchPosts = useCallback(async () => {
+    const fetchPosts = useCallback(async (reset: boolean = true, pageNumber: number = currentPage) => {
         try {
+            if (reset) { 
+                setCurrentPage(1);
+                pageNumber = 1;
+            }
             setLoading(true);
             setError(null);
             window.scrollTo({ top: 0, behavior: "smooth" });
@@ -72,7 +49,7 @@ export default function PortfolioList() {
             // Build API params dynamically
             const params = new URLSearchParams({
                 per_page: String(PER_PAGE),
-                page: String(currentPage),
+                page: String(pageNumber),
                 _embed: "",
             });
 
@@ -111,20 +88,16 @@ export default function PortfolioList() {
         } finally {
             setLoading(false);
         }
-    }, [currentPage, debouncedSearch, selectedIndustry, selectedTechnology]);
+    }, [debouncedSearch, selectedIndustry, selectedTechnology]);
+
+    const handlePageChange = async (page: number) => {
+        await setCurrentPage(page);
+        fetchPosts(false, page);
+    }
 
     useEffect(() => {
         fetchPosts();
     }, [fetchPosts]);
-
-    // if (loading)
-    //     return <div className="p-10 text-center text-gray-500 text-lg">Loading...</div>;
-    // if (error)
-    //     return (
-    //         <div className="p-10 text-center text-red-500 text-lg">
-    //             ❌ {error}
-    //         </div>
-    //     );
 
     console.log(error)
     return (
@@ -178,10 +151,16 @@ export default function PortfolioList() {
 
                                                     {/* Text */}
                                                     <div className="flex flex-col gap-[0.729vw] justify-center md:w-1/2 w-full relative">
+                                                        <div className="flex flex-wrap gap-[0.52vw] mb-[0.729vw]">
+                                                            {item._embedded?.["wp:term"]?.[0] && item._embedded?.["wp:term"]?.[0]?.length > 0 && (
+                                                                item._embedded?.["wp:term"]?.[0].map((term) => (
+                                                                    <span key={term?.name} className="text-[0.677vw] py-[0.4167vw] bg-white px-[0.833vw] rounded-full w-fit shadow-xl">
+                                                                        {term?.name || "General"}
+                                                                    </span>
+                                                                ))
+                                                            )}
+                                                        </div>
 
-                                                        <span className="text-[0.677vw] py-[0.4167vw] bg-white px-[0.833vw] rounded-full w-fit shadow-xl">
-                                                            {item._embedded?.["wp:term"]?.[0]?.[0]?.name || "General"}
-                                                        </span>
 
                                                         <h3
                                                             className="!text-[1.563vw] !font-semibold leading-[1.563vw]"
@@ -217,7 +196,7 @@ export default function PortfolioList() {
                                                     ? "text-gray-400 border-gray-300 cursor-not-allowed"
                                                     : "hover:bg-gray-100"
                                                     }`}
-                                                onClick={() => currentPage > 1 && setCurrentPage(1)}
+                                                onClick={() => currentPage > 1 && handlePageChange(1)}
                                             >
                                                 « First
                                             </li>
@@ -228,7 +207,7 @@ export default function PortfolioList() {
                                                     ? "text-gray-400 border-gray-300 cursor-not-allowed"
                                                     : "hover:bg-gray-100"
                                                     }`}
-                                                onClick={() => currentPage > 1 && setCurrentPage((p) => Math.max(1, p - 1))}
+                                                onClick={() => currentPage > 1 && handlePageChange(Math.max(1, currentPage - 1))}
                                             >
                                                 ‹ Back
                                             </li>
@@ -249,7 +228,7 @@ export default function PortfolioList() {
                                                     pages.push(
                                                         <li
                                                             key={1}
-                                                            onClick={() => setCurrentPage(1)}
+                                                            onClick={() => handlePageChange(1)}
                                                             className={`px-4 py-2 border rounded-md cursor-pointer hover:bg-gray-100 ${currentPage === 1 ? "bg-black text-white" : ""
                                                                 }`}
                                                         >
@@ -270,7 +249,7 @@ export default function PortfolioList() {
                                                     pages.push(
                                                         <li
                                                             key={i}
-                                                            onClick={() => setCurrentPage(i)}
+                                                            onClick={() => handlePageChange(i)}
                                                             className={`px-4 py-2 border rounded-md cursor-pointer transition-all duration-200 ${currentPage === i
                                                                 ? "bg-black text-white border-black"
                                                                 : "hover:bg-gray-100"
@@ -293,7 +272,7 @@ export default function PortfolioList() {
                                                     pages.push(
                                                         <li
                                                             key={totalPages}
-                                                            onClick={() => setCurrentPage(totalPages)}
+                                                            onClick={() => handlePageChange(totalPages)}
                                                             className={`px-4 py-2 border rounded-md cursor-pointer hover:bg-gray-100 ${currentPage === totalPages ? "bg-black text-white border-black" : ""
                                                                 }`}
                                                         >
@@ -312,7 +291,7 @@ export default function PortfolioList() {
                                                     : "hover:bg-gray-100"
                                                     }`}
                                                 onClick={() =>
-                                                    currentPage < totalPages && setCurrentPage((p) => Math.min(totalPages, p + 1))
+                                                    currentPage < totalPages && handlePageChange(Math.min(totalPages, currentPage + 1))
                                                 }
                                             >
                                                 Next ›
@@ -324,7 +303,7 @@ export default function PortfolioList() {
                                                     ? "text-gray-400 border-gray-300 cursor-not-allowed"
                                                     : "hover:bg-gray-100"
                                                     }`}
-                                                onClick={() => currentPage < totalPages && setCurrentPage(totalPages)}
+                                                onClick={() => currentPage < totalPages && handlePageChange(totalPages)}
                                             >
                                                 Last »
                                             </li>
