@@ -270,7 +270,7 @@ export default function LiferayPerformanceTuningPage() {
                           ? "border-black text-black"
                           : "border-gray-300 text-gray-600 hover:border-black hover:text-black"
                         } mb-[2.917vw]`}
-                      onMouseEnter={() => setActiveIndex(index)}
+                      onClick={() => setActiveIndex(index)}
                     >
                       <h3 className="text-[1.563vw]! font-semibold! ">{item.title}</h3>
                       <p className="mt-2 p16 text-gray-500 md:text-base">{item.desc}</p>
