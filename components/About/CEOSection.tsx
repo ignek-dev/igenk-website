@@ -40,7 +40,7 @@ const CEOSection = () => {
                         {/* CEO Name + LinkedIn */}
                         <div className="mt-[2.813vw] flex items-center">
                             <span className="mr-[0.729vw] text-[2.5vw] leading-[2.292vw] tracking-[-2%]"
-                            style={{ fontFamily: "Rage Italic" }}
+                                style={{ fontFamily: "Rage Italic" }}
                             >Bhavin Panchani</span>
 
                             {ceoMessage.linkedInHref && (

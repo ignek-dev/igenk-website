@@ -37,17 +37,17 @@ export const TestimonialCard: React.FC<{ data: TestimonialData }> = ({
   if (data.type === "video-review") {
     return (
       <div
-        className="flex bg-white rounded-3xl mr-[47px] shadow-sm overflow-hidden min-w-[989px] h-[468px]"
+        className="flex bg-white rounded-3xl mr-[2.448vw] shadow-sm overflow-hidden min-w-[51.51vw]"
         style={{ scrollSnapAlign: "start" }}
       >
         {/* Video side */}
-        <div className="relative w-[500px] h-full">
+        <div className="relative min-w-[26.042vw] h-full">
           {/* Actual video */}
           <video
             ref={videoRef}
             playsInline
             onClick={handleVideoToggle}
-            className="absolute rounded-l-3xl inset-0 w-full h-full object-cover cursor-pointer"
+            className="rounded-l-3xl inset-0 w-full h-full object-cover cursor-pointer"
           >
             <source
               src={"/images/about/Testimonial - Global Digital Platform.mp4"}
@@ -64,16 +64,16 @@ export const TestimonialCard: React.FC<{ data: TestimonialData }> = ({
             <div className="absolute inset-0 flex items-center justify-center">
               <button
                 onClick={handleVideoToggle}
-                className="relative w-[111px] h-[111px] rounded-full bg-white flex items-center justify-center shadow-[0_4px_20px_0_#03002B1A] hover:scale-105 transition-all"
+                className="relative w-[5.781vw] h-[5.781vw] rounded-full bg-white flex items-center justify-center shadow-[0_4px_20px_0_#03002B1A] hover:scale-105 transition-all"
               >
                 {/* Play triangle */}
                 <div
                   className="w-0 h-0"
                   style={{
-                    borderLeft: "25px solid black",
-                    borderTop: "15px solid transparent",
-                    borderBottom: "15px solid transparent",
-                    marginLeft: "5px",
+                    borderLeft: "1.302vw solid black",
+                    borderTop: "0.781vw solid transparent",
+                    borderBottom: "0.781vw solid transparent",
+                    marginLeft: "0.26vw",
                   }}
                 />
               </button>
@@ -82,38 +82,38 @@ export const TestimonialCard: React.FC<{ data: TestimonialData }> = ({
         </div>
 
         {/* Review side */}
-        <div className="w-1/2 p-10 flex flex-col justify-between">
+        <div className="p-[2.083vw] flex flex-col justify-between">
           <div>
-            <div className="flex items-center mb-5">
+            <div className="flex items-center mb-[0.781vw]">
               <Image
                 src={data.logo!}
                 alt={data.companyName!}
                 width={40}
                 height={40}
-                className="mr-3"
+                className="mr-[0.625vw] h-[2.083vw] w-[2.083vw]"
               />
-              <h4 className="text-xl font-semibold text-gray-900 tracking-tight">
+              <h4 className=" text-black ">
                 {data.companyName}
               </h4>
             </div>
-            <p className="text-gray-600 text-base leading-relaxed">
+            <p className="text-[#6F6C90] text-[0.938vw] leading-[1.563vw]">
               “{data.quote}”
             </p>
           </div>
 
-          <div className="flex items-center mt-6">
+          <div className="flex items-center mt-[1.771vw]">
             <Image
               src={data.authorAvatar!}
               alt={data.authorName!}
-              width={48}
-              height={48}
-              className="rounded-full"
+              width={60}
+              height={60}
+              className="rounded-full h-[3.125vw] w-[3.125vw]"
             />
-            <div className="ml-3">
-              <p className="font-semibold text-gray-900 text-base">
+            <div className="ml-[0.885vw]">
+              <p className="font-bold text-[#170F49] leading-[1.042vw] text-[0.938vw]">
                 {data.authorName}
               </p>
-              <p className="text-sm text-gray-500">{data.authorTitle}</p>
+              <p className="text-[0.938vw] mt-[0.208vw] leading-[1.042vw] text-[#6F6C90]">{data.authorTitle}</p>
             </div>
           </div>
         </div>
@@ -124,39 +124,39 @@ export const TestimonialCard: React.FC<{ data: TestimonialData }> = ({
   // Text-only card
   return (
     <div
-      className="bg-white rounded-3xl shadow-sm min-w-[500px] mr-[47px]  h-[468px] flex flex-col justify-between"
+      className="bg-white p-[2.083vw] rounded-3xl shadow-sm min-w-[26.042vw] mr-[2.448vw] flex flex-col justify-between"
       style={{ scrollSnapAlign: "start" }}
     >
-      <div className="p-[55px] pb-0">
-        <div className="flex items-center mb-0">
+      <div>
+        <div className="flex items-center mb-[0.781vw]">
           <Image
             src={data.logo!}
             alt={data.companyName!}
             width={40}
             height={40}
-            className="mr-3"
+            className="mr-[0.625vw] h-[2.083vw] w-[2.083vw]"
           />
-          <h4 className="text-xl font-semibold text-gray-900 tracking-tight">
+          <h4 className="text-black ">
             {data.companyName}
           </h4>
         </div>
-        <p className="text-gray-600 text-base leading-relaxed">
+        <p className="text-[#6F6C90] text-[0.938vw] leading-[1.563vw]">
           “{data.quote}”
         </p>
       </div>
-      <div className="flex items-center mt-[0px] px-[54px] mb-3">
+      <div className="flex items-center mt-[1.771vw]">
         <Image
           src={data.authorAvatar!}
           alt={data.authorName!}
-          width={48}
-          height={48}
-          className="rounded-full max-h-[48px]"
+          width={60}
+          height={60}
+          className="rounded-full h-[3.125vw] w-[3.125vw]"
         />
-        <div className="ml-3">
-          <p className="font-semibold text-gray-900 text-base">
+        <div className="ml-[0.885vw]">
+          <p className="font-bold text-[#170F49] leading-[1.042vw] text-[0.938vw]">
             {data.authorName}
           </p>
-          <p className="text-sm text-gray-500">{data.authorTitle}</p>
+          <p className="text-[0.938vw] mt-[0.208vw] leading-[1.042vw] text-[#6F6C90]">{data.authorTitle}</p>
         </div>
       </div>
     </div>

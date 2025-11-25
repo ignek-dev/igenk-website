@@ -1,5 +1,6 @@
 "use client"
 import React, { useRef } from "react"
+import Image from "next/image";
 import { TestimonialCard, TestimonialData } from "./TestimonialCard"
 
 export const Testimonial: React.FC = () => {
@@ -69,44 +70,42 @@ export const Testimonial: React.FC = () => {
   }
 
   return (
-    <section className="relative h-[758px] overflow-hidden bg-gray-50 py-[64px]">
+    <section className="overflow-hidden global-container bg-[#F6F6F6] py-[3.333vw]">
       {/* Header */}
-      <div className="mb-[28px] flex items-start justify-between">
-        <div className="pl-[192px]">
-          <h2 className="font-poppins text-[48px] leading-[60px] font-semibold tracking-[-0.02em] text-black capitalize">
-            Words That Inspire
+      <div className="mb-[1.458vw] flex justify-between">
+        <div className="flex flex-col">
+          <h2 className="mb-[0.677vw] text-black">
+            Words That Inspire  
           </h2>
-          <p className="font-poppins w-[942px] align-middle text-[20px] leading-[30px] font-normal tracking-[0] text-gray-600">
+          <p className="w-[49.063vw] text-[0.938vw] leading-[1.563vw] text-[#4B5563]">
             Our clients’ feedback drives us to innovate and excel as Liferay digital experience experts.
           </p>
         </div>
 
-        {/* Arrows */}
-        <div className="mt-2 flex space-x-3 pr-[191px]">
-          <button
-            onClick={scrollToPrevious}
-            className="flex h-12 w-12 items-center justify-center rounded-full bg-black text-white shadow-lg transition-colors hover:bg-gray-800"
-            aria-label="Previous testimonials"
-          >
-            ←
-          </button>
-          <button
-            onClick={scrollToNext}
-            className="flex h-12 w-12 items-center justify-center rounded-full bg-black text-white shadow-lg ring-2 ring-teal-400 transition-colors hover:bg-gray-800"
-            aria-label="Next testimonials"
-          >
-            →
-          </button>
-        </div>
+      <div className="flex gap-[1.25vw]">
+                <button
+                  onClick={scrollToPrevious}
+                  className="w-[3.333vw] cursor-pointer h-[3.333vw] bg-black text-white rounded-full flex items-center justify-center disabled:opacity-50"
+                >
+                  <Image src="/images/about/arrow-left.png" className="h-[1.875vw] w-[1.875vw]" alt="left-arrow" width={18} height={18} />
+                </button>
+                <button
+                  onClick={scrollToNext}
+                  className="w-[3.333vw] cursor-pointer h-[3.333vw] bg-black text-white rounded-full flex items-center justify-center disabled:opacity-50"
+                >
+                  <Image src="/images/about/arrow-right.png" className="h-[1.875vw] w-[1.875vw]" alt="right-arrow" width={18} height={18} />
+                </button>
+              </div>
+
       </div>
 
       {/* Scroll Wrapper: Defines the fixed-height viewport for scrolling */}
-      <div className="absolute inset-x-0 top-[225px] h-[468px]">
+      <div className="">
         {/* Carousel: Now flex and horizontally scrollable */}
         <div
           ref={scrollContainerRef}
           // The fix is here: using overflow-x-scroll and removing absolute positioning
-          className="scrollbar-hide flex h-full space-x-8 overflow-x-scroll pr-[191px] pl-[192px]"
+          className="scrollbar-hide flex h-full overflow-x-scroll"
           style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         >
           {testimonials.map((testimonial) => (
@@ -116,4 +115,4 @@ export const Testimonial: React.FC = () => {
       </div>
     </section>
   )
-}
+} 
