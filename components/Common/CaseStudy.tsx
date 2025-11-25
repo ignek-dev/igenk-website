@@ -79,7 +79,7 @@ const CaseStudy: React.FC<CaseStudyCarouselProps> = ({ caseStudies }) => {
   return (
     <section className="overflow-hidden bg-black py-16 text-white">
       <div className="max-w-7xl px-[192px]">
-        <h2 className="mb-10 px-4 text-3xl font-semibold">Related Case Studies</h2>
+        <p className="mb-10 px-4 text-[1.667vw] font-semibold">Related Case Studies</p>
 
         <div className="relative flex transition-transform duration-700 ease-in-out">
           {posts.map((item) => (
@@ -92,7 +92,7 @@ const CaseStudy: React.FC<CaseStudyCarouselProps> = ({ caseStudies }) => {
                 transitionTimingFunction: "cubic-bezier(0.4, 0, 0.2, 1)",
               }}
             >
-              <div className="flex flex-col gap-8 rounded-2xl border border-gray-800 bg-[#0f0f0f] p-4 md:flex-row">
+              <div className="flex flex-col gap-8 rounded-2xl border border-gray-800 bg-[#0f0f0f] p-4 md:flex-row h-[360px]">
                 {/* Image */}
                 <div className="h-[318px] w-[450px] flex-shrink-0 overflow-hidden rounded-xl md:w-1/2">
                   <Image
