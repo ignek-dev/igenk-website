@@ -47,7 +47,7 @@ const Achievements = () => {
             <br />
             Defined by Liferay Success
           </h2>
-          <p className="mb-7 max-w-[588px] text-lg text-gray-300">
+          <p className="mb-7 max-w-[588px] p18 text-gray-300">
             We design and develop digital solutions that adapt and grow with your business needs. Our platforms are built to deliver seamless performance, exceptional user experiences, and long-term scalability.
           </p>
           <ScheduleMeetingButton isFullWidth={false} btnName="Schedule Meeting" />

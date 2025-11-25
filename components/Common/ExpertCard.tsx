@@ -23,8 +23,8 @@ const ExpertCard: React.FC = () => {
           className="rounded-full border-2 border-[#00979E] object-cover"
         />
         <div>
-          <p className="text-lg font-semibold text-white">Bhavin Panchani</p>
-          <p className="text-sm text-gray-400">CEO @ IGNEK</p>
+          <p className="text-[0.9375vw] font-semibold text-white">Bhavin Panchani</p>
+          <p className="text-[0.729vw] text-gray-400">CEO @ IGNEK</p>
         </div>
       </div>
 
@@ -35,14 +35,14 @@ const ExpertCard: React.FC = () => {
 
       {/* Prefer Email */}
       <div className="pt-2">
-        <p className="mb-1 text-base text-gray-400">Prefer email ?</p>
+        <p className="mb-1 p16 text-gray-400">Prefer email ?</p>
         <a
           href="mailto:sales@ignek.com"
           className="group flex items-center justify-between text-lg font-semibold text-white"
         >
           sales@ignek.com
           <div className="mt-4 flex items-center justify-between">
-            <p className="mt-[-30px] rounded-full border border-white p-2 text-lg font-semibold text-white">
+            <p className="mt-[-30px] rounded-full border border-white p-2 text-[0.9375vw] font-semibold text-white">
               <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" viewBox="0 0 14 12" fill="none">
                 <path
                   d="M1.66683 5.99984L12.3335 5.99984M12.3335 5.99984L7.66683 1.33317M12.3335 5.99984L7.66683 10.6665"

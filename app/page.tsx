@@ -55,7 +55,7 @@ export default function HomePage() {
             <span>With IGNEK Today</span>
           </h1>
           <div className="mt-20 grid items-start gap-8 md:grid-cols-2">
-            <p className="max-w-xl text-xl text-white/80 sm:text-xl leading-[30px]">
+            <p className="max-w-xl p20 text-white/80 leading-[30px]">
               Transform your digital landscape with cutting-edge DXP solutions tailored to your unique business needs.
             </p>
 

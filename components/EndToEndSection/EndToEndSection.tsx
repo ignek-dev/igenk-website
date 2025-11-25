@@ -33,7 +33,7 @@ export default function EndToEndSection() {
           <p
             className={`${getAnimationClass(
               "animate-slide-top"
-            )} line-height-[30px] max-w-4xl pt-6.5 text-right text-lg text-white/80`}
+            )} max-w-4xl pt-6.5 text-right p18 text-white/80`}
           >
             We empower enterprises to innovate and scale with comprehensive Liferay DXP solutions, combining strategy, design, and technology for seamless digital transformation success.
           </p>
@@ -43,8 +43,8 @@ export default function EndToEndSection() {
         <div className="mt-21 grid gap-12 md:mt-24 md:grid-cols-2 md:gap-14 lg:gap-16">
           <div className={getAnimationClass("animate-slide-left", "animation-delay-200")}>
             <div className="mt-6.5">
-              <p className="text-2xl font-semibold md:text-[40px]">Digital Experience</p>
-              <p className="mt-3 max-w-xl text-lg text-white/80">
+              <p className="text-[2.083vw] font-semibold">Digital Experience</p>
+              <p className="mt-3 max-w-xl p18 text-white/80">
                 We craft unified and personalized digital experiences using Liferay DXP, ensuring customer engagement, consistency, and business growth across all digital touchpoints.
               </p>
             </div>

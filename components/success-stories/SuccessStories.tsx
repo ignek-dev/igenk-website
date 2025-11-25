@@ -121,7 +121,7 @@ const SuccessStories: React.FC = () => {
                     <h2 className="mb-4 global-container">
                       Success Stories
                     </h2>
-                    <p className="mt-1 text-lg text-gray-600">
+                    <p className="mt-1 p18 text-gray-600">
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit...
                     </p>
                   </div>

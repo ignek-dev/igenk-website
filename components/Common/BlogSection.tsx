@@ -101,7 +101,7 @@ export default function BlogSection() {
             Explore What's Shaping <br /> Digital Today
           </h2>
           <p
-            className={`max-w-[100%] justify-self-center text-right text-[0.938vw] leading-relaxed text-[#101012] text-gray-700 ${isInView ? "animate-when-visible animate-slide-right animation-delay-200" : "opacity-0"
+            className={`max-w-[100%] justify-self-center text-right p18 leading-relaxed text-[#101012] text-gray-700 ${isInView ? "animate-when-visible animate-slide-right animation-delay-200" : "opacity-0"
               }`}
           >
             Explore our blogs for expert insights, trends, and innovations driving digital transformation and shaping the future.

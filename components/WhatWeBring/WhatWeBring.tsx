@@ -63,7 +63,7 @@ const WhatWeBring: React.FC = () => {
             <br />
             Digital Experience
           </h2>
-          <p className="line-height-[30px] max-w-xl pt-0 text-right text-lg text-gray-300">
+          <p className="max-w-xl pt-0 text-right p18 text-gray-300">
             We empower businesses to deliver exceptional digital experiences through innovative strategies, design, and technology built on the power of Liferay DXP.
           </p>
         </div>
