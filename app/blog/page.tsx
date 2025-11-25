@@ -177,7 +177,7 @@ export default function Blogs() {
             </div>
 
             <div className="flex h-full items-end">
-              <p className="w-full text-right text-[#374151]">
+              <p className="p18 w-full text-right text-[#374151]">
                 Stay updated with our newly written tech blogs, covering trends, insights, and innovations to help your
                 business stay ahead.
               </p>
@@ -185,7 +185,7 @@ export default function Blogs() {
           </div>
 
           {/* Carousel Section */}
-          <div className="group relative mx-auto mb-16 w-[100%]">
+          <div className="group relative mx-auto w-[100%]">
             {/* Carousel Container */}
             <div className="relative h-[640px] overflow-hidden rounded-[22px] shadow-lg">
               {featuredBlogs.length > 0
@@ -205,14 +205,17 @@ export default function Blogs() {
                           alt={blog.title}
                           fill
                           sizes="(max-width: 768px) 100vw, 50vw"
-                          className="object-cover brightness-75"
+                          className="object-cover"
                           priority={index === 0}
                         />
                       </div>
 
                       {/* Overlay Content */}
                       <div
-                        className="absolute inset-0 flex cursor-pointer flex-col justify-end bg-gradient-to-t from-black/70 via-black/30 to-transparent px-[4.375rem] pb-[3rem] text-white"
+                        className="absolute inset-0 flex cursor-pointer flex-col justify-end px-[4.375rem] pb-[3rem] text-white"
+                        style={{
+                          background: "linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.81) 100%)",
+                        }}
                         onClick={() => router.push(`/blog/${blog.slug}`)}
                       >
                         <div className="inset-0 mb-[4.896vw] flex items-center justify-between">
@@ -233,7 +236,7 @@ export default function Blogs() {
                                 <div className="nav-fancy-glow absolute rounded-[42px]"></div>
 
                                 {/* Inner background */}
-                                <div className="absolute inset-0.5 rounded-[38px] bg-black"></div>
+                                <div className="absolute inset-0.5 rounded-[40px] bg-black"></div>
 
                                 <svg
                                   className="relative z-10 h-9 w-9 text-white"
@@ -262,10 +265,10 @@ export default function Blogs() {
                                 <div className="nav-fancy-glow absolute rounded-[42px]"></div>
 
                                 {/* Inner background */}
-                                <div className="absolute inset-0.5 rounded-[38px] bg-black"></div>
+                                <div className="absolute inset-0.5 rounded-[40px] bg-black"></div>
 
                                 <svg
-                                  className="relative z-10 h-9 w-9 text-white"
+                                  className="relative z-10 h-8 w-8 text-white"
                                   fill="currentColor"
                                   viewBox="0 0 16 16"
                                 >
@@ -280,13 +283,13 @@ export default function Blogs() {
                         </div>
 
                         <div className="p18 mb-[0.938vw] flex items-center space-x-2 font-normal text-[#E5E7EB] opacity-90">
-                          <span className="border-[] rounded-full border px-[1.042vw] py-[0.521vw] backdrop-blur-md">
+                          <span className="w-[7.5vw] rounded-full border border-[#D1D5DB] px-[1.042vw] py-[0.521vw] text-center text-[#E5E7EB]">
                             {blog.category}
                           </span>
                           <span>• {blog?.readTime}</span>
                         </div>
 
-                        <h2 className="mb-[0.938vw]">{blog.title}</h2>
+                        <h2 className="mb-[0.938vw] text-[1.563vw]">{blog.title}</h2>
                         <div className="flex items-center space-x-2 text-xl font-normal">
                           <Image
                             src={blog?.authPic}

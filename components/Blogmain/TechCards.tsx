@@ -17,7 +17,7 @@ export default function TechCard({ iconWhite, iconBlue, title, description, isSe
     <div
       onClick={() => setIsActive(!isActive)}
       className={`group relative flex flex-col items-center justify-center text-center p-6 cursor-pointer bg-[#ffffff] overflow-hidden
-            ${isSelected ? "border-2 border-purple-500" : "border border-gray-200"} 
+            
             max-w-[374px] h-[320px] rounded-[12px] 
             transition-all duration-300 ease-in-out 
             hover:shadow-xl hover:-translate-y-2`}>
@@ -50,7 +50,7 @@ export default function TechCard({ iconWhite, iconBlue, title, description, isSe
         </div>
 
         {/* Text */}
-        <h3 className="text-[1.563vw]! mb-2 text-gray-900 group-hover:text-white transition-colors duration-300">
+        <h3 className="text-[1.563vw]!  mb-2 text-gray-900 group-hover:text-white transition-colors duration-300">
           {title}
         </h3>
 

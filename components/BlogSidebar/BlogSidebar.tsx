@@ -147,14 +147,14 @@ const BlogSidebar = ({ categoryId }: BlogSidebarProps) => {
 
                     ))}
                 </div>
-                <h2 className="text-black font-medium! text-[1.667vw]! mt-9 mb-9 ">Related Blogs</h2>
+                <h2 className="text-black font-medium! text-[1.667vw]! mt-9  ">Related Blogs</h2>
             </div>
 
             {/* --- Related Blog Cards --- */}
-            <div className="grid gap-[31.5px] bg-white">
+            <div className="grid gap-[31.5px]">
                 {blogs?.map((blog, index) => (
                     <div key={blog?.id}>
-                        <div className="flex bg-white items-center overflow-hidden transition">
+                        <div className="flex items-center overflow-hidden transition">
 
                             {/* Image */}
                             <Image
@@ -193,9 +193,9 @@ const BlogSidebar = ({ categoryId }: BlogSidebarProps) => {
             <div className="bg-white rounded-[20px]  border-[#E5E7EB] border-[1.7px] shadow p-[2.375rem] mt-9 text-center">
                 <h2 className="text-[1.875vw]! font-semibold!  tracking-wide mb-10">AUTHOR</h2>
                 <h3 className="text-[1.563vw]! font-semibold! text-gray-900 mb-1">Bhavin Panchani</h3>
-                <p className="p16 text-[#121416] mb-7">CEO, IGNEK</p>
+                <p className="pb-[1.458vw] text-[#121416]">CEO, IGNEK</p>
 
-                <div className="flex justify-center mb-6">
+                <div className="flex justify-center mb-[1.875vw]">
                     <Image
                         src={"/images/blog/authorImg.png"}
                         alt="Author"
