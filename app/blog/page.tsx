@@ -378,7 +378,7 @@ export default function Blogs() {
 
                 {/* Pagination */}
                 {totalPages > 1 && (
-                  <div className="justify-left mt-[2.063rem] flex">
+                  <div className="justify-left mt-[2.5vw] flex">
                     <ul className="p20 flex items-center gap-2 font-medium">
                       {/* First */}
                       <li

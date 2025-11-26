@@ -259,9 +259,9 @@ export default function LiferayPerformanceTuningPage() {
           </div>
 
           <section className="pt-[3.333vw]">
-            <div className="grid grid-cols-1 gap-12 md:grid-cols-2 md:gap-16">
+            <div className="grid grid-cols-1  md:grid-cols-2 ">
               {/* Left column */}
-              <div className="pr-12">
+             
                 <div className="space-y-6">
                   {items.map((item, index) => (
                     <div
@@ -277,14 +277,14 @@ export default function LiferayPerformanceTuningPage() {
                     </div>
                   ))}
                 </div>
-              </div>
+             
 
               {/* Right column */}
-              <div className="h-[23.229vw] w-[42.135vw] rounded-xl border border-gray-200 bg-white p-[1.458vw] shadow-sm transition-all duration-500">
+              <div className="h-[23.229vw]  rounded-xl border border-gray-200 bg-white p-[1.458vw] shadow-sm transition-all duration-500">
                 <h3 className="text-[1.563vw]! font-semibold!">{item[activeIndex]?.title}</h3>
                 <ul className="mt-6 space-y-4">
                   {item[activeIndex]?.details.map((text) => (
-                    <li key={text} className="flex items-center gap-5">
+                    <li key={text} className="flex items-center gap-[1.042vw]">
                       <span className="flex aspect-square w-[1.458vw] h-[1.458vw] shrink-0 items-center justify-center rounded-full bg-black ">
                         <svg
                           viewBox="0 0 12 12"
