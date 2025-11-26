@@ -45,13 +45,13 @@ const WhatMake: React.FC<WhatMakeProps> = ({ WhatMakeData, titleText1, titleText
   }, []);
 
   return (
-    <section className="py-16 lg:py-16">
+    <section className="py-16 lg:py-16 bg-[#F6F6F6]">
       <div className="mx-auto w-full px-4 md:px-8 global-container">
         <div className="flex flex-col gap-16 md:flex-row md:items-start md:justify-between">
 
           {/* Left Column */}
           <div className="flex-1 space-y-6 pt-1 md:sticky md:top-48 lg:top-36">
-            <h2 className="mb-7 tracking-tight">
+            <h2 className="mb-[1.458vw] tracking-tight">
               {titleText1}
               <br />
               {titleText2}

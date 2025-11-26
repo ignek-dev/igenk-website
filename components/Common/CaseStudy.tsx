@@ -79,7 +79,7 @@ const CaseStudy: React.FC<CaseStudyCarouselProps> = ({ caseStudies }) => {
   return (
     <section className="overflow-hidden bg-black py-16 text-white">
       <div className="max-w-7xl px-[192px]">
-        <p className="mb-10 px-4 text-[1.667vw] font-semibold">Related Case Studies</p>
+        <p className="mb-[1.823vw] px-4 text-[1.667vw] font-semibold">Related Case Studies</p>
 
         <div className="relative flex transition-transform duration-700 ease-in-out">
           {posts.map((item) => (
@@ -92,13 +92,13 @@ const CaseStudy: React.FC<CaseStudyCarouselProps> = ({ caseStudies }) => {
                 transitionTimingFunction: "cubic-bezier(0.4, 0, 0.2, 1)",
               }}
             >
-              <div className="flex flex-col gap-8 rounded-2xl border border-gray-800 bg-[#0f0f0f] p-4 md:flex-row h-[360px]">
+              <div className="flex flex-col gap-8 rounded-2xl border border-gray-800 bg-[#0f0f0f] p-[1.667vw] md:flex-row max-h-[19.896vw]">
                 {/* Image */}
-                <div className="h-[318px] w-[450px] flex-shrink-0 overflow-hidden rounded-xl md:w-1/2">
+                <div className="h-[318px] max-w-[424px] flex-shrink-0 overflow-hidden rounded-xl md:w-1/2">
                   <Image
                     src={item._embedded?.["wp:featuredmedia"]?.[0]?.source_url || "/images/portfolio/portfolioImg.png"}
                     alt={item.title.rendered}
-                    width={450}
+                    width={424}
                     height={300}
                     objectFit="cover"
                     className="rounded-xl h-full w-full"

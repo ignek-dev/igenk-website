@@ -90,26 +90,26 @@ export default function LiferayUpgradePage() {
       {/* Hero */}
       <section className="relative bg-black text-white">
         <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_10%_0%,#0E7BF8_0%,#00979E_40%,transparent_65%)] opacity-25" />
-        <div className="global-container w-full pt-12 pb-16 md:pt-20 md:pb-28">
+        <div className="global-container w-full pt-[7.865vw] pb-[3.802vw]">
           <div className="relative grid items-start gap-10 md:grid-cols-2">
             <div>
               <div className="inline-flex items-center rounded-full border border-white/30 px-4 py-2 text-lg text-white">
                 Liferay Services
               </div>
-              <h1 className="mt-9 leading-tight font-semibold">
+              <h1 className="mt-[2.031vw] leading-tight font-semibold">
                 Liferay
                 <br />
                 <span className="block">DXP 7.4 Upgrade</span>
               </h1>
             </div>
-            <p className="p18 absolute bottom-0 max-w-xl text-right text-white md:mt-16 md:justify-self-end">
+            <p className="p18 absolute bottom-0 max-w-xl text-right text-white mt-[1.458vw] md:justify-self-end">
               Liferay DXP 7.4 introduces advanced features, enhanced performance, and stronger security for a more
               powerful digital experience.
             </p>
           </div>
 
           {/* Feature tabs */}
-          <div className="mt-15 flex flex-wrap gap-4">
+          <div className="mt-[3.177vw] flex flex-wrap gap-4">
             {featureTabs.map((label) => (
               <span
                 key={label}
@@ -126,25 +126,25 @@ export default function LiferayUpgradePage() {
         <div className="global-container py-12 lg:py-16">
           <h2 className="leading-tight font-semibold">Liferay DXP 7.4 Upgrade</h2>
 
-          <p className="p18 mt-4 leading-relaxed text-[#101012] text-gray-700">
+          <p className="p18 mt-[1.458vw] leading-relaxed text-[#101012] text-gray-700">
             Learn how the 7.4 upgrade transforms your digital platform, making it faster, smarter, and more secure.
           </p>
 
-          <div className="ml-[-20px] pt-12">
+          <div className="ml-[-20px] pt-[3.594vw]">
             {/* OUTER DRAG WRAPPER */}
             <div
               ref={containerRef}
-              className="no-scrollbar w-full cursor-grab overflow-x-auto active:cursor-grabbing"
+              className="no-scrollbar w-full cursor-grab overflow-x-auto overflow-y-hidden active:cursor-grabbing"
               onMouseDown={handleMouseDown}
               onMouseMove={handleMouseMove}
               onMouseUp={handleMouseUp}
               onMouseLeave={handleMouseLeave}
             >
               {/* INNER SCROLLABLE TRACK */}
-              <div className="relative flex flex-nowrap py-10 pr-[320px]">
+              <div className="relative flex flex-nowrap pr-[320px]">
                 {/* 👇 THE CONNECTOR LINE — FULL WIDTH, SCROLLS WITH CONTENT */}
                 <div
-                  className="pointer-events-none absolute top-[160px] z-0"
+                  className="pointer-events-none absolute top-[118px] z-0"
                   style={{ width: dynamicSteps.length * 260 + "px" }}
                 >
                   <div className="mx-6 h-1 bg-gray-200"></div>
@@ -173,7 +173,7 @@ export default function LiferayUpgradePage() {
 
                     {/* BOTTOM TITLE */}
                     {index % 2 !== 0 && (
-                      <p className="mt-6 text-center mb-12.5 text-[1.563vw] leading-[36px] font-medium text-black">
+                      <p className="mt-6 text-center w-[16.406vw] text-[1.563vw] leading-[36px] font-medium text-black">
                         {step.title}
                       </p>
                     )}
@@ -197,13 +197,13 @@ export default function LiferayUpgradePage() {
               to consider the upgrade
             </p>
           </div>
-          <div className="pt-12">
-            <div className="grid grid-cols-1 gap-x-[166px] gap-y-10 md:grid-cols-3">
+          <div className="pt-[3.021vw]">
+            <div className="grid grid-cols-1 gap-x-[166px] gap-y-[4.01vw] md:grid-cols-3">
               {supprotAndMaintanceServices.map((item, index) => (
-                <div key={index} className="flex flex-col pb-8">
+                <div key={index} className="flex flex-col">
                   <div className="flex items-center justify-between border-b border-gray-300 last:border-b-0">
                     <p
-                      className="whitespace-wrap mb-8 max-w-[215px] pt-4 font-semibold text-[1.563vw]"
+                      className="whitespace-wrap mb-[1.875vw] max-w-[215px] font-semibold text-[1.563vw]"
                       dangerouslySetInnerHTML={{ __html: item.text }}
                     />
                     <span className="mb-3 pt-4 text-[40px] font-semibold">
@@ -211,7 +211,7 @@ export default function LiferayUpgradePage() {
                     </span>
                   </div>
                   {/* Description */}
-                  <p className="pt-8 p20 text-white">{item.description}</p>
+                  <p className="pt-[1.875vw] p20 text-white">{item.description}</p>
                 </div>
               ))}
             </div>
@@ -230,12 +230,12 @@ export default function LiferayUpgradePage() {
               feature-rich functionality with minimal downtime.
             </p>
           </div>
-          <div className="pt-12">
+          <div className="pt-[3.021vw]">
             <div className="grid grid-cols-1 border border-gray-300 md:grid-cols-3 auto-rows-fr">
               {upgradePhases.map((phase, index) => (
                 <div key={index} className={`border-gray-300 ${index !== upgradePhases.length - 1 ? "border-r" : ""} `}>
                   {/* Phase Header */}
-                  <div className="bg-black px-4 py-3 text-center text-[1.563vw] font-semibold text-white">
+                  <div className="bg-black py-[1.458vw] text-center text-[1.563vw] font-semibold text-white">
                     {phase.phase}
                   </div>
 
@@ -295,12 +295,12 @@ export default function LiferayUpgradePage() {
               dynamic
             </p>
           </div>
-          <div className="relative pt-12">
-            <div className="relative grid gap-x-40 gap-y-20 md:grid-cols-2">
+          <div className="relative pt-[3.021vw]">
+            <div className="relative grid gap-x-40 gap-y-[4.427vw] md:grid-cols-2">
               {features.map((item, index) => (
                 <div className="relative" key={index}>
                   <div
-                    className={`w-[566px] rounded-full border border-gray-700 bg-black p-6 text-center transition-all hover:border-blue-500 [@media(min-width:1440px)]:w-[450px] ${
+                    className={`w-[29.479vw] rounded-full border border-gray-700 bg-black p-6 text-center transition-all hover:border-blue-500 ${
                       index == 0 || index == 4 || index == 3 ? "ml-[100px]" : ""
                     } `}
                   >
@@ -309,7 +309,7 @@ export default function LiferayUpgradePage() {
                   </div>
                 </div>
               ))}
-              <div className="absolute mt-12 flex w-max flex-col items-center justify-center [@media(min-width:1440px)]:translate-x-[236%] [@media(min-width:1440px)]:translate-y-[45%] [@media(min-width:1500px)]:translate-x-[245%] [@media(min-width:1800px)]:translate-x-[290%] [@media(min-width:1800px)]:translate-y-[35%]">
+              <div className="absolute mt-12 flex w-max flex-col items-center justify-center [@media(min-width:1440px)]:translate-x-[240%] [@media(min-width:1440px)]:translate-y-[45%] [@media(min-width:1500px)]:translate-x-[264%] [@media(min-width:1800px)]:translate-x-[325%] [@media(min-width:1800px)]:translate-y-[35%]">
                 <span className="mt-1 inline-flex h-50 w-50 items-center justify-center">
                   <svg
                     width="149"
@@ -355,18 +355,18 @@ export default function LiferayUpgradePage() {
               At IGNEK, we specialize in
             </p>
           </div>
-          <div className="pt-12">
-            <div className="grid grid-cols-1 gap-x-[166px] gap-y-10 md:grid-cols-3">
+          <div className="pt-[3.021vw]">
+            <div className="grid grid-cols-1 gap-x-[166px] gap-y-[5.208vw] md:grid-cols-3">
               {dxpUpgradeServices.map((item, index) => (
-                <div key={index} className="flex flex-col pb-8">
+                <div key={index} className="flex flex-col">
                   <div className="flex items-center justify-between border-b border-gray-300 last:border-b-0">
                     <p
-                      className="mb-6 pt-4 font-semibold text-[30px]"
+                      className="mb-[1.25vw] pt-4 font-semibold text-[30px]"
                       dangerouslySetInnerHTML={{ __html: item.text }}
                     />
                   </div>
                   {/* Description */}
-                  <p className="pt-6 p20 text-gray-700">{item.description}</p>
+                  <p className="pt-[1.25vw] p20 text-gray-700">{item.description}</p>
                 </div>
               ))}
             </div>

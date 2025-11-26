@@ -120,16 +120,16 @@ export default function BlogSection() {
                 alt={main?.title || "Blog Post"}
                 width={856}
                 height={459}
-                className=" object-cover max-h-[459px]"
+                className=" object-cover min-h-[459px]"
               />
             </div>
-            <h3 className="pt-[2.292vw] text-[#101012] ">
+            <h3 className="pt-[2.5vw] text-[#101012] ">
               {blogs[0]?.title || "Blog Post"}
             </h3>
             <p className="mt-[0.885vw] p18 text-[#101012] line-clamp-1  "
               dangerouslySetInnerHTML={{ __html: blogs[0]?.desc ?? "" }}
             />
-            <div className="mt-3 w-full border-t border-gray-300" />
+            <div className="mt-[1.667vw] w-full border-t border-gray-300" />
           </div>
 
           {/* Right: three small cards */}
@@ -152,7 +152,7 @@ export default function BlogSection() {
                     alt={item.title}
                     width={240}
                     height={140}
-                    className="h-full w-full object-cover"
+                    className="h-full w-full object-cover min-h-[139px]"
                   />
                 </div>
                 <div className=" ml-5">
