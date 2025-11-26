@@ -214,7 +214,7 @@ export default function Blogs() {
                       <div
                         className="absolute inset-0 flex cursor-pointer flex-col justify-end px-[4.375rem] pb-[3rem] text-white"
                         style={{
-                          background: "linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.81) 100%)",
+                          background: "linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,100) 100%)",
                         }}
                         onClick={() => router.push(`/blog/${blog.slug}`)}
                       >
@@ -289,7 +289,7 @@ export default function Blogs() {
                           <span>• {blog?.readTime}</span>
                         </div>
 
-                        <h2 className="mb-[0.938vw] text-[1.563vw]">{blog.title}</h2>
+                        <h2 className="mb-[0.938vw] text-[1.563vw]!">{blog.title}</h2>
                         <div className="flex items-center space-x-2 text-xl font-normal">
                           <Image
                             src={blog?.authPic}

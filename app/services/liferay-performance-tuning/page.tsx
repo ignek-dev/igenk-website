@@ -129,7 +129,7 @@ export default function LiferayPerformanceTuningPage() {
                 <span className="block">Performance Tuning</span>
               </h1>
             </div>
-            <p className="absolute bottom-0 w-[24.479vw] p18 mt-[3.177vw] md:justify-self-end">
+            <p className="absolute bottom-0 w-[24.479vw] text-right p18 mt-[3.177vw] md:justify-self-end">
               Optimize your Liferay Portal with specialized Liferay Performance Tuning, improving speed, stability, and
               resource efficiency for superior user experience.
             </p>
@@ -214,31 +214,31 @@ export default function LiferayPerformanceTuningPage() {
 
       {/* Outcome Of Our Liferay Performance Tuning Services */}
       <section className="bg-black text-white">
-        <div className="mx-auto w-full px-4 py-[64px] md:px-8 md:py-[64px] lg:py-[64px] [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
+        <div className="mx-auto w-full px-4 py-[64px] md:px-8 md:py-[64px] lg:py-[64px] global-container">
           <div className="relative grid items-start gap-10 md:grid-cols-2">
             <h2 className=" ">
               Outcome Of Our Liferay
               <br />
               Performance Tuning Services
             </h2>
-            <p className="absolute bottom-0  p18  text-white md:justify-self-end">
+            <p className="absolute bottom-0 max-w-[33.906vw] p18 text-right text-white md:justify-self-end">
               Liferay Performance Tuning improves portal speed, stability, scalability, security, and resource
               efficiency for optimal performance.
             </p>
           </div>
 
-          <div className="mt-12 grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-12 grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-3">
             {serviceDate?.map((item, index) => {
               const isLastRow = index >= serviceDate.length - (serviceDate.length % 3 || 3)
 
               return (
-                <div key={item.title} className="group relative min-h-[246px]">
-                  <Image src={item?.image ?? ""} alt="Progress icon" width={32} height={32} />
-                  <h3 className="mt-4 min-h-[80px] text-3xl font-medium [@media(min-width:1400px)]:w-[89%] [@media(min-width:1800px)]:w-[65%]">
+                <div key={item.title} className="group pr-[102px] justify-between flex flex-col gap-[1.042vw] relative ">
+                  <Image src={item?.image ?? ""} alt="Progress icon" width={44} height={44} />
+                  <h3 className=" h-[3.75vw] text-[1.563vw]! font-medium! w-[332px]">
                     {item.title}
                   </h3>
-                  <p className="mt-3 text-white/80">{item.desc}</p>
-                  {!isLastRow && <div className="absolute bottom-0 mt-6 w-full border-t border-white/30" />}
+                  <p className="p20  text-white/80">{item.desc}</p>
+                  {!isLastRow &&  <hr className="bottom-0 my-[64px] left-0 w-full border-b border-white/20" />}
                 </div>
               )
             })}
@@ -248,17 +248,17 @@ export default function LiferayPerformanceTuningPage() {
 
       {/* What We Do With Our Liferay DXP Performance Tuning Services */}
       <section className="bg-[#f7f7f7] text-black">
-        <div className="mx-auto w-full px-4 py-[64px] md:px-8 md:py-[64px] lg:py-[64px] [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
-          <div className="relative grid items-start gap-10 md:grid-cols-2">
-            <h2 className="text-3xl font-semibold sm:text-4xl md:text-4xl [@media(min-width:1400px)]:leading-[40px] [@media(min-width:1800px)]:text-5xl [@media(min-width:1800px)]:leading-[60px]">
-              What We Do With Our Liferay DXP Performance Tuning Services
+        <div className="mx-auto w-full px-4 py-[64px] md:px-8 md:py-[64px] lg:py-[64px] global-container"> 
+          <div className="relative grid items-start  md:grid-cols-2">
+            <h2 className="w-[43.802vw] text-[#000000]">
+              What We Do With Our Liferay DXP <br/> Performance Tuning Services
             </h2>
-            <p className="absolute bottom-0 max-w-xl text-right text-xl text-gray-700 md:justify-self-end">
+            <p className="absolute p18 bottom-0 text[#4B5563] max-w-[35.5vw] text-right md:justify-self-end">
               We optimize Liferay DXP performance through server tuning, JVM tweaks, and database enhancements to boost speed, stability, and scalability.
             </p>
           </div>
 
-          <section className="pt-13">
+          <section className="pt-[3.333vw]">
             <div className="grid grid-cols-1 gap-12 md:grid-cols-2 md:gap-16">
               {/* Left column */}
               <div className="pr-12">
@@ -266,26 +266,26 @@ export default function LiferayPerformanceTuningPage() {
                   {items.map((item, index) => (
                     <div
                       key={item.title}
-                      className={`group cursor-pointer border-l-4 pl-6 transition-all duration-300 ${activeIndex === index
+                      className={`group cursor-pointer border-l-4 pl-[1.667vw] transition-all duration-300 ${activeIndex === index
                           ? "border-black text-black"
                           : "border-gray-300 text-gray-600 hover:border-black hover:text-black"
-                        } mb-10`}
-                      onMouseEnter={() => setActiveIndex(index)}
+                        } mb-[2.917vw]`}
+                      onClick={() => setActiveIndex(index)}
                     >
-                      <h3 className="text-lg font-semibold md:text-2xl">{item.title}</h3>
-                      <p className="mt-2 text-sm text-gray-500 md:text-base">{item.desc}</p>
+                      <h3 className="text-[1.563vw]! font-semibold! ">{item.title}</h3>
+                      <p className="mt-2 p16 text-gray-500 md:text-base">{item.desc}</p>
                     </div>
                   ))}
                 </div>
               </div>
 
               {/* Right column */}
-              <div className="h-max w-full rounded-xl border border-gray-200 bg-white p-8 shadow-sm transition-all duration-500">
-                <h3 className="text-2xl font-semibold md:text-3xl">{item[activeIndex]?.title}</h3>
+              <div className="h-[23.229vw] w-[42.135vw] rounded-xl border border-gray-200 bg-white p-[1.458vw] shadow-sm transition-all duration-500">
+                <h3 className="text-[1.563vw]! font-semibold!">{item[activeIndex]?.title}</h3>
                 <ul className="mt-6 space-y-4">
                   {item[activeIndex]?.details.map((text) => (
-                    <li key={text} className="flex items-center gap-3">
-                      <span className="flex aspect-square w-5 shrink-0 items-center justify-center rounded-full bg-black md:w-6">
+                    <li key={text} className="flex items-center gap-5">
+                      <span className="flex aspect-square w-[1.458vw] h-[1.458vw] shrink-0 items-center justify-center rounded-full bg-black ">
                         <svg
                           viewBox="0 0 12 12"
                           className="h-[50%] w-[50%] text-white"
@@ -301,7 +301,7 @@ export default function LiferayPerformanceTuningPage() {
                           />
                         </svg>
                       </span>
-                      <span className="text-base leading-snug text-gray-800">{text}</span>
+                      <span className="p20 text-gray-800">{text}</span>
                     </li>
                   ))}
                 </ul>
