@@ -36,10 +36,66 @@ const metadata: Metadata = {
 
 export default function LiferayArchitectureDesignPage() {
   const containerRef = useRef<HTMLDivElement | null>(null)
+  const sectionRef = useRef<HTMLDivElement | null>(null)
   const [isDragging, setIsDragging] = useState(false)
   const [startX, setStartX] = useState(0)
   const [scrollStart, setScrollStart] = useState(0)
   const [targetScroll, setTargetScroll] = useState<number | null>(null)
+  const [isInView, setIsInView] = useState(false)
+
+  // Intersection Observer to detect when section is in view
+ // Intersection Observer to detect when section is in view
+useEffect(() => {
+  const section = sectionRef.current
+  if (!section) return
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      const entry = entries[0]
+      if (entry) {
+        setIsInView(entry.isIntersecting)
+      }
+    },
+    {
+      threshold: 0.3, // Trigger when 30% of section is visible
+      rootMargin: '0px'
+    }
+  )
+
+  observer.observe(section)
+  return () => observer.disconnect()
+}, [])
+  // Handle page scroll for horizontal scrolling
+  useEffect(() => {
+    if (!isInView || !containerRef.current || !sectionRef.current) return
+
+    const handlePageScroll = () => {
+      const container = containerRef.current
+      const section = sectionRef.current
+      if (!container || !section) return
+
+      const sectionRect = section.getBoundingClientRect()
+      const windowHeight = window.innerHeight
+      
+      // Calculate how much of the section is visible
+      const sectionTop = sectionRect.top
+      const sectionHeight = sectionRect.height
+      
+      // When section enters viewport, start horizontal scroll
+      if (sectionTop < windowHeight && sectionTop > -sectionHeight) {
+        const scrollProgress = 1 - (sectionTop / (windowHeight - sectionHeight * 0.3))
+        const clampedProgress = Math.max(0, Math.min(1, scrollProgress))
+        
+        const maxScroll = container.scrollWidth - container.clientWidth
+        const targetScrollLeft = clampedProgress * maxScroll
+        
+        container.scrollLeft = targetScrollLeft
+      }
+    }
+
+    window.addEventListener('scroll', handlePageScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handlePageScroll)
+  }, [isInView])
 
   // Custom smooth scroll logic (2-second easing)
   useEffect(() => {
@@ -79,57 +135,51 @@ export default function LiferayArchitectureDesignPage() {
     const walk = (x - startX) * 2.8 // reduced scroll speed
     setTargetScroll(scrollStart - walk)
   }
-  const handleWheelScroll = () => {
+
+  const handleWheelScroll = (e: React.WheelEvent) => {
     const container = containerRef.current
+    if (!container) return
+
+    const scrollThreshold = 10
+    const atStart = container.scrollLeft <= scrollThreshold
+    const atEnd = container.scrollLeft + container.clientWidth >= container.scrollWidth - scrollThreshold
+
+    // Apply horizontal scroll within boundaries
+    if ((e.deltaY > 0 && !atEnd) || (e.deltaY < 0 && !atStart)) {
+      container.scrollLeft += e.deltaY * 0.8
+    }
+    
+    // Vertical page scroll always works simultaneously
   }
-  useEffect(() => {
-    const handlePageScroll = () => {
-      const container = containerRef.current
-      if (container) {
-        // Calculate scroll position based on page scroll
-        const scrollY = window.scrollY
-        const maxScroll = document.documentElement.scrollHeight - window.innerHeight
-        const scrollPercentage = scrollY / maxScroll
 
-        const maxHorizontalScroll = container.scrollWidth - container.clientWidth
-        container.scrollLeft = scrollPercentage * maxHorizontalScroll
-      }
-    }
-
-    window.addEventListener("scroll", handlePageScroll)
-
-    return () => {
-      window.removeEventListener("scroll", handlePageScroll)
-    }
-  }, [])
   return (
     <main className="">
       {/* Hero */}
       <section className="relative bg-black text-white">
         <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_10%_0%,#0E7BF8_0%,#00979E_40%,transparent_65%)] opacity-25" />
-        <div className="global-container mx-auto w-full px-4 pt-12 md:px-8 md:pb-[72px]">
+        <div className="global-container mx-auto w-full pt-[3.333vw] pb-[3.802vw] ">
           <div className="relative grid items-start gap-10 text-[3.75vw] md:grid-cols-2">
             <div>
               <div className="p18 banner-tab">Liferay Services</div>
-              <h1 className="mt-9 leading-tight font-semibold">
+              <h1 className="mt-[2.031vw]   leading-tight font-semibold">
                 Liferay
                 <br />
                 <span className="block">Architecture</span>
                 <span className="block">Design</span>
               </h1>
             </div>
-            <p className="absolute bottom-0 text-right text-[0.938vw] text-white md:mt-16 md:justify-self-end [@media(min-width:1440px)]:max-w-xl [@media(min-width:1500px)]:max-w-3xl">
+            <p className="absolute bottom-0 text-right p18 text-white  md:justify-self-end ">
               Get Liferay architecture design and optimization services that enhance <br />
               performance, scalability, security, integrations, and user experience.
             </p>
           </div>
 
           {/* Feature tabs */}
-          <div className="mt-15 flex flex-wrap gap-9">
+          <div className="mt-[3.177vw] flex flex-wrap gap-9">
             {featureTabs.map((label, index) => (
               <span
                 key={index}
-                className="inline-flex items-center rounded-full border border-white/30 px-[16px] py-[20px] text-[1.042vw] font-semibold text-white transition-colors hover:border-white hover:text-white"
+                className="inline-flex items-center rounded-full border border-white/30 py-[0.833vw] px-[1.458vw] text-[1.042vw] font-semibold text-white transition-colors hover:border-white hover:text-white"
               >
                 {label}
               </span>
@@ -137,61 +187,75 @@ export default function LiferayArchitectureDesignPage() {
           </div>
         </div>
       </section>
-      <section>
-        <div className="global-container mx-auto w-full px-4">
+
+      {/* Horizontal Scroll Section - Now works with page scroll */}
+      <section ref={sectionRef}>
+        <div className="mx-auto w-full">
           <div
-            className="flex cursor-grab overflow-x-hidden"
-            onMouseDown={handleMouseDown}
-           
-            onMouseUp={handleMouseUp}
-            
+            className="
+              flex cursor-grab overflow-x-auto
+              [&::-webkit-scrollbar]:hidden     
+              [-ms-overflow-style:'none']       
+              [scrollbar-width:'none']          
+            "
             onWheel={handleWheelScroll}
+            onMouseDown={handleMouseDown}
+            onMouseUp={handleMouseUp}
+            onMouseLeave={handleMouseLeave}
+            onMouseMove={handleMouseMove}
             ref={containerRef}
           >
             {systemArchitecure.map((item, index) => (
               <div
                 key={index}
-                className={`flex-shrink-0 px-16 ${index === 0 ? "pl-0" : ""} ${
-                  index === systemArchitecure.length - 1 ? "pr-0" : ""
-                } ${index !== systemArchitecure.length - 1 ? "border-r border-[#E5E7EB]" : ""}`}
+                className={`flex-shrink-0 px-[3.333vw] ${
+                  index === 0 ? "ml-[10vw] pl-0" : ""
+                } ${index === systemArchitecure.length - 1 ? "" : ""} ${
+                  index !== systemArchitecure.length - 1
+                    ? "border-r border-[#E5E7EB]"
+                    : ""
+                }`}
                 style={{ width: "22%" }}
               >
-                <div className="flex flex-col gap-[4.688vw] py-4">
-                  <h3 className="mt-[64px] h-[88px] text-[1.875vw] leading-normal font-semibold text-gray-600">
+                <div className="flex flex-col gap-[4.688vw]">
+                  <h3 className="mt-[3.802vw] max-w-[16.51vw] h-[88px] text-[1.875vw] leading-normal font-semibold text-gray-600">
                     {item.text}
                   </h3>
-                  <p className="p16 mt-auto mb-[64px] leading-relaxed text-gray-500">{item.description}</p>
+                  <p className="p20 mt-auto max-w-[15.729vw] mb-[3.802vw] leading-relaxed text-gray-500">
+                    {item.description}
+                  </p>
                 </div>
               </div>
             ))}
           </div>
         </div>
       </section>
+
       <section className="bg-black text-white">
-        <div className="global-container mx-auto w-full px-4 py-16 md:px-8">
+        <div className="global-container mx-auto w-full px-4 py-[3.333vw] ">
           <div className="relative grid items-start gap-10 md:grid-cols-2">
             <h2 className="w-[41.25vw] text-[2.5vw] font-semibold">
               Key Activities Under Our Liferay Architecture Design Services
             </h2>
-            <p className="text-[0.938vw] font-normal text-white md:self-end md:justify-self-end md:text-right">
+            <p className="text-[0.938vw] max-w-[31.25vw ] text-right font-normal text-white md:self-end md:justify-self-end md:text-right">
               We offer design documents for Liferay Portal Architecture,
-              <br /> covering system components, security, load balancing, backup,
+               covering system components, security, load balancing, backup,
             </p>
           </div>
 
-          <div className="mt-12 grid grid-cols-1 gap-[1.875vw] md:mt-16">
+          <div className="mt-[3.49vw] grid grid-cols-1 gap-[1.875vw] ">
             {keyActivityArchitecureSystem.map((item, index) => (
               <div
                 key={index}
                 className="top-32 z-10 flex flex-col bg-black py-[1vw] md:flex-row md:items-center md:gap-[2vw] lg:gap-[3vw]"
               >
                 {/* Left Text */}
-                <div className="flex w-[16.406vw] min-w-[16.406vw] text-[1.563vw] font-semibold md:pr-[1.5vw]">
+                <div className="flex w-[16.406vw] min-w-[16.406vw] text-[1.563vw] leading-[1.875vw] font-semibold ">
                   {item.text}
                 </div>
 
                 {/* Description */}
-                <div className="flex items-center rounded-lg border border-[#1F2937] px-[1.875vw] py-[1.146vw] text-[1.042vw]">
+                <div className="flex items-center rounded-lg border border-[#1F2937] px-[1.875vw] py-[1.146vw] p20">
                   {item.description}
                 </div>
               </div>

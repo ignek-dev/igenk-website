@@ -143,7 +143,7 @@ export default function Blogs() {
   }, [fetchBlogs])
 
   return (
-    <main className="pb-5">
+    <main className="">
       {/* Hero */}
       <section className="relative bg-black text-white">
         <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_10%_0%,#0E7BF8_0%,#00979E_40%,transparent_65%)] opacity-25" />
@@ -164,7 +164,7 @@ export default function Blogs() {
         </div>
       </section>
 
-      <section className="bg-[#F9FAF7] py-[64px] text-black">
+      <section className="bg-[#F9FAF7] pt-[3.333vw] pb-[3.333vw]  text-black">
         <div className="global-container mx-auto w-full px-4 md:px-8">
           {/* Header part */}
           <div className="mb-[2.25rem] grid grid-cols-1 items-end gap-8 md:grid-cols-2">
@@ -357,7 +357,7 @@ export default function Blogs() {
           </div>
 
           {/* Blog Grid Section */}
-          <div className="pb-16">
+          <div className="">
             <h2 className="mb-9 tracking-tight text-[#000000]">Browse Latest Blog</h2>
 
             {loading ? (
@@ -378,7 +378,7 @@ export default function Blogs() {
 
                 {/* Pagination */}
                 {totalPages > 1 && (
-                  <div className="justify-left mt-[2.5vw] flex">
+                  <div className="justify-left mt-[2.292vw] flex">
                     <ul className="p20 flex items-center gap-2 font-medium">
                       {/* First */}
                       <li
