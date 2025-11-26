@@ -43,12 +43,12 @@ const BlogSidebar = ({ categoryId }: BlogSidebarProps) => {
         { icon: <IconLinkedIn />, href: "https://www.linkedin.com/company/ignek-infotech/about/", label: "LinkedIn" },
         { icon: <IconFacebook />, href: "https://www.facebook.com/ignekinfo/", label: "Facebook" },
         { icon: <IconX />, href: "https://x.com/ignekinfotech", label: "X" },
-        { icon: <WhatsappIcon />, href: "", label: "WhatsApp" },
-        { icon: <MainIcon />, href: "", label: "Mail" },
+        { icon: <WhatsappIcon />, href: "tel:+919328495160", label: "WhatsApp" },
+        { icon: <MainIcon />, href: "mailto:hr@ignek.com", label: "Mail" },
     ]
     const authorSocialLinks = [
-        { icon: <IconLinkedIn />, href: "https://www.linkedin.com/company/ignek-infotech/about/", label: "LinkedIn" },
-        { icon: <MainIcon />, href: "", label: "Mail" },
+        { icon: <IconLinkedIn />, href: "https://www.linkedin.com/in/bhavin-panchani", label: "LinkedIn" },
+        { icon: <MainIcon />, href: "mailto:bhavin.panchani@ignek.com", label: "Mail" },
     ]
     const [blogs, setBlogs] = useState<BlogData[]>([]);
     // const [loading, setLoading] = useState(true);
@@ -133,12 +133,13 @@ const BlogSidebar = ({ categoryId }: BlogSidebarProps) => {
         <div className="max-w-[1440px] grid gap-9 mx-auto pl-[4.271vw]  pr-[50px]">
             {/* --- Social Icons --- */}
             <div>
-                <h2 className="text-black font-medium! text-[1.667vw]! mb-4 mt-[2.292vw]">Share On</h2>
+                <h2 className="text-black font-medium! leading-[2.083vw] text-[1.667vw]! mb-4 mt-[2.292vw]">Share On</h2>
                 <div className="flex gap-[0.625rem] mt-0">
                     {socialLinks.map((social) => (
                         <a
                             href={social.href}
                             key={social.label}
+                            target="_blank"
                             aria-label={social.label}
                             className="flex w-[54px] h-[54px] items-center justify-center rounded-full bg-black text-white"
                         >
@@ -205,7 +206,7 @@ const BlogSidebar = ({ categoryId }: BlogSidebarProps) => {
                     />
                 </div>
 
-                <p className="text-[#374151] p16 leading-relaxed mb-6">
+                <p className="text-[#374151] p16 leading-relaxed mb-[1.875vw]">
                     Bhavin Panchani. Founder & Director. We were set up in early 2019 and
                     are passionate about driving innovation through digital transformation.
                 </p>
@@ -216,6 +217,7 @@ const BlogSidebar = ({ categoryId }: BlogSidebarProps) => {
                             href={social.href}
                             key={social.label}
                             aria-label={social.label}
+                            target="_blank"
                             className="flex size-[2.5rem] items-center justify-center rounded-full bg-black text-white"
                         >
                             {social.icon}

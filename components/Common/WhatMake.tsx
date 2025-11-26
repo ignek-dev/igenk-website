@@ -45,8 +45,8 @@ const WhatMake: React.FC<WhatMakeProps> = ({ WhatMakeData, titleText1, titleText
   }, []);
 
   return (
-    <section className="py-16 lg:py-16 bg-[#F6F6F6]">
-      <div className="mx-auto w-full px-4 md:px-8 global-container">
+    <section className="py-[3.75vw] ">
+      <div className="mx-auto w-full px-4  global-container">
         <div className="flex flex-col gap-16 md:flex-row md:items-start md:justify-between">
 
           {/* Left Column */}
@@ -57,7 +57,7 @@ const WhatMake: React.FC<WhatMakeProps> = ({ WhatMakeData, titleText1, titleText
               {titleText2}
             </h2>
 
-            <p className="text-[0.938vw] leading-7 max-w-[658px] text-gray-500">
+            <p className="p18 leading-[1.563vw] max-w-[658px] text-gray-500">
               {subContext}
             </p>
           </div>
@@ -77,9 +77,9 @@ const WhatMake: React.FC<WhatMakeProps> = ({ WhatMakeData, titleText1, titleText
                     style={{ top: "200px" }}
                   >
                     <div className="whatsmake-card flex w-full flex-col justify-center rounded-[1.563vw] border border-[#E5E7EB] bg-white py-10 px-[30px] backdrop-blur-md md:min-h-[196px]">
-                      <p className="mb-[20] text-[1.563vw] leading-tight font-semibold">{item.title}</p>
-                      <div className="h-[1.5px] bg-[#E5E7EB]" />
-                      <p className="p18 mt-[20px]">{item.desc}</p>
+                      <h3 className="mb-[20] text-[1.563vw]! leading-tight  font-semibold">{item.title}</h3>
+                      <div className=" h-[1.5px] bg-[#D1D5DB]" />
+                      <p className="p18 mt-[1.042vw] leading-relaxed">{item.desc}</p>
                     </div>
                   </div>
                 )

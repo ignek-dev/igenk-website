@@ -236,7 +236,7 @@ export default function BlogDetails() {
                     </div>
                 </div>
             </section>
-            <div className="blog-section bg-[#F9FAF7]">
+            <div className="blog-section pb-[2.917vw] bg-[#F9FAF7]">
                 <div className="grid grid-cols-1 lg:grid-cols-12 ">
                     {/* MAIN CONTENT */}
                     <div className="lg:col-span-8 border-r border-[#E3E3E3]">
