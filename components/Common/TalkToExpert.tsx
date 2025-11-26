@@ -9,15 +9,15 @@ const TalkToExpert = ({
 }) => {
   return (
     <section className="bg-black py-[2.917vw] text-white ">
-      <div className="mx-auto w-full px-4 md:px-8 grid grid-cols-1 items-start gap-[5.208vw] lg:grid-cols-12  global-container">
+      <div className="mx-auto w-full px-4 md:px-8 grid grid-cols-1 items-start gap-[5.208vw] lg:grid-cols-12 global-container">
 
         {/* Left Column: Main Content */}
         <div className="lg:col-span-7 mt-[2.708vw] flex flex-col gap-[1.82vw]">
-          <h2 className=" w-4/5 text-[2.5vw] text-[#FFFFFF] leading-tight font-bold">
+          <h2 className="w-4/5 text-[#FFFFFF]">
             {heading}
           </h2>
 
-          <p className="  text-[0.938vw] text-gray-400 leading-relaxed">
+          <p className="p18 text-gray-400">
             {description}
           </p>
 

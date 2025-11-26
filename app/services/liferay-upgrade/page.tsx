@@ -27,7 +27,8 @@ const metadata: Metadata = {
   openGraph: {
     url: "https://www.ignek.com/services/liferay-dxp-7-4-upgrade/",
     title: "Liferay DXP 7.4 Upgrade Services | Seamless Migration",
-    description: "Liferay DXP 7.4 Upgrade  for seamless migration and enhanced performance. Experience full support for new features transform your digital journey today!	",
+    description:
+      "Liferay DXP 7.4 Upgrade  for seamless migration and enhanced performance. Experience full support for new features transform your digital journey today!	",
     images: [
       {
         width: 1200,
@@ -37,7 +38,6 @@ const metadata: Metadata = {
     ],
   },
 }
-
 
 export default function LiferayUpgradePage() {
   const containerRef = useRef<HTMLDivElement | null>(null)
@@ -90,29 +90,30 @@ export default function LiferayUpgradePage() {
       {/* Hero */}
       <section className="relative bg-black text-white">
         <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_10%_0%,#0E7BF8_0%,#00979E_40%,transparent_65%)] opacity-25" />
-        <div className="mx-auto w-full px-4 pt-12 pb-16 md:px-8 md:pt-20 md:pb-28 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
+        <div className="global-container w-full pt-[7.865vw] pb-[3.802vw]">
           <div className="relative grid items-start gap-10 md:grid-cols-2">
             <div>
               <div className="inline-flex items-center rounded-full border border-white/30 px-4 py-2 text-lg text-white">
                 Liferay Services
               </div>
-              <h1 className="mt-9 text-4xl leading-tight font-semibold [@media(min-width:1440px)]:text-5xl [@media(min-width:1500px)]:text-6xl">
+              <h1 className="mt-[2.031vw] leading-tight font-semibold">
                 Liferay
                 <br />
                 <span className="block">DXP 7.4 Upgrade</span>
               </h1>
             </div>
-            <p className="absolute bottom-0 max-w-xl text-right text-white md:mt-16 md:justify-self-end [@media(min-width:1440px)]:text-sm [@media(min-width:1500px)]:text-base">
-              Liferay DXP 7.4 introduces advanced features, enhanced performance, and stronger security for a more powerful digital experience.
+            <p className="p18 absolute bottom-0 max-w-xl text-right text-white mt-[1.458vw] md:justify-self-end">
+              Liferay DXP 7.4 introduces advanced features, enhanced performance, and stronger security for a more
+              powerful digital experience.
             </p>
           </div>
 
           {/* Feature tabs */}
-          <div className="mt-15 flex flex-wrap gap-4">
+          <div className="mt-[3.177vw] flex flex-wrap gap-4">
             {featureTabs.map((label) => (
               <span
                 key={label}
-                className="inline-flex items-center rounded-full border border-white/30 py-5 text-lg text-white transition-colors hover:border-white hover:text-white [@media(min-width:1440px)]:px-5 [@media(min-width:1800px)]:px-7"
+                className="p20 inline-flex items-center rounded-full border border-white/30 py-5 text-white transition-colors hover:border-white hover:text-white [@media(min-width:1440px)]:px-5 [@media(min-width:1800px)]:px-7"
               >
                 {label}
               </span>
@@ -122,49 +123,59 @@ export default function LiferayUpgradePage() {
       </section>
 
       <section className="bg-[#f7f7f7] text-black">
-        <div className="mx-auto w-full px-4 py-[64px] md:px-8 md:py-[64px] lg:py-[64px] [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
-          <h2 className="text-5xl justify-self-center leading-tight font-semibold sm:text-4xl md:text-5xl">
-            Why Liferay DXP 7.4 Upgrade is a Game-Changer
-          </h2>
-          <p className="mt-4 justify-self-center text-lg leading-relaxed text-[#101012] text-gray-700">
+        <div className="global-container py-12 lg:py-16">
+          <h2 className="leading-tight font-semibold">Liferay DXP 7.4 Upgrade</h2>
+
+          <p className="p18 mt-[1.458vw] leading-relaxed text-[#101012] text-gray-700">
             Learn how the 7.4 upgrade transforms your digital platform, making it faster, smarter, and more secure.
           </p>
-          <div className="ml-[-20px] pt-4">
+
+          <div className="ml-[-20px] pt-[3.594vw]">
+            {/* OUTER DRAG WRAPPER */}
             <div
               ref={containerRef}
-              className="max-w-full cursor-grab overflow-hidden active:cursor-grabbing"
+              className="no-scrollbar w-full cursor-grab overflow-x-auto overflow-y-hidden active:cursor-grabbing"
               onMouseDown={handleMouseDown}
-              onMouseLeave={handleMouseLeave}
-              onMouseUp={handleMouseUp}
               onMouseMove={handleMouseMove}
+              onMouseUp={handleMouseUp}
+              onMouseLeave={handleMouseLeave}
             >
-              <div className="relative flex min-w-max">
+              {/* INNER SCROLLABLE TRACK */}
+              <div className="relative flex flex-nowrap pr-[320px]">
+                {/* 👇 THE CONNECTOR LINE — FULL WIDTH, SCROLLS WITH CONTENT */}
+                <div
+                  className="pointer-events-none absolute top-[118px] z-0"
+                  style={{ width: dynamicSteps.length * 260 + "px" }}
+                >
+                  <div className="mx-6 h-1 bg-gray-200"></div>
+                </div>
+
+                {/* 👇 LOOP ITEMS */}
                 {dynamicSteps.map((step, index) => (
-                  <div key={index} className="relative flex w-1/11 flex-shrink-0 flex-col items-center">
-                    {/* Number */}
-                    {index % 2 == 0 && (
-                      <p className="mt-2 mb-4 text-center text-3xl font-medium text-black">{step.title}</p>
-                    )}
-                    <div></div>
+                  <div
+                    key={index}
+                    className="relative flex w-[260px] flex-shrink-0 flex-col items-center px-6 sm:w-[220px] md:w-[240px] lg:w-[260px]"
+                  >
+                    {/* TOP TITLE */}
+                    {index % 2 === 0 && <p className="w-[16.406vw] mb-4 text-center leading-[36px] text-[1.563vw] font-medium text-black">{step.title}</p>}
+
+                    {/* SPACER */}
+                    <div style={{ height: 8 }} />
+
+                    {/* DOT */}
                     <div
-                      className={`relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-black text-lg font-medium text-white ${
-                        index % 2 !== 0 ? "top-[100px]" : ""
+                      className={`relative z-20 flex h-12 w-12 items-center justify-center rounded-full bg-black p24 font-medium text-white ${
+                        index === 0? "mt-[35px]" : index % 2 !== 0? "mt-[88px]" : "mt-0"
                       }`}
                     >
                       {step.number}
                     </div>
 
-                    {/* Text */}
+                    {/* BOTTOM TITLE */}
                     {index % 2 !== 0 && (
-                      <p className="mt-4 mt-[116px] text-center text-3xl font-medium text-black">{step.title}</p>
-                    )}
-
-                    {/* Connecting line */}
-                    {index < dynamicSteps.length - 1 && (
-                      <div
-                        className="absolute top-[120px] right-0 z-0 h-1.5 bg-gray-200"
-                        style={{ width: "100%", transform: "translateX(50%)" }}
-                      ></div>
+                      <p className="mt-6 text-center w-[16.406vw] text-[1.563vw] leading-[36px] font-medium text-black">
+                        {step.title}
+                      </p>
                     )}
                   </div>
                 ))}
@@ -175,32 +186,32 @@ export default function LiferayUpgradePage() {
       </section>
 
       <section className="bg-black py-[64px] text-white md:py-[64px] lg:py-[64px]">
-        <div className="mx-auto w-full items-start px-4 md:px-8 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
+        <div className="items-start global-container">
           <div className="relative grid items-start gap-10 md:grid-cols-2">
-            <h2 className="text-3xl leading-[60px] font-semibold [@media(min-width:1440px)]:max-w-sm [@media(min-width:1440px)]:text-4xl [@media(min-width:1500px)]:max-w-lg [@media(min-width:1500px)]:text-5xl">
+            <h2 className="">
               Key Benefits of Liferay DXP 7.4 Upgrade
             </h2>
-            <p className="absolute bottom-0 max-w-lg text-right text-xl text-white md:justify-self-end [@media(min-width:1440px)]:text-base">
+            <p className="absolute bottom-0 p18 max-w-[35vw] text-right text-white md:justify-self-end">
               Liferay DXP 7.4 Upgrade is essential for organizations aiming to enhance their digital experience
               capabilities and stay competitive in today’s fast-paced environment. Here are several compelling reasons
               to consider the upgrade
             </p>
           </div>
-          <div className="pt-12">
-            <div className="grid grid-cols-1 gap-x-[166px] gap-y-10 md:grid-cols-3">
+          <div className="pt-[3.021vw]">
+            <div className="grid grid-cols-1 gap-x-[166px] gap-y-[4.01vw] md:grid-cols-3">
               {supprotAndMaintanceServices.map((item, index) => (
-                <div key={index} className="flex flex-col pb-8">
+                <div key={index} className="flex flex-col">
                   <div className="flex items-center justify-between border-b border-gray-300 last:border-b-0">
-                    <h3
-                      className="whitespace-wrap mb-3 max-w-[215px] pt-4 font-semibold [@media(min-width:1440px)]:text-[28px] [@media(min-width:1800px)]:text-[30px]"
+                    <p
+                      className="whitespace-wrap mb-[1.875vw] max-w-[215px] font-semibold text-[1.563vw]"
                       dangerouslySetInnerHTML={{ __html: item.text }}
                     />
-                    <span className="mb-3 pt-4 text-[30px] font-semibold">
+                    <span className="mb-3 pt-4 text-[40px] font-semibold">
                       {index + 1 < 10 ? `0${index + 1}` : index + 1}
                     </span>
                   </div>
                   {/* Description */}
-                  <p className="pt-4 text-[16px] leading-relaxed text-white">{item.description}</p>
+                  <p className="pt-[1.875vw] p20 text-white">{item.description}</p>
                 </div>
               ))}
             </div>
@@ -209,29 +220,30 @@ export default function LiferayUpgradePage() {
       </section>
 
       <section className="bg-[#f7f7f7] py-[64px] text-black md:py-[64px] lg:py-[64px]">
-        <div className="mx-auto w-full items-start px-4 md:px-8 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
+        <div className="items-start global-container">
           <div className="relative grid items-start gap-10 md:grid-cols-2">
-            <h2 className="text-3xl font-semibold [@media(min-width:1440px)]:max-w-[430px] [@media(min-width:1440px)]:text-3xl [@media(min-width:1440px)]:leading-[40px] [@media(min-width:1500px)]:max-w-[430px] [@media(min-width:1500px)]:text-5xl [@media(min-width:1500px)]:leading-[60px]">
+            <h2 className="[@media(min-width:1440px)]:max-w-[430px] [@media(min-width:1500px)]:max-w-[430px]">
               Liferay DXP 7.4 Upgrade Process
             </h2>
-            <p className="absolute bottom-0 max-w-xl text-right text-lg text-gray-700 md:justify-self-end [@media(min-width:1440px)]:text-lg">
+            <p className="absolute bottom-0 max-w-xl text-right p18 text-gray-700 md:justify-self-end">
               Our Liferay DXP 7.4 upgrade process ensures smooth migration, improved performance, enhanced security, and
               feature-rich functionality with minimal downtime.
             </p>
           </div>
-          <div className="pt-12">
-            <div className="grid grid-cols-1 border border-gray-300 md:grid-cols-3">
+          <div className="pt-[3.021vw]">
+            <div className="grid grid-cols-1 border border-gray-300 md:grid-cols-3 auto-rows-fr">
               {upgradePhases.map((phase, index) => (
-                <div key={index} className={`border-gray-300 ${index !== upgradePhases.length - 1 ? "border-r" : ""}`}>
+                <div key={index} className={`border-gray-300 ${index !== upgradePhases.length - 1 ? "border-r" : ""} `}>
                   {/* Phase Header */}
-                  <div className="mb-4 bg-black px-4 py-3 text-center text-3xl font-semibold text-white">
+                  <div className="bg-black py-[1.458vw] text-center text-[1.563vw] font-semibold text-white">
                     {phase.phase}
                   </div>
 
                   {/* Sections */}
+                  <div className="flex-1">
                   {phase.sections.map((section, idx) => (
                     <div key={idx} className="mb-6 p-6 last:mb-0">
-                      <h3 className="mb-3 text-3xl font-medium">{section.title}</h3>
+                      <h3 className="mb-3 text-[1.563vw] font-medium">{section.title}</h3>
 
                       {section.points.map((point, pIndex) => (
                         <div key={pIndex} className="mb-4 flex gap-4">
@@ -259,11 +271,12 @@ export default function LiferayUpgradePage() {
                               />
                             </svg>
                           </span>
-                          <p key={pIndex}>{point}</p>
+                          <p className="p20" key={pIndex}>{point}</p>
                         </div>
                       ))}
                     </div>
                   ))}
+                  </div>
                 </div>
               ))}
             </div>
@@ -271,32 +284,32 @@ export default function LiferayUpgradePage() {
         </div>
       </section>
 
-      <section className="bg-black py-[64px] lg:py-[64px] text-white">
-        <div className="mx-auto w-full items-start px-4 md:px-8 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
+      <section className="bg-black py-[64px] text-white lg:py-[64px]">
+        <div className="items-start global-container">
           <div className="relative grid items-start gap-10 md:grid-cols-2">
-            <h2 className="text-3xl font-semibold [@media(min-width:1440px)]:text-3xl [@media(min-width:1500px)]:text-4xl">
+            <h2 className="">
               Enhance Digital Experiences with the Liferay DXP 7.4 Upgrade
             </h2>
-            <p className="absolute bottom-0 max-w-xl text-right text-xl text-white md:justify-self-end">
+            <p className="absolute bottom-0 max-w-xl text-right p18 text-white md:justify-self-end">
               Our dedicated Liferay team offers ongoing Liferay Support and Maintenance to address the challenges of a
               dynamic
             </p>
           </div>
-          <div className="relative pt-12">
-            <div className="relative grid gap-x-40 gap-y-20 md:grid-cols-2">
+          <div className="relative pt-[3.021vw]">
+            <div className="relative grid gap-x-40 gap-y-[4.427vw] md:grid-cols-2">
               {features.map((item, index) => (
                 <div className="relative" key={index}>
                   <div
-                    className={`w-[566px] rounded-full border border-gray-700 bg-black p-6 text-center transition-all hover:border-blue-500 [@media(min-width:1440px)]:w-[450px] ${
+                    className={`w-[29.479vw] rounded-full border border-gray-700 bg-black p-6 text-center transition-all hover:border-blue-500 ${
                       index == 0 || index == 4 || index == 3 ? "ml-[100px]" : ""
                     } `}
                   >
-                    <h3 className="mb-2 text-xl font-semibold">{item.title}</h3>
-                    <p className="text-sm text-white">{item.desc}</p>
+                    <p className="mb-2 text-[1.25vw] font-semibold">{item.title}</p>
+                    <p className="text-[0.833vw] text-white leading-[24px]">{item.desc}</p>
                   </div>
                 </div>
               ))}
-              <div className="absolute mt-12 flex w-max flex-col items-center justify-center [@media(min-width:1440px)]:translate-x-[236%] [@media(min-width:1440px)]:translate-y-[45%] [@media(min-width:1500px)]:translate-x-[245%] [@media(min-width:1800px)]:translate-x-[290%] [@media(min-width:1800px)]:translate-y-[35%]">
+              <div className="absolute mt-12 flex w-max flex-col items-center justify-center [@media(min-width:1440px)]:translate-x-[240%] [@media(min-width:1440px)]:translate-y-[45%] [@media(min-width:1500px)]:translate-x-[264%] [@media(min-width:1800px)]:translate-x-[325%] [@media(min-width:1800px)]:translate-y-[35%]">
                 <span className="mt-1 inline-flex h-50 w-50 items-center justify-center">
                   <svg
                     width="149"
@@ -332,28 +345,28 @@ export default function LiferayUpgradePage() {
       </section>
 
       <section className="bg-[#f7f7f7] py-[64px] text-black md:py-[64px] lg:py-[64px]">
-        <div className="mx-auto w-full items-start px-4 md:px-8 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
+        <div className="items-start global-container">
           <div className="relative grid items-start gap-10 md:grid-cols-2">
-            <h2 className="text-3xl font-semibold [@media(min-width:1440px)]:max-w-[430px] [@media(min-width:1440px)]:text-3xl [@media(min-width:1440px)]:leading-[40px] [@media(min-width:1500px)]:max-w-[550px] [@media(min-width:1500px)]:text-4xl [@media(min-width:1500px)]:leading-[50px]">
+            <h2 className="">
               Why Choose IGNEK For Liferay DXP 7.4 Upgrade Services?
             </h2>
-            <p className="absolute bottom-0 max-w-xl text-right text-lg text-gray-700 md:justify-self-end [@media(min-width:1440px)]:text-base">
+            <p className="absolute bottom-0 max-w-xl text-right p18 text-gray-700 md:justify-self-end">
               Liferay DXP 7.4 Upgrade is a pivotal step for organizations looking to enhance their digital experience.
               At IGNEK, we specialize in
             </p>
           </div>
-          <div className="pt-12">
-            <div className="grid grid-cols-1 gap-x-[166px] gap-y-10 md:grid-cols-3">
+          <div className="pt-[3.021vw]">
+            <div className="grid grid-cols-1 gap-x-[166px] gap-y-[5.208vw] md:grid-cols-3">
               {dxpUpgradeServices.map((item, index) => (
-                <div key={index} className="flex flex-col pb-8">
+                <div key={index} className="flex flex-col">
                   <div className="flex items-center justify-between border-b border-gray-300 last:border-b-0">
-                    <h3
-                      className="mb-3 pt-4 font-semibold [@media(min-width:1440px)]:text-[26px] [@media(min-width:1500px)]:text-[30px]"
+                    <p
+                      className="mb-[1.25vw] pt-4 font-semibold text-[30px]"
                       dangerouslySetInnerHTML={{ __html: item.text }}
                     />
                   </div>
                   {/* Description */}
-                  <p className="pt-4 text-lg leading-relaxed text-gray-700">{item.description}</p>
+                  <p className="pt-[1.25vw] p20 text-gray-700">{item.description}</p>
                 </div>
               ))}
             </div>
