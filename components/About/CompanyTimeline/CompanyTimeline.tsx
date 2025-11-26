@@ -12,12 +12,12 @@ export interface TimelineCardData {
   title: string;
   description: string;
   images: TimelineImage[];
-  marginTop?: number;
+  rotation: number;
+  marginTop: number;
 }
 
 export interface TimelineCardProps {
   data: TimelineCardData;
-  marginTop: number;
   tilt?: number;
   showConnector?: boolean;
 }
@@ -26,15 +26,9 @@ const TimelineCard: React.FC<TimelineCardProps> = ({
   data,
   tilt = 0,
   showConnector = false,
-  marginTop
 }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [offsets, setOffsets] = useState<number[]>([]);
-
-  useEffect(() => {
-    const newOffsets = Array.from({ length: 4 }, () => Math.floor(Math.random() * 80 - 30));
-    setOffsets(newOffsets);
-  }, []);
+  const [offsets, setOffsets] = useState<number[]>([6.458, 3.875, 6.458, 3.854]);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -47,27 +41,26 @@ const TimelineCard: React.FC<TimelineCardProps> = ({
   // const randomOffsets = Array.from({ length: 4 }, () => Math.floor(Math.random() * 60) - 30);
 
   return (
-    <div className="relative flex flex-col items-center mt-16">
+    <div className="relative flex flex-col items-center mt-[5.625vw]">
       {/* Background Dividers (first one has teal square) */}
-      <div className="absolute left-1/2 -translate-x-1/2 flex gap-[60px] -z-10 items-start">
+      <div className="absolute h-[373px] left-1/2 -translate-x-1/2 flex gap-[3.854vw] -z-10 items-start">
         {/* First Divider — main one with teal square */}
 
-        <div className="relative w-[1px] bg-gray-400 h-[633px] flex flex-col items-center">
-          <span style={{ top: "-11%" }} className="italic text-3xl text-gray-800 mb-3 relative z-10">
+        <div className="relative w-[0.052vw]  border border-r-0 border-[#9CA3AF] border-opacity-40 h-[32.969vw] flex flex-col items-center">
+          <span style={{ top: "-14%", fontFamily: "Times New Roman" }} className="italic leading-[2.531vw] text-[2.615vw] text-[#212121] mb-3 relative z-10">
             {data.year}
           </span>
-          <div style={{ marginTop: "-30px" }} className="absolute left-1/2 w-4 h-4 bg-teal-500 -translate-x-1/2 mt-2" />
+          <div style={{ marginTop: "-1.563vw" }} className="absolute left-1/2 w-[0.833vw] h-[0.833vw] bg-[#00979E] -translate-x-1/2 mt-[0.417vw]" />
         </div>
 
         {/* Remaining 4 straight background dividers */}
         {offsets.map((offset, idx) => (
           <div
             key={idx}
-            className="w-[1px] bg-[#212121]"
+            className="w-[0.052vw] bg-[#212121] opacity-20"
             style={{
-              height: "500px",
-              opacity: 0.25,
-              transform: `translateY(${offset}px)`,
+              height: "15.625vw",
+              transform: `translateY(${offset}vw)`,
             }}
           ></div>
         ))}
@@ -75,43 +68,45 @@ const TimelineCard: React.FC<TimelineCardProps> = ({
 
       {/* Card */}
       <div
-        className="w-[392px] h-[530px] rounded-[16px] p-[24px] shadow-md bg-white flex flex-col overflow-hidden"
+        className="w-[20.417vw] rounded-[0.833vw] p-[1.25vw] shadow-md bg-white flex flex-col overflow-hidden"
         style={{
-          transform: `rotate(${tilt}deg)`,
-          marginTop: `${marginTop}px`
+          transform: `rotate(${data.rotation}deg)`,
+          marginTop: `${data.marginTop}vw`
         }}
       >
         {/* Image at the top */}
-        <div className="relative w-[343px] h-[343px]">
+        <div className="relative w-[17.917vw] h-[17.917vw]">
           <Image
             src={data.images[currentImageIndex]?.src || ""}
             alt={data.images[currentImageIndex]?.alt || ""}
             fill
-            className="object-cover transition-opacity duration-500 rounded-[8px]"
+            className="object-cover w-[17.917vw] h-[17.917vw] transition-opacity duration-500 rounded-[0.417vw]"
           />
-          {/* Dots indicator */}
-          <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1 z-10">
-            {data.images.map((_, idx) => (
-              <button
-                key={idx}
-                className={`w-2.5 h-2.5 rounded-full border border-white ${idx === currentImageIndex ? "bg-white" : "bg-white/60"
-                  }`}
-                style={{
-                  transition: "background 0.2s"
-                }}
-                onClick={() => setCurrentImageIndex(idx)}
-                tabIndex={0}
-              ></button>
-            ))}
-          </div>
+          {/* Dots indicator - only show if more than 1 image */}
+          {data.images.length > 1 && (
+            <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1 z-10">
+              {data.images.map((_, idx) => (
+                <button
+                  key={idx}
+                  className={`w-[0.417vw] h-[0.417vw] rounded-full ${idx === currentImageIndex ? "bg-[#000000]" : "bg-[#C4C4C4]"
+                    }`}
+                  style={{
+                    transition: "background 0.2s"
+                  }}
+                  onClick={() => setCurrentImageIndex(idx)}
+                  tabIndex={0}
+                ></button>
+              ))}
+            </div>
+          )}
         </div>
 
         {/* Text content */}
-        <div className="flex flex-1 flex-col justify-end">
-          <h3 className="font-poppins font-semibold text-[22px] leading-[30px] tracking-[-0.48px] align-middle text-black">
+        <div className="flex flex-col mt-[0.335vw]">
+          <h3 className="!text-[1.146vw] font-semibold !leading-[1.563vw] tracking-[-0.025vw] text-black">
             {data.title}
           </h3>
-          <p className="font-poppins font-normal text-[16px] leading-[24px] tracking-[0] align-middle text-black">
+          <p className="text-[0.833vw] leading-[1.25vw] text-black">
             {data.description}
           </p>
         </div>
@@ -141,7 +136,7 @@ const CompanyTimeline = () => {
     );
   };
 
-  const baseTimelineData: TimelineCardData[] = [
+  const timelineData: TimelineCardData[] = [
     {
       year: 2018,
       title: "IGNEK is Born",
@@ -152,6 +147,8 @@ const CompanyTimeline = () => {
         { src: "/images/about/timeline/2018/img-2.JPG", alt: "Office-2018" },
         { src: "/images/about/timeline/2018/img-3.JPG", alt: "Office-2018" },
       ],
+      rotation: -2,
+      marginTop: 5.698,
     },
     {
       year: 2019,
@@ -161,6 +158,8 @@ const CompanyTimeline = () => {
       images: [
         { src: "/images/about/timeline/2019/img-1.jpg", alt: "Office-2019" },
       ],
+      rotation: 1.2,
+      marginTop: 8.49,
     },
     {
       year: 2020,
@@ -170,6 +169,8 @@ const CompanyTimeline = () => {
       images: [
         { src: "/images/about/timeline/2020/img-1.jpg", alt: "Office-2020" },
       ],
+      rotation: 1.2,
+      marginTop: 2.083,
     },
     {
       year: 2021,
@@ -179,6 +180,8 @@ const CompanyTimeline = () => {
       images: [
         { src: "/images/about/timeline/2021/img-1.jpeg", alt: "Office-2021" },
       ],
+      rotation: -2,
+      marginTop: 8.438,
     },
     {
       year: 2022,
@@ -188,6 +191,8 @@ const CompanyTimeline = () => {
       images: [
         { src: "/images/about/timeline/2022/img-1.jpg", alt: "Office-2022" },
       ],
+      rotation: 1.2,
+      marginTop: 9.219,
     },
     {
       year: 2023,
@@ -197,6 +202,8 @@ const CompanyTimeline = () => {
       images: [
         { src: "/images/about/timeline/2023/img-1.jpg", alt: "Office-2023" },
       ],
+      rotation: -2,
+      marginTop: 1.563,
     },
     {
       year: 2024,
@@ -206,6 +213,8 @@ const CompanyTimeline = () => {
       images: [
         { src: "/images/about/timeline/2024/img-1.JPG", alt: "Office-2024" },
       ],
+      rotation: 1.2,
+      marginTop: 9.219,
     },
     {
       year: 2025,
@@ -215,101 +224,58 @@ const CompanyTimeline = () => {
       images: [
         { src: "/images/about/timeline/2025/img-1.jpg", alt: "Office-2025" },
       ],
+      rotation: -2,
+      marginTop: 3.854,
     },
   ];
 
-
-  // Add random marginTop to each item
-  // let prevMargin = 202;
-
-  // const staggeredMargins = generateStaggeredMargins(baseTimelineData.length);
-
-  const [timelineData, setTimelineData] = useState<TimelineCardData[]>([]);
-
-  useEffect(() => {
-    const randomized = baseTimelineData.map((item, i) => ({
-      ...item,
-      marginTop:
-        i === 0
-          ? 202
-          : Math.floor(Math.random() * (260 - 70 + 1)) + 70,
-    }));
-    setTimelineData(randomized);
-  }, []);
-
-
-
   return (
-    <section className="py-[64px] h-[1117px] bg-gray-50 relative overflow-hidden">
+    <section className="pt-[3.385vw] pb-[3.802vw] pl-[10vw] bg-[#F6F6F6] overflow-hidden">
       {/* Header */}
-      <div className="flex items-start justify-between mb-12">
-        <div className="pl-[192px]">
-          <h2 className="text-5xl font-semibold text-black mb-4">
+      <div className="flex items-start justify-between pr-[10vw] mb-[1.458vw]">
+        <div>
+          <h2 className="text-black mb-[1.458vw]">
             From Startup Spark To Tech Powerhouse
           </h2>
-          <p className="text-gray-600 text-lg max-w-2xl">
+          <p className="text-[#4B5563] leading-[1.563vw] text-[0.938vw] w-[46.875vw]">
             From a small startup to a leading Liferay powerhouse, our journey reflects innovation and excellence.
           </p>
         </div>
 
         {/* Navigation Arrows */}
-        <div className="flex gap-3 pr-[192px]">
+        <div className="flex gap-[1.25vw]">
           <button
             onClick={goToPrevious}
             disabled={currentScrollIndex === 0}
-            className="w-10 h-10 bg-black text-white rounded-full flex items-center justify-center hover:bg-gray-800 disabled:opacity-50"
+            className="w-[3.333vw] cursor-pointer h-[3.333vw] bg-black text-white rounded-full flex items-center justify-center disabled:opacity-50"
           >
-            <svg
-              className="w-5 h-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M15 19l-7-7 7-7"
-              />
-            </svg>
+            <Image src="/images/about/arrow-left.png" className="h-[1.875vw] w-[1.875vw]" alt="left-arrow" width={18} height={18} />
           </button>
           <button
             onClick={goToNext}
             disabled={currentScrollIndex >= timelineData.length - 4}
-            className="w-10 h-10 bg-black text-white rounded-full flex items-center justify-center hover:bg-gray-800 disabled:opacity-50"
+            className="w-[3.333vw] cursor-pointer h-[3.333vw] bg-black text-white rounded-full flex items-center justify-center disabled:opacity-50"
           >
-            <svg
-              className="w-5 h-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M9 5l7 7-7 7"
-              />
-            </svg>
+            <Image src="/images/about/arrow-right.png" className="h-[1.875vw] w-[1.875vw]" alt="right-arrow" width={18} height={18} />
           </button>
         </div>
       </div>
 
       {/* Horizontal Timeline */}
-      <div className="relative overflow-hidden h-[860px] pl-[192px] pr-[192px]">
+      <div>
         {/* Center Line */}
         {/* <div className="absolute top-[60px] left-[192px] right-[192px] h-[1px] bg-gray-300 z-0"></div> */}
 
         {/* Cards Container */}
         <div
-          className="relative flex gap-24 transition-transform duration-500 z-10 "
+          className="flex"
           style={{
             transform: `translateX(-${currentScrollIndex * 340}px)`,
           }}
         >
           {timelineData.length > 0 && (
             <div
-              className="relative flex gap-10 transition-transform duration-500 z-10"
+              className="relative flex gap-[2.969vw] pl-[0.365vw] transition-transform duration-500 z-10"
               style={{
                 transform: `translateX(-${currentScrollIndex * 340}px)`,
               }}
@@ -318,12 +284,10 @@ const CompanyTimeline = () => {
                 <React.Fragment key={item.year}>
                   <TimelineCard
                     data={item}
-                    tilt={i % 2 === 0 ? -2 : 2}
                     showConnector={false}
-                    marginTop={item.marginTop!}
                   />
                   {i < timelineData.length - 1 && (
-                    <div className="w-[1px] bg-[#212121]/20 h-[394px] self-center relative z-0" />
+                    <div className="w-[0.052vw] bg-[#212121]/20 h-[20.521vw] self-center relative z-0" />
                   )}
                 </React.Fragment>
               ))}

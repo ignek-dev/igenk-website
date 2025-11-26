@@ -7,8 +7,8 @@ export default function ExploreServices() {
     <section className="bg-[#0B0B0B] text-white rounded-2xl p-10 flex flex-col gap-6">
       {/* Title */}
       <div>
-        <h2 className="text-[2rem] font-medium mb-2">Explore Our Services</h2>
-        <p className="text-gray-300  font-normal text-[1.166875rem] leading-relaxed ">
+        <h2 className="text-[1.667vw]! font-medium! mb-2">Explore Our Services</h2>
+        <p className="text-gray-300  font-normal text-[0.99vw]! leading-relaxed ">
           And find out how we can help your small startup, SME, or large enterprise
           succeed. We are here to support your requirements and objectives with our
           knowledge and resources.
@@ -19,7 +19,7 @@ export default function ExploreServices() {
       <div>
         <a
           href="#"
-          className="inline-flex items-center gap-2 text-[#00979E] font-normal text-[1.166875rem]  hover:underline"
+          className="inline-flex items-center gap-2 text-[#00979E] font-normal text-[0.99vw]!  hover:underline"
         >
           Liferay Development &amp; Customization
           <ArrowUpRight size={18} />
@@ -44,7 +44,7 @@ export default function ExploreServices() {
     Subscribe
   </button>
         </div>
-        <span className="text-[#FAFAFA] font-normal text-base leading-[1.2]">Subscribe to our channel</span>
+        <span className="text-[#FAFAFA] font-normal p16 leading-[1.2]">Subscribe to our channel</span>
       </div>
     </section>
   );

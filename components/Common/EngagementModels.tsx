@@ -46,10 +46,10 @@ export default function EngagementModels({ title, description }: EngagementModel
         {/* Section Header - Now uses props for dynamic content */}
         <div className="mb-14 grid grid-cols-1 items-end gap-8 md:grid-cols-2">
           <div>
-            <h2 className="text-5xl leading-tight font-semibold tracking-tight text-[#000000] [@media(min-width:1440px)]:text-4xl [@media(min-width:1800px)]:text-5xl">{title}</h2>
+            <h2 className="text-[#000000]">{title}</h2>
           </div>
           <div className="flex h-full items-end justify-end">
-            <p className="text-normal line-height-[30px] w-full text-right text-xl text-[#374151]">{description}</p>
+            <p className="p18 w-full text-right text-[#374151]">{description}</p>
           </div>
         </div>
 
@@ -78,13 +78,13 @@ export default function EngagementModels({ title, description }: EngagementModel
               <div>
 
                 {/* Card Title */}
-                <h3 className="mb-8 text-3xl font-semibold">{model.title}</h3>
+                <h4 className="mb-8">{model.title}</h4>
 
                 {/* Divider */}
                 <hr className={`mb-8 border-t ${isHovered ? "border-white/30" : "border-gray-200"}`} />
 
                 {/* Card Description */}
-                <p className={`mb-8 text-lg  ${isHovered ? "text-white/90" : "text-gray-600"}`}>{model.description}</p>
+                <p className={`mb-8 p20  ${isHovered ? "text-white/90" : "text-gray-600"}`}>{model.description}</p>
               </div>
 
                 {/* Card Features */}
@@ -98,7 +98,7 @@ export default function EngagementModels({ title, description }: EngagementModel
                     >
                       <div className="flex items-center gap-4 py-4">
                         <div
-                          className={`flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full transition-colors duration-300 ${
+                          className={`flex h-[2.1875vw] w-[2.1875vw] flex-shrink-0 items-center justify-center rounded-full transition-colors duration-300 ${
                             isHovered ? "bg-white" : "bg-black"
                           }`}
                         >
@@ -117,7 +117,7 @@ export default function EngagementModels({ title, description }: EngagementModel
                             <polyline points="20 6 9 17 4 12"></polyline>
                           </svg>
                         </div>
-                        <span className="text-base font-medium  [@media(min-width:1440px)]:text-base [@media(min-width:1800px)]:text-lg [@media(min-width:1800px)]:min-w-[350px] max-w-[180px]">{feature}</span>
+                        <span className="p20">{feature}</span>
                       </div>
                     </div>
                   ))}

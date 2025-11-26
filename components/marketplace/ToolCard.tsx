@@ -14,52 +14,60 @@ type ToolCardProps = {
 
 const ModuleTag = ({ text }: { text: string }) => {
   return (
-    <span
+    <p
       className={`
-        rounded-full border px-6 py-2.5 text-base font-medium
-        text-gray-900
-        border-[#00979E] /* --- Applied to all top modules --- */
+          inline-block py-[0.313vw] rounded-full border border-[#00979E] text-[0.896vw] leading-[1.344vw] px-[1.042vw]
       `}
     >
       {text}
-    </span>
+    </p>
   )
 }
 
 const DetailTag = ({ text }: { text: string }) => (
-  <span className="rounded-full border border-gray-200 bg-[#FFFFFF] px-6 py-2.5 text-base font-medium text-[#000000]">
+  <span className="rounded-full border leading-[1.253vw] font-medium border-[#D1D5DB] bg-[#FFFFFF] px-[0.896vw] py-[0.448vw] text-[0.833vw]"
+    style={{
+      boxShadow: '0px 3.21px 8.02px 0px rgba(0, 151, 158, 0.25)'
+    }}
+  >
     {text}
   </span>
 )
 
 export const ToolCard = ({ icon, module, title, description, tags, link }: ToolCardProps) => {
   return (
-    <div className="group relative h-full w-full overflow-hidden rounded-lg border border-gray-200 p-7.5 shadow-sm transition-all duration-300 ease-in-out hover:shadow-md">
+    <div className="group relative h-full w-[25.208vw] overflow-hidden rounded-[0.896vw] border border-[#E5E7EB] px-[1.094vw] pt-[1.094vw] pb-[1.667vw] shadow-sm transition-all duration-300 ease-in-out hover:shadow-md">
       {/* This container holds all content that slides up */}
       <div className="flex h-full flex-col transition-all duration-300 ease-in-out group-hover:-translate-y-[25%]">
         {" "}
         <div className="transition-all duration-300 ease-in-out group-hover:-translate-y-4 group-hover:opacity-0">
-          <Image src={icon} alt={`${title} icon`} width={68} height={68} className="h-25 w-25" />
+          <Image src={icon} alt={`${title} icon`} width={100} height={100} className="h-[5.208vw] w-[5.208vw]" />
         </div>
         {/* Text Content */}
-        <div className="mt-9 flex-grow">
+        <div className="mt-[1.563vw]">
           <ModuleTag text={module} />
-          <h3 className="mt-7 text-3xl font-semibold text-black">{title}</h3>
-          <p className="font-regular line-height-[24px] mt-4 text-base text-[#4B5563]">{description}</p>
+          <h3 className="mt-[0.885vw] text-[1.563vw]! leading-[1.875vw]! ">{title}</h3>
         </div>
         {/* Bottom Tags */}
-        <div className="mt-6 flex flex-wrap gap-3">
-          {tags.map((tag) => (
-            <DetailTag key={tag} text={tag} />
-          ))}
+        <div className="flex flex-col justify-between h-full">
+          <p className="line-height-[1.25vw] mt-[0.885vw] text-[0.833vw] text-[#4B5563]">{description}</p>
+          <div className="mt-[0.885vw] flex flex-wrap gap-[0.885vw]">
+            {tags.map((tag) => (
+              <DetailTag key={tag} text={tag} />
+            ))}
+          </div>
         </div>
       </div>
 
       {/* --- Hover Button --- */}
-      <div className="absolute -bottom-1 left-0 w-full p-4 opacity-0 transition-all duration-300 ease-in-out group-hover:bottom-0 group-hover:opacity-100">
+      <div className="absolute -bottom-1 left-0 w-full px-[1.094vw] pt-[1.094vw] pb-[1.667vw] opacity-0 transition-all duration-300 ease-in-out group-hover:bottom-0 group-hover:opacity-100">
         <Link
           href={link}
-          className="block w-full cursor-pointer rounded-full bg-blue-600 px-6 py-3 text-center text-base font-semibold text-white transition-colors hover:bg-blue-700"
+          className="block w-full cursor-pointer rounded-full bg-[#0C64CE] py-[0.807vw] text-center text-base font-semibold text-white transition-colors hover:bg-blue-700"
+          style={{
+            border: '0.078vw solid #00979E',
+            boxShadow: '0px 3px 7.5px 0px rgba(0, 151, 158, 0.25)'
+          }}
         >
           Use It Now
         </Link>

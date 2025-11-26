@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 
 type CeoMessageProps = {
-    imageSrc?: string; // put your provided image in /public/images/ceo.png and leave undefined
+    imageSrc?: string; 
     linkedInHref?: string;
 };
 
@@ -15,16 +15,12 @@ const CEOSection = () => {
     return (
         <section className="relative isolate global-container py-[5.625vw] bg-[#000000] overflow-hidden" >
             <div className="flex justify-between">
-                {/* Teal-glow card */}
                 <div className="relative max-w-[41.771vw] rounded-[30px] p-[3px]" style={{ background: 'linear-gradient(129.83deg, #00979E 0.83%, #000000 82.69%)' }}>
-                    {/* Inner content with shadow */}
                     <div className="h-full w-full bg-black rounded-[27px] pt-[3.49vw] pr-[2.5vw] pl-[3.333vw] pb-[4.115vw] shadow-[0_4px_4px_0_rgba(0,151,158,0.25)]">
-                        {/* Heading */}
                         <h2 className="text-white !text-[2.083vw] tracking-[-2%]">
                             Heard From Our CEO
                         </h2>
 
-                        {/* Paragraph */}
                         <p className="text-[0.938vw] mt-[1.51vw] leading-[1.563vw] text-justify">
                             We were set up in early 2019 and we are passionate about driving innovation through
                             digital transformation. With a deep understanding of the rapidly evolving digital
@@ -37,10 +33,9 @@ const CEOSection = () => {
                             Development, and Liferay Development.
                         </p>
 
-                        {/* CEO Name + LinkedIn */}
                         <div className="mt-[2.813vw] flex items-center">
                             <span className="mr-[0.729vw] text-[2.5vw] leading-[2.292vw] tracking-[-2%]"
-                            style={{ fontFamily: "Rage Italic" }}
+                                style={{ fontFamily: "Rage Italic" }}
                             >Bhavin Panchani</span>
 
                             {ceoMessage.linkedInHref && (
@@ -59,7 +54,6 @@ const CEOSection = () => {
                 </div>
 
 
-                {/* CEO Image */}
                 <div className="absolute right-0 top-[-8.271vw] h-[57.667vw] w-[51.719vw] pointer-events-none">
                     <div
                         className="relative top-[-3.271vw] h-full w-full"
@@ -79,7 +73,6 @@ const CEOSection = () => {
                         />
                     </div>
 
-                    {/* Bottom radial shadow */}
                     <div
                         className="absolute bottom-2 left-0 right-0 h-[40%] pointer-events-none"
                         style={{
@@ -87,7 +80,6 @@ const CEOSection = () => {
                         }}
                     />
 
-                    {/* Bottom radial shadow (floor effect) */}
                     <div className="pointer-events-none absolute bottom-0 left-1/2 h-[6.25vw] w-[70%] -translate-x-1/2 rounded-[999px] bg-[radial-gradient(closest-side,rgba(0,0,0,0.55),rgba(0,0,0,0))]" />                </div>
             </div>
         </section>

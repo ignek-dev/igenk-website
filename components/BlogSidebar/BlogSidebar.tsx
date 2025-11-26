@@ -130,10 +130,10 @@ const BlogSidebar = ({ categoryId }: BlogSidebarProps) => {
     const router = useRouter();
 
     return (
-        <div className="max-w-[1440px] grid gap-9 mx-auto p-4 pr-[50px]">
+        <div className="max-w-[1440px] grid gap-9 mx-auto pl-[4.271vw]  pr-[50px]">
             {/* --- Social Icons --- */}
             <div>
-                <h2 className="text-black font-medium text-[2rem] mb-4 mt-8">Share On</h2>
+                <h2 className="text-black font-medium! text-[1.667vw]! mb-4 mt-[2.292vw]">Share On</h2>
                 <div className="flex gap-[0.625rem] mt-0">
                     {socialLinks.map((social) => (
                         <a
@@ -147,14 +147,14 @@ const BlogSidebar = ({ categoryId }: BlogSidebarProps) => {
 
                     ))}
                 </div>
-                <h2 className="text-black font-medium text-[2rem] mt-9 ">Related Blogs</h2>
+                <h2 className="text-black font-medium! text-[1.667vw]! mt-9  ">Related Blogs</h2>
             </div>
 
             {/* --- Related Blog Cards --- */}
-            <div className="grid gap-[31.5px] bg-white">
+            <div className="grid gap-[31.5px]">
                 {blogs?.map((blog, index) => (
                     <div key={blog?.id}>
-                        <div className="flex bg-white items-center overflow-hidden transition">
+                        <div className="flex items-center overflow-hidden transition">
 
                             {/* Image */}
                             <Image
@@ -167,7 +167,7 @@ const BlogSidebar = ({ categoryId }: BlogSidebarProps) => {
 
                             {/* Text Container */}
                             <div className="flex flex-col gap-2  justify-center ml-[14px] flex-1 h-[82px]">
-                                <div className="!p18 w-[297px] mt-[11px] text-[#101012] mb-2 leading-snug">
+                                <div className="!p18 w-[14.063vw] mt-[11px] text-[#101012] mb-2 leading-snug">
                                     {blog?.title}
                                 </div>
 
@@ -190,12 +190,12 @@ const BlogSidebar = ({ categoryId }: BlogSidebarProps) => {
 
 
             {/* --- Author Card --- */}
-            <div className="bg-white rounded-[20px]  border-[#E5E7EB] border-[1.7px] shadow p-[2.375rem] text-center">
-                <h2 className="text-4xl font-semibold font-bold tracking-wide mb-10">AUTHOR</h2>
-                <h3 className="text-3xl font-semibold text-gray-900 mb-1">Bhavin Panchani</h3>
-                <p className="text-base text-[#121416] mb-7">CEO, IGNEK</p>
+            <div className="bg-white rounded-[20px]  border-[#E5E7EB] border-[1.7px] shadow p-[2.375rem] mt-9 text-center">
+                <h2 className="text-[1.875vw]! font-semibold!  tracking-wide mb-10">AUTHOR</h2>
+                <h3 className="text-[1.563vw]! font-semibold! text-gray-900 mb-1">Bhavin Panchani</h3>
+                <p className="pb-[1.458vw] text-[#121416]">CEO, IGNEK</p>
 
-                <div className="flex justify-center mb-6">
+                <div className="flex justify-center mb-[1.875vw]">
                     <Image
                         src={"/images/blog/authorImg.png"}
                         alt="Author"
@@ -205,7 +205,7 @@ const BlogSidebar = ({ categoryId }: BlogSidebarProps) => {
                     />
                 </div>
 
-                <p className="text-[#374151] font-normal text-base leading-relaxed mb-6">
+                <p className="text-[#374151] p16 leading-relaxed mb-6">
                     Bhavin Panchani. Founder & Director. We were set up in early 2019 and
                     are passionate about driving innovation through digital transformation.
                 </p>

@@ -31,19 +31,19 @@ export default function BlogCard({ blog }: BlogCardProps) {
   onClick={handleClick}
 >
   {/* Image */}
-  <div className="rounded-[19px] p-1 shadow overflow-hidden w-full">
+  <div className="rounded-[19px] h-[291px] w-[464px] p-1 shadow overflow-hidden w-full">
     <Image
       src={blog.image}
       alt={blog.title}
       width={500}
-      height={300}
-      className="w-full rounded-[16px] h-auto object-cover"
+      height={291}
+      className="w-full h-[291px]  rounded-[16px] "
     />
   </div>
 
   {/* Category */}
-  <div className="flex flex-wrap items-center gap-2 text-gray-500 p18 mt-4">
-    <span className="px-6 py-3 border rounded-full text-gray-600 ">
+  <div className="flex flex-wrap items-center gap-2 text-gray-500 p18 mt-[0.938vw]">
+    <span className="px-[1.042vw] p18 py-[0.521vw] border-[#D1D5DB] w-[7.5vw] text-center rounded-full border ">
       {blog.category}
     </span>
     <span>•</span>
@@ -51,7 +51,7 @@ export default function BlogCard({ blog }: BlogCardProps) {
   </div>
 
   {/* Title */}
-  <h3 className=" text-gray-900 mt-3 ">
+  <h3 className="text-[1.563vw]!  loading-[1.875vw] text-gray-900 mt-[1.042vw] ">
     {blog.title}
   </h3>
 

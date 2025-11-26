@@ -47,7 +47,7 @@ export default function CareerPage() {
 
       {/* Perks & Benefits */}
       <section className="border-t border-white/20 bg-black text-white">
-        <div className="mx-auto w-full px-4 py-[2.865vw] md:px-8 global-container">
+        <div className="mx-auto w-full px-4 py-[3.333vw] md:px-8 global-container">
           <div className="grid items-start gap-10 md:grid-cols-2">
             <h2 className="text-[2.5vw] font-semibold leading-[3.125vw]">More Than Just a Job</h2>
             <p className="max-w-xl  text-right text-[0.938vw] leading-[1.563vw] font-normal tracking-[0] text-white/80  md:justify-self-end">
@@ -81,7 +81,7 @@ export default function CareerPage() {
           alt={p.title.join(" ")}
           width={188}
           height={127}
-          className="mx-auto max-h-[127px] max-w-[188px] object-cover"
+          className="mx-auto max-h-[6.615vw] object-contain max-w-[9.792vw] "
           style={{ height: "auto", width: "189px" }}
         />
         <div className="text-[1.25vw] leading-[1.667vw] font-semibold">
@@ -98,7 +98,7 @@ export default function CareerPage() {
 
       {/* Open Roles */}
       <section className="bg-[#F6F6F6] pb-0 text-black">
-        <div className="mx-auto w-full px-4 py-[2.865vw] md:px-8 global-container">
+        <div className="mx-auto w-full px-4 py-[3.333vw] md:px-8 global-container">
           <div className="grid items-start gap-10 md:grid-cols-2">
             <h2 className="text-4xl leading-tight font-semibold tracking-[-0.02em] text-balance sm:text-3xl md:text-5xl">
               <span className="block">Apply at IGNEK</span>
