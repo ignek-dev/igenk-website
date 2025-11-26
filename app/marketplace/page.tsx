@@ -35,6 +35,216 @@ const toolsData = [
     tags: ["OAuth", "MFA","2FA For Community Edition"],
     link: "https://marketplace.liferay.com/p/email-otp-authentication-for-community-edition-of-liferay",
   },
+  {
+    id: 4,
+    icon: "/images/marketplace/ai-blog-workspace.png", // Note: Update paths to your images
+    module: "Content Management and Operations",
+    title: "AI Blog Workspace For Liferay",
+    description:
+      "Automate your entire Liferay blog workflow with AI technology that generates content, images, and styles, all at once.",
+    tags: ["Blog Generation","Generative AI", "Content Automation"],
+    link: "https://marketplace.liferay.com/p/ai-blog-workspace",
+  },
+  {
+    id: 5,
+    icon: "/images/marketplace/batch-client-extension.png",
+    module: "Batch",
+    title: "Batch Client Extension Generator",
+    description:
+      "Create extensions in bulk with automation, enabling developers to save time and simplify their Liferay project workflows.",
+    tags: ["Batch Automation","Objects","Liferay Client Extension"],
+    link: "https://marketplace.liferay.com/p/batch-client-extension-generator",
+  },
+  {
+    id: 6,
+    icon: "/images/marketplace/email-authentication.png",
+    module: "Identity Management & Governance",
+    title: "Email OTP Authentication for Community Edition",
+    description:
+      "Enable simple and secure email OTP login for Liferay CE user overcome verification to visitors and better protect the portal in general.",
+    tags: ["OAuth", "MFA","2FA For Community Edition"],
+    link: "https://marketplace.liferay.com/p/email-otp-authentication-for-community-edition-of-liferay",
+  },
+  {
+    id: 7,
+    icon: "/images/marketplace/ai-blog-workspace.png", // Note: Update paths to your images
+    module: "Content Management and Operations",
+    title: "AI Blog Workspace For Liferay",
+    description:
+      "Automate your entire Liferay blog workflow with AI technology that generates content, images, and styles, all at once.",
+    tags: ["Blog Generation","Generative AI", "Content Automation"],
+    link: "https://marketplace.liferay.com/p/ai-blog-workspace",
+  },
+  {
+    id: 8,
+    icon: "/images/marketplace/batch-client-extension.png",
+    module: "Batch",
+    title: "Batch Client Extension Generator",
+    description:
+      "Create extensions in bulk with automation, enabling developers to save time and simplify their Liferay project workflows.",
+    tags: ["Batch Automation","Objects","Liferay Client Extension"],
+    link: "https://marketplace.liferay.com/p/batch-client-extension-generator",
+  },
+  {
+    id: 9,
+    icon: "/images/marketplace/email-authentication.png",
+    module: "Identity Management & Governance",
+    title: "Email OTP Authentication for Community Edition",
+    description:
+      "Enable simple and secure email OTP login for Liferay CE user overcome verification to visitors and better protect the portal in general.",
+    tags: ["OAuth", "MFA","2FA For Community Edition"],
+    link: "https://marketplace.liferay.com/p/email-otp-authentication-for-community-edition-of-liferay",
+  },
+  {
+    id: 10,
+    icon: "/images/marketplace/ai-blog-workspace.png", // Note: Update paths to your images
+    module: "Content Management and Operations",
+    title: "AI Blog Workspace For Liferay",
+    description:
+      "Automate your entire Liferay blog workflow with AI technology that generates content, images, and styles, all at once.",
+    tags: ["Blog Generation","Generative AI", "Content Automation"],
+    link: "https://marketplace.liferay.com/p/ai-blog-workspace",
+  },
+  {
+    id: 11,
+    icon: "/images/marketplace/batch-client-extension.png",
+    module: "Batch",
+    title: "Batch Client Extension Generator",
+    description:
+      "Create extensions in bulk with automation, enabling developers to save time and simplify their Liferay project workflows.",
+    tags: ["Batch Automation","Objects","Liferay Client Extension"],
+    link: "https://marketplace.liferay.com/p/batch-client-extension-generator",
+  },
+  {
+    id: 12,
+    icon: "/images/marketplace/email-authentication.png",
+    module: "Identity Management & Governance",
+    title: "Email OTP Authentication for Community Edition",
+    description:
+      "Enable simple and secure email OTP login for Liferay CE user overcome verification to visitors and better protect the portal in general.",
+    tags: ["OAuth", "MFA","2FA For Community Edition"],
+    link: "https://marketplace.liferay.com/p/email-otp-authentication-for-community-edition-of-liferay",
+  },
+  {
+    id: 13,
+    icon: "/images/marketplace/ai-blog-workspace.png", // Note: Update paths to your images
+    module: "Content Management and Operations",
+    title: "AI Blog Workspace For Liferay",
+    description:
+      "Automate your entire Liferay blog workflow with AI technology that generates content, images, and styles, all at once.",
+    tags: ["Blog Generation","Generative AI", "Content Automation"],
+    link: "https://marketplace.liferay.com/p/ai-blog-workspace",
+  },
+  {
+    id: 14,
+    icon: "/images/marketplace/batch-client-extension.png",
+    module: "Batch",
+    title: "Batch Client Extension Generator",
+    description:
+      "Create extensions in bulk with automation, enabling developers to save time and simplify their Liferay project workflows.",
+    tags: ["Batch Automation","Objects","Liferay Client Extension"],
+    link: "https://marketplace.liferay.com/p/batch-client-extension-generator",
+  },
+  {
+    id: 15,
+    icon: "/images/marketplace/email-authentication.png",
+    module: "Identity Management & Governance",
+    title: "Email OTP Authentication for Community Edition",
+    description:
+      "Enable simple and secure email OTP login for Liferay CE user overcome verification to visitors and better protect the portal in general.",
+    tags: ["OAuth", "MFA","2FA For Community Edition"],
+    link: "https://marketplace.liferay.com/p/email-otp-authentication-for-community-edition-of-liferay",
+  },
+  {
+    id: 16,
+    icon: "/images/marketplace/ai-blog-workspace.png", // Note: Update paths to your images
+    module: "Content Management and Operations",
+    title: "AI Blog Workspace For Liferay",
+    description:
+      "Automate your entire Liferay blog workflow with AI technology that generates content, images, and styles, all at once.",
+    tags: ["Blog Generation","Generative AI", "Content Automation"],
+    link: "https://marketplace.liferay.com/p/ai-blog-workspace",
+  },
+  {
+    id: 17,
+    icon: "/images/marketplace/batch-client-extension.png",
+    module: "Batch",
+    title: "Batch Client Extension Generator",
+    description:
+      "Create extensions in bulk with automation, enabling developers to save time and simplify their Liferay project workflows.",
+    tags: ["Batch Automation","Objects","Liferay Client Extension"],
+    link: "https://marketplace.liferay.com/p/batch-client-extension-generator",
+  },
+  {
+    id: 18,
+    icon: "/images/marketplace/email-authentication.png",
+    module: "Identity Management & Governance",
+    title: "Email OTP Authentication for Community Edition",
+    description:
+      "Enable simple and secure email OTP login for Liferay CE user overcome verification to visitors and better protect the portal in general.",
+    tags: ["OAuth", "MFA","2FA For Community Edition"],
+    link: "https://marketplace.liferay.com/p/email-otp-authentication-for-community-edition-of-liferay",
+  },
+  {
+    id: 19,
+    icon: "/images/marketplace/ai-blog-workspace.png", // Note: Update paths to your images
+    module: "Content Management and Operations",
+    title: "AI Blog Workspace For Liferay",
+    description:
+      "Automate your entire Liferay blog workflow with AI technology that generates content, images, and styles, all at once.",
+    tags: ["Blog Generation","Generative AI", "Content Automation"],
+    link: "https://marketplace.liferay.com/p/ai-blog-workspace",
+  },
+  {
+    id: 20,
+    icon: "/images/marketplace/batch-client-extension.png",
+    module: "Batch",
+    title: "Batch Client Extension Generator",
+    description:
+      "Create extensions in bulk with automation, enabling developers to save time and simplify their Liferay project workflows.",
+    tags: ["Batch Automation","Objects","Liferay Client Extension"],
+    link: "https://marketplace.liferay.com/p/batch-client-extension-generator",
+  },
+  {
+    id: 21,
+    icon: "/images/marketplace/email-authentication.png",
+    module: "Identity Management & Governance",
+    title: "Email OTP Authentication for Community Edition",
+    description:
+      "Enable simple and secure email OTP login for Liferay CE user overcome verification to visitors and better protect the portal in general.",
+    tags: ["OAuth", "MFA","2FA For Community Edition"],
+    link: "https://marketplace.liferay.com/p/email-otp-authentication-for-community-edition-of-liferay",
+  },
+  {
+    id: 22,
+    icon: "/images/marketplace/ai-blog-workspace.png", // Note: Update paths to your images
+    module: "Content Management and Operations",
+    title: "AI Blog Workspace For Liferay",
+    description:
+      "Automate your entire Liferay blog workflow with AI technology that generates content, images, and styles, all at once.",
+    tags: ["Blog Generation","Generative AI", "Content Automation"],
+    link: "https://marketplace.liferay.com/p/ai-blog-workspace",
+  },
+  {
+    id: 23,
+    icon: "/images/marketplace/batch-client-extension.png",
+    module: "Batch",
+    title: "Batch Client Extension Generator",
+    description:
+      "Create extensions in bulk with automation, enabling developers to save time and simplify their Liferay project workflows.",
+    tags: ["Batch Automation","Objects","Liferay Client Extension"],
+    link: "https://marketplace.liferay.com/p/batch-client-extension-generator",
+  },
+  {
+    id: 24,
+    icon: "/images/marketplace/email-authentication.png",
+    module: "Identity Management & Governance",
+    title: "Email OTP Authentication for Community Edition",
+    description:
+      "Enable simple and secure email OTP login for Liferay CE user overcome verification to visitors and better protect the portal in general.",
+    tags: ["OAuth", "MFA","2FA For Community Edition"],
+    link: "https://marketplace.liferay.com/p/email-otp-authentication-for-community-edition-of-liferay",
+  },
 ]
 
 export default function MarketplacePage() {
@@ -82,7 +292,7 @@ export default function MarketplacePage() {
             </div>
 
           {/* --- Grid --- */}
-          <div className="grid grid-cols-1 gap-11 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-[2.083vw] md:grid-cols-2 lg:grid-cols-3">
             {currentTools.map((tool) => (
               <ToolCard
                 key={tool.id}

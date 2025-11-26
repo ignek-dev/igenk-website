@@ -47,13 +47,15 @@ export const ToolCard = ({ icon, module, title, description, tags, link }: ToolC
         <div className="mt-[1.563vw]">
           <ModuleTag text={module} />
           <h3 className="mt-[0.885vw] text-[1.563vw]! leading-[1.875vw]! ">{title}</h3>
-          <p className="line-height-[1.25vw] mt-[0.885vw] text-[0.833vw] text-[#4B5563]">{description}</p>
         </div>
         {/* Bottom Tags */}
-        <div className="mt-[0.885vw] flex flex-wrap gap-[0.885vw]">
-          {tags.map((tag) => (
-            <DetailTag key={tag} text={tag} />
-          ))}
+        <div className="flex flex-col justify-between h-full">
+          <p className="line-height-[1.25vw] mt-[0.885vw] text-[0.833vw] text-[#4B5563]">{description}</p>
+          <div className="mt-[0.885vw] flex flex-wrap gap-[0.885vw]">
+            {tags.map((tag) => (
+              <DetailTag key={tag} text={tag} />
+            ))}
+          </div>
         </div>
       </div>
 
