@@ -46,7 +46,7 @@ const TimelineCard: React.FC<TimelineCardProps> = ({
       <div className="absolute h-[373px] left-1/2 -translate-x-1/2 flex gap-[3.854vw] -z-10 items-start">
         {/* First Divider — main one with teal square */}
 
-        <div className="relative w-[0.052vw]  border border-r-0 border-[#212121] border-opacity-40 h-[32.969vw] flex flex-col items-center">
+        <div className="relative w-[0.052vw]  border border-r-0 border-[#9CA3AF] border-opacity-40 h-[32.969vw] flex flex-col items-center">
           <span style={{ top: "-14%", fontFamily: "Times New Roman" }} className="italic leading-[2.531vw] text-[2.615vw] text-[#212121] mb-3 relative z-10">
             {data.year}
           </span>
