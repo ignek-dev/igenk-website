@@ -10,11 +10,11 @@ export default function WordsFromCEO() {
           <div className="w-full md:w-1/2">
             {/* Gradient Border Effect */}
             <div className="rounded-2xl bg-gradient-to-br from-[#00979E] to-black p-px">
-              <div className="h-full w-full rounded-[15px] bg-black p-10">
-                <h2 className="line-height-[60px] letter-spacing-[0.02em] mb-6 text-4xl font-semibold">
+              <div className="h-full w-full rounded-[15px] bg-black p-10 pt-[3.54vw]">
+                <h3 className=" mb-6 !text-[2.08vw]">
                   Words From Our CEO
-                </h2>
-                <p className="line-height-[30px] mb-8 text-justify text-lg leading-relaxed text-gray-300">
+                </h3>
+                <p className="mb-8 text-justify p18 text-gray-300">
                   Over the past decade, my journey with Liferay has been a fascinating one. I’ve been there from its
                   version 6.0 and have watched it take significant steps in OSGI frameworks. I’ve followed its progress
                   in OSGI frameworks and witnessed its evolution from a basic Enterprise Content Management System (CMS)
