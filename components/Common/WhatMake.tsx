@@ -72,7 +72,7 @@ const WhatMake: React.FC<WhatMakeProps> = ({ WhatMakeData, titleText1, titleText
                   <div
                     ref={ref as React.RefObject<HTMLDivElement>}
                     key={index}
-                    className={`sticky ${stuck?.get(index) ? "stuck" : ""} mb-16 transition-opacity duration-500 ${isInView ? "animate-stack-in" : "opacity-0"
+                    className={`sticky ${stuck?.get(index) ? "stuck" : ""} mb-10 transition-opacity duration-500 ${isInView ? "animate-stack-in" : "opacity-0"
                       }`}
                     style={{ top: "200px" }}
                   >

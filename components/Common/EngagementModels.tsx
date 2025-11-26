@@ -41,20 +41,20 @@ export default function EngagementModels({ title, description }: EngagementModel
   const [hoveredModel, setHoveredModel] = useState<string | null>(null)
 
   return (
-    <section className="bg-white py-[64px] text-black">
+    <section className="bg-[#F6F6F6] py-[64px] text-black">
       <div className="mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
         {/* Section Header - Now uses props for dynamic content */}
         <div className="mb-14 grid grid-cols-1 items-end gap-8 md:grid-cols-2">
           <div>
             <h2 className="text-[#000000]">{title}</h2>
           </div>
-          <div className="flex h-full items-end justify-end">
+          <div className="flex h-full items-center justify-end">
             <p className="p18 w-full text-right text-[#374151]">{description}</p>
           </div>
         </div>
 
         {/* Engagement Cards */}
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
           {engagementModelsData.map((model) => {
             const isHovered = hoveredModel === model.title
             return (
@@ -70,9 +70,9 @@ export default function EngagementModels({ title, description }: EngagementModel
                 <Image
                   src={model.icon}
                   alt={`${model.title} icon`}
-                  width={48}
-                  height={48}
-                  className={`mb-8 h-12 w-12 ${isHovered ? "brightness-0 invert" : ""}`}
+                  width={44}
+                  height={44}
+                  className={`mb-8 ${isHovered ? "brightness-0 invert" : ""}`}
                 />
 
               <div>
