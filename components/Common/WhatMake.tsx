@@ -51,11 +51,11 @@ const WhatMake: React.FC<WhatMakeProps> = ({ WhatMakeData, titleText1, titleText
 
           {/* Left Column */}
           <div className="flex-1 space-y-6 pt-1 md:sticky md:top-48 lg:top-36">
-            <h1 className="text-[2.5vw]! mb-7  leading-[3.125vw]! font-bold tracking-tight">
+            <h2 className="mb-[1.458vw] tracking-tight">
               {titleText1}
               <br />
               {titleText2}
-            </h1>
+            </h2>
 
             <p className="p18 leading-[1.563vw] max-w-[658px] text-gray-500">
               {subContext}

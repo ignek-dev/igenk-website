@@ -52,46 +52,37 @@ export default function MarketplacePage() {
   return (
     <main className="">
       {/* Hero */}
-      <section className="relative bg-black text-white">
-        <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_10%_0%,#0E7BF8_0%,#00979E_40%,transparent_65%)] opacity-25" />
-        <div className="mx-auto w-full px-4 pt-12 pb-16 md:px-8 md:pt-20 md:pb-22 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
-          <div className="relative grid items-start gap-10 md:grid-cols-2">
-            <div>
-              <h1 className="mt-9 bg-[linear-gradient(0deg,#FFFFFF,#FFFFFF),linear-gradient(0deg,rgba(0,0,0,0.23),rgba(0,0,0,0.23))] bg-clip-text text-7xl leading-tight font-bold text-transparent sm:text-5xl md:text-7xl">
+      <section className="relative bg-black global-container pt-[7.865vw] pb-[4.427vw] text-white">
+        {/* <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_10%_0%,#0E7BF8_0%,#00979E_40%,transparent_65%)] opacity-25" /> */}
+          <div className="flex justify-between items-end">
+              <h1 className="text-[#FFFFFF]">
                 Our Marketplace
                 <br />
                 <span className="block">Tools For Liferay</span>
               </h1>
-            </div>
-            <p className="absolute bottom-0 max-w-2xl text-right text-lg text-white sm:text-lg md:mt-16 md:justify-self-end">
+            <p className="w-[34.479vw] text-[0.938vw] leading-[1.458vw] text-right">
               Experience the next level of efficiency with Liferay tools that streamline operations, enhance
               performance, and help you achieve consistent excellence across every digital initiative.
             </p>
-          </div>
         </div>
       </section>
 
-      <section className="bg-[#F9FAF7] py-[64px] text-black">
-        <div className="mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
+      <section className="bg-[##F9FAF7] pt-[3.333vw] pb-[3.333vw] global-container text-black">
           {/* Header part */}
-          <div className="mb-16 grid grid-cols-1 items-end gap-8 md:grid-cols-2">
-            <div>
-              <h2 className="text-5xl leading-tight font-semibold tracking-tight text-[#000000]">
+          <div className="flex justify-between items-center mb-[3.75vw]">
+              <h2 className="">
                 Check Out Our Newly
                 <br />
                 Launched Tools
               </h2>
-            </div>
-            <div className="flex h-full items-end justify-end">
-              <p className="text-normal line-height-[30px] w-full text-right text-xl text-[#374151]">
+              <p className="text-[#374151] text-[0.938vw] leading-[1.563vw] text-right w-[33.75vw]">
                 Deliver better results with Liferay tools built to sustain automation and efficiency, easing management
                 for growing teams.
               </p>
             </div>
-          </div>
 
           {/* --- Grid --- */}
-          <div className="grid grid-cols-1 gap-11 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-[2.083vw] md:grid-cols-2 lg:grid-cols-3">
             {currentTools.map((tool) => (
               <ToolCard
                 key={tool.id}
@@ -109,7 +100,6 @@ export default function MarketplacePage() {
           {totalPages > 1 && (
             <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={setCurrentPage} />
           )}
-        </div>
       </section>
     </main>
   )

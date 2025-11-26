@@ -37,10 +37,10 @@ const TalkToExpertCard: React.FC<TalkToExpertCardProps> = ({ title }) => {
 
   {/* Prefer Email */}
   <div className="pt-[0.5vw] text-[#FFFFFF]">
-    <p className="mb-[0.3vw] text-[0.938vw] text-[#FFFFFF]">Prefer email?</p>
+    <p className="mb-[0.3vw] p18 text-[#FFFFFF]">Prefer email?</p>
     <a
       href="mailto:sales@ignek.com"
-      className="group flex items-center justify-between text-[0.938vw] font-semibold text-white"
+      className="group flex items-center justify-between p18 text-white"
     >
       sales@ignek.com
       <div className="flex items-center">
