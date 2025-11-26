@@ -16,12 +16,14 @@ interface CalendlyButtonProps {
   url?: string;
   customButton?: boolean;
   customButtonContent?: ReactNode;
+  buttonColor?: string;
 }
 
 export default function CalendlyButton({
   url = "https://calendly.com/ignek/30min",
   customButton = false,
   customButtonContent,
+  buttonColor = "#000",
 }: CalendlyButtonProps) {
   useEffect(() => {
     // Load Calendly CSS
@@ -56,14 +58,14 @@ export default function CalendlyButton({
 
   return (
     <div className="nav-fancy-button">
-  <div className="nav-fancy-glow"></div>
+  <div className="nav-fancy-glow" style={{ "--button-bg-color": buttonColor } as React.CSSProperties}></div>
     <button
       type="button"
-      aria-label="Calendar"
+      aria-label="Schedule-Meeting"
       onClick={handleOpenCalendly}
       className="nav-round-btn"
       >
-      <div className="nav-round-btn-inner">
+      <div className="nav-round-btn-inner cursor-pointer">
         <Image
           src="/images/icon/calendar.png"
           alt="calendar"

@@ -1,6 +1,13 @@
 // components/ServicesMegaMenu.tsx
 import Image from "next/image"
 import CalendlyButton from "components/CalendlyPopupButton/CalendlyButton"
+
+
+interface MegaMenuProps {
+  onClose: () => void;
+}
+
+
 // Data for the card on the left
 const featuredService = {
   // Path starts from the 'public' directory
@@ -37,21 +44,21 @@ const liferayServicesLinks = [
 ]
 
 // --- Main ServicesMegaMenu Component ---
-export default function ServicesMegaMenu() {
+export default function ServicesMegaMenu({ onClose }: MegaMenuProps) {
   return (
     <>
-      <div className="global-container mx-auto w-full px-[2.083vw] py-[3.125vw]">
+      <div className="global-container mx-auto w-full px-4 py-20 md:px-8">
         <div className="flex items-start gap-[2.083vw]">
           {/* Left Side: Image Card */}
-          <div className="flex-shrink-0" style={{ maxWidth: "27.135vw" }}>
-            <div className="group relative w-full overflow-hidden rounded-[1.041vw] border-[0.156vw] border-white">
+          <div className="h-[-webkit-fill-available] flex-shrink-0" style={{ maxWidth: "27.135vw" }}>
+            <div className="group relative h-full w-full overflow-hidden rounded-[1.041vw] border-[0.156vw] border-white">
               {/* Background Image */}
               <Image
                 src={featuredService.imageSrc}
                 alt="Tech Experts"
                 width={521} // Base width from parent style
                 height={460} // Estimated height for aspect ratio
-                className="h-auto w-full object-cover"
+                className="h-full w-full object-cover"
               />
 
               {/* Gradient Overlay */}
@@ -80,7 +87,7 @@ export default function ServicesMegaMenu() {
                   customButton
                   customButtonContent={
                     <button
-                      className="mb-[0.833vw] flex cursor-pointer items-center justify-start text-center align-middle text-[0.938vw] font-semibold text-white transition-opacity hover:opacity-90 px-[1.25vw]"
+                      className="mb-[0.833vw] flex cursor-pointer items-center justify-start px-[1.25vw] text-center align-middle text-[0.938vw] font-semibold text-white transition-opacity hover:opacity-90"
                       style={{ backgroundColor: "#00979E" }}
                     >
                       {featuredService.buttonText}
@@ -95,15 +102,17 @@ export default function ServicesMegaMenu() {
           <div className="flex flex-grow gap-[1.042vw]">
             {/* Digital Experience Section */}
             <div className="w-1/4">
-              <h4 className="mb-[1.25vw] font-medium whitespace-pre">Digital Experience</h4>
-              <ul className="space-y-[0.833vw]">
+              <h4 className="mb-[2vw] font-medium whitespace-pre">Digital Experience</h4>
+              <ul className="flex flex-col gap-[1.4vw]">
                 {digitalExperienceLinks.map((link) => (
-                  <li key={link.text}>
+                  <li key={link.text} className="flex h-[40px] items-center">
                     <a
                       href={link.href}
-                      className="flex items-center gap-[0.625vw] text-white/80 transition-colors hover:text-white"
+                      className="flex items-center gap-[0.625vw] text-white transition-colors hover:text-white"
                     >
-                      <Image src={link.iconUrl} alt={link.text} width={40} height={40} />
+                      <div className="flex h-[40px] w-[40px] items-center justify-center flex-shrink-0">
+                        <Image src={link.iconUrl} alt={link.text} width={36} height={40} className="object-contain" />
+                      </div>
                       <span className="p20">{link.text}</span>
                     </a>
                   </li>
@@ -116,14 +125,15 @@ export default function ServicesMegaMenu() {
 
             {/* Liferay Services Section */}
             <div className="w-1/2">
-              <h4 className="mb-[1.25vw] font-medium">Liferay Services</h4>
+              <h4 className="mb-[2vw] font-medium">Liferay Services</h4>
               {/* Using a grid to create two columns */}
-              <ul className="grid grid-cols-2 gap-x-[10.5vw] gap-y-[0.833vw]">
+              <ul className="grid grid-cols-2 gap-x-[10.5vw] gap-y-[1.6rem]">
                 {liferayServicesLinks.map((link) => (
-                  <li key={link.text}>
+                  <li key={link.text} className="flex h-[40px] items-center">
                     <a
                       href={link.href}
-                      className="p20 font-medium whitespace-pre text-white/80 transition-colors hover:text-white"
+                      className="p20 flex h-full items-center font-medium whitespace-pre text-white transition-colors hover:text-white"
+                      onClick={onClose}
                     >
                       {link.text}
                     </a>
