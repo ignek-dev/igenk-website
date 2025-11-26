@@ -43,7 +43,7 @@ export default function BlogCard({ blog }: BlogCardProps) {
 
   {/* Category */}
   <div className="flex flex-wrap items-center gap-2 text-gray-500 p18 mt-[0.938vw]">
-    <span className="px-[1.042vw] p18 py-[0.521vw] border-[#D1D5DB] w-[7.5vw] text-center rounded-full border ">
+    <span className="px-[1.042vw] p18 py-[0.521vw] border-[#D1D5DB] w-[9.5vw] text-center rounded-full border ">
       {blog.category}
     </span>
     <span>•</span>

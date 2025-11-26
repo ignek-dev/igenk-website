@@ -47,8 +47,8 @@ const BlogSidebar = ({ categoryId }: BlogSidebarProps) => {
         { icon: <MainIcon />, href: "mailto:hr@ignek.com", label: "Mail" },
     ]
     const authorSocialLinks = [
-        { icon: <IconLinkedIn />, href: "https://www.linkedin.com/company/ignek-infotech/about/", label: "LinkedIn" },
-        { icon: <MainIcon />, href: "mailto:hr@ignek.com", label: "Mail" },
+        { icon: <IconLinkedIn />, href: "https://www.linkedin.com/in/bhavin-panchani", label: "LinkedIn" },
+        { icon: <MainIcon />, href: "mailto:bhavin.panchani@ignek.com", label: "Mail" },
     ]
     const [blogs, setBlogs] = useState<BlogData[]>([]);
     // const [loading, setLoading] = useState(true);
@@ -139,6 +139,7 @@ const BlogSidebar = ({ categoryId }: BlogSidebarProps) => {
                         <a
                             href={social.href}
                             key={social.label}
+                            target="_blank"
                             aria-label={social.label}
                             className="flex w-[54px] h-[54px] items-center justify-center rounded-full bg-black text-white"
                         >
@@ -216,6 +217,7 @@ const BlogSidebar = ({ categoryId }: BlogSidebarProps) => {
                             href={social.href}
                             key={social.label}
                             aria-label={social.label}
+                            target="_blank"
                             className="flex size-[2.5rem] items-center justify-center rounded-full bg-black text-white"
                         >
                             {social.icon}

@@ -283,7 +283,7 @@ export default function Blogs() {
                         </div>
 
                         <div className="p18 mb-[0.938vw] flex items-center space-x-2 font-normal text-[#E5E7EB] opacity-90">
-                          <span className="w-[7.5vw] rounded-full border border-[#D1D5DB] px-[1.042vw] py-[0.521vw] text-center text-[#E5E7EB]">
+                          <span className="w-[9.5vw] rounded-full border border-[#D1D5DB] px-[1.042vw] py-[0.521vw] text-center text-[#E5E7EB]">
                             {blog.category}
                           </span>
                           <span>• {blog?.readTime}</span>
