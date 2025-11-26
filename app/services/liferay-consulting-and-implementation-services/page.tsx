@@ -475,7 +475,7 @@ export default function LiferayConsultationPage() {
                     {industry.description}
                   </p>
                   <div
-                    className={`absolute top-1/2 z-10 w-[10.9896vw] h-[9.0625vw] -translate-y-1/2 transform opacity-0 transition-all duration-300 group-hover:translate-x-4 group-hover:opacity-100 [@media(min-width:1440px)]:right-30 [@media(min-width:1800px)]:right-65`}
+                    className={`absolute top-1/2 z-10 w-[10.9896vw] h-[9.0625vw] -translate-y-1/2 transform opacity-0 transition-all duration-300 group-hover:translate-x-4 group-hover:opacity-100 left-[55.875vw]`}
                   >
                     <Image
                       src={industry.image}
@@ -529,7 +529,7 @@ export default function LiferayConsultationPage() {
                 <span className="block">Consulting Services</span>
               </h2>
             </div>
-            <div className="flex h-full items-end justify-end">
+            <div className="flex h-full items-center justify-end">
               <p className="p18 w-full text-right text-white/80">
                 Through expert Liferay Consulting, we design and implement secure, flexible, and user-centric digital
                 platforms for every business need.
@@ -545,7 +545,7 @@ export default function LiferayConsultationPage() {
                 onClick={() => setActiveServiceTab(tab)}
                 className={`flex-1 cursor-pointer rounded-full px-8 py-4 text-center text-[1.4583vw] font-medium transition-colors duration-300 md:whitespace-pre ${
                   activeServiceTab === tab
-                    ? "border border-blue-600 bg-blue-600 text-white"
+                    ? "border border-blue-600 bg-[#0C63CE] text-white"
                     : "border border-white text-white hover:border-blue-600 hover:text-white"
                 }`}
               >
@@ -577,7 +577,7 @@ export default function LiferayConsultationPage() {
       <section className="bg-[#F6F6F6] py-[64px] text-black">
         <div className="global-container">
           {/* Section Header */}
-          <div className="mb-16">
+          <div className="mb-11">
             <h2 className="text-black">We Offer end-to-end Liferay Consulting Services</h2>
             <p className="p18 mt-4 text-gray-600">
               Delivering complete Liferay Consulting solutions from planning to maintenance for seamless digital

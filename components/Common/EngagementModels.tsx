@@ -81,10 +81,10 @@ export default function EngagementModels({ title, description }: EngagementModel
                 <h4 className="mb-8">{model.title}</h4>
 
                 {/* Divider */}
-                <hr className={`mb-8 border-t ${isHovered ? "border-white/30" : "border-gray-200"}`} />
+                <hr className={`mb-8 border-t ${isHovered ? "border-white/30" : "border-[#D1D5DB]"}`} />
 
                 {/* Card Description */}
-                <p className={`mb-8 p20  ${isHovered ? "text-white/90" : "text-gray-600"}`}>{model.description}</p>
+                <p className={`mb-4 p20  ${isHovered ? "text-white/90" : "text-gray-600"}`}>{model.description}</p>
               </div>
 
                 {/* Card Features */}
@@ -92,7 +92,7 @@ export default function EngagementModels({ title, description }: EngagementModel
                   {model.features.map((feature, index) => (
                     <div
                       key={index}
-                      className={`border-b ${isHovered ? "border-white/30" : "border-gray-200"} ${
+                      className={`border-b ${isHovered ? "border-white/30" : "border-[#D1D5DB]"} ${
                         index === model.features.length - 1 ? "border-b-0" : ""
                       }`}
                     >
