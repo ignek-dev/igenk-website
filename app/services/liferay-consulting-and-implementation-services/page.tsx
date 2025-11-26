@@ -281,7 +281,7 @@ export default function LiferayConsultationPage() {
         <div className="global-container">
           <div className="flex flex-col gap-16 md:flex-row md:items-start md:justify-between">
             {/* Left Column */}
-            <div className="max-w-[520px] flex-1 space-y-[26px] pt-[4px] md:sticky md:top-24">
+            <div className="top-[137px] max-w-[520px] flex-1 space-y-[26px] pt-[4px] md:sticky">
               <h2 className="text-white">
                 Our Liferay
                 <span className="block">Consulting Services</span>
@@ -290,7 +290,7 @@ export default function LiferayConsultationPage() {
                 Our Liferay Consulting Services help you maximize the potential of the Liferay platform. From
                 development to support, we’re here to ensure you create top-notch digital experiences for your users.
               </p>
-              <div className="pt-[26px]">
+              <div className="pt-[2 px]">
                 <ScheduleMeetingButton isFullWidth={false} btnName="Schedule Meeting" />
               </div>
             </div>
@@ -308,7 +308,7 @@ export default function LiferayConsultationPage() {
                       className={`sticky mb-16 transition-opacity duration-500 ${
                         isInView ? "animate-stack-in" : "opacity-0"
                       }`}
-                      style={{ top: `calc(6rem + ${index * 4}rem)` }}
+                      style={{ top: `calc(8.5rem + ${index * 4}rem)` }}
                     >
                       <div className="flex w-full flex-col justify-center rounded-2xl border border-gray-700 bg-[#0C0C0C] p-9 pt-6 backdrop-blur-md transition-all duration-300 hover:border-[#00AEEF] md:min-h-[196px]">
                         <h4 className="mb-4 text-white">{item.title}</h4>
@@ -336,15 +336,15 @@ export default function LiferayConsultationPage() {
               </h2>
             </div>
             <div className="flex h-full items-end">
-              <p className="p18 text-gray-500">
-                We deliver top-quality Liferay Consulting Services. From setup to support, we’ve got you covered for all
+              <p className="p18 text-gray-500 text-right">
+                We deliver top-quality Liferay Consulting Services. From setup to support, <br></br>we’ve got you covered for all
                 your digital needs.
               </p>
             </div>
           </div>
 
           {/* Solution Cards Grid */}
-          <div className="mt-16 flex flex-col gap-8 lg:flex-row">
+          <div className="mt-[48px] flex flex-col gap-8 lg:flex-row">
             {liferaySolutions.map((solution) => {
               const isHovered = hoveredCard === solution.id
               const isDefaultPrimary = hoveredCard === null && solution.id === "Liferay DXP"
@@ -366,7 +366,7 @@ export default function LiferayConsultationPage() {
                     <>
                       <div className="text-left">
                         <h4>{solution.title}</h4>
-                        <hr className="my-7 max-w-[120px] border-t border-white/50" />
+                        <hr className="my-7 border-t border-white/50" />
                         <p className="p18">{solution.description}</p>
                       </div>
                       <Image
@@ -387,7 +387,7 @@ export default function LiferayConsultationPage() {
                         height={120}
                         className="h-30 w-30 object-contain transition-all duration-300 ease-in-out"
                       />
-                      <h4 className="mt-6 text-center">{solution.title}</h4>
+                      <h4 className="mt-[44px] text-center">{solution.title}</h4>
                     </>
                   )}
                 </div>
@@ -403,7 +403,7 @@ export default function LiferayConsultationPage() {
           {/* Section Header */}
           <div className="w-full">
             <h2>Why Liferay Can Be Best Choice For Your Project ?</h2>
-            <p className="p18 mt-4 text-white/80">
+            <p className="p18 mt-7 text-white/80">
               Explore our expertise in Liferay! We’re experienced and ready to help with everything, from building
               user-friendly interfaces to managing backend systems. Whether you need a custom portal, smooth
               integration, or ongoing support, we’ve got you covered. Partner with us today and make the most of Liferay
@@ -494,7 +494,7 @@ export default function LiferayConsultationPage() {
 
                   {/* Arrow Icon */}
                   <div
-                    className={`flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full border transition-colors duration-300 group-hover:border-white group-hover:bg-white`}
+                    className={`flex h-[2.5vw] w-[2.5vw] flex-shrink-0 items-center justify-center rounded-full border transition-colors duration-300 group-hover:border-white group-hover:bg-white`}
                   >
                     <svg
                       width="22"
@@ -538,7 +538,7 @@ export default function LiferayConsultationPage() {
           </div>
 
           {/* Tabs */}
-          <div className="mb-10 flex items-center justify-center gap-4">
+          <div className="mb-[4.115vw] flex items-center justify-center gap-4">
             {liferayConsultingTabs.map((tab) => (
               <button
                 key={tab}
@@ -557,7 +557,7 @@ export default function LiferayConsultationPage() {
           <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
             {liferayConsultingServicesData[activeServiceTab]?.map((service: string, index: number) => (
               <div key={index} className="border-b border-gray-700">
-                <div className="flex items-start gap-4 py-[40px]">
+                <div className="flex items-start gap-4 pb-[40px]">
                   <Image
                     src="/images/liferay-pages-image/liferay-consultation-page/checkmark-icon.svg"
                     alt="Checkmark icon"
