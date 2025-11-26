@@ -218,21 +218,21 @@ export default function LiferayConsultationPage() {
             {/* Stats Row */}
             <div className="flex-no-wrap grid-cols-2 items-center gap-20 [@media(min-width:1440px)]:grid [@media(min-width:1800px)]:flex">
               {/* Stat 1 */}
-              <div className="flex gap-3">
-                <p className="text-5xl font-bold text-gray-900">30%</p>
+              <div className="flex gap-3 items-center">
+                <p className="text-5xl font-bold text-[#171717]">30%</p>
                 <p className="p20 text-gray-600">Project Success</p>
               </div>
               {/* Stat 2 */}
-              <div className="flex gap-3">
-                <p className="text-5xl font-bold text-gray-900">20%</p>
+              <div className="flex gap-3 items-center">
+                <p className="text-5xl font-bold text-[#171717]">20%</p>
                 <p className="p20 whitespace-nowrap text-gray-600">
                   Cost <br />
                   Efficiency
                 </p>
               </div>
               {/* Stat 3 */}
-              <div className="flex gap-3">
-                <p className="text-5xl font-bold text-gray-900">10%</p>
+              <div className="flex gap-3 items-center">
+                <p className="text-5xl font-bold text-[#171717]">10%</p>
                 <p className="p20 text-gray-600">Revenue Growth</p>
               </div>
             </div>
@@ -335,7 +335,7 @@ export default function LiferayConsultationPage() {
                 <span className="block">Liferay Solutions</span>
               </h2>
             </div>
-            <div className="flex h-full items-end">
+            <div className="flex h-full items-center">
               <p className="p18 text-gray-500 text-right">
                 We deliver top-quality Liferay Consulting Services. From setup to support, <br></br>we’ve got you covered for all
                 your digital needs.
@@ -415,7 +415,7 @@ export default function LiferayConsultationPage() {
           <div className="mt-9.5">
             {liferayProjectFeatures.map((feature) => (
               <div key={feature.title}>
-                <div className="flex flex-col items-start py-[57px] md:flex-row md:items-center md:gap-24">
+                <div className="flex flex-col items-start py-[57px] md:flex-row md:items-center gap-[4.1667vw]">
                   {/* Icon */}
                   <div className="flex-shrink-0">
                     <Image src={feature.icon} alt="" width={64} height={64} className="h-16 w-16" />
@@ -465,7 +465,7 @@ export default function LiferayConsultationPage() {
                 className={`group relative flex cursor-pointer items-center border-b border-gray-200 py-10 transition-colors duration-300 hover:bg-[#0B63CE] [@media(min-width:1440px)]:px-4 [@media(min-width:1800px)]:px-10`}
               >
                 {/* Column 1: Title */}
-                <div className="w-1/3 flex-shrink-0">
+                <div className="min-w-[16.8229vw] flex-shrink-0">
                   <h4 className="text-black transition-colors duration-300 group-hover:text-white">{industry.title}</h4>
                 </div>
 
@@ -475,7 +475,7 @@ export default function LiferayConsultationPage() {
                     {industry.description}
                   </p>
                   <div
-                    className={`absolute top-1/2 z-10 w-[180px] -translate-y-1/2 transform opacity-0 transition-all duration-300 group-hover:translate-x-4 group-hover:opacity-100 [@media(min-width:1440px)]:right-30 [@media(min-width:1800px)]:right-65`}
+                    className={`absolute top-1/2 z-10 w-[10.9896vw] h-[9.0625vw] -translate-y-1/2 transform opacity-0 transition-all duration-300 group-hover:translate-x-4 group-hover:opacity-100 [@media(min-width:1440px)]:right-30 [@media(min-width:1800px)]:right-65`}
                   >
                     <Image
                       src={industry.image}
@@ -543,7 +543,7 @@ export default function LiferayConsultationPage() {
               <button
                 key={tab}
                 onClick={() => setActiveServiceTab(tab)}
-                className={`flex-1 cursor-pointer rounded-full px-8 py-4 text-center text-2xl font-medium transition-colors duration-300 md:whitespace-pre ${
+                className={`flex-1 cursor-pointer rounded-full px-8 py-4 text-center text-[1.4583vw] font-medium transition-colors duration-300 md:whitespace-pre ${
                   activeServiceTab === tab
                     ? "border border-blue-600 bg-blue-600 text-white"
                     : "border border-white text-white hover:border-blue-600 hover:text-white"
@@ -554,9 +554,9 @@ export default function LiferayConsultationPage() {
             ))}
           </div>
 
-          <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
+          <div className="grid grid-cols-1 gap-10 gap-x-[4.375vw] md:grid-cols-3">
             {liferayConsultingServicesData[activeServiceTab]?.map((service: string, index: number) => (
-              <div key={index} className="border-b border-gray-700">
+              <div key={index} className="border-b border-[#9CA3AF]">
                 <div className="flex items-start gap-4 pb-[40px]">
                   <Image
                     src="/images/liferay-pages-image/liferay-consultation-page/checkmark-icon.svg"
@@ -611,7 +611,7 @@ export default function LiferayConsultationPage() {
               {endToEndServices.map((service, index) => (
                 <div
                   key={index}
-                  className={`flex h-full flex-col justify-between rounded-lg p-6 transition-all duration-300 ease-in-out ${
+                  className={`flex h-full flex-col justify-between rounded-lg p-7 transition-all duration-300 ease-in-out ${
                     activePillar === index
                       ? "w-full flex-grow bg-[#0B63CE] text-white shadow-xl"
                       : "w-[20%] flex-grow-0 border border-[#E5E7EB] bg-white text-gray-400"
