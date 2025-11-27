@@ -50,7 +50,7 @@ const CEOSection = () => {
           </div>
         </div>
 
-        <div className="pointer-events-none absolute top-[-8.271vw] right-0 h-[57.667vw] w-[51.719vw]">
+        <div className="pointer-events-none absolute bottom-[0] right-0 h-[57.667vw] w-[51.719vw]">
           <div
             className="relative top-[-3.271vw] h-full w-full"
             style={{

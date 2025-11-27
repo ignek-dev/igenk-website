@@ -154,35 +154,35 @@ export const industriesWeServe = [
     title: "Healthcare",
     description:
       "We create secure, connected healthcare platforms with Liferay Consulting to simplify patient care and improve digital health experiences.",
-    image: "/images/liferay-pages-image/liferay-consultation-page/Healthcare.jpg", // Default image for all
+    image: "/images/liferay-pages-image/liferay-consultation-page/Healthcare.png", // Default image for all
   },
   {
     id: "Manufacturing",
     title: "Manufacturing",
     description:
       "From production to delivery, our Liferay Consulting helps manufacturers digitize processes and achieve smarter, more efficient operations.",
-    image: "/images/liferay-pages-image/liferay-consultation-page/Manufacturing.jpg",
+    image: "/images/liferay-pages-image/liferay-consultation-page/Manufacturing.png",
   },
   {
     id: "Corporate",
     title: "Corporate",
     description:
       "We empower businesses with Liferay Consulting to build modern portals that boost collaboration, productivity, and digital growth.",
-    image: "/images/liferay-pages-image/liferay-consultation-page/Corporate.jpg",
+    image: "/images/liferay-pages-image/liferay-consultation-page/Corporate.png",
   },
   {
     id: "Government",
     title: "Government",
     description:
       "Our Liferay Consulting services help government bodies improve citizen engagement and deliver seamless, transparent digital experiences.",
-    image: "/images/liferay-pages-image/liferay-consultation-page/Government.jpg",
+    image: "/images/liferay-pages-image/liferay-consultation-page/Government.png",
   },
   {
     id: "Aviation",
     title: "Aviation",
     description:
       "We help aviation companies enhance traveler experiences and streamline operations through custom Liferay Consulting and digital platforms.",
-    image: "/images/liferay-pages-image/liferay-consultation-page/Aviation.jpg",
+    image: "/images/liferay-pages-image/liferay-consultation-page/Aviation.png",
   },
   {
     id: "Fintech",

@@ -11,6 +11,17 @@
   If we ever want to remove these styles, we need to add an explicit border
   color utility to any element that depends on these defaults.
 */
+.glow-bg {
+  background: radial-gradient(
+    83.98% 108.86% at 54.7% 46.41%,
+    #1D3FFF 0%,
+    #470E47 50%,
+    #00979E 100%
+  );
+  filter: blur(103px);
+  opacity: 1; /* adjust glow intensity */
+}
+
 
 @layer base {
   html {
