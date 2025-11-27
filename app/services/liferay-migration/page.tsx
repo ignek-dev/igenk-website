@@ -3,10 +3,17 @@ import ScheduleMeetingButton from "components/Button/ScheduleMeetingButton"
 import { BlogSection } from "components/Common"
 import TalkToExpert from "components/Common/TalkToExpert"
 import WhatMake from "components/Common/WhatMake"
-import { features, featureTabs, LiferayMigrationData, LiferayMigrationSubContent, LiferayMigrationTitle1, LiferayMigrationTitle2, steps } from "data/liferay-migration"
+import {
+  features,
+  featureTabs,
+  LiferayMigrationData,
+  LiferayMigrationSubContent,
+  LiferayMigrationTitle1,
+  LiferayMigrationTitle2,
+  steps,
+} from "data/liferay-migration"
 
-
- const metadata: Metadata = {
+const metadata: Metadata = {
   title: "Liferay Migration Services - IGNEK",
   description:
     "Move smoothly with Liferay Migration Services! Upgrade your digital platform hassle-free with our expert guidance. Elevate your business today!",
@@ -14,7 +21,8 @@ import { features, featureTabs, LiferayMigrationData, LiferayMigrationSubContent
   openGraph: {
     url: "https://www.ignek.com/services/liferay-migration/",
     title: "Liferay Migration Services - IGNEK",
-    description: "Move smoothly with Liferay Migration Services! Upgrade your digital platform hassle-free with our expert guidance. Elevate your business today!",
+    description:
+      "Move smoothly with Liferay Migration Services! Upgrade your digital platform hassle-free with our expert guidance. Elevate your business today!",
     images: [
       {
         width: 1200,
@@ -26,8 +34,6 @@ import { features, featureTabs, LiferayMigrationData, LiferayMigrationSubContent
 }
 
 export default function LiferayMigrationPage() {
-
-
   // const circlePoints = [
   //   { label: "Create Personalized Experiences for Users", pos: "top-4 left-1/2 -translate-x-1/2" },
   //   { label: "Easy Integration Capabilities", pos: "top-1/3 right-4" },
@@ -38,37 +44,33 @@ export default function LiferayMigrationPage() {
   //   { label: "Efficient Content Management", pos: "top-1/2 left-2 -translate-y-1/2" },
   // ]
 
-
-
-
   return (
     <main className="pb-16">
       {/* Hero */}
       <section className="relative bg-black text-white">
         <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_10%_0%,#0E7BF8_0%,#00979E_40%,transparent_65%)] opacity-25" />
-        <div className="mx-auto w-full px-4 pt-12 pb-16 md:px-8 md:pt-20 md:pb-28 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
+        <div className="global-container mx-auto mt-[-1px] w-full pt-[7.865vw] pb-[3.802vw]">
           <div className="relative grid items-start gap-10 md:grid-cols-2">
             <div>
-              <div className="inline-flex items-center rounded-full border border-white/30 px-4 py-2 text-lg text-white">
-                Liferay Services
-              </div>
-              <h1 className="mt-9 text-4xl leading-tight font-semibold sm:text-5xl md:text-7xl text-gradient-liferay">
+              <div className="p18 banner-tab mb-[2.031vw] inline-flex">Liferay Services</div>
+              <h1 className="text-gradient-liferay">
                 Liferay
                 <br />
                 <span className="block">Migration</span>
               </h1>
             </div>
-            <p className="absolute bottom-0 max-w-xl text-lg text-white sm:text-lg md:mt-16 md:justify-self-end text-right">
-              Upgrade smoothly to the latest Liferay version with expert Liferay Migration to ensures secure data transfer, minimal downtime, and optimized platform performance.
+            <p className="p18 absolute bottom-0 max-w-[662px] text-right md:justify-self-end">
+              Upgrade smoothly to the latest Liferay version with expert Liferay Migration to ensures secure data
+              transfer, minimal downtime, and optimized platform performance.
             </p>
           </div>
 
           {/* Feature tabs */}
-          <div className="mt-15 flex flex-wrap gap-5">
+          <div className="mt-[3.177vw] flex flex-wrap gap-5">
             {featureTabs.map((label) => (
               <span
                 key={label}
-                className="inline-flex items-center rounded-full border border-white/30 px-7 py-5 text-lg text-white transition-colors hover:border-white hover:text-white"
+                className="p20 inline-flex items-center rounded-full border border-[#374151] px-[1.458vw] py-[0.833vw] text-lg text-white shadow-[0px_4px_10px_0px_#00979E40] transition-colors"
               >
                 {label}
               </span>
@@ -78,16 +80,16 @@ export default function LiferayMigrationPage() {
       </section>
 
       {/* Circular reasons section */}
-      <section className="bg-[#f7f7f7] text-black">
-        <div className="mx-auto w-full px-4 py-[64px] md:px-8 md:py-[64px] lg:py-[64px] [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
-          <div className="relative flex flex-col items-center justify-center px-6 text-center">
-            {/* Outer Dotted Circle */}
-            <div className="relative flex h-[700px] w-[700px] items-center justify-center rounded-full border-2 border-dotted border-gray-300">
-              {/* Inner Dotted Circle */}
-              <div className="flex h-[400px] w-[400px] items-center justify-center rounded-full border border-dotted border-gray-300">
-                {/* Center Content */}
-                <div className="max-w-[260px]">
-                  <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-md bg-blue-100">
+  <section className="bg-[#f7f7f7] text-black">
+  <div className="mx-auto w-full px-[0.208vw] py-[3.333vw] md:px-[0.417vw] md:py-[3.333vw] lg:py-[3.333vw] [@media(min-width:1440px)]:px-[10vw] [@media(min-width:1920px)]:px-[10vw]">
+    <div className="relative flex flex-col items-center justify-center px-[0.313vw] text-center">
+      {/* Outer Dotted Circle */}
+      <div className="relative flex h-[48.125vw] w-[48.125vw] items-center justify-center rounded-full border-[0.104vw] border-dotted border-gray-300">
+        {/* Inner Dotted Circle */}
+        <div className="flex h-[31.25vw] w-[31.25vw] items-center justify-center rounded-full border border-dotted border-gray-300">
+          {/* Center Content */}
+          <div className="max-w-[13.542vw] flex flex-col items-center text-center">
+           <div className="mx-auto mb-4 flex  items-center justify-center rounded-md bg-blue-100">
                     <svg
                       width="91"
                       height="91"
@@ -114,27 +116,27 @@ export default function LiferayMigrationPage() {
                       </defs>
                     </svg>
                   </div>
-                  <h2 className="mb-2 text-3xl font-medium">Why Enterprises Should Migrate To Liferay?</h2>
-                  <p className="mt-4 text-sm leading-relaxed text-gray-600">
-                    Liferay provides a scalable platform for personalized customer experiences, with Liferay Portal
-                    Migration enhancing content management for efficient delivery.
-                  </p>
-                </div>
-              </div>
-
-              {/* Circular Feature Points */}
-              {features.map((feature, index) => (
-                <div key={index} className={`absolute ${feature.position} flex w-48 flex-col items-center text-center`}>
-                  <div className="mb-2 flex h-8 min-h-[40px] w-8 min-w-[40px] items-center justify-center rounded-full bg-black text-white">
-                    ✓
-                  </div>
-                  <p className="text-xl leading-snug font-medium text-gray-800">{feature.title}</p>
-                </div>
-              ))}
-            </div>
+            <h2 className="mb-[0.104vw] text-[1.875vw]! w-[26.146vw] font-medium">Why Enterprises Should Migrate To Liferay?</h2>
+            <p className="mt-[0.208vw] text-[0.729vw] leading-relaxed text-gray-600">
+              Liferay provides a scalable platform for personalized customer experiences, with Liferay Portal
+              Migration enhancing content management for efficient delivery.
+            </p>
           </div>
         </div>
-      </section>
+
+        {/* Circular Feature Points */}
+        {features.map((feature, index) => (
+          <div key={index} className={`absolute ${feature.position} flex w-[12.5vw] flex-col items-center text-center`}>
+            <div className="mb-[0.104vw] flex h-[2.083vw] min-h-[2.083vw] w-[2.083vw] min-w-[2.083vw] items-center justify-center rounded-full bg-black text-white">
+              ✓
+            </div>
+            <p className="text-[1.042vw] leading-snug font-medium text-gray-800">{feature.title}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Migration Process timeline */}
       <section className="bg-black text-white">
@@ -145,7 +147,9 @@ export default function LiferayMigrationPage() {
                 Our Liferay Migration Process
               </h2>
               <p className="mt-4 mb-8 max-w-xl text-lg text-white">
-                We optimize transitions from legacy systems to Liferay with our proven Liferay Portal Migration services, using best practices for seamless upgrades. Our expertise ensures cost-effective, high-quality transitions. Here is our Liferay Migration process.
+                We optimize transitions from legacy systems to Liferay with our proven Liferay Portal Migration
+                services, using best practices for seamless upgrades. Our expertise ensures cost-effective, high-quality
+                transitions. Here is our Liferay Migration process.
               </p>
               <ScheduleMeetingButton isFullWidth={false} btnName="Schedule Meeting" />
             </div>
@@ -154,7 +158,10 @@ export default function LiferayMigrationPage() {
               <div className="relative">
                 <div className="relative ml-12 flex flex-col">
                   {/* Vertical line */}
-                  <div className="absolute top-0 left-7 h-[89%] [@media(min-width:2140px)]:h-[90%] bg-white" style={{ width: "4px" }}></div>
+                  <div
+                    className="absolute top-0 left-7 h-[89%] bg-white [@media(min-width:2140px)]:h-[90%]"
+                    style={{ width: "4px" }}
+                  ></div>
 
                   {steps.map((step, index) => (
                     <div
@@ -185,7 +192,12 @@ export default function LiferayMigrationPage() {
       </section>
 
       {/* Case Studies (reuse BlogSection) */}
-      <WhatMake WhatMakeData={ LiferayMigrationData} titleText1={ LiferayMigrationTitle1} titleText2={ LiferayMigrationTitle2} subContext={ LiferayMigrationSubContent}/>
+      <WhatMake
+        WhatMakeData={LiferayMigrationData}
+        titleText1={LiferayMigrationTitle1}
+        titleText2={LiferayMigrationTitle2}
+        subContext={LiferayMigrationSubContent}
+      />
       <TalkToExpert
         heading="Hassle-Free Liferay Portal Migration"
         description="Ensure smooth upgrades with expert guidance and proven migration strategies."

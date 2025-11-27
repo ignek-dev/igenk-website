@@ -213,8 +213,8 @@ export default function BlogDetails() {
                             {post?.title?.rendered || "Untitled"}
                         </h1>
 
-                        <div className="max-w-2xl mt-6 text-[1.25vw] font-normal text-gray-200 sm:text-xl md:mt-[3.438rem]">
-                            <div className="flex items-center p24 mt-4 space-x-2  text-white">
+                        <div className="max-w-2xl  text-[1.25vw] font-normal text-gray-200 sm:text-xl mt-[2.24vw]">
+                            <div className="flex items-center p24  space-x-2  text-white">
                                 <Image
                                     src={post._embedded?.author?.[0]?.avatar_urls?.["96"] || "/images/blogs/blogAuthor.png"}
                                     alt={"authorI"}
