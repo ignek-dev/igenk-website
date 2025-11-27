@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import DOMPurify from 'dompurify';
 
 export interface BlogData {
   id: number;
@@ -51,9 +52,7 @@ export default function BlogCard({ blog }: BlogCardProps) {
   </div>
 
   {/* Title */}
-  <h3 className="text-[1.563vw]!  loading-[1.875vw] text-gray-900 mt-[1.042vw] ">
-    {blog.title}
-  </h3>
+  <h3 className="text-[1.563vw]!  loading-[1.875vw] text-gray-900 mt-[1.042vw] " dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(blog.title) }} />
 
   {/* Author Section fixed at bottom */}
   <div className="flex items-center gap-3 text-lg font-normal text-gray-600 mt-auto pt-6">
