@@ -22,37 +22,50 @@ export default function Navigation() {
   const [activeMenu, setActiveMenu] = useState<string | null>(null)
   const pathname = usePathname() // Get the current path
   const isCareerPage = pathname === "/career" // Check if it's the career page
-  const isAboutUsPage = pathname === "/about-us"
+  const isAboutUsPage = pathname === '/about-us'
   const isConsultingPage = pathname === "/services/liferay-consulting-and-implementation-services"
   const isHireDeveloperPage = pathname === "/services/liferay-hire-developer"
   const [isHeaderHovered, setIsHeaderHovered] = useState(false)
-  const router = useRouter()
+  const router = useRouter();
+
+  const isBluePage = isConsultingPage || isHireDeveloperPage;
+
+  const closeMenu = () => setActiveMenu(null)
 
   const handleMouseEnter = (label: string) => {
     setActiveMenu(label)
     setIsHeaderHovered(true)
   }
   const handleMouseLeave = () => setActiveMenu(null)
-  const [isScrolled, setIsScrolled] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false);
 
   // Scroll listener
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50) // when scrolled 50px from top
-    }
+      setIsScrolled(window.scrollY > 50); // when scrolled 50px from top
+    };
 
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   const backgroundClass = isHeaderHovered
     ? "bg-black"
     : isScrolled
-    ? "bg-black sticky"
-    : isCareerPage || isAboutUsPage
-    ? "bg-transparent"
-    : isConsultingPage || isHireDeveloperPage
-    ? "bg-[#0B63CE]"
-    : "bg-black"
+      ? "bg-black sticky"
+      : isCareerPage || isAboutUsPage
+        ? "bg-transparent"
+        : isConsultingPage || isHireDeveloperPage
+          ? "bg-[#0B63CE]"
+          : "bg-black"
+
+  const buttonInnerColor =
+    isHeaderHovered || isScrolled
+      ? "#000"
+      : isCareerPage
+      ? "transparent" 
+      : isBluePage
+      ? "#0B63CE"
+      : "#000";
 
   return (
     <>
@@ -67,8 +80,8 @@ export default function Navigation() {
             setIsHeaderHovered(false)
           }}
         >
-          {!isCareerPage && !isAboutUsPage && (
-            <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_14%_0%,#00979E_0%,#0E7BF800_60%)] opacity-20" />
+          {!isCareerPage && !isAboutUsPage && !isConsultingPage && !isHireDeveloperPage && (
+            <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_35%_0%,#00979E_0%,#0E7BF800_60%)] opacity-20" />
           )}{" "}
           <nav className="global-container mx-auto flex w-full items-center px-4 py-6.5 md:px-8">
             <Link href="/" className="flex items-center gap-3" aria-label="Home">
@@ -107,23 +120,19 @@ export default function Navigation() {
             </ul>
 
             <div className="z-10 flex items-center gap-4.5">
-              {/* <button
-                type="button"
-                aria-label="Calendar"
-                className="rounded-full border border-[#00979E] p-2 text-white/80 transition-colors hover:border-[#00979E] hover:text-white"
-              >
-                <div className="flex h-7 w-7 items-center justify-center cursor-pointer">
-                  <Image src="/images/icon/calendar.png" alt="calendar" width={24} height={24} />
-                </div>
-              </button> */}
-              <CalendlyButton />
+              <CalendlyButton buttonColor={buttonInnerColor} />
               <div className="nav-fancy-button">
-                <div className="nav-fancy-glow"></div>
-                <button type="button" aria-label="Go" className="nav-round-btn" onClick={() => router.push("/contact")}>
-                  <div className="nav-round-btn-inner">
-                    <Image src="/images/icon/arrow-tr.png" alt="arrow-top-right" width={28} height={28} />
-                  </div>
-                </button>
+  <div className="nav-fancy-glow" style={{ "--button-bg-color": buttonInnerColor } as React.CSSProperties}></div>
+              <button
+                type="button"
+                aria-label="Contact-Us"
+                className="nav-round-btn cursor-pointer"
+                onClick={() => router.push("/contact")}
+              >
+                <div className="nav-round-btn-inner cursor-pointer">
+                  <Image src="/images/icon/arrow-tr.png" alt="arrow-top-right" width={28} height={28} />
+                </div>
+              </button>
               </div>
             </div>
           </nav>
@@ -135,34 +144,29 @@ export default function Navigation() {
             initial={{ opacity: 1, y: -300 }}
             whileInView={{ opacity: 1, y: 0 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.5 }}
-            className={`top-0 left-0 z-50 w-full border-t border-white/10 bg-black text-white ${
+            // exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 1.5, ease: "easeOut" }}
+            className={`top-0 left-0 z-50 w-full border-t border-white/10 bg-black text-white rounded-b-[80px] overflow-hidden shadow-2xl  ${
               isScrolled ? "sticky" : "absolute"
             }`}
           >
             <header
-              className={`w-full text-white transition-colors duration-300 ${
-                isCareerPage || isAboutUsPage || isConsultingPage || isHireDeveloperPage ? "absolute top-0" : "relative"
-              } ${backgroundClass}`}
+             className={`w-full text-white transition-colors duration-300 ${
+                 // Force black bg when menu is open to blend with the dropdown container
+                "bg-black"
+              }`}
               onMouseEnter={() => setIsHeaderHovered(true)}
               onMouseLeave={() => {
                 handleMouseLeave()
                 setIsHeaderHovered(false)
               }}
             >
-              {!isCareerPage && !isAboutUsPage && (
-                <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_14%_0%,#00979E_0%,#0E7BF800_60%)] opacity-20" />
+              {!isCareerPage && !isAboutUsPage && !isConsultingPage && !isHireDeveloperPage && (
+                <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_35%_0%,#00979E_0%,#0E7BF800_60%)] opacity-20" />
               )}{" "}
               <nav className="global-container mx-auto flex w-full items-center px-4 py-6 md:px-8">
                 <Link href="/" className="flex items-center gap-3" aria-label="Home">
-                  <Image
-                    src="/images/logo.svg"
-                    alt="Ignek logo"
-                    width={182}
-                    height={86}
-                    priority
-                    className="logo-responsive"
-                  />
+                  <Image src="/images/logo.svg" alt="Ignek logo" width={182} height={86} priority className="logo-responsive" />
                 </Link>
 
                 <div className="flex-1" />
@@ -190,26 +194,26 @@ export default function Navigation() {
                 </ul>
 
                 <div className="flex items-center gap-4">
-                  <CalendlyButton />
+                  <CalendlyButton buttonColor={buttonInnerColor} />
                   <div className="nav-fancy-button">
-                    <div className="nav-fancy-glow"></div>
-                    <button
-                      type="button"
-                      aria-label="Go"
-                      className="nav-round-btn"
-                      onClick={() => router.push("/contact")}
-                    >
-                      <div className="nav-round-btn-inner">
-                        <Image src="/images/icon/arrow-tr.png" alt="arrow-top-right" width={46} height={46} />
-                      </div>
-                    </button>
+  <div className="nav-fancy-glow"></div>
+                  <button
+                    type="button"
+                    aria-label="Contact-Us"
+                    className="nav-round-btn"
+                    onClick={() => router.push("/contact")}
+                  >
+                    <div className="nav-round-btn-inner cursor-pointer">
+                      <Image src="/images/icon/arrow-tr.png" alt="arrow-top-right" width={46} height={46} />
+                    </div>
+                  </button>
                   </div>
                 </div>
               </nav>
-              {activeMenu === "Company" && <CompanyMegaMenu />}
-              {activeMenu === "Insights" && <InsightsMegaMenu />}
-              {activeMenu === "Services" && <ServicesMegaMenu />}
-              {activeMenu === "Solutions" && <SolutionsMegaMenu />}
+              {activeMenu === "Company" && <CompanyMegaMenu onClose={closeMenu} />}
+              {activeMenu === "Insights" && <InsightsMegaMenu onClose={closeMenu} />}
+              {activeMenu === "Services" && <ServicesMegaMenu onClose={closeMenu} />}
+              {activeMenu === "Solutions" && <SolutionsMegaMenu onClose={closeMenu} />}
             </header>
           </motion.div>
         </AnimatePresence>
