@@ -91,7 +91,7 @@ export default function BlogSection() {
     return <div className="text-black">Loading.......</div>
   return (
     <section className="bg-white text-black">
-      <div className="py-12 md:py-16 global-container">
+      <div className="pt-12 md:pt-16 global-container">
         <div className="grid items-center gap-10 md:grid-cols-2 "
         >
           <h2
@@ -108,7 +108,7 @@ export default function BlogSection() {
           </p>
         </div>
 
-        <div className="mt-16 grid grid-cols-1 gap-[1.719vw] lg:grid-cols-2  ">
+        <div className="mt-[2.9167vw] grid grid-cols-1 gap-[1.719vw] lg:grid-cols-2  ">
           <div
             className={`flex flex-col  cursor-pointer ${isInView ? "animate-when-visible animate-slide-left animation-delay-200" : "opacity-0"
               }`}
@@ -123,13 +123,13 @@ export default function BlogSection() {
                 className=" object-cover min-h-[459px]"
               />
             </div>
-            <h3 className="pt-[2.5vw] text-[#101012] ">
+            <h3 className="pt-[1.395vw] text-[#101012] line-clamp-2">
               {blogs[0]?.title || "Blog Post"}
             </h3>
             <p className="mt-[0.885vw] p18 text-[#101012] line-clamp-1  "
               dangerouslySetInnerHTML={{ __html: blogs[0]?.desc ?? "" }}
             />
-            <div className="mt-[1.667vw] w-full border-t border-gray-300" />
+            <div className="mt-[1.667vw] w-full border-t border-[#9CA3AF]" />
           </div>
 
           {/* Right: three small cards */}
@@ -156,7 +156,7 @@ export default function BlogSection() {
                   />
                 </div>
                 <div className=" ml-5">
-                  <div className="text-[1.25vw]">{item.title}</div>
+                  <div className="text-[1.25vw] line-clamp-2 min-h-[2.5vw]">{item.title}</div>
                   <p className="p16 mt-[10px] line-clamp-2  text-gray-700"
                     dangerouslySetInnerHTML={{ __html: item.desc ?? "" }}
                   />

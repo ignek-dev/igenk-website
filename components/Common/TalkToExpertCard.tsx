@@ -8,15 +8,15 @@ interface TalkToExpertCardProps {
 
 const TalkToExpertCard: React.FC<TalkToExpertCardProps> = ({ title }) => {
   return (
-   <div className="flex flex-col gap-[2vw] rounded-[1.25vw] bg-[#1C1C1C] px-[1.5vw] py-[2vw]">
+   <div className="flex flex-col rounded-[1.25vw] bg-[#1C1C1C] px-[1.5vw] py-[2vw]">
   
   {/* Title */}
-  <h3 className="text-[1.563vw]! leading-[1.875vw] font-bold text-white">
+  <h3 className="text-[1.563vw]! leading-[1.875vw] font-bold text-white mb-[2.34375vw]">
     {title}
   </h3>
 
   {/* Profile Section */}
-  <div className="flex items-center  gap-[2vw]">
+  <div className="flex items-center  gap-[2vw] mb-[2.23958vw]">
     <Image
       src="/images/bhavinImage.png"
       alt="Bhavin Panchani"
@@ -31,7 +31,7 @@ const TalkToExpertCard: React.FC<TalkToExpertCardProps> = ({ title }) => {
   </div>
 
   {/* Schedule Meeting Button */}
-  <div>
+  <div className="mb-[2.13542vw]">
     <ScheduleMeetingButton isFullWidth={true} btnName="Schedule Meeting" />
   </div>
 
