@@ -4,13 +4,17 @@ import Image from "next/image"
 import Link from "next/link"
 // const iconUrl = "/images/mega-menu/solution-e1.png"
 
+interface MegaMenuProps {
+  onClose: () => void;
+}
+
 const solutionsLinks = [
-  { text: "Enterprise Websites", href: "/contact", icon: "/images/mega-menu/solution-e1.png" },
-  { text: "Employee Experience", href: "/contact", icon: "/images/mega-menu/solution-e2.png" },
-  { text: "Digital Commerce", href: "/contact", icon: "/images/mega-menu/solution-e3.png" },
-  { text: "Partner Experience", href: "/contact", icon: "/images/mega-menu/solution-e4.png" },
-  { text: "Supplier Experience", href: "/contact", icon: "/images/mega-menu/solution-e5.png" },
-  { text: "Customer Experience", href: "/contact", icon: "/images/mega-menu/solution-e6.png" },
+  { text: "Enterprise Websites", href: "/contact", icon: "/images/mega-menu/solution-mega-icons/solution-e1.svg" },
+  { text: "Employee Experience", href: "/contact", icon: "/images/mega-menu/solution-mega-icons/solution-e2.svg" },
+  { text: "Digital Commerce", href: "/contact", icon: "/images/mega-menu/solution-mega-icons/solution-e3.svg" },
+  { text: "Partner Experience", href: "/contact", icon: "/images/mega-menu/solution-mega-icons/solution-e4.svg" },
+  { text: "Supplier Experience", href: "/contact", icon: "/images/mega-menu/solution-mega-icons/solution-e5.svg" },
+  { text: "Customer Experience", href: "/contact", icon: "/images/mega-menu/solution-mega-icons/solution-e6.svg" },
 ]
 
 const integrationsLinks = [
@@ -48,20 +52,20 @@ const aiLinks = [
   {
     text: "Cognitive Virtual Assistants for Enterprise Experiences",
     href: "/contact",
-    icon: "/images/mega-menu/liferay-ai-1.png",
+    icon: "/images/mega-menu/solution-mega-icons/liferay-ai-1.svg",
   },
-  { text: "AI-Driven Personalization & Engagement", href: "/contact", icon: "/images/mega-menu/liferay-ai-2.png" },
-  { text: "Intelligent Search & Knowledge Discovery", href: "/contact", icon: "/images/mega-menu/liferay-ai-3.png" },
-  { text: "Autonomous Workflow Optimization", href: "/contact", icon: "/images/mega-menu/liferay-ai-4.png" },
-  { text: "Predictive Business Intelligence", href: "/contact", icon: "/images/mega-menu/liferay-ai-5.png" },
-  { text: "AI-Enhanced Document Intelligence", href: "/contact", icon: "/images/mega-menu/liferay-ai-6.png" },
+  { text: "AI-Driven Personalization & Engagement", href: "/contact", icon: "/images/mega-menu/solution-mega-icons/liferay-ai-2.svg" },
+  { text: "Intelligent Search & Knowledge Discovery", href: "/contact", icon: "/images/mega-menu/solution-mega-icons/liferay-ai-3.svg" },
+  { text: "Autonomous Workflow Optimization", href: "/contact", icon: "/images/mega-menu/solution-mega-icons/liferay-ai-4.svg" },
+  { text: "Predictive Business Intelligence", href: "/contact", icon: "/images/mega-menu/solution-mega-icons/liferay-ai-5.svg" },
+  { text: "AI-Enhanced Document Intelligence", href: "/contact", icon: "/images/mega-menu/solution-mega-icons/liferay-ai-6.svg" },
 ]
 
 // --- Main SolutionsMegaMenu Component ---
-export default function SolutionsMegaMenu() {
+export default function SolutionsMegaMenu({ onClose }: MegaMenuProps) {
   return (
     <>
-      <div className="global-container mx-auto w-full px-4 py-12 md:px-8">
+      <div className="global-container mx-auto w-full px-4 py-8 md:px-8">
         <div className="flex w-full justify-between gap-[5.21vw]">
           {/* Left Group (Solutions & Integrations) */}
           <div className="flex gap-[5.21vw]">
@@ -100,6 +104,7 @@ export default function SolutionsMegaMenu() {
                     <Link
                       href={link.href}
                       className="flex items-center gap-5 text-white p20"
+                      onClick={onClose}
                     >
                       <Image
                         src={link.icon}

@@ -1,10 +1,15 @@
 // InsightsMegaMenu.tsx
 import Image from "next/image"
 import Link from "next/link"
+
+interface MegaMenuProps {
+  onClose: () => void;
+}
+
 // --- Icon Components ---
 const IconArrowRight = ({ className }: { className?: string }) => (
   <svg className={className} width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M9 18L15 12L9 6" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 )
 
@@ -29,7 +34,7 @@ const insightLinks = [
     href: "/contact",
   },
   {
-    icon: "/images/icon/blogs.png",
+    icon: "/images/mega-menu/marketplace.png",
     title: "Marketplace",
     description: "Modules that make your Liferay experience effortless.",
     href: "/marketplace",
@@ -41,19 +46,19 @@ const insightLinks = [
 const featuredEvent = {
   title: "Unlock insights that drive growth — join our upcoming webinar and level up your digital game!",
   // The path starts from the `public` directory
-  imageSrc: "/images/mega-menu/Event-image.jpg",
+  imageSrc: "/images/mega-menu/upcoming-webinar.svg",
   imageAlt: "Customer Onboarding with Low Code/No-Code Capabilities of Liferay Portal Webinar",
   href: "/webinar", // Link to the webinar page
 }
 
 // --- Main InsightsMegaMenu Component ---
-export default function InsightsMegaMenu() {
+export default function InsightsMegaMenu({ onClose }: MegaMenuProps) {
   return (
     <>
       {/* Background Gradient */}
       {/* <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_14%_0%,#00979E_0%,#0E7BF800_60%)] opacity-40" /> */}
 
-      <div className="global-container mx-auto w-full px-4 py-9.5 md:px-8">
+      <div className="global-container mx-auto w-full px-4 py-7 md:px-8">
         <div className="grid grid-cols-12 items-start gap-8">
           {/* Left Side: Cards */}
           <div className="col-span-5">
@@ -62,7 +67,7 @@ export default function InsightsMegaMenu() {
                 <a
                   href={link.href}
                   key={link.title}
-                  className="group /* 1440px → use vw scaling */ /* 1920px → match the design exactly */ flex h-[130px] items-center gap-[1.041vw] rounded-[16px] bg-[#0D0D0D] p-8 transition-all duration-300 [@media(min-width:1440px)]:h-[8.333vw] [@media(min-width:1440px)]:rounded-[0.937vw] [@media(min-width:1920px)]:h-[129px] [@media(min-width:1920px)]:rounded-[20px]"
+                  className="group /* 1440px → use vw scaling */ /* 1920px → match the design exactly */ flex h-[130px] items-center gap-[1.041vw] rounded-[16px] bg-[#0D0D0D] p-8 transition-all duration-300 [@media(min-width:1440px)]:h-[120px] [@media(min-width:1440px)]:rounded-[0.937vw] [@media(min-width:1920px)]:h-[129px] [@media(min-width:1920px)]:rounded-[20px]"
                 >
                   {/* Icon container */}
                   <div className="/* At 1440px+ scale using vw */ h-[40px] w-[40px] text-white/70 transition-colors group-hover:text-white sm:h-[44px] sm:w-[44px] md:h-[48px] md:w-[48px] xl:h-[2.604vw] xl:w-[2.604vw]">
@@ -78,7 +83,7 @@ export default function InsightsMegaMenu() {
                   {/* Text */}
                   <div className="flex-1">
                     <h4 className="font-medium text-white">{link.title}</h4>
-                    <p className="p16 font-regular mt-1 text-white">{link.description}</p>
+                    <p className="p16 font-regular mt-2 text-white">{link.description}</p>
                   </div>
 
                   {/* Arrow Icon */}
@@ -93,7 +98,7 @@ export default function InsightsMegaMenu() {
             <p className="mb-6 max-w-4xl align-middle text-[1.6667vw]! leading-[2.2917vw] font-semibold! tracking-[-0.02em] text-white">
               {featuredEvent.title}
             </p>
-            <Link href={featuredEvent.href} className="group block">
+            <Link href={featuredEvent.href} onClick={onClose} className="group block">
               <div className="overflow-hidden rounded-[14.35px] border-[1.2px] border-white/20 transition-all duration-300 group-hover:border-white/40">
                 <Image
                   src={featuredEvent.imageSrc}

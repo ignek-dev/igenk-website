@@ -5,6 +5,10 @@ import "../../styles/icon-arrow.css"
 // --- Data for the Mega Menu ---
 // --- Icon Components (can be in their own file or here) ---
 
+interface MegaMenuProps {
+  onClose: () => void;
+}
+
 const IconArrowRight = ({ className }: { className?: string }) => (
   <svg
     className={`arrow-responsive ${className}`}
@@ -14,71 +18,46 @@ const IconArrowRight = ({ className }: { className?: string }) => (
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M9 18L15 12L9 6" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 )
 
 // Social Icons
 export const IconLinkedIn = () => (
-  <svg
-    width="22"
-    height="22"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-    <rect x="2" y="9" width="4" height="12"></rect>
-    <circle cx="4" cy="4" r="2"></circle>
-  </svg>
+   <Image
+    src="/images/mega-menu/linkedin-dark.png"
+    alt="LinkedIn"
+    width={36}
+    height={36}
+    className="social-icon"
+  />
 )
 export const IconFacebook = () => (
-  <svg
-    width="22"
-    height="22"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-  </svg>
+   <Image
+    src="/images/mega-menu/facebook-dark.png"
+    alt="Facebook"
+    width={36}
+    height={36}
+    className="social-icon"
+  />
 )
 export const IconX = () => (
-  <svg
-    width="22"
-    height="22"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    <path d="M18 6 6 18"></path>
-    <path d="m6 6 12 12"></path>
-  </svg>
+   <Image
+    src="/images/mega-menu/tweeter-dark.png"
+    alt="X"
+    width={36}
+    height={36}
+    className="social-icon"
+  />
 )
 export const IconInstagram = () => (
-  <svg
-    width="22"
-    height="22"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-  </svg>
+   <Image
+    src="/images/mega-menu/instagram-dark.png"
+    alt="Instagram"
+    width={36}
+    height={36}
+    className="social-icon"
+  />
 )
 
 const companyLinks = [
@@ -126,7 +105,7 @@ const socialLinks = [
 
 // --- Main MegaMenu Component ---
 
-export default function CompanyMegaMenu() {
+export default function CompanyMegaMenu({ onClose }: MegaMenuProps) {
   return (
     <>
       {/* <div className="inset-x-0 top-full bg-black text-white border-t border-white/10 z-50"> */}
@@ -142,6 +121,7 @@ export default function CompanyMegaMenu() {
                 <Link
                   href={link.href}
                   key={link.title}
+                  onClick={onClose}
                   className="group flex h-[150px] items-center gap-5 rounded-[16px] bg-[#0D0D0D] p-4 transition-all duration-300 [@media(min-width:1440px)]:h-[160px] [@media(min-width:1440px)]:rounded-[18px] [@media(min-width:1536px)]:h-[168px] [@media(min-width:1536px)]:rounded-[19px] [@media(min-width:1920px)]:h-[174px] [@media(min-width:1920px)]:rounded-[20px]"
                 >
                   <Image
@@ -158,9 +138,9 @@ export default function CompanyMegaMenu() {
                   />
                   <div className="flex-1">
                     <h4 className="font-medium text-white">{link.title}</h4>
-                    <p className="font-regular p16 mt-1 text-white">{link.description}</p>
+                    <p className="font-regular p16 mt-4 text-white">{link.description}</p>
                   </div>
-                  <IconArrowRight className="size-8 text-white transition-transform duration-300 group-hover:translate-x-1 group-hover:text-white" />
+                  <IconArrowRight className="size-8 text-white! transition-transform duration-300 group-hover:translate-x-1 group-hover:text-white" />
                 </Link>
               ))}
             </div>
@@ -176,8 +156,8 @@ export default function CompanyMegaMenu() {
               accelerate growth through expert engineering, modern design, and reliable technology solutions.
             </p>
 
-            <div className="mt-16 grid grid-cols-3 gap-x-8 gap-y-6 border-white/10">
-              <div className="relative pr-4">
+            <div className="mt-16 grid grid-cols-3 gap-y-6 border-white/10">
+              <div className="relative pr-4 border-r border-[#4B5563]">
                 <h4 className="mb-6.5 font-medium">General</h4>
                 <ul className="space-y-2">
                   {contactDetails.general.map((item) => (
@@ -199,11 +179,11 @@ export default function CompanyMegaMenu() {
                     </li>
                   ))}
                 </ul>
-                <div className="absolute top-0 right-[-1] h-full w-[1px] bg-[#4B5563]" />
+                {/* <div className="absolute top-0 right-[-1] h-full w-[1px] bg-[#4B5563]" /> */}
               </div>
 
               {/* Sales sections */}
-              <div className="relative px-4">
+              <div className="relative px-4 border-r border-[#4B5563]">
                 <h4 className="mb-6.5 font-medium">Sales</h4>
                 <ul className="space-y-2">
                   {contactDetails.sales.map((item) => (
@@ -225,7 +205,7 @@ export default function CompanyMegaMenu() {
                     </li>
                   ))}
                 </ul>
-                <div className="absolute top-0 h-full w-[1px] bg-[#4B5563] [@media(min-width:1440px)]:right-[-20] [@media(min-width:1920px)]:right-0" />{" "}
+                {/* <div className="absolute top-0 h-full w-[1px] bg-[#4B5563] [@media(min-width:1440px)]:right-[-20] [@media(min-width:1920px)]:right-0" />{" "} */}
                 {/* Right border */}
               </div>
 
@@ -269,13 +249,13 @@ export default function CompanyMegaMenu() {
                   E 910-912, Ganesh Glory 11, Jagatpur Road, SG Highway, Ahmedabad, Gujarat - 382470
                 </p>
               </div>
-              <div className="flex items-center [@media(min-width:1440px)]:gap-4 [@media(min-width:1920px)]:gap-5">
+              <div className="flex items-center gap-[1.042vw]">
                 {socialLinks.map((social) => (
                   <a
                     href={social.href}
                     key={social.label}
                     aria-label={social.label}
-                    className="flex size-12.5 items-center justify-center rounded-full bg-white text-black/70 transition-colors hover:bg-gray-200"
+                    className="flex size-12.5 items-center justify-center rounded-full text-black bg-white transition-colors hover:bg-gray-200"
                     target="blank"
                   >
                     {social.icon}

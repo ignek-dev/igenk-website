@@ -64,25 +64,28 @@ export default function Footer() {
   ]
 
   return (
-   <footer className="relative bg-black text-white">
+    <footer className="relative bg-black text-white">
       {/* Top section: menus with right decorative lines and partial width */}
-      <div className="footer-sidebar global-container mx-auto flex w-full border-b border-white/100 pl-4 md:pl-8 " style={{ paddingRight: "0px !important" }}>
+      <div
+        className="footer-sidebar global-container mx-auto flex w-full border-b border-white pl-4 md:pl-8"
+        style={{ paddingRight: "0px !important" }}
+      >
         <div className="relative w-[80%] pt-12 pr-4 pb-20 md:pt-16 md:pr-8 md:pb-4">
           <motion.div
-            className="pointer-events-none absolute right-0 bottom-0 h-full w-full rounded-br-[19rem] border-r-2 border-b-2 border-white/100"
+            className="pointer-events-none absolute right-0 bottom-0 h-full w-full rounded-br-[19rem] border-r-2 border-b-2 border-white"
             initial={{ width: 0 }}
             whileInView={{ width: "100%" }}
-            viewport={{ amount:0.2}}
+            viewport={{ amount: 0.2 }}
             transition={{ duration: 0.9, ease: "easeIn" }}
           />
           <div className="auto-grid">
             <>
               {menus.map((menu) => (
                 <div key={menu.title}>
-                  <p className="text-2xl font-semibold! text-white leading-[1.9rem]">{menu.title}</p>
-                  <ul className="mt-5 space-y-8 p20 text-white tracking-[2%] ">
+                  <p className="footer-text-header leading-[1.9rem] font-semibold! text-white">{menu.title}</p>
+                  <ul className="mt-5 space-y-8 tracking-[2%] text-white">
                     {menu.items.map((it) => (
-                      <li className="mb-2" key={it.label}>
+                      <li className="" key={it.label}>
                         <Link href={it.href} className="cursor-pointer hover:text-white">
                           {it.label}
                         </Link>
@@ -94,57 +97,63 @@ export default function Footer() {
             </>
           </div>
         </div>
-        <div className="animate-drawLine border-l w-[20%]"></div>
+        <div className="animate-drawLine w-[20%] border-l"></div>
       </div>
- 
+
       {/* Bottom section: contacts + big logo + motto + bottom bar */}
       <div className="global-container mx-auto flex w-full pl-4 md:pl-8" style={{ paddingRight: "0px !important" }}>
         <div className="w-[80%] pt-12 pr-4 pb-20 md:pt-16 md:pr-8 md:pb-4">
-          <div className="grid  sm:grid-cols-2 md:grid-cols-4">
+          <div className="grid sm:grid-cols-2 md:grid-cols-4">
             <div>
-              <p className="text-2xl font-semibold text-white leading-[1.9rem]">Emails</p>
+              <p className="text-2xl leading-[1.9rem] font-semibold text-white">Emails</p>
               <div className="mt-4 space-y-3 text-white">
                 <div>
-                  <Link href="mailto:sales@ignek.com" className="hover:text-white p20 font-semibold!">
+                  <Link href="mailto:sales@ignek.com" className="p20 font-semibold! hover:text-white">
                     sales@ignek.com
                   </Link>
-                  <div className="text-[#9CA3AF] p16">(For sales inquiry)</div>
+                  <div className="p16 text-[#9CA3AF]">(For sales inquiry)</div>
                 </div>
                 <div>
-                  <Link href="mailto:hr@ignek.com" className="hover:text-white p20 font-semibold!">
+                  <Link href="mailto:hr@ignek.com" className="p20 font-semibold! hover:text-white">
                     hr@ignek.com
                   </Link>
-                  <div className="text-[#9CA3AF] p16">(For hiring inquiry)</div>
+                  <div className="p16 text-[#9CA3AF]">(For hiring inquiry)</div>
                 </div>
               </div>
             </div>
             <div>
-              <p className="text-2xl font-semibold text-white leading-[1.9rem]">Call</p>
+              <p className="text-2xl leading-[1.9rem] font-semibold text-white">Call</p>
               <div className="mt-4 space-y-3 text-white">
                 <div>
-                  <Link href="tel:+916351576580" className="hover:text-white p20 font-semibold!">
+                  <Link href="tel:+916351576580" className="p20 font-semibold! hover:text-white">
                     (+91) 635 157 6580
                   </Link>
-                  <div className="text-[#9CA3AF] p16">(For sales inquiry)</div>
+                  <div className="p16 text-[#9CA3AF]">(For sales inquiry)</div>
                 </div>
                 <div>
-                  <Link href="tel:+919328495160" className="hover:text-white p20 font-semibold!">
+                  <Link href="tel:+919328495160" className="p20 font-semibold! hover:text-white">
                     (+91) 932 849 5160
                   </Link>
-                  <div className="text-[#9CA3AF] p16">(For hiring inquiry)</div>
+                  <div className="p16 text-[#9CA3AF]">(For hiring inquiry)</div>
                 </div>
               </div>
             </div>
             <div>
-             <p className="text-2xl font-semibold text-white leading-[1.9rem]">Office</p>
-              <p className="mt-4 min-w-xl p20 font-semibold! text-white mb-3 whitespace-wrap [@media(max-width:1700px)]:min-w-auto">
+              <p className="text-2xl leading-[1.9rem] font-semibold text-white">Office</p>
+              <p className="p20 whitespace-wrap mt-4 mb-3 min-w-xl font-semibold! text-white [@media(max-width:1700px)]:min-w-auto">
                 E 910-912, Ganesh Glory 11, Jagatpur Road, SG Highway, Ahmedabad, Gujarat - 382470 (Headquarter) <br />
               </p>
-              <span className="whitespace-nowrap mt-4 min-w-3xl p20 font-semibold! text-white">Dubai, United Arab Emirates (UAE Branch)</span>
+              <span className="p20 mt-4 min-w-3xl font-semibold! whitespace-nowrap text-white">
+                Dubai, United Arab Emirates (UAE Branch)
+              </span>
             </div>
           </div>
           {/* Big brand logo */}
-          <div className="gradient-box" onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
+          <div
+            className="gradient-box right-[2.24vw]"
+            onMouseEnter={() => setHover(true)}
+            onMouseLeave={() => setHover(false)}
+          >
             <svg className="svg-custom" width="1350" height="500">
               <defs>
                 <linearGradient id="textGradient" x1="0" y1="0" x2="0" y2="1">
@@ -152,7 +161,7 @@ export default function Footer() {
                   <stop offset="100%" stopColor="#00979E" />
                 </linearGradient>
               </defs>
- 
+
               <text
                 x="50%"
                 y="50%"
@@ -171,7 +180,7 @@ export default function Footer() {
               </text>
             </svg>
           </div>
-          <p className="mt-4 text-center text-2xl tracking-[0.7em] text-white">
+          <p className="mt-[0.833vw] text-center text-[1.25vw] leading-[1.666vw] tracking-[0.8em] text-white">
             DRIVING DIGITAL SOLUTIONS
           </p>
         </div>
@@ -180,7 +189,7 @@ export default function Footer() {
             className="absolute top-0 left-0 h-[100%] w-[100%] rounded-tl-full border-t-2 border-l-2 border-white"
             initial={{ width: 0 }}
             whileInView={{ width: "100%" }}
-            viewport={{ amount:0.2}}
+            viewport={{ amount: 0.2 }}
             transition={{ duration: 0.4, ease: "easeIn" }}
           />
         </div>
