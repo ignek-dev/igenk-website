@@ -156,8 +156,8 @@ export default function CompanyMegaMenu({ onClose }: MegaMenuProps) {
               accelerate growth through expert engineering, modern design, and reliable technology solutions.
             </p>
 
-            <div className="mt-16 grid grid-cols-3 gap-x-8 gap-y-6 border-white/10">
-              <div className="relative pr-4">
+            <div className="mt-16 grid grid-cols-3 gap-y-6 border-white/10">
+              <div className="relative pr-4 border-r border-[#4B5563]">
                 <h4 className="mb-6.5 font-medium">General</h4>
                 <ul className="space-y-2">
                   {contactDetails.general.map((item) => (
@@ -179,11 +179,11 @@ export default function CompanyMegaMenu({ onClose }: MegaMenuProps) {
                     </li>
                   ))}
                 </ul>
-                <div className="absolute top-0 right-[-1] h-full w-[1px] bg-[#4B5563]" />
+                {/* <div className="absolute top-0 right-[-1] h-full w-[1px] bg-[#4B5563]" /> */}
               </div>
 
               {/* Sales sections */}
-              <div className="relative px-4">
+              <div className="relative px-4 border-r border-[#4B5563]">
                 <h4 className="mb-6.5 font-medium">Sales</h4>
                 <ul className="space-y-2">
                   {contactDetails.sales.map((item) => (
@@ -205,7 +205,7 @@ export default function CompanyMegaMenu({ onClose }: MegaMenuProps) {
                     </li>
                   ))}
                 </ul>
-                <div className="absolute top-0 h-full w-[1px] bg-[#4B5563] [@media(min-width:1440px)]:right-[-20] [@media(min-width:1920px)]:right-0" />{" "}
+                {/* <div className="absolute top-0 h-full w-[1px] bg-[#4B5563] [@media(min-width:1440px)]:right-[-20] [@media(min-width:1920px)]:right-0" />{" "} */}
                 {/* Right border */}
               </div>
 

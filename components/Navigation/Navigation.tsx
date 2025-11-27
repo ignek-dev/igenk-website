@@ -80,8 +80,8 @@ export default function Navigation() {
             setIsHeaderHovered(false)
           }}
         >
-          {!isCareerPage && !isAboutUsPage && (
-            <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_14%_0%,#00979E_0%,#0E7BF800_60%)] opacity-20" />
+          {!isCareerPage && !isAboutUsPage && !isConsultingPage && !isHireDeveloperPage && (
+            <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_35%_0%,#00979E_0%,#0E7BF800_60%)] opacity-20" />
           )}{" "}
           <nav className="global-container mx-auto flex w-full items-center px-4 py-6.5 md:px-8">
             <Link href="/" className="flex items-center gap-3" aria-label="Home">
@@ -161,9 +161,9 @@ export default function Navigation() {
                 setIsHeaderHovered(false)
               }}
             >
-              {/* {!isCareerPage && !isAboutUsPage && (
-                <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_14%_0%,#00979E_0%,#0E7BF800_60%)] opacity-20" />
-              )}{" "} */}
+              {!isCareerPage && !isAboutUsPage && !isConsultingPage && !isHireDeveloperPage && (
+                <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_35%_0%,#00979E_0%,#0E7BF800_60%)] opacity-20" />
+              )}{" "}
               <nav className="global-container mx-auto flex w-full items-center px-4 py-6 md:px-8">
                 <Link href="/" className="flex items-center gap-3" aria-label="Home">
                   <Image src="/images/logo.svg" alt="Ignek logo" width={182} height={86} priority className="logo-responsive" />
