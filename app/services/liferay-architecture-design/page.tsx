@@ -77,12 +77,14 @@ useEffect(() => {
     const sectionRect = section.getBoundingClientRect()
     const windowHeight = window.innerHeight
 
-    // Simple and reliable progress calculation
-    const startScroll = windowHeight * 0.8 // Start when section is 80% from top
-    const endScroll = -sectionRect.height * 0.2 // End when section is 20% from bottom
+    // Start horizontal scroll only when first half of section is scrolled (50% from top)
+    const startScroll = windowHeight * 0.5
+    // End horizontal scroll when section is almost at the top (10% from top)
+    const endScroll = -sectionRect.height * 0.1
 
     let progress = 0
     
+    // Only start progress when section top passes the 50% mark
     if (sectionRect.top < startScroll) {
       progress = 1 - Math.max(0, (sectionRect.top - endScroll) / (startScroll - endScroll))
     }
@@ -98,20 +100,6 @@ useEffect(() => {
   return () => window.removeEventListener("scroll", handlePageScroll)
 }, [])
 
-// Remove these state variables and functions completely:
-// const [isDragging, setIsDragging] = useState(false)
-// const [startX, setStartX] = useState(0)
-// const [scrollStart, setScrollStart] = useState(0)
-// const [targetScroll, setTargetScroll] = useState<number | null>(null)
-
-// Remove these handler functions:
-// const handleMouseDown = (e: React.MouseEvent) => { ... }
-// const handleMouseUp = () => { ... }
-// const handleMouseLeave = () => { ... }
-// const handleMouseMove = (e: React.MouseEvent) => { ... }
-// const handleWheelScroll = (e: React.WheelEvent) => { ... }
-
-// Also remove the smooth scroll useEffect since we don't need it anymore
   return (
     <main className="">
       {/* Hero */}
@@ -153,14 +141,15 @@ useEffect(() => {
     <div
       className="flex cursor-grab overflow-x-auto [-ms-overflow-style:'none'] [scrollbar-width:'none'] [&::-webkit-scrollbar]:hidden"
       ref={containerRef}
-      // Removed: onWheel, onMouseDown, onMouseUp, onMouseLeave, onMouseMove
+      
     >
+      
       {systemArchitecure.map((item, index) => (
         <div
           key={index}
           className={`flex-shrink-0 px-[3.333vw] ${index === 0 ? "ml-[10vw] pl-0" : ""} ${
             index === systemArchitecure.length - 1 ? "mr-[20vw]" : ""
-          } ${index !== systemArchitecure.length - 1 ? "border-r border-[#E5E7EB]" : ""}`}
+          } ${index !== systemArchitecure.length - 1 ? "border-r border-[#9CA3AF]" : ""}`}
           style={{ width: "22%" }}
         >
           <div className="flex flex-col gap-[4.688vw]">

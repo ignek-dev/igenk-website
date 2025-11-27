@@ -414,7 +414,7 @@ export default function BlogsContent() {
                             isHovering ? "max-h-20 opacity-100" : "max-h-0 opacity-0"
                           } overflow-hidden`}
                         >
-                          <p className="line-clamp-2 text-[0.833vw] leading-relaxed text-white/90">
+                          <p className="line-clamp-2 text-[0.938vw] leading-relaxed text-white/90">
                             {blog.desc
                               ? blog.desc.replace(/<[^>]*>/g, "")
                               : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris."}
