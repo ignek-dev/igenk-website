@@ -10,23 +10,30 @@ import { WPPost } from "components/BlogSidebar/BlogSidebar"
 const cardData = [
   {
     id: 15,
-    iconWhite: "/images/liferay-pages-image/Liferay-whilte.svg",
-    iconBlue: "/images/liferay-pages-image/Liferay-blue.svg",
+    iconWhite: "/images/blogs/Liferay-whilte.svg",
+    iconBlue: "/images/blogs/Liferay-blue.svg",
     title: "Liferay",
     description: "Explore strategies, leadership skills, and growth tactics for",
   },
   {
     id: 16,
-    iconWhite: "/images/liferay-pages-image/React-white.svg",
-    iconBlue: "/images/liferay-pages-image/React-blue.svg",
+    iconWhite: "/images/blogs/React-white.svg",
+    iconBlue: "/images/blogs/React-blue.svg",
     title: "React",
     description: "Explore strategies, leadership skills, and growth tactics for",
   },
   {
     id: 21,
-    iconWhite: "/images/liferay-pages-image/spring-boot.svg",
-    iconBlue: "/images/liferay-pages-image/spring-boot.svg",
+    iconWhite: "/images/blogs/Nodejs-white.svg",
+    iconBlue: "/images/blogs/Spring-Boot.svg",
     title: "Spring Boot",
+    description: "Explore strategies, leadership skills, and growth tactics for",
+  },
+  {
+    id: 237,
+    iconWhite: "/images/blogs/Spring-boot-white.svg",
+    iconBlue: "/images/blogs/Nodejs.svg",
+    title: "Node.js",
     description: "Explore strategies, leadership skills, and growth tactics for",
   },
 ]
@@ -437,7 +444,7 @@ export default function BlogsContent() {
               Browse By Category
             </h2>
 
-            <div className="flex flex-wrap justify-between gap-4">
+            <div className="flex justify-between gap-[0.677vw]">
               {cardData.map((card, index) => {
                 const isSelected = selectedCategory === card.id
                 return (
