@@ -155,13 +155,12 @@ const BlogSidebar = ({ categoryId }: BlogSidebarProps) => {
   }, [categoryId, fetchBlogs])
 
   const router = useRouter()
-
-  return (
-    <div className="mx-auto grid max-w-[1440px] gap-9 pr-[50px] pl-[4.271vw]">
+return (
+    <div className="mx-auto grid max-w-[1440px] gap-[1.875vw] pr-[2.604vw] pl-[4.271vw]">
       {/* --- Social Icons --- */}
       <div>
-        <h2 className="mt-[2.292vw] mb-4 text-[1.667vw]! leading-[2.083vw] font-medium! text-black">Share On</h2>
-        <div className="mt-0 flex gap-[0.625rem]">
+        <h2 className="mt-[2.292vw] mb-[0.208vw] text-[1.667vw]! leading-[2.083vw] font-medium! text-black">Share On</h2>
+        <div className="mt-0 flex gap-[0.326vw]">
           {socialLinks.map((social) => {
             const href = typeof social.href === "function" ? social.href() : social.href
 
@@ -172,7 +171,7 @@ const BlogSidebar = ({ categoryId }: BlogSidebarProps) => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={social.label}
-                className="flex h-[54px] w-[54px] items-center justify-center rounded-full bg-black text-white"
+                className="flex h-[2.813vw] w-[2.813vw] items-center justify-center rounded-full bg-black text-white"
               >
                 {social.icon}
               </a>
@@ -180,11 +179,11 @@ const BlogSidebar = ({ categoryId }: BlogSidebarProps) => {
           })}
         </div>
 
-        <h2 className="mt-9 text-[1.667vw]! font-medium! text-black">Related Blogs</h2>
+        <h2 className="mt-[1.875vw] text-[1.667vw]! font-medium! text-black">Related Blogs</h2>
       </div>
 
       {/* --- Related Blog Cards --- */}
-      <div className="grid gap-[31.5px]">
+      <div className="grid gap-[1.641vw]">
         {blogs?.map((blog, index) => (
           <div key={blog?.id}>
             <div className="flex items-center overflow-hidden transition">
@@ -194,31 +193,31 @@ const BlogSidebar = ({ categoryId }: BlogSidebarProps) => {
                 alt="Blog thumbnail"
                 width={200}
                 height={130}
-                className="h-[130px] w-full max-w-[200px] rounded-[15px]"
+                className="h-[6.771vw] w-full max-w-[10.417vw] rounded-[0.781vw]"
               />
 
               {/* Text Container */}
-              <div className="ml-[14px] flex h-[82px] flex-1 flex-col justify-center gap-2">
-                <div className="!p18 mt-[11px] mb-2 w-[14.063vw] leading-snug text-[#101012]">{blog?.title}</div>
+              <div className="ml-[0.729vw] flex h-[4.271vw] flex-1 flex-col justify-center gap-[0.104vw]">
+                <div className="p18 mt-[0.573vw] mb-[0.104vw]  leading-snug text-[#101012]">{blog?.title}</div>
 
                 <div
                   onClick={() => router.push(`/blog/${blog.slug}`)}
-                  className="mt-auto flex cursor-pointer items-center gap-2 text-[16px] leading-[24px] font-medium text-[#4A3AFF]"
+                  className="mt-auto flex cursor-pointer items-center gap-[0.104vw] text-[0.833vw] leading-[1.25vw] font-medium text-[#4A3AFF]"
                 >
                   Read Now <ArrowRight size={20} />
                 </div>
               </div>
             </div>
 
-            {index !== blogs.length - 1 && <hr className="mt-[31.5px] border-gray-300" />}
+            {index !== blogs.length - 1 && <hr className="mt-[1.667vw] border-gray-300" />}
           </div>
         ))}
       </div>
 
       {/* --- Author Card --- */}
-      <div className="rounded-[20px] border-[1.7px] border-[#E5E7EB] bg-white p-[2.375rem] text-center shadow">
-        <h2 className="mb-10 text-[1.875vw]! font-semibold! tracking-wide">AUTHOR</h2>
-        <h3 className="mb-1 text-[1.563vw]! font-semibold! text-gray-900">Bhavin Panchani</h3>
+      <div className="rounded-[1.042vw] border-[0.089vw] border-[#E5E7EB] bg-white p-[2.375vw] text-center shadow">
+        <h2 className="mb-[2.083vw] text-[1.875vw]! font-semibold! tracking-wide">AUTHOR</h2>
+        <h3 className="mb-[0.052vw] text-[1.563vw]! font-semibold! text-gray-900">Bhavin Panchani</h3>
         <p className="pb-[1.458vw] text-[#121416]">CEO, IGNEK</p>
 
         <div className="mb-[1.875vw] flex justify-center">
@@ -227,7 +226,7 @@ const BlogSidebar = ({ categoryId }: BlogSidebarProps) => {
             alt="Author"
             width={186}
             height={186}
-            className="max-h-[186px] rounded-full object-cover"
+            className="max-h-[9.688vw] rounded-full object-cover"
           />
         </div>
 
@@ -236,14 +235,14 @@ const BlogSidebar = ({ categoryId }: BlogSidebarProps) => {
           through digital transformation.
         </p>
 
-        <div className="flex justify-center gap-[1.25rem]">
+        <div className="flex justify-center gap-[1.302vw]">
           {authorSocialLinks.map((social) => (
             <a
               href={social.href}
               key={social.label}
               aria-label={social.label}
               target="_blank"
-              className="flex size-[2.5rem] items-center justify-center rounded-full bg-black text-white"
+              className="flex size-[2.604vw] items-center justify-center rounded-full bg-black text-white"
             >
               {social.icon}
             </a>

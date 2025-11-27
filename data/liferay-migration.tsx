@@ -34,7 +34,7 @@ export const steps = [
 export const features = [
   {
     title: "Easy Integration Capabilities",
-    position: "top-[-0.1vw] left-1/2 right-[-5.21vw]",
+    position: "top-[-0.1vw] flex flex-col gap-[1.042vw] left-1/2 right-[-5.21vw]",
   },
   {
     title: "B2B & B2C Digital Commerce",

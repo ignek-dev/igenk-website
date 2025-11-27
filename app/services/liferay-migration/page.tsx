@@ -179,12 +179,12 @@ export default function LiferayMigrationPage() {
                       </div>
 
                       {/* Step content */}
-                      <div className={`${index !== steps.length - 1 ? " mb-[2.708vw]  max-w-[34.583vw] pb-[2.708vw]" : ""} ml-[3.438vw]`}>
+                      <div className={`${index !== steps.length - 1 ? "   max-w-[34.583vw] " : ""} ml-[3.438vw]`}>
                         <div className="flex items-center justify-between">
                           <h3 className="text-[1.563vw]! text-[#FFFFFF] font-medium! ">{step.title}</h3>
                         </div>
                         <p className="text-gray/50 mt-[1.25vw] p20">{step.desc}</p>
-                        <hr className="pr-[2.24vw]"/>
+                       {index !== steps.length - 1 ? <hr className=" mb-[2.708vw] mt-[2.708vw] "/> : ""} 
                       </div>
                       
                     </div>
