@@ -164,9 +164,7 @@ export default function LiferayConsultationPage() {
           <div className="grid grid-cols-1 items-center gap-6 md:grid-cols-5">
             {/* Left Side: Text Content */}
             <div className="col-span-3">
-              <div className="p18 banner-tab">
-                Liferay Services
-              </div>
+              <div className="p18 banner-tab">Liferay Services</div>
               <h1 className="mt-[2.031vw]">
                 Liferay Consulting &
                 <br />
@@ -218,12 +216,12 @@ export default function LiferayConsultationPage() {
             {/* Stats Row */}
             <div className="flex-no-wrap grid-cols-2 items-center gap-20 [@media(min-width:1440px)]:grid [@media(min-width:1800px)]:flex">
               {/* Stat 1 */}
-              <div className="flex gap-3 items-center">
+              <div className="flex items-center gap-3">
                 <p className="text-5xl font-bold text-[#171717]">30%</p>
                 <p className="p20 text-gray-600">Project Success</p>
               </div>
               {/* Stat 2 */}
-              <div className="flex gap-3 items-center">
+              <div className="flex items-center gap-3">
                 <p className="text-5xl font-bold text-[#171717]">20%</p>
                 <p className="p20 whitespace-nowrap text-gray-600">
                   Cost <br />
@@ -231,7 +229,7 @@ export default function LiferayConsultationPage() {
                 </p>
               </div>
               {/* Stat 3 */}
-              <div className="flex gap-3 items-center">
+              <div className="flex items-center gap-3">
                 <p className="text-5xl font-bold text-[#171717]">10%</p>
                 <p className="p20 text-gray-600">Revenue Growth</p>
               </div>
@@ -239,9 +237,7 @@ export default function LiferayConsultationPage() {
 
             {/* Heading and Description Block - Positioned below with a top margin */}
             <div className="mt-24">
-              <h2 className="text-gray-900">
-                Your Digital Edge for Transformation Always Evolving with Liferay Consulting
-              </h2>
+              <h2 className="text-gray-900">Powering Your Digital Growth with Liferay Expertise</h2>
               <p className="p20 mt-[1.927vw] max-w-[500px] text-gray-600">
                 Simplifying complexity and driving transformation with expert Liferay Consulting services.
               </p>
@@ -300,7 +296,6 @@ export default function LiferayConsultationPage() {
               <div className="relative w-full max-w-[883px]">
                 {consultingServices.map((item, index) => {
                   const [ref, isInView] = useInView({ triggerOnce: true })
-
                   return (
                     <div
                       ref={ref as React.RefObject<HTMLDivElement>}
@@ -310,6 +305,7 @@ export default function LiferayConsultationPage() {
                       }`}
                       style={{ top: `calc(8.5rem + ${index * 4}rem)` }}
                     >
+                      {index === consultingServices.length - 1 && <div className="glow-bg absolute inset-0 -z-10" />}
                       <div className="flex w-full flex-col justify-center rounded-2xl border border-gray-700 bg-[#0C0C0C] p-9 pt-6 backdrop-blur-md transition-all duration-300 hover:border-[#00AEEF] md:min-h-[196px]">
                         <h4 className="mb-4 text-white">{item.title}</h4>
                         <div className="mb-4 h-[1px] bg-gray-700" />
@@ -336,9 +332,9 @@ export default function LiferayConsultationPage() {
               </h2>
             </div>
             <div className="flex h-full items-center">
-              <p className="p18 text-gray-500 text-right">
-                We deliver top-quality Liferay Consulting Services. From setup to support, <br></br>we’ve got you covered for all
-                your digital needs.
+              <p className="p18 text-right text-gray-500">
+                We deliver top-quality Liferay Consulting Services. From setup to support, <br></br>we’ve got you
+                covered for all your digital needs.
               </p>
             </div>
           </div>
@@ -415,7 +411,7 @@ export default function LiferayConsultationPage() {
           <div className="mt-9.5">
             {liferayProjectFeatures.map((feature) => (
               <div key={feature.title}>
-                <div className="flex flex-col items-start py-[57px] md:flex-row md:items-center gap-[4.1667vw]">
+                <div className="flex flex-col items-start gap-[4.1667vw] py-[57px] md:flex-row md:items-center">
                   {/* Icon */}
                   <div className="flex-shrink-0">
                     <Image src={feature.icon} alt="" width={64} height={64} className="h-16 w-16" />
@@ -475,7 +471,7 @@ export default function LiferayConsultationPage() {
                     {industry.description}
                   </p>
                   <div
-                    className={`absolute top-1/2 z-10 w-[10.9896vw] h-[9.0625vw] -translate-y-1/2 transform opacity-0 transition-all duration-300 group-hover:translate-x-4 group-hover:opacity-100 left-[55.875vw]`}
+                    className={`absolute top-1/2 left-[55.875vw] z-10 h-[9.0625vw] w-[10.9896vw] -translate-y-1/2 transform opacity-0 transition-all duration-300 group-hover:translate-x-4 group-hover:opacity-100`}
                   >
                     <Image
                       src={industry.image}
@@ -580,8 +576,8 @@ export default function LiferayConsultationPage() {
           <div className="mb-11">
             <h2 className="text-black">We Offer end-to-end Liferay Consulting Services</h2>
             <p className="p18 mt-4 text-gray-600">
-              Delivering complete Liferay Consulting solutions from planning to maintenance for seamless digital
-              transformation and growth.
+              Our team helps you at every step of your Liferay journey, including planning, setup, improvements, and
+              ongoing support, making your digital transformation easier, faster, and more effective.
             </p>
           </div>
 
@@ -599,7 +595,7 @@ export default function LiferayConsultationPage() {
                         : "border-transparent text-gray-500 hover:text-black"
                     }`}
                   >
-                    <h4 className="mr-4">{service.number})</h4>
+                    <h4 className="mr-2">{service.number})</h4>
                     <h4>{service.name}</h4>
                   </div>
                 </div>
