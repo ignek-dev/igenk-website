@@ -47,7 +47,7 @@ const liferayServicesLinks = [
 export default function ServicesMegaMenu({ onClose }: MegaMenuProps) {
   return (
     <>
-      <div className="global-container mx-auto w-full px-4 py-20 md:px-8">
+      <div className="global-container mx-auto w-full px-4 py-[clamp(20px,2vw,38px)] md:px-8">
         <div className="flex items-start gap-[2.083vw]">
           {/* Left Side: Image Card */}
           <div className="h-[-webkit-fill-available] flex-shrink-0" style={{ maxWidth: "27.135vw" }}>
@@ -99,11 +99,11 @@ export default function ServicesMegaMenu({ onClose }: MegaMenuProps) {
           </div>
 
           {/* Right Side: Service Links */}
-          <div className="flex flex-grow gap-[1.042vw]">
+          <div className="flex flex-grow">
             {/* Digital Experience Section */}
-            <div className="w-1/4">
-              <h4 className="mb-[2vw] font-medium whitespace-pre">Digital Experience</h4>
-              <ul className="flex flex-col gap-[1.4vw]">
+            <div className="w-1/3.5">
+              <h4 className="mb-[1.875vw] font-medium whitespace-pre">Digital Experience</h4>
+              <ul className="flex flex-col gap-[1.25vw]">
                 {digitalExperienceLinks.map((link) => (
                   <li key={link.text} className="flex h-[40px] items-center">
                     <a
@@ -121,13 +121,13 @@ export default function ServicesMegaMenu({ onClose }: MegaMenuProps) {
             </div>
 
             {/* Vertical Separator */}
-            <div className="mx-[2.083vw] w-[0.052vw] bg-white"></div>
+            <div className="mx-[2.8125rem] w-[1px] bg-white"></div>
 
             {/* Liferay Services Section */}
-            <div className="w-1/2">
-              <h4 className="mb-[2vw] font-medium">Liferay Services</h4>
+            <div className="flex-1">
+              <h4 className="mb-[1.875vw] font-medium">Liferay Services</h4>
               {/* Using a grid to create two columns */}
-              <ul className="grid grid-cols-2 gap-x-[10.5vw] gap-y-[1.6rem]">
+              <ul className="grid grid-cols-2 gap-x-[4.75rem] gap-y-[1.5rem]">
                 {liferayServicesLinks.map((link) => (
                   <li key={link.text} className="flex h-[40px] items-center">
                     <a

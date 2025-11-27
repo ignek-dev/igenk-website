@@ -83,7 +83,7 @@ export default function Footer() {
               {menus.map((menu) => (
                 <div key={menu.title}>
                   <p className="footer-text-header leading-[1.9rem] font-semibold! text-white">{menu.title}</p>
-                  <ul className="mt-5 space-y-8 tracking-[2%] text-white">
+                  <ul className="mt-9 space-y-8 tracking-[2%] text-white">
                     {menu.items.map((it) => (
                       <li className="" key={it.label}>
                         <Link href={it.href} className="cursor-pointer hover:text-white">

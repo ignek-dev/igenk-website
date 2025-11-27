@@ -9,6 +9,7 @@ import CompanyMegaMenu from "components/Navigation/CompanyMegaMenu"
 import InsightsMegaMenu from "components/Navigation/InsightsMegaMenu"
 import ServicesMegaMenu from "components/Navigation/ServicesMegaMenu"
 import SolutionsMegaMenu from "components/Navigation/SolutionsMegaMenu"
+import Tooltip from "components/UI/Tooltip"
 
 const menu = [
   { label: "Company", href: "#" },
@@ -121,19 +122,24 @@ export default function Navigation() {
 
             <div className="z-10 flex items-center gap-4.5">
               <CalendlyButton buttonColor={buttonInnerColor} />
-              <div className="nav-fancy-button">
-  <div className="nav-fancy-glow" style={{ "--button-bg-color": buttonInnerColor } as React.CSSProperties}></div>
-              <button
-                type="button"
-                aria-label="Contact-Us"
-                className="nav-round-btn cursor-pointer"
-                onClick={() => router.push("/contact")}
-              >
-                <div className="nav-round-btn-inner cursor-pointer">
-                  <Image src="/images/icon/arrow-tr.png" alt="arrow-top-right" width={28} height={28} />
+              <Tooltip text="Contact Us">
+                <div className="nav-fancy-button">
+                  <div
+                    className="nav-fancy-glow"
+                    style={{ "--button-bg-color": buttonInnerColor } as React.CSSProperties}
+                  ></div>
+                  <button
+                    type="button"
+                    aria-label="Contact-Us"
+                    className="nav-round-btn cursor-pointer"
+                    onClick={() => router.push("/contact")}
+                  >
+                    <div className="nav-round-btn-inner cursor-pointer">
+                      <Image src="/images/icon/arrow-tr.png" alt="arrow-top-right" width={28} height={28} />
+                    </div>
+                  </button>
                 </div>
-              </button>
-              </div>
+              </Tooltip>
             </div>
           </nav>
         </header>
@@ -146,13 +152,13 @@ export default function Navigation() {
             animate={{ opacity: 1, y: 0 }}
             // exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 1.5, ease: "easeOut" }}
-            className={`top-0 left-0 z-50 w-full border-t border-white/10 bg-black text-white rounded-b-[80px] overflow-hidden shadow-2xl  ${
+            className={`top-0 left-0 z-50 w-full overflow-hidden rounded-b-[80px] border-t border-white/10 bg-black text-white shadow-2xl ${
               isScrolled ? "sticky" : "absolute"
             }`}
           >
             <header
-             className={`w-full text-white transition-colors duration-300 ${
-                 // Force black bg when menu is open to blend with the dropdown container
+              className={`w-full text-white transition-colors duration-300 ${
+                // Force black bg when menu is open to blend with the dropdown container
                 "bg-black"
               }`}
               onMouseEnter={() => setIsHeaderHovered(true)}
@@ -166,7 +172,14 @@ export default function Navigation() {
               )}{" "}
               <nav className="global-container mx-auto flex w-full items-center px-4 py-6 md:px-8">
                 <Link href="/" className="flex items-center gap-3" aria-label="Home">
-                  <Image src="/images/logo.svg" alt="Ignek logo" width={182} height={86} priority className="logo-responsive" />
+                  <Image
+                    src="/images/logo.svg"
+                    alt="Ignek logo"
+                    width={182}
+                    height={86}
+                    priority
+                    className="logo-responsive"
+                  />
                 </Link>
 
                 <div className="flex-1" />
@@ -195,19 +208,21 @@ export default function Navigation() {
 
                 <div className="flex items-center gap-4">
                   <CalendlyButton buttonColor={buttonInnerColor} />
-                  <div className="nav-fancy-button">
-  <div className="nav-fancy-glow"></div>
-                  <button
-                    type="button"
-                    aria-label="Contact-Us"
-                    className="nav-round-btn"
-                    onClick={() => router.push("/contact")}
-                  >
-                    <div className="nav-round-btn-inner cursor-pointer">
-                      <Image src="/images/icon/arrow-tr.png" alt="arrow-top-right" width={46} height={46} />
-                    </div>
-                  </button>
+                  <Tooltip text="Contact Us">
+                    <div className="nav-fancy-button">
+                      <div className="nav-fancy-glow"></div>
+                      <button
+                        type="button"
+                        aria-label="Contact-Us"
+                        className="nav-round-btn"
+                      onClick={() => router.push("/contact")}
+                    >
+                      <div className="nav-round-btn-inner cursor-pointer">
+                        <Image src="/images/icon/arrow-tr.png" alt="arrow-top-right" width={46} height={46} />
+                      </div>
+                    </button>
                   </div>
+                  </Tooltip>
                 </div>
               </nav>
               {activeMenu === "Company" && <CompanyMegaMenu onClose={closeMenu} />}
