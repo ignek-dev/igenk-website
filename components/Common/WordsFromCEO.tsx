@@ -19,8 +19,8 @@ const CEOSection = () => {
           className="relative max-w-[41.771vw] rounded-[30px] p-[3px]"
           style={{ background: "linear-gradient(129.83deg, #00979E 0.83%, #000000 82.69%)" }}
         >
-          <div className="h-full w-full rounded-[27px] bg-black pt-[3.49vw] pr-[2.5vw] pb-[4.115vw] pl-[3.333vw] shadow-[0_4px_4px_0_rgba(0,151,158,0.25)]">
-            <h2 className="!text-[2.083vw] tracking-[-2%] text-white">Heard From Our CEO</h2>
+          <div className="h-full w-full rounded-[27px] bg-black pt-[3.4896vw] pr-[2.5vw] pb-[2.2917vw] pl-[3.333vw] shadow-[0_4px_4px_0_rgba(0,151,158,0.25)]">
+            <h2 className="!text-[2.083vw] tracking-[-2%] text-white">Word From Our CEO</h2>
 
             <p className="mt-[1.51vw] text-justify text-[0.938vw] leading-[1.563vw] text-white">
               Over the past decade, my journey with Liferay has been a fascinating one. I’ve been there from its version
@@ -36,7 +36,7 @@ const CEOSection = () => {
               to continue this journey.
             </p>
 
-            <div className="mt-[2.813vw]">
+            <div className="mt-[1.51vw]">
               <span
                 className="mr-[0.729vw] text-[2.5vw] leading-[2.292vw] tracking-[-2%]"
                 style={{ fontFamily: "Rage Italic" }}
