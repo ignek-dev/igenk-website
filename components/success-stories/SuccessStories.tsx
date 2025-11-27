@@ -20,129 +20,115 @@ export const commonProvidedServices = [
 
 // Dummy Data - Updated to use commonProvidedServices
 
-
-const API_BASE = "https://insights.ignek.com/wp-json/wp/v2/portfolio";
+const API_BASE = "https://insights.ignek.com/wp-json/wp/v2/portfolio"
 const SuccessStories: React.FC = () => {
-  const [posts, setPosts] = useState<Story[]>([]);
-  const fetchPosts = useCallback(
-    async (idsToFilter: number[]) => {
-      try {
-        window.scrollTo({ top: 0, behavior: "smooth" });
+  const [posts, setPosts] = useState<Story[]>([])
+  const fetchPosts = useCallback(async (idsToFilter: number[]) => {
+    try {
+      window.scrollTo({ top: 0, behavior: "smooth" })
 
-        // Build API params
-        const params = new URLSearchParams({
-          per_page: String(50),
-          page: String(1),
-          _embed: "",
-        });
+      // Build API params
+      const params = new URLSearchParams({
+        per_page: String(50),
+        page: String(1),
+        _embed: "",
+      })
 
-        const res = await fetch(`${API_BASE}?${params.toString()}`, {
-          cache: "no-store",
-        });
+      const res = await fetch(`${API_BASE}?${params.toString()}`, {
+        cache: "no-store",
+      })
 
-        if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
+      if (!res.ok) throw new Error(`${res.status} ${res.statusText}`)
 
-        const data = (await res.json()) as WPPortfolioPost[];
-        // ✅ Filter only posts whose IDs are in the provided array
-        const filteredPosts = idsToFilter.length
-          ? data
+      const data = (await res.json()) as WPPortfolioPost[]
+      // ✅ Filter only posts whose IDs are in the provided array
+      const filteredPosts = idsToFilter.length
+        ? data
             .filter((post) => idsToFilter.includes(post.id))
-            .sort(
-              (a, b) => idsToFilter.indexOf(a.id) - idsToFilter.indexOf(b.id)
-            )
-          : data;
-        const mappedStories: Story[] = filteredPosts.map((post) => ({
-          id: post?.id,
-          slug: post?.slug,
-          imageSrc:
-            post._embedded?.["wp:featuredmedia"]?.[0]?.source_url ||
-            "/images/portfolio/portfolioImg.png",
-          tag: post._embedded?.["wp:term"]?.[0]?.[0]?.name || "General",
-          title: post.title.rendered,
-          description: post.excerpt.rendered,
-          services: [], // <-- Add this line to satisfy the interface
-        }))
+            .sort((a, b) => idsToFilter.indexOf(a.id) - idsToFilter.indexOf(b.id))
+        : data
+      const mappedStories: Story[] = filteredPosts.map((post) => ({
+        id: post?.id,
+        slug: post?.slug,
+        imageSrc: post._embedded?.["wp:featuredmedia"]?.[0]?.source_url || "/images/portfolio/portfolioImg.png",
+        tag: post._embedded?.["wp:term"]?.[0]?.[0]?.name || "General",
+        title: post.title.rendered,
+        description: post.excerpt.rendered,
+        services: [], // <-- Add this line to satisfy the interface
+      }))
 
-        setPosts(mappedStories)
-      } catch (err) {
-        console.error("Error fetching posts:", err);
-      }
-    },
-    []
-  );
+      setPosts(mappedStories)
+    } catch (err) {
+      console.error("Error fetching posts:", err)
+    }
+  }, [])
 
   useEffect(() => {
     // const id=[19498,32037,32555]
-    const categoryIds = [19498, 32037, 32555];
-    fetchPosts(categoryIds);
-  }, [fetchPosts]);
+    const categoryIds = [19498, 32037, 32555]
+    fetchPosts(categoryIds)
+  }, [fetchPosts])
   // Use the context hook here as well
 
-
-  const [stuck, setStuck] = useState<Map<number, boolean>>(new Map());
+  const [stuck, setStuck] = useState<Map<number, boolean>>(new Map())
 
   useEffect(() => {
     const handleScroll = () => {
-      const stickyCards = document.querySelectorAll(".success-sticky") as NodeListOf<HTMLElement>;
-      const map = new Map<number, boolean>();
+      const stickyCards = document.querySelectorAll(".success-sticky") as NodeListOf<HTMLElement>
+      const map = new Map<number, boolean>()
 
       stickyCards.forEach((card, index) => {
-        const rect = card.getBoundingClientRect();
+        const rect = card.getBoundingClientRect()
 
         // ⭐ SAME logic as your WhatMake component
         if (rect.top <= 200) {
-          map.set(index, true);
+          map.set(index, true)
         }
-      });
+      })
 
-      setStuck(map);
-    };
+      setStuck(map)
+    }
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
   return (
-    <div
-      id="success-stories"
-      className="stack-clip z-20 h-max w-full rounded-t-[5rem] bg-white text-black shadow-xl"
-    >
-      <div className="w-full py-12 md:py-16 global-container bg-[#F9FAF7]">
+    <div id="success-stories" className="stack-clip z-20 h-max w-full rounded-t-[5rem] bg-white text-black shadow-xl">
+      <div className="global-container w-full bg-[#F9FAF7] py-12 md:py-16">
         <div className="w-full px-0">
           {/* Header */}
 
           {/* Cards Container */}
+
           <div className="card-stack relative flex flex-col space-y-10">
             {posts.map((story, index) => (
               <React.Fragment key={index}>
-
+                {/* Title + Description only for first card */}
                 {index === 0 && (
                   <div className="mx-auto mb-8 max-w-3xl text-center">
-                    <h2 className="mb-4 global-container">
-                      Success Stories
-                    </h2>
-                    <p className="mt-1 p18 text-gray-600">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit...
-                    </p>
+                    <h2 className="global-container mb-4">Success Stories</h2>
+
+                    <p className="p18 mt-1 text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
                   </div>
                 )}
 
+                {/* Sticky Card */}
                 <div
-                  className={`success-sticky sticky transition-all duration-500 ${stuck.get(index) ? "stuck" : ""
-                    }`}
-                  style={{ top: `${200 + (index + 1) * 100}px` }}
+                  className="success-sticky sticky transition-all duration-500"
+                  style={{
+                    top: "200px",
+                    zIndex: 10 + index,
+                  }}
                 >
                   <SuccessStoryCard story={story} />
                 </div>
-
               </React.Fragment>
             ))}
           </div>
-
-
         </div>
       </div>
-    </div >
+    </div>
   )
 }
 

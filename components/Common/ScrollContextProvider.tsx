@@ -22,12 +22,14 @@ export const ScrollContextProvider = ({ children }: { children: ReactNode }) => 
   // This hook tracks the scroll progress of the ref'd div
   const { scrollYProgress } = useScroll({
     target: scrollContainerRef,
-    offset: ["start start", "end end"],
+    offset: ["start center", "end center"],
   })
 
   return (
     // This div creates the "scroll runway" for the animation
-    <div ref={scrollContainerRef} className="relative bg-black">
+    <div ref={scrollContainerRef} className="relative bg-black"
+    //  style={{ minHeight: "120vh" }}
+     >
       {/* The scroll progress is provided to any children */}
       <ScrollContext.Provider value={scrollYProgress}>{children}</ScrollContext.Provider>
     </div>

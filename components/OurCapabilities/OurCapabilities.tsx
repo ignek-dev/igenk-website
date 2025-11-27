@@ -5,68 +5,82 @@ import { useInView } from "hooks/useInView"
 import CapabilityCard from "./CapabilityCard"
 
 // Define the image paths at the top for easy management
-const platformIconPath = "/images/our-capabilities/plateformSection.png"
-const omniChannelIconPath = "/images/our-capabilities/omni-channel.png"
+const defaultIcon = "/images/our-capabilities/omni-channel.svg"
 
 const OurCapabilities: React.FC = () => {
-  const capabilitiesData = [
+ const capabilitiesData = [
     {
+      iconSrc: "/images/our-capabilities/platform-selection.svg",
       title: "Platform Selection",
       description: "Choose the right Liferay platform to achieve scalable digital transformation goals.",
     },
     {
+      iconSrc: "/images/our-capabilities/omni-channel.svg",
       title: "Omni-channel",
       description: "Deliver seamless, consistent experiences across web, mobile, and digital platforms.",
     },
     {
+      iconSrc: "/images/our-capabilities/platform-upgrade.svg",
       title: "Platform upgrades",
       description: "Upgrade to the latest Liferay DXP for enhanced performance and security.",
     },
     {
+      iconSrc: "/images/our-capabilities/cms.svg",
       title: "CMS",
       description: "Empower content teams with flexible, easy-to-manage Liferay CMS solutions.",
     },
     {
+      iconSrc: "/images/our-capabilities/personalization.svg",
       title: "Personalization",
       description: "Engage users with behavior-based, contextual, and data-driven personalized experiences.",
     },
     {
+      iconSrc: "/images/our-capabilities/search.svg",
       title: "Search",
       description: "Enhance content discovery and user experience with advanced Liferay search.",
     },
     {
+      iconSrc: "/images/our-capabilities/commerce.svg",
       title: "Commerce",
       description: "Build seamless, integrated Liferay Commerce experiences for digital shopping journeys.",
     },
     {
+      iconSrc: "/images/our-capabilities/dam.svg",
       title: "DAM",
       description: "Manage and distribute digital assets efficiently with Liferay DAM.",
     },
     {
+      iconSrc: "/images/our-capabilities/workflow-automation.svg",
       title: "Workflow Automation",
       description: "Automate processes, improve governance, and boost efficiency using Liferay workflows.",
     },
     {
+      iconSrc: "/images/our-capabilities/multisite-management.svg",
       title: "Multisite Management",
       description: "Control multiple sites easily with centralized Liferay platform management.",
     },
     {
+      iconSrc: "/images/our-capabilities/integrations.svg",
       title: "Integrations",
       description: "Connect enterprise systems and tools seamlessly with Liferay DXP.",
     },
     {
+      iconSrc: "/images/our-capabilities/headless-architecture.svg",
       title: "Headless Architecture",
       description: "Deliver flexible, API-driven experiences through Liferay headless architecture.",
     },
     {
+      iconSrc: "/images/our-capabilities/lowcode.svg",
       title: "Lowcode",
       description: "Develop faster with Liferay low-code tools and simplified workflows.",
     },
     {
+      iconSrc: "/images/our-capabilities/security-governance.svg",
       title: "Security & Governance",
       description: "Ensure enterprise-grade data protection, compliance, and secure Liferay environments.",
     },
     {
+      iconSrc: "/images/our-capabilities/artificial-intelligence.svg",
       title: "Artificial intelligence",
       description: "Leverage AI insights to personalize experiences and automate smarter decisions.",
     },
@@ -78,10 +92,10 @@ const OurCapabilities: React.FC = () => {
   })
 
   return (
-    <section ref={sectionRef} className="bg-black py-16 text-white pb-10">
+    <section ref={sectionRef} className="bg-black py-[3.333vw] text-white pb-10">
       <div className="w-full global-container">
         {/* Header Section */}
-        <div className="mb-12 flex flex-col lg:mb-20 lg:flex-row lg:items-end lg:justify-between">
+        <div className="mb-[5.052vw] flex flex-col lg:mb-20 lg:flex-row lg:items-end lg:justify-between">
           <h2
             className={`mb-4 lg:mb-0 ${
               isInView ? "animate-when-visible animate-slide-top" : "opacity-0"
@@ -100,15 +114,14 @@ const OurCapabilities: React.FC = () => {
 
         {/* Capabilities Grid */}
         <div
-          className={`grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3 ${
+          className={`grid grid-cols-1 gap-x-[7.708vw] gap-y-[5.729vw] md:grid-cols-2 lg:grid-cols-3 ${
             isInView ? "animate-when-visible animate-fade-in animation-delay-200" : "opacity-0"
           }`}
         >
           {capabilitiesData.map((capability, index) => (
             <CapabilityCard
-              key={index}
-              // Alternate between the two icons based on whether the index is even or odd
-              iconSrc={index % 2 === 0 ? platformIconPath : omniChannelIconPath}
+              key={capability.title}
+              iconSrc={capability.iconSrc ?? defaultIcon}
               title={capability.title}
               description={capability.description}
             />

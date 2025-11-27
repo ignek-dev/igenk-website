@@ -22,7 +22,7 @@ const platformsData = [
 const FlexiblePlatforms = () => {
   const [sectionRef, isInView] = useInView({ threshold: 0.2, triggerOnce: true })
   return (
-    <section ref={sectionRef} className="overflow-hidden bg-[#F9FAF7] py-20 text-black lg:py-16">
+    <section ref={sectionRef} className="overflow-hidden bg-[#F9FAF7] text-black py-[3.333vw]">
       <div className="global-container grid items-start gap-12 lg:grid-cols-2">
         {/* Left Column: Title and Description */}
         <div
@@ -36,13 +36,13 @@ const FlexiblePlatforms = () => {
             Flexible Platforms.
             <span className="block">Scalable Experiences.</span>
           </h2>
-          <p className="mt-6 p18 text-gray-600">
+          <p className="mt-[0.833vw] p18 text-gray-600">
             We specialize in Liferay DXP framework development, offering expert Liferay Consulting, Liferay Implementation, and Liferay Portal Development Services that help enterprises create connected, scalable, and high-performing digital ecosystems built for the future. Our team ensures seamless integration, optimized performance, and personalized user experiences that accelerate digital transformation and business growth.
           </p>
         </div>
 
         <div
-          className={`group relative min-h-[646px] w-full overflow-hidden rounded-[20px] transition-all duration-[1500ms] ease-out ${
+          className={`group relative min-h-[33.646vw] w-full overflow-hidden rounded-[20px] transition-all duration-[1500ms] ease-out ${
             isInView
               ? "animate-when-visible animate-slide-right animation-delay-200 translate-x-0 opacity-100"
               : "translate-x-20 opacity-0"
@@ -63,7 +63,7 @@ const FlexiblePlatforms = () => {
           {/* 3. Text Overlay (Visible on Hover) */}
           <div className="absolute inset-0 flex flex-col justify-end bg-black/40 p-6 text-white opacity-0 transition-opacity duration-500 group-hover:opacity-100 md:p-10">
             <h3 className="text-4xl font-bold">{platformsData[0]?.platformName}</h3>
-            <div className="mt-4 max-w-2xl p18 leading-relaxed text-gray-200">
+            <div className="mt-[0.833vw] max-w-2xl p18 leading-relaxed text-gray-200">
               {platformsData[0]?.hoverDescription}
             </div>
           </div>

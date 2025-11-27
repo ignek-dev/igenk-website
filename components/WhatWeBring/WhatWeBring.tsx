@@ -1,6 +1,6 @@
 "use client"
 
-import { motion, useTransform } from "framer-motion"
+import { motion,  useSpring, useTransform } from "framer-motion"
 import React from "react"
 import { useSharedScroll } from "components/Common/ScrollContextProvider"
 import WhatWeBringCard from "./WhatWeBringCard"
@@ -50,7 +50,8 @@ const WhatWeBring: React.FC = () => {
   const scrollYProgress = useSharedScroll()
 
   // The rest of the animation logic is the same
-  const x = useTransform(scrollYProgress, [0, 0.75], ["0%", "-210%"])
+  const rawX = useTransform(scrollYProgress, [0.1, 0.5], ["0%", "-120%"])
+  const x = useSpring(rawX, { stiffness: 90, damping: 14 })
 
   return (
     // This section is "sticky" and stays on screen while the parent scrolls
