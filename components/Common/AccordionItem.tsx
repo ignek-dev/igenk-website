@@ -16,7 +16,7 @@ const AccordionItem: React.FC<AccordionItemProps> = ({ title, content }) => {
   return (
     <div className="w-full border-b border-gray-700">
       <button
-        className="flex w-full items-center justify-between py-6 text-left text-xl font-semibold text-white focus:outline-none"
+        className="flex w-full items-center justify-between py-[1.563vw] text-left text-xl font-semibold text-white focus:outline-none"
         onClick={() => setIsOpen(!isOpen)}
       >
         <span className="p24 leading-[36px]">{title}</span>

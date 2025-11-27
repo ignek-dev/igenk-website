@@ -22,9 +22,9 @@ const StatCard: React.FC<StatCardProps> = ({ number, title, description, isInVie
         isInView ? `animate-when-visible ${animationDirection} animation-delay-200` : "opacity-0"
       }`}
     >
-      <div className="line-height-[88px] mb-16.5 text-8xl font-semibold text-white">{number}</div>
-      <div className="mb-12.5 border-t border-gray-700" /> {/* Horizontal line */}
-      <p className="line-height-[32px] mb-2 text-[1.25vw] font-semibold text-white">{title}</p>
+      <div className="line-height-[88px] mb-[3.49vw] text-8xl font-semibold text-white">{number}</div>
+      <div className="mb-[2.656vw] border-t border-gray-700" /> {/* Horizontal line */}
+      <p className="line-height-[32px] mb-[0.833vw] text-[1.25vw] font-semibold text-white">{title}</p>
       <p className="w-full p18 leading-relaxed text-gray-400">{description}</p>
     </div>
   )

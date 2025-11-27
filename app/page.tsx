@@ -54,7 +54,7 @@ export default function HomePage() {
             <br />
             <span>With IGNEK Today</span>
           </h1>
-          <div className="mt-20 grid items-start gap-8 md:grid-cols-2">
+          <div className="mt-[3.646vw] grid items-start gap-8 md:grid-cols-2">
             <p className="max-w-xl p20 text-white/80 leading-[30px]">
               Transform your digital landscape with cutting-edge DXP solutions tailored to your unique business needs.
             </p>
@@ -73,7 +73,7 @@ export default function HomePage() {
           </div>
 
           {/* Divider line matching text color */}
-          <div className="mt-17.5 border-t border-white/30" />
+          <div className="mt-[3.49vw] border-t border-white/30" />
 
           {/* Logos row: 7 items with spacing and responsive wrap */}
           <div className="mt-12 overflow-hidden">

@@ -42,19 +42,19 @@ const Achievements = () => {
         <div
           className={`flex flex-col items-start ${isInView ? "animate-when-visible animate-slide-left" : "opacity-0"}`}
         >
-          <h2 className="mb-8 max-w-[658px]">
+          <h2 className="mb-[1.458vw] max-w-[658px]">
             Delivering Impact,
             <br />
             Defined by Liferay Success
           </h2>
-          <p className="mb-7 max-w-[588px] p18 text-gray-300">
+          <p className="mb-[1.458vw] max-w-[588px] p18 text-gray-300">
             We design and develop digital solutions that adapt and grow with your business needs. Our platforms are built to deliver seamless performance, exceptional user experiences, and long-term scalability.
           </p>
           <ScheduleMeetingButton isFullWidth={false} btnName="Schedule Meeting" />
         </div>
 
         {/* Right Column: Stats Grid */}
-        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2">
+        <div className="grid grid-cols-1 gap-[3.49vw] sm:grid-cols-2">
           {statData.map((stat, index) => (
             <StatCard
               key={index}

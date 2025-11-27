@@ -18,7 +18,7 @@ export default function EndToEndSection() {
   return (
     // Attach the ref from the hook to the section
     <section ref={sectionRef} className="relative bg-black text-white">
-      <div className="w-full py-12 md:py-16 global-container">
+      <div className="w-full py-[3.333vw] global-container">
         {/* Top Heading */}
         <div className="grid gap-10 md:grid-cols-2 md:gap-12 lg:gap-0">
           <div>
@@ -40,7 +40,7 @@ export default function EndToEndSection() {
         </div>
 
         {/* Digital Experience */}
-        <div className="mt-21 grid gap-12 md:mt-24 md:grid-cols-2 md:gap-14 lg:gap-16">
+        <div className="mt-[5.052vw] grid gap-[3.333vw] md:grid-cols-2">
           <div className={getAnimationClass("animate-slide-left", "animation-delay-200")}>
             <div className="mt-6.5">
               <p className="text-[2.083vw] font-semibold">Digital Experience</p>
@@ -80,7 +80,7 @@ export default function EndToEndSection() {
         </div>
 
         {/* Staff Augmentation */}
-        <div className="mt-20 grid gap-12 md:grid-cols-2 md:gap-14 lg:mt-24 lg:gap-16">
+        <div className="mt-[5.052vw] grid gap-12 md:grid-cols-2 md:gap-14 lg:mt-24 lg:gap-16">
           <div className={getAnimationClass("animate-slide-left", "animation-delay-200")}>
             <p className="text-2xl font-semibold md:text-[40px]">Staff augmentation</p>
             <p className="mt-3 max-w-xl text-lg text-white/80">
