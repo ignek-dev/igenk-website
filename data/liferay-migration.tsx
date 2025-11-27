@@ -34,31 +34,31 @@ export const steps = [
 export const features = [
   {
     title: "Easy Integration Capabilities",
-    position: "top-[-10px] left-1/2  right-[-100px]",
+    position: "top-[-0.1vw] left-1/2 right-[-5.21vw]",
   },
   {
     title: "B2B & B2C Digital Commerce",
-    position: "top-[25%] right-[30px] flex flex-row",
+    position: "top-[25%] right-[1.20vw] flex flex-row",
   },
   {
     title: "Forms, Workflow, and Collaboration",
-    position: "bottom-[20%] right-[-18%] flex flex-row",
+    position: "bottom-[20%] right-[-7.80vw] flex flex-row",
   },
   {
     title: "Low Code/No Code Tool for Rapid Custom Development",
-    position: "bottom-[10%] left-1/2 -translate-x-1/2 min-w-[347px]",
+    position: "bottom-[9%] left-1/2 -translate-x-1/2 min-w-[18.07vw]",
   },
   {
     title: "Native Headless Capabilities",
-    position: "bottom-[22%] left-[-130px] flex flex-row-reverse ",
+    position: "bottom-[22%] left-[-8.30vw] flex flex-row-reverse",
   },
   {
     title: "Efficient Content Management System",
-    position: "top-[45%] left-[-20px] flex flex-row-reverse",
+    position: "top-[45%] left-[-3.03vw] flex flex-row-reverse",
   },
   {
     title: "Create Personalized Experiences for Users",
-    position: "top-[20%] left-[-135px] flex flex-row-reverse",
+    position: "top-[20%] left-[-8.3vw] flex flex-row-reverse",
   },
 ]
 

@@ -81,12 +81,12 @@ export default function LiferayMigrationPage() {
 
       {/* Circular reasons section */}
   <section className="bg-[#f7f7f7] text-black">
-  <div className="mx-auto w-full px-[0.208vw] py-[3.333vw] md:px-[0.417vw] md:py-[3.333vw] lg:py-[3.333vw] [@media(min-width:1440px)]:px-[10vw] [@media(min-width:1920px)]:px-[10vw]">
+  <div className="mx-auto w-full pt-[3.75vw] pb-[2.76vw] ">
     <div className="relative flex flex-col items-center justify-center px-[0.313vw] text-center">
       {/* Outer Dotted Circle */}
-      <div className="relative flex h-[48.125vw] w-[48.125vw] items-center justify-center rounded-full border-[0.104vw] border-dotted border-gray-300">
+      <div className="relative flex h-[48.125vw] w-[48.125vw] items-center justify-center rounded-full border-[0.104vw] border-dashed border-[#000000]">
         {/* Inner Dotted Circle */}
-        <div className="flex h-[31.25vw] w-[31.25vw] items-center justify-center rounded-full border border-dotted border-gray-300">
+        <div className="flex h-[31.25vw] w-[31.25vw] items-center justify-center rounded-full border border-dashed border-[#000000]">
           {/* Center Content */}
           <div className="max-w-[13.542vw] flex flex-col items-center text-center">
            <div className="mx-auto mb-4 flex  items-center justify-center rounded-md bg-blue-100">
@@ -127,8 +127,11 @@ export default function LiferayMigrationPage() {
         {/* Circular Feature Points */}
         {features.map((feature, index) => (
           <div key={index} className={`absolute ${feature.position} flex w-[12.5vw] flex-col items-center text-center`}>
-            <div className="mb-[0.104vw] flex h-[2.083vw] min-h-[2.083vw] w-[2.083vw] min-w-[2.083vw] items-center justify-center rounded-full bg-black text-white">
-              ✓
+            <div className="mb-[0.104vw] flex h-[2.917vw] min-h-[2.917vw] w-[2.917vw] min-w-[2.917vw] items-center justify-center rounded-full bg-black text-white">
+              <svg width="23" height="17" viewBox="0 0 23 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 10L7 16L22 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
             </div>
             <p className="text-[1.042vw] leading-snug font-medium text-gray-800">{feature.title}</p>
           </div>
@@ -140,13 +143,13 @@ export default function LiferayMigrationPage() {
 
       {/* Migration Process timeline */}
       <section className="bg-black text-white">
-        <div className="mx-auto w-full px-4 py-[64px] md:px-8 md:py-[64px] lg:py-[64px] [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
+        <div className="mx-auto w-full py-[3.333vw] global-container">
           <div className="grid items-start gap-10 lg:grid-cols-[0.9fr_1.1fr]">
-            <div className="sticky top-0 w-[80%]">
-              <h2 className="text-3xl leading-[60px] font-semibold sm:text-4xl md:text-5xl">
+            <div className="sticky flex flex-col gap-[1.458vw] top-0 w-[28.698vw]">
+              <h2 className=" leading-[60px] font-semibold ">
                 Our Liferay Migration Process
               </h2>
-              <p className="mt-4 mb-8 max-w-xl text-lg text-white">
+              <p className="  p20 text-gray-500">
                 We optimize transitions from legacy systems to Liferay with our proven Liferay Portal Migration
                 services, using best practices for seamless upgrades. Our expertise ensures cost-effective, high-quality
                 transitions. Here is our Liferay Migration process.
@@ -156,32 +159,34 @@ export default function LiferayMigrationPage() {
 
             <div>
               <div className="relative">
-                <div className="relative ml-12 flex flex-col">
+                <div className="relative   mt-[0.313vw]  ml-[3.75vw] flex flex-col">
                   {/* Vertical line */}
                   <div
-                    className="absolute top-0 left-7 h-[89%] bg-white [@media(min-width:2140px)]:h-[90%]"
+                    className="absolute top-0 left-[2.3vw] h-[89%] bg-white [@media(min-width:2140px)]:h-[90%]"
                     style={{ width: "4px" }}
                   ></div>
 
                   {steps.map((step, index) => (
                     <div
                       key={index}
-                      className={`relative flex items-start ${index !== steps.length - 1 ? "mb-12" : "mb-0"}`}
+                      className={`relative flex items-start ${index !== steps.length - 1 ? "" : "mb-0"}`}
                     >
                       {/* Step circle */}
                       <div className="flex flex-col items-center">
-                        <div className="z-10 flex h-15 w-15 items-center justify-center rounded-full border-4 border-white bg-black text-2xl text-white">
+                        <div className="z-10 flex h-[4.688vw] w-[4.688vw] items-center justify-center rounded-full border-4 border-white bg-black text-2xl text-white">
                           {index + 1}
                         </div>
                       </div>
 
                       {/* Step content */}
-                      <div className={`${index !== steps.length - 1 ? "border-b border-white/20 pb-8" : ""} ml-8`}>
+                      <div className={`${index !== steps.length - 1 ? " mb-[2.708vw]  max-w-[34.583vw] pb-[2.708vw]" : ""} ml-[3.438vw]`}>
                         <div className="flex items-center justify-between">
-                          <h3 className="text-2xl font-medium md:text-3xl">{step.title}</h3>
+                          <h3 className="text-[1.563vw]! text-[#FFFFFF] font-medium! ">{step.title}</h3>
                         </div>
-                        <p className="text-gray/50 mt-4 text-lg">{step.desc}</p>
+                        <p className="text-gray/50 mt-[1.25vw] p20">{step.desc}</p>
+                        <hr className="pr-[2.24vw]"/>
                       </div>
+                      
                     </div>
                   ))}
                 </div>

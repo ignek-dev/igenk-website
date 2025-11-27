@@ -24,14 +24,14 @@ const cardData = [
   },
   {
     id: 21,
-    iconWhite: "/images/blogs/Nodejs-white.svg",
+    iconWhite: "/images/blogs/Spring-boot-white.svg",
     iconBlue: "/images/blogs/Spring-Boot.svg",
     title: "Spring Boot",
     description: "Explore strategies, leadership skills, and growth tactics for",
   },
   {
     id: 237,
-    iconWhite: "/images/blogs/Spring-boot-white.svg",
+    iconWhite: "/images/blogs/Nodejs-white.svg",
     iconBlue: "/images/blogs/Nodejs.svg",
     title: "Node.js",
     description: "Explore strategies, leadership skills, and growth tactics for",
