@@ -243,7 +243,7 @@ export default function LiferayPerformanceTuningPage() {
 
       {/* What We Do With Our Liferay DXP Performance Tuning Services */}
       <section className="bg-[#f7f7f7] text-black">
-        <div className="global-container mx-auto w-full px-4 py-[64px] md:px-8 md:py-[64px] lg:py-[64px]">
+        <div className="global-container mx-auto w-full px-4 pt-[64px] pb-[2.083vw]">
           <div className="relative grid items-start md:grid-cols-2">
             <h2 className="w-[43.802vw] text-[#000000]">
               What We Do With Our Liferay DXP <br /> Performance Tuning Services
@@ -266,11 +266,11 @@ export default function LiferayPerformanceTuningPage() {
                       activeIndex === index
                         ? "border-black text-black"
                         : "border-gray-300 text-gray-600 hover:border-black hover:text-black"
-                    } mb-[2.917vw]`}
+                    }   ${index !== items.length - 1 ? "mb-[2.917vw]" : "mb-0"}  `}
                     onClick={() => setActiveIndex(index)}
                   >
-                    <h3 className="text-[1.563vw]! font-semibold!">{item.title}</h3>
-                    <p className="p16 mt-2 max-w-[537px] text-gray-500 md:text-base">{item.desc}</p>
+                    <h3 className="text-[1.563vw]! text-black font-semibold!">{item.title}</h3>
+                    <p className="p16 mt-2 max-w-[537px] text-gray-700 md:text-base">{item.desc}</p>
                   </div>
                 ))}
               </div>

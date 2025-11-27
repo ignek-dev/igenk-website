@@ -172,9 +172,9 @@ useEffect(() => {
             <h2 className="w-[41.25vw] text-[2.5vw]! font-semibold">
               Key Activities Under Our Liferay Architecture Design Services
             </h2>
-            <p className="max-w-[31.25vw ] text-right text-[0.938vw] font-normal text-white md:self-end md:justify-self-end md:text-right">
-              We offer design documents for Liferay Portal Architecture, covering<br/> system components, security, load
-              balancing, backup.
+            <p className="max-w-[31.25vw ] text-right text-[0.938vw] font-normal text-white self-center ">
+              We provide Liferay Portal architecture design documents covering security, <br/>
+              scalability, integrations, content management, and monitoring.
             </p>
           </div>
 
