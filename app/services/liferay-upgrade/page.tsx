@@ -39,12 +39,17 @@ const metadata: Metadata = {
   },
 }
 
+const rowHeights = ["h-[17.5vw]", "h-[23.5vw]", "h-[18.5vw]"]
+
 export default function LiferayUpgradePage() {
   const containerRef = useRef<HTMLDivElement | null>(null)
   const [isDragging, setIsDragging] = useState(false)
   const [startX, setStartX] = useState(0)
   const [scrollStart, setScrollStart] = useState(0)
   const [targetScroll, setTargetScroll] = useState<number | null>(null)
+
+  const phases = upgradePhases
+  const maxRows = Math.max(...phases.map((p) => p.sections.length))
 
   // Custom smooth scroll logic (2-second easing)
   useEffect(() => {
@@ -102,7 +107,7 @@ export default function LiferayUpgradePage() {
                 <span className="block">DXP 7.4 Upgrade</span>
               </h1>
             </div>
-            <p className="p18 absolute bottom-0 max-w-xl text-right text-white mt-[1.458vw] md:justify-self-end">
+            <p className="p18 absolute bottom-0 mt-[1.458vw] max-w-xl text-right text-white md:justify-self-end">
               Liferay DXP 7.4 introduces advanced features, enhanced performance, and stronger security for a more
               powerful digital experience.
             </p>
@@ -157,15 +162,19 @@ export default function LiferayUpgradePage() {
                     className="relative flex w-[260px] flex-shrink-0 flex-col items-center px-6 sm:w-[220px] md:w-[240px] lg:w-[260px]"
                   >
                     {/* TOP TITLE */}
-                    {index % 2 === 0 && <p className="w-[16.406vw] mb-4 text-center leading-[36px] text-[1.563vw] font-medium text-black">{step.title}</p>}
+                    {index % 2 === 0 && (
+                      <p className="mb-4 w-[16.406vw] text-center text-[1.563vw] leading-[36px] font-medium text-black">
+                        {step.title}
+                      </p>
+                    )}
 
                     {/* SPACER */}
                     <div style={{ height: 0 }} />
 
                     {/* DOT */}
                     <div
-                      className={`relative z-20 flex h-[4.167vw] w-[4.167vw] items-center justify-center rounded-full bg-black p24 font-medium text-white ${
-                        index === 0? "mt-[35px]" : index % 2 !== 0? "mt-[88px]" : "mt-0"
+                      className={`p24 relative z-20 flex h-[4.167vw] w-[4.167vw] items-center justify-center rounded-full bg-black font-medium text-white ${
+                        index === 0 ? "mt-[35px]" : index % 2 !== 0 ? "mt-[88px]" : "mt-0"
                       }`}
                     >
                       {step.number}
@@ -173,7 +182,7 @@ export default function LiferayUpgradePage() {
 
                     {/* BOTTOM TITLE */}
                     {index % 2 !== 0 && (
-                      <p className="mt-6 text-center w-[16.406vw] text-[1.563vw] leading-[36px] font-medium text-black">
+                      <p className="mt-6 w-[16.406vw] text-center text-[1.563vw] leading-[36px] font-medium text-black">
                         {step.title}
                       </p>
                     )}
@@ -186,24 +195,24 @@ export default function LiferayUpgradePage() {
       </section>
 
       <section className="bg-black py-[64px] text-white md:py-[64px] lg:py-[64px]">
-        <div className="items-start global-container">
+        <div className="global-container items-start">
           <div className="relative grid items-start gap-10 md:grid-cols-2">
             <h2 className="">
-              Key Benefits of Liferay DXP 7.4 Upgrade
+              Key Benefits of Liferay DXP 7.4 <br /> Upgrade
             </h2>
-            <p className="absolute bottom-0 p18 max-w-[35vw] text-right text-white md:justify-self-end">
+            <p className="p18 absolute bottom-0 max-w-[37vw] text-right text-white md:justify-self-end">
               Liferay DXP 7.4 Upgrade is essential for organizations aiming to enhance their digital experience
               capabilities and stay competitive in today’s fast-paced environment. Here are several compelling reasons
               to consider the upgrade
             </p>
           </div>
           <div className="pt-[3.021vw]">
-            <div className="grid grid-cols-1 gap-x-[166px] gap-y-[4.01vw] md:grid-cols-3">
+            <div className="grid grid-cols-1 gap-[4.01vw] md:grid-cols-3">
               {supprotAndMaintanceServices.map((item, index) => (
                 <div key={index} className="flex flex-col">
                   <div className="flex items-center justify-between border-b border-gray-300 last:border-b-0">
                     <p
-                      className="whitespace-wrap mb-[1.875vw] max-w-[215px] font-semibold text-[1.563vw]"
+                      className="whitespace-wrap mb-[1.875vw] max-w-[215px] text-[1.563vw] font-semibold"
                       dangerouslySetInnerHTML={{ __html: item.text }}
                     />
                     <span className="mb-3 pt-4 text-[40px] font-semibold">
@@ -211,7 +220,7 @@ export default function LiferayUpgradePage() {
                     </span>
                   </div>
                   {/* Description */}
-                  <p className="pt-[1.875vw] p20 text-white">{item.description}</p>
+                  <p className="p20 pt-[1.875vw] text-white">{item.description}</p>
                 </div>
               ))}
             </div>
@@ -220,79 +229,105 @@ export default function LiferayUpgradePage() {
       </section>
 
       <section className="bg-[#f7f7f7] py-[64px] text-black md:py-[64px] lg:py-[64px]">
-        <div className="items-start global-container">
+        <div className="global-container items-start">
           <div className="relative grid items-start gap-10 md:grid-cols-2">
             <h2 className="[@media(min-width:1440px)]:max-w-[430px] [@media(min-width:1500px)]:max-w-[430px]">
               Liferay DXP 7.4 Upgrade Process
             </h2>
-            <p className="absolute bottom-0 max-w-xl text-right p18 text-gray-700 md:justify-self-end">
+            <p className="p18 absolute bottom-0 max-w-4xl text-right text-gray-700 md:justify-self-end">
               Our Liferay DXP 7.4 upgrade process ensures smooth migration, improved performance, enhanced security, and
               feature-rich functionality with minimal downtime.
             </p>
           </div>
           <div className="pt-[3.021vw]">
-            <div className="grid grid-cols-1 border border-gray-300 md:grid-cols-3 auto-rows-fr">
-              {upgradePhases.map((phase, index) => (
-                <div key={index} className={`border-gray-300 ${index !== upgradePhases.length - 1 ? "border-r" : ""} `}>
-                  {/* Phase Header */}
+            {/* Header Row */}
+            <div className="grid grid-cols-1 border border-gray-300 md:grid-cols-3">
+              {phases.map((phase, idx) => (
+                <div key={idx} className={`border-gray-300 ${idx !== phases.length - 1 ? "border-r" : ""}`}>
                   <div className="bg-black py-[1.458vw] text-center text-[1.563vw] font-semibold text-white">
                     {phase.phase}
                   </div>
-
-                  {/* Sections */}
-                  <div className="flex-1">
-                  {phase.sections.map((section, idx) => (
-                    <div key={idx} className="mb-6 p-6 last:mb-0">
-                      <h3 className="mb-3 text-[1.563vw] font-medium">{section.title}</h3>
-
-                      {section.points.map((point, pIndex) => (
-                        <div key={pIndex} className="mb-4 flex gap-4">
-                          <span className="mt-1 inline-flex h-5 w-5 items-center justify-center">
-                            <svg
-                              width="20"
-                              height="18"
-                              viewBox="0 0 20 18"
-                              fill="none"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M12.375 1.125H1.125V16.875H16.875V11.625"
-                                stroke="black"
-                                strokeWidth="1.5"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                              />
-                              <path
-                                d="M5.625 8.625L9.375 12.375L18.375 2.625"
-                                stroke="black"
-                                strokeWidth="1.5"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                              />
-                            </svg>
-                          </span>
-                          <p className="p20" key={pIndex}>{point}</p>
-                        </div>
-                      ))}
-                    </div>
-                  ))}
-                  </div>
                 </div>
               ))}
+            </div>
+
+            {/* Section Rows */}
+            <div className="border-r border-b border-l border-gray-300 pt-[1.25vw]">
+              {Array.from({ length: maxRows }).map((_, rowIdx) => {
+                const height = rowHeights[rowIdx] || "min-h-[16.5vw]"
+
+                return (
+                  <div key={rowIdx} className={`grid grid-cols-1 md:grid-cols-3 ${height} border-gray-200`}>
+                    {phases.map((phase, colIdx) => {
+                      const section = phase.sections[rowIdx]
+
+                      return (
+                        <div
+                          key={colIdx}
+                          className={`px-[2.188vw] ${colIdx !== phases.length - 1 ? "border-r border-gray-300" : ""}`}
+                        >
+                          {section ? (
+                            <div className="flex h-full flex-col">
+                              {/* Title */}
+                              <h3 className="mb-3 text-[1.563vw] font-medium">{section.title}</h3>
+
+                              {/* Points */}
+                              <div className="flex-1 overflow-auto pr-2">
+                                {section.points.map((point, i) => (
+                                  <div key={i} className="mb-4 flex items-start gap-4">
+                                    <span className="mt-1 inline-flex h-5 w-5 items-center justify-center">
+                                      <svg
+                                        width="20"
+                                        height="18"
+                                        viewBox="0 0 20 18"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                      >
+                                        <path
+                                          d="M12.375 1.125H1.125V16.875H16.875V11.625"
+                                          stroke="black"
+                                          strokeWidth="1.5"
+                                          strokeLinecap="round"
+                                          strokeLinejoin="round"
+                                        />
+                                        <path
+                                          d="M5.625 8.625L9.375 12.375L18.375 2.625"
+                                          stroke="black"
+                                          strokeWidth="1.5"
+                                          strokeLinecap="round"
+                                          strokeLinejoin="round"
+                                        />
+                                      </svg>
+                                    </span>
+
+                                    <p className="p20">{point}</p>
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          ) : (
+                            <div className="h-full" />
+                          )}
+                        </div>
+                      )
+                    })}
+                  </div>
+                )
+              })}
             </div>
           </div>
         </div>
       </section>
 
       <section className="bg-black py-[64px] text-white lg:py-[64px]">
-        <div className="items-start global-container">
-          <div className="relative grid items-start gap-10 md:grid-cols-2">
-            <h2 className="">
-              Enhance Digital Experiences with the Liferay DXP 7.4 Upgrade
+        <div className="global-container items-start">
+          <div className="relative grid items-center gap-10 md:grid-cols-2">
+            <h2 className="min-w-[51.51vw]">
+              Enhance Digital Experiences with <br /> the Liferay DXP 7.4 Upgrade
             </h2>
-            <p className="absolute bottom-0 max-w-xl text-right p18 text-white md:justify-self-end">
-              Our dedicated Liferay team offers ongoing Liferay Support and Maintenance to address the challenges of a
-              dynamic
+            <p className="p18 absolute max-w-xl text-right text-white md:justify-self-end">
+              Our dedicated Liferay team offers ongoing Liferay Support <br /> and Maintenance to address the challenges
+              of a dynamic
             </p>
           </div>
           <div className="relative pt-[3.021vw]">
@@ -300,12 +335,13 @@ export default function LiferayUpgradePage() {
               {features.map((item, index) => (
                 <div className="relative" key={index}>
                   <div
-                    className={`w-[29.479vw] rounded-full border border-gray-700 bg-black p-6 text-center transition-all hover:border-blue-500 ${
+                   
+                    className={`w-[29.479vw] glow-box rounded-full border border-gray-700 bg-black p-6 text-center transition-all hover:border-blue-500 ${
                       index == 0 || index == 4 || index == 3 ? "ml-[100px]" : ""
                     } `}
                   >
                     <p className="mb-2 text-[1.25vw] font-semibold">{item.title}</p>
-                    <p className="text-[0.833vw] text-white leading-[24px]">{item.desc}</p>
+                    <p className="text-[0.833vw] leading-[24px] text-white">{item.desc}</p>
                   </div>
                 </div>
               ))}
@@ -337,7 +373,7 @@ export default function LiferayUpgradePage() {
                     </defs>
                   </svg>
                 </span>
-                <p className="font-medium text-gray-300">Liferay DXP 7.4</p>
+                <p className="text-[1.042vw] font-medium text-gray-300">Liferay DXP 7.4</p>
               </div>
             </div>
           </div>
@@ -345,12 +381,10 @@ export default function LiferayUpgradePage() {
       </section>
 
       <section className="bg-[#f7f7f7] py-[64px] text-black md:py-[64px] lg:py-[64px]">
-        <div className="items-start global-container">
+        <div className="global-container items-start">
           <div className="relative grid items-start gap-10 md:grid-cols-2">
-            <h2 className="">
-              Why Choose IGNEK For Liferay DXP 7.4 Upgrade Services?
-            </h2>
-            <p className="absolute bottom-0 max-w-xl text-right p18 text-gray-700 md:justify-self-end">
+            <h2 className="">Why Choose IGNEK For Liferay DXP 7.4 Upgrade Services?</h2>
+            <p className="p18 absolute items-center max-w-2xl text-right text-gray-700 md:justify-self-end">
               Liferay DXP 7.4 Upgrade is a pivotal step for organizations looking to enhance their digital experience.
               At IGNEK, we specialize in
             </p>
@@ -361,12 +395,12 @@ export default function LiferayUpgradePage() {
                 <div key={index} className="flex flex-col">
                   <div className="flex items-center justify-between border-b border-gray-300 last:border-b-0">
                     <p
-                      className="mb-[1.25vw] pt-4 font-semibold text-[30px]"
+                      className="mb-[1.25vw] text-[30px] font-semibold"
                       dangerouslySetInnerHTML={{ __html: item.text }}
                     />
                   </div>
                   {/* Description */}
-                  <p className="pt-[1.25vw] p20 text-gray-700">{item.description}</p>
+                  <p className="p20 pt-[1.25vw] text-gray-700">{item.description}</p>
                 </div>
               ))}
             </div>
