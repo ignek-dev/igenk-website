@@ -1,6 +1,6 @@
 "use client"
 
-import { motion, useTransform, useSpring } from "framer-motion"
+import { motion,  useSpring, useTransform } from "framer-motion"
 import React from "react"
 import { useSharedScroll } from "components/Common/ScrollContextProvider"
 import WhatWeBringCard from "./WhatWeBringCard"

@@ -144,7 +144,7 @@ export default function LiferayUpgradePage() {
               <div className="relative flex flex-nowrap pr-[320px]">
                 {/* 👇 THE CONNECTOR LINE — FULL WIDTH, SCROLLS WITH CONTENT */}
                 <div
-                  className="pointer-events-none absolute top-[118px] z-0"
+                  className="pointer-events-none absolute top-[125px] z-0"
                   style={{ width: dynamicSteps.length * 260 + "px" }}
                 >
                   <div className="mx-6 h-1 bg-gray-200"></div>
@@ -160,11 +160,11 @@ export default function LiferayUpgradePage() {
                     {index % 2 === 0 && <p className="w-[16.406vw] mb-4 text-center leading-[36px] text-[1.563vw] font-medium text-black">{step.title}</p>}
 
                     {/* SPACER */}
-                    <div style={{ height: 8 }} />
+                    <div style={{ height: 0 }} />
 
                     {/* DOT */}
                     <div
-                      className={`relative z-20 flex h-12 w-12 items-center justify-center rounded-full bg-black p24 font-medium text-white ${
+                      className={`relative z-20 flex h-[4.167vw] w-[4.167vw] items-center justify-center rounded-full bg-black p24 font-medium text-white ${
                         index === 0? "mt-[35px]" : index % 2 !== 0? "mt-[88px]" : "mt-0"
                       }`}
                     >
