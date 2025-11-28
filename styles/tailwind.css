@@ -836,7 +836,7 @@ h5 {
 .whatsmake-card {
   transition:
     background-color 0.2s ease-in-out,
-    color 0.8s ease-in-out;
+    color 0.2s ease-in-out;
 }
 
 /* Define the hover animation using keyframes */
