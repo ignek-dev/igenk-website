@@ -366,7 +366,7 @@ export default function LiferayConsultationPage() {
                         <p className="p18">{solution.description}</p>
                       </div>
                       <Image
-                        src={solution.icon}
+                        src={solution.iconActive}
                         alt={`${solution.title} icon`}
                         width={112}
                         height={112}
@@ -377,7 +377,7 @@ export default function LiferayConsultationPage() {
                     // Layout for inactive cards
                     <>
                       <Image
-                        src={solution.icon}
+                        src={solution.iconInactive}
                         alt={`${solution.title} icon`}
                         width={120}
                         height={120}
