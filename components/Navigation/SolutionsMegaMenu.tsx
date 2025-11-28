@@ -65,14 +65,14 @@ const aiLinks = [
 export default function SolutionsMegaMenu({ onClose }: MegaMenuProps) {
   return (
     <>
-      <div className="global-container mx-auto w-full px-4 py-10 md:px-8">
+      <div className="global-container mx-auto w-full px-4 py-10 pb-16 md:px-8">
         <div className="flex w-full justify-between gap-[5.21vw]">
           {/* Left Group (Solutions & Integrations) */}
           <div className="flex gap-[5.21vw]">
             <div>
-              <h4 className="mb-9">
+              <h5 className="mb-9">
                 Solutions
-              </h4>
+              </h5>
               <ul className="space-y-6">
                 {solutionsLinks.map((link, index) => (
                   <li key={`sol-${index}`}>
@@ -95,9 +95,9 @@ export default function SolutionsMegaMenu({ onClose }: MegaMenuProps) {
               </ul>
             </div>
             <div>
-              <h4 className="mb-9">
+              <h5 className="mb-9">
                 Integrations
-              </h4>
+              </h5>
               <ul className="space-y-6">
                 {integrationsLinks.map((link, index) => (
                   <li key={`int-${index}`}>
@@ -123,9 +123,9 @@ export default function SolutionsMegaMenu({ onClose }: MegaMenuProps) {
 
           <div className="flex gap-[5.21vw]">
             <div>
-              <h4 className="mb-9">
+              <h5 className="mb-9">
                 Liferay Marketplace
-              </h4>
+              </h5>
               <ul className="space-y-6">
                 {marketplaceLinks.map((link, index) => (
                   <li key={`mp-${index}`}>
@@ -147,9 +147,9 @@ export default function SolutionsMegaMenu({ onClose }: MegaMenuProps) {
               </ul>
             </div>
             <div>
-              <h4 className="mb-9">
+              <h5 className="mb-9">
                 Liferay + AI
-              </h4>
+              </h5>
               <ul className="space-y-6">
                 {aiLinks.map((link, index) => (
                   <li key={`ai-${index}`}>

@@ -113,11 +113,11 @@ export default function CompanyMegaMenu({ onClose }: MegaMenuProps) {
       {/* Background Gradient */}
       {/* <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_14%_0%,#00979E_0%,#0E7BF800_60%)] opacity-40" /> */}
 
-      <div className="global-container mx-auto w-full px-4 py-10 md:px-8">
-        <div className="grid grid-cols-12 items-start gap-8">
+      <div className="global-container mx-auto w-full px-4 py-10 pb-16 md:px-8">
+        <div className="grid grid-cols-12 items-start gap-[3.1875rem]">
           {/* Left Side: Cards */}
           <div className="col-span-5">
-            <div className="flex w-full max-w-[588px] flex-col gap-4">
+            <div className="flex w-full flex-col gap-7">
               {companyLinks.map((link) => (
                 <Link
                   href={link.href}
@@ -156,8 +156,8 @@ export default function CompanyMegaMenu({ onClose }: MegaMenuProps) {
               IGNEK delivers smart, high-quality digital experiences that transform businesses, through expert engineering, modern design, and reliable technology solutions.
             </p>
 
-            <div className="mt-16 grid grid-cols-3 gap-y-6 border-white/10">
-              <div className="relative pr-4 border-r border-[#4B5563]">
+           <div className="mt-16 flex border-white/10">
+              <div className="flex-grow w-1/3 relative pr-[2.375rem] border-r border-[#4B5563]">
                 <h5 className="mb-6.5 font-medium">General</h5>
                 <ul className="space-y-2">
                   {contactDetails.general.map((item) => (
@@ -171,8 +171,7 @@ export default function CompanyMegaMenu({ onClose }: MegaMenuProps) {
                           alt={item.text}
                           width={41}
                           height={41}
-                          objectFit="contain"
-                          className="h-[28px] w-[28px] [@media(min-width:1440px)]:h-[32px] [@media(min-width:1440px)]:w-[32px] [@media(min-width:1536px)]:h-[36px] [@media(min-width:1536px)]:w-[36px] [@media(min-width:1920px)]:h-[41px] [@media(min-width:1920px)]:w-[41px]"
+                          className="h-[28px] w-[28px] object-contain [@media(min-width:1440px)]:h-[32px] [@media(min-width:1440px)]:w-[32px] [@media(min-width:1536px)]:h-[36px] [@media(min-width:1536px)]:w-[36px] [@media(min-width:1920px)]:h-[41px] [@media(min-width:1920px)]:w-[41px]"
                         />
                         <p className="whitespace-wrap p20 font-semibold! text-[#FFFFFF]">{item.text}</p>
                       </a>
@@ -183,7 +182,7 @@ export default function CompanyMegaMenu({ onClose }: MegaMenuProps) {
               </div>
 
               {/* Sales sections */}
-              <div className="relative px-4 border-r border-[#4B5563]">
+              <div className="flex-grow-[1.2] relative px-[2.375rem] border-r border-[#4B5563]">
                 <h5 className="mb-6.5 font-medium">Sales</h5>
                 <ul className="space-y-2">
                   {contactDetails.sales.map((item) => (
@@ -197,10 +196,9 @@ export default function CompanyMegaMenu({ onClose }: MegaMenuProps) {
                           alt={item.text}
                           width={41}
                           height={41}
-                          objectFit="contain"
-                          className="h-[28px] w-[28px] [@media(min-width:1440px)]:h-[32px] [@media(min-width:1440px)]:w-[32px] [@media(min-width:1536px)]:h-[36px] [@media(min-width:1536px)]:w-[36px] [@media(min-width:1920px)]:h-[41px] [@media(min-width:1920px)]:w-[41px]"
+                          className="h-[28px] w-[28px] object-contain [@media(min-width:1440px)]:h-[32px] [@media(min-width:1440px)]:w-[32px] [@media(min-width:1536px)]:h-[36px] [@media(min-width:1536px)]:w-[36px] [@media(min-width:1920px)]:h-[41px] [@media(min-width:1920px)]:w-[41px]"
                         />
-                        <p className="p20 font-semibold! text-[#FFFFFF]">{item.text}</p>
+                        <p className="whitespace-nowrap p20 font-semibold! text-[#FFFFFF]">{item.text}</p>
                       </a>
                     </li>
                   ))}
@@ -210,7 +208,7 @@ export default function CompanyMegaMenu({ onClose }: MegaMenuProps) {
               </div>
 
               {/* HR sections */}
-              <div className="relative pl-4">
+              <div className="flex-grow w-1/3.5 relative pl-[2.375rem]">
                 <h5 className="mb-6.5 font-medium">HR</h5>
                 <ul className="space-y-2">
                   {contactDetails.hr.map((item) => (
@@ -227,7 +225,7 @@ export default function CompanyMegaMenu({ onClose }: MegaMenuProps) {
                           objectFit="contain"
                           className="h-[28px] w-[28px] [@media(min-width:1440px)]:h-[32px] [@media(min-width:1440px)]:w-[32px] [@media(min-width:1536px)]:h-[36px] [@media(min-width:1536px)]:w-[36px] [@media(min-width:1920px)]:h-[41px] [@media(min-width:1920px)]:w-[41px]"
                         />
-                        <p className="p20 font-semibold! text-[#FFFFFF]">{item.text}</p>
+                        <p className="whitespace-nowrap p20 font-semibold! text-[#FFFFFF]">{item.text}</p>
                       </a>
                     </li>
                   ))}
@@ -235,7 +233,7 @@ export default function CompanyMegaMenu({ onClose }: MegaMenuProps) {
               </div>
             </div>
 
-            <div className="mt-8 flex items-center gap-14 border-white/10 pt-8">
+            <div className="mt-8 flex items-center gap-25 border-white/10 pt-8">
               <div className="flex items-center gap-3 sm:gap-4 md:gap-5 lg:gap-6 xl:gap-[1.0417vw]">
                 <Image
                   src={"/images/icon/location.png"}

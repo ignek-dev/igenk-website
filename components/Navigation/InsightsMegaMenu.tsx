@@ -58,7 +58,7 @@ export default function InsightsMegaMenu({ onClose }: MegaMenuProps) {
       {/* Background Gradient */}
       {/* <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_14%_0%,#00979E_0%,#0E7BF800_60%)] opacity-40" /> */}
 
-      <div className="global-container mx-auto w-full px-4 py-10 md:px-8">
+      <div className="global-container mx-auto w-full px-4 py-10 pb-16 md:px-8">
         <div className="grid grid-cols-12 items-start gap-8">
           {/* Left Side: Cards */}
           <div className="col-span-5">
