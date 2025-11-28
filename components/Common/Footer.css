@@ -84,7 +84,7 @@ text {
 @media screen and (min-width: 1440px) {
   .gradient-box {
     height: 26rem;
-    padding-top: 6rem;
+    padding-top: 5rem;
   }
 
   text {
@@ -96,7 +96,7 @@ text {
 @media screen and (min-width: 1536px) {
   .gradient-box {
     height: 26rem;
-    padding-top: 8rem;
+    padding-top: 5rem;
   }
 
   text {
@@ -108,7 +108,7 @@ text {
 @media screen and (min-width: 1920px) {
   .gradient-box {
     height: 29rem;
-    padding-top: 8rem;
+    padding-top: 5rem;
   }
 
   text {
@@ -193,14 +193,14 @@ text {
   }
 }
 
-@media (min-width: 1024px) and (max-width: 1440px) {
+@media (min-width: 1024px) and (max-width: 1439px) {
   .auto-grid {
     grid-template-columns: repeat(2, max-content);
     justify-content: space-around;
   }
 }
 
-@media (min-width: 1441px) {
+@media (min-width: 1440px) {
   .auto-grid {
     grid-template-columns: repeat(4, max-content);
     justify-content: space-between;
