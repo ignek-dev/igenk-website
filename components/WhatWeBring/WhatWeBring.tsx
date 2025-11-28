@@ -130,7 +130,7 @@ const WhatWeBring: React.FC = () => {
       {/* Top pause buffer (px) to ensure initial pause — keeps first cards visible */}
       <div style={{ height: topBufferPx }} />
 
-      {/* Sticky viewport */}
+   
       <section
         ref={stickyRef}
         className="sticky top-0 z-10 flex items-center overflow-hidden py-16 text-white"
