@@ -84,7 +84,7 @@ export const TestimonialCard: React.FC<{ data: TestimonialData }> = ({
         {/* Review side */}
         <div className="p-[2.083vw] flex flex-col justify-between">
           <div>
-            <div className="flex items-center mb-[0.781vw]">
+            <div className="flex items-center h-[2.656vw] mb-[0.781vw]">
               <Image
                 src={data.logo!}
                 alt={data.companyName!}
@@ -125,7 +125,7 @@ export const TestimonialCard: React.FC<{ data: TestimonialData }> = ({
       style={{ scrollSnapAlign: "start" }}
     >
       <div>
-        <div className="flex items-center mb-[0.781vw]">
+        <div className="flex items-center h-[2.656vw] mb-[0.781vw]">
           <Image
             src={data.logo!}
             alt={data.companyName!}
@@ -138,7 +138,7 @@ export const TestimonialCard: React.FC<{ data: TestimonialData }> = ({
           “{data.quote}”
         </p>
       </div>
-      <div className="flex items-center mt-[1.771vw]">
+      <div className="flex items-center  mt-[1.771vw]">
         <Image
           src={data.authorAvatar!}
           alt={data.authorName!}

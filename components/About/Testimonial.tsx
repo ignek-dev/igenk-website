@@ -6,10 +6,8 @@ import { TestimonialCard, TestimonialData } from "./TestimonialCard"
 export const Testimonial: React.FC = () => {
   const scrollContainerRef = useRef<HTMLDivElement>(null)
 
-  // ... (testimonials data omitted for brevity)
 
   const testimonials: TestimonialData[] = [
-    // ... (Testimonial data here) ...
     {
       id: "video-review",
       type: "video-review",
