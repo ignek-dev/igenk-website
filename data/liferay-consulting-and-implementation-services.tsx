@@ -123,28 +123,32 @@ export const liferaySolutions = [
     title: "Liferay DXP",
     description:
       "We help you get the most out of Liferay DXP with tailored solutions that enhance performance, scalability, and user experience.",
-    icon: "/images/liferay-pages-image/liferay-consultation-page/Liferay-dxp.png",
+    iconActive: "/images/liferay-pages-image/liferay-consultation-page/Liferay-dxp.png",
+    iconInactive: "/images/liferay-pages-image/liferay-consultation-page/liferay-blue.png",
   },
   {
     id: "Liferay Commerce",
     title: "Liferay Commerce",
     description:
       "Build powerful, customizable online stores with seamless integrations and a smooth shopping experience using Liferay Commerce.", // Add description for all cards
-    icon: "/images/liferay-pages-image/liferay-consultation-page/Liferay-commerce.png",
+    iconActive: "/images/liferay-pages-image/liferay-consultation-page/commerce-white.png",
+      iconInactive: "/images/liferay-pages-image/liferay-consultation-page/Liferay-commerce.png",
   },
   {
     id: "Analytics Cloud",
     title: "Analytics Cloud",
     description:
       "Gain real-time insights into user behavior and engagement with Liferay Analytics Cloud to make smarter business decisions.", // Add description for all cards
-    icon: "/images/liferay-pages-image/liferay-consultation-page/Analytics-cloud.png",
+    iconActive: "/images/liferay-pages-image/liferay-consultation-page/cloud-white.png",
+      iconInactive: "/images/liferay-pages-image/liferay-consultation-page/Analytics-cloud.png",
   },
   {
     id: "DXP Cloud",
     title: "DXP Cloud",
     description:
       "Deploy, scale, and manage your digital solutions effortlessly with Liferay DXP Cloud, ensuring speed, security, and high availability.", // Add description for all cards
-    icon: "/images/liferay-pages-image/liferay-consultation-page/Dxp-cloud.png",
+    iconActive: "/images/liferay-pages-image/liferay-consultation-page/dxp-white.png",
+      iconInactive: "/images/liferay-pages-image/liferay-consultation-page/Dxp-cloud.png",
   },
 ]
 
