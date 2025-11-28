@@ -66,11 +66,11 @@ export default function LiferayMigrationPage() {
           </div>
 
           {/* Feature tabs */}
-          <div className="mt-[3.177vw] flex flex-wrap gap-5">
+          <div className="mt-[3.177vw] flex flex-wrap gap-[1.875vw]">
             {featureTabs.map((label) => (
               <span
                 key={label}
-                className="p20 inline-flex items-center rounded-full border border-[#374151] px-[1.458vw] py-[0.833vw] text-lg text-white shadow-[0px_4px_10px_0px_#00979E40] transition-colors"
+                className="inline-flex items-center rounded-[2.083vw] border border-[#374151] bg-black px-[1.458vw] py-[0.833vw] p20 text-white shadow-[0_0.208vw_0.521vw_0_rgba(0,151,158,0.25)] transition-colors"
               >
                 {label}
               </span>
@@ -129,7 +129,7 @@ export default function LiferayMigrationPage() {
           <div key={index} className={`absolute ${feature.position} flex w-[12.5vw] flex-col items-center text-center`}>
             <div className="mb-[0.104vw] flex h-[2.917vw] min-h-[2.917vw] w-[2.917vw] min-w-[2.917vw] items-center justify-center rounded-full bg-black text-white">
               <svg width="23" height="17" viewBox="0 0 23 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M1 10L7 16L22 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M1 10L7 16L22 1" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
 </svg>
 
             </div>

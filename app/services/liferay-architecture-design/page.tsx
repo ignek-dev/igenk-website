@@ -66,6 +66,11 @@ export default function LiferayArchitectureDesignPage() {
   return () => observer.disconnect()
 }, [])
 // Handle page scroll for horizontal scrolling
+// Add this state
+const [isStickyActive, setIsStickyActive] = useState(false)
+
+// Handle page scroll for horizontal scrolling with sticky behavior
+// Handle page scroll for horizontal scrolling with sticky behavior
 useEffect(() => {
   if (!containerRef.current || !sectionRef.current) return
 
@@ -123,7 +128,7 @@ useEffect(() => {
           </div>
 
           {/* Feature tabs */}
-          <div className="mt-[3.177vw] flex flex-wrap gap-9">
+          <div className="mt-[3.177vw] flex flex-wrap gap-[1.875vw]">
             {featureTabs.map((label, index) => (
              <span
                 key={index}
@@ -136,36 +141,56 @@ useEffect(() => {
         </div>
       </section>
 
-      <section ref={sectionRef}>
+<section ref={sectionRef} className="relative">
+  {/*
+    1. The section needs significant vertical height to define the scroll duration.
+       You will need to set this height dynamically or manually via a class/style.
+       Example: style={{ height: '300vh' }}
+       In a real app, you might calculate the required height based on containerRef.scrollWidth.
+  */}
+  <div style={{ height: '300vh' }} className="h-[300vh] pointer-events-none absolute w-full top-[137px] left-0" aria-hidden="true" />
+
+
   <div className="mx-auto w-full">
-    <div
-      className="flex cursor-grab overflow-x-auto [-ms-overflow-style:'none'] [scrollbar-width:'none'] [&::-webkit-scrollbar]:hidden"
-      ref={containerRef}
+    
+    {/* The inner container holding the horizontal content should be sticky, 
+      effectively "pinning" it to the top of the screen while the parent section's 
+      300vh of scroll is being consumed.
       
-    >
+      We rely on the isStickyActive state to conditionally apply the 'sticky' class,
+      although typically in this setup, the sticky class is always present, and the
+      JS controls the content's horizontal movement while pinned.
       
-      {systemArchitecure.map((item, index) => (
-        <div
-          key={index}
-          className={`flex-shrink-0 px-[3.333vw] ${index === 0 ? "ml-[10vw] pl-0" : ""} ${
-            index === systemArchitecure.length - 1 ? "mr-[20vw]" : ""
-          } ${index !== systemArchitecure.length - 1 ? "border-r border-[#9CA3AF]" : ""}`}
-          style={{ width: "22%" }}
-        >
-          <div className="flex flex-col gap-[4.688vw]">
-            <h3 className="mt-[3.802vw] h-[88px] max-w-[16.51vw] text-[1.875vw] leading-normal font-semibold text-gray-600">
-              {item.text}
-            </h3>
-            <p className="p20 mt-auto mb-[3.802vw] max-w-[15.729vw] leading-relaxed text-gray-500">
-              {item.description}
-            </p>
+      However, since your JS logic toggles isStickyActive, we'll use that here.
+    */}
+    <div className={`w-full ${isStickyActive ? "sticky top-[137px]" : ""}`}>
+
+      <div
+        className="flex cursor-grab overflow-x-auto [-ms-overflow-style:'none'] [scrollbar-width:'none'] [&::-webkit-scrollbar]:hidden"
+        ref={containerRef}
+      >
+        {systemArchitecure.map((item, index) => (
+          <div
+            key={index}
+            className={`flex-shrink-0 px-[3.333vw] ${index === 0 ? "ml-[10vw] pl-0" : ""} ${
+              index === systemArchitecure.length - 1 ? "mr-[20vw]" : ""
+            } ${index !== systemArchitecure.length - 1 ? "border-r border-[#9CA3AF]" : ""}`}
+            style={{ width: "22%" }}
+          >
+            <div className="flex flex-col gap-[4.688vw]">
+              <h3 className="mt-[3.802vw] h-[88px] max-w-[16.51vw] text-[1.875vw] leading-normal font-semibold text-gray-600">
+                {item.text}
+              </h3>
+              <p className="p20 mt-auto mb-[3.802vw] max-w-[15.729vw] leading-relaxed text-gray-500">
+                {item.description}
+              </p>
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   </div>
 </section>
-
       <section className="bg-black text-white">
         <div className="global-container mx-auto w-full px-4 py-[3.333vw]">
           <div className="relative grid items-start gap-10 md:grid-cols-2">
