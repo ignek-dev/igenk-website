@@ -37,23 +37,16 @@ const TimelineCard: React.FC<TimelineCardProps> = ({
     return () => clearInterval(interval);
   }, [data.images.length]);
 
-  // generate random vertical offsets for dividers
-  // const randomOffsets = Array.from({ length: 4 }, () => Math.floor(Math.random() * 60) - 30);
-
   return (
     <div className="relative flex flex-col items-center mt-[5.625vw]">
-      {/* Background Dividers (first one has teal square) */}
       <div className="absolute h-[373px] left-1/2 -translate-x-1/2 flex gap-[3.854vw] -z-10 items-start">
-        {/* First Divider — main one with teal square */}
-
-        <div className="relative w-[0.052vw]  border border-r-0 border-[#9CA3AF] border-opacity-40 h-[32.969vw] flex flex-col items-center">
+        <div className="relative w-[0.052vw] border border-r-0 border-[#9CA3AF] border-opacity-40 h-[32.969vw] flex flex-col items-center">
           <span style={{ top: "-14%", fontFamily: "Times New Roman" }} className="italic leading-[2.531vw] text-[2.615vw] text-[#212121] mb-3 relative z-10">
             {data.year}
           </span>
           <div style={{ marginTop: "-1.563vw" }} className="absolute left-1/2 w-[0.833vw] h-[0.833vw] bg-[#00979E] -translate-x-1/2 mt-[0.417vw]" />
         </div>
 
-        {/* Remaining 4 straight background dividers */}
         {offsets.map((offset, idx) => (
           <div
             key={idx}
@@ -66,7 +59,6 @@ const TimelineCard: React.FC<TimelineCardProps> = ({
         ))}
       </div>
 
-      {/* Card */}
       <div
         className="w-[20.417vw] rounded-[0.833vw] p-[1.25vw] shadow-md bg-white flex flex-col overflow-hidden"
         style={{
@@ -74,7 +66,6 @@ const TimelineCard: React.FC<TimelineCardProps> = ({
           marginTop: `${data.marginTop}vw`
         }}
       >
-        {/* Image at the top */}
         <div className="relative w-[17.917vw] h-[17.917vw]">
           <Image
             src={data.images[currentImageIndex]?.src || ""}
@@ -82,7 +73,6 @@ const TimelineCard: React.FC<TimelineCardProps> = ({
             fill
             className="object-cover w-[17.917vw] h-[17.917vw] transition-opacity duration-500 rounded-[0.417vw]"
           />
-          {/* Dots indicator - only show if more than 1 image */}
           {data.images.length > 1 && (
             <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1 z-10">
               {data.images.map((_, idx) => (
@@ -101,7 +91,6 @@ const TimelineCard: React.FC<TimelineCardProps> = ({
           )}
         </div>
 
-        {/* Text content */}
         <div className="flex flex-col mt-[0.335vw]">
           <h3 className="!text-[1.146vw] font-semibold !leading-[1.563vw] tracking-[-0.025vw] text-black">
             {data.title}
@@ -112,7 +101,6 @@ const TimelineCard: React.FC<TimelineCardProps> = ({
         </div>
       </div>
 
-      {/* Optional connector to next card */}
       {showConnector && (
         <div className="absolute top-full left-1/2 w-0.5 h-24 bg-gray-300 mt-2 -translate-x-1/2 z-0"></div>
       )}
@@ -120,20 +108,11 @@ const TimelineCard: React.FC<TimelineCardProps> = ({
   );
 };
 
-// -----------------------------
-// Main Timeline Component
-// -----------------------------
 const CompanyTimeline = () => {
   const [currentScrollIndex, setCurrentScrollIndex] = useState(0);
 
   const goToPrevious = () => {
     setCurrentScrollIndex((prev) => Math.max(0, prev - 1));
-  };
-
-  const goToNext = () => {
-    setCurrentScrollIndex((prev) =>
-      Math.min(timelineData.length - 4, prev + 1)
-    );
   };
 
   const timelineData: TimelineCardData[] = [
@@ -229,9 +208,19 @@ const CompanyTimeline = () => {
     },
   ];
 
+  const cardsVisible = 2.7;
+  const maxScrollIndex = Math.max(0, timelineData.length - cardsVisible);
+
+  const goToNext = () => {
+    setCurrentScrollIndex((prev) =>
+      Math.min(maxScrollIndex, prev + 1)
+    );
+  };
+
+  const scrollAmountVw = 23.438;
+
   return (
     <section className="pt-[3.385vw] pb-[3.802vw] pl-[10vw] bg-[#F6F6F6] overflow-hidden">
-      {/* Header */}
       <div className="flex items-start justify-between pr-[10vw] mb-[1.458vw]">
         <div>
           <h2 className="text-black mb-[1.458vw]">
@@ -242,42 +231,29 @@ const CompanyTimeline = () => {
           </p>
         </div>
 
-        {/* Navigation Arrows */}
         <div className="flex gap-[1.25vw]">
           <button
             onClick={goToPrevious}
-            disabled={currentScrollIndex === 0}
-            className="w-[3.333vw] cursor-pointer h-[3.333vw] bg-black text-white rounded-full flex items-center justify-center disabled:opacity-50"
+            className="w-[3.333vw] cursor-pointer h-[3.333vw] bg-black text-white rounded-full flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed"
           >
             <Image src="/images/about/arrow-left.png" className="h-[1.875vw] w-[1.875vw]" alt="left-arrow" width={18} height={18} />
           </button>
           <button
             onClick={goToNext}
-            disabled={currentScrollIndex >= timelineData.length - 4}
-            className="w-[3.333vw] cursor-pointer h-[3.333vw] bg-black text-white rounded-full flex items-center justify-center disabled:opacity-50"
+            className="w-[3.333vw] cursor-pointer h-[3.333vw] bg-black text-white rounded-full flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed"
           >
             <Image src="/images/about/arrow-right.png" className="h-[1.875vw] w-[1.875vw]" alt="right-arrow" width={18} height={18} />
           </button>
         </div>
       </div>
 
-      {/* Horizontal Timeline */}
       <div>
-        {/* Center Line */}
-        {/* <div className="absolute top-[60px] left-[192px] right-[192px] h-[1px] bg-gray-300 z-0"></div> */}
-
-        {/* Cards Container */}
-        <div
-          className="flex"
-          style={{
-            transform: `translateX(-${currentScrollIndex * 340}px)`,
-          }}
-        >
+        <div className="overflow-hidden">
           {timelineData.length > 0 && (
             <div
               className="relative flex gap-[2.969vw] pl-[0.365vw] transition-transform duration-500 z-10"
               style={{
-                transform: `translateX(-${currentScrollIndex * 340}px)`,
+                transform: `translateX(-${currentScrollIndex * scrollAmountVw}vw)`,
               }}
             >
               {timelineData.map((item, i) => (
@@ -291,6 +267,7 @@ const CompanyTimeline = () => {
                   )}
                 </React.Fragment>
               ))}
+              <div className="w-[10vw]" />
             </div>
           )}
         </div>

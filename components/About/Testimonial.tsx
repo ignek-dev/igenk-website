@@ -14,7 +14,7 @@ export const Testimonial: React.FC = () => {
       id: "video-review",
       type: "video-review",
       videoThumbnail: "/images/about/ayushi-1.jpg",
-      logo: "/images/about/navvis_logo.jpeg",
+      logo: "/images/about/NAVVIS.webp",
       companyName: "NAVVIS",
       quote:
         "Reliability and expertise come to my mind when I think about Bhavin. I was particularly impressed by his reliability and flexibility - though working remotely with him and a time difference of a couple of hours, he responded quickly, reacted flexible to our changing demands and provided well thought-out solutions for things that were hard to solve before. No matter how tricky the problem, he made sure that the communication was always very friendly and clear. Anyone who needs Liferay expertise would be lucky to work with Bhavin.",
@@ -25,7 +25,7 @@ export const Testimonial: React.FC = () => {
     {
       id: "unified-aviation",
       type: "text",
-      logo: "/images/about/mibusoft_inc__logo.jpeg",
+      logo: "/images/about/Mibusoft.webp",
       companyName: "Mibusoft Inc. ",
       quote:
         "I was overseeing the development of a healthcare portal based on Liferay, led by Bhavin and his exceptional team. Bhavin's swift adoption of FHIR and HL7 healthcare standards showcased his commitment to staying at the forefront of industry advancements. Their expertise in Liferay development is truly remarkable. Bhavin and his dedicated team, known as IGNEK team, possess an innate understanding of the Liferay Portal environment.",
@@ -36,75 +36,59 @@ export const Testimonial: React.FC = () => {
     {
       id: "edut",
       type: "text",
-      logo: "/images/about/logo.svg",
+      logo: "/images/about/EduT.webp",
       companyName: "EduT",
       quote: "I have had privilege to work with Bhavin for one of Manufacturing portal on Liferay Platform. I had the pleasure of witnessing his exceptional expertise in Liferay. He is Liferay Machine who comes with his own bullets ( his Liferay team ). They know almost all Liferay features and more importantly they know very well what would be best/OOTB way for achieving particular requirements. Their technical proficiency and ability to tailor Liferay solutions to the specific needs of manufacturing portals are truly remarkable.",
       authorName: "Sarah Johnson",
       authorTitle: "CTO, EduT",
       authorAvatar: "/images/about/noDp.webp",
-    },
-    // {
-    //   id: "techcorp",
-    //   type: "text",
-    //   logo: "/images/about/logo.svg",
-    //   companyName: "TechCorp",
-    //   quote: "Outstanding partnership that delivered beyond our expectations",
-    //   authorName: "Michael Chen",
-    //   authorTitle: "VP Engineering",
-    //   authorAvatar: "/images/about/ayushi-1.jpg",
-    // },
+    }
   ]
 
   const scrollToNext = () => {
     if (scrollContainerRef.current) {
-      // Adjusted scroll amount to match a typical card width + margin for smoother navigation
       scrollContainerRef.current.scrollBy({ left: 1050, behavior: "smooth" })
     }
   }
 
   const scrollToPrevious = () => {
     if (scrollContainerRef.current) {
-      // Adjusted scroll amount
       scrollContainerRef.current.scrollBy({ left: -1050, behavior: "smooth" })
     }
   }
 
   return (
-    <section className="overflow-hidden global-container bg-[#F6F6F6] py-[3.333vw]">
-      {/* Header */}
-      <div className="mb-[1.458vw] flex justify-between">
+    <section className="overflow-hidden pl-[10vw] bg-[#F6F6F6] py-[3.333vw]">
+      <div className="mb-[1.458vw] flex justify-between pr-[10vw]">
         <div className="flex flex-col">
           <h2 className="mb-[0.677vw] text-black">
-            Words That Inspire  
+            Words That Inspire
           </h2>
           <p className="w-[49.063vw] text-[0.938vw] leading-[1.563vw] text-[#4B5563]">
             Our clients’ feedback drives us to innovate and excel as Liferay digital experience experts.
           </p>
         </div>
 
-      <div className="flex gap-[1.25vw]">
-                <button
-                  onClick={scrollToPrevious}
-                  className="w-[3.333vw] cursor-pointer h-[3.333vw] bg-black text-white rounded-full flex items-center justify-center disabled:opacity-50"
-                >
-                  <Image src="/images/about/arrow-left.png" className="h-[1.875vw] w-[1.875vw]" alt="left-arrow" width={18} height={18} />
-                </button>
-                <button
-                  onClick={scrollToNext}
-                  className="w-[3.333vw] cursor-pointer h-[3.333vw] bg-black text-white rounded-full flex items-center justify-center disabled:opacity-50"
-                >
-                  <Image src="/images/about/arrow-right.png" className="h-[1.875vw] w-[1.875vw]" alt="right-arrow" width={18} height={18} />
-                </button>
-              </div>
+        <div className="flex gap-[1.25vw]">
+          <button
+            onClick={scrollToPrevious}
+            className="w-[3.333vw] cursor-pointer h-[3.333vw] bg-black text-white rounded-full flex items-center justify-center disabled:opacity-50"
+          >
+            <Image src="/images/about/arrow-left.png" className="h-[1.875vw] w-[1.875vw]" alt="left-arrow" width={100} height={100} />
+          </button>
+          <button
+            onClick={scrollToNext}
+            className="w-[3.333vw] cursor-pointer h-[3.333vw] bg-black text-white rounded-full flex items-center justify-center disabled:opacity-50"
+          >
+            <Image src="/images/about/arrow-right.png" className="h-[1.875vw] w-[1.875vw]" alt="right-arrow" width={100} height={100} />
+          </button>
+        </div>
 
       </div>
 
-      {/* Scroll Wrapper: Defines the fixed-height viewport for scrolling */}
       <div className="">
-        {/* Carousel: Now flex and horizontally scrollable */}
         <div
           ref={scrollContainerRef}
-          // The fix is here: using overflow-x-scroll and removing absolute positioning
           className="scrollbar-hide flex h-full overflow-x-scroll"
           style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         >

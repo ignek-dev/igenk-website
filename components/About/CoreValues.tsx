@@ -80,9 +80,9 @@ const CoreValues = () => {
                             truncate pl-[132px] !leading-[3.75vw] !font-normal
                             text-[#000000] 
                             transition-transform duration-300 
-                            group-hover:translate-x-[8.906vw]
-                            group-hover:pl-[4.135vw]
-                        "
+                            group-hover:pl-[15.625vw]
+                            "
+                            // group-hover:translate-x-[8.906vw]
                             >
                                 {v.title}
                             </h2>
@@ -99,7 +99,7 @@ const CoreValues = () => {
                             {/* Hover image */}
                             <div
                                 className="
-                            pointer-events-none absolute left-[6.875vw] top-1/2 z-10 
+                            pointer-events-none absolute left-[8.229vw] top-1/2 z-10 
                             h-[6.25vw] w-[6.25vw] -translate-y-1/2 -translate-x-2 
                             overflow-hidden rounded-[0.313vw] opacity-0 
                             transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100

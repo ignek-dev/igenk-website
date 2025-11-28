@@ -88,13 +88,10 @@ export const TestimonialCard: React.FC<{ data: TestimonialData }> = ({
               <Image
                 src={data.logo!}
                 alt={data.companyName!}
-                width={40}
-                height={40}
-                className="mr-[0.625vw] h-[2.083vw] w-[2.083vw]"
+                width={100}
+                height={100}
+                className="mr-[0.625vw] h-[2.656vw] w-auto"
               />
-              <h4 className=" text-black ">
-                {data.companyName}
-              </h4>
             </div>
             <p className="text-[#6F6C90] text-[0.938vw] leading-[1.563vw]">
               “{data.quote}”
@@ -105,8 +102,8 @@ export const TestimonialCard: React.FC<{ data: TestimonialData }> = ({
             <Image
               src={data.authorAvatar!}
               alt={data.authorName!}
-              width={60}
-              height={60}
+              width={100}
+              height={100}
               className="rounded-full h-[3.125vw] w-[3.125vw]"
             />
             <div className="ml-[0.885vw]">
@@ -132,14 +129,11 @@ export const TestimonialCard: React.FC<{ data: TestimonialData }> = ({
           <Image
             src={data.logo!}
             alt={data.companyName!}
-            width={40}
-            height={40}
-            className="mr-[0.625vw] h-[2.083vw] w-[2.083vw]"
+            width={100}
+            height={100}
+            className="mr-[0.625vw] h-[2.656vw] w-auto "
           />
-          <h4 className="text-black ">
-            {data.companyName}
-          </h4>
-        </div>
+         </div>
         <p className="text-[#6F6C90] text-[0.938vw] leading-[1.563vw]">
           “{data.quote}”
         </p>
@@ -148,8 +142,8 @@ export const TestimonialCard: React.FC<{ data: TestimonialData }> = ({
         <Image
           src={data.authorAvatar!}
           alt={data.authorName!}
-          width={60}
-          height={60}
+          width={100}
+          height={100}
           className="rounded-full h-[3.125vw] w-[3.125vw]"
         />
         <div className="ml-[0.885vw]">
