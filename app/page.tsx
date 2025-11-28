@@ -38,7 +38,8 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   return (
-    <main className="">
+    // enable smooth scrolling for anchor links
+    <main className="scroll-smooth">
       <section className="relative overflow-hidden bg-black text-white">
         {/* Top-left subtle radial gradient using provided colors */}
         <div className="pointer-events-none absolute top-0 left-0 -z-10 h-full w-full">
@@ -93,8 +94,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* MODIFICATION: Replace the entire section with our new component */}
-      <EndToEndSection />
+      {/* Wrap the EndToEndSection with a section that has the matching id */}
+      <section id="discover">
+        <EndToEndSection />
+      </section>
 
       <IntermediateFrame />
       <OurCapabilities />

@@ -20,23 +20,23 @@ const SuccessStoryCard: React.FC<{ story: Story }> = ({ story }) => {
   return (
     // The main card container
     <div className="rounded-2xl border border-[#E5E7EB] bg-white">
-      <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-2 p-[1.25vw]">
+      <div className="grid grid-cols-1 items-center gap-8 p-[1.25vw] lg:grid-cols-2">
         {/* Left Column: Image */}
-         <div className="aspect-[4/3] h-auto w-full overflow-hidden rounded-lg">
+        <div className="h-[29.063vw] w-[38.698vw] overflow-hidden rounded-lg">
           <Image
             src={story.imageSrc}
             alt={story.title}
-            width={800}
-            height={600}
-            className="h-full w-full object-contain"
+            width={743}
+            height={558}
+            className="h-full w-full object-fill"
           />
         </div>
 
         {/* Right Column: Content */}
         <div>
           <span
-            className="mb-[1.615vw] inline-block rounded-full border border-[#00979E] bg-white px-4 py-1.5 text-[0.729vw] font-semibold text-gray-800"
-            style={{ boxShadow: "0px 0px 12px -2px #00979E" }}
+            className="mb-[1.615vw] inline-block rounded-full border border-[#00979E] bg-white px-[1.823vw] py-1.5 text-[0.833vw] font-semibold text-gray-800"
+            // style={{ boxShadow: "0px 0px 12px -2px #00979E" }}
           >
             {story.tag}
           </span>
@@ -47,8 +47,7 @@ const SuccessStoryCard: React.FC<{ story: Story }> = ({ story }) => {
           />
           <Link
             href={`/case-study/${story.slug}`}
-            className="mb-[1.146vw] inline-flex items-center gap-1 rounded-full border border-[#00979E] bg-white px-5 py-2 text-sm font-semibold text-gray-800 transition-all hover:bg-gray-50"
-            style={{ boxShadow: "0px 0px 12px -2px #00979E" }}
+            className="semicircle-top relative mb-[1.354vw] inline-flex items-center gap-1 rounded-full border border-transparent bg-white px-5 py-2 text-sm font-semibold text-gray-800 transition-all hover:bg-gray-50"
           >
             Read case study
           </Link>

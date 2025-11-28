@@ -6,7 +6,7 @@ import ScheduleMeetingButton from "../Button/ScheduleMeetingButton" // Reusing y
 
 const ExpertCard: React.FC = () => {
   return (
-    <div className="flex flex-col gap-8 rounded-2xl bg-[#1C1C1C] px-6 py-8 md:px-8 md:py-10">
+    <div className="flex flex-col gap-8 rounded-2xl bg-[#1C1C1C] px-6 py-8 md:px-8 md:py-10 max-w-[28.906vw] h-[30.104vw]">
       {/* Top Heading */}
       <p className="text-[1.458vw] leading-snug font-bold text-white">
         Connect directly with our CEO to <br />
@@ -18,27 +18,27 @@ const ExpertCard: React.FC = () => {
         <Image
           src="/images/bhavinImage.png"
           alt="Bhavin Panchani"
-          width={64}
-          height={64}
+          width={110}
+          height={110}
           className="rounded-full border-2 border-[#00979E] object-cover"
         />
         <div>
           <p className="text-[0.9375vw] font-semibold text-white">Bhavin Panchani</p>
-          <p className="text-[0.729vw] text-gray-400">CEO @ IGNEK</p>
+          <p className="text-[1.042vw] text-gray-400">CEO @ IGNEK</p>
         </div>
       </div>
 
       {/* Schedule Meeting Button */}
-      <div>
+      <div className="mt-[0.521vw]">
         <ScheduleMeetingButton isFullWidth={true} btnName="Schedule Meeting" />
       </div>
 
       {/* Prefer Email */}
       <div className="pt-2">
-        <p className="mb-1 p16 text-gray-400">Prefer email ?</p>
+        <p className="mb-1 p16 text-[0.938vw] text-gray-400">Prefer email ?</p>
         <a
           href="mailto:sales@ignek.com"
-          className="group flex items-center justify-between text-lg font-semibold text-white"
+          className="group flex items-center justify-between text-[0.833vw] font-semibold text-white"
         >
           sales@ignek.com
           <div className="mt-4 flex items-center justify-between">
