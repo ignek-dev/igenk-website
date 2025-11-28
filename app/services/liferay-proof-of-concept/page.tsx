@@ -36,7 +36,7 @@ const metadata: Metadata = {
 
 export default function LiferayProofOfConceptPage() {
   return (
-    <main className="pb-[3.333vw]">
+    <main>
       {/* Hero */}
       <section className="bg-black text-white global-container pt-[7.917vw] pb-[3.802vw]">
         <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_10%_0%,#0E7BF8_0%,#00979E_40%,transparent_65%)] opacity-25" />
@@ -59,7 +59,7 @@ export default function LiferayProofOfConceptPage() {
           {featureTabs.map((label, index) => (
             <div
               key={index}
-              className="inline-flex p20 mr-[1.875vw] justify-center last:mr-0 items-center rounded-full border border-[#374151] px-[1.458vw] py-[1.094vw] text-white"
+              className="inline-flex p20 mr-[1.458vw]  justify-center last:mr-0 items-center rounded-full border border-[#374151] px-[1.458vw] py-[1.094vw] text-white"
             >
               {label}
             </div>
