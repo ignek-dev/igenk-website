@@ -156,7 +156,7 @@ export default function LiferayConsultationPage() {
   // Data for the new End-to-End Liferay Consulting Services section
 
   return (
-    <main className="pb-16">
+    <main>
       {/* Hero */}
       <section className="relative bg-[#0B63CE] text-white">
         <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_10%_0%,#0E7BF8_0%,#00979E_40%,transparent_65%)] opacity-25" />
@@ -351,9 +351,9 @@ export default function LiferayConsultationPage() {
                   key={solution.id}
                   onMouseEnter={() => setHoveredCard(solution.id)}
                   onMouseLeave={() => setHoveredCard(null)}
-                  className={`flex h-[340px] items-center rounded-lg p-8 transition-all duration-300 ease-in-out ${
+                  className={`flex h-[340px] items-center rounded-lg p-10 transition-all duration-300 ease-in-out ${
                     isCurrentPrimary
-                      ? "min-w-[35.8333vw] flex-grow-[2] basis-0 flex-row justify-between gap-8 bg-[#0B63CE] text-white [@media(min-width:1440px)]:flex-grow-[3] [@media(min-width:1800px)]:flex-grow-[2]"
+                      ? "min-w-[35.8333vw] flex-grow-[2] basis-0 flex-row justify-between gap-[4.1667vw] bg-[#0B63CE] text-white [@media(min-width:1440px)]:flex-grow-[3] [@media(min-width:1800px)]:flex-grow-[2]"
                       : "w-full flex-grow basis-0 flex-col justify-center border border-gray-200 bg-white text-gray-800 shadow-sm"
                   } `}
                 >
@@ -370,7 +370,7 @@ export default function LiferayConsultationPage() {
                         alt={`${solution.title} icon`}
                         width={112}
                         height={112}
-                        className="h-28 w-28 flex-shrink-0 object-contain transition-all duration-300 ease-in-out"
+                        className="h-[8.75vw] w-[8.75vw] flex-shrink-0 object-contain transition-all duration-300 ease-in-out"
                       />
                     </>
                   ) : (
@@ -381,7 +381,7 @@ export default function LiferayConsultationPage() {
                         alt={`${solution.title} icon`}
                         width={120}
                         height={120}
-                        className="h-30 w-30 object-contain transition-all duration-300 ease-in-out"
+                        className="h-[8.75vw] w-[8.75vw] object-contain transition-all duration-300 ease-in-out"
                       />
                       <h4 className="mt-[44px] text-center">{solution.title}</h4>
                     </>
@@ -586,7 +586,7 @@ export default function LiferayConsultationPage() {
             {/* Left Column: Numbered Service List */}
             <div className="flex flex-col">
               {endToEndServices.map((service, index) => (
-                <div key={index} className="py-6">
+                <div key={index} className="pb-12">
                   <div
                     onMouseEnter={() => setActivePillar(index)}
                     className={`flex w-fit cursor-pointer border-b-1 transition-all duration-300 ${

@@ -77,7 +77,7 @@ export default function BlogSection() {
   if (blogs?.length < 1) return <div className="text-black">Loading.......</div>
   return (
     <section className="bg-white text-black">
-      <div className="global-container pt-12 md:pt-16">
+      <div className="global-container p-16">
         <div className="grid items-center gap-10 md:grid-cols-2">
           <h2 className={` ${isInView ? "animate-when-visible animate-slide-left animation-delay-200" : "opacity-0"}`}>
             Explore What's Shaping <br /> Digital Today
@@ -105,7 +105,7 @@ export default function BlogSection() {
                 alt={main?.title || "Blog Post"}
                 width={856}
                 height={459}
-                className="min-h-[459px] object-cover"
+                className="min-h-[459px] object-unset"
               />
             </div>
             <h3 className="line-clamp-2 pt-[1.395vw] text-[#101012]">{blogs[0]?.title || "Blog Post"}</h3>
