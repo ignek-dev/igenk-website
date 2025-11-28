@@ -214,7 +214,7 @@ export default function LiferayConsultationPage() {
           {/* Left Content */}
           <div className="flex flex-1 flex-col justify-between gap-25">
             {/* Stats Row */}
-            <div className="flex-no-wrap grid-cols-2 items-center gap-20 [@media(min-width:1440px)]:grid [@media(min-width:1800px)]:flex">
+            <div className="flex-no-wrap grid-cols-2 items-center gap-[6.6667vw] [@media(min-width:1440px)]:grid [@media(min-width:1800px)]:flex">
               {/* Stat 1 */}
               <div className="flex items-center gap-3">
                 <p className="text-5xl font-bold text-[#171717]">30%</p>
@@ -340,7 +340,7 @@ export default function LiferayConsultationPage() {
           </div>
 
           {/* Solution Cards Grid */}
-          <div className="mt-[48px] flex flex-col gap-8 lg:flex-row">
+          <div className="mt-[48px] flex flex-col gap-[1.7708vw] lg:flex-row">
             {liferaySolutions.map((solution) => {
               const isHovered = hoveredCard === solution.id
               const isDefaultPrimary = hoveredCard === null && solution.id === "Liferay DXP"
@@ -353,7 +353,7 @@ export default function LiferayConsultationPage() {
                   onMouseLeave={() => setHoveredCard(null)}
                   className={`flex h-[340px] items-center rounded-lg p-8 transition-all duration-300 ease-in-out ${
                     isCurrentPrimary
-                      ? "w-full flex-grow-[2] basis-0 flex-row justify-between gap-8 bg-[#0B63CE] text-white [@media(min-width:1440px)]:flex-grow-[3] [@media(min-width:1800px)]:flex-grow-[2]"
+                      ? "min-w-[35.8333vw] flex-grow-[2] basis-0 flex-row justify-between gap-8 bg-[#0B63CE] text-white [@media(min-width:1440px)]:flex-grow-[3] [@media(min-width:1800px)]:flex-grow-[2]"
                       : "w-full flex-grow basis-0 flex-col justify-center border border-gray-200 bg-white text-gray-800 shadow-sm"
                   } `}
                 >
@@ -609,7 +609,7 @@ export default function LiferayConsultationPage() {
                   key={index}
                   className={`flex h-full flex-col justify-between rounded-lg p-7 transition-all duration-300 ease-in-out ${
                     activePillar === index
-                      ? "w-full flex-grow bg-[#0B63CE] text-white shadow-xl"
+                      ? "min-w-[20.3646vw] w-[20.3646vw] flex-grow bg-[#0B63CE] text-white shadow-xl"
                       : "w-[20%] flex-grow-0 border border-[#E5E7EB] bg-white text-gray-400"
                   }`}
                 >
