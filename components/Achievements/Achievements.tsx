@@ -37,7 +37,7 @@ const Achievements = () => {
 
   return (
     <section ref={sectionRef} className="overflow-x-hidden bg-black py-16 text-white">
-      <div className="global-container grid items-start gap-16 lg:grid-cols-2 lg:gap-16">
+      <div className="global-container grid items-start gap-[5vw] lg:grid-cols-2">
         {/* Left Column: Title, Description, Button */}
         <div
           className={`flex flex-col items-start ${isInView ? "animate-when-visible animate-slide-left" : "opacity-0"}`}
@@ -54,7 +54,7 @@ const Achievements = () => {
         </div>
 
         {/* Right Column: Stats Grid */}
-        <div className="grid grid-cols-1 gap-[3.49vw] sm:grid-cols-2">
+        <div className="grid grid-cols-1 gap-x-[5vw] gap-y-[3.49vw] sm:grid-cols-2">
           {statData.map((stat, index) => (
             <StatCard
               key={index}

@@ -92,7 +92,7 @@ const OurCapabilities: React.FC = () => {
   })
 
   return (
-    <section ref={sectionRef} className="bg-black py-[3.333vw] text-white pb-10">
+    <section ref={sectionRef} className="bg-black py-[3.333vw] text-white pb-[3.333vw]">
       <div className="w-full global-container">
         {/* Header Section */}
         <div className="mb-[5.052vw] flex flex-col lg:mb-20 lg:flex-row lg:items-end lg:justify-between">

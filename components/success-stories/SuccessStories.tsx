@@ -106,16 +106,16 @@ const SuccessStories: React.FC = () => {
               <React.Fragment key={index}>
                 {/* Title + Description only for first card */}
                 {index === 0 && (
-                  <div className="mx-auto mb-8 max-w-3xl text-center">
-                    <h2 className="global-container mb-4">Success Stories</h2>
+                  <div className="mx-auto mb-[2.604vw] max-w-3xl text-center">
+                    <h2 className="global-container mb-[0.833vw]">Success Stories</h2>
 
-                    <p className="p18 mt-1 text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+                    <p className="p18 mt-1 text-gray-600">Discover the impactful solutions we've successfully executed.</p>
                   </div>
                 )}
 
                 {/* Sticky Card */}
                 <div
-                  className="success-sticky sticky transition-all duration-500"
+                  className="success-sticky mb-[4.427vw] sticky transition-all duration-500"
                   style={{
                     top: "200px",
                     zIndex: 10 + index,

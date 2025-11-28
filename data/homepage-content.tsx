@@ -25,10 +25,14 @@ export const partners = [
   },
   {
     name: "EduTecks",
-    image: "/images/partner/youngsoftIndia.svg",
+    image: "/images/partner/eduteks.svg",
+  },
+  {
+    name: "Unified Aviation",
+    image: "/images/partner/unified-aviation.svg",
   },
   {
     name: "Infogain",
-    image: "/images/partner/youngsoftIndia.svg",
+    image: "/images/partner/infogain.svg",
   },
 ]

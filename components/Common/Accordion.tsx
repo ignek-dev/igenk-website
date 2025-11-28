@@ -12,8 +12,8 @@ type AccordionProps = {
   defaultOpenIndex?: number | null
 }
 
-export function Accordion({ items, defaultOpenIndex = 0 }: AccordionProps) {
-  const [openIndex, setOpenIndex] = useState<number | null>(defaultOpenIndex ?? null)
+export function Accordion({ items, defaultOpenIndex = null }: AccordionProps) {
+  const [openIndex, setOpenIndex] = useState<number | null>(defaultOpenIndex)
 
   return (
     <div className="divide-y divide-white/10">
