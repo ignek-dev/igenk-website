@@ -208,7 +208,7 @@ const CompanyTimeline = () => {
     },
   ];
 
-  const cardsVisible = 2.7;
+  const cardsVisible = 3;
   const maxScrollIndex = Math.max(0, timelineData.length - cardsVisible);
 
   const goToNext = () => {
@@ -263,11 +263,11 @@ const CompanyTimeline = () => {
                     showConnector={false}
                   />
                   {i < timelineData.length - 1 && (
-                    <div className="w-[0.052vw] bg-[#212121]/20 h-[20.521vw] self-center relative z-0" />
+                    <div className="w-[0.052vw] bg-[#212121]/20 h-[20.521vw] self-center relative z-0 flex-shrink-0" />
                   )}
                 </React.Fragment>
               ))}
-              <div className="w-[10vw]" />
+              <div className="w-[10vw] flex-shrink-0" />
             </div>
           )}
         </div>

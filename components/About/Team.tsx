@@ -108,7 +108,7 @@ const Team: React.FC = () => {
     const [activeMember, setActiveMember] = useState<Member>(MEMBERS[0]!);
 
     // Always use the first photo from the photos array
-    const currentPhoto = activeMember.photos[0];
+    const currentPhoto = activeMember.photos[1];
 
     return (
         <section className="bg-black text-white px-[10vw] py-[3.333vw] overflow-hidden">

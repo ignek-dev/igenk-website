@@ -50,7 +50,7 @@ const StandoutSection = () => {
       {/* Canvas container */}
       <div>
 
-        <div className="flex justify-between items-end">
+        <div className="flex justify-between items-center">
           {/* H1 */}
           <h2
             className="leading-[3.125vw] text-white capitalize"
