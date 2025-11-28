@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import React, { useState } from "react";
 
 type Member = {
     id: string;
@@ -22,7 +22,7 @@ const MEMBERS: Member[] = [
             "/images/about/kishan-1.jpg",
             "/images/about/kishan-2.png",
         ],
-        linkedin: "#",
+        linkedin: "https://www.linkedin.com/in/kishan-khatsuriya-093540179/",
     },
     {
         id: "kishan2",
@@ -33,7 +33,7 @@ const MEMBERS: Member[] = [
             "/images/about/kishan-1.jpg",
             "/images/about/kishan-2.png",
         ],
-        linkedin: "#"
+        linkedin: "https://www.linkedin.com/in/kishan-khatsuriya-093540179/"
     },
     {
         id: "bhargav",
@@ -41,7 +41,7 @@ const MEMBERS: Member[] = [
         role: "Liferay Practice Head",
         thumb: "/images/about/bhargav-1.jpg",
         photos: ["/images/about/bhargav-1.jpg", "/images/about/bhargav-2.png"],
-        linkedin: "#"
+        linkedin: "https://www.linkedin.com/in/bhargavvaghasiya/"
     },
     {
         id: "parth",
@@ -49,7 +49,7 @@ const MEMBERS: Member[] = [
         role: "Sales Head",
         thumb: "/images/about/parth-1.jpg",
         photos: ["/images/about/parth-1.jpg", "/images/about/parth-2.png"],
-        linkedin: "#"
+        linkedin: "https://www.linkedin.com/in/parth-panchani-682b02268/"
     },
     {
         id: "ayushi",
@@ -57,7 +57,7 @@ const MEMBERS: Member[] = [
         role: "Front-end Team Lead",
         thumb: "/images/about/ayushi-1.jpg",
         photos: ["/images/about/ayushi-1.jpg", "/images/about/ayushi-2.png"],
-        linkedin: "#"
+        linkedin: "https://www.linkedin.com/in/ayushi-bhadauria-847587179/"
     },
     {
         id: "simran",
@@ -65,7 +65,7 @@ const MEMBERS: Member[] = [
         role: "HR Manager",
         thumb: "/images/about/simran-1.jpg",
         photos: ["/images/about/simran-1.jpg", "/images/about/simran-2.png"],
-        linkedin: "#"
+        linkedin: "https://www.linkedin.com/in/simran-dubey-hr-433915225/"
     },
 ];
 
@@ -83,8 +83,7 @@ function MemberThumb({
             type="button"
             onMouseEnter={() => setActiveMember(m)}
             onFocus={() => setActiveMember(m)}
-            className={`group overflow-hidden bg-[#111] ring-1 ring-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60
-                       w-[13.229vw] h-[14.167vw]
+            className={`group overflow-hidden bg-[#111] w-[13.229vw] h-[14.167vw]
                        ${className}`}
             style={{
                 borderRadius: 1,
@@ -95,52 +94,27 @@ function MemberThumb({
                     src={m.thumb}
                     alt={m.name}
                     fill
-                    className="object-cover transition group-hover:scale-[1.03]"
+                    className="object-cover transition "
                     style={{ borderRadius: 16 }}
                 />
                 <div className="absolute inset-0 bg-black/20" style={{ borderRadius: 16 }} />
             </div>
 
-            <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/10" style={{ borderRadius: 16 }} />
         </button>
     );
 }
 
-const SLIDE_INTERVAL_MS = 1800;
-
 const Team: React.FC = () => {
     const [activeMember, setActiveMember] = useState<Member>(MEMBERS[0]!);
-    const [slideIndex, setSlideIndex] = useState(0);
-    const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
-    useEffect(() => {
-        if (timerRef.current) clearInterval(timerRef.current);
-        setSlideIndex(0);
-        timerRef.current = setInterval(() => {
-            setSlideIndex((i) => (i + 1) % Math.max(activeMember.photos.length, 1));
-        }, SLIDE_INTERVAL_MS);
-        return () => {
-            if (timerRef.current) clearInterval(timerRef.current);
-        };
-    }, [activeMember]);
-
-    useEffect(() => {
-        activeMember.photos.forEach((src) => {
-            const img = new window.Image();
-            img.src = src;
-        });
-    }, [activeMember]);
-
-    const currentPhoto = useMemo(
-        () => activeMember.photos[slideIndex % activeMember.photos.length],
-        [activeMember, slideIndex]
-    );
+    // Always use the first photo from the photos array
+    const currentPhoto = activeMember.photos[0];
 
     return (
-        <section className="relative isolate bg-black text-white px-[10vw] py-[3.333vw] overflow-hidden">
+        <section className="bg-black text-white px-[10vw] py-[3.333vw] overflow-hidden">
             {/* Heading + Description */}
-            <div className="mb-[3.333vw] sm:mb-12 lg:mb-16">
-                <div className="flex justify-between items-end">
+            <div className="mb-[3.333vw]">
+                <div className="flex justify-between items-center">
                     {/* Title */}
                     <h2 className="font-semibold text-[2.5vw] leading-[3.125vw]">
                         Meet the people
@@ -149,7 +123,7 @@ const Team: React.FC = () => {
                     </h2>
 
                     {/* Description */}
-                    <p className="text-[0.938vw] text-[#E5E7EB] text-right leading-[1.458vw] mb-[1.667vw]">
+                    <p className="text-[0.938vw] text-[#E5E7EB] text-right leading-[1.458vw]">
                         Our passionate team of innovators and <br /> experts brings IGNEK's vision and Liferay excellence to life.
                     </p>
                 </div>
@@ -157,10 +131,10 @@ const Team: React.FC = () => {
 
             {/* Main Content Area */}
             <div className="w-full">
-                <div className="flex flex-col lg:flex-row justify-between gap-[2.917vw]">
+                <div className="flex justify-between gap-[2.917vw]">
                     {/* Left large spotlight card */}
                     <div
-                        className="relative overflow-hidden bg-[#0B0B0F] ring-1 ring-white/10 flex-shrink-0
+                        className="overflow-hidden relative bg-[#0B0B0F]
                                        w-[32.656vw] h-[42.5vw]"
                         style={{
                             borderRadius: 20,
@@ -169,20 +143,19 @@ const Team: React.FC = () => {
                     >
                         <div className="relative w-full h-full">
                             <Image
-                                key={currentPhoto}
                                 src={currentPhoto ?? ""}
                                 alt={activeMember.name}
                                 fill
                                 priority
-                                className="object-cover transition-opacity duration-500"
+                                className="object-cover"
                                 style={{ borderRadius: 20 }}
                             />
                             <div className="absolute inset-0 bg-gradient-to-b from-transparent from-[46.19%] to-black/79 to-100% pointer-events-none rounded-xl" />
 
                         </div>
-                        <div className="absolute sm:bottom-6 left-4 sm:left-6 right-4 sm:right-6 flex items-center justify-between">
+                        <div className="absolute bottom-[2.031vw] left-[3.125vw] right-[3.125vw] flex items-center justify-between">
                             <div>
-                                <div className="text-[1.875vw] font-semibold leading-[2.292vw]">
+                                <div className="text-[1.875vw] font-semibold leading-[2.292vw] mb-[0.104vw]">
                                     {activeMember.name}
                                 </div>
                                 <div className="text-[0.938vw] leading-[1.458vw] text-[#E5E7EB]">{activeMember.role}</div>
@@ -192,11 +165,15 @@ const Team: React.FC = () => {
                                 <a
                                     href={activeMember.linkedin}
                                     aria-label="LinkedIn"
-                                    className="inline-flex h-[1.474vw] w-[1.474vw] items-center justify-center text-[0.833vw] rounded-lg bg-white text-[#0B0B0F] font-semibold flex-shrink-0"
+                                    className="h-[1.979vw] w-[1.979vw] rounded-lg "
                                     target="_blank"
                                     rel="noreferrer"
                                 >
-                                    in
+                                    <Image
+                                        src={"/images/about/linkedin.png"}
+                                        width={38}
+                                        height={38}
+                                        alt={activeMember.name} />
                                 </a>
                             ) : null}
                         </div>
