@@ -17,7 +17,7 @@ const engagementModelsData = [
     description:
       "Gain total control over your predetermined market schedule with a versatile time and materials model for Liferay development.",
     features: [
-      "Ongoing Software Development Needs",
+      "Ongoing Development Needs",
       "Supports Part & Full time Dev Needs",
       "Better control over your project",
     ],

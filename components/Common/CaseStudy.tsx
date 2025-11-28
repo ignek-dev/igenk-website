@@ -26,15 +26,15 @@ const CaseStudy: React.FC<CaseStudyCarouselProps> = ({ caseStudies }) => {
   const router = useRouter()
   // const PER_PAGE = 10;
   const API_BASE = "https://insights.ignek.com/wp-json/wp/v2/portfolio"
-  useEffect(() => {
-    if (!posts.length) return; // only run when data is ready
+  // useEffect(() => {
+  //   if (!posts.length) return; // only run when data is ready
 
-    const interval = setInterval(() => {
-      setActiveIndex((prev) => (prev + 1) % posts.length);
-    }, 4000); // change every 4 seconds
+  //   const interval = setInterval(() => {
+  //     setActiveIndex((prev) => (prev + 1) % posts.length);
+  //   }, 4000); // change every 4 seconds
 
-    return () => clearInterval(interval);
-  }, [posts]);
+  //   return () => clearInterval(interval);
+  // }, [posts]);
 
   const fetchPosts = useCallback(
     async (idsToFilter: number[]) => {
@@ -92,7 +92,7 @@ const CaseStudy: React.FC<CaseStudyCarouselProps> = ({ caseStudies }) => {
             >
               <div className="flex max-h-[19.896vw] flex-col gap-8 rounded-2xl border border-gray-800 bg-[#0f0f0f] p-[1.667vw] md:flex-row">
                 {/* Image */}
-                <div className="h-[318px] max-w-[424px] flex-shrink-0 overflow-hidden rounded-xl md:w-1/2">
+                <div className="h-[16.5625vw] max-w-[424px] flex-shrink-0 overflow-hidden rounded-xl md:w-1/2">
                   <Image
                     src={item._embedded?.["wp:featuredmedia"]?.[0]?.source_url || "/images/portfolio/portfolioImg.png"}
                     alt={item.title.rendered}
@@ -113,11 +113,11 @@ const CaseStudy: React.FC<CaseStudyCarouselProps> = ({ caseStudies }) => {
                     dangerouslySetInnerHTML={{ __html: item.title.rendered }}
                   />
                   <p
-                    className="p16 mb-[1.1979vw] line-clamp-3 text-gray-400"
+                    className="p16 mb-[1.1979vw] line-clamp-2 text-gray-400"
                     dangerouslySetInnerHTML={{ __html: item.excerpt.rendered }}
                   />
                   <button
-                    className="fancy w-[max-content] cursor-pointer rounded-2xle px-12 py-4 transition-all"
+                    className="fancy w-[max-content] cursor-pointer rounded-2xle px-12 py-[0.8333vw] transition-all"
                     onClick={() => router.push(`/case-study/${item.slug}`)}
                   >
                     <span className="relative z-10 flex items-center justify-center gap-3 rounded-full bg-black text-[15px] font-medium text-white">

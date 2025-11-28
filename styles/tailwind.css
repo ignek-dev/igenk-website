@@ -835,19 +835,19 @@ h5 {
 
 .whatsmake-card {
   transition:
-    background-color 0.8s ease-in-out,
+    background-color 0.2s ease-in-out,
     color 0.8s ease-in-out;
 }
 
 /* Define the hover animation using keyframes */
 .whatsmake-card:hover {
-  animation: bgFade 0.8s ease-in forwards;
+  animation: bgFade 0.2s ease-in forwards;
   /* color: #ffffff; */
 }
 
 /* Optional: reverse animation when hover ends */
 .whatsmake-card {
-  animation: bgFadeReverse 0.8s ease-in forwards;
+  animation: bgFadeReverse 0.2s ease-in forwards;
   background-color: #fff;
 }
 
