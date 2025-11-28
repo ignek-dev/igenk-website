@@ -1,5 +1,6 @@
 import { Metadata } from "next"
 import { BlogSection } from "components/Common"
+import Image from "next/image";
 import CaseStudy from "components/Common/CaseStudy"
 import TalkToExpert from "components/Common/TalkToExpert"
 import WhatMake from "components/Common/WhatMake"
@@ -14,7 +15,7 @@ import {
 } from "data/liferay-proof-of-concept"
 
 
- const metadata: Metadata = {
+const metadata: Metadata = {
   title: "Liferay POC Services - Enhance Your Business with IGNEK",
   description:
     "Explore IGNEK's Liferay POC services. Test Liferay’s features and see how it can enhance your business with a tailored trial run.",
@@ -35,74 +36,55 @@ import {
 
 export default function LiferayProofOfConceptPage() {
   return (
-    <main className="pb-16">
+    <main className="pb-[3.333vw]">
       {/* Hero */}
-      <section className="relative bg-black text-white">
+      <section className="bg-black text-white global-container pt-[7.917vw] pb-[3.802vw]">
         <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_10%_0%,#0E7BF8_0%,#00979E_40%,transparent_65%)] opacity-25" />
-        <div className="mx-auto w-full px-4 pt-12 pb-16 md:px-8 md:pt-20 md:pb-28 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1820px)]:px-[192px]">
-          <div className="relative grid items-start gap-10 md:grid-cols-2">
-            <div>
-              <div className="inline-flex items-center rounded-full border border-white/30 px-4 py-2 text-lg text-white">
-                Liferay Services
-              </div>
-              <h1 className="mt-9 text-4xl leading-tight font-semibold sm:text-5xl md:text-7xl">
-                Liferay Proof
-                <br />
-                <span className="block">Of Concept</span>
-              </h1>
-            </div>
-            <p className="absolute bottom-0 max-w-xl text-right text-lg text-white sm:text-lg md:mt-16 md:justify-self-end">
-              Liferay Proof of Concept (PoC) Services help evaluate whether Liferay is the right fit for your project by showcasing customizable portal features your requirements.
-            </p>
-          </div>
+        <div className="inline-flex items-center rounded-full border border-white px-[1.51vw] py-[0.521vw] p18 text-white">
+          Liferay Services
+        </div>
+        <div className="flex items-end justify-between mt-[2.031vw]">
+          <h1 className=" tracking-[-2%]">
+            Liferay Proof
+            <br />
+            Of Concept
+          </h1>
+          <p className="text-right p18 text-white w-[35.938vw]">
+            Liferay PoC Services help you assess whether Liferay suits your project by demonstrating customizable portal features aligned with your requirements.
+          </p>
+        </div>
 
-          {/* Feature tabs */}
-          <div className="mt-15 flex flex-wrap gap-4 [@media(min-width:1440px)]:gap-2 [@media(min-width:1800px)]:gap-4">
-            {featureTabs.map((label, index) => (
-              <span
-                key={index}
-                className="inline-flex items-center rounded-full border border-white/30 px-7 py-5 text-white transition-colors hover:border-white hover:text-white [@media(min-width:1440px)]:px-4 [@media(min-width:1440px)]:text-sm [@media(min-width:1500px)]:text-base [@media(min-width:1800px)]:px-7 [@media(min-width:1800px)]:text-lg"
-              >
-                {label}
-              </span>
-            ))}
-          </div>
+        {/* Feature tabs */}
+        <div className="mt-[3.177vw] flex flex-wrap">
+          {featureTabs.map((label, index) => (
+            <div
+              key={index}
+              className="inline-flex p20 mr-[1.875vw] justify-center last:mr-0 items-center rounded-full border border-[#374151] px-[1.458vw] py-[1.094vw] text-white"
+            >
+              {label}
+            </div>
+          ))}
         </div>
       </section>
 
-      <section className="bg-[#f7f7f7] text-black">
-        <div className="mx-auto w-full px-4 py-[64px] md:px-8 md:py-[64px] lg:py-[64px] [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
-          <h2 className="text-5xl leading-tight font-semibold sm:text-4xl md:text-5xl">
+      <section className="bg-[#F6F6F6] text-black">
+        <div className="global-container py-[3.333vw]">
+          <h2 className="tracking-[-2%]">
             What We Do With Liferay POC Services
           </h2>
-          <p className="mt-7 justify-self-center text-lg leading-relaxed text-[#101012] text-gray-700">
+          <p className="mt-[1.458vw] p18 text-[#374151] !leading-[1.667vw]">
             Our Liferay PoC services align your needs with Liferay’s out-of-the-box capabilities. We provide a
             functional prototype to gauge if Liferay Proof of Concept meets your objectives, document feature
             comparisons, highlight time-to-market reductions, and assess future project risks.
           </p>
-          <div className="pt-8">
-            <div className="grid grid-cols-1 gap-[60px] sm:grid-cols-2 md:grid-cols-3">
+          <div className="pt-[2.5vw]">
+            <div className="grid grid-cols-1 gap-x-[2.917vw] gap-y-[2.708vw] sm:grid-cols-2 md:grid-cols-3">
               {liferayPOCServices.map((item, index) => (
-                <div key={index} className="flex min-h-[80px] rounded-full border border-[#E5E7EB] bg-white">
-                  <span className="flex h-full items-center justify-center rounded-full bg-black [@media(min-width:1440px)]:w-[38%] [@media(min-width:1800px)]:w-[25%]">
-                    <svg
-                      width="40"
-                      height="40"
-                      viewBox="0 0 12 12"
-                      className="text-white"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M3 6l2 2 4-4"
-                        stroke="currentColor"
-                        strokeWidth="1"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
+                <div key={index} className="flex items-center pr-[0.625vw] rounded-full border border-[#D1D5DB] bg-white">
+                  <span className="flex min-h-[3.75vw] mr-[0.833vw] min-w-[3.75vw] items-center justify-center rounded-full bg-black">
+                    <Image src="/images/about/check.png" className="h-[1.875vw] w-[1.875vw]" alt="check-sign" width={100} height={100} />
                   </span>
-                  <p className="whitespace-wrap w-full p-4 pr-4 text-left text-lg font-medium text-black [@media(min-width:1440px)]:text-sm [@media(min-width:1500px)]:text-sm [@media(min-width:1800px)]:text-base">
+                  <p className="p18 !leading-[1.25vw] !font-medium py-[0.625vw]">
                     {item}
                   </p>
                 </div>
