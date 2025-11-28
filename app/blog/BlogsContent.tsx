@@ -6,7 +6,7 @@ import { useCallback, useEffect, useState } from "react"
 import BlogCard, { BlogData } from "components/Blogmain/BlogCards"
 import TechCard from "components/Blogmain/TechCards"
 import { WPPost } from "components/BlogSidebar/BlogSidebar"
-
+import DOMPurify from 'dompurify';
 const cardData = [
   {
     id: 15,
@@ -24,14 +24,14 @@ const cardData = [
   },
   {
     id: 21,
-    iconWhite: "/images/blogs/Nodejs-white.svg",
+    iconWhite: "/images/blogs/Spring-boot-white.svg",
     iconBlue: "/images/blogs/Spring-Boot.svg",
     title: "Spring Boot",
     description: "Explore strategies, leadership skills, and growth tactics for",
   },
   {
     id: 237,
-    iconWhite: "/images/blogs/Spring-boot-white.svg",
+    iconWhite: "/images/blogs/Nodejs-white.svg",
     iconBlue: "/images/blogs/Nodejs.svg",
     title: "Node.js",
     description: "Explore strategies, leadership skills, and growth tactics for",
@@ -402,7 +402,7 @@ export default function BlogsContent() {
                           <span>• {blog?.readTime}</span>
                         </div>
 
-                        <h2 className="mb-[0.938vw] text-[1.563vw]!">{blog.title}</h2>
+                        <h2 className="mb-[0.938vw] text-[1.563vw]!" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(blog.title) }}/>
                         <div className="flex items-center space-x-2 text-xl font-normal">
                           <Image
                             src={blog?.authPic}
