@@ -31,12 +31,12 @@ const insightLinks = [
     icon: "/images/icon/webinars.png",
     title: "Webinars",
     description: "Watch our latest organized webinar",
-    href: "/contact",
+    href: "/webinar",
   },
   {
     icon: "/images/mega-menu/marketplace.png",
     title: "Marketplace",
-    description: "Modules that make your Liferay experience effortless.",
+    description: "Modules that make Liferay experience effortless.",
     href: "/marketplace",
   },
 ]
@@ -58,31 +58,30 @@ export default function InsightsMegaMenu({ onClose }: MegaMenuProps) {
       {/* Background Gradient */}
       {/* <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_14%_0%,#00979E_0%,#0E7BF800_60%)] opacity-40" /> */}
 
-      <div className="global-container mx-auto w-full px-4 py-7 md:px-8">
+      <div className="global-container mx-auto w-full px-4 py-10 md:px-8">
         <div className="grid grid-cols-12 items-start gap-8">
           {/* Left Side: Cards */}
           <div className="col-span-5">
-            <div className="flex w-full max-w-[30.625vw] flex-col gap-[1.041vw]">
+            <div className="flex w-full max-w-[30.625vw] flex-col gap-[1.75rem]">
               {insightLinks.map((link) => (
                 <a
                   href={link.href}
                   key={link.title}
-                  className="group /* 1440px → use vw scaling */ /* 1920px → match the design exactly */ flex h-[130px] items-center gap-[1.041vw] rounded-[16px] bg-[#0D0D0D] p-8 transition-all duration-300 [@media(min-width:1440px)]:h-[120px] [@media(min-width:1440px)]:rounded-[0.937vw] [@media(min-width:1920px)]:h-[129px] [@media(min-width:1920px)]:rounded-[20px]"
-                >
+                  className="group flex items-center gap-[0.785vw] rounded-[16px] bg-[#0D0D0D] px-[2rem] py-[1.92rem] transition-all duration-300 hover:bg-[#1a1a1a] [@media(min-width:1440px)]:rounded-[0.937vw] [@media(min-width:1920px)]:rounded-[20px]"                >
                   {/* Icon container */}
-                  <div className="/* At 1440px+ scale using vw */ h-[40px] w-[40px] text-white/70 transition-colors group-hover:text-white sm:h-[44px] sm:w-[44px] md:h-[48px] md:w-[48px] xl:h-[2.604vw] xl:w-[2.604vw]">
+                  <div className="flex h-[3.125rem] w-[3.125rem] flex-shrink-0 items-center justify-center text-white/70 transition-colors group-hover:text-white">
                     <Image
                       src={link.icon}
                       alt={link.title}
-                      width={50}
-                      height={50}
-                      className="h-full w-full object-contain"
+                      width={38}
+                      height={38}
+                     className="h-[2.375rem] w-[2.375rem] object-contain"
                     />
                   </div>
 
                   {/* Text */}
                   <div className="flex-1">
-                    <h4 className="font-medium text-white">{link.title}</h4>
+                    <h5 className="font-medium text-white">{link.title}</h5>
                     <p className="p16 font-regular mt-2 text-white">{link.description}</p>
                   </div>
 
@@ -94,7 +93,7 @@ export default function InsightsMegaMenu({ onClose }: MegaMenuProps) {
           </div>
 
           {/* Right Side: Featured Event */}
-          <div className="col-span-7 pt-4">
+          <div className="col-span-7 pt-2.5">
             <p className="mb-6 max-w-4xl align-middle text-[1.6667vw]! leading-[2.2917vw] font-semibold! tracking-[-0.02em] text-white">
               {featuredEvent.title}
             </p>

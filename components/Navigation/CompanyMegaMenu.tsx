@@ -33,15 +33,22 @@ export const IconLinkedIn = () => (
   />
 )
 export const IconFacebook = () => (
-  <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M10.41 23.7164C11.6667 23.9252 12.9492 23.9261 14.2063 23.7189M10.41 23.7164C7.71056 23.2658 5.25722 21.8722 3.48863 19.7837C1.72005 17.6951 0.749633 15.0469 0.75 12.3101C0.750455 10.1043 1.38185 7.94468 2.56969 6.08603C3.75753 4.22737 5.45223 2.74727 7.45384 1.82038C9.45544 0.893482 11.6804 0.558469 13.8662 0.854871C16.052 1.15127 18.1074 2.06672 19.7899 3.49319C21.4724 4.91966 22.7117 6.79763 23.3617 8.9055C24.0116 11.0134 24.0451 13.2632 23.4581 15.3894C22.8711 17.5157 21.6882 19.4297 20.0488 20.9056C18.4095 22.3814 16.3823 23.3576 14.2063 23.7189M10.41 23.7164L10.4088 17.4601H8.0375C7.83859 17.4601 7.64782 17.3811 7.50717 17.2405C7.36652 17.0998 7.2875 16.909 7.2875 16.7101V14.4126C7.2875 14.2137 7.36652 14.0229 7.50717 13.8823C7.64782 13.7416 7.83859 13.6626 8.0375 13.6626H10.4088V9.74762C10.4088 8.75306 10.8038 7.79923 11.5071 7.09597C12.2104 6.39271 13.1642 5.99762 14.1588 5.99762H16.4213C16.7528 5.99762 17.0707 6.12932 17.3051 6.36374C17.5396 6.59816 17.6713 6.9161 17.6713 7.24762V8.54762C17.6713 8.87914 17.5396 9.19708 17.3051 9.4315C17.0707 9.66592 16.7528 9.79762 16.4213 9.79762H15.4563C15.1247 9.79762 14.8068 9.92932 14.5724 10.1637C14.3379 10.3982 14.2063 10.7161 14.2063 11.0476V13.6626H17.0775C17.1864 13.6626 17.2939 13.6863 17.3927 13.732C17.4915 13.7778 17.5791 13.8445 17.6496 13.9275C17.72 14.0105 17.7715 14.1079 17.8005 14.2128C17.8295 14.3177 17.8353 14.4277 17.8175 14.5351L17.505 16.4151C17.4565 16.707 17.306 16.9722 17.0803 17.1635C16.8546 17.3549 16.5684 17.46 16.2725 17.4601H14.2063V23.7189" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
-</svg>
-
+   <Image
+    src="/images/mega-menu/facebook-dark.png"
+    alt="Facebook"
+    width={36}
+    height={36}
+    className="social-icon"
+  />
 )
 export const IconX = () => (
-  <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M12.141 8.892L19.7355 0H17.9355L11.343 7.7205L6.075 0H0L7.965 11.676L0 21H1.8L8.763 12.846L14.3265 21H20.4015L12.141 8.892ZM9.6765 11.778L8.8695 10.6155L2.448 1.365H5.2125L10.3935 8.8305L11.2005 9.993L17.937 19.698H15.1725L9.6765 11.778Z" fill="white"/>
-</svg>
+  <Image
+    src="/images/mega-menu/tweeter-dark.png"
+    alt="X"
+    width={36}
+    height={36}
+    className="social-icon"
+  />
 
 )
 export const IconInstagram = () => (
@@ -67,12 +74,12 @@ const companyLinks = [
     description: "Join our team and grow your skills through exciting real-world projects.",
     href: "/career",
   },
-  // {
-  //   image: "/images/mega-menu/LifeAtIgnek.png",
-  //   title: "Life#IGNEK",
-  //   description: "Experience a collaborative, creative, and energetic work culture at IGNEK.",
-  //   href: "/life-at-ignek",
-  // },
+  {
+    image: "/images/mega-menu/LifeAtIgnek.png",
+    title: "Life#IGNEK",
+    description: "Experience a collaborative, creative, and energetic work culture at IGNEK.",
+    href: "/life-at-ignek",
+  },
 ]
 
 const contactDetails = {
@@ -106,7 +113,7 @@ export default function CompanyMegaMenu({ onClose }: MegaMenuProps) {
       {/* Background Gradient */}
       {/* <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_14%_0%,#00979E_0%,#0E7BF800_60%)] opacity-40" /> */}
 
-      <div className="global-container mx-auto w-full px-4 py-9.5 md:px-8">
+      <div className="global-container mx-auto w-full px-4 py-10 md:px-8">
         <div className="grid grid-cols-12 items-start gap-8">
           {/* Left Side: Cards */}
           <div className="col-span-5">
@@ -116,7 +123,7 @@ export default function CompanyMegaMenu({ onClose }: MegaMenuProps) {
                   href={link.href}
                   key={link.title}
                   onClick={onClose}
-                  className="group flex h-[150px] items-center gap-5 rounded-[16px] bg-[#0D0D0D] p-4 transition-all duration-300 [@media(min-width:1440px)]:h-[160px] [@media(min-width:1440px)]:rounded-[18px] [@media(min-width:1536px)]:h-[168px] [@media(min-width:1536px)]:rounded-[19px] [@media(min-width:1920px)]:h-[174px] [@media(min-width:1920px)]:rounded-[20px]"
+                  className="group flex h-[150px] items-center gap-7.5 rounded-[16px] bg-[#0D0D0D] p-6 transition-all duration-300 [@media(min-width:1440px)]:h-[160px] [@media(min-width:1440px)]:rounded-[18px] [@media(min-width:1536px)]:h-[168px] [@media(min-width:1536px)]:rounded-[19px] [@media(min-width:1920px)]:h-[174px] [@media(min-width:1920px)]:rounded-[20px]"
                 >
                   <Image
                     src={link.image}
@@ -131,10 +138,10 @@ export default function CompanyMegaMenu({ onClose }: MegaMenuProps) {
                     }}
                   />
                   <div className="flex-1">
-                    <h4 className="font-medium text-white">{link.title}</h4>
+                    <h5 className="font-medium text-white">{link.title}</h5>
                     <p className="font-regular p16 mt-4 text-white">{link.description}</p>
                   </div>
-                  <IconArrowRight className="size-8 text-white! transition-transform duration-300 group-hover:translate-x-1 group-hover:text-white" />
+                  <IconArrowRight className="size-8 mr-3 text-white! transition-transform duration-300 group-hover:translate-x-1 group-hover:text-white" />
                 </Link>
               ))}
             </div>
@@ -145,14 +152,13 @@ export default function CompanyMegaMenu({ onClose }: MegaMenuProps) {
             <p className="align-middle text-[1.6667vw]! leading-[2.2917vw] font-semibold! tracking-[-0.02em]">
               We&apos;re the Top #1 Digital experience development company contributing towards a smart World
             </p>
-            <p className="p18 mt-4 max-w-3xl text-left! text-[#D1D5DB]">
-              IGNEK delivers smart, high-quality digital experiences that transform businesses, improve efficiency, and
-              accelerate growth through expert engineering, modern design, and reliable technology solutions.
+            <p className="p18 mt-4 max-w-4xl text-left! text-[#D1D5DB]">
+              IGNEK delivers smart, high-quality digital experiences that transform businesses, through expert engineering, modern design, and reliable technology solutions.
             </p>
 
             <div className="mt-16 grid grid-cols-3 gap-y-6 border-white/10">
               <div className="relative pr-4 border-r border-[#4B5563]">
-                <h4 className="mb-6.5 font-medium">General</h4>
+                <h5 className="mb-6.5 font-medium">General</h5>
                 <ul className="space-y-2">
                   {contactDetails.general.map((item) => (
                     <li key={item.text}>
@@ -178,7 +184,7 @@ export default function CompanyMegaMenu({ onClose }: MegaMenuProps) {
 
               {/* Sales sections */}
               <div className="relative px-4 border-r border-[#4B5563]">
-                <h4 className="mb-6.5 font-medium">Sales</h4>
+                <h5 className="mb-6.5 font-medium">Sales</h5>
                 <ul className="space-y-2">
                   {contactDetails.sales.map((item) => (
                     <li key={item.text}>
@@ -205,7 +211,7 @@ export default function CompanyMegaMenu({ onClose }: MegaMenuProps) {
 
               {/* HR sections */}
               <div className="relative pl-4">
-                <h4 className="mb-6.5 font-medium">HR</h4>
+                <h5 className="mb-6.5 font-medium">HR</h5>
                 <ul className="space-y-2">
                   {contactDetails.hr.map((item) => (
                     <li key={item.text}>

@@ -156,7 +156,7 @@ text {
 }
 
 .auto-grid ul li {
-  margin-bottom: 12px;
+  margin-bottom: 28px;
   font-size: 20px;
 }
 
@@ -193,16 +193,20 @@ text {
   }
 }
 
-@media (min-width: 1024px) and (max-width: 1640px) {
+@media (min-width: 1024px) and (max-width: 1440px) {
   .auto-grid {
     grid-template-columns: repeat(2, max-content);
     justify-content: space-around;
   }
 }
 
-@media (min-width: 1641px) {
+@media (min-width: 1441px) {
   .auto-grid {
     grid-template-columns: repeat(4, max-content);
     justify-content: space-between;
+  }
+
+  .auto-grid ul li {
+    max-width: 20vw;
   }
 }

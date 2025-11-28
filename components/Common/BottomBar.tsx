@@ -35,15 +35,15 @@ const BottomBar: React.FC = () => {
               <a href="/contact" className="transition-colors hover:text-white">
                 Privacy Policy
               </a>
-              <span className="text-gray-600">|</span>
+              <span className="text-white">|</span>
               <a href="/contact" className="transition-colors hover:text-white">
                 Terms & Conditions
               </a>
-              <span className="text-gray-600">|</span>
+              <span className="text-white">|</span>
               <a href="/contact" className="transition-colors hover:text-white">
                 Cookies Policy
               </a>
-              <span className="text-gray-600">|</span>
+              <span className="text-white">|</span>
               <a href="/contact" className="transition-colors hover:text-white">
                 Map
               </a>

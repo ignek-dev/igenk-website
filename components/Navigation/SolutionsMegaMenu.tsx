@@ -65,12 +65,12 @@ const aiLinks = [
 export default function SolutionsMegaMenu({ onClose }: MegaMenuProps) {
   return (
     <>
-      <div className="global-container mx-auto w-full px-4 py-8 md:px-8">
+      <div className="global-container mx-auto w-full px-4 py-10 md:px-8">
         <div className="flex w-full justify-between gap-[5.21vw]">
           {/* Left Group (Solutions & Integrations) */}
           <div className="flex gap-[5.21vw]">
             <div>
-              <h4 className="mb-6">
+              <h4 className="mb-9">
                 Solutions
               </h4>
               <ul className="space-y-6">
@@ -95,7 +95,7 @@ export default function SolutionsMegaMenu({ onClose }: MegaMenuProps) {
               </ul>
             </div>
             <div>
-              <h4 className="mb-6">
+              <h4 className="mb-9">
                 Integrations
               </h4>
               <ul className="space-y-6">
@@ -123,7 +123,7 @@ export default function SolutionsMegaMenu({ onClose }: MegaMenuProps) {
 
           <div className="flex gap-[5.21vw]">
             <div>
-              <h4 className="mb-6">
+              <h4 className="mb-9">
                 Liferay Marketplace
               </h4>
               <ul className="space-y-6">
@@ -147,7 +147,7 @@ export default function SolutionsMegaMenu({ onClose }: MegaMenuProps) {
               </ul>
             </div>
             <div>
-              <h4 className="mb-6">
+              <h4 className="mb-9">
                 Liferay + AI
               </h4>
               <ul className="space-y-6">
