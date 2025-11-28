@@ -118,7 +118,7 @@ export default function LiferayPerformanceTuningPage() {
     <main className="pb-0">
       <section className="relative bg-black text-white">
         <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_10%_0%,#0E7BF8_0%,#00979E_40%,transparent_65%)] opacity-25" />
-        <div className="global-container mx-auto w-full pt-[7.865vw] pb-16">
+        <div className="global-container mx-auto w-full pt-[7.865vw] pb-[3.854vw]">
           <div className="relative grid items-start gap-10 md:grid-cols-2">
             <div className="">
               <div className="p18 banner-tab">Liferay Services</div>
@@ -135,11 +135,11 @@ export default function LiferayPerformanceTuningPage() {
           </div>
 
           {/* Feature tabs */}
-          <div className="mt-15 flex flex-wrap gap-[0.521vw]">
+          <div className="mt-15 flex flex-wrap gap-[1.875vw]">
             {featureTabs.map((label, index) => (
               <span
                 key={index}
-                className="p20 inline-flex items-center rounded-full border border-[#374151] px-[1.458vw] py-[0.833vw] text-lg text-white shadow-[0px_4px_10px_0px_#00979E40] transition-colors"
+                className="inline-flex items-center rounded-[2.083vw] border border-[#374151] bg-black px-[1.458vw] py-[0.833vw] p20 text-white shadow-[0_0.208vw_0.521vw_0_rgba(0,151,158,0.25)] transition-colors"
               >
                 {label}
               </span>
@@ -150,18 +150,18 @@ export default function LiferayPerformanceTuningPage() {
 
       {/* Liferay Performance Tuning - Features Grid */}
       <section className="bg-[#f7f7f7] text-black">
-        <div className="global-container mx-auto w-full px-4 py-[64px] md:px-8 md:py-[64px] lg:py-[64px]">
+        <div className="global-container mx-auto w-full pt-[3.333vw]">
           <div className="flex flex-col items-start gap-[1.458vw]">
             <h2 className="text-[#000000]">Common Liferay Performance Challenges We Solve</h2>
-            <p className="text-[#374151] p16">
+            <p className="text-[#374151] p18">
               Through expert Liferay Performance Tuning, we identify bottlenecks, optimize configurations, and deliver
               faster, more scalable, and reliable Liferay DXP experiences.
             </p>
           </div>
           {/* Row 1 */}
           <div className="mt-[2.604vw] grid grid-cols-1 divide-y divide-gray-200 md:grid-cols-3 md:divide-x md:divide-y-0">
-            <div className="flex flex-col items-center justify-center gap-2 py-[3.646vw] text-center">
-              <h3 className="w-[19.688vw] text-center text-3xl font-semibold">Slow Page Load Times</h3>
+            <div className="flex flex-col items-center justify-center gap-2 pt-[3.125vw] pb-[4.219vw] text-center">
+              <h3 className="w-[19.688vw] text-center text-[1.563vw]! ">Slow Page Load Times</h3>
               <p className="p20 mt-3 text-gray-700">
                 Delays caused by unoptimized code, heavy themes, or large assets are resolved through Liferay
                 Performance Tuning.
@@ -211,7 +211,7 @@ export default function LiferayPerformanceTuningPage() {
 
       {/* Outcome Of Our Liferay Performance Tuning Services */}
       <section className="bg-black text-white">
-        <div className="global-container mx-auto w-full px-4 py-[64px] md:px-8 md:py-[64px] lg:py-[64px]">
+        <div className="global-container mx-auto w-full px-4 py-[3.333vw] md:px-8 md:py-[3.333vw] lg:py-[3.333vw]">
           <div className="relative grid items-start gap-10 md:grid-cols-2">
             <h2 className=" ">
               Outcome Of Our Liferay
@@ -224,16 +224,16 @@ export default function LiferayPerformanceTuningPage() {
             </p>
           </div>
 
-          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-[3.021vw] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
             {serviceDate?.map((item, index) => {
               const isLastRow = index >= serviceDate.length - (serviceDate.length % 3 || 3)
 
               return (
-                <div key={item.title} className="group relative flex flex-col justify-between gap-[1.042vw] pr-[102px]">
+                <div key={item.title} className="group relative flex flex-col justify-between gap-[1.042vw] pr-[5.313vw]">
                   <Image src={item?.image ?? ""} alt="Progress icon" width={44} height={44} />
-                  <h3 className="h-[3.75vw] w-[332px] text-[1.563vw]! font-medium!">{item.title}</h3>
+                  <h3 className="h-[3.75vw] w-[17.292vw] text-[1.563vw]! font-medium!">{item.title}</h3>
                   <p className="p20 text-white/80">{item.desc}</p>
-                  {!isLastRow && <hr className="bottom-0 left-0 my-[64px] w-full border-b border-white/20" />}
+                  {!isLastRow && <hr className="bottom-0 left-0 my-[3.333vw] w-full border-b border-white/20" />}
                 </div>
               )
             })}
@@ -243,7 +243,7 @@ export default function LiferayPerformanceTuningPage() {
 
       {/* What We Do With Our Liferay DXP Performance Tuning Services */}
       <section className="bg-[#f7f7f7] text-black">
-        <div className="global-container mx-auto w-full px-4 pt-[64px] pb-[2.083vw]">
+        <div className="global-container mx-auto w-full px-4 pt-[3.333vw] pb-[2.083vw]">
           <div className="relative grid items-start md:grid-cols-2">
             <h2 className="w-[43.802vw] text-[#000000]">
               What We Do With Our Liferay DXP <br /> Performance Tuning Services
@@ -270,7 +270,7 @@ export default function LiferayPerformanceTuningPage() {
                     onClick={() => setActiveIndex(index)}
                   >
                     <h3 className="text-[1.563vw]! text-black font-semibold!">{item.title}</h3>
-                    <p className="p16 mt-2 max-w-[537px] text-gray-700 md:text-base">{item.desc}</p>
+                    <p className="p16 mt-[0.417vw] max-w-[27.969vw] text-gray-700 ">{item.desc}</p>
                   </div>
                 ))}
               </div>
