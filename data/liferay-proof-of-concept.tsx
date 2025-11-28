@@ -1,7 +1,7 @@
 export const featureTabs = [
   "Discuss PoC requirements",
-  "Assist To Validate The Assumption",
-  "Liferay Functionality Identification",
+  "Help validate the assumption.",
+  "Functionality Identification",
   "Demonstrate Customized Prototype",
 ]
 
