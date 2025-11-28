@@ -210,7 +210,7 @@ export default function LiferayConsultationPage() {
 
       {/* Digital Edge Section */}
       <section className="bg-[#F9FAFB] py-[64px]">
-        <div className="global-container flex items-center">
+        <div className="global-container flex">
           {/* Left Content */}
           <div className="flex flex-1 flex-col justify-between gap-25">
             {/* Stats Row */}
@@ -305,7 +305,7 @@ export default function LiferayConsultationPage() {
                       }`}
                       style={{ top: `calc(8.5rem + ${index * 4}rem)` }}
                     >
-                      {index === consultingServices.length - 1 && <div className="glow-bg absolute inset-0 -z-10" />}
+                      <div className="glow-bg absolute inset-0 -z-10" />
                       <div className="flex w-full flex-col justify-center rounded-2xl border border-gray-700 bg-[#0C0C0C] p-9 pt-6 backdrop-blur-md transition-all duration-300 hover:border-[#00AEEF] md:min-h-[196px]">
                         <h4 className="mb-4 text-white">{item.title}</h4>
                         <div className="mb-4 h-[1px] bg-gray-700" />
@@ -331,7 +331,7 @@ export default function LiferayConsultationPage() {
                 <span className="block">Liferay Solutions</span>
               </h2>
             </div>
-            <div className="flex h-full items-center">
+            <div className="flex h-full items-center justify-end">
               <p className="p18 text-right text-gray-500">
                 We deliver top-quality Liferay Consulting Services. From setup to support, <br></br>we’ve got you
                 covered for all your digital needs.

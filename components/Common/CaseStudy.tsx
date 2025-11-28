@@ -79,11 +79,11 @@ const CaseStudy: React.FC<CaseStudyCarouselProps> = ({ caseStudies }) => {
       <div className="max-w-7xl px-[192px]">
         <p className="mb-[1.823vw] px-4 text-[1.667vw] font-semibold">Related Case Studies</p>
 
-        <div className="relative flex transition-transform duration-700 ease-in-out">
+        <div className="relative flex transition-transform duration-700 ease-in-out gap-[34px]">
           {posts.map((item) => (
             <div
               key={item.id}
-              className="w-full max-w-[61.1458vw] flex-shrink-0 px-4 transition-transform duration-[2000ms] md:px-4"
+              className="w-full max-w-[61.1458vw] flex-shrink-0 transition-transform duration-[2000ms]"
               style={{
                 transform: `translateX(-${activeIndex * 100}%)`,
                 width: `${posts.length * 100}%`,

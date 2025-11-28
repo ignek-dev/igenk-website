@@ -16,7 +16,7 @@ const TalkToExpertCard: React.FC<TalkToExpertCardProps> = ({ title }) => {
   </h3>
 
   {/* Profile Section */}
-  <div className="flex items-center  gap-[2vw] mb-[2.23958vw]">
+  <div className="flex items-center  gap-[1.3542vw] mb-[2.23958vw]">
     <Image
       src="/images/bhavinImage.png"
       alt="Bhavin Panchani"
