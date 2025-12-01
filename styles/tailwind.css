@@ -50,6 +50,17 @@ select:-webkit-autofill {
   transition: background-color 9999s ease-in-out 0s;
 }
 
+/* ... existing code ... */
+
+/* ---- Specific Fix for White Background Forms ---- */
+.autofill-text-dark:-webkit-autofill,
+.autofill-text-dark:-webkit-autofill:hover,
+.autofill-text-dark:-webkit-autofill:focus {
+  -webkit-text-fill-color: #1F2937 !important; /* Dark Gray text */
+  -webkit-box-shadow: 0 0 0 1000px white inset !important; /* Force White Background */
+  transition: background-color 9999s ease-in-out 0s;
+}
+
 @layer utilities {
   /* Global padding across website */
   .global-container {
