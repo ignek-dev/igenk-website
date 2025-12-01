@@ -31,7 +31,7 @@ const insightLinks = [
     icon: "/images/icon/webinars.png",
     title: "Webinars",
     description: "Watch our latest organized webinar",
-    href: "/webinar",
+    href: "/webinars",
   },
   {
     icon: "/images/mega-menu/marketplace.png",
@@ -48,7 +48,7 @@ const featuredEvent = {
   // The path starts from the `public` directory
   imageSrc: "/images/mega-menu/upcoming-webinar.svg",
   imageAlt: "Customer Onboarding with Low Code/No-Code Capabilities of Liferay Portal Webinar",
-  href: "/webinar", // Link to the webinar page
+  href: "/webinars", // Link to the webinar page
 }
 
 // --- Main InsightsMegaMenu Component ---
