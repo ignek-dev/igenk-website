@@ -54,7 +54,7 @@ export const partners = [
 ]
 
 export const EndToEndSectionData = {
-  heading: "Your End-to-End Liferay Digital Experience Implementation Partner",
+  heading: "Your End-to-End Liferay Implementation Partner",
   description:
     "We help enterprises utilise Liferay to its highest potential through thoughtful, best-practice implementations. From discovery to design, engineering, and optimisation, we craft digital experiences that are scalable, intuitive, and built to deliver long-term value.",
 
