@@ -7,12 +7,16 @@ import CalendlyButton from "components/CalendlyPopupButton/CalendlyButton"
 interface ScheduleMeetingButtonProps {
   btnName: string
   isFullWidth: boolean
+  onClick?: () => void // Optional onClick prop
+  showIcon?: boolean //  icon props
+  // sizeVariant?: "default" | "webinar-hero"; 
 }
 
-const ScheduleMeetingButton: React.FC<ScheduleMeetingButtonProps> = ({ btnName, isFullWidth }) => {
+const ScheduleMeetingButton: React.FC<ScheduleMeetingButtonProps> = ({ btnName, isFullWidth, onClick, showIcon = true}) => {
   return (
     <CalendlyButton 
       customButton={true}
+      onClick={onClick}
       customButtonContent={
         <button
           // onClick={handleClick}
@@ -22,7 +26,10 @@ const ScheduleMeetingButton: React.FC<ScheduleMeetingButtonProps> = ({ btnName, 
           <span className="relative z-10 flex items-center justify-center gap-3 rounded-full bg-black px-8 py-3 text-[1.042vw] font-medium text-white">
             {/* Schedule Meeting */}
             {btnName ?? "Schedule Meeting"}
-            <Image src="/images/calendar.png" alt="Calendar icon" width={28} height={28} />
+          {/* 3. Conditionally render the image */}
+            {showIcon && (
+              <Image src="/images/calendar.png" alt="Calendar icon" width={28} height={28} />
+            )}
           </span>
         </button>
       }

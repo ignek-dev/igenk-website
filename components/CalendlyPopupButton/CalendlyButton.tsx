@@ -18,6 +18,7 @@ interface CalendlyButtonProps {
   customButton?: boolean
   customButtonContent?: ReactNode
   buttonColor?: string
+  onClick?: () => void // Add optional onClick prop
 }
 
 export default function CalendlyButton({
@@ -25,6 +26,7 @@ export default function CalendlyButton({
   customButton = false,
   customButtonContent,
   buttonColor = "#000",
+  onClick,
 }: CalendlyButtonProps) {
   useEffect(() => {
     // Load Calendly CSS
@@ -49,9 +51,13 @@ export default function CalendlyButton({
     }
   }
 
+  // 3. Determine which action to take
+  // If an external onClick is provided (like scrolling), use it. Otherwise, use Calendly.
+  const handleAction = onClick || handleOpenCalendly;
+
   if (customButton && customButtonContent) {
     return (
-      <div onClick={handleOpenCalendly} className="cursor-pointer">
+      <div onClick={handleAction} className="cursor-pointer">
         {customButtonContent}
       </div>
     )
@@ -61,7 +67,7 @@ export default function CalendlyButton({
     <Tooltip text="Schedule Meeting">
       <div className="nav-fancy-button">
         <div className="nav-fancy-glow" style={{ "--button-bg-color": buttonColor } as React.CSSProperties}></div>
-        <button type="button" aria-label="Schedule-Meeting" onClick={handleOpenCalendly} className="nav-round-btn">
+        <button type="button" aria-label="Schedule-Meeting" onClick={handleAction} className="nav-round-btn">
           <div className="nav-round-btn-inner cursor-pointer">
             <Image src="/images/icon/calendar.png" alt="calendar" width={28} height={28} />
           </div>
