@@ -39,7 +39,7 @@ const metadata: Metadata = {
   },
 }
 
-const rowHeights = ["h-[17.5vw]", "h-[23.5vw]", "h-[18.5vw]"]
+const rowHeights = ["h-[19.5vw]", "h-[23.5vw]", "h-[18.5vw]"]
 
 export default function LiferayUpgradePage() {
   const containerRef = useRef<HTMLDivElement | null>(null)
@@ -91,7 +91,7 @@ export default function LiferayUpgradePage() {
   }
 
   return (
-    <main className="pb-16">
+    <main>
       {/* Hero */}
       <section className="relative bg-black text-white">
         <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_10%_0%,#0E7BF8_0%,#00979E_40%,transparent_65%)] opacity-25" />
@@ -107,8 +107,8 @@ export default function LiferayUpgradePage() {
                 <span className="block">DXP 7.4 Upgrade</span>
               </h1>
             </div>
-            <p className="p18 absolute bottom-0 mt-[1.458vw] max-w-xl text-right text-white md:justify-self-end">
-              Liferay DXP 7.4 introduces advanced features, enhanced performance, and stronger security for a more
+            <p className="p18 absolute bottom-0 mt-[1.458vw] text-right text-white md:justify-self-end lg:max-w-xl xl:max-w-2xl">
+              Liferay DXP 7.4 introduces advanced features, enhanced performance,<br/> and stronger security for a more
               powerful digital experience.
             </p>
           </div>
@@ -198,7 +198,7 @@ export default function LiferayUpgradePage() {
         <div className="global-container items-start">
           <div className="relative grid items-start gap-10 md:grid-cols-2">
             <h2 className="">
-              Key Benefits of Liferay DXP 7.4 <br /> Upgrade
+              Key Benefits of Liferay <br /> DXP 7.4 Upgrade
             </h2>
             <p className="p18 absolute bottom-0 max-w-[37vw] text-right text-white md:justify-self-end">
               Liferay DXP 7.4 Upgrade is essential for organizations aiming to enhance their digital experience
@@ -230,13 +230,12 @@ export default function LiferayUpgradePage() {
 
       <section className="bg-[#f7f7f7] py-[64px] text-black md:py-[64px] lg:py-[64px]">
         <div className="global-container items-start">
-          <div className="relative grid items-start gap-10 md:grid-cols-2">
+          <div className="relative grid items-center gap-10 md:grid-cols-2">
             <h2 className="[@media(min-width:1440px)]:max-w-[430px] [@media(min-width:1500px)]:max-w-[430px]">
               Liferay DXP 7.4 Upgrade Process
             </h2>
-            <p className="p18 absolute bottom-0 max-w-4xl text-right text-gray-700 md:justify-self-end">
-              Our Liferay DXP 7.4 upgrade process ensures smooth migration, improved performance, enhanced security, and
-              feature-rich functionality with minimal downtime.
+            <p className="p18 absolute max-w-4xl text-right text-gray-700 md:justify-self-end">
+              Our Liferay DXP 7.4 upgrade process ensures smooth migration, improved<br/> performance, enhanced security, and feature-rich functionality with minimal downtime.
             </p>
           </div>
           <div className="pt-[3.021vw]">
@@ -252,24 +251,26 @@ export default function LiferayUpgradePage() {
             </div>
 
             {/* Section Rows */}
-            <div className="border-r border-b border-l border-gray-300 pt-[1.25vw]">
+            <div className="border-t border-r border-b border-l border-black">
               {Array.from({ length: maxRows }).map((_, rowIdx) => {
                 const height = rowHeights[rowIdx] || "min-h-[16.5vw]"
 
                 return (
-                  <div key={rowIdx} className={`grid grid-cols-1 md:grid-cols-3 ${height} border-gray-200`}>
+                  <div key={rowIdx} className={`grid grid-cols-1 md:grid-cols-3 ${height} border-black`}>
                     {phases.map((phase, colIdx) => {
                       const section = phase.sections[rowIdx]
 
                       return (
                         <div
                           key={colIdx}
-                          className={`px-[2.188vw] ${colIdx !== phases.length - 1 ? "border-r border-gray-300" : ""}`}
+                          className={`px-[2.188vw] ${rowIdx === 0 ? "pt-[1.25vw]" : ""} ${
+                            colIdx !== phases.length - 1 ? "border-r border-black" : ""
+                          }`}
                         >
                           {section ? (
                             <div className="flex h-full flex-col">
                               {/* Title */}
-                              <h3 className="mb-3 text-[1.563vw] font-medium">{section.title}</h3>
+                              <p className="mb-3 text-[1.563vw] font-medium">{section.title}</p>
 
                               {/* Points */}
                               <div className="flex-1 overflow-auto pr-2">
@@ -335,8 +336,7 @@ export default function LiferayUpgradePage() {
               {features.map((item, index) => (
                 <div className="relative" key={index}>
                   <div
-                   
-                    className={`w-[29.479vw] glow-box rounded-full border border-gray-700 bg-black p-6 text-center transition-all hover:border-blue-500 ${
+                    className={`glow-box w-[29.479vw] rounded-full border border-gray-700 bg-black p-6 text-center transition-all hover:border-blue-500 ${
                       index == 0 || index == 4 || index == 3 ? "ml-[100px]" : ""
                     } `}
                   >
@@ -373,7 +373,7 @@ export default function LiferayUpgradePage() {
                     </defs>
                   </svg>
                 </span>
-                <p className="text-[1.042vw] font-medium text-gray-300">Liferay DXP 7.4</p>
+                <p className="text-[1.042vw] font-medium text-white">Liferay DXP 7.4</p>
               </div>
             </div>
           </div>
@@ -382,9 +382,9 @@ export default function LiferayUpgradePage() {
 
       <section className="bg-[#f7f7f7] py-[64px] text-black md:py-[64px] lg:py-[64px]">
         <div className="global-container items-start">
-          <div className="relative grid items-start gap-10 md:grid-cols-2">
+          <div className="relative grid items-center gap-10 md:grid-cols-2">
             <h2 className="">Why Choose IGNEK For Liferay DXP 7.4 Upgrade Services?</h2>
-            <p className="p18 absolute items-center max-w-2xl text-right text-gray-700 md:justify-self-end">
+            <p className="p18 absolute max-w-2xl items-center text-right text-gray-700 md:justify-self-end">
               Liferay DXP 7.4 Upgrade is a pivotal step for organizations looking to enhance their digital experience.
               At IGNEK, we specialize in
             </p>
