@@ -4,13 +4,9 @@
 import React from "react"
 import { useInView } from "hooks/useInView"
 import RatingItem from "./RatingItem"
+import { ratingsData } from "data/homepage-content"
 
-const ratingsData = [
-  { logoSrc: "/images/ratings/google_logo.webp", logoAlt: "Google", ratingValue: "4.9" },
-  { logoSrc: "/images/ratings/upwork-logo.svg.png", logoAlt: "Upwork", ratingValue: "5.0" },
-  { logoSrc: "/images/ratings/clutch-logo.png", logoAlt: "Clutch", ratingValue: "5.0" },
-  { logoSrc: "/images/ratings/ambition.png", logoAlt: "Ambition", ratingValue: "5.0" },
-]
+
 
 const RatingsSection: React.FC = () => {
   const [sectionRef, isInView] = useInView({
