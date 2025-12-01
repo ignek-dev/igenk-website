@@ -467,7 +467,7 @@ export default function BlogsContent() {
 
           {/* Blog Grid Section */}
           <div className="">
-            <h2 className="mb-9 tracking-tight text-[#000000]">Browse Latest Blog</h2>
+            <h2 className="mb-9 tracking-tight text-[#000000]">Browse Latest Blogs</h2>
 
             {loading ? (
               <div className="flex items-center justify-center py-12">

@@ -1,6 +1,7 @@
 "use client"
 import { Metadata } from "next"
 import { useEffect, useRef, useState } from "react"
+import { motion, useMotionValue, useSpring } from "framer-motion"
 import { BlogSection } from "components/Common"
 import CaseStudy from "components/Common/CaseStudy"
 import TalkToExpert from "components/Common/TalkToExpert"
@@ -36,67 +37,70 @@ const metadata: Metadata = {
     ],
   },
 }
-
 export default function LiferayEcommerceDevelopmentPage() {
   const containerRef = useRef<HTMLDivElement | null>(null)
-  const [isDragging, setIsDragging] = useState(false)
-  const [startX, setStartX] = useState(0)
-  const [scrollStart, setScrollStart] = useState(0)
-  const [targetScroll, setTargetScroll] = useState<number | null>(null)
+  const scrollerRef = useRef<HTMLDivElement | null>(null)
+  const [maxScroll, setMaxScroll] = useState(0)
+  const [scrollMultiplier] = useState(3)
+  const [progress, setProgress] = useState(0)
 
-  // Smooth Scroll Animation
+  const x = useMotionValue(0)
+  const smoothX = useSpring(x, { stiffness: 100, damping: 20 })
+
   useEffect(() => {
-    if (targetScroll === null || !containerRef.current) return
+    function calculateMaxScroll() {
+      const scroller = scrollerRef.current
+      if (!scroller) return
 
-    const container = containerRef.current
-    const start = container.scrollLeft
-    const distance = targetScroll - start
-    const duration = 1200 // 1.2s
-    const startTime = performance.now()
+      const totalWidth = scroller.scrollWidth
+      const viewportW = window.innerWidth
 
-    const smoothScroll = (currentTime: number) => {
-      const elapsed = currentTime - startTime
-      const progress = Math.min(elapsed / duration, 1)
-      const ease = 1 - Math.pow(1 - progress, 3) // easeOutCubic
+      const maxScrollDistance = Math.max(0, totalWidth - viewportW)
 
-      container.scrollLeft = start + distance * ease
-
-      if (progress < 1) requestAnimationFrame(smoothScroll)
+      setMaxScroll(maxScrollDistance)
     }
 
-    requestAnimationFrame(smoothScroll)
-  }, [targetScroll])
+    calculateMaxScroll()
+    window.addEventListener("resize", calculateMaxScroll)
+    const timeout = setTimeout(calculateMaxScroll, 100)
 
-  // Mouse events
-  const handleMouseDown = (e: React.MouseEvent) => {
-    if (!containerRef.current) return
-    setIsDragging(true)
-    setStartX(e.pageX - containerRef.current.offsetLeft)
-    setScrollStart(containerRef.current.scrollLeft)
-  }
+    return () => {
+      window.removeEventListener("resize", calculateMaxScroll)
+      clearTimeout(timeout)
+    }
+  }, [])
 
-  const handleMouseUp = () => setIsDragging(false)
-  const handleMouseLeave = () => setIsDragging(false)
+  useEffect(() => {
+    function handleScroll() {
+      const container = containerRef.current
+      if (!container) return
 
-  const handleMouseMove = (e: React.MouseEvent) => {
-    if (!isDragging || !containerRef.current) return
+      const containerRect = container.getBoundingClientRect()
+      const scrollEnd = containerRect.height - window.innerHeight
 
-    e.preventDefault()
+      if (containerRect.top <= 0 && containerRect.bottom >= window.innerHeight) {
+        const scrolled = Math.abs(containerRect.top)
+        const progressValue = scrolled / scrollEnd
+        const clampedProgress = Math.max(0, Math.min(1, progressValue))
+        x.set(-clampedProgress * maxScroll)
+        setProgress(clampedProgress)
+      } else if (containerRect.top > 0) {
+        x.set(0)
+        setProgress(0)
+      } else {
+        x.set(-maxScroll)
+        setProgress(1)
+      }
+    }
 
-    const container = containerRef.current
-    const x = e.pageX - container.offsetLeft
-    const walk = (x - startX) * 2.8
+    window.addEventListener("scroll", handleScroll)
+    handleScroll()
 
-    let newScroll = scrollStart - walk
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [maxScroll, x])
 
-    // ⭐ LIMIT SCROLL (Don't scroll past last step)
-    const maxScroll = container.scrollWidth - container.clientWidth
+  const containerHeight = maxScroll * scrollMultiplier + (typeof window !== "undefined" ? window.innerHeight : 800)
 
-    if (newScroll < 0) newScroll = 0
-    if (newScroll > maxScroll) newScroll = maxScroll
-
-    setTargetScroll(newScroll)
-  }
   return (
     <main className="pb-0">
       {/* Hero */}
@@ -199,64 +203,52 @@ export default function LiferayEcommerceDevelopmentPage() {
         </div>
       </section>
 
-      <section className="bg-[#f7f7f7] text-black">
-        <div className="mx-auto w-full  py-[3.333vw]">
-          {/* Heading Row */}
-          <div className="global-container grid items-center gap-10 md:grid-cols-2">
-            <h2 className="text-black">Our Liferay Ecommerce Development Process</h2>
-
-            <p className="p18 leading-relaxed text-gray-500">
-              Liferay Ecommerce enables easy creation and management of digital shopping experiences, combining strong
-              content tools with seamless transactions for improved efficiency and user satisfaction.
-            </p>
-          </div>
-
-          {/* Horizontal Timeline */}
-      <div className="pt-[4.01vw] select-none">
-  <div
-    ref={containerRef}
-    className="w-full cursor-grab overflow-hidden pl-[10vw] active:cursor-grabbing"
-    onMouseDown={handleMouseDown}
-    onMouseLeave={handleMouseLeave}
-    onMouseUp={handleMouseUp}
-    onMouseMove={handleMouseMove}
-  >
-    <div className="relative flex min-w-max gap-[14.833vw]">
-
-      {/* ✅ Perfectly aligned horizontal line */}
-      <div className="absolute left-0 top-[2.0835vw] h-[4px] w-[91%] bg-black z-0"></div>
-
-      {steps.map((step, index) => (
-        <div
-          key={index}
-            className="relative h-[17.396vw] w-[21.875vw] flex  flex-col"
-        >
-         
-            <div className="z-10  flex h-[4.167vw] w-[4.167vw] items-center justify-center rounded-full bg-black text-[1.667vw] text-white">
-              {index + 1}
+      <div ref={containerRef} className="relative" style={{ height: `${containerHeight}px` }}>
+        <section className="sticky top-[3.75vw] h-screen overflow-hidden bg-[#f7f7f7] text-black">
+          <div className="mx-auto w-full py-[3.333vw]">
+            {/* Heading Row */}
+            <div className="global-container grid items-center gap-10 md:grid-cols-2">
+              <h2 className="text-black">Our Liferay Ecommerce Development Process</h2>
+              <p className="p18 leading-relaxed text-gray-500">
+                Liferay Ecommerce enables easy creation and management of digital shopping experiences, combining strong
+                content tools with seamless transactions for improved efficiency and user satisfaction.
+              </p>
             </div>
-        
 
-          <div className=" flex flex-col  pt-[2.188vw]">
-            {/* ✅ Title */}
-            <h3 className="absolute h-[4.583vw] w-[21.354vw] text-left text-[1.875vw]! font-medium text-black">
-              {step.title}
-            </h3>
+            {/* Horizontal Timeline */}
+            <div className="pt-[4.01vw] select-none pl-[10vw]">
+              <motion.div
+                ref={scrollerRef}
+                className="relative flex min-w-max gap-0 will-change-transform"
+                style={{ x: smoothX }}
+              >
+                <div className="relative flex min-w-max gap-[14.833vw]">
+                  {/* ✅ Perfectly aligned horizontal line */}
+                  <div className="absolute top-[2.0835vw] left-0 z-0 h-[4px] w-[91%] bg-black"></div>
 
-            {/* ✅ Description */}
-            <p className="p18 absolute bottom-0 w-[25.354vw] text-left text-gray-600">
-              {step.description}
-            </p>
+                  {steps.map((step, index) => (
+                    <div key={index} className="relative flex h-[17.396vw] w-[21.875vw] flex-col">
+                      <div className="z-10 flex h-[4.167vw] w-[4.167vw] items-center justify-center rounded-full bg-black text-[1.667vw] text-white">
+                        {index + 1}
+                      </div>
+
+                      <div className="flex flex-col pt-[2.188vw]">
+                        {/* ✅ Title */}
+                        <h3 className="absolute h-[4.583vw] w-[21.354vw] text-left text-[1.875vw]! font-medium text-black">
+                          {step.title}
+                        </h3>
+
+                        {/* ✅ Description */}
+                        <p className="p18 absolute bottom-0 w-[25.354vw] text-left text-gray-600">{step.description}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+            </div>
           </div>
-        </div>
-      ))}
-    </div>
-  </div>
-</div>
-
-        </div>
-      </section>
-
+        </section>
+      </div>
       <CaseStudy caseStudies={caseStudies} />
 
       <WhatMake
