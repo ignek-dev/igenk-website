@@ -29,11 +29,31 @@ const toolsData = [
     id: 3,
     icon: "/images/marketplace/email-authentication.png",
     module: "Identity Management & Governance",
-    title: "Email OTP Authentication for Community Edition",
+    title: "Liferay CE Email MFA",
     description:
       "Enable simple and secure email OTP login for Liferay CE user overcome verification to visitors and better protect the portal in general.",
     tags: ["OAuth", "MFA","2FA For Community Edition"],
     link: "https://marketplace.liferay.com/p/email-otp-authentication-for-community-edition-of-liferay",
+  },
+  {
+    id: 4,
+    icon: "/images/marketplace/collection-display.png",
+    module: "Content Management and Operations",
+    title: "Collection display grid view with Item Highlight",
+    description:
+      "This fragment enhances a standard Collection Display by introducing a custom grid layout where one item can be highlighted with a larger visual style. It allows authors to choose which item to highlight, offering a more dynamic and visually engaging presentation. ",
+    tags: ["Fragment", "Liferay Frontend"],
+    link: "https://marketplace.liferay.com/p/collection-display-grid-view-with-item-highlight",
+  },
+  {
+    id: 5,
+    icon: "/images/marketplace/sticky-notes.png",
+    module: "Content Management and Operations",
+    title: "Sticky Notes for the Portal",
+    description:
+      "The fragment provides a universal notes panel accessible from any page, allowing users to create, edit, delete, and search notes. Notes persist across the entire site and autosave while typing.",
+    tags: ["Fragment", "Liferay Frontend"],
+    link: "https://marketplace.liferay.com/p/sticky-notes-for-the-portal",
   },
 ]
 

@@ -103,8 +103,8 @@ export default function LiferaySupportMaintenancePage() {
             Key Activities Under Our Liferay <br /> Support And Maintenance Service
           </h2>
           <p className="w-[28.906vw] p18 text-[#E5E7EB] text-right">
-            Our dedicated Liferay team offers ongoing Liferay <br /> Support and Maintenance to address the challenges <br />of a
-            dynamic business environment.
+            Our dedicated Liferay team offers ongoing Liferay  Support and Maintenance to address the challenges of a
+            business.
           </p>
         </div>
 
