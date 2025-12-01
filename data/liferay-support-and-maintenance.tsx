@@ -14,7 +14,8 @@ export const supportChecklist = [
   "Backup & disaster recovery readiness",
 ]
 
-export const activitiesLeft = [
+// Updated data array
+export const activities = [
   {
     num: "01",
     title: "Monitoring",
@@ -28,7 +29,7 @@ export const activitiesLeft = [
   {
     num: "03",
     title: "Debugging & Bug fixing",
-    desc: "Rapidly resolve post-launch issues, ensuring Liferay Portal’s seamless performance with expert debugging and bug-fixing support.",
+    desc: "Rapidly resolve post-launch issues, ensuring Liferay Portal's seamless performance with expert debugging and bug-fixing support.",
   },
   {
     num: "04",
@@ -40,9 +41,6 @@ export const activitiesLeft = [
     title: "Regular Updates",
     desc: "We ensure your Liferay Server remains up-to-date by installing diverse patches, including Fix Packs, Security Fix Packs, Hotfixes, Service Packs, and Rolling Releases provided by Liferay.",
   },
-]
-
-export const activitiesRight = [
   {
     num: "06",
     title: "Backup and Recovery",
