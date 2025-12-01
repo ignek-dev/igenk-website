@@ -46,6 +46,9 @@ interface WebinarData {
 
   agenda: AgendaItem[]; // New Agenda Array
   whyWatch: WhyWatchData; // New Section Data
+
+  // For Event: To determine logic
+  status: "upcoming" | "past";
 }
 
 // --- Expanded Mock Data (Acts as your Database) ---
@@ -54,10 +57,11 @@ const webinarsDB: WebinarData[] = [
     id: "featured-1",
     slug: "customer-onboarding-liferay",
     title: "Customer Onboarding with Low Code",
+    status: "past",
     shortDescription: "Learn how to streamline onboarding...",
     fullTitle: "Customer Onboarding With Low Code/ No-Code Capabilities of Liferay Portal",
     heroDescription:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus.",
+      "Explore the possibilities of Liferay, the industry-leading digital experience platform, in this special webinar.",
     aboutWebinar:
       "We're excited to announce our upcoming webinar: \"Customer Onboarding With Low Code/No-Code Capabilities of Liferay Portal\" While working with businesses, we have seen that the onboarding process for new customers is the biggest source of headaches for them, and we always concentrate on finding solutions for the business's problems.",
     date: "26-27 Sep 2025",
@@ -125,6 +129,7 @@ const webinarsDB: WebinarData[] = [
     id: "1",
     slug: "building-enterprise-liferay-1",
     title: "Building Enterprise Website With Liferay",
+    status: "upcoming", 
     shortDescription: "Deliver better results with Liferay tools...",
     fullTitle: "Building Enterprise Website With Liferay DXP",
     heroDescription:
@@ -132,7 +137,7 @@ const webinarsDB: WebinarData[] = [
     aboutWebinar:
       "In this session, we will dive deep into the architecture of Liferay DXP. We will cover module development, theme creation, and how to leverage the OSGi framework to build resilient enterprise applications.",
     date: "26-27 September 2025",
-    location: "IGNEK, Ahmedabad",
+    location: "Virtual Webinar",
     time: "8:30 AM - 7:30 PM",
     pricing: "Free",
     image: "/images/webinar/card-event-image.png",
@@ -216,7 +221,22 @@ export default function WebinarDetails({ params }: { params: Promise<{ slug: str
     message: "",
   });
 
-  // 3. Handle Submit Function
+  if (!data) {
+    notFound(); 
+  }
+
+  // --- LOGIC FOR BUTTON TEXT AND BEHAVIOR ---
+  const isUpcoming = data.status === "upcoming";
+  const ctaText = isUpcoming ? "Register Now" : "Get Presentation & Recording";
+
+  // --- SCROLL FUNCTION ---
+  const scrollToForm = () => {
+    const formSection = document.getElementById("webinar-registration-form");
+    if (formSection) {
+      formSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (loading) return;
@@ -226,7 +246,6 @@ export default function WebinarDetails({ params }: { params: Promise<{ slug: str
     const form = e.currentTarget;
     const formData = new FormData(form);
     
-    // --- Email Validation ---
     const email = formData.get("email") as string;
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
@@ -235,12 +254,8 @@ export default function WebinarDetails({ params }: { params: Promise<{ slug: str
         return;
     }
 
-    // Append Access Key (Using the one from your reference, or replace with a new one)
-    // - Based on user provided contact page logic
     formData.append("access_key", "f4dec7fc-2afe-4db7-9612-886b779847e9"); 
-    
-    // Append extra info to know which webinar they want
-    formData.append("subject", `Webinar Registration: ${data?.title}`);
+    formData.append("subject", `Webinar Registration: ${data?.title} (${data.status})`);
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
@@ -250,18 +265,12 @@ export default function WebinarDetails({ params }: { params: Promise<{ slug: str
       await response.json();
       
       if (response.ok) {
-        setStatus({ type: "success", message: "Registration successful! We will send details shortly." });
+        setStatus({ type: "success", message: "Request received! We will be in touch." });
         form.reset();
-        
-        // Hide message after 4 seconds
-        setTimeout(() => {
-          setStatus({ type: "idle", message: "" });
-        }, 4000);
+        setTimeout(() => { setStatus({ type: "idle", message: "" }); }, 4000);
       } else {
-        setStatus({ type: "error", message: "Failed to register. Please try again." });
-        setTimeout(() => {
-          setStatus({ type: "idle", message: "" });
-        }, 4000);
+        setStatus({ type: "error", message: "Submission failed. Please try again." });
+        setTimeout(() => { setStatus({ type: "idle", message: "" }); }, 4000);
       }
     } catch (err) {
       console.log(err);
@@ -271,9 +280,7 @@ export default function WebinarDetails({ params }: { params: Promise<{ slug: str
     }
   };
 
-  if (!data) {
-    notFound(); // Returns 404 if slug doesn't exist
-  }
+  // const webinarButtonClasses = "px-16 py-5 text-[1.041vw]"; 
 
   return (
     <main className="w-full mt-[-1px]">
@@ -292,15 +299,19 @@ export default function WebinarDetails({ params }: { params: Promise<{ slug: str
           </h1>
 
           {/* Description */}
-          <p className="text-[1.041vw] leading-[1.6] text-gray-300 max-w-[55vw] mb-[2.24vw]">
+          <p className="p18 text-[1.041vw] leading-[1.6] text-white max-w-[55vw] mb-[2.24vw]">
             {data.heroDescription}
           </p>
 
           {/* CTA Button using your Component */}
           <div className="flex justify-center">
             <ScheduleMeetingButton 
-              btnName="Get Presentation & Recording" 
-              isFullWidth={false} 
+              btnName={ctaText} 
+              isFullWidth={false}
+              onClick={scrollToForm}
+              showIcon={false} // <--- Hides icon here 
+              // customClasses={webinarButtonClasses}
+              //  sizeVariant="webinar-hero"
             />
           </div>
         </div>
@@ -321,9 +332,9 @@ export default function WebinarDetails({ params }: { params: Promise<{ slug: str
         <div className="flex w-full mb-[1.875vw] items-stretch">
           
           {/* Date: Aligned Left. Max Width ~280px */}
-          <div className="flex flex-col gap-[1.2vw] w-full max-w-[12.58vw]">
-            <h4 className="text-[1.25vw] font-semibold text-black">Date</h4>
-            <p className="text-[1.041vw] text-[#374151]">{data.date}</p>
+          <div className="flex flex-col gap-[1.2vw] w-full max-w-[14.58vw]">
+            <h4 className="text-[1.25vw] text-black">Date</h4>
+            <p className="p24 text-[#4B5563]! font-medium!">{data.date}</p>
           </div>
 
           {/* DIVIDER: 
@@ -331,9 +342,9 @@ export default function WebinarDetails({ params }: { params: Promise<{ slug: str
           <div className="w-[1px] bg-gray-300 mx-[6.09vw]"></div>
 
           {/* Location */}
-          <div className="flex flex-col gap-[1.2vw] w-full max-w-[12.58vw]">
-            <h4 className="text-[1.25vw] font-semibold text-black">Location</h4>
-            <p className="text-[1.041vw] text-[#374151]">{data.location}</p>
+          <div className="flex flex-col gap-[1.2vw] w-full max-w-[10.58vw]">
+            <h4 className="text-[1.25vw] text-black">Location</h4>
+            <p className="p24 text-[#4B5563]! font-medium!">{data.location}</p>
           </div>
 
           {/* DIVIDER */}
@@ -341,8 +352,8 @@ export default function WebinarDetails({ params }: { params: Promise<{ slug: str
 
           {/* Timing */}
           <div className="flex flex-col gap-[1.2vw] w-full max-w-[12.58vw]">
-            <h4 className="text-[1.25vw] font-semibold text-black">Timing</h4>
-            <p className="text-[1.041vw] text-[#374151]">{data.time}</p>
+            <h4 className="text-[1.25vw] text-black">Timing</h4>
+            <p className="p24 text-[#4B5563]! font-medium!">{data.time}</p>
           </div>
 
           {/* DIVIDER */}
@@ -350,8 +361,8 @@ export default function WebinarDetails({ params }: { params: Promise<{ slug: str
 
           {/* Pricing: Aligned Right. ml-auto pushes it to end if space allows. */}
           <div className="flex flex-col gap-[1.2vw] w-full max-w-[5.58vw]">
-            <h4 className="text-[1.25vw] font-semibold text-black">Pricing</h4>
-            <p className="text-[1.041vw] text-[#374151] capitalize">{data.pricing}</p>
+            <h4 className="text-[1.25vw] text-black">Pricing</h4>
+            <p className="p24 text-[#4B5563]! font-medium! capitalize">{data.pricing}</p>
           </div>
         </div>
 
@@ -383,19 +394,23 @@ export default function WebinarDetails({ params }: { params: Promise<{ slug: str
       {/* --- SECTION 3: AGENDA (Black Background) --- */}
       {/* Renders only if agenda items exist */}
       {data.agenda && data.agenda.length > 0 && (
-        <section className="bg-black text-white pt-[3.333vw] pb-[5vw]">
+        <section className="bg-black text-white pt-[3.333vw] pb-[3.333vw]">
           <div className="global-container flex flex-col lg:flex-row gap-[1.875vw] relative">
             
             {/* LEFT: Sticky Header */}
             {/* 'lg:w-1/3' gives it about 33% width. 'sticky top-[10vw]' keeps it pinned. */}
-            <div className="lg:w-1/2 flex flex-col items-start h-fit sticky top-[8vw] pt-[3.333vw]">
+            <div className="lg:w-1/2 flex flex-col items-start h-fit sticky top-[8vw]">
               <h2 className="text-[2.5vw] font-bold mb-[1.458vw]">Agenda Of Webinar</h2>
               <p className="p18 text-gray-300 mb-[1.458vw] leading-[1.6] max-w-lg">
                 In this webinar, you&apos;ll learn how to use Liferay Portal in order to meet the expectations of today&apos;s market. We will also cover :
               </p>
               <ScheduleMeetingButton 
-                btnName="Get Presentation & Recording" 
-                isFullWidth={false} 
+                btnName={ctaText} 
+                isFullWidth={false}
+                onClick={scrollToForm}
+                showIcon={false} // <--- Hides icon here
+                // customClasses={webinarButtonClasses}
+                //  sizeVariant="webinar-hero"
               />
             </div>
 
@@ -426,7 +441,7 @@ export default function WebinarDetails({ params }: { params: Promise<{ slug: str
       )}
 
       {/* --- SECTION 4: WHY WATCH & FORM (Light Background) --- */}
-      <section className="bg-[#F9FAF7] pt-[3.333vw] pb-[5vw]">
+      <section id="webinar-registration-form" className="bg-[#F9FAF7] pt-[3.333vw] pb-[3.333vw]">
         <div className="global-container flex flex-col lg:flex-row gap-[7.4vw] relative">
           
           {/* LEFT: Sticky Text */}
@@ -445,7 +460,7 @@ export default function WebinarDetails({ params }: { params: Promise<{ slug: str
                 
                 {/* Header: */}
                 <h3 className="text-[1.875vw] font-semibold text-[#19213D] mb-[4.688vw]">
-                  Get Presentation & Recording
+                  {ctaText}
                 </h3>
 
                 <form onSubmit={handleSubmit} className="flex flex-col gap-[2.3vw]">
@@ -511,9 +526,9 @@ export default function WebinarDetails({ params }: { params: Promise<{ slug: str
                     <button 
                       type="submit"
                       disabled={loading}
-                      className="w-full bg-black text-white font-medium py-[1.5vw] rounded-[1.2vw] hover:opacity-90 transition-opacity text-[1.1vw]"
+                      className="w-full bg-black text-white font-medium py-[1.5vw] rounded-[1.2vw] hover:opacity-90 transition-opacity text-[1.1vw] disabled:opacity-50 disabled:cursor-not-allowed"
                     >
-                     {loading ? "Sending..." : "Get Presentation & Recording"}
+                     {loading ? "Processing..." : ctaText}
                     </button>
 
                     {/* Status Messages */}
