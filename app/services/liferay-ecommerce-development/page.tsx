@@ -105,8 +105,8 @@ export default function LiferayEcommerceDevelopmentPage() {
         <div className="global-container mx-auto w-full pt-[3.281vw] pb-[3.802vw]">
           <div className="3.802vw relative grid items-start gap-10 md:grid-cols-2">
             <div>
-              <div className="pp18 banner-tab inline-flex items-center">Liferay Services</div>
-              <h1 className="mt-9">
+              <div className="p18 banner-tab inline-flex items-center">Liferay Services</div>
+              <h1 className="mt-[2.031vw]">
                 Liferay
                 <br />
                 <span className="block">Ecommerce</span>
@@ -142,25 +142,27 @@ export default function LiferayEcommerceDevelopmentPage() {
               optimization to guarantee fast load times, responsive interactions, and minimal downtime.
             </p>
           </div>
-          <div className="">
+          <div>
             <div className="flex flex-col">
               {ecommerceDevelopment.map((item, index) => (
                 <div
                   key={index}
-                  className={`flex items-center gap-[100px] border-gray-300 px-4 py-6 ${
-                    index !== 0 ? "border-t" : ""
-                  } ${index !== ecommerceDevelopment.length - 1 ? "border-b" : ""}`}
+                  className={`flex flex-row items-center justify-between border-gray-300 py-6 ${
+                    index !== 0 ? "border-t pt-[1.458vw]" : "pt-0"
+                  } ${index !== ecommerceDevelopment.length - 1 ? "border-b" : "pb-0"}`}
                 >
                   {/* Row Number */}
-                  <span className="mb-2 text-[30px] font-medium text-black">
+                  <span className="mb-2 max-w-[2.76vw] text-[2.083vw] font-medium text-black">
                     {index + 1 < 10 ? `0${index + 1}` : index + 1}
                   </span>
 
                   {/* Title */}
-                  <h3 className="mb-2 w-[800px] text-[1.563vw] font-medium text-black">{item.text}</h3>
+                  <h3 className="mb-2 text-[1.563vw]! leading-[36px]! font-normal text-black">{item.text}</h3>
 
                   {/* Description */}
-                  <p className="w-[1800px] text-justify text-[20px] font-normal text-gray-600">{item.description}</p>
+                  <p className="max-w-[39.198vw] text-left text-[1.042vw] font-normal text-gray-600">
+                    {item.description}
+                  </p>
                 </div>
               ))}
             </div>
@@ -168,25 +170,29 @@ export default function LiferayEcommerceDevelopmentPage() {
         </div>
       </section>
 
-      <section className="bg-black py-[64px] text-white lg:py-[64px]">
-        <div className="mx-auto w-full items-start px-4 md:px-8 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
-          <h2 className="text-5xl leading-tight font-semibold sm:text-4xl md:text-5xl">
-            Ecommerce Development Using Liferay
-          </h2>
-          <p className="mt-4 justify-self-center text-lg leading-relaxed text-[#101012] text-white">
-            Liferay Ecommerce Development Service streamlines online retail operations with customizable storefronts,
-            product management, order processing, and marketing tools for businesses seeking a strong online presence.
-          </p>
-          <div className="grid grid-cols-1 gap-x-[30px] gap-y-[63px] pt-15 md:grid-cols-2">
+      <section className="global-container bg-black py-[3.333vw]">
+        <div className="mx-auto w-full items-start">
+          <div className="flex flex-col gap-[1.458vw]">
+            <h2 className="text-white">Ecommerce Development Using Liferay</h2>
+            <p className="p18 justify-self-center text-gray-100!">
+              Liferay Ecommerce Development Service streamlines online retail operations with customizable storefronts,
+              product management, order processing, and marketing tools for businesses seeking a strong online presence.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 gap-x-[1.51vw] gap-y-[4.688vw] pt-[4.063vw] md:grid-cols-2">
             {ecommerceDevelopmentUsingLiferay.map((item, index) => (
-              <div key={index} className="relative z-1 flex flex-col rounded-lg border border-gray-700 p-8">
+              <div
+                key={index}
+                className="relative z-1 flex flex-col rounded-lg border border-gray-700 px-[1.875vw] pt-[1.771vw] pb-[1.771vw]"
+              >
                 {/* Title */}
-                <h3 className="absolute z-10 mt-[-60px] mb-2 w-max rounded-full border border-gray-700 bg-black px-8 py-3 text-2xl font-medium text-white">
+                <h3 className="absolute z-10 mt-[-3.385vw] w-max rounded-full border border-gray-700 bg-black px-[1.875vw] py-[0.521vw] text-[1.458vw]! font-medium text-white">
                   {item.text}
                 </h3>
 
                 {/* Description */}
-                <p className="text-gray/200 mt-8 text-[20px] font-normal">{item.description}</p>
+                <p className="p20 mt-[1.276vw] font-normal text-[#D1D5DB]!">{item.description}</p>
               </div>
             ))}
           </div>
@@ -194,57 +200,60 @@ export default function LiferayEcommerceDevelopmentPage() {
       </section>
 
       <section className="bg-[#f7f7f7] text-black">
-        <div className="mx-auto w-full px-4 py-[64px] md:px-8 lg:py-[64px] [@media(min-width:1440px)]:px-[192px]">
+        <div className="mx-auto w-full  py-[3.333vw]">
           {/* Heading Row */}
-          <div className="grid items-center gap-10 md:grid-cols-2">
-            <h2 className="text-5xl leading-tight font-semibold">Our Liferay Ecommerce Development Process</h2>
+          <div className="global-container grid items-center gap-10 md:grid-cols-2">
+            <h2 className="text-black">Our Liferay Ecommerce Development Process</h2>
 
-            <p className="text-lg leading-relaxed text-gray-700">
+            <p className="p18 leading-relaxed text-gray-500">
               Liferay Ecommerce enables easy creation and management of digital shopping experiences, combining strong
               content tools with seamless transactions for improved efficiency and user satisfaction.
             </p>
           </div>
 
           {/* Horizontal Timeline */}
-          <div className="pt-16 select-none">
-            <div
-              ref={containerRef}
-              className="w-full cursor-grab overflow-hidden active:cursor-grabbing"
-              onMouseDown={handleMouseDown}
-              onMouseLeave={handleMouseLeave}
-              onMouseUp={handleMouseUp}
-              onMouseMove={handleMouseMove}
-            >
-              <div className="relative flex min-w-max gap-0">
-                {steps.map((step, index) => (
-                  <div key={index} className="relative h-[300px] w-[420px] flex-shrink-0 md:w-[600px]">
-                    {/* Number + connecting line */}
-                    <div className="relative flex w-full items-center">
-                      {/* Number */}
-                      <div className="z-10 flex h-14 w-14 items-center justify-center rounded-full bg-black text-xl font-semibold text-white">
-                        {step.number}
-                      </div>
+      <div className="pt-[4.01vw] select-none">
+  <div
+    ref={containerRef}
+    className="w-full cursor-grab overflow-hidden pl-[10vw] active:cursor-grabbing"
+    onMouseDown={handleMouseDown}
+    onMouseLeave={handleMouseLeave}
+    onMouseUp={handleMouseUp}
+    onMouseMove={handleMouseMove}
+  >
+    <div className="relative flex min-w-max gap-[14.833vw]">
 
-                      {/* Line */}
-                      {index < steps.length - 1 && (
-                        <div className="absolute top-1/2 right-0 left-0 -z-0 h-[3px] bg-black"></div>
-                      )}
-                    </div>
+      {/* ✅ Perfectly aligned horizontal line */}
+      <div className="absolute left-0 top-[2.0835vw] h-[4px] w-[91%] bg-black z-0"></div>
 
-                    {/* Title (same line for all) */}
-                    <h3 className="absolute top-[90px] w-[70%] text-left text-4xl font-medium text-black">
-                      {step.title}
-                    </h3>
-
-                    {/* Description (bottom: 0 for all) */}
-                    <p className="absolute bottom-0 w-[70%] text-left text-base leading-relaxed text-gray-600">
-                      {step.description}
-                    </p>
-                  </div>
-                ))}
-              </div>
+      {steps.map((step, index) => (
+        <div
+          key={index}
+            className="relative h-[17.396vw] w-[21.875vw] flex  flex-col"
+        >
+         
+            <div className="z-10  flex h-[4.167vw] w-[4.167vw] items-center justify-center rounded-full bg-black text-[1.667vw] text-white">
+              {index + 1}
             </div>
+        
+
+          <div className=" flex flex-col  pt-[2.188vw]">
+            {/* ✅ Title */}
+            <h3 className="absolute h-[4.583vw] w-[21.354vw] text-left text-[1.875vw]! font-medium text-black">
+              {step.title}
+            </h3>
+
+            {/* ✅ Description */}
+            <p className="p18 absolute bottom-0 w-[25.354vw] text-left text-gray-600">
+              {step.description}
+            </p>
           </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>
+
         </div>
       </section>
 

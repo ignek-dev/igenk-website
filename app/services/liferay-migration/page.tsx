@@ -152,7 +152,7 @@ export default function LiferayMigrationPage() {
       <section className="bg-black text-white">
         <div className="global-container mx-auto w-full py-[3.333vw]">
           <div className="grid items-start gap-10 lg:grid-cols-[0.9fr_1.1fr]">
-            <div className="sticky top-0 flex w-[28.698vw] flex-col gap-[1.458vw]">
+            <div className="sticky top-[10.417vw] flex w-[28.698vw] flex-col gap-[1.458vw]">
               <h2 className="leading-[60px] font-semibold">Our Liferay Migration Process</h2>
               <p className="p20 text-gray-500">
                 We optimize transitions from legacy systems to Liferay with our proven Liferay Portal Migration
