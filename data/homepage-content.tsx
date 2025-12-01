@@ -5,7 +5,7 @@ export const homepageData = {
     headingLine3: "With IGNEK Today",
 
     description:
-      "Transform your digital landscape with cutting-edge DXP solutions tailored to your unique business needs.",
+      "Transform your digital landscape with cutting-edge Liferay DXP solutions tailored to your unique business needs.",
 
     button: {
       text: "Discover More",
