@@ -59,7 +59,7 @@ export default function LiferayMigrationPage() {
                 <span className="block">Migration</span>
               </h1>
             </div>
-            <p className="p18 absolute bottom-0 max-w-[662px] text-right md:justify-self-end">
+            <p className="p18 absolute bottom-0 w-[28.646vw] text-right md:justify-self-end">
               Upgrade smoothly to the latest Liferay version with expert Liferay Migration to ensures secure data
               transfer, minimal downtime, and optimized platform performance.
             </p>
@@ -70,7 +70,7 @@ export default function LiferayMigrationPage() {
             {featureTabs.map((label) => (
               <span
                 key={label}
-                className="inline-flex items-center rounded-[2.083vw] border border-[#374151] bg-black px-[1.458vw] py-[0.833vw] p20 text-white shadow-[0_0.208vw_0.521vw_0_rgba(0,151,158,0.25)] transition-colors"
+                className="p20 inline-flex items-center rounded-[2.083vw] border border-[#374151] bg-black px-[1.458vw] py-[0.833vw] text-white shadow-[0_0.208vw_0.521vw_0_rgba(0,151,158,0.25)] transition-colors"
               >
                 {label}
               </span>
@@ -80,16 +80,16 @@ export default function LiferayMigrationPage() {
       </section>
 
       {/* Circular reasons section */}
-  <section className="bg-[#f7f7f7] text-black">
-  <div className="mx-auto w-full pt-[3.75vw] pb-[2.76vw] ">
-    <div className="relative flex flex-col items-center justify-center px-[0.313vw] text-center">
-      {/* Outer Dotted Circle */}
-      <div className="relative flex h-[48.125vw] w-[48.125vw] items-center justify-center rounded-full border-[0.104vw] border-dashed border-[#000000]">
-        {/* Inner Dotted Circle */}
-        <div className="flex h-[31.25vw] w-[31.25vw] items-center justify-center rounded-full border border-dashed border-[#000000]">
-          {/* Center Content */}
-          <div className="max-w-[13.542vw] flex flex-col items-center text-center">
-           <div className="mx-auto mb-4 flex  items-center justify-center rounded-md bg-blue-100">
+      <section className="bg-[#f7f7f7] text-black">
+        <div className="mx-auto w-full pt-[3.75vw] pb-[2.76vw]">
+          <div className="relative flex flex-col items-center justify-center px-[0.313vw] text-center">
+            {/* Outer Dotted Circle */}
+            <div className="relative flex h-[48.125vw] w-[48.125vw] items-center justify-center rounded-full border-[0.104vw] border-dashed border-[#000000]">
+              {/* Inner Dotted Circle */}
+              <div className="flex h-[31.25vw] w-[31.25vw] items-center justify-center rounded-full border border-dashed border-[#000000]">
+                {/* Center Content */}
+                <div className="flex max-w-[13.542vw] flex-col items-center text-center">
+                  <div className="mx-auto mb-4 flex items-center justify-center rounded-md bg-blue-100">
                     <svg
                       width="91"
                       height="91"
@@ -116,40 +116,45 @@ export default function LiferayMigrationPage() {
                       </defs>
                     </svg>
                   </div>
-            <h2 className="mb-[0.104vw] text-[1.875vw]! w-[26.146vw] font-medium">Why Enterprises Should Migrate To Liferay?</h2>
-            <p className="mt-[0.208vw] text-[0.729vw] leading-relaxed text-gray-600">
-              Liferay provides a scalable platform for personalized customer experiences, with Liferay Portal
-              Migration enhancing content management for efficient delivery.
-            </p>
+                  <h2 className="mb-[0.104vw] w-[26.146vw] text-[1.875vw]! font-medium">
+                    Why Enterprises Should Migrate To Liferay?
+                  </h2>
+                  <p className="mt-[0.208vw] text-[0.729vw] leading-relaxed text-gray-600">
+                    Liferay provides a scalable platform for personalized customer experiences, with Liferay Portal
+                    Migration enhancing content management for efficient delivery.
+                  </p>
+                </div>
+              </div>
+
+              {/* Circular Feature Points */}
+              {features.map((feature, index) => (
+                <div key={index} className={`absolute ${feature.position} flex flex-col`}>
+                  <div className="mb-[0.104vw] flex h-[2.917vw] min-h-[2.917vw] w-[2.917vw] min-w-[2.917vw] items-center justify-center rounded-full bg-black text-white">
+                    <svg width="21" height="8" viewBox="0 0 23 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M1 10L7 16L22 1"
+                        stroke="white"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </div>
+                  <p className={`${feature.heading} text-[1.042vw] leading-snug font-medium text-gray-800`}>{feature.title}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
-
-        {/* Circular Feature Points */}
-        {features.map((feature, index) => (
-          <div key={index} className={`absolute ${feature.position} flex w-[12.5vw] flex-col items-center text-center`}>
-            <div className="mb-[0.104vw] flex h-[2.917vw] min-h-[2.917vw] w-[2.917vw] min-w-[2.917vw] items-center justify-center rounded-full bg-black text-white">
-              <svg width="23" height="17" viewBox="0 0 23 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M1 10L7 16L22 1" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-</svg>
-
-            </div>
-            <p className="text-[1.042vw] leading-snug font-medium text-gray-800">{feature.title}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </div>
-</section>
+      </section>
 
       {/* Migration Process timeline */}
       <section className="bg-black text-white">
-        <div className="mx-auto w-full py-[3.333vw] global-container">
+        <div className="global-container mx-auto w-full py-[3.333vw]">
           <div className="grid items-start gap-10 lg:grid-cols-[0.9fr_1.1fr]">
-            <div className="sticky flex flex-col gap-[1.458vw] top-0 w-[28.698vw]">
-              <h2 className=" leading-[60px] font-semibold ">
-                Our Liferay Migration Process
-              </h2>
-              <p className="  p20 text-gray-500">
+            <div className="sticky top-0 flex w-[28.698vw] flex-col gap-[1.458vw]">
+              <h2 className="leading-[60px] font-semibold">Our Liferay Migration Process</h2>
+              <p className="p20 text-gray-500">
                 We optimize transitions from legacy systems to Liferay with our proven Liferay Portal Migration
                 services, using best practices for seamless upgrades. Our expertise ensures cost-effective, high-quality
                 transitions. Here is our Liferay Migration process.
@@ -159,7 +164,7 @@ export default function LiferayMigrationPage() {
 
             <div>
               <div className="relative">
-                <div className="relative   mt-[0.313vw]  ml-[3.75vw] flex flex-col">
+                <div className="relative mt-[0.313vw] ml-[3.75vw] flex flex-col">
                   {/* Vertical line */}
                   <div
                     className="absolute top-0 left-[2.3vw] h-[89%] bg-white [@media(min-width:2140px)]:h-[90%]"
@@ -179,14 +184,13 @@ export default function LiferayMigrationPage() {
                       </div>
 
                       {/* Step content */}
-                      <div className={`${index !== steps.length - 1 ? "   max-w-[34.583vw] " : ""} ml-[3.438vw]`}>
+                      <div className={`${index !== steps.length - 1 ? "max-w-[34.583vw]" : ""} ml-[3.438vw]`}>
                         <div className="flex items-center justify-between">
-                          <h3 className="text-[1.563vw]! text-[#FFFFFF] font-medium! ">{step.title}</h3>
+                          <h3 className="text-[1.563vw]! font-medium! text-[#FFFFFF]">{step.title}</h3>
                         </div>
-                        <p className="text-gray/50 mt-[1.25vw] p20">{step.desc}</p>
-                       {index !== steps.length - 1 ? <hr className=" mb-[2.708vw] mt-[2.708vw] "/> : ""} 
+                        <p className="text-gray/50 p20 mt-[1.25vw]">{step.desc}</p>
+                        {index !== steps.length - 1 ? <hr className="mt-[2.708vw] mb-[2.708vw]" /> : ""}
                       </div>
-                      
                     </div>
                   ))}
                 </div>

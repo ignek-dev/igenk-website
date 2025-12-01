@@ -34,31 +34,38 @@ export const steps = [
 export const features = [
   {
     title: "Easy Integration Capabilities",
-    position: "top-[-0.1vw] flex flex-col gap-[1.042vw] left-1/2 right-[-5.21vw]",
+    position: "top-[-0.1vw] items-center max-w-[13.698vw] flex flex-col gap-[1.042vw] left-1/2 right-[-5.21vw]",
+    heading: "w-[10.417vw] ",
   },
   {
     title: "B2B & B2C Digital Commerce",
-    position: "top-[25%] right-[1.20vw] flex flex-row",
+    position: "top-[35%] right-[-12.2vw] flex gap-[1.042vw] flex flex-row",
+    heading: "w-[10.417vw] ",
   },
   {
     title: "Forms, Workflow, and Collaboration",
-    position: "bottom-[20%] right-[-7.80vw] flex flex-row",
+    position: "bottom-[20%] right-[-9.80vw] gap-[1.042vw] flex flex-row",
+    heading: "w-[11.458vw] ",
   },
   {
     title: "Low Code/No Code Tool for Rapid Custom Development",
-    position: "bottom-[9%] left-1/2 -translate-x-1/2 min-w-[18.07vw]",
+    position: "bottom-[9%] left-[51%] items-center -translate-x-1/2 min-w-[18.07vw]",
+    heading: "w-[18.49vw] ",
   },
   {
     title: "Native Headless Capabilities",
-    position: "bottom-[22%] left-[-8.30vw] flex flex-row-reverse",
+    position: "bottom-[22%] left-[-10.30vw] gap-[1.042vw] text-right flex flex-row-reverse",
+    heading: "w-[10.417vw] ",
   },
   {
     title: "Efficient Content Management System",
-    position: "top-[45%] left-[-3.03vw] flex flex-row-reverse",
+    position: "top-[45%] left-[-6.03vw] flex gap-[1.042vw] text-right flex-row-reverse",
+    heading: "w-[11.458vw] ",
   },
   {
     title: "Create Personalized Experiences for Users",
-    position: "top-[20%] left-[-8.3vw] flex flex-row-reverse",
+    position: "top-[9%] left-[-6.3vw] text-right flex gap-[1.042vw] flex-row-reverse",
+    heading: "w-[11.979vw] ",
   },
 ]
 
