@@ -1,11 +1,11 @@
 export const homepageData = {
   hero: {
-    headingLine1: "Utilise LIFERAY",
-    headingItalic: "to the Highest Potential",
-    headingLine3: "",
+    headingLine1: "We are",
+    headingItalic: "Liferay Boutique",
+    headingLine3: "Company",
 
     description:
-      "Unlock the full power of Liferay with expertly crafted DXP solutions tailored to your enterprise’s digital ambitions.",
+      "Helping enterprises utilise Liferay to its highest potential through strategy-led, best-practice implementations.",
 
     button: {
       text: "Discover More",
