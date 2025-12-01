@@ -1,11 +1,11 @@
 export const homepageData = {
   hero: {
-    headingLine1: "Transform Your",
-    headingItalic: "DIGITAL EXPERIENCE",
-    headingLine3: "With IGNEK Today",
+    headingLine1: "Utilise",
+    headingItalic: "LIFERAY",
+    headingLine3: "to the Highest Potential",
 
     description:
-      "Transform your digital landscape with cutting-edge Liferay DXP solutions tailored to your unique business needs.",
+      "Unlock the full power of Liferay with expertly crafted DXP solutions tailored to your enterprise’s digital ambitions.",
 
     button: {
       text: "Discover More",
@@ -54,9 +54,9 @@ export const partners = [
 ]
 
 export const EndToEndSectionData = {
-  heading: "Your End-to-End Digital Transformation Partner",
+  heading: "Your End-to-End Liferay Digital Experience Implementation Partner",
   description:
-    "We empower enterprises to innovate and scale with comprehensive Liferay DXP solutions, combining strategy, design, and technology for seamless digital transformation success.",
+    "We help enterprises utilise Liferay to its highest potential through thoughtful, best-practice implementations. From discovery to design, engineering, and optimisation, we craft digital experiences that are scalable, intuitive, and built to deliver long-term value.",
 
   digitalExperience: {
     title: "Digital Experience",
