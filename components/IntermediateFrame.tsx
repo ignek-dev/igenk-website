@@ -1,14 +1,6 @@
+import { frameContent } from "data/homepage-content"
 import React from "react"
 
-// Array of text to display in the frame
-const frameContent = [
-  "DELIVER SEAMLESS JOURNEYS",
-  "PERSONALIZE EVERY INTERACTION",
-  "TRANSFORM CUSTOMER TOUCHPOINTS",
-  "AUTOMATE WHAT MATTERS",
-  "TURN DATA INTO DECISIONS",
-  "LEAD WITH STRATEGY",
-]
 
 const IntermediateFrame = () => {
   const marqueeContent = [...frameContent, ...frameContent]
