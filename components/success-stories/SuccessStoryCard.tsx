@@ -20,9 +20,9 @@ const SuccessStoryCard: React.FC<{ story: Story }> = ({ story }) => {
   return (
     // The main card container
     <div className="rounded-2xl border border-[#E5E7EB] bg-white">
-      <div className="grid grid-cols-1 items-center gap-8 p-[1.25vw] lg:grid-cols-2">
+      <div className="grid grid-cols-1 items-center gap-[3.073vw] p-[1.25vw] lg:grid-cols-2">
         {/* Left Column: Image */}
-        <div className="h-[29.063vw] w-[38.698vw] overflow-hidden rounded-lg">
+        <div className="h-[29.063vw] max-w-[38.698vw] overflow-hidden rounded-lg">
           <Image
             src={story.imageSrc}
             alt={story.title}

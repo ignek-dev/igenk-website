@@ -933,62 +933,6 @@ html {
   scroll-margin-top: 80px; /* adjust to header height */
 }
 
-.semicircle-top::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  height: 20px;
-  border-top-left-radius: 999px;
-  border-top-right-radius: 999px;
-  border: 2px solid #00979E;
-  border-bottom: none;
-  pointer-events: none;
-  opacity: 0.5;
-}
-
-.conic-border {
-  position: relative;
-  border-radius: 50px;
-  overflow: visible;       /* allow ring to show outside slightly if inset is negative */
-}
-
-/* Rotating border ring */
-.conic-border::before {
-  content: "";
-  position: absolute;
-  inset: -2px;             /* makes a thin ring outside the element */
-  border-radius: inherit;
-  background: conic-gradient(transparent 240deg, #00ffff, #00ffff);
-  animation: rotate 3s linear infinite;
-  z-index: 0;
-  pointer-events: none;
-}
-
-/* Inner mask that keeps the interior solid (prevents gradient leaking in) */
-.conic-border::after {
-  content: "";
-  position: absolute;
-  inset: 2px;              /* thickness of the ring */
-  border-radius: inherit;
-  background: white;       /* use your actual background color here if not white */
-  z-index: 1;
-  pointer-events: none;
-}
-
-/* Make sure actual link content is above the pseudo elements */
-.conic-border > * {
-  position: relative;
-  z-index: 2;
-}
-
-@keyframes rotate {
-  to { transform: rotate(360deg); }
-}
-
-
 .fancy-white {
   --offset: 3px;
   position: relative;
@@ -1021,3 +965,4 @@ html {
   position: absolute;
   inset: var(--offset);
 }
+
