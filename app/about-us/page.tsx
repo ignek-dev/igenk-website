@@ -176,11 +176,11 @@ export default function AboutUs() {
             {/*Core Values */}
             <CoreValues />
 
-            {/* CEO Section */}
-            <CEOSection />
+            {/* CEO Section - hidden */}
+            {/* <CEOSection /> */}
 
-            {/* Jorney Section */}
-            <Journey />
+            {/* Jorney Section - hidden */}
+            {/* <Journey /> */}
 
             {/*Meet the People*/}
             <Team />

@@ -105,7 +105,7 @@ export default function PortfolioRenderer() {
 
   return (
     <>
-      <main className="pb-16">
+      <main>
         <section className="relative bg-black text-white">
           <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_10%_0%,#0E7BF8_0%,#00979E_40%,transparent_65%)] opacity-25" />
           <div className="mx-auto w-full px-4 pt-12 pb-16 md:px-8 md:pt-20 md:pb-28 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px]">
@@ -189,7 +189,7 @@ export default function PortfolioRenderer() {
         </section>
       </main>
 
-      <div className="portfolio-page pb-10">
+      <div className="portfolio-page portfolio-detail-page pb-10">
         <article className="portfolio-article">
           <div
             className="portfolio-content elementor-content m-0"
