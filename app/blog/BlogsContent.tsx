@@ -41,12 +41,6 @@ const cardData = [
 const PER_PAGE = 9
 const API_URL = "https://insights.ignek.com/wp-json/wp/v2/posts"
 
-// localStorage keys
-const STORAGE_KEYS = {
-  PAGE: 'blog_page',
-  CATEGORY: 'blog_category'
-}
-
 export default function BlogsContent() {
   const [blogs, setBlogs] = useState<BlogData[]>([])
   const [loading, setLoading] = useState(true)
@@ -59,76 +53,25 @@ export default function BlogsContent() {
   const router = useRouter()
   const searchParams = useSearchParams()
 
-  // Save state to localStorage
-  const saveToLocalStorage = useCallback((page: number, category: number | null) => {
-    if (typeof window !== 'undefined') {
-      try {
-        localStorage.setItem(STORAGE_KEYS.PAGE, page.toString())
-        localStorage.setItem(STORAGE_KEYS.CATEGORY, category ? category.toString() : 'null')
-      } catch (error) {
-        console.warn('Failed to save to localStorage:', error)
-      }
-    }
-  }, [])
-
-  // Load state from localStorage
-  const loadFromLocalStorage = useCallback(() => {
-    if (typeof window !== 'undefined') {
-      try {
-        const savedPage = localStorage.getItem(STORAGE_KEYS.PAGE)
-        const savedCategory = localStorage.getItem(STORAGE_KEYS.CATEGORY)
-        
-        if (savedPage) {
-          const pageNum = Number(savedPage)
-          if (!isNaN(pageNum) && pageNum > 0) {
-            setCurrentPage(pageNum)
-          }
-        }
-        
-        if (savedCategory && savedCategory !== 'null') {
-          const categoryNum = Number(savedCategory)
-          if (!isNaN(categoryNum)) {
-            setSelectedCategory(categoryNum)
-          }
-        }
-      } catch (error) {
-        console.warn('Failed to load from localStorage:', error)
-      }
-    }
-  }, [])
-
-  // Initialize state from URL parameters or localStorage
+  // Initialize state from URL parameters on component mount
   useEffect(() => {
     const category = searchParams.get('category')
     const page = searchParams.get('page')
     
-    // Priority: URL params > localStorage > default
-    if (category || page) {
-      // Use URL parameters if they exist
-      if (category) {
-        const categoryNum = Number(category)
-        if (!isNaN(categoryNum)) {
-          setSelectedCategory(categoryNum)
-        }
+    if (category) {
+      const categoryNum = Number(category)
+      if (!isNaN(categoryNum)) {
+        setSelectedCategory(categoryNum)
       }
-      
-      if (page) {
-        const pageNum = Number(page)
-        if (!isNaN(pageNum) && pageNum > 0) {
-          setCurrentPage(pageNum)
-        }
-      }
-      
-      // Save URL state to localStorage
-      saveToLocalStorage(
-        page ? Number(page) : 1,
-        category ? Number(category) : null
-      )
-    } else {
-      // No URL params, try localStorage
-      loadFromLocalStorage()
     }
-  }, [searchParams, saveToLocalStorage, loadFromLocalStorage])
+    
+    if (page) {
+      const pageNum = Number(page)
+      if (!isNaN(pageNum) && pageNum > 0) {
+        setCurrentPage(pageNum)
+      }
+    }
+  }, [searchParams])
 
   // Update URL when category or page changes
   const updateURL = useCallback((category: number | null, page: number) => {
@@ -146,10 +89,7 @@ export default function BlogsContent() {
     
     // Use replace instead of push to avoid adding to history stack
     window.history.replaceState(null, '', newUrl)
-    
-    // Also save to localStorage
-    saveToLocalStorage(page, category)
-  }, [saveToLocalStorage])
+  }, [])
 
   // Update URL when state changes
   useEffect(() => {
@@ -254,15 +194,6 @@ export default function BlogsContent() {
     }
   }
 
-  // Clear localStorage (optional - for debugging or user preference)
-  const clearStorage = () => {
-    if (typeof window !== 'undefined') {
-      localStorage.removeItem(STORAGE_KEYS.PAGE)
-      localStorage.removeItem(STORAGE_KEYS.CATEGORY)
-      setCurrentPage(1)
-      setSelectedCategory(15)
-    }
-  }
   return (
     <main className="">
       {/* Hero */}
@@ -305,9 +236,9 @@ export default function BlogsContent() {
             </div>
           </div>
 
-          {/* Carousel Section */}
+       {/* Carousel Section */}
           <div className="group relative mx-auto w-[100%]">
-            {/* Carousel Container */}
+           
             <div className="relative h-[640px] overflow-hidden rounded-[22px] shadow-lg">
               {featuredBlogs.length > 0
                 ? featuredBlogs.map((blog, index) => (
@@ -467,7 +398,7 @@ export default function BlogsContent() {
 
           {/* Blog Grid Section */}
           <div className="">
-            <h2 className="mb-9 tracking-tight text-[#000000]">Browse Latest Blogs</h2>
+            <h2 className="mb-9 tracking-tight text-[#000000]">Browse Latest Blog</h2>
 
             {loading ? (
               <div className="flex items-center justify-center py-12">
@@ -489,8 +420,8 @@ export default function BlogsContent() {
 
                 {/* Pagination */}
                 {totalPages > 1 && (
-                  <div className="justify-left mt-[2.292vw] flex">
-                    <ul className="p20 flex items-center gap-2 font-medium">
+                  <div className="justify-left mt-[2.656vw] flex">
+                    <ul className="p20 flex items-center gap-[0.438vw] font-medium">
                       {/* First */}
                       <li
                         className={`flex cursor-pointer items-center rounded-md border px-4 py-2 ${

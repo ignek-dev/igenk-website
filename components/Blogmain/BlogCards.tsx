@@ -52,10 +52,10 @@ export default function BlogCard({ blog }: BlogCardProps) {
   </div>
 
   {/* Title */}
-  <h3 className="text-[1.563vw]!  loading-[1.875vw] text-gray-900 mt-[1.042vw] " dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(blog.title) }} />
+  <h3 className="text-[1.563vw]! line-clamp-2 h-[4.906vw]  loading-[1.875vw] text-gray-900 mt-[1.042vw] " dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(blog.title) }} />
 
   {/* Author Section fixed at bottom */}
-  <div className="flex items-center gap-3 text-lg font-normal text-gray-600 mt-auto pt-6">
+  <div className="flex items-center gap-3 text-lg font-normal text-gray-600 mt-[1.615vw] ">
     <Image
       src={blog.authPic}
       alt={blog.author}
