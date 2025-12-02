@@ -1,180 +1,125 @@
-import { Metadata } from "next";
-import CEOSection from "components/About/CEOSection";
-import Journey from "components/About/CompanyTimeline/CompanyTimeline";
-import CoreValues from "components/About/CoreValues";
-import StandoutSection from "components/About/StandoutSection";
-import Team from "components/About/Team";
-import { Testimonial } from "components/About/Testimonial";
-import { BackgroundLines } from "components/Common/BackgroundLines";
-
+import { Metadata } from "next"
+import CEOSection from "components/About/CEOSection"
+import Journey from "components/About/CompanyTimeline/CompanyTimeline"
+import CoreValues from "components/About/CoreValues"
+import StandoutSection from "components/About/StandoutSection"
+import Team from "components/About/Team"
+import { Testimonial } from "components/About/Testimonial"
+import { BackgroundLines } from "components/Common/BackgroundLines"
+import { aboutPageData } from "data/about-content"
 
 export const metadata: Metadata = {
+  title: "Learn About Our Team  - IGNEK Architecture Design Services - IGNEK",
+  description:
+    "Serving large organizations and start-ups for over 5 years, IGNEK is an expert in developing and deploying business solutions powered by cutting-edge technology.",
+
+  openGraph: {
+    url: "https://www.ignek.com/about-us/",
     title: "Learn About Our Team  - IGNEK Architecture Design Services - IGNEK",
     description:
-        "Serving large organizations and start-ups for over 5 years, IGNEK is an expert in developing and deploying business solutions powered by cutting-edge technology.",
-
-    openGraph: {
-        url: "https://www.ignek.com/about-us/",
-        title: "Learn About Our Team  - IGNEK Architecture Design Services - IGNEK",
-        description: "Serving large organizations and start-ups for over 5 years, IGNEK is an expert in developing and deploying business solutions powered by cutting-edge technology.",
-        images: [
-            {
-                width: 1200,
-                height: 630,
-                url: "/og-image.png",
-            },
-        ],
-    },
+      "Serving large organizations and start-ups for over 5 years, IGNEK is an expert in developing and deploying business solutions powered by cutting-edge technology.",
+    images: [
+      {
+        width: 1200,
+        height: 630,
+        url: "/og-image.png",
+      },
+    ],
+  },
 }
-// const partners = [
-//     {
-//         name: "Youngsoft India",
-//         image: "/images/partner/youngsoftIndia.svg",
-//     },
-//     {
-//         name: "United Nations",
-//         image: "/images/partner/United-nations.png",
-//     },
-//     {
-//         name: "This",
-//         image: "/images/partner/This.png",
-//     },
-//     {
-//         name: "Cognizer AI",
-//         image: "/images/partner/cognizerAI.png",
-//     },
-//     {
-//         name: "Mibusoft",
-//         image: "/images/partner/mibusoft.png",
-//     },
-//     {
-//         name: "Navvis",
-//         image: "/images/partner/navvis.png",
-//     },
-//     {
-//         name: "EduTecks",
-//         image: "/images/partner/youngsoftIndia.svg",
-//     },
-//     {
-//         name: "Infogain",
-//         image: "/images/partner/youngsoftIndia.svg",
-//     },
-// ]
 
 export default function AboutUs() {
-    return (
-        <div className="relative bg-[#0B0B0F] text-white">
-            <BackgroundLines className="relative flex flex-col justify-center global-container items-start bg-black text-white overflow-hidden">
-                <section className="relative w-full mb-[6.406vw] mt-[12.031vw]">
-                    <div className="grid items-end">
-    {/* Left Column */}
-    <div className="flex flex-col justify-center">
-        {/* Tag */}
-        <div className="inline-flex items-center rounded-full border border-[0.052vw] border-white px-[1.51vw] py-[0.521vw] text-[0.938vw] leading-[1.458vw] text-white self-start">
-            About IGNEK
-        </div>
+  const { heroTag, heroMaskVideo, maskedHeadingSvg, whyCompaniesTrust } = aboutPageData
+  return (
+    <div className="relative bg-[#0B0B0F] text-white">
+      <BackgroundLines className="global-container relative flex flex-col items-start justify-center overflow-hidden bg-black text-white">
+        <section className="relative mt-[12.031vw] mb-[6.406vw] w-full">
+          <div className="grid items-end">
+            {/* Left Column */}
+            <div className="flex flex-col justify-center">
+              {/* Tag */}
+              <div className="inline-flex items-center self-start rounded-full border border-[0.052vw] border-white px-[1.51vw] py-[0.521vw] text-[0.938vw] leading-[1.458vw] text-white">
+                {heroTag}
+              </div>
 
-        {/* Masked Text Video */}
-        <div
-            className="relative mt-[1.25vw] w-[45.885vw] h-[17.5vw] overflow-hidden self-start"
-            style={{
-                WebkitMaskImage: "url(/images/about/about-us-text.svg)",
-                maskImage: "url(/images/about/about-us-text.svg)",
-                WebkitMaskSize: "100% 100%",
-                maskSize: "100% 100%",
-                WebkitMaskRepeat: "no-repeat",
-                maskRepeat: "no-repeat",
-                WebkitMaskPosition: "bottom left",
-                maskPosition: "bottom left",
-            }}
-        >
-            <video
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="absolute top-0 left-0 w-[45.885vw] h-[17.5vw] object-cover"
-            >
-                <source src="/images/career/multi-color-bg.mp4" type="video/mp4" />
-            </video>
-        </div>
-    </div>
-</div>
+              {/* Masked Text Video */}
+              <div
+                className="relative mt-[1.25vw] h-[17.5vw] w-[45.885vw] self-start overflow-hidden"
+                style={{
+                  WebkitMaskImage: `url(${maskedHeadingSvg})`,
+                  maskImage: `url(${maskedHeadingSvg})`,
+                  WebkitMaskSize: "100% 100%",
+                  maskSize: "100% 100%",
+                  WebkitMaskRepeat: "no-repeat",
+                  maskRepeat: "no-repeat",
+                  WebkitMaskPosition: "bottom left",
+                  maskPosition: "bottom left",
+                }}
+              >
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="absolute top-0 left-0 h-[17.5vw] w-[45.885vw] object-cover"
+                >
+                  <source src={heroMaskVideo} type="video/mp4" />
+                </video>
+              </div>
+            </div>
+          </div>
+        </section>
+      </BackgroundLines>
 
-                </section>
-            </BackgroundLines>
-
-
-            {/* About Company */}
-            <div className="bg-[#F8F8F8] pt-[3.333vw] pb-[4.479vw] global-container">
-                <div>
-                    <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-12 lg:gap-16 items-start">
-                        {/* Left Column - Main Heading */}
-                        <div className="">
-                            <h2 className="font-bold text-black">
-                                Why Companies
-                                <br />
-                                Trust IGNEK
-                            </h2>
-                        </div>
-
-                        {/* Right Column - Content */}
-                        <div className="space-y-8">
-                            {/* Introductory Paragraph */}
-                            <p className="text-[0.938vw] text-[#374151] leading-[1.563vw] pt-[1.563vw] text-right mb-[1.042vw]">
-                                Companies trust IGNEK for proven Liferay expertise, innovation, reliability, and transformative digital experience solutions.
-                            </p>
-
-                            {/* Section 1: Digital Excellence */}
-                            <div className="mt-[4.375vw]">
-                                <h4 className="text-[1.563vw] !font-semibold text-black">
-                                    Digital Excellence
-                                </h4>
-                                <div className="border-gray-[0.052vw] border mt-[1.042vw] mb-[1.042vw]"></div>
-                                <p className="text-[1.042vw] text-[#374151] leading-[1.563vw]">
-                                    We craft scalable, high-performing solutions that empower businesses to embrace innovation and achieve measurable results.
-                                </p>
-                            </div>
-
-                            {/* Section 2: Future-Ready Solutions */}
-                            <div className="mt-[3.333vw]">
-                                <h4 className="text-[1.563vw] !font-semibold text-black">
-                                    Future-Ready Solutions
-                                </h4>
-                                <div className="border-gray-[0.052vw] border mt-[1.042vw] mb-[1.042vw]"></div>
-                                <p className="text-[1.042vw] text-[#374151] leading-[1.563vw]">
-                                    From modern web applications to enterprise platforms, we design systems built for adaptability, growth, and long-term success.
-                                </p>
-                            </div>
-
-                            {/* Section 3: Collaborative Approach */}
-                            <div className="mt-[3.333vw]">
-                                <h4 className="text-[1.563vw] !font-semibold text-black">
-                                    Collaborative Approach
-                                </h4>
-                                <div className="border-gray-[0.052vw] border mt-[1.042vw] mb-[1.042vw]"></div>
-                                <p className="text-[1.042vw] text-[#374151] leading-[1.563vw]">
-                                    Our team works hand-in-hand with clients, ensuring every project reflects their vision while meeting the highest standards of quality.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+      {/* About Company */}
+      <div className="global-container bg-[#F8F8F8] pt-[3.333vw] pb-[4.479vw]">
+        <div>
+          <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-[1fr_1.2fr] lg:gap-16">
+            {/* Left Column - Main Heading */}
+            <div className="">
+              <h2 className="font-bold text-black">
+                {whyCompaniesTrust.heading[0]}
+                <br />
+                {whyCompaniesTrust.heading[1]}
+              </h2>
             </div>
 
-            {/* Standout Points*/}
-            <StandoutSection />
+            {/* Right Column - Content */}
+            <div className="space-y-8">
+              {/* Introductory Paragraph */}
+              <p className="mb-[1.042vw] pt-[1.563vw] text-right text-[0.938vw] leading-[1.563vw] text-[#374151]">
+                {whyCompaniesTrust.intro}
+              </p>
 
-            {/* Background accents */}
-            <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
-                <div className="absolute left-[6%] top-[-12%] h-[34rem] w-[34rem] rounded-full bg-fuchsia-500/18 blur-[120px]" />
-                <div className="absolute right-[-12%] top-[18%] h-[32rem] w-[32rem] rounded-full bg-cyan-400/18 blur-[120px]" />
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_-10%,rgba(255,255,255,0.08),transparent_55%)]" />
-                <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent,rgba(255,255,255,0.04)_30%,transparent_70%)]" />
+              {whyCompaniesTrust.sections.map((section, i) => (
+              <div key={i} className={i === 0 ? "mt-[4.375vw]" : "mt-[3.333vw]"}>
+                <h4 className="text-[1.563vw] !font-semibold text-black">
+                  {section.title}
+                </h4>
+                <div className="border-gray-[0.052vw] mt-[1.042vw] mb-[1.042vw] border"></div>
+                <p className="text-[1.042vw] leading-[1.563vw] text-[#374151]">
+                  {section.description}
+                </p>
+              </div>
+            ))}
             </div>
+          </div>
+        </div>
+      </div>
 
-            {/*Core Values */}
-            <CoreValues />
+      {/* Standout Points*/}
+      <StandoutSection />
+
+      {/* Background accents */}
+      <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+        <div className="absolute top-[-12%] left-[6%] h-[34rem] w-[34rem] rounded-full bg-fuchsia-500/18 blur-[120px]" />
+        <div className="absolute top-[18%] right-[-12%] h-[32rem] w-[32rem] rounded-full bg-cyan-400/18 blur-[120px]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_-10%,rgba(255,255,255,0.08),transparent_55%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent,rgba(255,255,255,0.04)_30%,transparent_70%)]" />
+      </div>
+
+      {/*Core Values */}
+      <CoreValues />
 
             {/* CEO Section - hidden */}
             {/* <CEOSection /> */}
@@ -182,11 +127,11 @@ export default function AboutUs() {
             {/* Jorney Section - hidden */}
             {/* <Journey /> */}
 
-            {/*Meet the People*/}
-            <Team />
+      {/*Meet the People*/}
+      <Team />
 
-            {/*Testimonials*/}
-            <Testimonial />
-        </div>
-    );
+      {/*Testimonials*/}
+      <Testimonial />
+    </div>
+  )
 }

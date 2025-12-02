@@ -1,50 +1,39 @@
-"use client";
-import Image from "next/image";
-import React, { useEffect, useState } from "react";
-
-export interface TimelineImage {
-  src: string;
-  alt: string;
-}
-
-export interface TimelineCardData {
-  year: number;
-  title: string;
-  description: string;
-  images: TimelineImage[];
-  rotation: number;
-  marginTop: number;
-}
+"use client"
+import Image from "next/image"
+import React, { useEffect, useState } from "react"
+import { aboutJourneyContent, aboutPageData, companyTimelineData, TimelineCardData } from "data/about-content"
 
 export interface TimelineCardProps {
-  data: TimelineCardData;
-  tilt?: number;
-  showConnector?: boolean;
+  data: TimelineCardData
+  tilt?: number
+  showConnector?: boolean
 }
 
-const TimelineCard: React.FC<TimelineCardProps> = ({
-  data,
-  tilt = 0,
-  showConnector = false,
-}) => {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [offsets, setOffsets] = useState<number[]>([6.458, 3.875, 6.458, 3.854]);
+const TimelineCard: React.FC<TimelineCardProps> = ({ data, tilt = 0, showConnector = false }) => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const [offsets, setOffsets] = useState<number[]>([6.458, 3.875, 6.458, 3.854])
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentImageIndex((prev) => (prev + 1) % data.images.length);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, [data.images.length]);
+      setCurrentImageIndex((prev) => (prev + 1) % data.images.length)
+    }, 3000)
+    return () => clearInterval(interval)
+  }, [data.images.length])
 
   return (
-    <div className="relative flex flex-col items-center mt-[5.625vw]">
-      <div className="absolute h-[373px] left-1/2 -translate-x-1/2 flex gap-[3.854vw] -z-10 items-start">
-        <div className="relative w-[0.052vw] border border-r-0 border-[#9CA3AF] border-opacity-40 h-[32.969vw] flex flex-col items-center">
-          <span style={{ top: "-14%", fontFamily: "Times New Roman" }} className="italic leading-[2.531vw] text-[2.615vw] text-[#212121] mb-3 relative z-10">
+    <div className="relative mt-[5.625vw] flex flex-col items-center">
+      <div className="absolute left-1/2 -z-10 flex h-[373px] -translate-x-1/2 items-start gap-[3.854vw]">
+        <div className="border-opacity-40 relative flex h-[32.969vw] w-[0.052vw] flex-col items-center border border-r-0 border-[#9CA3AF]">
+          <span
+            style={{ top: "-14%", fontFamily: "Times New Roman" }}
+            className="relative z-10 mb-3 text-[2.615vw] leading-[2.531vw] text-[#212121] italic"
+          >
             {data.year}
           </span>
-          <div style={{ marginTop: "-1.563vw" }} className="absolute left-1/2 w-[0.833vw] h-[0.833vw] bg-[#00979E] -translate-x-1/2 mt-[0.417vw]" />
+          <div
+            style={{ marginTop: "-1.563vw" }}
+            className="absolute left-1/2 mt-[0.417vw] h-[0.833vw] w-[0.833vw] -translate-x-1/2 bg-[#00979E]"
+          />
         </div>
 
         {offsets.map((offset, idx) => (
@@ -60,28 +49,29 @@ const TimelineCard: React.FC<TimelineCardProps> = ({
       </div>
 
       <div
-        className="w-[20.417vw] rounded-[0.833vw] p-[1.25vw] shadow-md bg-white flex flex-col overflow-hidden"
+        className="flex w-[20.417vw] flex-col overflow-hidden rounded-[0.833vw] bg-white p-[1.25vw] shadow-md"
         style={{
           transform: `rotate(${data.rotation}deg)`,
-          marginTop: `${data.marginTop}vw`
+          marginTop: `${data.marginTop}vw`,
         }}
       >
-        <div className="relative w-[17.917vw] h-[17.917vw]">
+        <div className="relative h-[17.917vw] w-[17.917vw]">
           <Image
             src={data.images[currentImageIndex]?.src || ""}
             alt={data.images[currentImageIndex]?.alt || ""}
             fill
-            className="object-cover w-[17.917vw] h-[17.917vw] transition-opacity duration-500 rounded-[0.417vw]"
+            className="h-[17.917vw] w-[17.917vw] rounded-[0.417vw] object-cover transition-opacity duration-500"
           />
           {data.images.length > 1 && (
-            <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1 z-10">
+            <div className="absolute bottom-3 left-1/2 z-10 flex -translate-x-1/2 gap-1">
               {data.images.map((_, idx) => (
                 <button
                   key={idx}
-                  className={`w-[0.417vw] h-[0.417vw] rounded-full ${idx === currentImageIndex ? "bg-[#000000]" : "bg-[#C4C4C4]"
-                    }`}
+                  className={`h-[0.417vw] w-[0.417vw] rounded-full ${
+                    idx === currentImageIndex ? "bg-[#000000]" : "bg-[#C4C4C4]"
+                  }`}
                   style={{
-                    transition: "background 0.2s"
+                    transition: "background 0.2s",
                   }}
                   onClick={() => setCurrentImageIndex(idx)}
                   tabIndex={0}
@@ -91,179 +81,89 @@ const TimelineCard: React.FC<TimelineCardProps> = ({
           )}
         </div>
 
-        <div className="flex flex-col mt-[0.335vw]">
-          <h3 className="!text-[1.146vw] font-semibold !leading-[1.563vw] tracking-[-0.025vw] text-black">
+        <div className="mt-[0.335vw] flex flex-col">
+          <h3 className="!text-[1.146vw] !leading-[1.563vw] font-semibold tracking-[-0.025vw] text-black">
             {data.title}
           </h3>
-          <p className="text-[0.833vw] leading-[1.25vw] text-black">
-            {data.description}
-          </p>
+          <p className="text-[0.833vw] leading-[1.25vw] text-black">{data.description}</p>
         </div>
       </div>
 
       {showConnector && (
-        <div className="absolute top-full left-1/2 w-0.5 h-24 bg-gray-300 mt-2 -translate-x-1/2 z-0"></div>
+        <div className="absolute top-full left-1/2 z-0 mt-2 h-24 w-0.5 -translate-x-1/2 bg-gray-300"></div>
       )}
     </div>
-  );
-};
+  )
+}
 
 const CompanyTimeline = () => {
-  const [currentScrollIndex, setCurrentScrollIndex] = useState(0);
+  const [currentScrollIndex, setCurrentScrollIndex] = useState(0)
 
   const goToPrevious = () => {
-    setCurrentScrollIndex((prev) => Math.max(0, prev - 1));
-  };
+    setCurrentScrollIndex((prev) => Math.max(0, prev - 1))
+  }
 
-  const timelineData: TimelineCardData[] = [
-    {
-      year: 2018,
-      title: "IGNEK is Born",
-      description:
-        "Started by Mr Bhavin Panchani with a clear vision to build innovative digital solutions, rooted in a passion for design, development, and seamless experiences.",
-      images: [
-        { src: "/images/about/timeline/2018/img-1.JPG", alt: "Office-2018" },
-        { src: "/images/about/timeline/2018/img-2.JPG", alt: "Office-2018" },
-        { src: "/images/about/timeline/2018/img-3.JPG", alt: "Office-2018" },
-      ],
-      rotation: -2,
-      marginTop: 5.698,
-    },
-    {
-      year: 2019,
-      title: "First Global Client Win",
-      description:
-        "Successfully onboarded our first overseas client, setting the tone for a strong international presence and long-term collaborations.",
-      images: [
-        { src: "/images/about/timeline/2019/img-1.jpg", alt: "Office-2019" },
-      ],
-      rotation: 1.2,
-      marginTop: 8.49,
-    },
-    {
-      year: 2020,
-      title: "Embracing Remote Culture",
-      description:
-        "Adapted swiftly to global changes, expanded our remote delivery capabilities while maintaining top-notch project quality.",
-      images: [
-        { src: "/images/about/timeline/2020/img-1.jpg", alt: "Office-2020" },
-      ],
-      rotation: 1.2,
-      marginTop: 2.083,
-    },
-    {
-      year: 2021,
-      title: "Moved to a Bigger Space",
-      description:
-        "Shifted to a new office to accommodate our growing team and evolving infrastructure needs — a big step toward scalability.",
-      images: [
-        { src: "/images/about/timeline/2021/img-1.jpeg", alt: "Office-2021" },
-      ],
-      rotation: -2,
-      marginTop: 8.438,
-    },
-    {
-      year: 2022,
-      title: "Team IGNEK Crosses 25+",
-      description:
-        "Continued innovation and expansion with an even stronger focus on quality and long-term partnerships.",
-      images: [
-        { src: "/images/about/timeline/2022/img-1.jpg", alt: "Office-2022" },
-      ],
-      rotation: 1.2,
-      marginTop: 9.219,
-    },
-    {
-      year: 2023,
-      title: "New Service Verticals Launched",
-      description:
-        "Continued innovation and expansion with an even stronger focus on quality and long-term partnerships.",
-      images: [
-        { src: "/images/about/timeline/2023/img-1.jpg", alt: "Office-2023" },
-      ],
-      rotation: -2,
-      marginTop: 1.563,
-    },
-    {
-      year: 2024,
-      title: "A New Home Again",
-      description:
-        "Continued innovation and expansion with an even stronger focus on quality and long-term partnerships.",
-      images: [
-        { src: "/images/about/timeline/2024/img-1.JPG", alt: "Office-2024" },
-      ],
-      rotation: 1.2,
-      marginTop: 9.219,
-    },
-    {
-      year: 2025,
-      title: "IGNEK Goes Global",
-      description:
-        "Continued innovation and expansion with an even stronger focus on quality and long-term partnerships.",
-      images: [
-        { src: "/images/about/timeline/2025/img-1.jpg", alt: "Office-2025" },
-      ],
-      rotation: -2,
-      marginTop: 3.854,
-    },
-  ];
-
-  const cardsVisible = 3;
-  const maxScrollIndex = Math.max(0, timelineData.length - cardsVisible);
+  const cardsVisible = 3
+  const maxScrollIndex = Math.max(0, companyTimelineData.length - cardsVisible)
 
   const goToNext = () => {
-    setCurrentScrollIndex((prev) =>
-      Math.min(maxScrollIndex, prev + 1)
-    );
-  };
+    setCurrentScrollIndex((prev) => Math.min(maxScrollIndex, prev + 1))
+  }
 
-  const scrollAmountVw = 23.438;
+  const scrollAmountVw = 23.438
 
   return (
-    <section className="pt-[3.385vw] pb-[3.802vw] pl-[10vw] bg-[#F6F6F6] overflow-hidden">
-      <div className="flex items-start justify-between pr-[10vw] mb-[1.458vw]">
+    <section className="overflow-hidden bg-[#F6F6F6] pt-[3.385vw] pb-[3.802vw] pl-[10vw]">
+      <div className="mb-[1.458vw] flex items-start justify-between pr-[10vw]">
         <div>
-          <h2 className="text-black mb-[1.458vw]">
-            From Startup Spark To Tech Powerhouse
-          </h2>
-          <p className="text-[#4B5563] leading-[1.563vw] text-[0.938vw] w-[46.875vw]">
-            From a small startup to a leading Liferay powerhouse, our journey reflects innovation and excellence.
+          <h2 className="mb-[1.458vw] text-black">{aboutJourneyContent.title}</h2>
+          <p className="w-[46.875vw] text-[0.938vw] leading-[1.563vw] text-[#4B5563]">
+            {aboutJourneyContent.description}
           </p>
         </div>
 
         <div className="flex gap-[1.25vw]">
           <button
             onClick={goToPrevious}
-            className="w-[3.333vw] cursor-pointer h-[3.333vw] bg-black text-white rounded-full flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed"
+            className="flex h-[3.333vw] w-[3.333vw] cursor-pointer items-center justify-center rounded-full bg-black text-white disabled:cursor-not-allowed disabled:opacity-50"
           >
-            <Image src="/images/about/arrow-left.png" className="h-[1.875vw] w-[1.875vw]" alt="left-arrow" width={18} height={18} />
+            <Image
+              src="/images/about/arrow-left.png"
+              className="h-[1.875vw] w-[1.875vw]"
+              alt="left-arrow"
+              width={18}
+              height={18}
+            />
           </button>
           <button
             onClick={goToNext}
-            className="w-[3.333vw] cursor-pointer h-[3.333vw] bg-black text-white rounded-full flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed"
+            className="flex h-[3.333vw] w-[3.333vw] cursor-pointer items-center justify-center rounded-full bg-black text-white disabled:cursor-not-allowed disabled:opacity-50"
           >
-            <Image src="/images/about/arrow-right.png" className="h-[1.875vw] w-[1.875vw]" alt="right-arrow" width={18} height={18} />
+            <Image
+              src="/images/about/arrow-right.png"
+              className="h-[1.875vw] w-[1.875vw]"
+              alt="right-arrow"
+              width={18}
+              height={18}
+            />
           </button>
         </div>
       </div>
 
       <div>
         <div className="overflow-hidden">
-          {timelineData.length > 0 && (
+          {companyTimelineData.length > 0 && (
             <div
-              className="relative flex gap-[2.969vw] pl-[0.365vw] transition-transform duration-500 z-10"
+              className="relative z-10 flex gap-[2.969vw] pl-[0.365vw] transition-transform duration-500"
               style={{
                 transform: `translateX(-${currentScrollIndex * scrollAmountVw}vw)`,
               }}
             >
-              {timelineData.map((item, i) => (
+              {companyTimelineData.map((item, i) => (
                 <React.Fragment key={item.year}>
-                  <TimelineCard
-                    data={item}
-                    showConnector={false}
-                  />
-                  {i < timelineData.length - 1 && (
-                    <div className="w-[0.052vw] bg-[#212121]/20 h-[20.521vw] self-center relative z-0 flex-shrink-0" />
+                  <TimelineCard data={item} showConnector={false} />
+                  {i < companyTimelineData.length - 1 && (
+                    <div className="relative z-0 h-[20.521vw] w-[0.052vw] flex-shrink-0 self-center bg-[#212121]/20" />
                   )}
                 </React.Fragment>
               ))}
@@ -273,7 +173,7 @@ const CompanyTimeline = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default CompanyTimeline;
+export default CompanyTimeline
