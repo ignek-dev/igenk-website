@@ -58,7 +58,7 @@ const insightLinks = [
 // --- Dynamic Event Data ---
 // To update the event, just change the data in this object
 const featuredEvent = {
-  title: "Unlock insights that drive growth — join our upcoming webinar and level up your digital game!",
+  title: "Gain the insights that matter. Apply actionable techniques to build more resilient digital experiences.",
   // The path starts from the `public` directory
   imageSrc: "/images/mega-menu/upcoming-webinar.svg",
   imageAlt: "Customer Onboarding with Low Code/No-Code Capabilities of Liferay Portal Webinar",

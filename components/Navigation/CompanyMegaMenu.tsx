@@ -253,7 +253,7 @@ export default function CompanyMegaMenu({ onClose }: MegaMenuProps) {
                   objectFit="cover"
                   className="flex-shrink-0 rounded-md"
                 />
-                <p className="p20 max-w-[23.438vw] font-semibold! text-[#FFFFFF]">Ahmedabad, Gujarat.</p>
+                <p className="p20 max-w-[23.438vw] font-semibold! text-[#FFFFFF]">Ahmedabad, India.</p>
               </div>
               <div className="flex items-center gap-[1.042vw]">
                 {socialLinks.map((social) => (
