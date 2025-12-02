@@ -9,7 +9,8 @@ interface AccordionItemProps {
   title: string;
   content: string | React.ReactNode;
   isOpen: boolean;            // NEW
-  onToggle: () => void;       // NEW
+  onToggle: () => void;       // 
+  removeTopPadding?: boolean;
 }
 
 const AccordionItem: React.FC<AccordionItemProps> = ({
@@ -17,11 +18,13 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
   content,
   isOpen,
   onToggle,
+  removeTopPadding = false,
 }) => {
   return (
     <div className="w-full border-b border-gray-700">
       <button
-        className="flex w-full items-center justify-between pt-[1.563vw] pb-[0.521vw] text-left text-xl font-semibold text-white focus:outline-none"
+        className={`flex w-full items-center justify-between pb-[1.563vw] text-left text-xl font-semibold text-white focus:outline-none
+          ${removeTopPadding ? "pt-0" : "pt-[1.563vw]"}`}
         onClick={onToggle}
       >
         <span className="p24 leading-[36px]">{title}</span>

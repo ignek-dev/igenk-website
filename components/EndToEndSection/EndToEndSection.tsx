@@ -25,13 +25,13 @@ export default function EndToEndSection() {
     <section ref={sectionRef} className="relative bg-black text-white">
       <div className="global-container w-full py-[3.333vw]">
         {/* Top Heading */}
-        <div className="grid gap-10 md:grid-cols-2 md:gap-12 lg:gap-0">
+        <div className="grid gap-10 items-center md:grid-cols-2 md:gap-12 lg:gap-0">
           <div>
             <h2 className={`${getAnimationClass("animate-slide-top")}`}>
               {EndToEndSectionData.heading}
             </h2>
           </div>
-          <p className={`${getAnimationClass("animate-slide-top")} p18 max-w-4xl pt-6.5 text-right text-white/80`}>
+          <p className={`${getAnimationClass("animate-slide-top")} p18 max-w-4xl text-right text-white/80`}>
             {EndToEndSectionData.description}
           </p>
         </div>
@@ -39,7 +39,7 @@ export default function EndToEndSection() {
         {/* Digital Experience */}
         <div className="mt-[3.333vw] grid gap-[3.333vw] md:grid-cols-2">
           <div className={getAnimationClass("animate-slide-left", "animation-delay-200")}>
-            <div className="mt-6.5">
+            <div>
               <p className="text-[2.083vw] font-semibold">{EndToEndSectionData.digitalExperience.title}</p>
               <p className="p18 mt-[1.25vw] max-w-xl text-white/80">
                 {EndToEndSectionData.digitalExperience.description}
@@ -61,10 +61,10 @@ export default function EndToEndSection() {
         </div>
 
         {/* Staff Augmentation */}
-        <div className="mt-[5.052vw] grid gap-12 md:grid-cols-2 md:gap-14 lg:mt-24 lg:gap-16">
+        <div className="mt-[4.688vw] grid gap-12 md:grid-cols-2 md:gap-14 lg:mt-24 lg:gap-16">
           <div className={getAnimationClass("animate-slide-left", "animation-delay-200")}>
-            <p className="text-2xl pt-[1.563vw] font-semibold md:text-[40px]">{EndToEndSectionData.staffAugmentation.title}</p>
-            <p className="mt-3 max-w-xl text-lg text-white/80">
+            <p className="text-[2.083vw] font-semibold md:text-[40px]">{EndToEndSectionData.staffAugmentation.title}</p>
+            <p className="mt-[1.25vw] max-w-xl p18 text-white/80">
               {EndToEndSectionData.staffAugmentation.description}
             </p>
           </div>

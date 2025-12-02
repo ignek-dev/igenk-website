@@ -35,34 +35,34 @@ const metadata: Metadata = {
 
 export default function LiferayDevelopmentAndCustomizationPage() {
   return (
-    <main className="pb-16">
+    <main>
       {/* Hero */}
       <section className="relative bg-black text-white">
         <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_10%_0%,#0E7BF8_0%,#00979E_40%,transparent_65%)] opacity-25" />
-        <div className="mx-auto w-full px-4 pt-12 pb-16 md:px-8 md:pt-20 md:pb-28 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px]">
+        <div className="pt-[4.271vw] pb-[3.802vw] global-container">
           <div className="relative grid items-start gap-10 md:grid-cols-2">
             <div>
-              <div className="inline-flex items-center rounded-full border border-white/30 px-4 py-2 text-lg text-white">
+              <div className="inline-flex items-center rounded-full border border-white/30 px-[1.51vw] py-[0.521vw] text-[0.938vw] text-white">
                 Liferay Services
               </div>
-              <h1 className="mt-9 text-4xl leading-tight font-semibold sm:text-5xl md:text-7xl">
+              <h1 className="mt-[2.031vw]">
                 Liferay
                 <br />
                 <span className="block">Development &</span>
                 <span className="block">Customization</span>
               </h1>
             </div>
-            <p className="absolute bottom-0 max-w-lg text-right text-lg text-white sm:text-lg md:mt-16 md:justify-self-end">
+            <p className="absolute bottom-0 max-w-xl text-right text-[0.938vw] text-white  md:justify-self-end">
               With our Liferay Development and customization, we simplify digital transformation for businesses to fit your needs.
             </p>
           </div>
 
           {/* Feature tabs */}
-          <div className="mt-15 flex flex-wrap gap-4.5">
+          <div className="mt-[2.188vw] flex flex-wrap gap-[1.875vw]">
             {featureTabs.map((label) => (
               <span
                 key={label}
-                className="inline-flex items-center rounded-full border border-white/30 px-7 py-5 text-white transition-colors hover:border-white hover:text-white [@media(min-width:1440px)]:text-base [@media(min-width:1500px)]:text-lg"
+                className="inline-flex items-center rounded-full border border-white/30 px-[1.458vw] py-[0.833vw] text-white transition-colors hover:border-white hover:text-white text-[1.042vw]"
               >
                 {label}
               </span>
@@ -72,25 +72,24 @@ export default function LiferayDevelopmentAndCustomizationPage() {
       </section>
 
       <section className="bg-white text-black">
-        <div className="mx-auto w-full px-4 py-20 md:px-8 md:py-[64px] lg:py-[64px] [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px]">
-          <div className="grid items-start gap-10 md:grid-cols-2">
+        <div className="py-[3.333vw] global-container">
+          <div className="grid items-start gap-[7.656vw] md:grid-cols-2">
             <div>
-              <h2 className="text-5xl leading-[60px] font-semibold sm:text-3xl md:text-5xl">
-                Our Liferay Development Services
+              <h2>
+                Our Liferay<br/> Development Services
               </h2>
-              <p className="mt-4 max-w-xl text-sm text-[20px] text-gray-700">
-                As a leading Liferay Development Company, we provide comprehensive Liferay Development Services
-                including custom portlets, Rest API integration, portal customization,
+              <p className="mt-[1.458vw] max-w-[100%] text-sm text-[1.042vw] text-gray-700">
+                As a leading Liferay Development Company, we provide comprehensive Liferay Development Services including custom portlets, Rest API integration, portal customization,
               </p>
             </div>
-            <div className="w-full space-y-4 md:justify-self-end">
+            <div className="w-full md:justify-self-end">
               {developmentServices.map((txt, index) => (
                 <div
                   key={index}
-                  className={`flex items-center gap-3 rounded-lg bg-white p-0 pb-4 ${index === developmentServices.length - 1 ? "" : "border-b border-gray-200"
+                  className={`flex items-center gap-[1.25vw] rounded-lg bg-white p-0 mt-[1.771vw] mb-[1.771vw] ${index === developmentServices.length - 1 ? "" : "border-b border-gray-200"
                     }`}
                 >
-                  <span className="flex h-[40px] w-[40px] items-center justify-center rounded-full bg-black">
+                  <span className="flex h-[42px] w-[42px] items-center justify-center rounded-full bg-black">
                     <svg
                       width="40"
                       height="30"
@@ -108,7 +107,7 @@ export default function LiferayDevelopmentAndCustomizationPage() {
                       />
                     </svg>
                   </span>
-                  <span className="p-3 text-sm text-[20px] font-medium text-black">{txt}</span>
+                  <span className="text-[1.042vw] font-medium text-black">{txt}</span>
                 </div>
               ))}
             </div>

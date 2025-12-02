@@ -7,7 +7,7 @@ import { expertCardContent } from "data/homepage-content"
 
 const ExpertCard: React.FC = () => {
   return (
-    <div className="flex flex-col gap-8 rounded-2xl bg-[#1C1C1C] px-6 py-8 md:px-8 md:py-10 max-w-[28.906vw] h-[30.104vw]">
+    <div className="flex flex-col gap-[2.188vw] rounded-2xl bg-[#1C1C1C] px-6 py-8 md:px-8 md:py-10 min-w-[28.906vw] min-h-[30.104vw]">
       {/* Top Heading */}
       <p className="text-[1.458vw] leading-snug font-bold text-white">
         {expertCardContent.headingLine1} <br />
@@ -15,7 +15,7 @@ const ExpertCard: React.FC = () => {
       </p>
 
       {/* Expert Details */}
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-[1.354vw]">
         <Image
           src={expertCardContent.expertImage}
           alt={expertCardContent.expertName}
@@ -36,7 +36,7 @@ const ExpertCard: React.FC = () => {
 
       {/* Prefer Email */}
       <div className="pt-2">
-        <p className="mb-1 p16 text-[0.938vw] text-gray-400">{expertCardContent.emailLabel}</p>
+        <p className="mb-1 text-[0.938vw] text-gray-400">{expertCardContent.emailLabel}</p>
         <a
           href={`mailto:${expertCardContent.email}`}
           className="group flex items-center justify-between text-[0.833vw] font-semibold text-white"

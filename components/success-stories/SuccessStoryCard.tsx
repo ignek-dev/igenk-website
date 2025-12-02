@@ -47,12 +47,14 @@ const SuccessStoryCard: React.FC<{ story: Story }> = ({ story }) => {
           />
           <Link
             href={`/case-study/${story.slug}`}
-            className="semicircle-top relative mb-[1.354vw] inline-flex items-center gap-1 rounded-full border border-transparent bg-white px-5 py-2 text-sm font-semibold text-gray-800 transition-all hover:bg-gray-50"
+            className="fancy-white relative mb-[1.354vw] inline-flex items-center gap-1 rounded-full 
+             border border-transparent bg-white px-5 py-2 text-sm font-semibold 
+             text-gray-800 transition-all hover:bg-gray-50"
           >
-            Read case study
+            <span className="relative z-10 text-black">Read case study</span>
           </Link>
           <p className="mb-[1.042vw] text-[1.041vw] font-semibold text-gray-800">Provided Services</p>
-          <div className="flex flex-wrap gap-3">
+          <div className="flex flex-wrap gap-[0.833vw]">
             {commonProvidedServices.map((service, idx) => (
               <TechnologyChip key={idx} iconSrc={service.iconSrc} name={service.name} />
             ))}

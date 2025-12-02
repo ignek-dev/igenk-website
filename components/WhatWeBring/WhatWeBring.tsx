@@ -97,18 +97,18 @@ const WhatWeBring: React.FC = () => {
    
       <section
         ref={stickyRef}
-        className="sticky top-0 z-10 flex items-center overflow-hidden py-16 text-white"
+        className="sticky top-0 z-10 flex items-center overflow-hidden py-[3.333vw] text-white"
         style={{ height: "100vh" }}
       >
         <div className="w-full global-container">
           {/* Header */}
-          <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
+          <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
             <h2>
               {whatWeBringHeader.headingLine1}
               <br />
               {whatWeBringHeader.headingLine2}
             </h2>
-            <p className="max-w-xl pt-0 text-right p18 text-gray-300">
+            <p className="max-w-3xl pt-0 text-right p18 text-gray-300">
               {whatWeBringHeader.description}
             </p>
           </div>
