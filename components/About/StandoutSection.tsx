@@ -149,7 +149,7 @@ const StandoutSection = () => {
             {cardsData.map((card, i) => (
               <div
                 key={i}
-                className="snap-start relative shrink-0 rounded-[1.563vw] bg-[#00000094] w-[21.719vw] backdrop-blur-[2px] text-center text-white px-[2.76vw] pt-[3.438vw] pb-[4.115vw] shadow-[0_10px_30px_rgba(0,0,0,0.35)]"
+                className="snap-start relative shrink-0 rounded-[1.563vw] bg-black/58 w-[21.719vw] backdrop-blur-[2px] text-center text-white px-[2.76vw] pt-[3.438vw] pb-[4.115vw] shadow-[0_10px_30px_rgba(0,0,0,0.35)]"
               >
                 <div className="text-center capitalize text-[1.875vw] leading-[2.604vw] h-[5.208vw] tracking-[-2%]">
                   {card.title}
@@ -165,13 +165,13 @@ const StandoutSection = () => {
           </motion.div>
 
           {/* Scrollbar Progress */}
-          <div className="relative w-full mt-[3.875rem]">
+          <div className="relative w-full mt-[3.229vw]">
             <div className="border border-[#6B7280] "></div>
             <div 
               className="absolute top-0 left-0 border border-[#9CA3AF] transition-all duration-200 ease-out"
               style={{ width: `${progress * 100}%` }}
             ></div>
-          </div>
+          </div>  
         </div>
       </section>
     </div>
