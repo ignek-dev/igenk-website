@@ -39,7 +39,7 @@ const StandoutSection = () => {
   const containerRef = useRef<HTMLDivElement | null>(null)
   const scrollerRef = useRef<HTMLDivElement | null>(null)
   const [maxScroll, setMaxScroll] = useState(0)
-  const [scrollMultiplier] = useState(3)
+  const [scrollMultiplier] = useState(1.5)
   const [progress, setProgress] = useState(0)
   
   const x = useMotionValue(0)
@@ -107,8 +107,8 @@ const StandoutSection = () => {
   const containerHeight = maxScroll * scrollMultiplier + (typeof window !== 'undefined' ? window.innerHeight : 800)
 
   return (
-    <div ref={containerRef} className="relative" style={{ height: `${containerHeight}px` }}>
-      <section className="sticky top-[2.76vw] isolate overflow-hidden global-container py-[3.333vw] h-screen">
+    <div ref={containerRef} className="relative" style={{ height: `${containerHeight}px`}}>
+      <section className="sticky top-[6.5vh] isolate overflow-hidden global-container py-[3.333vw] h-screen">
         {/* Background */}
         <div className="absolute inset-0 -z-10">
           <Image
@@ -126,7 +126,7 @@ const StandoutSection = () => {
           <div className="flex justify-between items-center">
             {/* H1 */}
             <h2
-              className="leading-[3.125vw] text-white capitalize"
+              className="leading-[3.125vw] mt-[0.1vh] text-white capitalize"
             >
               What Makes Us Stand Out
               <br />

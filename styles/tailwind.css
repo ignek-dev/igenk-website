@@ -86,6 +86,14 @@ select:-webkit-autofill {
   font-size: 1rem; 
 }
 
+.portfolio-detail-page ul {
+    margin-left: 50px;
+}
+
+.portfolio-detail-page li {
+    list-style:disc;
+}
+
 /* Global fonts*/
 h1 {
   font-weight: 700;
