@@ -34,14 +34,14 @@ export default async function PortfolioPage() {
           <div className="relative grid justify-between items-end gap-[2.083vw] md:grid-cols-2">
 
               <h1 className="font-semibold leading-tight text-[3.75vw] sm:text-[2.5vw] md:text-[3.75vw]">
-                Our Latest
-                <br />
-                <span className="block">Case Study</span>
+                Liferay 
+                <br/>
+                 Success Stories
+
               </h1>
 
             <p className="text-right text-[0.938vw] ">
-              Explore our latest case studies, showcasing real-world solutions,<br />
-              success stories, and impactful results delivered to our clients.
+              Browse Liferay success stories and DXP project case studies that demonstrate real customer value and high-impact digital outcomes.
             </p>
 
           </div>

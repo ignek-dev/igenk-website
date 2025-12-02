@@ -32,9 +32,9 @@ const featuredWebinar: WebinarData = {
 const upcomingWebinars: WebinarData[] = [
   {
     id: "1",
-    title: "BUILDING ENTERPRISE WEBSITE WITH LIFERAY",
+    title: "Customer Onboarding With Low Code/No Code Capabilities Of Liferay Portal",
     category: "Webinar",
-    location: "IGNEK, Ahmedabad",
+    location: "Virtual",
     date: "26-27 September 2025",
     time: "8:30 AM - 7:30 PM",
     cost: "FREE",
@@ -52,17 +52,7 @@ const upcomingWebinars: WebinarData[] = [
     link: "/webinars/building-enterprise-liferay-2",
     image: "/images/webinar/card-event-image.png",
   },
-  {
-    id: "3",
-    title: "BUILDING ENTERPRISE WEBSITE WITH LIFERAY",
-    category: "Webinar",
-    location: "IGNEK, Ahmedabad",
-    date: "26-27 September 2025",
-    time: "8:30 AM - 7:30 PM",
-    cost: "FREE",
-    link: "/webinars/building-enterprise-liferay-3",
-    image: "/images/webinar/card-event-image.png",
-  },
+
 ];
 
 export default function Webinar() {
@@ -74,28 +64,28 @@ export default function Webinar() {
         {/* <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_10%_0%,#0E7BF8_0%,#00979E_40%,transparent_65%)] opacity-25" /> */}
         <div className="flex items-end justify-between">
           <h1 className="text-[#FFFFFF]">
-            Our Upcoming
+            Liferay DXP
+
             <br />
-            <span className="block">Webinars</span>
+            <span className="block">Learning Webinars</span>
           </h1>
           <p className="w-[39.992vw] text-right text-[0.938vw] leading-[1.458vw]">
-            Stay informed with our latest webinars covering emerging trends, software solutions, and industry best
-            practices. Watch live or catch up on past sessions anytime.
+            Deepen your understanding of Liferay DXP through technical webinars packed with practical insights, architecture guidance, and implementation strategies.
+
           </p>
         </div>
       </section>
 
       <section className="global-container bg-[##F9FAF7] pt-[3.333vw] pb-[3.333vw] text-black">
          {/* Header part */}
-          <div className="flex justify-between items-center mb-[1.875vw]">
+          <div className="flex  justify-between items-center mb-[1.875vw]">
               <h2 className="">
-                Check Out Our
-                <br />
-                Upcoming Webinars
+                Past Liferay <br/> Webinars
+                & Recorded Sessions
               </h2>
-              <p className="text-[#374151] text-[0.938vw] leading-[1.563vw] text-right w-[33.75vw]">
-                Deliver better results with Liferay tools built to sustain automation and efficiency, easing management
-                for growing teams.
+              <p className="text-[#374151] text-[0.938vw] leading-[1.563vw] text-right w-[35.75vw]">
+                Catch up on past Liferay webinars covering DXP, development best practices, and real-world implementation strategies for digital experiences.
+
               </p>
             </div>
      {/* 1. FEATURED IMAGE CARD (Dynamic Banner) */}
@@ -105,7 +95,7 @@ export default function Webinar() {
                    1534 / 753 = ~2.037
                    This ensures the image scales perfectly while keeping the Figma shape.
                 */}
-                <div className="relative w-full aspect-[1534/753] rounded-[20px] overflow-hidden shadow-lg">
+                <div className="relative hidden w-full aspect-[1534/753] rounded-[20px] overflow-hidden shadow-lg">
                     <Image
                         src={featuredWebinar.image}
                         alt={featuredWebinar.title}
@@ -119,7 +109,7 @@ export default function Webinar() {
 
        {/* 2. GRID SECTION TITLE */}
         <div className="mb-[2.396vw] mt-[3.333vw]">
-            <h2 className="text-3xl md:text-4xl font-bold leading-tight">
+            <h2 className="text-3xl hidden md:text-4xl font-bold leading-tight">
                 Check Out Our Newly
                 <br />
                 Upcoming Webinars
@@ -186,7 +176,7 @@ export default function Webinar() {
                   href={webinar.link}
                   className="block w-full text-center text-[1.25rem] leading-[1.563vw] bg-black text-white px-[0.833vw] py-[0.417vw] rounded-lg font-medium hover:bg-gray-800 transition-colors"
                 >
-                  Register Now
+                  Learn More
                 </Link>
               </div>
             </div>

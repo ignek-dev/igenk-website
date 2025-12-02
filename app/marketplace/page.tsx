@@ -76,13 +76,13 @@ export default function MarketplacePage() {
         {/* <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_10%_0%,#0E7BF8_0%,#00979E_40%,transparent_65%)] opacity-25" /> */}
           <div className="flex justify-between items-end">
               <h1 className="text-[#FFFFFF]">
-                Our Marketplace
+                Explore the Liferay 
+
                 <br />
-                <span className="block">Tools For Liferay</span>
+                <span className="block">Marketplace Module</span>
               </h1>
             <p className="w-[34.479vw] text-[0.938vw] leading-[1.458vw] text-right">
-              Experience the next level of efficiency with Liferay tools that streamline operations, enhance
-              performance, and help you achieve consistent excellence across every digital initiative.
+              Explore modules, plugins, and add-ons to optimize development, extend functionality, and create scalable Liferay DXP solutions.
             </p>
         </div>
       </section>
@@ -91,13 +91,13 @@ export default function MarketplacePage() {
           {/* Header part */}
           <div className="flex justify-between items-center mb-[3.75vw]">
               <h2 className="">
-                Check Out Our Newly
+                Featured Liferay 
                 <br />
-                Launched Tools
+                Marketplace Modules
               </h2>
-              <p className="text-[#374151] text-[0.938vw] leading-[1.563vw] text-right w-[33.75vw]">
-                Deliver better results with Liferay tools built to sustain automation and efficiency, easing management
-                for growing teams.
+              <p className="text-[#374151] text-[0.938vw] leading-[1.563vw] text-right w-[42.75vw]">
+                Explore our curated collection of Liferay Marketplace modules, apps, and plugins designed to extend functionality, streamline integrations, and enhance your DXP platform.
+
               </p>
             </div>
 

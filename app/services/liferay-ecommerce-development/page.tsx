@@ -45,7 +45,7 @@ export default function LiferayEcommerceDevelopmentPage() {
   const [progress, setProgress] = useState(0)
 
   const x = useMotionValue(0)
-const smoothX = useSpring(x, { stiffness: 200, damping: 25 })
+  const smoothX = useSpring(x, { stiffness: 200, damping: 25 })
 
   useEffect(() => {
     function calculateMaxScroll() {
@@ -151,20 +151,20 @@ const smoothX = useSpring(x, { stiffness: 200, damping: 25 })
               {ecommerceDevelopment.map((item, index) => (
                 <div
                   key={index}
-                  className={`flex flex-row items-center justify-between border-gray-300 py-6 ${
-                    index !== 0 ? "border-t pt-[1.458vw]" : "pt-0"
+                  className={`flex flex-row items-center border-gray-300 py-[1.458vw] ${
+                    index !== 0 ? "border-t" : "pt-0"
                   } ${index !== ecommerceDevelopment.length - 1 ? "border-b" : "pb-0"}`}
                 >
                   {/* Row Number */}
-                  <span className="mb-2 max-w-[2.76vw] text-[2.083vw] font-medium text-black">
+                  <span className="mr-[5.417vw] max-w-[2.76vw] text-[2.083vw] font-medium text-black">
                     {index + 1 < 10 ? `0${index + 1}` : index + 1}
                   </span>
 
                   {/* Title */}
-                  <h3 className="mb-2 text-[1.563vw]! leading-[36px]! font-normal text-black">{item.text}</h3>
+                  <h3 className="text-[1.563vw]! leading-[36px]! font-normal text-black">{item.text}</h3>
 
                   {/* Description */}
-                  <p className="max-w-[39.198vw] text-left text-[1.042vw] font-normal text-gray-600">
+                  <p className="ml-auto max-w-[39.198vw] text-left text-[1.042vw] font-normal text-gray-600">
                     {item.description}
                   </p>
                 </div>
@@ -188,10 +188,13 @@ const smoothX = useSpring(x, { stiffness: 200, damping: 25 })
             {ecommerceDevelopmentUsingLiferay.map((item, index) => (
               <div
                 key={index}
-                className="relative z-1 flex flex-col rounded-lg border border-gray-700 px-[1.875vw] pt-[1.771vw] pb-[1.771vw]"
+                style={{
+                  boxShadow: "0 0 0 0 rgba(0, 0, 0, 0.00), 0 0 0 1px rgba(244, 244, 245, 0.10), 0 0 0 0 #FFF",
+                }}
+                className="relative z-[1] flex flex-col rounded-[16px] border border-[#1F2937] bg-black px-[1.875vw] pt-[1.771vw] pb-[1.771vw]"
               >
                 {/* Title */}
-                <h3 className="absolute z-10 mt-[-3.385vw] w-max rounded-full border border-gray-700 bg-black px-[1.875vw] py-[0.521vw] text-[1.458vw]! font-medium text-white">
+                <h3 className="z-10 mt-[-3.385vw] w-max rounded-[27px] border border-[#1F2937] bg-black px-[1.875vw] py-[0.521vw] text-[1.458vw]! font-medium text-white">
                   {item.text}
                 </h3>
 
@@ -204,19 +207,19 @@ const smoothX = useSpring(x, { stiffness: 200, damping: 25 })
       </section>
 
       <div ref={containerRef} className="relative" style={{ height: `${containerHeight}px` }}>
-        <section className="sticky top-[3.75vw]  overflow-hidden bg-[#f7f7f7] text-black">
+        <section className="sticky top-[3.75vw] h-screen overflow-hidden bg-[#f7f7f7] text-black">
           <div className="mx-auto w-full py-[3.333vw]">
             {/* Heading Row */}
             <div className="global-container grid items-center gap-10 md:grid-cols-2">
               <h2 className="text-black">Our Liferay Ecommerce Development Process</h2>
-              <p className="p18 leading-relaxed text-gray-500">
+              <p className="p18 text-right leading-relaxed text-gray-500">
                 Liferay Ecommerce enables easy creation and management of digital shopping experiences, combining strong
                 content tools with seamless transactions for improved efficiency and user satisfaction.
               </p>
             </div>
 
             {/* Horizontal Timeline */}
-            <div className="pt-[4.01vw] select-none pl-[10vw]">
+            <div className="pt-[4.01vw] pl-[10vw] select-none">
               <motion.div
                 ref={scrollerRef}
                 className="relative flex min-w-max gap-0 will-change-transform"
@@ -227,19 +230,21 @@ const smoothX = useSpring(x, { stiffness: 200, damping: 25 })
                   <div className="absolute top-[2.0835vw] left-0 z-0 h-[4px] w-[91%] bg-black"></div>
 
                   {steps.map((step, index) => (
-                    <div key={index} className="relative flex h-[17.396vw] w-[21.875vw] flex-col">
-                      <div className="z-10 flex h-[4.167vw] w-[4.167vw] items-center justify-center rounded-full bg-black text-[1.667vw] text-white">
+                    <div key={index} className="flex w-[24.875vw] flex-col gap-[2.188vw]">
+                      <div className="z-10 flex h-[4.167vw] w-[4.167vw] items-center justify-center rounded-full bg-black text-[1.667vw]! text-white">
                         {index + 1}
                       </div>
 
-                      <div className="flex flex-col pt-[2.188vw]">
+                      <div className="flex flex-col">
                         {/* ✅ Title */}
-                        <h3 className="absolute h-[4.583vw] w-[21.354vw] text-left text-[1.875vw]! font-medium text-black">
+                        <h3 className="h-[4.583vw] w-[21.354vw] text-left text-[1.875vw]! font-medium text-black">
                           {step.title}
                         </h3>
 
                         {/* ✅ Description */}
-                        <p className="p18 absolute bottom-0 w-[25.354vw] text-left text-gray-600">{step.description}</p>
+                        <p className="p20 bottom-0 mt-[1.458vw] w-[25.354vw] text-left text-gray-600">
+                          {step.description}
+                        </p>
                       </div>
                     </div>
                   ))}

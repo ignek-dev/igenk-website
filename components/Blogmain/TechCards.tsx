@@ -16,7 +16,7 @@ export default function TechCard({ iconWhite, iconBlue, title, description, isSe
   return (
     <div
       onClick={() => setIsActive(!isActive)}
-      className={`group relative flex flex-col items-center justify-center text-center p-6 cursor-pointer bg-[#ffffff] overflow-hidden
+      className={`group relative flex flex-col items-center justify-center text-center p-[2.604vw] cursor-pointer bg-[#ffffff] overflow-hidden
             
             max-w-[374px] h-[320px] rounded-[12px] 
             transition-all duration-300 ease-in-out 
