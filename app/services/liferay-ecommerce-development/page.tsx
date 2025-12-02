@@ -41,11 +41,11 @@ export default function LiferayEcommerceDevelopmentPage() {
   const containerRef = useRef<HTMLDivElement | null>(null)
   const scrollerRef = useRef<HTMLDivElement | null>(null)
   const [maxScroll, setMaxScroll] = useState(0)
-  const [scrollMultiplier] = useState(3)
+  const [scrollMultiplier] = useState(1.5)
   const [progress, setProgress] = useState(0)
 
   const x = useMotionValue(0)
-  const smoothX = useSpring(x, { stiffness: 100, damping: 20 })
+const smoothX = useSpring(x, { stiffness: 200, damping: 25 })
 
   useEffect(() => {
     function calculateMaxScroll() {
@@ -117,7 +117,7 @@ export default function LiferayEcommerceDevelopmentPage() {
                 <span className="block">Development</span>
               </h1>
             </div>
-            <p className="p18 absolute bottom-0 max-w-[26.042vw] text-right text-white md:justify-self-end">
+            <p className="p18 absolute bottom-0 max-w-[35.438vw] text-right text-white md:justify-self-end">
               Liferay Ecommerce Development empowers businesses to build integrated digital commerce platforms that
               enhance customer experiences.
             </p>
@@ -204,7 +204,7 @@ export default function LiferayEcommerceDevelopmentPage() {
       </section>
 
       <div ref={containerRef} className="relative" style={{ height: `${containerHeight}px` }}>
-        <section className="sticky top-[3.75vw] h-screen overflow-hidden bg-[#f7f7f7] text-black">
+        <section className="sticky top-[3.75vw]  overflow-hidden bg-[#f7f7f7] text-black">
           <div className="mx-auto w-full py-[3.333vw]">
             {/* Heading Row */}
             <div className="global-container grid items-center gap-10 md:grid-cols-2">

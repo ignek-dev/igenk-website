@@ -130,7 +130,7 @@ export default function LiferayMigrationPage() {
               {features.map((feature, index) => (
                 <div key={index} className={`absolute ${feature.position} flex flex-col`}>
                   <div className="mb-[0.104vw] flex h-[2.917vw] min-h-[2.917vw] w-[2.917vw] min-w-[2.917vw] items-center justify-center rounded-full bg-black text-white">
-                    <svg width="21" height="8" viewBox="0 0 23 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg width="22" height="15" viewBox="0 0 23 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path
                         d="M1 10L7 16L22 1"
                         stroke="white"

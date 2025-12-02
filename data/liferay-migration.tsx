@@ -39,12 +39,12 @@ export const features = [
   },
   {
     title: "B2B & B2C Digital Commerce",
-    position: "top-[35%] right-[-12.2vw] flex gap-[1.042vw] flex flex-row",
+    position: "top-[35%] right-[-12.2vw] text-left flex gap-[1.042vw] flex flex-row",
     heading: "w-[10.417vw] ",
   },
   {
     title: "Forms, Workflow, and Collaboration",
-    position: "bottom-[20%] right-[-9.80vw] gap-[1.042vw] flex flex-row",
+    position: "bottom-[20%] right-[-9.80vw] gap-[1.042vw] text-left flex flex-row",
     heading: "w-[11.458vw] ",
   },
   {
