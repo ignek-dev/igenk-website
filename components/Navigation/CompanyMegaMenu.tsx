@@ -140,10 +140,10 @@ export default function CompanyMegaMenu({ onClose }: MegaMenuProps) {
                   />
                   <div className="flex-1">
                     <div className="flex items-center gap-1">
-                      <h5 className="font-medium text-white">{link.title}</h5>
+                      <h5 className="font-medium text-white mr-2">{link.title}</h5>
 
                       {link.subheading && (
-                        <span className="rounded-full bg-white/10 px-3 py-1 text-sm font-medium text-white/70">
+                        <span className="rounded-full border min-w-[7.688vw] bg-white/10 inline-flex justify-center py-1 px-[0.521vw] text-[0.833vw] font-medium text-white/70">
                           {link.subheading}
                         </span>
                       )}
