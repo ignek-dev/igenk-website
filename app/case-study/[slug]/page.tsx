@@ -189,7 +189,7 @@ export default function PortfolioRenderer() {
         </section>
       </main>
 
-      <div className="portfolio-page portfolio-detail-page pb-10">
+      <div className="portfolio-page portfolio-detail-page">
         <article className="portfolio-article">
           <div
             className="portfolio-content elementor-content m-0"
