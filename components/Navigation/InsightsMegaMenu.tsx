@@ -1,10 +1,24 @@
-// InsightsMegaMenu.tsx
+"use client"
 import Image from "next/image"
 import Link from "next/link"
+import { useEffect, useState } from "react"
 
 interface MegaMenuProps {
   onClose: () => void;
 }
+
+interface WPFeaturedMedia {
+  source_url: string;
+}
+
+interface WPEmbedded {
+  "wp:featuredmedia"?: WPFeaturedMedia[];
+}
+
+interface WPPost {
+  _embedded?: WPEmbedded;
+}
+
 
 // --- Icon Components ---
 const IconArrowRight = ({ className }: { className?: string }) => (
@@ -53,6 +67,37 @@ const featuredEvent = {
 
 // --- Main InsightsMegaMenu Component ---
 export default function InsightsMegaMenu({ onClose }: MegaMenuProps) {
+  const [latestImage, setLatestImage] = useState<string | null>(null)
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(false)
+
+
+   useEffect(() => {
+    async function fetchLatest() {
+      try {
+        const res = await fetch(
+          "https://insights.ignek.com/wp-json/wp/v2/posts?per_page=1&_embed",
+          { cache: "no-store" }
+        );
+
+        const data = (await res.json()) as WPPost[];
+
+        const img = data?.[0]?._embedded?.["wp:featuredmedia"]?.[0]?.source_url;
+
+        if (img) setLatestImage(img);
+        else setError(true);
+      } catch (err) {
+        console.error("Failed to fetch latest blog image:", err);
+        setError(true);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    fetchLatest();
+  }, []);
+
+
   return (
     <>
       {/* Background Gradient */}
@@ -67,7 +112,8 @@ export default function InsightsMegaMenu({ onClose }: MegaMenuProps) {
                 <a
                   href={link.href}
                   key={link.title}
-                  className="group flex items-center gap-[0.785vw] rounded-[16px] bg-[#0D0D0D] px-[2rem] py-[1.92rem] transition-all duration-300 hover:bg-[#1a1a1a] [@media(min-width:1440px)]:rounded-[0.937vw] [@media(min-width:1920px)]:rounded-[20px]"                >
+                  className="group flex items-center gap-[0.785vw] rounded-[16px] bg-[#0D0D0D] px-[2rem] py-[1.92rem] transition-all duration-300 hover:bg-[#1a1a1a] [@media(min-width:1440px)]:rounded-[0.937vw] [@media(min-width:1920px)]:rounded-[20px]"
+                >
                   {/* Icon container */}
                   <div className="flex h-[3.125rem] w-[3.125rem] flex-shrink-0 items-center justify-center text-white/70 transition-colors group-hover:text-white">
                     <Image
@@ -75,7 +121,7 @@ export default function InsightsMegaMenu({ onClose }: MegaMenuProps) {
                       alt={link.title}
                       width={38}
                       height={38}
-                     className="h-[2.375rem] w-[2.375rem] object-contain"
+                      className="h-[2.375rem] w-[2.375rem] object-contain"
                     />
                   </div>
 
@@ -97,16 +143,29 @@ export default function InsightsMegaMenu({ onClose }: MegaMenuProps) {
             <p className="mb-6 max-w-4xl align-middle text-[1.6667vw]! leading-[2.2917vw] font-semibold! tracking-[-0.02em] text-white">
               {featuredEvent.title}
             </p>
-            <Link href={featuredEvent.href} onClick={onClose} className="group block">
-              <div className="overflow-hidden rounded-[14.35px] border-[1.2px] border-white/20 transition-all duration-300 group-hover:border-white/40">
-                <Image
-                  src={featuredEvent.imageSrc}
-                  alt={featuredEvent.imageAlt}
-                  width={800} // Base width for aspect ratio
-                  height={450} // Base height for aspect ratio
-                  objectFit="cover" // from object-cover class
-                  className="h-auto w-full transition-transform duration-300 group-hover:scale-105"
-                />
+            <Link href="/blog" onClick={onClose} className="group block">
+              <div className="flex h-[450px] w-full items-center justify-center overflow-hidden rounded-[14.35px] border-[1.2px] border-white/20 bg-black/20 transition-all duration-300 group-hover:border-white/40">
+                {/* Loader */}
+                {loading && (
+                  <div className="flex flex-col items-center justify-center gap-4">
+                    <div className="h-10 w-10 animate-spin rounded-full border-4 border-white/30 border-t-white"></div>
+                    <p className="text-white">Loading latest blog…</p>
+                  </div>
+                )}
+
+                {/* Error */}
+                {!loading && error && <p className="text-white opacity-80">Failed to load latest blog image</p>}
+
+                {/* Image */}
+                {!loading && !error && latestImage && (
+                  <Image
+                    src={latestImage}
+                    alt="Latest Blog Featured Image"
+                    width={800}
+                    height={450}
+                    className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                )}
               </div>
             </Link>
           </div>

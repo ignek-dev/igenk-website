@@ -139,7 +139,7 @@ export default function CompanyMegaMenu({ onClose }: MegaMenuProps) {
                     }}
                   />
                   <div className="flex-1">
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-1">
                       <h5 className="font-medium text-white">{link.title}</h5>
 
                       {link.subheading && (
