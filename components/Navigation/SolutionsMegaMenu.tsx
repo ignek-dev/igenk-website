@@ -140,15 +140,15 @@ export default function SolutionsMegaMenu({ onClose }: MegaMenuProps) {
                         height={60}
                         className="h-10 w-10 flex-shrink-0 rounded-lg bg-white [@media(min-width:1440px)]:h-12 [@media(min-width:1440px)]:w-12 [@media(min-width:1536px)]:h-[52px] [@media(min-width:1536px)]:w-[52px] [@media(min-width:1920px)]:h-[60px] [@media(min-width:1920px)]:w-[60px]"
                       />
-                      <div className="flex max-w-[320px] items-baseline">
-                        <span className="font-medium" dangerouslySetInnerHTML={{ __html: link.text }} />
-
-                        {link.subheading && (
-                          <span className="rounded-full align-middle bg-white/10 px-1.5 py-1 text-sm font-medium text-white/70 border inline-block whitespace-nowrap
-             filter drop-shadow-[0_0_6px_rgba(255,255,255,0.4)]">
-                            {link.subheading}
-                          </span>
-                        )}
+                   <div className="flex max-w-[320px]  items-center">
+                        <div className="font-medium">
+                          {/* dangerouslySetInnerHTML={{ __html: link.text } */}{link.text}
+                          {link.subheading && (
+                            <span className="rounded-full min-w-[7.688vw] bg-white/10 inline-flex justify-center border py-1 px-[0.521vw] text-[0.833vw] font-medium text-white" style={{ marginLeft: "8px" }}>
+                              {link.subheading}
+                            </span>
+                          )}
+                        </div>
                       </div>
                     </Link>
                   </li>
