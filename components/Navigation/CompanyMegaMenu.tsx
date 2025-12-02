@@ -77,8 +77,9 @@ const companyLinks = [
   {
     image: "/images/mega-menu/LifeAtIgnek.png",
     title: "Life#IGNEK",
+    subheading: "Coming soon",
     description: "Experience a collaborative, creative, and energetic work culture at IGNEK.",
-    href: "/life-at-ignek",
+    href: "#",
   },
 ]
 
@@ -138,10 +139,18 @@ export default function CompanyMegaMenu({ onClose }: MegaMenuProps) {
                     }}
                   />
                   <div className="flex-1">
-                    <h5 className="font-medium text-white">{link.title}</h5>
+                    <div className="flex items-center gap-1">
+                      <h5 className="font-medium text-white">{link.title}</h5>
+
+                      {link.subheading && (
+                        <span className="rounded-full bg-white/10 px-3 py-1 text-sm font-medium text-white/70">
+                          {link.subheading}
+                        </span>
+                      )}
+                    </div>
                     <p className="font-regular p16 mt-4 text-white">{link.description}</p>
                   </div>
-                  <IconArrowRight className="size-8 mr-3 text-white! transition-transform duration-300 group-hover:translate-x-1 group-hover:text-white" />
+                  <IconArrowRight className="mr-3 size-8 text-white! transition-transform duration-300 group-hover:translate-x-1 group-hover:text-white" />
                 </Link>
               ))}
             </div>
@@ -153,11 +162,12 @@ export default function CompanyMegaMenu({ onClose }: MegaMenuProps) {
               We&apos;re the Top #1 Digital experience development company contributing towards a smart World
             </p>
             <p className="p18 mt-4 max-w-4xl text-left! text-[#D1D5DB]">
-              IGNEK delivers smart, high-quality digital experiences that transform businesses, through expert engineering, modern design, and reliable technology solutions.
+              IGNEK delivers smart, high-quality digital experiences that transform businesses, through expert
+              engineering, modern design, and reliable technology solutions.
             </p>
 
-           <div className="mt-16 flex border-white/10">
-              <div className="flex-grow w-1/3 relative pr-[2.375rem] border-r border-[#4B5563]">
+            <div className="mt-16 flex border-white/10">
+              <div className="relative w-1/3 flex-grow border-r border-[#4B5563] pr-[2.375rem]">
                 <h5 className="mb-6.5 font-medium">General</h5>
                 <ul className="space-y-2">
                   {contactDetails.general.map((item) => (
@@ -182,7 +192,7 @@ export default function CompanyMegaMenu({ onClose }: MegaMenuProps) {
               </div>
 
               {/* Sales sections */}
-              <div className="flex-grow-[1.2] relative px-[2.375rem] border-r border-[#4B5563]">
+              <div className="relative flex-grow-[1.2] border-r border-[#4B5563] px-[2.375rem]">
                 <h5 className="mb-6.5 font-medium">Sales</h5>
                 <ul className="space-y-2">
                   {contactDetails.sales.map((item) => (
@@ -198,7 +208,7 @@ export default function CompanyMegaMenu({ onClose }: MegaMenuProps) {
                           height={41}
                           className="h-[28px] w-[28px] object-contain [@media(min-width:1440px)]:h-[32px] [@media(min-width:1440px)]:w-[32px] [@media(min-width:1536px)]:h-[36px] [@media(min-width:1536px)]:w-[36px] [@media(min-width:1920px)]:h-[41px] [@media(min-width:1920px)]:w-[41px]"
                         />
-                        <p className="whitespace-nowrap p20 font-semibold! text-[#FFFFFF]">{item.text}</p>
+                        <p className="p20 font-semibold! whitespace-nowrap text-[#FFFFFF]">{item.text}</p>
                       </a>
                     </li>
                   ))}
@@ -208,7 +218,7 @@ export default function CompanyMegaMenu({ onClose }: MegaMenuProps) {
               </div>
 
               {/* HR sections */}
-              <div className="flex-grow w-1/3.5 relative pl-[2.375rem]">
+              <div className="w-1/3.5 relative flex-grow pl-[2.375rem]">
                 <h5 className="mb-6.5 font-medium">HR</h5>
                 <ul className="space-y-2">
                   {contactDetails.hr.map((item) => (
@@ -225,7 +235,7 @@ export default function CompanyMegaMenu({ onClose }: MegaMenuProps) {
                           objectFit="contain"
                           className="h-[28px] w-[28px] [@media(min-width:1440px)]:h-[32px] [@media(min-width:1440px)]:w-[32px] [@media(min-width:1536px)]:h-[36px] [@media(min-width:1536px)]:w-[36px] [@media(min-width:1920px)]:h-[41px] [@media(min-width:1920px)]:w-[41px]"
                         />
-                        <p className="whitespace-nowrap p20 font-semibold! text-[#FFFFFF]">{item.text}</p>
+                        <p className="p20 font-semibold! whitespace-nowrap text-[#FFFFFF]">{item.text}</p>
                       </a>
                     </li>
                   ))}
@@ -243,9 +253,7 @@ export default function CompanyMegaMenu({ onClose }: MegaMenuProps) {
                   objectFit="cover"
                   className="flex-shrink-0 rounded-md"
                 />
-                <p className="p20 max-w-[23.438vw] font-semibold! text-[#FFFFFF]">
-                  E 910-912, Ganesh Glory 11, Jagatpur Road, SG Highway, Ahmedabad, Gujarat - 382470
-                </p>
+                <p className="p20 max-w-[23.438vw] font-semibold! text-[#FFFFFF]">Ahmedabad, Gujarat.</p>
               </div>
               <div className="flex items-center gap-[1.042vw]">
                 {socialLinks.map((social) => (
@@ -253,7 +261,7 @@ export default function CompanyMegaMenu({ onClose }: MegaMenuProps) {
                     href={social.href}
                     key={social.label}
                     aria-label={social.label}
-                    className="flex size-12.5 items-center justify-center rounded-full text-black bg-white transition-colors hover:bg-gray-200"
+                    className="flex size-12.5 items-center justify-center rounded-full bg-white text-black transition-colors hover:bg-gray-200"
                     target="blank"
                   >
                     {social.icon}
