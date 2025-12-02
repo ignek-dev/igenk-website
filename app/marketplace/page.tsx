@@ -41,8 +41,8 @@ const toolsData = [
     module: "Content Management and Operations",
     title: "Collection display grid view with Item Highlight",
     description:
-      "This fragment enhances a standard Collection Display by introducing a custom grid layout where one item can be highlighted with a larger visual style. It allows authors to choose which item to highlight, offering a more dynamic and visually engaging presentation. ",
-    tags: ["Fragment", "Liferay Frontend"],
+      "A custom fragment that enhances Liferay’s Collection Display by allowing one item to be highlighted with a unique layout and styling for better visual emphasis.",
+    tags: ["Collection Layout", "Highlighted Item","Custom Grid"],
     link: "https://marketplace.liferay.com/p/collection-display-grid-view-with-item-highlight",
   },
   {
@@ -51,8 +51,8 @@ const toolsData = [
     module: "Content Management and Operations",
     title: "Sticky Notes for the Portal",
     description:
-      "The fragment provides a universal notes panel accessible from any page, allowing users to create, edit, delete, and search notes. Notes persist across the entire site and autosave while typing.",
-    tags: ["Fragment", "Liferay Frontend"],
+      "A global sticky-notes widget that lets users quickly create, edit, and manage notes across all pages, stored locally in the browser.",
+    tags: ["Productivity", "Notes Panel","LocalStorage"],
     link: "https://marketplace.liferay.com/p/sticky-notes-for-the-portal",
   },
 ]
