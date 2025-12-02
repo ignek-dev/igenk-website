@@ -216,13 +216,13 @@ export default function BlogDetails() {
                         <div className="max-w-2xl  text-[1.25vw] font-normal text-gray-200 sm:text-xl mt-[2.24vw]">
                             <div className="flex items-center p24  space-x-2  text-white">
                                 <Image
-                                    src={post._embedded?.author?.[0]?.avatar_urls?.["96"] || "/images/blogs/blogAuthor.png"}
+                                    src={"/images/blogs/blogAuthor.png"}
                                     alt={"authorI"}
                                     width={58}
                                     height={58}
-                                    className="w-[3.021vw] h-[3.021vw] object-cover rounded-full border border-gray-200"
+                                    className="w-[3.021vw] h-[3.021vw] object-cover rounded-full "
                                 />
-                                <span className="">{post._embedded?.author?.[0]?.name || "Bhavin Panchani"}</span>
+                                <span className="">{"Bhavin Panchani"}</span>
                                 <span>•</span>
                                 <span>{post.date
                                     ? new Date(post.date).toLocaleDateString("en-US", {

@@ -45,7 +45,7 @@ export default function LiferayMigrationPage() {
   // ]
 
   return (
-    <main className="pb-16">
+    <main className="">
       {/* Hero */}
       <section className="relative bg-black text-white">
         <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_10%_0%,#0E7BF8_0%,#00979E_40%,transparent_65%)] opacity-25" />
@@ -84,12 +84,12 @@ export default function LiferayMigrationPage() {
         <div className="mx-auto w-full pt-[3.75vw] pb-[2.76vw]">
           <div className="relative flex flex-col items-center justify-center px-[0.313vw] text-center">
             {/* Outer Dotted Circle */}
-            <div className="relative flex h-[48.125vw] w-[48.125vw] items-center justify-center rounded-full border-[0.104vw] border-dashed border-[#000000]">
+            <div className="relative flex h-[48.125vw] w-[48.125vw] items-center justify-center rounded-full border-[0.052vw] border-dashed border-[#000000]">
               {/* Inner Dotted Circle */}
-              <div className="flex h-[31.25vw] w-[31.25vw] items-center justify-center rounded-full border border-dashed border-[#000000]">
+              <div className="flex h-[31.25vw] w-[31.25vw] items-center justify-center rounded-full border-[0.052vw]  border-dashed border-[#000000]">
                 {/* Center Content */}
-                <div className="flex max-w-[13.542vw] flex-col items-center text-center">
-                  <div className="mx-auto mb-4 flex items-center justify-center rounded-md bg-blue-100">
+                <div className="flex max-w-[13.542vw] flex-col items-center gap-[1.823vw] text-center">
+                  <div className="mx-auto flex items-center justify-center rounded-md">
                     <svg
                       width="91"
                       height="91"
@@ -116,10 +116,10 @@ export default function LiferayMigrationPage() {
                       </defs>
                     </svg>
                   </div>
-                  <h2 className="mb-[0.104vw] w-[26.146vw] text-[1.875vw]! font-medium">
+                  <h2 className="w-[26.146vw] text-[1.875vw]! font-medium">
                     Why Enterprises Should Migrate To Liferay?
                   </h2>
-                  <p className="mt-[0.208vw] text-[0.729vw] leading-relaxed text-gray-600">
+                  <p className="text-[0.729vw]! leading-relaxed text-gray-600">
                     Liferay provides a scalable platform for personalized customer experiences, with Liferay Portal
                     Migration enhancing content management for efficient delivery.
                   </p>
@@ -129,18 +129,23 @@ export default function LiferayMigrationPage() {
               {/* Circular Feature Points */}
               {features.map((feature, index) => (
                 <div key={index} className={`absolute ${feature.position} flex flex-col`}>
-                  <div className="mb-[0.104vw] flex h-[2.917vw] min-h-[2.917vw] w-[2.917vw] min-w-[2.917vw] items-center justify-center rounded-full bg-black text-white">
-                    <svg width="21" height="8" viewBox="0 0 23 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <div className="mb-[0.104vw] h-[2.917vw] w-[2.917vw] flex rounded-[2.552vw] items-center justify-center  bg-black ">
+                   
+                   <div className="text-white p-[36px]">
+                    <svg width="23" height="17" viewBox="0 0 23 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path
                         d="M1 10L7 16L22 1"
                         stroke="white"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
                       />
                     </svg>
+                    </div>
                   </div>
-                  <p className={`${feature.heading} text-[1.042vw] leading-snug font-medium text-gray-800`}>{feature.title}</p>
+                  <p className={`${feature.heading} text-[1.042vw] leading-snug font-medium text-gray-800`}>
+                    {feature.title}
+                  </p>
                 </div>
               ))}
             </div>
@@ -154,7 +159,7 @@ export default function LiferayMigrationPage() {
           <div className="grid items-start gap-10 lg:grid-cols-[0.9fr_1.1fr]">
             <div className="sticky top-[10.417vw] flex w-[28.698vw] flex-col gap-[1.458vw]">
               <h2 className="leading-[60px] font-semibold">Our Liferay Migration Process</h2>
-              <p className="p20 text-gray-500">
+              <p className="p18 text-gray-500">
                 We optimize transitions from legacy systems to Liferay with our proven Liferay Portal Migration
                 services, using best practices for seamless upgrades. Our expertise ensures cost-effective, high-quality
                 transitions. Here is our Liferay Migration process.
@@ -167,7 +172,7 @@ export default function LiferayMigrationPage() {
                 <div className="relative mt-[0.313vw] ml-[3.75vw] flex flex-col">
                   {/* Vertical line */}
                   <div
-                    className="absolute top-0 left-[2.3vw] h-[89%] bg-white [@media(min-width:2140px)]:h-[90%]"
+                    className="absolute top-0 left-[1.999vw] h-[89%] bg-white [@media(min-width:2140px)]:h-[90%]"
                     style={{ width: "4px" }}
                   ></div>
 
@@ -178,7 +183,7 @@ export default function LiferayMigrationPage() {
                     >
                       {/* Step circle */}
                       <div className="flex flex-col items-center">
-                        <div className="z-10 flex h-[4.688vw] w-[4.688vw] items-center justify-center rounded-full border-4 border-white bg-black text-2xl text-white">
+                        <div className="z-10 flex h-[4.167vw] w-[4.167vw] items-center justify-center rounded-full border-4 border-white bg-black text-2xl text-white">
                           {index + 1}
                         </div>
                       </div>
