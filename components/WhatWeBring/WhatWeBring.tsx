@@ -1,14 +1,15 @@
 "use client"
 
 import React, { useEffect, useRef, useState } from "react"
-import { motion, useScroll , useSpring, useTransform } from "framer-motion"
+import { motion, useScroll, useSpring, useTransform } from "framer-motion"
 import WhatWeBringCard from "./WhatWeBringCard"
 import { cardData, whatWeBringHeader } from "data/homepage-content"
 
-
-
 const START_BUFFER_FRAC = 0.15
-const END_BUFFER_FRAC = 0.25 
+const END_BUFFER_FRAC = 0.25
+
+const MAX_TOP_BUFFER_PX_DESKTOP = 120
+const MAX_TOP_BUFFER_PX_MOBILE = 64
 
 const WhatWeBring: React.FC = () => {
   const containerRef = useRef<HTMLDivElement | null>(null)
@@ -22,42 +23,49 @@ const WhatWeBring: React.FC = () => {
 
   useEffect(() => {
     function recompute() {
-      const scroller = scrollerRef.current;
-      if (!scroller) return;
+  const scroller = scrollerRef.current;
+  if (!scroller) return;
 
-      const totalWidth = scroller.scrollWidth;
-      const viewportW = window.innerWidth;
-      const viewportH = window.innerHeight;
+  const totalWidth = scroller.scrollWidth;
+  const viewportW = window.innerWidth;
+  const viewportH = window.innerHeight;
 
-      // Tailwind sizes
-      const gap = 44; // gap-11 = 2.75rem * 16px
-      const pr = 44;  // pr-11 = 2.75rem * 16px
+  const gap = 44;
+  const pr  = 44;
 
-      // Get the last card's width
-      const lastCard = scroller.lastElementChild as HTMLElement | null;
-      const lastCardWidth = lastCard?.offsetWidth || 0;
+  const lastCard = scroller.lastElementChild as HTMLElement | null;
+  const lastCardWidth = lastCard?.offsetWidth || 0;
 
-      const horizontalDistancePx = Math.max(
-        0,
-        totalWidth - viewportW - lastCardWidth - gap - pr + lastCardWidth + 400
-      );
+  const horizontalDistancePx = Math.max(
+    0,
+    totalWidth - viewportW - lastCardWidth - gap - pr + lastCardWidth + 50
+  );
 
-      const topPx = Math.round(START_BUFFER_FRAC * viewportH);
-      const bottomPx = Math.round(END_BUFFER_FRAC * viewportH);
+  // raw buffers
+  const rawTopPx = Math.round(START_BUFFER_FRAC * viewportH);
+  const rawBottomPx = Math.round(END_BUFFER_FRAC * viewportH);
 
-      const newContainerHeight = horizontalDistancePx + viewportH + topPx + bottomPx;
+  // clamp top buffer — smaller on mobile
+  const maxTopPx = 64; // tweak values to taste
+  const topPx = Math.min(rawTopPx, maxTopPx);
 
-      setContainerHeight(newContainerHeight);
-      setTopBufferPx(topPx);
-      setBottomBufferPx(bottomPx);
-      setTravelPx(horizontalDistancePx);
-    }
+  // optionally clamp bottom too (if you want)
+  const maxBottomPx = 200;
+  const bottomPx = Math.min(rawBottomPx, maxBottomPx);
+
+  const newContainerHeight = horizontalDistancePx + viewportH + topPx + bottomPx;
+
+  setContainerHeight(newContainerHeight);
+  setTopBufferPx(topPx);
+  setBottomBufferPx(bottomPx);
+  setTravelPx(horizontalDistancePx);
+}
+
 
     recompute()
     window.addEventListener("resize", recompute)
     return () => window.removeEventListener("resize", recompute)
   }, [])
-
 
   // useScroll scoped to the containerRef — returns progress 0..1 while scrolling through container
   const { scrollYProgress } = useScroll({
@@ -80,11 +88,7 @@ const WhatWeBring: React.FC = () => {
   const { start, end } = computeRaw()
 
   // Make a four-point transform so we have explicit pause at beginning and end
-  const rawX = useTransform(
-    scrollYProgress,
-    [0, start, end, 1],
-    ["0px", "0px", `-${travelPx}px`, `-${travelPx}px`]
-  )
+  const rawX = useTransform(scrollYProgress, [0, start, end, 1], ["0px", "0px", `-${travelPx}px`, `-${travelPx}px`])
 
   const x = useSpring(rawX, { stiffness: 90, damping: 16 })
 
@@ -92,15 +96,15 @@ const WhatWeBring: React.FC = () => {
     // tall parent — scroll passes through this and the sticky child remains visible during scroll
     <div ref={containerRef} style={{ height: containerHeight }} className="relative bg-black">
       {/* Top pause buffer (px) to ensure initial pause — keeps first cards visible */}
-      <div style={{ height: topBufferPx }} />
+      {containerHeight > 0 && <div style={{ height: topBufferPx }} />}
+      {/* <div style={{ height: topBufferPx }} /> */}
 
-   
       <section
         ref={stickyRef}
         className="sticky top-0 z-10 flex items-center overflow-hidden py-[3.333vw] text-white"
         style={{ height: "100vh" }}
       >
-        <div className="w-full global-container">
+        <div className="global-container w-full">
           {/* Header */}
           <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
             <h2>
@@ -108,16 +112,14 @@ const WhatWeBring: React.FC = () => {
               <br />
               {whatWeBringHeader.headingLine2}
             </h2>
-            <p className="max-w-3xl pt-0 text-right p18 text-gray-300">
-              {whatWeBringHeader.description}
-            </p>
+            <p className="p18 max-w-3xl pt-0 text-right text-gray-300">{whatWeBringHeader.description}</p>
           </div>
 
           {/* Horizontal scroller */}
           <motion.div
             ref={scrollerRef}
             style={{ x }}
-            className="flex pt-15 pb-16 w-max gap-11 pr-11 will-change-transform"
+            className="flex w-max gap-11 pt-15 pr-11 pb-16 will-change-transform"
           >
             {cardData.map((card) => (
               <WhatWeBringCard
@@ -128,7 +130,6 @@ const WhatWeBring: React.FC = () => {
               />
             ))}
           </motion.div>
-
         </div>
       </section>
 
@@ -138,4 +139,3 @@ const WhatWeBring: React.FC = () => {
 }
 
 export default WhatWeBring
-
