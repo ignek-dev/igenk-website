@@ -11,9 +11,8 @@ import OurCapabilities from "components/OurCapabilities/OurCapabilities"
 import RatingsSection from "components/Ratings/RatingsSection"
 import SuccessStories from "components/success-stories/SuccessStories"
 import WhatWeBring from "components/WhatWeBring/WhatWeBring"
-import { partners } from "data/homepage-content"
+import { homepageData, partners } from "data/homepage-content"
 import { BlogSection } from "../components/Common"
-
 
 export const metadata: Metadata = {
   title: "Ignek - Transform Your Digital Experience",
@@ -37,6 +36,7 @@ export const metadata: Metadata = {
 }
 
 export default function HomePage() {
+  const { hero } = homepageData
   return (
     // enable smooth scrolling for anchor links
     <main className="scroll-smooth">
@@ -48,27 +48,25 @@ export default function HomePage() {
         </div>
 
         <div className="global-container w-full py-16">
-          <h1 className="!text-[6.875vw] letter-spacing-[0.04em] font-extrabold !leading-[6.9vw]">
-            Transform Your
+          <h1 className="letter-spacing-[0.04em] !text-[6.875vw] !leading-[6.9vw] font-extrabold">
+            {hero.headingLine1}
             <br />
-            <span className="italic">DIGITAL EXPERIENCE</span>
+            <span className="italic">{hero.headingItalic}</span>
             <br />
-            <span>With IGNEK Today</span>
+            <span>{hero.headingLine3}</span>
           </h1>
           <div className="mt-[3.646vw] grid items-start gap-8 md:grid-cols-2">
-            <p className="max-w-xl p20 text-white/80 leading-[30px]">
-              Transform your digital landscape with cutting-edge DXP solutions tailored to your unique business needs.
-            </p>
+            <p className="p20 max-w-xl leading-[30px] text-white/80">{hero.description} </p>
 
             <div className="pb-3 md:self-end md:justify-self-end">
               <a
-                href="#discover"
+                href={hero.button.link}
                 className="group flex items-center justify-center gap-2 rounded-full bg-black/30 px-3 py-3 text-sm text-white transition-colors"
               >
                 <div className="flex h-8 w-8 items-center justify-center rounded-full border border-[#00979E] bg-black/30">
-                  <Image src="/images/icon/discover-arrow.png" alt="discover-now" width={18} height={18} />
+                  <Image src={hero.button.icon} alt="discover-now" width={18} height={18} />
                 </div>
-                <span className="pr-2 text-xl font-semibold">Discover More</span>
+                <span className="pr-2 text-xl font-semibold">{hero.button.text}</span>
               </a>
             </div>
           </div>

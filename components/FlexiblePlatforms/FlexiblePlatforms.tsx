@@ -4,20 +4,8 @@ import Image from "next/image"
 import React from "react"
 // import PlatformCard from './PlatformCard';
 import { useInView } from "hooks/useInView"
+import { flexiblePlatforms } from "data/homepage-content"
 
-const platformsData = [
-  {
-    platformName: "Liferay",
-    hoverDescription: (
-      <p>
-        Liferay is a <strong>Digital Experience Platform (DXP)</strong> that enables organizations to build and manage{" "}
-        <strong>digital experiences across various channels</strong>. It provides tools for creating and managing
-        websites, portals, intranets, and more. Liferay is known for its{" "}
-        <strong>flexibility, scalability, and open-source</strong> nature.
-      </p>
-    ),
-  },
-]
 
 const FlexiblePlatforms = () => {
   const [sectionRef, isInView] = useInView({ threshold: 0.2, triggerOnce: true })
@@ -33,11 +21,11 @@ const FlexiblePlatforms = () => {
           }`}
         >
           <h2 className="">
-            Flexible Platforms.
-            <span className="block">Scalable Experiences.</span>
+            {flexiblePlatforms.titleLine1}
+            <span className="block">{flexiblePlatforms.titleLine2}</span>
           </h2>
           <p className="mt-[0.833vw] p18 text-gray-600">
-            We specialize in Liferay DXP framework development, offering expert Liferay Consulting, Liferay Implementation, and Liferay Portal Development Services that help enterprises create connected, scalable, and high-performing digital ecosystems built for the future. Our team ensures seamless integration, optimized performance, and personalized user experiences that accelerate digital transformation and business growth.
+            {flexiblePlatforms.description}
           </p>
         </div>
 
@@ -50,7 +38,7 @@ const FlexiblePlatforms = () => {
         >
           {/* 1. Background Image */}
           <Image
-            src="/images/liferay_image.webp"
+            src={flexiblePlatforms.image}
             alt="Liferay Digital Experience Platform"
             layout="fill"
             objectFit="cover"
@@ -62,9 +50,9 @@ const FlexiblePlatforms = () => {
 
           {/* 3. Text Overlay (Visible on Hover) */}
           <div className="absolute inset-0 flex flex-col justify-end bg-black/40 p-6 text-white opacity-0 transition-opacity duration-500 group-hover:opacity-100 md:p-10">
-            <h3 className="text-4xl font-bold">{platformsData[0]?.platformName}</h3>
+            <h3 className="text-4xl font-bold">{flexiblePlatforms?.platforms?.[0]?.platformName}</h3>
             <div className="mt-[0.833vw] max-w-2xl p18 leading-relaxed text-gray-200">
-              {platformsData[0]?.hoverDescription}
+              {flexiblePlatforms?.platforms?.[0]?.hoverDescription}
             </div>
           </div>
         </div>
