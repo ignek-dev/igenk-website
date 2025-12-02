@@ -344,3 +344,233 @@ export const caseStudies = [
       "Curabitur at lacus ac velit ornare lobortis. Vestibulum suscipit nulla quis orci. Donec posuere vulputate arcu.",
   },
 ]
+
+export interface LiferayConsultingCategory {
+  id: string
+  label: string
+  services: string[]
+}
+
+export const liferayConsultingData: LiferayConsultingCategory[] = [
+  {
+    id: "portal",
+    label: "Portal",
+    services: [
+      "Intuitive UI development",
+      "Flexible enterprise integrations",
+      "Built-in tools and accelerators",
+      "Secure single sign-on (SSO)",
+      "Customizable fields and modules",
+      "Rules engine setup",
+      "User groups, organizations, and site management",
+      "Headless API support",
+      "Service-oriented architecture (SOA)",
+      "User personalization features",
+      "Multi-tenant architecture",
+      "Custom extension and configuration options",
+      "Role-based content delivery",
+      "One-click configuration setup",
+      "Drag-and-drop UI elements",
+      "Workflow and approval framework",
+      "User-driven workflow automation",
+      "Monitoring & analytics",
+      "Liferay Sync for desktop access",
+      "Search and tagging capabilities",
+      "Multi-language support",
+      "OpenSocial integrations",
+    ],
+  },
+  {
+    id: "enterprise-crm",
+    label: "Enterprise CRM",
+    services: [
+      "Advanced web publishing tools",
+      "Documents & media management",
+      "Multiple repository mounting",
+      "Custom content categories & asset publisher",
+      "Workspace publishing",
+      "Rich text editors",
+      "Content templates & structures",
+      "Template comments & versioning",
+      "Microsoft Office® integration",
+      "One-click page creation",
+      "Site creation templates",
+      "Workflow & approval management",
+      "Live editing & scheduling",
+      "Staging & rollout options",
+      "Document conversion & bulk upload",
+      "Drag-and-drop site map",
+      "Faceted search",
+      "Multi-tier search indexing",
+      "Dynamic tagging",
+      "SEO optimization",
+      "Simple third-party integrations",
+      "Vanity URLs & virtual hosting",
+      "Localization support",
+      "Customizable pages",
+    ],
+  },
+  {
+    id: "collaboration-social",
+    label: "Collaboration & Social",
+    services: [
+      "Knowledge base",
+      "Wikis",
+      "Message boards",
+      "Blogs",
+      "RSS Feeds",
+      "Activity tracking",
+      "Instant messaging",
+      "Email integrations",
+      "Shared calendars",
+      "Tags & categories",
+      "Announcements & alerts",
+      "Dynamic data lists",
+      "Polls",
+      "Social equity scoring",
+    ],
+  },
+  {
+    id: "ecommerce",
+    label: "E-Commerce",
+    services: [
+      "Custom e-commerce development",
+      "Modern storefront UI",
+      "Product management system",
+      "Flexible promotions & pricing",
+      "Integrated payment gateways",
+      "Custom shopping cart",
+      "Order management system",
+      "CRM connectivity",
+      "Customer support modules",
+      "Scalable platform architecture",
+      "Theme customization",
+      "Personalized shopping experiences",
+      "Omni-channel selling",
+      "AI-ready product suggestions",
+      "Real-time inventory control",
+      "Secure checkout",
+      "Mobile-first commerce",
+      "Customer reviews & ratings",
+      "Analytics & reporting",
+      "Responsive design",
+      "Social commerce integrations",
+      "SEO-optimized structure",
+    ],
+  },
+]
+
+export const liferayHeroData = {
+  tag: "Liferay Services",
+  titleLine1: "Liferay Consulting &",
+  titleLine2: "Implementation Services",
+  description:
+    "Optimize your digital ecosystem through tailored Liferay Consulting for seamless implementation, customization, and dedicated support.",
+  image: {
+    src: "/images/liferay-pages-image/liferay-consultation-page/Liferay-dxp.png",
+    alt: "Liferay DXP",
+  },
+}
+export const liferayDigitalEdgeData = {
+  stats: [
+    {
+      value: "30%",
+      label: "Project Success",
+    },
+    {
+      value: "20%",
+      label: "Cost Efficiency",
+      isMultiLine: true, // handles the line break
+    },
+    {
+      value: "10%",
+      label: "Revenue Growth",
+    },
+  ],
+  heading: "Powering Your Digital Growth with Liferay Expertise",
+  description:
+    "Simplifying complexity and driving transformation with expert Liferay Consulting services.",
+  images: {
+    glow: {
+      src: "/images/liferay-pages-image/rgb-radiant.png",
+      alt: "Glow background",
+    },
+    tablet: {
+      src: "/images/liferay-pages-image/tablet-image.png",
+      alt: "Tablet Preview",
+    },
+  },
+}
+
+export const liferayConsultingServicesSection = {
+  heading: "Our Liferay",
+  headingSpan: "Consulting Services",
+  description:
+    "Our Liferay Consulting Services help you maximize the potential of the Liferay platform. From development to support, we’re here to ensure you create top-notch digital experiences for your users.",
+  button: {
+    name: "Schedule Meeting",
+    isFullWidth: false,
+  },
+}
+
+export const liferaySolutionsSection = {
+  title: "We Provide Top-Notch",
+  titleSpan: "Liferay Solutions",
+  descriptions:
+    "We deliver top-quality Liferay Consulting Services. From setup to support, we’ve got you covered for all your digital needs.",
+}
+
+export const liferayWhyChooseSection = {
+  sectionTitle: "Why Liferay Can Be Best Choice For Your Project ?",
+  sectionDescription:
+    "Explore our expertise in Liferay! We’re experienced and ready to help with everything, from building user-friendly interfaces to managing backend systems. Whether you need a custom portal, smooth integration, or ongoing support, we’ve got you covered. Partner with us today and make the most of Liferay for your business.",
+}
+
+export const industriesWeServeSection = {
+  heading: "Industries We Serve",
+  description:
+    "We help every industry grow digitally through tailored Liferay Consulting and innovative technology solutions.",
+};
+
+export const liferayConsultingServicesHeader = {
+  headingLine1: "Our Liferay",
+  headingLine2: "Consulting Services",
+  description:
+    "Through expert Liferay Consulting, we design and implement secure, flexible, and user-centric digital platforms for every business need.",
+};
+
+export const endToEndLiferayConsultingSection = {
+  heading: "We Offer end-to-end Liferay Consulting Services",
+  description:
+    "Our team helps you at every step of your Liferay journey, including planning, setup, improvements, and ongoing support, making your digital transformation easier, faster, and more effective.",
+};
+
+export const ceoSectionData = {
+  heading: "Word From Our CEO",
+  message: `
+    Over the past decade, my journey with Liferay has been a fascinating one. I’ve been there from its version
+    6.0 and have watched it take significant steps in OSGI frameworks. I’ve followed its progress in OSGI
+    frameworks and witnessed its evolution from a basic Enterprise Content Management System (CMS) into a
+    comprehensive and highly Advanced Digital Experience Platform (DXP). Along the way, I’ve seen the
+    introduction of groundbreaking solutions like Liferay Commerce, the establishment of Liferay Analytics
+    Cloud, and the enhancement of its headless architecture capabilities. Liferay stands as a genuine digital
+    experience platform, consistently leading the way in the domain of digital transformation. It empowers
+    businesses to craft immersive and personalized experiences for both customers and employees. What truly
+    sets Liferay apart is its exceptional ability to tailor solutions to meet the unique needs of various
+    industries. Working with Liferay has been both enlightening and fulfilling, and I’m excited to continue
+    this journey.
+  `,
+  ceoName: "Bhavin Panchani",
+  ceoTitle: "Liferay Certified, Liferay Architect, 10+ Years Of Experience",
+  imageSrc: "/images/about/ceo-img.png",
+  linkedInHref: "https://in.linkedin.com/in/bhavin-panchani",
+}
+
+export const engagementModelsData = {
+  title: {
+    line1: "Our Liferay Consulting",
+    line2: "Services Engagement Models",
+  },
+  description:
+    "Engage with the Liferay-focused technology partner to get your simple & complex Liferay requirements implemented.",
+}

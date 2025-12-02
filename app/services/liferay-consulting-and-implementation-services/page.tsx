@@ -12,15 +12,25 @@ import WordsFromCEO from "components/Common/WordsFromCEO"
 import {
   caseStudies,
   consultingServices,
+  endToEndLiferayConsultingSection,
   endToEndServices,
+  engagementModelsData,
   expertiseStats,
   industriesWeServe,
+  industriesWeServeSection,
   LiferayConsultationData,
   LiferayConsultationSubContent,
   LiferayConsultationTitle1,
   LiferayConsultationTitle2,
+  liferayConsultingData,
+  liferayConsultingServicesHeader,
+  liferayConsultingServicesSection,
+  liferayDigitalEdgeData,
+  liferayHeroData,
   liferayProjectFeatures,
   liferaySolutions,
+  liferaySolutionsSection,
+  liferayWhyChooseSection,
 } from "data/liferay-consulting-and-implementation-services"
 import { useInView } from "hooks/useInView"
 
@@ -46,112 +56,24 @@ const metadata: Metadata = {
 
 export default function LiferayConsultationPage() {
   const [hoveredCard, setHoveredCard] = useState<string | null>(null)
-  const [activeServiceTab, setActiveServiceTab] = useState("Portal")
+  // const [activeServiceTab, setActiveServiceTab] = useState("Portal")
   const [hoveredIndustry, setHoveredIndustry] = useState<string | null>(null)
   console.log(hoveredIndustry)
 
   // State for the new End-to-End Liferay Consulting Services section
   const [activePillar, setActivePillar] = useState(0) // 0-indexed for Analysis
 
-  const liferayConsultingTabs = ["Portal", "Enterprise CRM", "Collaboration & social", "E- Commerce"]
+  const tabs = liferayConsultingData.map((item) => item.label)
 
-  const portalServices = [
-    "Simplified UI Development",
-    "Flexible Enterprise Integration Framework",
-    "Out-of-the-box Tools",
-    "Secure Single Sign On (SSO)",
-    "Custom Fields",
-    "Rules Engine Integration",
-    "User Groups, Organizations and Sites",
-    "Headless Support",
-    "SOA Framework",
-    "User Personalization",
-    "Multi-Tenancy Support",
-    "Built-in Customization Features",
-    "Role Based Content Delivery",
-    "Single-Click Configuration",
-    "Dynamic Drag & Drop",
-    "Workflow Framework",
-    "User-Driven Workflow & Approval",
-    "Auditing & Performance Monitoring",
-    "Working from Your Desktop with Liferay Sync",
-    "Search & Tagging",
-    "Multi-language Support",
-    "OpenSocial",
-  ]
-  const EnterpriseServices = [
-    "Web Publishing",
-    "Unified Documents & Media",
-    "Mounting Multiple Content Repositories",
-    "User Defined Content Categories Asset Publisher",
-    "Workspace Publishing",
-    "Easy Rich Text Editors",
-    "Web Content Structures and Templates",
-    "Template/Structure Comments",
-    "Integration with Microsoft Office®",
-    "One-Click Page Creation",
-    "Quick Site Creation",
-    "User-Driven Workflow & Approval",
-    "Live Page Editing and Scheduling",
-    "Staging and Easy Website Planning",
-    "Document Conversion and Multi-File Uploads",
-    "Drag-and-Drop Site Maps",
-    "Faceted Search",
-    "Multi-Tier Search",
-    "Dynamic Tagging",
-    "Search Engine Optimization (SEO)",
-    "Easy Integration",
-    "Dynamic Virtual Hosting and Vanity URL",
-    "Multi-Language Support",
-    "Customisable Pages",
-  ]
-  const CollaborationServices = [
-    "KnowledgeBase",
-    "Wikis",
-    "Message Boards",
-    "Blogs",
-    "RSS",
-    "Activity Tracking",
-    "Instant Message",
-    "Email",
-    "Shared Calendar",
-    "Tags & Categories",
-    "Announcements & Alerts",
-    "Dynamic Data Lists",
-    "Polls",
-    "Social Equity",
-  ]
-  const CommerceServices = [
-    "E-commerce Solution",
-    "Intuitive Online Storefront",
-    "Seamless Product Management",
-    "Flexible Pricing and Promotion Options",
-    "Integrated Payment Gateways",
-    "Customizable Shopping Cart",
-    "Order Management System",
-    "CRM Integration",
-    "Customer Support and Assistance",
-    "Scalable Architecture for Growing Businesses",
-    "Customizable Themes and Templates",
-    "Personalized Shopping Experience",
-    "Multi-channel Selling Support",
-    "Dynamic Product Recommendations",
-    "Real-time Inventory Management",
-    "Secure Checkout Process",
-    "Mobile Commerce Compatibility",
-    "Customer Reviews and Ratings",
-    "Analytics and Reporting Tools",
-    "Responsive Design for Any Device",
-    "Integration with Social Media Platforms",
-    "SEO Optimization Features",
-  ]
+  const [activeServiceTab, setActiveServiceTab] = useState(tabs[0])
 
-  const liferayConsultingServicesData: Record<string, string[]> = {
-    Portal: portalServices,
-    "Enterprise CRM": EnterpriseServices,
-    "Collaboration & social": CollaborationServices,
-    "E- Commerce": CommerceServices,
-  }
+  const activeServices = liferayConsultingData.find((item) => item.label === activeServiceTab)?.services || []
+
+  const { heading, headingSpan, description, button } = liferayConsultingServicesSection
+
+  const { title, titleSpan, descriptions } = liferaySolutionsSection
+
+  const { sectionTitle, sectionDescription } = liferayWhyChooseSection
 
   // Data for the new End-to-End Liferay Consulting Services section
 
@@ -164,23 +86,20 @@ export default function LiferayConsultationPage() {
           <div className="grid grid-cols-1 items-center gap-6 md:grid-cols-5">
             {/* Left Side: Text Content */}
             <div className="col-span-3">
-              <div className="p18 banner-tab">Liferay Services</div>
+              <div className="p18 banner-tab">{liferayHeroData.tag}</div>
               <h1 className="mt-[2.031vw]">
-                Liferay Consulting &
+                {liferayHeroData.titleLine1}
                 <br />
-                <span className="block">Implementation Services</span>
+                <span className="block">{liferayHeroData.titleLine2}</span>
               </h1>
-              <p className="p18 mt-[2.813vw] max-w-xl">
-                Optimize your digital ecosystem through tailored Liferay Consulting for seamless implementation,
-                customization, and dedicated support.
-              </p>
+              <p className="p18 mt-[2.813vw] max-w-xl">{liferayHeroData.description}</p>
             </div>
 
             {/* Right Side: Image */}
             <div className="flex items-center justify-center md:col-span-2">
               <Image
-                src="/images/liferay-pages-image/liferay-consultation-page/Liferay-dxp.png"
-                alt="Liferay DXP"
+                src={liferayHeroData.image.src}
+                alt={liferayHeroData.image.alt}
                 width={280}
                 height={280}
                 className="h-auto max-w-sm"
@@ -190,7 +109,7 @@ export default function LiferayConsultationPage() {
 
           {/* Marquee Animation Bar */}
           <div className="relative flex w-full overflow-hidden pt-22">
-            <div className="animate-marquee-fast flex min-w-full flex-shrink-0 items-center justify-around">
+            <div className="animate-marquee-medium flex min-w-full flex-shrink-0 items-center justify-around">
               {expertiseStats.map((stat, index) => (
                 <React.Fragment key={index}>
                   <span className="mx-8 text-xl font-medium">{stat}</span>
@@ -216,31 +135,26 @@ export default function LiferayConsultationPage() {
             {/* Stats Row */}
             <div className="flex-no-wrap grid-cols-2 items-center gap-[6.6667vw] [@media(min-width:1440px)]:grid [@media(min-width:1800px)]:flex">
               {/* Stat 1 */}
-              <div className="flex items-center gap-3">
-                <p className="text-5xl font-bold text-[#171717]">30%</p>
-                <p className="p20 text-gray-600">Project Success</p>
-              </div>
-              {/* Stat 2 */}
-              <div className="flex items-center gap-3">
-                <p className="text-5xl font-bold text-[#171717]">20%</p>
-                <p className="p20 whitespace-nowrap text-gray-600">
-                  Cost <br />
-                  Efficiency
-                </p>
-              </div>
-              {/* Stat 3 */}
-              <div className="flex items-center gap-3">
-                <p className="text-5xl font-bold text-[#171717]">10%</p>
-                <p className="p20 text-gray-600">Revenue Growth</p>
-              </div>
+              {liferayDigitalEdgeData.stats.map((stat, index) => (
+                <div key={index} className="flex items-center gap-3">
+                  <p className="text-5xl font-bold text-[#171717]">{stat.value}</p>
+                  <p className="p20 text-gray-600">
+                    {stat.isMultiLine
+                      ? stat.label.split(" ").map((line, i) => (
+                          <React.Fragment key={i}>
+                            {line} <br />
+                          </React.Fragment>
+                        ))
+                      : stat.label}
+                  </p>
+                </div>
+              ))}
             </div>
 
             {/* Heading and Description Block - Positioned below with a top margin */}
             <div className="mt-24">
-              <h2 className="text-gray-900">Powering Your Digital Growth with Liferay Expertise</h2>
-              <p className="p20 mt-[1.927vw] max-w-[500px] text-gray-600">
-                Simplifying complexity and driving transformation with expert Liferay Consulting services.
-              </p>
+              <h2 className="text-gray-900">{liferayDigitalEdgeData.heading}</h2>
+              <p className="p20 mt-[1.927vw] max-w-[500px] text-gray-600">{liferayDigitalEdgeData.description}</p>
             </div>
           </div>
 
@@ -249,8 +163,8 @@ export default function LiferayConsultationPage() {
             {/* RGB Glow Background */}
             <div className="absolute bottom-0 h-full w-[600px] opacity-80">
               <Image
-                src="/images/liferay-pages-image/rgb-radiant.png"
-                alt="Glow background"
+                src={liferayDigitalEdgeData.images.glow.src}
+                alt={liferayDigitalEdgeData.images.glow.alt}
                 fill
                 objectFit="contain"
                 className="scale-147 [@media(min-width:1440px)]:scale-152 [@media(min-width:1500px)]:scale-147"
@@ -260,8 +174,8 @@ export default function LiferayConsultationPage() {
 
             {/* Tablet Image*/}
             <Image
-              src="/images/liferay-pages-image/tablet-image.png"
-              alt="Tablet Preview"
+              src={liferayDigitalEdgeData.images.tablet.src}
+              alt={liferayDigitalEdgeData.images.tablet.alt}
               width={500}
               height={500}
               objectFit="contain"
@@ -279,15 +193,14 @@ export default function LiferayConsultationPage() {
             {/* Left Column */}
             <div className="top-[137px] max-w-[520px] flex-1 space-y-[26px] pt-[4px] md:sticky">
               <h2 className="text-white">
-                Our Liferay
-                <span className="block">Consulting Services</span>
+                {heading}
+                <span className="block">{headingSpan}</span>
               </h2>
               <p className="p18 max-w-[520px] text-[#D1D5DB]">
-                Our Liferay Consulting Services help you maximize the potential of the Liferay platform. From
-                development to support, we’re here to ensure you create top-notch digital experiences for your users.
+                {description}
               </p>
               <div className="pt-[2 px]">
-                <ScheduleMeetingButton isFullWidth={false} btnName="Schedule Meeting" />
+                <ScheduleMeetingButton isFullWidth={button.isFullWidth} btnName={button.name} />
               </div>
             </div>
 
@@ -321,20 +234,19 @@ export default function LiferayConsultationPage() {
       </section>
 
       {/* Liferay Solutions */}
-      <section className="bg-white py-[64px]">
+      <section className="bg-white py-[64px] relative">
         <div className="global-container">
           {/* Section Header */}
           <div className="grid grid-cols-1 items-start gap-8 md:grid-cols-2">
             <div>
               <h2 className="text-black">
-                We Provide Top-Notch
-                <span className="block">Liferay Solutions</span>
+                {title}
+                <span className="block">{titleSpan}</span>
               </h2>
             </div>
             <div className="flex h-full items-center justify-end">
               <p className="p18 text-right text-gray-500">
-                We deliver top-quality Liferay Consulting Services. From setup to support, <br></br>we’ve got you
-                covered for all your digital needs.
+                {descriptions}
               </p>
             </div>
           </div>
@@ -398,12 +310,9 @@ export default function LiferayConsultationPage() {
         <div className="global-container">
           {/* Section Header */}
           <div className="w-full">
-            <h2>Why Liferay Can Be Best Choice For Your Project ?</h2>
+            <h2>{sectionTitle}</h2>
             <p className="p18 mt-7 text-white/80">
-              Explore our expertise in Liferay! We’re experienced and ready to help with everything, from building
-              user-friendly interfaces to managing backend systems. Whether you need a custom portal, smooth
-              integration, or ongoing support, we’ve got you covered. Partner with us today and make the most of Liferay
-              for your business.
+              {sectionDescription}
             </p>
           </div>
 
@@ -441,12 +350,11 @@ export default function LiferayConsultationPage() {
           {/* Section Header */}
           <div className="mb-16 grid grid-cols-1 items-end gap-8 md:grid-cols-2">
             <div>
-              <h2 className="text-black">Industries We Serve</h2>
+              <h2 className="text-black">{industriesWeServeSection.heading}</h2>
             </div>
             <div className="flex h-full items-end justify-end">
               <p className="p18 w-full text-right text-gray-600">
-                We help every industry grow digitally through tailored Liferay Consulting and innovative technology
-                solutions.
+                {industriesWeServeSection.description}
               </p>
             </div>
           </div>
@@ -521,21 +429,20 @@ export default function LiferayConsultationPage() {
           <div className="grid grid-cols-1 items-end gap-8 pb-16 md:grid-cols-2">
             <div>
               <h2>
-                Our Liferay
-                <span className="block">Consulting Services</span>
+                {liferayConsultingServicesHeader.headingLine1}
+                <span className="block">{liferayConsultingServicesHeader.headingLine2}</span>
               </h2>
             </div>
             <div className="flex h-full items-center justify-end">
               <p className="p18 w-full text-right text-white/80">
-                Through expert Liferay Consulting, we design and implement secure, flexible, and user-centric digital
-                platforms for every business need.
+                {liferayConsultingServicesHeader.description}
               </p>
             </div>
           </div>
 
           {/* Tabs */}
           <div className="mb-[4.115vw] flex items-center justify-center gap-4">
-            {liferayConsultingTabs.map((tab) => (
+            {tabs.map((tab) => (
               <button
                 key={tab}
                 onClick={() => setActiveServiceTab(tab)}
@@ -551,7 +458,7 @@ export default function LiferayConsultationPage() {
           </div>
 
           <div className="grid grid-cols-1 gap-10 gap-x-[4.375vw] md:grid-cols-3">
-            {liferayConsultingServicesData[activeServiceTab]?.map((service: string, index: number) => (
+            {activeServices.map((service, index) => (
               <div key={index} className="border-b border-[#9CA3AF]">
                 <div className="flex items-start gap-4 pb-[40px]">
                   <Image
@@ -574,10 +481,9 @@ export default function LiferayConsultationPage() {
         <div className="global-container">
           {/* Section Header */}
           <div className="mb-11">
-            <h2 className="text-black">We Offer end-to-end Liferay Consulting Services</h2>
+            <h2 className="text-black">{endToEndLiferayConsultingSection.heading}</h2>
             <p className="p18 mt-4 text-gray-600">
-              Our team helps you at every step of your Liferay journey, including planning, setup, improvements, and
-              ongoing support, making your digital transformation easier, faster, and more effective.
+              {endToEndLiferayConsultingSection.description}
             </p>
           </div>
 
@@ -609,7 +515,7 @@ export default function LiferayConsultationPage() {
                   key={index}
                   className={`flex h-full flex-col justify-between rounded-lg p-7 transition-all duration-300 ease-in-out ${
                     activePillar === index
-                      ? "min-w-[20.3646vw] w-[20.3646vw] flex-grow bg-[#0B63CE] text-white shadow-xl"
+                      ? "w-[20.3646vw] min-w-[20.3646vw] flex-grow bg-[#0B63CE] text-white shadow-xl"
                       : "w-[20%] flex-grow-0 border border-[#E5E7EB] bg-white text-gray-400"
                   }`}
                 >
@@ -646,11 +552,11 @@ export default function LiferayConsultationPage() {
       <EngagementModels
         title={
           <>
-            Our Liferay Consulting
-            <span className="block">Services Engagement Models</span>
+            {engagementModelsData.title.line1}
+            <span className="block">{engagementModelsData.title.line2}</span>
           </>
         }
-        description="Engage with the Liferay-focused technology partner to get your simple & complex Liferay requirements implemented."
+        description={engagementModelsData.description}
       />
       <section className="bg-white text-black"></section>
       <CaseStudy caseStudies={caseStudies} />
