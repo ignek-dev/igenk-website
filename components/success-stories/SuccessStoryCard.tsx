@@ -28,7 +28,7 @@ const SuccessStoryCard: React.FC<{ story: Story }> = ({ story }) => {
             alt={story.title}
             width={743}
             height={558}
-            className="h-full w-full object-fill"
+            className="h-full w-full object-cover"
           />
         </div>
 
