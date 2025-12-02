@@ -99,7 +99,7 @@ const CaseStudy: React.FC<CaseStudyCarouselProps> = ({ caseStudies }) => {
                     width={424}
                     height={300}
                     objectFit="cover"
-                    className="h-full w-full rounded-xl"
+                    className="h-full w-full rounded-xl object-cover"
                   />
                 </div>
 
