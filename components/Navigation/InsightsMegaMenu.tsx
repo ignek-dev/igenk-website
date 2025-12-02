@@ -19,6 +19,11 @@ interface WPPost {
   _embedded?: WPEmbedded;
 }
 
+interface CachedBlogImage {
+  image: string;
+  timestamp: number;
+}
+
 
 // --- Icon Components ---
 const IconArrowRight = ({ className }: { className?: string }) => (
@@ -71,21 +76,55 @@ export default function InsightsMegaMenu({ onClose }: MegaMenuProps) {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(false)
 
-
-   useEffect(() => {
+  useEffect(() => {
     async function fetchLatest() {
       try {
+        // ---- Read cache safely ----
+        const cachedRaw = localStorage.getItem("latest_blog_image");
+
+        if (cachedRaw) {
+          try {
+            const parsed: unknown = JSON.parse(cachedRaw);
+
+            if (
+              typeof parsed === "object" &&
+              parsed !== null &&
+              "image" in parsed &&
+              "timestamp" in parsed
+            ) {
+              const cache = parsed as CachedBlogImage;
+              const isExpired =
+                Date.now() - cache.timestamp > 24 * 60 * 60 * 1000;
+
+              if (!isExpired && cache.image) {
+                setLatestImage(cache.image);
+                setLoading(false);
+                return; // STOP — no API call
+              }
+            }
+          } catch {
+            console.warn("Invalid cache");
+          }
+        }
+
+        // ---- Fetch from API ----
         const res = await fetch(
           "https://insights.ignek.com/wp-json/wp/v2/posts?per_page=1&_embed",
           { cache: "no-store" }
         );
 
         const data = (await res.json()) as WPPost[];
-
         const img = data?.[0]?._embedded?.["wp:featuredmedia"]?.[0]?.source_url;
 
-        if (img) setLatestImage(img);
-        else setError(true);
+        if (img) {
+          setLatestImage(img);
+          localStorage.setItem(
+            "latest_blog_image",
+            JSON.stringify({ image: img, timestamp: Date.now() })
+          );
+        } else {
+          setError(true);
+        }
       } catch (err) {
         console.error("Failed to fetch latest blog image:", err);
         setError(true);
@@ -97,6 +136,10 @@ export default function InsightsMegaMenu({ onClose }: MegaMenuProps) {
     fetchLatest();
   }, []);
 
+const handleClick = (e: React.MouseEvent) => {
+  e.stopPropagation();
+  onClose();
+};
 
   return (
     <>
@@ -143,7 +186,7 @@ export default function InsightsMegaMenu({ onClose }: MegaMenuProps) {
             <p className="mb-6 max-w-4xl align-middle text-[1.6667vw]! leading-[2.2917vw] font-semibold! tracking-[-0.02em] text-white">
               {featuredEvent.title}
             </p>
-            <Link href="/blog" onClick={onClose} className="group block">
+           <Link href="/blog" onClick={handleClick} className="group block">
               <div className="flex h-[450px] w-full items-center justify-center overflow-hidden rounded-[14.35px] border-[1.2px] border-white/20 bg-black/20 transition-all duration-300 group-hover:border-white/40">
                 {/* Loader */}
                 {loading && (
