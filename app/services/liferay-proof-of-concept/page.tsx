@@ -7,11 +7,14 @@ import WhatMake from "components/Common/WhatMake"
 import {
   caseStudies,
   featureTabs,
+  liferayPocHeroData,
   liferayPOCServices,
+  liferayPocWhatWeDoData,
   LiferayProofOfConceptData,
   LiferayProofOfConceptSubContent,
   LiferayProofOfConceptTitle1,
   LiferayProofOfConceptTitle2,
+  talkToExpertPocData,
 } from "data/liferay-proof-of-concept"
 
 
@@ -40,16 +43,16 @@ export default function LiferayProofOfConceptPage() {
       <section className="bg-black text-white global-container pt-[7.917vw] pb-[3.802vw]">
         <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_10%_0%,#0E7BF8_0%,#00979E_40%,transparent_65%)] opacity-25" />
         <div className="inline-flex items-center rounded-full border border-white px-[1.51vw] py-[0.521vw] p18 text-white">
-          Liferay Services
+          {liferayPocHeroData.badge}
         </div>
         <div className="flex items-end justify-between mt-[2.031vw]">
           <h1 className=" tracking-[-2%]">
-            Liferay Proof
+            {liferayPocHeroData.title.line1}
             <br />
-            Of Concept
+            {liferayPocHeroData.title.line2}
           </h1>
           <p className="text-right p18 text-white w-[35.938vw]">
-            Liferay PoC Services help you assess whether Liferay suits your project by demonstrating customizable portal features aligned with your requirements.
+            {liferayPocHeroData.description}
           </p>
         </div>
 
@@ -71,12 +74,10 @@ export default function LiferayProofOfConceptPage() {
       <section className="bg-[#F6F6F6] text-black">
         <div className="global-container py-[3.333vw]">
           <h2 className="tracking-[-2%]">
-            What We Do With Liferay POC Services
+            {liferayPocWhatWeDoData.title}
           </h2>
           <p className="mt-[1.458vw] p18 text-[#374151] !leading-[1.667vw]">
-            Our Liferay PoC services align your needs with Liferay’s out-of-the-box capabilities. We provide a
-            functional prototype to gauge if Liferay Proof of Concept meets your objectives, document feature
-            comparisons, highlight time-to-market reductions, and assess future project risks.
+            {liferayPocWhatWeDoData.description}
           </p>
           <div className="pt-[2.5vw]">
             <div className="grid grid-cols-1 gap-x-[2.917vw] gap-y-[2.708vw] sm:grid-cols-2 md:grid-cols-3">
@@ -102,9 +103,9 @@ export default function LiferayProofOfConceptPage() {
         subContext={LiferayProofOfConceptSubContent}
       />
       <TalkToExpert
-        heading="Validate ideas swiftly with Liferay Proof of Concept."
-        description="Quickly evaluate Liferay functionality to confirm ideas before full-scale implementation."
-        buttonText="Request PoC Consultation"
+        heading={talkToExpertPocData.heading}
+        description={talkToExpertPocData.description}
+        buttonText={talkToExpertPocData.buttonText}
       />
 
       <BlogSection />

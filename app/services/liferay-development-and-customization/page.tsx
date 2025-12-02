@@ -6,12 +6,18 @@ import {
   customizationServices,
   developmentServices,
   featureTabs,
+  liferayCustomizationData,
+  liferayDevCustomizationHeroData,
   LiferayDevelopmentAndCustomizationData,
   LiferayDevelopmentAndCustomizationSubContent,
   LiferayDevelopmentAndCustomizationTitle1,
   LiferayDevelopmentAndCustomizationTitle2,
+  liferayDevelopmentServicesData,
+  liferayIntegrationData,
   liferayIntegrationServices,
+  liferayPortalCustomizationData,
   portalDevelopmentService,
+  talkToExpertData,
 } from "data/liferay-development-and-customization"
 
 const metadata: Metadata = {
@@ -43,17 +49,17 @@ export default function LiferayDevelopmentAndCustomizationPage() {
           <div className="relative grid items-start gap-10 md:grid-cols-2">
             <div>
               <div className="inline-flex items-center rounded-full border border-white/30 px-[1.51vw] py-[0.521vw] text-[0.938vw] text-white">
-                Liferay Services
+                {liferayDevCustomizationHeroData.tag}
               </div>
               <h1 className="mt-[2.031vw]">
-                Liferay
+                {liferayDevCustomizationHeroData.titleLine1}
                 <br />
-                <span className="block">Development &</span>
-                <span className="block">Customization</span>
+                <span className="block">{liferayDevCustomizationHeroData.titleLine2}</span>
+                <span className="block">{liferayDevCustomizationHeroData.titleLine3}</span>
               </h1>
             </div>
             <p className="absolute bottom-0 max-w-xl text-right text-[0.938vw] text-white  md:justify-self-end">
-              With our Liferay Development and customization, we simplify digital transformation for businesses to fit your needs.
+              {liferayDevCustomizationHeroData.description}
             </p>
           </div>
 
@@ -76,10 +82,10 @@ export default function LiferayDevelopmentAndCustomizationPage() {
           <div className="grid items-start gap-[7.656vw] md:grid-cols-2">
             <div>
               <h2>
-                Our Liferay<br/> Development Services
+                {liferayDevelopmentServicesData.title.split(" ").slice(0, 2).join(" ")}<br/> {liferayDevelopmentServicesData.title.split(" ").slice(2).join(" ")}
               </h2>
               <p className="mt-[1.458vw] max-w-[100%] text-sm text-[1.042vw] text-gray-700">
-                As a leading Liferay Development Company, we provide comprehensive Liferay Development Services including custom portlets, Rest API integration, portal customization,
+                {liferayDevelopmentServicesData.description}
               </p>
             </div>
             <div className="w-full md:justify-self-end">
@@ -119,10 +125,10 @@ export default function LiferayDevelopmentAndCustomizationPage() {
         <div className="mx-auto w-full items-start px-4 md:px-8 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px]">
           <div className="relative grid items-start gap-10 md:grid-cols-2">
             <h2 className="text-3xl leading-[60px] font-semibold sm:text-4xl [@media(min-width:1440px)]:text-4xl [@media(min-width:1800px)]:text-5xl">
-              Our Liferay Customization and Development Services
+              {liferayCustomizationData.title}
             </h2>
             <p className="absolute bottom-0 max-w-xl text-right text-xl text-white md:justify-self-end">
-              Our approach blends prevention and rapid response to keep your platform stable, secure, and performing.
+              {liferayCustomizationData.description}
             </p>
           </div>
           <section className="w-full bg-black pt-10 text-white">
@@ -149,11 +155,10 @@ export default function LiferayDevelopmentAndCustomizationPage() {
       <section className="bg-white text-black">
         <div className="mx-auto w-full px-4 py-[64px] md:px-8 md:py-[64px] lg:py-[64px] [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px]">
           <h2 className="text-5xl leading-[60px] leading-tight font-semibold sm:text-4xl md:text-5xl">
-            Liferay Integration Services
+            {liferayIntegrationData.title}
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-[#101012] text-gray-700">
-            Enable seamless data flow and connectivity by integrating Liferay with ERP, CRM, and third-party business
-            applications.
+            {liferayIntegrationData.description}
           </p>
           <div className="pt-4">
             <section className="w-full pt-10 text-white">
@@ -179,11 +184,10 @@ export default function LiferayDevelopmentAndCustomizationPage() {
         <div className="mx-auto w-full items-start px-4 md:px-8 [@media(min-width:1440px)]:px-[150px] [@media(min-width:1920px)]:px-[192px]">
           <div className="relative grid items-start gap-10 md:grid-cols-2">
             <h2 className="text-3xl leading-[60px] font-semibold sm:text-4xl md:text-5xl">
-              Liferay Portal Customization Services
+              {liferayPortalCustomizationData.title}
             </h2>
             <p className="absolute bottom-0 max-w-xl text-right text-xl text-white md:justify-self-end">
-              Transform your Liferay experience with custom solutions that make your platform faster, smarter, and
-              easier to use.
+              {liferayPortalCustomizationData.description}
             </p>
           </div>
           <div className="pt-12">
@@ -222,9 +226,9 @@ export default function LiferayDevelopmentAndCustomizationPage() {
         subContext={LiferayDevelopmentAndCustomizationSubContent}
       />
       <TalkToExpert
-        heading="Expert Liferay Development and Customization Services"
-        description="Transform your portal efficiently with our professional Liferay development and customization expertise."
-        buttonText="Start Your Customization"
+        heading={talkToExpertData.heading}
+        description={talkToExpertData.description}
+        buttonText={talkToExpertData.buttonText}
       />
       <BlogSection />
 

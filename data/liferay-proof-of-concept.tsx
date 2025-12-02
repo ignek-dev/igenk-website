@@ -82,3 +82,29 @@ export const caseStudies = [
       "Curabitur at lacus ac velit ornare lobortis. Vestibulum suscipit nulla quis orci. Donec posuere vulputate arcu.",
   },
 ]
+
+export const liferayPocHeroData = {
+  badge: "Liferay Services",
+
+  title: {
+    line1: "Liferay Proof",
+    line2: "Of Concept",
+  },
+
+  description:
+    "Liferay PoC Services help you assess whether Liferay suits your project by demonstrating customizable portal features aligned with your requirements.",
+}
+
+export const liferayPocWhatWeDoData = {
+  title: "What We Do With Liferay POC Services",
+
+  description:
+    "Our Liferay PoC services align your needs with Liferay’s out-of-the-box capabilities. We provide a functional prototype to gauge if Liferay Proof of Concept meets your objectives, document feature comparisons, highlight time-to-market reductions, and assess future project risks.",
+}
+
+export const talkToExpertPocData = {
+  heading: "Validate ideas swiftly with Liferay Proof of Concept.",
+  description:
+    "Quickly evaluate Liferay functionality to confirm ideas before full-scale implementation.",
+  buttonText: "Request PoC Consultation",
+}

@@ -146,3 +146,46 @@ export const customizationServices = [
       "Redefine and modernize Liferay’s UI seamlessly using client extensions for a smoother user experience.",
   },
 ]
+
+export const liferayDevCustomizationHeroData = {
+  tag: "Liferay Services",
+
+  titleLine1: "Liferay",
+  titleLine2: "Development &",
+  titleLine3: "Customization",
+
+  description:
+    "With our Liferay Development and customization, we simplify digital transformation for businesses to fit your needs.",
+}
+
+export const liferayDevelopmentServicesData = {
+  title: "Our Liferay Development Services",
+
+  description:
+    "As a leading Liferay Development Company, we provide comprehensive Liferay Development Services including custom portlets, REST API integration, portal customization, and more to help you build scalable and high-performance digital solutions.",
+}
+
+export const liferayCustomizationData = {
+  title: "Our Liferay Customization and Development Services",
+  description:
+    "Our approach blends prevention and rapid response to keep your platform stable, secure, and performing.",
+}
+
+export const liferayIntegrationData = {
+  title: "Liferay Integration Services",
+  description:
+    "Enable seamless data flow and connectivity by integrating Liferay with ERP, CRM, and third-party business applications.",
+}
+
+export const liferayPortalCustomizationData = {
+  title: "Liferay Portal Customization Services",
+  description:
+    "Transform your Liferay experience with custom solutions that make your platform faster, smarter, and easier to use.",
+}
+
+export const talkToExpertData = {
+  heading: "Expert Liferay Development and Customization Services",
+  description:
+    "Transform your portal efficiently with our professional Liferay development and customization expertise.",
+  buttonText: "Start Your Customization",
+}
