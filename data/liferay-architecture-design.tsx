@@ -106,3 +106,29 @@ export const systemArchitecure = [
       "Clear strategy for upgrades, extensions, and cloud readiness.",
   },
 ]
+
+export const liferayArchitectureHeroData = {
+  tab: "Liferay Services",
+  titleLine1: "Liferay",
+  titleLine2: "Architecture",
+  titleLine3: "Design",
+  description:
+    "Get Liferay architecture design and optimization services that enhance",
+  description2:  
+    "performance, scalability, security, integrations, and user experience.",
+}
+
+export const liferayArchitectureKeyData = {
+  titleLine1: "Key Activities Under Our Liferay Architecture Design Services",
+  description:
+    "We provide Liferay Portal architecture design documents covering security,",
+  description2:  
+    "scalability, integrations, content management, and monitoring.",
+}
+
+export const talkToExpertArcData = {
+  heading: "Design Scalable Solutions with Experienced Liferay Architecture Experts",
+  description:
+    "Craft efficient system designs that enhance portal performance and stability.",
+  buttonText: "Explore Architecture Solutions",
+}

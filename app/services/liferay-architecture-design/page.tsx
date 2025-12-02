@@ -8,10 +8,13 @@ import {
   featureTabs,
   keyActivityArchitecureSystem,
   LiferayArchitectureData,
+  liferayArchitectureHeroData,
+  liferayArchitectureKeyData,
   LiferayArchitectureSubContent,
   LiferayArchitectureTitle1,
   LiferayArchitectureTitle2,
   systemArchitecure,
+  talkToExpertArcData,
 } from "data/liferay-architecture-design"
 
 const metadata: Metadata = {
@@ -43,67 +46,66 @@ export default function LiferayArchitectureDesignPage() {
   const [targetScroll, setTargetScroll] = useState<number | null>(null)
   const [isInView, setIsInView] = useState(false)
 
-  
   // Intersection Observer to detect when section is in view
- useEffect(() => {
-  const section = sectionRef.current
-  if (!section) return
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      const entry = entries[0]
-      if (entry) {
-        setIsInView(entry.isIntersecting)
-      }
-    },
-    {
-      threshold: 0.3,
-      rootMargin: "0px",
-    }
-  )
-
-  observer.observe(section)
-  return () => observer.disconnect()
-}, [])
-// Handle page scroll for horizontal scrolling
-// Add this state
-const [isStickyActive, setIsStickyActive] = useState(false)
-
-// Handle page scroll for horizontal scrolling with sticky behavior
-// Handle page scroll for horizontal scrolling with sticky behavior
-useEffect(() => {
-  if (!containerRef.current || !sectionRef.current) return
-
-  const handlePageScroll = () => {
-    const container = containerRef.current
+  useEffect(() => {
     const section = sectionRef.current
-    if (!container || !section) return
+    if (!section) return
 
-    const sectionRect = section.getBoundingClientRect()
-    const windowHeight = window.innerHeight
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0]
+        if (entry) {
+          setIsInView(entry.isIntersecting)
+        }
+      },
+      {
+        threshold: 0.3,
+        rootMargin: "0px",
+      }
+    )
 
-    // Start horizontal scroll only when first half of section is scrolled (50% from top)
-    const startScroll = windowHeight * 0.5
-    // End horizontal scroll when section is almost at the top (10% from top)
-    const endScroll = -sectionRect.height * 0.1
+    observer.observe(section)
+    return () => observer.disconnect()
+  }, [])
+  // Handle page scroll for horizontal scrolling
+  // Add this state
+  const [isStickyActive, setIsStickyActive] = useState(false)
 
-    let progress = 0
-    
-    // Only start progress when section top passes the 50% mark
-    if (sectionRect.top < startScroll) {
-      progress = 1 - Math.max(0, (sectionRect.top - endScroll) / (startScroll - endScroll))
+  // Handle page scroll for horizontal scrolling with sticky behavior
+  // Handle page scroll for horizontal scrolling with sticky behavior
+  useEffect(() => {
+    if (!containerRef.current || !sectionRef.current) return
+
+    const handlePageScroll = () => {
+      const container = containerRef.current
+      const section = sectionRef.current
+      if (!container || !section) return
+
+      const sectionRect = section.getBoundingClientRect()
+      const windowHeight = window.innerHeight
+
+      // Start horizontal scroll only when first half of section is scrolled (50% from top)
+      const startScroll = windowHeight * 0.5
+      // End horizontal scroll when section is almost at the top (10% from top)
+      const endScroll = -sectionRect.height * 0.1
+
+      let progress = 0
+
+      // Only start progress when section top passes the 50% mark
+      if (sectionRect.top < startScroll) {
+        progress = 1 - Math.max(0, (sectionRect.top - endScroll) / (startScroll - endScroll))
+      }
+
+      const clampedProgress = Math.max(0, Math.min(1, progress))
+      const maxScroll = container.scrollWidth - container.clientWidth
+      const targetScrollLeft = clampedProgress * maxScroll
+
+      container.scrollLeft = targetScrollLeft
     }
 
-    const clampedProgress = Math.max(0, Math.min(1, progress))
-    const maxScroll = container.scrollWidth - container.clientWidth
-    const targetScrollLeft = clampedProgress * maxScroll
-
-    container.scrollLeft = targetScrollLeft
-  }
-
-  window.addEventListener("scroll", handlePageScroll, { passive: true })
-  return () => window.removeEventListener("scroll", handlePageScroll)
-}, [])
+    window.addEventListener("scroll", handlePageScroll, { passive: true })
+    return () => window.removeEventListener("scroll", handlePageScroll)
+  }, [])
 
   return (
     <main className="">
@@ -113,24 +115,25 @@ useEffect(() => {
         <div className="global-container mx-auto w-full pt-[3.333vw] pb-[3.802vw]">
           <div className="relative grid items-start gap-10 text-[3.75vw] md:grid-cols-2">
             <div>
-              <div className="p18 banner-tab">Liferay Services</div>
+              <div className="p18 banner-tab">{liferayArchitectureHeroData.tab}</div>
               <h1 className="mt-[2.031vw] leading-tight font-semibold">
-                Liferay
+                {liferayArchitectureHeroData.titleLine1}
                 <br />
-                <span className="block">Architecture</span>
-                <span className="block">Design</span>
+                <span className="block">{liferayArchitectureHeroData.titleLine2}</span>
+                <span className="block">{liferayArchitectureHeroData.titleLine3}</span>
               </h1>
             </div>
             <p className="p18 absolute bottom-0 text-right text-white md:justify-self-end">
-              Get Liferay architecture design and optimization services that enhance <br />
-              performance, scalability, security, integrations, and user experience.
+              {liferayArchitectureHeroData.description}
+              <br />
+              {liferayArchitectureHeroData.description2}
             </p>
           </div>
 
           {/* Feature tabs */}
           <div className="mt-[3.177vw] flex flex-wrap gap-[1.875vw]">
             {featureTabs.map((label, index) => (
-             <span
+              <span
                 key={index}
                 className="p20 inline-flex items-center rounded-full border border-[#374151] px-[1.458vw] py-[0.833vw] text-lg text-white shadow-[0px_4px_10px_0px_#00979E40] transition-colors"
               >
@@ -141,19 +144,21 @@ useEffect(() => {
         </div>
       </section>
 
-<section ref={sectionRef} className="relative">
-  {/*
+      <section ref={sectionRef} className="relative">
+        {/*
     1. The section needs significant vertical height to define the scroll duration.
        You will need to set this height dynamically or manually via a class/style.
        Example: style={{ height: '300vh' }}
        In a real app, you might calculate the required height based on containerRef.scrollWidth.
   */}
-  <div style={{ height: '300vh' }} className="h-[300vh] pointer-events-none absolute w-full top-[137px] left-0" aria-hidden="true" />
+        <div
+          style={{ height: "300vh" }}
+          className="pointer-events-none absolute top-[137px] left-0 h-[300vh] w-full"
+          aria-hidden="true"
+        />
 
-
-  <div className="mx-auto w-full">
-    
-    {/* The inner container holding the horizontal content should be sticky, 
+        <div className="mx-auto w-full">
+          {/* The inner container holding the horizontal content should be sticky, 
       effectively "pinning" it to the top of the screen while the parent section's 
       300vh of scroll is being consumed.
       
@@ -163,59 +168,55 @@ useEffect(() => {
       
       However, since your JS logic toggles isStickyActive, we'll use that here.
     */}
-    <div className={`w-full ${isStickyActive ? "sticky top-[137px]" : ""}`}>
-
-      <div
-        className="flex cursor-grab overflow-x-auto [-ms-overflow-style:'none'] [scrollbar-width:'none'] [&::-webkit-scrollbar]:hidden"
-        ref={containerRef}
-      >
-        {systemArchitecure.map((item, index) => (
-          <div
-            key={index}
-            className={`flex-shrink-0 px-[3.333vw] ${index === 0 ? "ml-[10vw] pl-0" : ""} ${
-              index === systemArchitecure.length - 1 ? "mr-[20vw]" : ""
-            } ${index !== systemArchitecure.length - 1 ? "border-r border-[#9CA3AF]" : ""}`}
-            style={{ width: "22%" }}
-          >
-            <div className="flex flex-col gap-[4.688vw]">
-              <h3 className="mt-[3.802vw] h-[88px] max-w-[16.51vw] text-[1.875vw] leading-normal font-semibold text-gray-600">
-                {item.text}
-              </h3>
-              <p className="p20 mt-auto mb-[3.802vw] max-w-[15.729vw] leading-relaxed text-gray-500">
-                {item.description}
-              </p>
+          <div className={`w-full ${isStickyActive ? "sticky top-[137px]" : ""}`}>
+            <div
+              className="flex cursor-grab overflow-x-auto [-ms-overflow-style:'none'] [scrollbar-width:'none'] [&::-webkit-scrollbar]:hidden"
+              ref={containerRef}
+            >
+              {systemArchitecure.map((item, index) => (
+                <div
+                  key={index}
+                  className={`flex-shrink-0 px-[3.333vw] ${index === 0 ? "ml-[10vw] pl-0" : ""} ${
+                    index === systemArchitecure.length - 1 ? "mr-[20vw]" : ""
+                  } ${index !== systemArchitecure.length - 1 ? "border-r border-[#9CA3AF]" : ""}`}
+                  style={{ width: "22%" }}
+                >
+                  <div className="flex flex-col gap-[4.688vw]">
+                    <h3 className="mt-[3.802vw] h-[88px] max-w-[16.51vw] text-[1.875vw] leading-normal font-semibold text-gray-600">
+                      {item.text}
+                    </h3>
+                    <p className="p20 mt-auto mb-[3.802vw] max-w-[15.729vw] leading-relaxed text-gray-500">
+                      {item.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
-        ))}
-      </div>
-    </div>
-  </div>
-</section>
+        </div>
+      </section>
       <section className="bg-black text-white">
         <div className="global-container mx-auto w-full px-4 py-[3.333vw]">
           <div className="relative grid items-start gap-10 md:grid-cols-2">
             <h2 className="w-[41.25vw] text-[2.5vw]! font-semibold">
-              Key Activities Under Our Liferay Architecture Design Services
+              {liferayArchitectureKeyData.titleLine1}
             </h2>
-            <p className="max-w-[31.25vw ] text-right text-[0.938vw] font-normal text-white self-center ">
-              We provide Liferay Portal architecture design documents covering security, <br/>
-              scalability, integrations, content management, and monitoring.
+            <p className="max-w-[31.25vw ] self-center text-right text-[0.938vw] font-normal text-white">
+              {liferayArchitectureKeyData.description} <br />
+              {liferayArchitectureKeyData.description2}
             </p>
           </div>
 
           <div className="mt-[3.49vw] grid grid-cols-1 gap-[1.875vw]">
             {keyActivityArchitecureSystem.map((item, index) => (
-              <div
-                key={index}
-                className="top-32 z-10 flex flex-col bg-black md:flex-row md:items-center "
-              >
+              <div key={index} className="top-32 z-10 flex flex-col bg-black md:flex-row md:items-center">
                 {/* Left Text */}
-                <div className="flex w-[16.406vw] min-w-[16.406vw] text-[1.563vw] py-[0.833vw] pr-[1.875vw] leading-[1.875vw] font-semibold">
+                <div className="flex w-[16.406vw] min-w-[16.406vw] py-[0.833vw] pr-[1.875vw] text-[1.563vw] leading-[1.875vw] font-semibold">
                   {item.text}
                 </div>
 
                 {/* Description */}
-                <div className="p20 py-[0.938vw] flex items-center rounded-lg border border-[#1F2937] px-[1.875vw] py-[1.146vw]">
+                <div className="p20 flex items-center rounded-lg border border-[#1F2937] px-[1.875vw] py-[0.938vw] py-[1.146vw]">
                   {item.description}
                 </div>
               </div>
@@ -232,9 +233,9 @@ useEffect(() => {
       />
       {/* <HeroCTASection /> */}
       <TalkToExpert
-        heading="Design Scalable Solutions with Experienced Liferay Architecture Experts"
-        description="Craft efficient system designs that enhance portal performance and stability."
-        buttonText="Explore Architecture Solutions"
+        heading={talkToExpertArcData.heading}
+        description={talkToExpertArcData.description}
+        buttonText={talkToExpertArcData.buttonText}
       />
       <BlogSection />
     </main>
