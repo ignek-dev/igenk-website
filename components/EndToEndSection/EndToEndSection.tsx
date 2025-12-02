@@ -23,22 +23,21 @@ export default function EndToEndSection() {
     <section ref={sectionRef} className="relative bg-black text-white">
       <div className="global-container w-full py-[3.333vw]">
         {/* Top Heading */}
-        <div className="grid gap-10 md:grid-cols-2 md:gap-12 lg:gap-0">
+        <div className="grid gap-10 items-center md:grid-cols-2 md:gap-12 lg:gap-0">
           <div>
             <h2 className={`${getAnimationClass("animate-slide-top")}`}>
               Your End-to-End Digital Transformation Partner
             </h2>
           </div>
-          <p className={`${getAnimationClass("animate-slide-top")} p18 max-w-4xl pt-6.5 text-right text-white/80`}>
-            We empower enterprises to innovate and scale with comprehensive Liferay DXP solutions, combining strategy,
-            design, and technology for seamless digital transformation success.
+          <p className={`${getAnimationClass("animate-slide-top")} p18 max-w-4xl text-right text-white/80`}>
+           We empower enterprises to innovate and scale with Liferay DXP solutions, combining strategy, design, and technology for digital transformation success.
           </p>
         </div>
 
         {/* Digital Experience */}
         <div className="mt-[3.333vw] grid gap-[3.333vw] md:grid-cols-2">
           <div className={getAnimationClass("animate-slide-left", "animation-delay-200")}>
-            <div className="mt-6.5">
+            <div className="">
               <p className="text-[2.083vw] font-semibold">Digital Experience</p>
               <p className="p18 mt-[1.25vw] max-w-xl text-white/80">
                 We craft unified and personalized digital experiences using Liferay DXP, ensuring customer engagement,
@@ -92,10 +91,10 @@ export default function EndToEndSection() {
         </div>
 
         {/* Staff Augmentation */}
-        <div className="mt-[5.052vw] grid gap-12 md:grid-cols-2 md:gap-14 lg:mt-24 lg:gap-16">
+        <div className="mt-[4.688vw] grid gap-12 md:grid-cols-2 md:gap-14 lg:mt-24 lg:gap-16">
           <div className={getAnimationClass("animate-slide-left", "animation-delay-200")}>
-            <p className="text-2xl pt-[1.563vw] font-semibold md:text-[40px]">Staff augmentation</p>
-            <p className="mt-3 max-w-xl text-lg text-white/80">
+            <p className="text-[2.083vw] font-semibold md:text-[40px]">Staff augmentation</p>
+            <p className="mt-[1.25vw] max-w-xl p18 text-white/80">
               We provide expert Liferay developers and consultants through flexible staff augmentation models, ensuring
               rapid scalability, domain expertise, and seamless project delivery.
             </p>

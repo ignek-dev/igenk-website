@@ -940,3 +940,76 @@ html {
   pointer-events: none;
   opacity: 0.5;
 }
+
+.conic-border {
+  position: relative;
+  border-radius: 50px;
+  overflow: visible;       /* allow ring to show outside slightly if inset is negative */
+}
+
+/* Rotating border ring */
+.conic-border::before {
+  content: "";
+  position: absolute;
+  inset: -2px;             /* makes a thin ring outside the element */
+  border-radius: inherit;
+  background: conic-gradient(transparent 240deg, #00ffff, #00ffff);
+  animation: rotate 3s linear infinite;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Inner mask that keeps the interior solid (prevents gradient leaking in) */
+.conic-border::after {
+  content: "";
+  position: absolute;
+  inset: 2px;              /* thickness of the ring */
+  border-radius: inherit;
+  background: white;       /* use your actual background color here if not white */
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Make sure actual link content is above the pseudo elements */
+.conic-border > * {
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes rotate {
+  to { transform: rotate(360deg); }
+}
+
+
+.fancy-white {
+  --offset: 3px;
+  position: relative;
+  background: white;
+  border-radius: 50px;
+  height: 54px;
+  overflow: hidden;
+  width: 214px;
+  display: flex;           
+  justify-content: center; 
+  align-items: center;
+}
+
+.fancy-white::before {
+  content: "";
+  background: conic-gradient(transparent 270deg, #00ffff, #00ffff);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  aspect-ratio: 1;
+  width: 100%;
+  animation: rotate 3s linear infinite;
+}
+
+.fancy-white::after {
+  content: "";
+  background: white;
+  border-radius: inherit;
+  position: absolute;
+  inset: var(--offset);
+}

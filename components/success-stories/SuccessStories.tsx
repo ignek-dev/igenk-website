@@ -109,7 +109,7 @@ const SuccessStories: React.FC = () => {
                   <div className="mx-auto mb-[2.604vw] max-w-3xl text-center">
                     <h2 className="global-container mb-[0.833vw]">Success Stories</h2>
 
-                    <p className="p18 mt-1 text-gray-600">Discover the impactful solutions we've successfully executed.</p>
+                    <p className="p18 mt-1 text-gray-600">Discover the impactful solutions <br/>we've successfully executed.</p>
                   </div>
                 )}
 
