@@ -204,9 +204,9 @@ const handleClick = (e: React.MouseEvent) => {
                   <Image
                     src={latestImage}
                     alt="Latest Blog Featured Image"
-                    width={800}
-                    height={450}
-                    className="max-h-[26.438vw] max-w-[43.667vw] object-cover transition-transform rounded-[14.35px] duration-300 group-hover:scale-105"
+                    width={884}
+                    height={462}
+                    className="max-h-[24.063vw] max-w-[46.042vw] object-cover transition-transform rounded-[14.35px] duration-300 group-hover:scale-105"
                   />
                 )}
               </div>
