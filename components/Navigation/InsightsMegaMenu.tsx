@@ -162,9 +162,9 @@ const handleClick = (e: React.MouseEvent) => {
                     <Image
                       src={link.icon}
                       alt={link.title}
-                      width={38}
-                      height={38}
-                      className="h-[2.375rem] w-[2.375rem] object-contain"
+                      width={45}
+                      height={45}
+                      className="h-[2.8125rem] w-[2.8125rem] object-contain"
                     />
                   </div>
 

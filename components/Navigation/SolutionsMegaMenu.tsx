@@ -58,12 +58,12 @@ const marketplaceLinks = [
     text: "Service Builder Migration Utility",
     href: "#",
     subheading: "Coming Soon",
-    icon: "/images/mega-menu/solution-mega-icons/service-builder-migration-utility.png",
+    icon: "/images/mega-menu/solution-mega-icons/service-builder.png",
   },
   {
     text: "Liferay CE Email MFA",
     href: "https://marketplace.liferay.com/p/email-otp-authentication-for-community-edition-of-liferay",
-    icon: "/images/mega-menu/marketplace-e3.png",
+    icon: "/images/mega-menu/solution-mega-icons/liferay-ce-email-mfa.png",
   },
   {
     text: "Collection display grid view with Item Highlight",
