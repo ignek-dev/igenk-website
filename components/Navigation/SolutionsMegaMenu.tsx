@@ -209,7 +209,7 @@ export default function SolutionsMegaMenu({ onClose }: MegaMenuProps) {
                           {link.text}
                           {link.subheading && (
                             <span
-                              className="inline-flex min-w-[7.688vw] justify-center rounded-full border bg-white/10 px-[0.521vw] py-1 text-[0.833vw] font-medium text-white"
+                              className="inline-flex min-w-[7.188vw] justify-center rounded-full border bg-white/10  text-[0.833vw] font-medium text-white"
                               style={{ marginLeft: "8px" }}
                             >
                               {link.subheading}

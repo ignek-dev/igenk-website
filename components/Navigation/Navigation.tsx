@@ -84,9 +84,9 @@ export default function Navigation() {
   // --- FIX: Dynamic Position Logic ---
   // If it's a special page (Career/About), use 'absolute' to overlay content.
   // Otherwise (Home), use 'sticky' so it takes up space and pushes the Hero down.
-  const positionClass = (isCareerPage || isAboutUsPage || isBluePage) 
-    ? "absolute top-0" 
-    : "sticky top-0"
+ const positionClass = (isCareerPage || isAboutUsPage || isBluePage) 
+  ? "fixed top-0" // Changed from absolute to fixed
+  : "sticky top-0"
 
 // Determine Background Colors
   const backgroundClass = activeMenu
