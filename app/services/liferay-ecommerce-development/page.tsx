@@ -106,10 +106,10 @@ export default function LiferayEcommerceDevelopmentPage() {
       {/* Hero */}
       <section className="relative bg-black text-white">
         <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_10%_0%,#0E7BF8_0%,#00979E_40%,transparent_65%)] opacity-25" />
-        <div className="global-container mx-auto w-full pt-[3.281vw] pb-[3.802vw]">
+        <div className="global-container mx-auto  pt-[3.281vw] pb-[3.802vw]">
           <div className="3.802vw relative grid items-start gap-10 md:grid-cols-2">
             <div>
-              <div className="p18 banner-tab inline-flex items-center">Liferay Services</div>
+              
               <h1 className="mt-[2.031vw]">
                 Liferay
                 <br />
@@ -124,7 +124,7 @@ export default function LiferayEcommerceDevelopmentPage() {
           </div>
 
           {/* Feature tabs */}
-          <div className="mt-[3.177vw] flex flex-wrap gap-[1.875vw]">
+          <div className="mt-[3.177vw] flex flex-row gap-[1.6vw]">
             {featureTabs.map((label) => (
               <span
                 key={label}
@@ -188,13 +188,14 @@ export default function LiferayEcommerceDevelopmentPage() {
             {ecommerceDevelopmentUsingLiferay.map((item, index) => (
               <div
                 key={index}
-                style={{
-                  boxShadow: "0 0 0 0 rgba(0, 0, 0, 0.00), 0 0 0 1px rgba(244, 244, 245, 0.10), 0 0 0 0 #FFF",
-                }}
                 className="relative z-[1] flex flex-col rounded-[16px] border border-[#1F2937] bg-black px-[1.875vw] pt-[1.771vw] pb-[1.771vw]"
+                style={{
+                  boxShadow: "0 0 0 0 rgba(0,0,0,0), 0 0 0 1px rgba(244,244,245,0.10), 0 0 0 0 #FFF",
+                }}
               >
+                <div style={{}}></div>
                 {/* Title */}
-                <h3 className="z-10 mt-[-3.385vw] w-max rounded-[27px] border border-[#1F2937] bg-black px-[1.875vw] py-[0.521vw] text-[1.458vw]! font-medium text-white">
+                <h3 className="z-10 mt-[-3.385vw] w-max rounded-full border border-gray-700 bg-black px-[1.875vw] py-[0.521vw] text-[1.458vw]! font-medium text-white">
                   {item.text}
                 </h3>
 
@@ -210,24 +211,24 @@ export default function LiferayEcommerceDevelopmentPage() {
         <section className="sticky top-[3.75vw] h-screen overflow-hidden bg-[#f7f7f7] text-black">
           <div className="mx-auto w-full py-[3.333vw]">
             {/* Heading Row */}
-            <div className="global-container grid items-center gap-10 md:grid-cols-2">
+            <div className="global-container flex flex-row items-center gap-10 md:grid-cols-2">
               <h2 className="text-black">Our Liferay Ecommerce Development Process</h2>
-              <p className="p18 text-right leading-relaxed text-gray-500">
+              <p className="p18 text-right w-[46.875vw] leading-relaxed text-gray-500">
                 Liferay Ecommerce enables easy creation and management of digital shopping experiences, combining strong
                 content tools with seamless transactions for improved efficiency and user satisfaction.
               </p>
             </div>
 
             {/* Horizontal Timeline */}
-            <div className="pt-[4.01vw] pl-[10vw] select-none">
+            <div className="pt-[4.01vw] pl-[10vw]  select-none">
               <motion.div
                 ref={scrollerRef}
                 className="relative flex min-w-max gap-0 will-change-transform"
                 style={{ x: smoothX }}
               >
-                <div className="relative flex min-w-max gap-[14.833vw]">
+                <div className="relative flex min-w-max gap-[8.833vw]">
                   {/* ✅ Perfectly aligned horizontal line */}
-                  <div className="absolute top-[2.0835vw] left-0 z-0 h-[4px] w-[91%] bg-black"></div>
+                  <div className="absolute top-[2.0835vw] left-0 z-0 h-[4px] w-[90%] bg-black"></div>
 
                   {steps.map((step, index) => (
                     <div key={index} className="flex w-[24.875vw] flex-col gap-[2.188vw]">

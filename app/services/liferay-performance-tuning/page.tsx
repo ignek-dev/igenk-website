@@ -52,7 +52,7 @@ export default function LiferayPerformanceTuningPage() {
         <div className="global-container mx-auto w-full pt-[7.865vw] pb-[3.854vw]">
           <div className="relative grid items-start justify-between gap-10 md:grid-cols-2">
             <div className="">
-              <div className="p18 banner-tab">{liferayPerformanceTuning.label}</div>
+             
               <h1 className="mt-[2.031vw] w-[40.156vw]">
                 {liferayPerformanceTuning.heading}
                 <br />
@@ -66,7 +66,7 @@ export default function LiferayPerformanceTuningPage() {
           </div>
 
           {/* Feature tabs */}
-          <div className="mt-15 flex flex-wrap gap-[1.875vw]">
+          <div className="mt-15 inline-flex flex-wrap gap-[1.563vw]">
             {featureTabs.map((label, index) => (
               <span
                 key={index}
@@ -90,19 +90,19 @@ export default function LiferayPerformanceTuningPage() {
             {liferayPerformanceFeatures.features.slice(0, 3).map((feature, index) => (
               <div
                 key={index}
-                className="flex flex-col items-center gap-[0.417vw] px-[0.625vw] pt-[2.604vw] pb-[3.698vw] text-center"
+                className="flex flex-col items-center gap-[0.417vw] pt-[2.604vw] pr-[0.625vw] pb-[3.698vw] text-center"
               >
-                <h3 className="h-[4.5vw] w-[19.688vw] text-[1.563vw]! font-semibold">{feature.title}</h3>
-                <p className="p20 text-gray-500">{feature.description}</p>
+                <h3 className="h-[4.5vw] w-[19.688vw] text-center text-[1.563vw]!">{feature.title}</h3>
+                <p className="p20 mt-[0.156vw] text-gray-500">{feature.description}</p>
               </div>
             ))}
           </div>
 
-          <div className="grid grid-cols-1 divide-y divide-gray-200 border-t border-gray-200 md:grid-cols-3 md:divide-x md:divide-y-0">
+          <div className="grid grid-cols-1 divide-y-2 divide-gray-200 border-t-2  border-gray-200 md:grid-cols-3 md:divide-x-2 md:divide-y-0">
             {liferayPerformanceFeatures.features.slice(3, 6).map((feature, index) => (
               <div
                 key={index}
-                className="flex flex-col items-center gap-[0.417vw] px-[0.625vw] pt-[2.604vw] pb-[3.698vw] text-center"
+                className="flex flex-col items-center gap-[0.417vw] pt-[2.604vw] pr-[0.625vw] pb-[3.698vw] text-center"
               >
                 <h3 className="w-[19.688vw] text-[1.563vw]! font-semibold">{feature.title}</h3>
                 <p className="p20 text-gray-500">{feature.description}</p>
@@ -136,8 +136,8 @@ export default function LiferayPerformanceTuningPage() {
                   className="group relative flex flex-col justify-between gap-[1.042vw] pr-[5.313vw]"
                 >
                   <Image src={item?.image ?? ""} alt="Progress icon" width={44} height={44} />
-                  <h3 className="h-[3.75vw] w-[17.292vw] text-[1.563vw]! font-medium!">{item.title}</h3>
-                  <p className="p20 text-white/80">{item.desc}</p>
+                  <h3 className="h-[4.688vw] w-[17.292vw] text-[1.563vw]! font-medium!">{item.title}</h3>
+                  <p className="p20 h-[6.25vw] text-white/80">{item.desc}</p>
                   {!isLastRow && <hr className="bottom-0 left-0 my-[3.333vw] w-full border-b border-white/20" />}
                 </div>
               )
@@ -161,7 +161,7 @@ export default function LiferayPerformanceTuningPage() {
             <div className="flex">
               {/* Left column */}
 
-              <div className="mr-[1.302vw] max-w-[34.583vw] space-y-6 scroll-auto">
+              <div className="mr-[3.021vw] max-w-[34.583vw] space-y-6 scroll-auto">
                 {items.map((item, index) => (
                   <div
                     key={item.title}

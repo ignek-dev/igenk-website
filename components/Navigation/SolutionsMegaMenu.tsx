@@ -1,11 +1,26 @@
 // components/SolutionsMegaMenu.tsx
 // --- Data for the Mega Menu ---
+"use client"
 import Image from "next/image"
 import Link from "next/link"
+import { useEffect, useState } from "react";
 // const iconUrl = "/images/mega-menu/solution-e1.png"
 
 interface MegaMenuProps {
   onClose: () => void;
+}
+
+// 1. Define the interface for our link data
+interface IntegrationLink {
+  id: number;
+  text: string;
+  icon: string;
+  href: string; // This will start as empty/fallback and get updated
+}
+
+interface WPPost {
+  id: number;
+  slug: string;
 }
 
 const solutionsLinks = [
@@ -17,17 +32,15 @@ const solutionsLinks = [
   { text: "Customer Experience", href: "/contact", icon: "/images/mega-menu/solution-mega-icons/solution-e6.svg" },
 ]
 
-const integrationsLinks = [
-  { text: "Matomo Integration with Liferay", href: "/blog/35704", icon: "/images/mega-menu/Integartion-e1.png" },
-  {
-    text: "Microsoft Teams Integration with Liferay",
-    href: "/blog/2379",
-    icon: "/images/mega-menu/Integration-e2.png",
-  },
-  { text: "Jira Integration with Liferay", href: "/blog/21796", icon: "/images/mega-menu/Integration-e3.png" },
-  { text: "Twilio Integration with Liferay", href: "/blog/29103", icon: "/images/mega-menu/Integration-e4.png" },
-  { text: "ZOOM Integration with Liferay", href: "/blog/18883", icon: "/images/mega-menu/Integration-e5.png" },
-  { text: "Sonar Integration with Liferay", href: "/blog/17663", icon: "/images/mega-menu/Integration-e6.png" },
+// 2. Static configuration (Icons and Titles)
+// We use the 'id' here to fetch the correct slug later.
+const initialIntegrationsConfig: IntegrationLink[] = [
+  { id: 35704, text: "Matomo Integration with Liferay", href: "", icon: "/images/mega-menu/Integartion-e1.png" },
+  { id: 2379, text: "Microsoft Teams Integration with Liferay", href: "", icon: "/images/mega-menu/Integration-e2.png" },
+  { id: 21796, text: "Jira Integration with Liferay", href: "", icon: "/images/mega-menu/Integration-e3.png" },
+  { id: 29103, text: "Twilio Integration with Liferay", href: "", icon: "/images/mega-menu/Integration-e4.png" },
+  { id: 18883, text: "ZOOM Integration with Liferay", href: "", icon: "/images/mega-menu/Integration-e5.png" },
+  { id: 17663, text: "Sonar Integration with Liferay", href: "", icon: "/images/mega-menu/Integration-e6.png" },
 ]
 
 const marketplaceLinks = [
@@ -45,12 +58,12 @@ const marketplaceLinks = [
     text: "Service Builder Migration Utility",
     href: "#",
     subheading: "Coming Soon",
-    icon: "/images/mega-menu/solution-mega-icons/service-builder-migration-utility.png",
+    icon: "/images/mega-menu/solution-mega-icons/service-builder.png",
   },
   {
     text: "Liferay CE Email MFA",
     href: "https://marketplace.liferay.com/p/email-otp-authentication-for-community-edition-of-liferay",
-    icon: "/images/mega-menu/marketplace-e3.png",
+    icon: "/images/mega-menu/solution-mega-icons/liferay-ce-email-mfa.png",
   },
   {
     text: "Collection display grid view with Item Highlight",
@@ -66,22 +79,72 @@ const marketplaceLinks = [
 
 const aiLinks = [
   {
-    text: "Cognitive Virtual Assistants for Enterprise Experiences",
+    text: "Virtual Assistants for Enterprise Experiences",
     href: "/contact",
     icon: "/images/mega-menu/solution-mega-icons/liferay-ai-1.svg",
   },
-  { text: "AI-Driven Personalization & Engagement", href: "/contact", icon: "/images/mega-menu/solution-mega-icons/liferay-ai-2.svg" },
+  { text: "Personalization & Engagement", href: "/contact", icon: "/images/mega-menu/solution-mega-icons/liferay-ai-2.svg" },
   { text: "Intelligent Search & Knowledge Discovery", href: "/contact", icon: "/images/mega-menu/solution-mega-icons/liferay-ai-3.svg" },
   { text: "Autonomous Workflow Optimization", href: "/contact", icon: "/images/mega-menu/solution-mega-icons/liferay-ai-4.svg" },
   { text: "Predictive Business Intelligence", href: "/contact", icon: "/images/mega-menu/solution-mega-icons/liferay-ai-5.svg" },
   { text: "AI-Enhanced Document Intelligence", href: "/contact", icon: "/images/mega-menu/solution-mega-icons/liferay-ai-6.svg" },
 ]
 
+// --- CACHE VARIABLES (Defined Outside Component) ---
+// These persist in memory as long as the page is not refreshed.
+let cachedIntegrations: IntegrationLink[] = [...initialIntegrationsConfig];
+let isDataFetched = false;
+
 // --- Main SolutionsMegaMenu Component ---
 export default function SolutionsMegaMenu({ onClose }: MegaMenuProps) {
+  // State to hold the fetched integration links
+  const [integrations, setIntegrations] = useState<IntegrationLink[]>(cachedIntegrations);
+
+  
+
+ useEffect(() => {
+
+  // If data is already fetched in this session, don't fetch again.
+    if (isDataFetched) {
+      return;
+    }
+    async function fetchIntegrationSlugs() {
+      try {
+        // 3. Create a comma-separated list of IDs to fetch in one go
+        const ids = initialIntegrationsConfig.map((link) => link.id).join(",");
+
+        // 4. Fetch the posts, asking only for 'id' and 'slug' to be fast
+        const res = await fetch(`https://insights.ignek.com/wp-json/wp/v2/posts?include=${ids}&_fields=id,slug`);
+        
+        if (!res.ok) throw new Error("Failed to fetch slugs");
+        
+       const posts = await res.json() as WPPost[];
+        // 5. Update our state: Map the original config to the new API data
+       const updatedLinks = initialIntegrationsConfig.map((link) => {
+          const foundPost = posts.find((p) => p.id === link.id);
+          return {
+            ...link,
+            href: foundPost?.slug ? `/blog/${foundPost.slug}` : "",
+          };
+        });
+
+        // Update the global cache and flag
+        cachedIntegrations = updatedLinks;
+        isDataFetched = true;
+        
+        // Update local state to trigger re-render
+        setIntegrations(updatedLinks);
+      } catch (err) {
+        console.error("Error updating menu links:", err);
+      }
+    }
+
+    fetchIntegrationSlugs();
+  }, []);
+
   return (
     <>
-      <div className="global-container mx-auto w-full px-4 py-10 pb-16 md:px-8">
+      <div className="global-container mx-auto w-full px-4 py-9.5 pb-16 md:px-8">
         <div className="flex w-full justify-between gap-[5.21vw]">
           {/* Left Group (Solutions & Integrations) */}
           <div className="flex gap-[5.21vw]">
@@ -90,7 +153,7 @@ export default function SolutionsMegaMenu({ onClose }: MegaMenuProps) {
               <ul className="space-y-6">
                 {solutionsLinks.map((link, index) => (
                   <li key={`sol-${index}`}>
-                    <Link href={link.href} className="p20 flex items-center gap-5 text-white">
+                    <Link href={link.href} className="p20 flex items-center gap-5 text-white" onClick={onClose}>
                       <Image
                         src={link.icon}
                         alt={link.text}
@@ -108,9 +171,9 @@ export default function SolutionsMegaMenu({ onClose }: MegaMenuProps) {
             <div>
               <h5 className="mb-9">Integrations</h5>
               <ul className="space-y-6">
-                {integrationsLinks.map((link, index) => (
+                {integrations.map((link, index) => (
                   <li key={`int-${index}`}>
-                    <Link href={link.href} className="p20 flex items-center gap-5 text-white" onClick={onClose}>
+                    <Link href={link.href || "#"} className="p20 flex items-center gap-5 text-white" onClick={onClose}>
                       <Image
                         src={link.icon}
                         alt={link.text}
@@ -132,7 +195,7 @@ export default function SolutionsMegaMenu({ onClose }: MegaMenuProps) {
               <ul className="space-y-6">
                 {marketplaceLinks.map((link, index) => (
                   <li key={`mp-${index}`}>
-                    <Link href={link.href} className="p20 flex items-center gap-5 text-white">
+                    <Link href={link.href} className="p20 flex items-center gap-5 text-white" onClick={onClose} target="_blank">
                       <Image
                         src={link.icon}
                         alt={link.text}
@@ -140,15 +203,19 @@ export default function SolutionsMegaMenu({ onClose }: MegaMenuProps) {
                         height={60}
                         className="h-10 w-10 flex-shrink-0 rounded-lg bg-white [@media(min-width:1440px)]:h-12 [@media(min-width:1440px)]:w-12 [@media(min-width:1536px)]:h-[52px] [@media(min-width:1536px)]:w-[52px] [@media(min-width:1920px)]:h-[60px] [@media(min-width:1920px)]:w-[60px]"
                       />
-                      <div className="flex max-w-[320px] items-baseline">
-                        <span className="font-medium" dangerouslySetInnerHTML={{ __html: link.text }} />
-
-                        {link.subheading && (
-                          <span className="rounded-full align-middle bg-white/10 px-1.5 py-1 text-sm font-medium text-white/70 border inline-block whitespace-nowrap
-             filter drop-shadow-[0_0_6px_rgba(255,255,255,0.4)]">
-                            {link.subheading}
-                          </span>
-                        )}
+                      <div className="flex max-w-[320px] items-center">
+                        <div className="font-medium">
+                          {/* dangerouslySetInnerHTML={{ __html: link.text } */}
+                          {link.text}
+                          {link.subheading && (
+                            <span
+                              className="inline-flex min-w-[7.188vw] justify-center rounded-full border bg-white/10  text-[0.833vw] font-medium text-white"
+                              style={{ marginLeft: "8px" }}
+                            >
+                              {link.subheading}
+                            </span>
+                          )}
+                        </div>
                       </div>
                     </Link>
                   </li>
@@ -160,7 +227,7 @@ export default function SolutionsMegaMenu({ onClose }: MegaMenuProps) {
               <ul className="space-y-6">
                 {aiLinks.map((link, index) => (
                   <li key={`ai-${index}`}>
-                    <Link href={link.href} className="p20 flex items-center gap-5 text-white">
+                    <Link href={link.href} className="p20 flex items-center gap-5 text-white" onClick={onClose}>
                       <Image
                         src={link.icon}
                         alt={link.text}

@@ -104,9 +104,9 @@ export default function LiferayUpgradePage() {
         <div className="global-container w-full pt-[7.865vw] pb-[3.802vw]">
           <div className="relative grid items-start gap-10 md:grid-cols-2">
             <div>
-              <div className="inline-flex items-center rounded-full border border-white/30 px-4 py-2 text-lg text-white">
-                {liferayDxUpgradeHero.badge}
-              </div>
+              {/* <div className="inline-flex items-center rounded-full border border-white/30 px-4 py-2 text-lg text-white">
+                Liferay Services
+              </div> */}
               <h1 className="mt-[2.031vw] leading-tight font-semibold">
                 {liferayDxUpgradeHero.headingLine1}
                 <br />
@@ -201,11 +201,11 @@ export default function LiferayUpgradePage() {
 
       <section className="bg-black py-[64px] text-white md:py-[64px] lg:py-[64px]">
         <div className="global-container items-start">
-          <div className="relative grid items-start gap-10 md:grid-cols-2">
+          <div className="relative grid items-center gap-10 md:grid-cols-2">
             <h2 className="">
               {liferayDxUpgradeBenefits.titleLine1} <br /> {liferayDxUpgradeBenefits.titleLine2}
             </h2>
-            <p className="p18 absolute bottom-0 max-w-[37vw] text-right text-white md:justify-self-end">
+            <p className="p18 absolute max-w-[37vw] text-right text-white md:justify-self-end">
               {liferayDxUpgradeBenefits.description}
             </p>
           </div>

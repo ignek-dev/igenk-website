@@ -84,9 +84,9 @@ export default function Navigation() {
   // --- FIX: Dynamic Position Logic ---
   // If it's a special page (Career/About), use 'absolute' to overlay content.
   // Otherwise (Home), use 'sticky' so it takes up space and pushes the Hero down.
-  const positionClass = (isCareerPage || isAboutUsPage || isBluePage) 
-    ? "absolute top-0" 
-    : "sticky top-0"
+ const positionClass = (isCareerPage || isAboutUsPage || isBluePage) 
+  ? "fixed top-0" // Changed from absolute to fixed
+  : "sticky top-0"
 
 // Determine Background Colors
   const backgroundClass = activeMenu
@@ -118,10 +118,13 @@ export default function Navigation() {
     >
       {/* Background Gradient for specific pages when menu is closed */}
       {!activeMenu && !isCareerPage && !isAboutUsPage && !isConsultingPage && !isHireDeveloperPage && (
-        <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_35%_0%,#00979E_0%,#0E7BF800_60%)] opacity-20" />
+        <div className="pointer-events-none absolute inset-0 -z-100 bg-[radial-gradient(800px_circle_at_35%_0%,#00979E_0%,#0E7BF800_60%)] opacity-20" />
       )}
 
-      <nav ref={navRef} className="global-container relative z-20 mx-auto flex w-full items-center bg-inherit px-4 py-6.5 md:px-8">
+      <nav
+        ref={navRef}
+        className="global-container relative z-20 mx-auto flex w-full items-center bg-inherit px-4 py-6.5 md:px-8"
+      >
         <Link href="/" className="flex items-center gap-3" aria-label="Home">
           <Image src="/images/logo.svg" alt="Ignek logo" width={182} height={86} priority className="logo-responsive" />
         </Link>
@@ -136,19 +139,21 @@ export default function Navigation() {
                   activeMenu === item.label ? "text-white" : "text-white/90"
                 } hover:text-white`}
               >
-                {item.label}
-              </a>
+                <span className="relative inline-block">
+                  {item.label}
 
-              {/* Active state bottom border */}
-              {activeMenu === item.label && (
-                <div
-                  className="absolute bottom-0 left-0 w-full"
-                  style={{
-                    height: "0.156vw", // converted from 3px
-                    backgroundColor: "#00979E",
-                  }}
-                ></div>
-              )}
+                  {activeMenu === item.label && (
+                    <span
+                      className="absolute left-0 w-full"
+                      style={{
+                        bottom: "-0.2vw",
+                        height: "0.156vw",
+                        backgroundColor: "#00979E",
+                      }}
+                    />
+                  )}
+                </span>
+              </a>
             </li>
           ))}
         </ul>
@@ -156,11 +161,8 @@ export default function Navigation() {
         <div className="flex items-center gap-4.5">
           <CalendlyButton buttonColor={buttonInnerColor} />
           <Tooltip text="Contact Us">
-            <div className="nav-fancy-button">
-              <div
-                className="nav-fancy-glow"
-                style={{ "--button-bg-color": buttonInnerColor } as React.CSSProperties}
-              ></div>
+            <div className="rounded-full border border-[#00979E] transition-colors hover:bg-white/10">
+              <div className="" style={{ "--button-bg-color": buttonInnerColor } as React.CSSProperties}></div>
               <button
                 type="button"
                 aria-label="Contact-Us"
@@ -168,7 +170,7 @@ export default function Navigation() {
                 onClick={() => router.push("/contact")}
               >
                 <div className="nav-round-btn-inner cursor-pointer">
-                  <Image src="/images/icon/arrow-tr.png" alt="arrow-top-right" width={28} height={28} />
+                  <Image src="/images/icon/arrow-tr.png" alt="arrow-top-right" width={24} height={24} />
                 </div>
               </button>
             </div>
@@ -187,7 +189,7 @@ export default function Navigation() {
             transition={{ duration: 1.5, ease: "easeOut" }}
             className="absolute top-full left-0 z-10 w-full overflow-hidden rounded-b-[80px] bg-black shadow-2xl"
             // --- FIX: Logic to close menu when hovering the "X" (Void) areas ---
-           onMouseMove={handleDrawerMouseMove}
+            onMouseMove={handleDrawerMouseMove}
           >
             {activeMenu === "Company" && <CompanyMegaMenu onClose={closeMenu} />}
             {activeMenu === "Insights" && <InsightsMegaMenu onClose={closeMenu} />}

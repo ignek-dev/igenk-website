@@ -114,7 +114,7 @@ export default function CompanyMegaMenu({ onClose }: MegaMenuProps) {
       {/* Background Gradient */}
       {/* <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_14%_0%,#00979E_0%,#0E7BF800_60%)] opacity-40" /> */}
 
-      <div className="global-container mx-auto w-full px-4 py-10 pb-16 md:px-8">
+      <div className="global-container mx-auto w-full px-4 py-9.5 pb-16 md:px-8">
         <div className="grid grid-cols-12 items-start gap-[3.1875rem]">
           {/* Left Side: Cards */}
           <div className="col-span-5">
@@ -140,10 +140,10 @@ export default function CompanyMegaMenu({ onClose }: MegaMenuProps) {
                   />
                   <div className="flex-1">
                     <div className="flex items-center gap-1">
-                      <h5 className="font-medium text-white">{link.title}</h5>
+                      <h5 className="mr-2 font-medium text-white">{link.title}</h5>
 
                       {link.subheading && (
-                        <span className="rounded-full bg-white/10 px-3 py-1 text-sm font-medium text-white/70">
+                        <span className="inline-flex min-w-[7.688vw] justify-center rounded-full border bg-white/10 px-[0.521vw] py-1 text-[0.833vw] font-medium text-white/70">
                           {link.subheading}
                         </span>
                       )}
@@ -243,17 +243,19 @@ export default function CompanyMegaMenu({ onClose }: MegaMenuProps) {
               </div>
             </div>
 
-            <div className="mt-8 flex items-center gap-25 border-white/10 pt-8">
-              <div className="flex items-center gap-3 sm:gap-4 md:gap-5 lg:gap-6 xl:gap-[1.0417vw]">
+            <div className="mt-8 flex justify-between gap-25 border-white/10 pt-8">
+              <div
+                onClick={() => window.open("https://maps.app.goo.gl/Ek7djBmoQwA1NUK48", "_blank")}
+                className="flex cursor-pointer items-center gap-3 sm:gap-4 md:gap-5 lg:gap-6 xl:gap-[1.0417vw]"
+              >
                 <Image
-                  src={"/images/icon/location.png"}
-                  alt={"Location"}
+                  src="/images/icon/location.png"
+                  alt="Location"
                   width={41}
                   height={41}
-                  objectFit="cover"
                   className="flex-shrink-0 rounded-md"
                 />
-                <p className="p20 max-w-[23.438vw] font-semibold! text-[#FFFFFF]">Ahmedabad, India.</p>
+                <p className="p20 max-w-[23.438vw] font-semibold! text-white">Ahmedabad, India.</p>
               </div>
               <div className="flex items-center gap-[1.042vw]">
                 {socialLinks.map((social) => (

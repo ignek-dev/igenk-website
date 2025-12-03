@@ -47,7 +47,7 @@ export default function LiferayMigrationPage() {
         <div className="global-container mx-auto mt-[-1px] w-full pt-[7.865vw] pb-[3.802vw]">
           <div className="relative grid items-start gap-10 md:grid-cols-2">
             <div>
-              <div className="p18 banner-tab mb-[2.031vw] inline-flex">Liferay Services</div>
+              
               <h1 className="text-gradient-liferay">
                 {heroMigration.titlePart1}
                 <br />
@@ -75,12 +75,12 @@ export default function LiferayMigrationPage() {
 
       {/* Circular reasons section */}
       <section className="bg-[#f7f7f7] text-black">
-        <div className="mx-auto w-full pt-[3.75vw] pb-[2.76vw]">
+        <div className="mx-auto w-full pt-[3.333vw] pb-[3.333vw]">
           <div className="relative flex flex-col items-center justify-center px-[0.313vw] text-center">
             {/* Outer Dotted Circle */}
-            <div className="relative flex h-[48.125vw] w-[48.125vw] items-center justify-center rounded-full border-[0.052vw] border-dashed border-[#000000]">
+            <div className="relative flex h-[48.125vw] w-[48.125vw] items-center justify-center rounded-full border-[0.104vw] border-dashed border-[#000000]">
               {/* Inner Dotted Circle */}
-              <div className="flex h-[31.25vw] w-[31.25vw] items-center justify-center rounded-full border-[0.052vw]  border-dashed border-[#000000]">
+              <div className="flex h-[31.25vw] w-[31.25vw] items-center justify-center rounded-full border-[0.104vw]  border-dashed border-[#000000]">
                 {/* Center Content */}
                 <div className="flex max-w-[13.542vw] flex-col items-center gap-[1.823vw] text-center">
                   <div className="mx-auto flex items-center justify-center rounded-md">
@@ -113,7 +113,7 @@ export default function LiferayMigrationPage() {
                   <h2 className="w-[26.146vw] text-[1.875vw]! font-medium">
                     {whyMigrateLiferay.titlePart1} {whyMigrateLiferay.titlePart2}
                   </h2>
-                  <p className="text-[0.729vw]! leading-relaxed text-gray-600">
+                  <p className="text-[0.833vw]! w-[21.75vw] leading-relaxed text-gray-600">
                     {whyMigrateLiferay.descPart1} {whyMigrateLiferay.descPart2}
                   </p>
                 </div>
@@ -149,10 +149,10 @@ export default function LiferayMigrationPage() {
       {/* Migration Process timeline */}
       <section className="bg-black text-white">
         <div className="global-container mx-auto w-full py-[3.333vw]">
-          <div className="grid items-start gap-10 lg:grid-cols-[0.9fr_1.1fr]">
-            <div className="sticky top-[10.417vw] flex w-[28.698vw] flex-col gap-[1.458vw]">
-              <h2 className="leading-[60px] font-semibold">{liferayMigrationProcess.title}</h2>
-              <p className="p18 text-gray-500">
+          <div className="flex flex-row gap-[10.417vw] items-start gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+            <div className="sticky top-[10.417vw] flex w-[74.698vw] flex-col gap-[1.458vw]">
+              <h2 className="leading-[60px] font-semibold">Our Liferay Migration Process</h2>
+              <p className="p18 text-gray-100">
                 {liferayMigrationProcess.description}
               </p>
               <ScheduleMeetingButton isFullWidth={false} btnName={liferayMigrationProcess.buttonText} />
@@ -160,10 +160,10 @@ export default function LiferayMigrationPage() {
 
             <div>
               <div className="relative">
-                <div className="relative mt-[0.313vw] ml-[3.75vw] flex flex-col">
+                <div className="relative mt-[0.313vw] flex flex-col">
                   {/* Vertical line */}
                   <div
-                    className="absolute top-0 left-[1.999vw] h-[89%] bg-white [@media(min-width:2140px)]:h-[90%]"
+                    className="absolute top-0 left-[1.999vw] h-[89%] bg-gray-400"  
                     style={{ width: "4px" }}
                   ></div>
 
@@ -184,7 +184,7 @@ export default function LiferayMigrationPage() {
                         <div className="flex items-center justify-between">
                           <h3 className="text-[1.563vw]! font-medium! text-[#FFFFFF]">{step.title}</h3>
                         </div>
-                        <p className="text-gray/50 p20 mt-[1.25vw]">{step.desc}</p>
+                        <p className="text-gray-50 p20  mt-[1.25vw]">{step.desc}</p>
                         {index !== steps.length - 1 ? <hr className="mt-[2.708vw] mb-[2.708vw]" /> : ""}
                       </div>
                     </div>
