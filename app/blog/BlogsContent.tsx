@@ -200,7 +200,7 @@ export default function BlogsContent() {
       <section className="relative bg-black text-white">
         <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_10%_0%,#0E7BF8_0%,#00979E_40%,transparent_65%)] opacity-25" />
         <div className="global-container mx-auto w-full px-4 pt-12 pb-16 md:px-8 md:pt-20 md:pb-22">
-          <div className="relative grid items-start gap-10 md:grid-cols-2">
+          <div className="relative grid items-start gap-[0.521vw] md:grid-cols-2">
             <div>
               <h1 className="mt-9 bg-[linear-gradient(0deg,#FFFFFF,#FFFFFF),linear-gradient(0deg,rgba(0,0,0,0.23),rgba(0,0,0,0.23))] bg-clip-text text-transparent">
                 Liferay Blog:
@@ -209,7 +209,7 @@ export default function BlogsContent() {
 
               </h1>
             </div>
-            <p className="p18 absolute bottom-0 max-w-3xl justify-self-end text-right text-white">
+            <p className="p18 absolute bottom-0 max-w-[41.646vw] justify-self-end text-right text-white">
              Explore our latest tech and solution blogs to stay informed on trends, innovations, and best practices across industries, helping you for operational excellence.
             </p>
           </div>
