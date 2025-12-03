@@ -186,26 +186,51 @@ h5 {
 
 /* Default → 1920px */
 .nav-round-btn {
-  width: 3.333vw;
-  height: 3.333vw;
+ width: 40px;
+  height: 40px;
   padding: 0;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: all 0.3s ease; /* Smooth resizing if user resizes window */
 }
 
 .nav-round-btn-inner {
-  width: 3.333vw;
-  height: 3.333vw;
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .nav-round-btn-inner img {
-  width: 28px !important;
-  height: 28px !important;
+  width: 50% !important; /* This makes the icon dynamic relative to button size */
+  height: auto !important;
+}
+
+/* --- Laptop (1280px - 1440px) --- */
+@media (min-width: 1280px) {
+  .nav-round-btn {
+    width: 44px; /* Standard readable size */
+    height: 44px;
+  }
+}
+
+/* --- Large Laptop (1536px) --- */
+@media (min-width: 1536px) {
+  .nav-round-btn {
+    width: 48px; /* Slightly larger for 15-16 inch screens */
+    height: 48px;
+  }
+}
+
+/* --- Full HD Desktop (1920px +) --- */
+@media (min-width: 1920px) {
+  .nav-round-btn {
+    width: 54px; /* Fixed perfect size (was ~64px before) */
+    height: 54px;
+  }
 }
 
 .nav-fancy-button {
