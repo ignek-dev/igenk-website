@@ -98,9 +98,9 @@ export default function LiferayUpgradePage() {
         <div className="global-container w-full pt-[7.865vw] pb-[3.802vw]">
           <div className="relative grid items-start gap-10 md:grid-cols-2">
             <div>
-              <div className="inline-flex items-center rounded-full border border-white/30 px-4 py-2 text-lg text-white">
+              {/* <div className="inline-flex items-center rounded-full border border-white/30 px-4 py-2 text-lg text-white">
                 Liferay Services
-              </div>
+              </div> */}
               <h1 className="mt-[2.031vw] leading-tight font-semibold">
                 Liferay
                 <br />
@@ -196,11 +196,11 @@ export default function LiferayUpgradePage() {
 
       <section className="bg-black py-[64px] text-white md:py-[64px] lg:py-[64px]">
         <div className="global-container items-start">
-          <div className="relative grid items-start gap-10 md:grid-cols-2">
+          <div className="relative grid items-center gap-10 md:grid-cols-2">
             <h2 className="">
               Key Benefits of Liferay <br /> DXP 7.4 Upgrade
             </h2>
-            <p className="p18 absolute bottom-0 max-w-[37vw] text-right text-white md:justify-self-end">
+            <p className="p18 absolute max-w-[37vw] text-right text-white md:justify-self-end">
               Liferay DXP 7.4 Upgrade is essential for organizations aiming to enhance their digital experience
               capabilities and stay competitive in today’s fast-paced environment. Here are several compelling reasons
               to consider the upgrade

@@ -95,7 +95,7 @@ const SuccessStories: React.FC = () => {
 
   return (
     <div id="success-stories" className="stack-clip z-20 h-max w-full rounded-t-[5rem] bg-white text-black shadow-xl">
-      <div className="global-container w-full bg-[#F9FAF7] py-12 md:py-16">
+      <div className="global-container w-full bg-[#F9FAF7] pt-[3.333vw]">
         <div className="w-full px-0">
           {/* Header */}
 
@@ -115,7 +115,7 @@ const SuccessStories: React.FC = () => {
 
                 {/* Sticky Card */}
                 <div
-                  className="success-sticky mb-[4.427vw] sticky transition-all duration-500"
+                  className="success-sticky mb-[3.333vw] sticky transition-all duration-500"
                   style={{
                     top: "200px",
                     zIndex: 10 + index,
