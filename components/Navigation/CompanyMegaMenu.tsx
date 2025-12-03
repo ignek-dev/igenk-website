@@ -140,10 +140,10 @@ export default function CompanyMegaMenu({ onClose }: MegaMenuProps) {
                   />
                   <div className="flex-1">
                     <div className="flex items-center gap-1">
-                      <h5 className="font-medium text-white mr-2">{link.title}</h5>
+                      <h5 className="mr-2 font-medium text-white">{link.title}</h5>
 
                       {link.subheading && (
-                        <span className="rounded-full border min-w-[7.688vw] bg-white/10 inline-flex justify-center py-1 px-[0.521vw] text-[0.833vw] font-medium text-white/70">
+                        <span className="inline-flex min-w-[7.688vw] justify-center rounded-full border bg-white/10 px-[0.521vw] py-1 text-[0.833vw] font-medium text-white/70">
                           {link.subheading}
                         </span>
                       )}
@@ -244,16 +244,18 @@ export default function CompanyMegaMenu({ onClose }: MegaMenuProps) {
             </div>
 
             <div className="mt-8 flex justify-between gap-25 border-white/10 pt-8">
-              <div className="flex items-center gap-3 sm:gap-4 md:gap-5 lg:gap-6 xl:gap-[1.0417vw]">
+              <div
+                onClick={() => window.open("https://maps.app.goo.gl/Ek7djBmoQwA1NUK48", "_blank")}
+                className="flex cursor-pointer items-center gap-3 sm:gap-4 md:gap-5 lg:gap-6 xl:gap-[1.0417vw]"
+              >
                 <Image
-                  src={"/images/icon/location.png"}
-                  alt={"Location"}
+                  src="/images/icon/location.png"
+                  alt="Location"
                   width={41}
                   height={41}
-                  objectFit="cover"
                   className="flex-shrink-0 rounded-md"
                 />
-                <p className="p20 max-w-[23.438vw] font-semibold! text-[#FFFFFF]">Ahmedabad, India.</p>
+                <p className="p20 max-w-[23.438vw] font-semibold! text-white">Ahmedabad, India.</p>
               </div>
               <div className="flex items-center gap-[1.042vw]">
                 {socialLinks.map((social) => (
