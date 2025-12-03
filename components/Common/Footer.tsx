@@ -105,50 +105,54 @@ export default function Footer() {
       {/* Bottom section: contacts + big logo + motto + bottom bar */}
       <div className="global-container mx-auto flex w-full pl-4 md:pl-8" style={{ paddingRight: "0px !important" }}>
         <div className="w-[80%] pt-12 pr-4 pb-20 md:pt-16 md:pr-8 md:pb-4">
-          <div className="grid sm:grid-cols-2 md:grid-cols-4">
-            <div>
-              <p className="text-2xl leading-[1.9rem] font-semibold text-white">Emails</p>
-              <div className="mt-4 space-y-3 text-white">
-                <div>
-                  <Link href="mailto:sales@ignek.com" className="p20 font-semibold! hover:text-white">
-                    sales@ignek.com
-                  </Link>
-                  <div className="p16 text-[#9CA3AF]">(For sales inquiry)</div>
-                </div>
-                <div>
-                  <Link href="mailto:hr@ignek.com" className="p20 font-semibold! hover:text-white">
-                    hr@ignek.com
-                  </Link>
-                  <div className="p16 text-[#9CA3AF]">(For hiring inquiry)</div>
-                </div>
-              </div>
-            </div>
-            <div>
-              <p className="text-2xl leading-[1.9rem] font-semibold text-white">Call</p>
-              <div className="mt-4 space-y-3 text-white">
-                <div>
-                  <Link href="tel:+916351576580" className="p20 font-semibold! hover:text-white">
-                    (+91) 635 157 6580
-                  </Link>
-                  <div className="p16 text-[#9CA3AF]">(For sales inquiry)</div>
-                </div>
-                <div>
-                  <Link href="tel:+919328495160" className="p20 font-semibold! hover:text-white">
-                    (+91) 932 849 5160
-                  </Link>
-                  <div className="p16 text-[#9CA3AF]">(For hiring inquiry)</div>
-                </div>
-              </div>
-            </div>
-            <div>
-              <p className="text-2xl leading-[1.9rem] font-semibold text-white">Office</p>
-              <p className="p20 whitespace-wrap mt-4 mb-4.5 min-w-xl font-semibold! text-white [@media(max-width:1700px)]:min-w-auto">
-                Ahmedabad, India  <br />
-              </p>
-              <span className="p20 mt-4 min-w-3xl font-semibold! whitespace-nowrap text-white">
-                Dubai, United Arab Emirates
-              </span>
-            </div>
+          <div className="contact-grid">
+        {/* 1. Emails Column */}
+      <div>
+        <p className="contact-header">Emails</p>
+        <div className="contact-group">
+          <Link href="mailto:sales@ignek.com" className="contact-title">
+            sales@ignek.com
+          </Link>
+          <div className="contact-sub">(For sales inquiry)</div>
+        </div>
+        <div className="contact-group">
+          <Link href="mailto:hr@ignek.com" className="contact-title">
+            hr@ignek.com
+          </Link>
+          <div className="contact-sub">(For hiring inquiry)</div>
+        </div>
+      </div>
+           {/* 2. Call Column */}
+      <div>
+        <p className="contact-header">Call</p>
+        <div className="contact-group">
+          <Link href="tel:+916351576580" className="contact-title">
+            (+91) 635 157 6580
+          </Link>
+          <div className="contact-sub">(For sales inquiry)</div>
+        </div>
+        <div className="contact-group">
+          <Link href="tel:+919328495160" className="contact-title">
+            (+91) 932 849 5160
+          </Link>
+          <div className="contact-sub">(For hiring inquiry)</div>
+        </div>
+      </div>
+          {/* 3. Office Column */}
+      <div className="office-col">
+        <p className="contact-header">Office</p>
+        <div className="contact-group">
+          <p className="contact-title">
+            Ahmedabad, India
+          </p>
+          {/* Optional: Add full address in sub-text if needed, or keep clean as per screenshot */}
+        </div>
+        <div className="contact-group">
+          <p className="contact-title">
+            Dubai, United Arab Emirates
+          </p>
+        </div>
+      </div>
           </div>
           {/* Big brand logo */}
           <div

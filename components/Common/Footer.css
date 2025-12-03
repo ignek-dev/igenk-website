@@ -260,3 +260,103 @@ text {
     min-width: max-content;
   }
 }
+/* =========================================
+   Bottom Contact Section (Emails, Call, Office)
+   ========================================= */
+
+/* --- 1. Mobile & Small Tablet Defaults (Fixed Minimum Sizes) --- */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Stack vertically */
+  gap: 40px;
+}
+
+/* Minimum readable sizes (matches Top Section Mobile) */
+.contact-header {
+  font-family: var(--font-poppins);
+  font-weight: 600;
+  font-size: 20px; /* Never goes below 20px */
+  color: white;
+  margin-bottom: 16px;
+}
+
+.contact-title {
+  font-family: var(--font-poppins);
+  font-weight: 600;
+  font-size: 16px; /* Never goes below 16px */
+  color: white;
+  display: block;
+  transition: color 0.3s ease;
+}
+
+.contact-title:hover {
+  color: #00979E;
+}
+
+.contact-sub {
+  font-family: var(--font-poppins);
+  font-weight: 400;
+  font-size: 14px; /* Readable sub-text */
+  color: #9CA3AF;
+  margin-top: 4px;
+}
+
+.contact-group {
+  margin-bottom: 24px;
+}
+
+/* --- 2. Standard Laptops (1280px - 1439px) --- */
+/* Scale up slightly for better laptop visibility */
+@media (min-width: 1280px) and (max-width: 1439px) {
+  .contact-grid {
+    grid-template-columns: repeat(3, max-content);
+    gap: 60px; /* Reduced gap for laptops */
+  }
+
+  .contact-header {
+    font-size: 24px; /* Matches Top Section Laptop Header */
+    margin-bottom: 20px;
+  }
+
+  .contact-title {
+    font-size: 18px; /* Matches Top Section Laptop Item */
+  }
+
+  .contact-sub {
+    font-size: 14px;
+  }
+}
+
+/* --- 3. Large Screens (1440px +) --- */
+@media (min-width: 1440px) {
+  .contact-grid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: start;
+    
+    /* Gap: 123px @ 1920px = 6.406vw */
+    gap: 6.406vw; 
+  }
+
+  .contact-header {
+    /* 24px @ 1920px */
+    font-size: 1.25vw; 
+    margin-bottom: 1.25vw;
+  }
+
+  .contact-title {
+    /* 20px @ 1920px */
+    font-size: 1.042vw; 
+  }
+
+  .contact-sub {
+    /* 16px @ 1920px */
+    font-size: 0.833vw; 
+    margin-top: 0.208vw;
+  }
+
+  .contact-group {
+    /* approx 32px spacing */
+    margin-bottom: 0.938vw; 
+  }
+}
