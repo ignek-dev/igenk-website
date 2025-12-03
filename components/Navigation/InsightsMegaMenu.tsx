@@ -187,7 +187,7 @@ const handleClick = (e: React.MouseEvent) => {
               {featuredEvent.title}
             </p>
            <Link href="/blog" onClick={handleClick} className="group block">
-              <div className="flex h-[450px] w-full items-center justify-center overflow-hidden rounded-[14.35px] border-[1.2px] border-white/20 bg-black/20 transition-all duration-300 group-hover:border-white/40">
+              <div className="flex items-center overflow-hidden border-white/20 bg-black/20 transition-all duration-300 group-hover:border-white/40">
                 {/* Loader */}
                 {loading && (
                   <div className="flex flex-col items-center justify-center gap-4">
@@ -206,7 +206,7 @@ const handleClick = (e: React.MouseEvent) => {
                     alt="Latest Blog Featured Image"
                     width={800}
                     height={450}
-                    className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    className="max-h-[26.438vw] max-w-[43.667vw] object-cover transition-transform rounded-[14.35px] duration-300 group-hover:scale-105"
                   />
                 )}
               </div>
