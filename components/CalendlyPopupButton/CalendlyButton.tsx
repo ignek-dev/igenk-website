@@ -65,11 +65,11 @@ export default function CalendlyButton({
 
   return (
     <Tooltip text="Schedule Meeting">
-      <div className="nav-fancy-button">
-        <div className="nav-fancy-glow" style={{ "--button-bg-color": buttonColor } as React.CSSProperties}></div>
+      <div className="border border-[#00979E] rounded-full hover:bg-white/10 transition-colors">
+        {/* <div className="" style={{ "--button-bg-color": buttonColor } as React.CSSProperties}></div> */}
         <button type="button" aria-label="Schedule-Meeting" onClick={handleAction} className="nav-round-btn">
           <div className="nav-round-btn-inner cursor-pointer">
-            <Image src="/images/icon/calendar.png" alt="calendar" width={28} height={28} />
+            <Image src="/images/icon/calendar.png" alt="calendar" width={24} height={24} />
           </div>
         </button>
       </div>

@@ -114,7 +114,7 @@ export default function CompanyMegaMenu({ onClose }: MegaMenuProps) {
       {/* Background Gradient */}
       {/* <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_14%_0%,#00979E_0%,#0E7BF800_60%)] opacity-40" /> */}
 
-      <div className="global-container mx-auto w-full px-4 py-10 pb-16 md:px-8">
+      <div className="global-container mx-auto w-full px-4 py-9.5 pb-16 md:px-8">
         <div className="grid grid-cols-12 items-start gap-[3.1875rem]">
           {/* Left Side: Cards */}
           <div className="col-span-5">
@@ -243,7 +243,7 @@ export default function CompanyMegaMenu({ onClose }: MegaMenuProps) {
               </div>
             </div>
 
-            <div className="mt-8 flex items-center gap-25 border-white/10 pt-8">
+            <div className="mt-8 flex justify-between gap-25 border-white/10 pt-8">
               <div className="flex items-center gap-3 sm:gap-4 md:gap-5 lg:gap-6 xl:gap-[1.0417vw]">
                 <Image
                   src={"/images/icon/location.png"}
