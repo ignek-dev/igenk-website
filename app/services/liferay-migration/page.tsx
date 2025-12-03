@@ -172,7 +172,7 @@ export default function LiferayMigrationPage() {
                 <div className="relative mt-[0.313vw] flex flex-col">
                   {/* Vertical line */}
                   <div
-                    className="absolute top-0 left-[1.999vw] h-[89%] bg-gray-400"  
+                    className="absolute top-0 left-[1.999vw] h-[89%] bg-white"  
                     style={{ width: "4px" }}
                   ></div>
 
