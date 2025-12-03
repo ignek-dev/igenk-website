@@ -66,7 +66,7 @@ export default function LiferayPerformanceTuningPage() {
           </div>
 
           {/* Feature tabs */}
-          <div className="mt-15 inline-flex flex-wrap gap-[1.563vw]">
+          <div className="mt-[3.177vw] inline-flex flex-wrap gap-[1.563vw]  ">
             {featureTabs.map((label, index) => (
               <span
                 key={index}
@@ -138,7 +138,7 @@ export default function LiferayPerformanceTuningPage() {
                   <Image src={item?.image ?? ""} alt="Progress icon" width={44} height={44} />
                   <h3 className="h-[4.688vw] w-[17.292vw] text-[1.563vw]! font-medium!">{item.title}</h3>
                   <p className="p20 h-[6.25vw] text-white/80">{item.desc}</p>
-                  {!isLastRow && <hr className="bottom-0 left-0 my-[3.333vw] w-full border-b border-white/20" />}
+                  {!isLastRow && <hr className="bottom-0 left-0 mb-[3.333vw] mt-[2.292vw] w-full border-b border-white/20" />}
                 </div>
               )
             })}

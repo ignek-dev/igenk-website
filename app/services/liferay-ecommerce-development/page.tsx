@@ -188,11 +188,12 @@ export default function LiferayEcommerceDevelopmentPage() {
             {ecommerceDevelopmentUsingLiferay.map((item, index) => (
               <div
                 key={index}
-                className="relative z-[1] flex flex-col rounded-[16px] border border-[#1F2937] bg-black px-[1.875vw] pt-[1.771vw] pb-[1.771vw]"
+                className="relative z-[1]  flex flex-col rounded-[16px] border border-[#1F2937] bg-black px-[1.875vw] pt-[1.771vw] pb-[1.771vw]"
                 style={{
                   boxShadow: "0 0 0 0 rgba(0,0,0,0), 0 0 0 1px rgba(244,244,245,0.10), 0 0 0 0 #FFF",
                 }}
               >
+                <div className="glow-bg absolute inset-0 -z-10"></div>
                 <div style={{}}></div>
                 {/* Title */}
                 <h3 className="z-10 mt-[-3.385vw] w-max rounded-full border border-gray-700 bg-black px-[1.875vw] py-[0.521vw] text-[1.458vw]! font-medium text-white">
@@ -200,7 +201,8 @@ export default function LiferayEcommerceDevelopmentPage() {
                 </h3>
 
                 {/* Description */}
-                <p className="p20 mt-[1.276vw] font-normal text-[#D1D5DB]!">{item.description}</p>
+                <p className="p20 mt-[1.276vw] font-normal bg-black text-[#D1D5DB]!">{item.description}</p>
+                
               </div>
             ))}
           </div>
@@ -226,7 +228,7 @@ export default function LiferayEcommerceDevelopmentPage() {
                 className="relative flex min-w-max gap-0 will-change-transform"
                 style={{ x: smoothX }}
               >
-                <div className="relative flex min-w-max gap-[8.833vw]">
+                <div className="relative flex min-w-max gap-[6.833vw]">
                   {/* ✅ Perfectly aligned horizontal line */}
                   <div className="absolute top-[2.0835vw] left-0 z-0 h-[4px] w-[90%] bg-black"></div>
 
