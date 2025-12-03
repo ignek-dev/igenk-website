@@ -102,7 +102,7 @@ export default function LiferayExpertAdvicePage() {
           {/* Left Column */}
           <div className="sticky top-10 col-span-12 flex flex-col justify-center space-y-6 md:col-span-6">
             <h1 className="text-5xl leading-[60px] leading-tight font-bold text-white [@media(min-width:1440px)]:text-4xl [@media(min-width:1800px)]:text-5xl">
-              Solutions For Production, Performance, Development And Architecture
+              Solutions For Architecture To Production
             </h1>
             <p className="text-lg leading-relaxed text-white">
               From production releases to architecture design, our Liferay Expert Advice Services offer tailored

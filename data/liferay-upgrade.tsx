@@ -268,3 +268,54 @@ export const dynamicSteps = [
   { number: 6, title: "Reporting & Insights" },
   { number: 7, title: "Reduced Maintenance Efforts" },
 ]
+
+export const liferayDxUpgradeHero = {
+  badge: "Liferay Services",
+  headingLine1: "Liferay",
+  headingLine2: "DXP 7.4 Upgrade",
+  description:
+    "Liferay DXP 7.4 introduces advanced features, enhanced performance, and stronger security for a more powerful digital experience.",
+  subSection: {
+    title: "Liferay DXP 7.4 Upgrade",
+    description:
+      "Learn how the 7.4 upgrade transforms your digital platform, making it faster, smarter, and more secure.",
+  },
+};
+
+export const liferayDxUpgradeBenefits = {
+  titleLine1: "Key Benefits of Liferay",
+  titleLine2: "DXP 7.4 Upgrade",
+  description:
+    "Liferay DXP 7.4 Upgrade is essential for organizations aiming to enhance their digital experience capabilities and stay competitive in today’s fast-paced environment. Here are several compelling reasons to consider the upgrade.",
+};
+
+export const liferayDxUpgradeProcess = {
+  title: "Liferay DXP 7.4 Upgrade Process",
+  description:
+    "Our Liferay DXP 7.4 upgrade process ensures smooth migration, improved ",
+  description2:
+    "performance, enhanced security, and feature-rich functionality with minimal downtime.",
+};
+
+export const enhanceDigitalExperience = {
+  titlePart1: "Enhance Digital Experiences with",
+  titlePart2: "the Liferay DXP 7.4 Upgrade",
+
+  descriptionPart1:
+    "Our dedicated Liferay team offers ongoing Liferay Support",
+  descriptionPart2:
+    "and Maintenance to address the challenges of a dynamic",
+};
+
+export const whyChooseIgnek = {
+  titlePart1: "Why Choose IGNEK For Liferay DXP 7.4 Upgrade Services?",
+
+  descriptionPart1:
+    "Liferay DXP 7.4 Upgrade is a pivotal step for organizations looking to enhance their digital experience. At IGNEK, we specialize in",
+};
+
+export const talkToExpertUpgrade = {
+  headingPart1: "Future-Proof Your Portal with Liferay 7.4 Upgrade",
+  descriptionPart1: "Upgrade to 7.4 for stronger security, scalability, and smarter digital experiences.",
+  button:"Upgrade Your Liferay",
+};

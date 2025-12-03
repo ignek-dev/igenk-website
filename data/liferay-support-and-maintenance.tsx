@@ -14,7 +14,6 @@ export const supportChecklist = [
   "Backup & disaster recovery readiness",
 ]
 
-// Updated data array
 export const activities = [
   {
     num: "01",
