@@ -342,7 +342,7 @@ export default function BlogsContent() {
                             alt={"Author"}
                             width={40}
                             height={40}
-                            className="h-10 w-10 rounded-full border-2 border-white/80 object-cover"
+                            className="h-[2.083vw] w-[2.083vw] rounded-full  object-cover"
                           />
                           <span className="p20 font-medium">{blog?.author}</span>
                           <span className="p18 opacity-80">• {blog.date}</span>
