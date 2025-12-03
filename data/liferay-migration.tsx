@@ -100,3 +100,34 @@ export const LiferayMigrationData = [
     desc: "From assessment to post-migration monitoring, we provide ongoing guidance and technical support.",
   },
 ]
+
+export const heroMigration = {
+  titlePart1: "Liferay",
+  titlePart2: "Migration",
+
+  descriptionPart1: "Upgrade smoothly to the latest Liferay version with expert Liferay Migration to ensure secure data transfer, minimal downtime, and optimized platform performance.",
+};
+
+export const whyMigrateLiferay = {
+  titlePart1: "Why Enterprises Should",
+  titlePart2: "Migrate To Liferay?",
+
+  descPart1:
+    "Liferay provides a scalable platform for personalized customer experiences,",
+  descPart2:
+    "with Liferay Portal Migration enhancing content management for efficient delivery.",
+};
+
+export const liferayMigrationProcess = {
+  title: "Our Liferay Migration Process",
+  description:
+    "We optimize transitions from legacy systems to Liferay with our proven Liferay Portal Migration services, using best practices for seamless upgrades. Our expertise ensures cost-effective, high-quality transitions. Here is our Liferay Migration process.",
+  buttonText: "Schedule Meeting",
+};
+
+export const liferayMigrationTalk = {
+  heading: "Hassle-Free Liferay Portal Migration",
+  description:
+    "Ensure smooth upgrades with expert guidance and proven migration strategies.",
+  buttonText: "Start Your Migration",
+};

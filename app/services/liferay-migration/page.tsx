@@ -6,11 +6,15 @@ import WhatMake from "components/Common/WhatMake"
 import {
   features,
   featureTabs,
+  heroMigration,
   LiferayMigrationData,
+  liferayMigrationProcess,
   LiferayMigrationSubContent,
+  liferayMigrationTalk,
   LiferayMigrationTitle1,
   LiferayMigrationTitle2,
   steps,
+  whyMigrateLiferay,
 } from "data/liferay-migration"
 
 const metadata: Metadata = {
@@ -34,15 +38,6 @@ const metadata: Metadata = {
 }
 
 export default function LiferayMigrationPage() {
-  // const circlePoints = [
-  //   { label: "Create Personalized Experiences for Users", pos: "top-4 left-1/2 -translate-x-1/2" },
-  //   { label: "Easy Integration Capabilities", pos: "top-1/3 right-4" },
-  //   { label: "Rich UI/UX Capabilities", pos: "top-1/2 right-2 -translate-y-1/2" },
-  //   { label: "Workflows, Forms, and Collaboration", pos: "bottom-1/3 right-4" },
-  //   { label: "Low Code/No Code Features boost Citizen Development", pos: "bottom-4 left-1/2 -translate-x-1/2" },
-  //   { label: "Mobile‑ready Capabilities", pos: "bottom-1/3 left-4" },
-  //   { label: "Efficient Content Management", pos: "top-1/2 left-2 -translate-y-1/2" },
-  // ]
 
   return (
     <main className="">
@@ -54,14 +49,13 @@ export default function LiferayMigrationPage() {
             <div>
               
               <h1 className="text-gradient-liferay">
-                Liferay
+                {heroMigration.titlePart1}
                 <br />
-                <span className="block">Migration</span>
+                <span className="block">{heroMigration.titlePart2}</span>
               </h1>
             </div>
             <p className="p18 absolute bottom-0 w-[28.646vw] text-right md:justify-self-end">
-              Upgrade smoothly to the latest Liferay version with expert Liferay Migration to ensures secure data
-              transfer, minimal downtime, and optimized platform performance.
+              {heroMigration.descriptionPart1}
             </p>
           </div>
 
@@ -117,11 +111,10 @@ export default function LiferayMigrationPage() {
                     </svg>
                   </div>
                   <h2 className="w-[26.146vw] text-[1.875vw]! font-medium">
-                    Why Enterprises Should Migrate To Liferay?
+                    {whyMigrateLiferay.titlePart1} {whyMigrateLiferay.titlePart2}
                   </h2>
                   <p className="text-[0.833vw]! w-[21.75vw] leading-relaxed text-gray-600">
-                    Liferay provides a scalable platform for personalized customer experiences, with Liferay Portal
-                    Migration enhancing content management for efficient delivery.
+                    {whyMigrateLiferay.descPart1} {whyMigrateLiferay.descPart2}
                   </p>
                 </div>
               </div>
@@ -160,11 +153,9 @@ export default function LiferayMigrationPage() {
             <div className="sticky top-[10.417vw] flex w-[74.698vw] flex-col gap-[1.458vw]">
               <h2 className="leading-[60px] font-semibold">Our Liferay Migration Process</h2>
               <p className="p18 text-gray-100">
-                We optimize transitions from legacy systems to Liferay with our proven Liferay Portal Migration
-                services, using best practices for seamless upgrades. Our expertise ensures cost-effective, high-quality
-                transitions. Here is our Liferay Migration process.
+                {liferayMigrationProcess.description}
               </p>
-              <ScheduleMeetingButton isFullWidth={false} btnName="Schedule Meeting" />
+              <ScheduleMeetingButton isFullWidth={false} btnName={liferayMigrationProcess.buttonText} />
             </div>
 
             <div>
@@ -213,9 +204,9 @@ export default function LiferayMigrationPage() {
         subContext={LiferayMigrationSubContent}
       />
       <TalkToExpert
-        heading="Hassle-Free Liferay Portal Migration"
-        description="Ensure smooth upgrades with expert guidance and proven migration strategies."
-        buttonText="Start Your Migration"
+        heading={liferayMigrationTalk.heading}
+        description={liferayMigrationTalk.description}
+        buttonText={liferayMigrationTalk.buttonText}
       />
       <BlogSection />
 
