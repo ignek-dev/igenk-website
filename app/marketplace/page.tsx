@@ -55,6 +55,16 @@ const toolsData = [
     tags: ["Productivity", "Notes Panel","LocalStorage"],
     link: "https://marketplace.liferay.com/p/sticky-notes-for-the-portal",
   },
+  {
+    id: 6,
+    icon: "/images/marketplace/service-builder-migration-utility.png",
+    module: "Data Migration",
+    title: "Service Builder Schema-to-Object Converter",
+    description:
+      "Creates object definitions based on your service file and migrates existing data from legacy tables; also handles relationships between the tables.",
+    tags: ["Liferay service", "Objects","Migration Automation"],
+    link: "#",
+  },
 ]
 
 export default function MarketplacePage() {
