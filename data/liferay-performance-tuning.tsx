@@ -32,10 +32,11 @@ export const items = [
 ]
 
 export const featureTabs = [
-  "Comprehensive Performance Analysis",
+  "Enhanced User Interaction Speed",
+
   "Data Load Optimization",
   "Configuration Fine-Tuning",
-  "Enhanced User Interaction Speed",
+  "Comprehensive Performance Analysis",
   "Proactive Monitoring and Maintenance",
 ]
 
@@ -106,45 +107,45 @@ export const caseStudies = [
   },
 ]
 
-export const serviceDate=[
-   {
+export const serviceDate = [
+  {
     title: "Enhanced User Experience",
     desc: "Delivering a faster, more responsive Liferay Portal through optimized resource allocation for efficient CPU, memory & disk use.",
-    image:"/images/liferay-pages-image/Enhanced-User-Experience.svg",
+    image: "/images/liferay-pages-image/Enhanced-User-Experience.svg",
   },
   {
     title: "Scalability",
     desc: "Prepare your Liferay environment for growth with scalable configurations, clustering, and distributed deploy.",
-    image:"/images/liferay-pages-image/Scalability.svg",
+    image: "/images/liferay-pages-image/Scalability.svg",
   },
   {
     title: "Load Testing Excellence",
     desc: "We are very transparent in terms of work, culture & communication to build trust & strong bonding among employees",
-    image:"/images/liferay-pages-image/Load-Testing-Excellence.svg",
+    image: "/images/liferay-pages-image/Load-Testing-Excellence.svg",
   },
   {
     title: "Database Performance",
     desc: "Optimize database access with tuned configurations, indexing, and query optimizations for enhanced performance.",
-    image:"/images/liferay-pages-image/Database-Performance.svg",
+    image: "/images/liferay-pages-image/Database-Performance.svg",
   },
   {
     title: "Tailored Portal Configuration",
     desc: "Customize Liferay Portal settings to fit your organization’s requirements, ensuring the platform meets your business needs.",
-    image:"/images/liferay-pages-image/Tailored-Portal-Configuration.svg",
+    image: "/images/liferay-pages-image/Tailored-Portal-Configuration.svg",
   },
   {
     title: "Web and Application Server Optimization",
     desc: "Fine-tune web and application server settings, including thread pools and connections, to maximize performance.",
-    image:"/images/liferay-pages-image/Web-Application-Server.svg",
+    image: "/images/liferay-pages-image/Web-Application-Server.svg",
   },
   {
     title: "Reliability and Fault Tolerance",
     desc: "Increase the reliability of your portal with fine-tuned settings for clustering, failover mechanisms, and session replication.",
-    image:"/images/liferay-pages-image/Reliability-and-Fault.svg",
+    image: "/images/liferay-pages-image/Reliability-and-Fault.svg",
   },
   {
     title: "Java Virtual Machine Fine-Tuning",
     desc: "Optimize JVM settings, including heap size and garbage collection, for improved Java application performance.",
-    image:"/images/liferay-pages-image/JVM-Fine-Tuning.svg",
+    image: "/images/liferay-pages-image/JVM-Fine-Tuning.svg",
   },
 ]

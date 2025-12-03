@@ -109,7 +109,7 @@ export default function LiferayEcommerceDevelopmentPage() {
         <div className="global-container mx-auto  pt-[3.281vw] pb-[3.802vw]">
           <div className="3.802vw relative grid items-start gap-10 md:grid-cols-2">
             <div>
-              <div className="p18 banner-tab inline-flex items-center">Liferay Services</div>
+              
               <h1 className="mt-[2.031vw]">
                 Liferay
                 <br />

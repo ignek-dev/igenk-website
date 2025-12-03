@@ -115,7 +115,7 @@ export default function LiferayArchitectureDesignPage() {
         <div className="global-container mx-auto w-full pt-[3.333vw] pb-[3.802vw]">
           <div className="relative grid items-start gap-10 text-[3.75vw] md:grid-cols-2">
             <div>
-              <div className="p18 banner-tab">{liferayArchitectureHeroData.tab}</div>
+         
               <h1 className="mt-[2.031vw] leading-tight font-semibold">
                 {liferayArchitectureHeroData.titleLine1}
                 <br />
