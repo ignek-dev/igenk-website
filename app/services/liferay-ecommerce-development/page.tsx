@@ -229,9 +229,9 @@ export default function LiferayEcommerceDevelopmentPage() {
                 className="relative flex min-w-max gap-0 will-change-transform"
                 style={{ x: smoothX }}
               >
-                <div className="relative flex min-w-max">
+                <div className="relative flex min-w-max gap-[4.833vw]">
                   {/* ✅ Perfectly aligned horizontal line */}
-                  <div className="absolute top-[2.0835vw] left-0 z-0 h-[4px] w-[88%] bg-black"></div>
+                  <div className="absolute top-[2.0835vw] left-0 z-0 h-[4px] w-[89%] bg-black"></div>
 
                   {steps.map((step, index) => (
                     <div key={index} className="flex w-[24.875vw] flex-col gap-[2.188vw]">
@@ -246,7 +246,7 @@ export default function LiferayEcommerceDevelopmentPage() {
                         </h3>
 
                         {/* ✅ Description */}
-                        <p className="p20 bottom-0 mt-[1.458vw] w-[19.354vw] text-left text-gray-600">
+                        <p className="p20 bottom-0 mt-[1.458vw] w-[25.354vw] text-left text-gray-600">
                           {step.description}
                         </p>
                       </div>

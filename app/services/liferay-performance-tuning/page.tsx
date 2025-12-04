@@ -81,8 +81,8 @@ export default function LiferayPerformanceTuningPage() {
 
       <section className="bg-[#f7f7f7] text-black">
         <div className="global-container mx-auto w-full pt-[3.333vw] pb-[3.333vw]">
-          <div className="flex flex-col items-start gap-[1.458vw]">
-            <h2 className="text-[#000000]">{liferayPerformanceFeatures.heading}</h2>
+          <div className="flex flex-col items-center gap-[1.458vw]">
+            <h2 className="text-[#000000] text-center">{liferayPerformanceFeatures.heading}</h2>
             <p className="p18 text-[#374151]">{liferayPerformanceFeatures.description}</p>
           </div>
 

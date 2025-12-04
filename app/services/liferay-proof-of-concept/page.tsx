@@ -42,9 +42,9 @@ export default function LiferayProofOfConceptPage() {
     <main>
       <section className="bg-black text-white global-container pt-[7.917vw] pb-[3.802vw]">
         <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_10%_0%,#0E7BF8_0%,#00979E_40%,transparent_65%)] opacity-25" />
-        <div className="inline-flex items-center rounded-full border border-white px-[1.51vw] py-[0.521vw] p18 text-white">
+        {/* <div className="inline-flex items-center rounded-full border border-white px-[1.51vw] py-[0.521vw] p18 text-white">
           {liferayPocHeroData.badge}
-        </div>
+        </div> */}
         <div className="flex items-end justify-between mt-[2.031vw]">
           <h1 className=" tracking-[-2%]">
             {liferayPocHeroData.title.line1}

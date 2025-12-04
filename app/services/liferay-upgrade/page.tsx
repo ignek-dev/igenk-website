@@ -144,7 +144,7 @@ export default function LiferayUpgradePage() {
             {/* OUTER DRAG WRAPPER */}
             <div
               ref={containerRef}
-              className="no-scrollbar w-full cursor-grab overflow-x-auto overflow-y-hidden active:cursor-grabbing"
+              className="no-scrollbar w-full cursor-grab [-ms-overflow-style:'none'] [scrollbar-width:'none'] [&::-webkit-scrollbar]:hidden overflow-x-auto overflow-y-hidden active:cursor-grabbing"
               onMouseDown={handleMouseDown}
               onMouseMove={handleMouseMove}
               onMouseUp={handleMouseUp}
