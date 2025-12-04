@@ -1,3 +1,5 @@
+import { head } from "lodash"
+
 export const featureTabs = [
   "Liferay Consultation",
   "Liferay Architectural Design",
@@ -66,3 +68,30 @@ export const LiferayExpertAdviceData = [
     desc: "Every recommendation is backed by performance data, best practices, and proven strategies to maximize platform efficiency.",
   },
 ]
+
+export const expertAdviceHero = {
+  tag: "Liferay Services",
+  heading: "Liferay",
+  heading2: "Expert Advice",
+  description:
+    "Our Liferay Expert Advice Services are here to provide you with the guidance and expertise you need to ensure your digital experience platform performs at its best.",
+};
+
+export const expertAdviceSection = {
+  heading: "Liferay Expert Advice Service",
+  description:
+    "Gain actionable insights through our Liferay Expert Advice Service and Liferay Consultation, helping you enhance performance, implement new features, and create smooth, engaging user experiences.",
+};
+
+export const expertAdviceSolutions = {
+  heading: "Solutions For Architecture To Production",
+  description:
+    "From production releases to architecture design, our Liferay Expert Advice Services offer tailored strategies and hands-on support to improve efficiency, scalability, and overall platform performance.",
+};
+
+export const liferayExpertCTA = {
+  heading: "Get Professional Guidance for Liferay Optimization",
+  description:
+    "Schedule a Liferay consultation today and start optimizing your environment effectively.",
+  buttonText: "Consult Our Experts",
+};
