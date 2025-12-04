@@ -382,7 +382,7 @@ export default function LiferayUpgradePage() {
         </div>
       </section>
 
-      <section className="bg-[#f7f7f7] py-[64px] text-black md:py-[64px] lg:py-[64px]">
+<section className="bg-[#f7f7f7] py-[64px] text-black md:py-[64px] lg:py-[64px]">
         <div className="global-container items-start">
           <div className="relative grid items-center gap-10 md:grid-cols-2">
             <h2 className="">{whyChooseIgnek.titlePart1}</h2>
@@ -407,16 +407,16 @@ export default function LiferayUpgradePage() {
             </div>
           </div>
         </div>
-      </section>
+      </section>      
 
-      <CaseStudy caseStudies={caseStudies} />
+      {/* <CaseStudy caseStudies={caseStudies} /> */}
 
-      <WhatMake
+      {/* <WhatMake
         WhatMakeData={LiferayUpgradeData}
         titleText1={LiferayUpgradeTitle1}
         titleText2={LiferayUpgradeTitle2}
         subContext={LiferayUpgradeSubContent}
-      />
+      /> */}
       <TalkToExpert
         heading={talkToExpertUpgrade.headingPart1}
         description={talkToExpertUpgrade.descriptionPart1}
