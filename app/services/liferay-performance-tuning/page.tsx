@@ -48,36 +48,56 @@ export default function LiferayPerformanceTuningPage() {
   const [activeIndex, setActiveIndex] = useState(0);
 const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
 const sectionRef = useRef<HTMLDivElement>(null);
-
 useEffect(() => {
+  let ticking = false;
+
   const handleScroll = () => {
-    if (!sectionRef.current) return;
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        setTimeout(() => {   // ✅ controls the slow effect (increase for more slow)
 
-    const sectionTop = sectionRef.current.offsetTop;
-    const sectionBottom = sectionTop + sectionRef.current.offsetHeight;
-    const scrollPosition = window.scrollY + window.innerHeight / 1;
+          if (!sectionRef.current) return;
 
-    // Check if we're within the section bounds
-    if (scrollPosition >= sectionTop && scrollPosition <= sectionBottom) {
-      // Find active card based on scroll position
-      for (let i = cardRefs.current.length - 1; i >= 0; i--) {
-        const card = cardRefs.current[i];
-        if (card) {
-          const cardTop = card.offsetTop;
-          if (scrollPosition >= cardTop) {
-            setActiveIndex(i);
-            break;
+          const sectionTop = sectionRef.current.offsetTop;
+          const sectionBottom =
+            sectionTop + sectionRef.current.offsetHeight;
+          const scrollPosition =
+            window.scrollY + window.innerHeight / 2;
+
+          if (
+            scrollPosition >= sectionTop &&
+            scrollPosition <= sectionBottom
+          ) {
+            for (let i = cardRefs.current.length - 1; i >= 0; i--) {
+              const card = cardRefs.current[i];
+              if (card) {
+                const cardTop = card.offsetTop;
+
+                if (scrollPosition >= cardTop) {
+                  setActiveIndex((prev) =>
+                    prev !== i ? i : prev
+                  );
+                  break;
+                }
+              }
+            }
           }
-        }
-      }
+
+          ticking = false;
+
+        }, 120); // 🔥 Increase this to slow more (200–300 looks very smooth)
+      });
+
+      ticking = true;
     }
   };
 
-  window.addEventListener('scroll', handleScroll);
-  handleScroll(); // Initial check
+  window.addEventListener("scroll", handleScroll);
+  handleScroll();
 
-  return () => window.removeEventListener('scroll', handleScroll);
+  return () => window.removeEventListener("scroll", handleScroll);
 }, []);
+
 
   return (
     <main className="pb-0">

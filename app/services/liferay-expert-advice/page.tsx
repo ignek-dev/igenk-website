@@ -120,15 +120,15 @@ export default function LiferayExpertAdvicePage() {
           </div>
 
           {/* Right Column */}
-          <div className="relative flex  flex-col items-end">
+          <div className="relative flex z-  flex-col items-end">
             <div  className="relative">
               {solutions.map((item, index) => (
                 <div
                   key={index}
-                   style={{ top: `calc(9vw + ${index * 5}vw)` }}
- className={`sticky mb-16 transition-opacity duration-500 bg-black    `}                >
+                   style={{ top: `calc(10vw + ${index * 6}vw)` }}
+                       className={`sticky mb-10 transition-opacity duration-500 bg-black    `}                >
                   {index!==0?<hr />:<hr className="hidden"/>} 
-                  <div className="flex items-baseline gap-[3.438vw] mt-12">
+                  <div className="flex items-baseline gap-[3.438vw] mt-7">
                    
                     <span className="text-[1.563vw] leading-[3.125vw] font-normal text-white">
                       ({item.number})
