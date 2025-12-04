@@ -38,7 +38,7 @@ const WhatWeBring: React.FC = () => {
 
   const horizontalDistancePx = Math.max(
     0,
-    totalWidth - viewportW - lastCardWidth - gap - pr + lastCardWidth + 500
+    totalWidth - viewportW - lastCardWidth - gap - pr + lastCardWidth + 400
   );
 
   // raw buffers

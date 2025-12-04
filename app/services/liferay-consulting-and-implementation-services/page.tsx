@@ -131,7 +131,7 @@ export default function LiferayConsultationPage() {
       <section className="bg-[#F9FAFB] py-[64px]">
         <div className="global-container flex">
           {/* Left Content */}
-          <div className="flex flex-1 flex-col justify-between gap-25">
+          <div className="flex flex-1 flex-col gap-[12.396vw]">
             {/* Stats Row */}
             <div className="flex-no-wrap grid-cols-2 items-center gap-[6.6667vw] [@media(min-width:1440px)]:grid [@media(min-width:1800px)]:flex">
               {/* Stat 1 */}
@@ -152,9 +152,9 @@ export default function LiferayConsultationPage() {
             </div>
 
             {/* Heading and Description Block - Positioned below with a top margin */}
-            <div className="mt-24">
+            <div>
               <h2 className="text-gray-900">{liferayDigitalEdgeData.heading}</h2>
-              <p className="p20 mt-[1.927vw] max-w-[500px] text-gray-600">{liferayDigitalEdgeData.description}</p>
+              <p className="p20 mt-[2.083vw] mb-[3.125vw] max-w-[500px] text-gray-600">{liferayDigitalEdgeData.description}</p>
             </div>
           </div>
 

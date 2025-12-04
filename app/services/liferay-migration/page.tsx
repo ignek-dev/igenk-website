@@ -155,7 +155,7 @@ export default function LiferayMigrationPage() {
               <p className="p18 text-gray-100">
                 {liferayMigrationProcess.description}
               </p>
-              <ScheduleMeetingButton isFullWidth={false} btnName={liferayMigrationProcess.buttonText} />
+              {/* <ScheduleMeetingButton isFullWidth={false} btnName="Schedule Meeting" /> */}
             </div>
 
             <div>
