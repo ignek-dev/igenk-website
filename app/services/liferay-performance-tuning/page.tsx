@@ -86,7 +86,7 @@ export default function LiferayPerformanceTuningPage() {
             <p className="p18 text-[#374151]">{liferayPerformanceFeatures.description}</p>
           </div>
 
-          <div className="mt-[2.604vw] grid grid-cols-1 divide-y divide-gray-200 md:grid-cols-3 md:divide-x md:divide-y-0">
+          <div className="mt-[2.604vw] grid grid-cols-1 divide-y divide-gray-200 md:grid-cols-3 md:divide-x-2 md:divide-y-0">
             {liferayPerformanceFeatures.features.slice(0, 3).map((feature, index) => (
               <div
                 key={index}
