@@ -139,15 +139,15 @@ export default function Footer() {
         </div>
       </div>
           {/* 3. Office Column */}
-      <div className="office-col">
+      <div>
         <p className="contact-header">Office</p>
-        <div className="contact-group">
+        <div className="office-group">
           <p className="contact-title">
             Ahmedabad, India
           </p>
           {/* Optional: Add full address in sub-text if needed, or keep clean as per screenshot */}
         </div>
-        <div className="contact-group">
+        <div className="office-group">
           <p className="contact-title">
             Dubai, United Arab Emirates
           </p>

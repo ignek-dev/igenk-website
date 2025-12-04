@@ -35,7 +35,13 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 2), transparent);
+  /* OLD: background: linear-gradient(to top, rgba(0, 0, 0, 2), transparent);
+     
+     NEW: The code below makes it darker. 
+     - 0% to 40%: Solid Black
+     - 100%: Transparent
+  */
+  background: linear-gradient(to top, black 0%, rgba(0,0,0,0.8) 40%, transparent 90%);
   transition: opacity 0.5s ease;
   pointer-events: none;
 }
@@ -264,67 +270,77 @@ text {
    Bottom Contact Section (Emails, Call, Office)
    ========================================= */
 
-/* --- 1. Mobile & Small Tablet Defaults (Fixed Minimum Sizes) --- */
+/* --- 1. Mobile & Small Tablet Defaults --- */
 .contact-grid {
   display: grid;
-  grid-template-columns: 1fr; /* Stack vertically */
+  grid-template-columns: 1fr;
   gap: 40px;
 }
 
-/* Minimum readable sizes (matches Top Section Mobile) */
+/* Default Header Style (Emails & Call) */
 .contact-header {
   font-family: var(--font-poppins);
   font-weight: 600;
-  font-size: 20px; /* Never goes below 20px */
+  font-size: 20px;
   color: white;
-  margin-bottom: 16px;
+  
+  /* FIX: Force exactly 8px bottom margin for Emails & Call */
+  margin-bottom: 8px !important; 
+}
+
+/* Specific Override for Office Column (3rd Item) */
+.contact-grid > div:nth-child(3) .contact-header {
+  /* FIX: Force exactly 18px bottom margin for Office */
+  margin-bottom: 18px !important;
 }
 
 .contact-title {
   font-family: var(--font-poppins);
   font-weight: 600;
-  font-size: 16px; /* Never goes below 16px */
+  font-size: 16px;
   color: white;
   display: block;
-  transition: color 0.3s ease;
 }
 
+/* Remove Blue Hover */
 .contact-title:hover {
-  color: #00979E;
+  color: white; 
 }
 
 .contact-sub {
   font-family: var(--font-poppins);
   font-weight: 400;
-  font-size: 14px; /* Readable sub-text */
+  font-size: 14px;
   color: #9CA3AF;
   margin-top: 4px;
 }
 
+/* Item Spacing */
 .contact-group {
-  margin-bottom: 24px;
+  margin-bottom: 8px;
+}
+.office-group {
+  margin-bottom: 18px; 
 }
 
 /* --- 2. Standard Laptops (1280px - 1439px) --- */
-/* Scale up slightly for better laptop visibility */
 @media (min-width: 1280px) and (max-width: 1439px) {
   .contact-grid {
     grid-template-columns: repeat(3, max-content);
-    gap: 60px; /* Reduced gap for laptops */
+    gap: 60px;
   }
 
   .contact-header {
-    font-size: 24px; /* Matches Top Section Laptop Header */
-    margin-bottom: 20px;
+    font-size: 24px;
+    margin-bottom: 8px !important; /* Keep 8px */
   }
 
-  .contact-title {
-    font-size: 18px; /* Matches Top Section Laptop Item */
+  /* Keep 18px for Office on Laptop */
+  .contact-grid > div:nth-child(3) .contact-header {
+    margin-bottom: 18px !important;
   }
 
-  .contact-sub {
-    font-size: 14px;
-  }
+  .contact-title { font-size: 18px; }
 }
 
 /* --- 3. Large Screens (1440px +) --- */
@@ -333,30 +349,29 @@ text {
     display: grid;
     grid-template-columns: auto auto auto;
     justify-content: start;
-    
-    /* Gap: 123px @ 1920px = 6.406vw */
     gap: 6.406vw; 
   }
 
   .contact-header {
-    /* 24px @ 1920px */
     font-size: 1.25vw; 
-    margin-bottom: 1.25vw;
+    
+    /* FIX: 8px @ 1920px = 0.417vw */
+    margin-bottom: 0.417vw !important; 
   }
 
-  .contact-title {
-    /* 20px @ 1920px */
-    font-size: 1.042vw; 
+  /* FIX: Office Header Spacing Override */
+  .contact-grid > div:nth-child(3) .contact-header {
+    /* 18px @ 1920px = 0.938vw */
+    margin-bottom: 0.938vw !important;
   }
+
+  .contact-title { font-size: 1.042vw; }
 
   .contact-sub {
-    /* 16px @ 1920px */
     font-size: 0.833vw; 
     margin-top: 0.208vw;
   }
 
-  .contact-group {
-    /* approx 32px spacing */
-    margin-bottom: 0.938vw; 
-  }
+  .contact-group { margin-bottom: 0.938vw; }
+  .office-group { margin-bottom: 0.938vw; }
 }
