@@ -200,7 +200,7 @@ export default function LiferayConsultationPage() {
                 {description}
               </p>
               <div className="pt-[2 px]">
-                <ScheduleMeetingButton isFullWidth={button.isFullWidth} btnName={button.name} />
+                {/* <ScheduleMeetingButton isFullWidth={button.isFullWidth} btnName={button.name} /> */}
               </div>
             </div>
 
