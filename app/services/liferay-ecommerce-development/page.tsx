@@ -10,6 +10,11 @@ import { caseStudies } from "data/liferay-consulting-and-implementation-services
 import {
   ecommerceDevelopment,
   ecommerceDevelopmentUsingLiferay,
+  ecommerceDevLiferay,
+  ecommerceHero,
+  ecommerceOptimization,
+  ecommerceProcess,
+  ecommerceTalkToExpert,
   featureTabs,
   LiferayEcommerceDevelopmentData,
   LiferayEcommerceDevelopmentSubContent,
@@ -111,15 +116,14 @@ export default function LiferayEcommerceDevelopmentPage() {
             <div>
               
               <h1 className="mt-[2.031vw]">
-                Liferay
+                {ecommerceHero.titleLine1}
                 <br />
-                <span className="block">Ecommerce</span>
-                <span className="block">Development</span>
+                <span className="block">{ecommerceHero.titleLine2}</span>
+                <span className="block">{ecommerceHero.titleLine3}</span>
               </h1>
             </div>
             <p className="p18 absolute bottom-0 max-w-[35.438vw] text-right text-white md:justify-self-end">
-              Liferay Ecommerce Development empowers businesses to build integrated digital commerce platforms that
-              enhance customer experiences.
+              {ecommerceHero.description}
             </p>
           </div>
 
@@ -140,10 +144,9 @@ export default function LiferayEcommerceDevelopmentPage() {
       <section className="bg-[#f7f7f7] text-black">
         <div className="global-container mx-auto flex w-full flex-col gap-[3.021vw] py-[3.333vw]">
           <div className="flex flex-col gap-[1.458vw]">
-            <h2 className="">Liferay Ecommerce Performance & Scalability Optimization</h2>
+            <h2 className="">{ecommerceOptimization.heading}</h2>
             <p className="p18 justify-self-center text-gray-600">
-              Our Liferay Ecommerce Development services include performance tuning, scalability planning, and resource
-              optimization to guarantee fast load times, responsive interactions, and minimal downtime.
+              {ecommerceOptimization.description}
             </p>
           </div>
           <div>
@@ -177,10 +180,9 @@ export default function LiferayEcommerceDevelopmentPage() {
       <section className="global-container bg-black py-[3.333vw]">
         <div className="mx-auto w-full items-start">
           <div className="flex flex-col gap-[1.458vw]">
-            <h2 className="text-white">Ecommerce Development Using Liferay</h2>
+            <h2 className="text-white">{ecommerceDevLiferay.heading}</h2>
             <p className="p18 justify-self-center text-gray-100!">
-              Liferay Ecommerce Development Service streamlines online retail operations with customizable storefronts,
-              product management, order processing, and marketing tools for businesses seeking a strong online presence.
+              {ecommerceDevLiferay.description}
             </p>
           </div>
 
@@ -214,10 +216,9 @@ export default function LiferayEcommerceDevelopmentPage() {
           <div className="mx-auto w-full py-[3.333vw]">
             {/* Heading Row */}
             <div className="global-container flex flex-row items-center gap-10 md:grid-cols-2">
-              <h2 className="text-black">Our Liferay Ecommerce Development Process</h2>
+              <h2 className="text-black">{ecommerceProcess.heading}</h2>
               <p className="p18 text-right w-[46.875vw] leading-relaxed text-[#4B5563]">
-                Liferay Ecommerce enables easy creation and management of digital shopping experiences, combining strong
-                content tools with seamless transactions for improved efficiency and user satisfaction.
+                {ecommerceProcess.description}
               </p>
             </div>
 
@@ -266,9 +267,9 @@ export default function LiferayEcommerceDevelopmentPage() {
         subContext={LiferayEcommerceDevelopmentSubContent}
       />
       <TalkToExpert
-        heading="Transform Your Online Store with Liferay Ecommerce Development"
-        description="Optimize product management, checkout, payment options, and multichannel sales with ease."
-        buttonText="Explore E-Commerce Solutions"
+        heading={ecommerceTalkToExpert.heading}
+        description={ecommerceTalkToExpert.description}
+        buttonText={ecommerceTalkToExpert.buttonText}
       />
       <BlogSection />
 
