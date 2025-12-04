@@ -9,14 +9,20 @@ import {
   caseStudies,
   dxpUpgradeServices,
   dynamicSteps,
+  enhanceDigitalExperience,
   features,
   featureTabs,
+  liferayDxUpgradeBenefits,
+  liferayDxUpgradeHero,
+  liferayDxUpgradeProcess,
   LiferayUpgradeData,
   LiferayUpgradeSubContent,
   LiferayUpgradeTitle1,
   LiferayUpgradeTitle2,
   supprotAndMaintanceServices,
+  talkToExpertUpgrade,
   upgradePhases,
+  whyChooseIgnek,
 } from "data/liferay-upgrade"
 
 const metadata: Metadata = {
@@ -102,14 +108,13 @@ export default function LiferayUpgradePage() {
                 Liferay Services
               </div> */}
               <h1 className="mt-[2.031vw] leading-tight font-semibold">
-                Liferay
+                {liferayDxUpgradeHero.headingLine1}
                 <br />
-                <span className="block">DXP 7.4 Upgrade</span>
+                <span className="block">{liferayDxUpgradeHero.headingLine2}</span>
               </h1>
             </div>
             <p className="p18 absolute bottom-0 mt-[1.458vw] text-right text-white md:justify-self-end lg:max-w-xl xl:max-w-2xl">
-              Liferay DXP 7.4 introduces advanced features, enhanced performance,<br/> and stronger security for a more
-              powerful digital experience.
+              {liferayDxUpgradeHero.description}
             </p>
           </div>
 
@@ -129,10 +134,10 @@ export default function LiferayUpgradePage() {
 
       <section className="bg-[#f7f7f7] text-black">
         <div className="global-container py-12 lg:py-16">
-          <h2 className="leading-tight font-semibold">Liferay DXP 7.4 Upgrade</h2>
+          <h2 className="leading-tight font-semibold">{liferayDxUpgradeHero.subSection.title}</h2>
 
           <p className="p18 mt-[1.458vw] leading-relaxed text-[#101012] text-gray-700">
-            Learn how the 7.4 upgrade transforms your digital platform, making it faster, smarter, and more secure.
+            {liferayDxUpgradeHero.subSection.description}
           </p>
 
           <div className="ml-[-20px] pt-[3.594vw]">
@@ -198,12 +203,10 @@ export default function LiferayUpgradePage() {
         <div className="global-container items-start">
           <div className="relative grid items-center gap-10 md:grid-cols-2">
             <h2 className="">
-              Key Benefits of Liferay <br /> DXP 7.4 Upgrade
+              {liferayDxUpgradeBenefits.titleLine1} <br /> {liferayDxUpgradeBenefits.titleLine2}
             </h2>
             <p className="p18 absolute max-w-[37vw] text-right text-white md:justify-self-end">
-              Liferay DXP 7.4 Upgrade is essential for organizations aiming to enhance their digital experience
-              capabilities and stay competitive in today’s fast-paced environment. Here are several compelling reasons
-              to consider the upgrade
+              {liferayDxUpgradeBenefits.description}
             </p>
           </div>
           <div className="pt-[3.021vw]">
@@ -232,10 +235,10 @@ export default function LiferayUpgradePage() {
         <div className="global-container items-start">
           <div className="relative grid items-center gap-10 md:grid-cols-2">
             <h2 className="[@media(min-width:1440px)]:max-w-[430px] [@media(min-width:1500px)]:max-w-[430px]">
-              Liferay DXP 7.4 Upgrade Process
+              {liferayDxUpgradeProcess.title}
             </h2>
             <p className="p18 absolute max-w-4xl text-right text-gray-700 md:justify-self-end">
-              Our Liferay DXP 7.4 upgrade process ensures smooth migration, improved<br/> performance, enhanced security, and feature-rich functionality with minimal downtime.
+              {liferayDxUpgradeProcess.description}<br/> {liferayDxUpgradeProcess.description2}
             </p>
           </div>
           <div className="pt-[3.021vw]">
@@ -324,11 +327,10 @@ export default function LiferayUpgradePage() {
         <div className="global-container items-start">
           <div className="relative grid items-center gap-10 md:grid-cols-2">
             <h2 className="min-w-[51.51vw]">
-              Enhance Digital Experiences with <br /> the Liferay DXP 7.4 Upgrade
+              {enhanceDigitalExperience.titlePart1} <br /> {enhanceDigitalExperience.titlePart2}
             </h2>
             <p className="p18 absolute max-w-xl text-right text-white md:justify-self-end">
-              Our dedicated Liferay team offers ongoing Liferay Support <br /> and Maintenance to address the challenges
-              of a dynamic
+              {enhanceDigitalExperience.descriptionPart1} <br /> {enhanceDigitalExperience.descriptionPart2}
             </p>
           </div>
           <div className="relative pt-[3.021vw]">
@@ -383,10 +385,9 @@ export default function LiferayUpgradePage() {
 <section className="bg-[#f7f7f7] py-[64px] text-black md:py-[64px] lg:py-[64px]">
         <div className="global-container items-start">
           <div className="relative grid items-center gap-10 md:grid-cols-2">
-            <h2 className="">Why Choose IGNEK For Liferay DXP 7.4 Upgrade Services?</h2>
+            <h2 className="">{whyChooseIgnek.titlePart1}</h2>
             <p className="p18 absolute max-w-2xl items-center text-right text-gray-700 md:justify-self-end">
-              Liferay DXP 7.4 Upgrade is a pivotal step for organizations looking to enhance their digital experience.
-              At IGNEK, we specialize in
+              {whyChooseIgnek.descriptionPart1}
             </p>
           </div>
           <div className="pt-[3.021vw]">
@@ -417,9 +418,9 @@ export default function LiferayUpgradePage() {
         subContext={LiferayUpgradeSubContent}
       /> */}
       <TalkToExpert
-        heading="Future-Proof Your Portal with Liferay 7.4 Upgrade"
-        description="Upgrade to 7.4 for stronger security, scalability, and smarter digital experiences."
-        buttonText="Upgrade Your Liferay"
+        heading={talkToExpertUpgrade.headingPart1}
+        description={talkToExpertUpgrade.descriptionPart1}
+        buttonText={talkToExpertUpgrade.button}
       />
       <BlogSection />
     </main>

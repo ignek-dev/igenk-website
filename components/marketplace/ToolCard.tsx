@@ -10,6 +10,7 @@ type ToolCardProps = {
   description: string
   tags: string[]
   link: string
+  subTag: string
 }
 
 const ModuleTag = ({ text }: { text: string }) => {
@@ -34,7 +35,7 @@ const DetailTag = ({ text }: { text: string }) => (
   </span>
 )
 
-export const ToolCard = ({ icon, module, title, description, tags, link }: ToolCardProps) => {
+export const ToolCard = ({ icon, module, title, description, tags, link,subTag }: ToolCardProps) => {
   return (
     <div className="group relative h-full w-[25.208vw] overflow-hidden rounded-[0.896vw] border border-[#E5E7EB] px-[1.094vw] pt-[1.094vw] pb-[1.667vw] shadow-sm transition-all duration-300 ease-in-out hover:shadow-md">
       {/* This container holds all content that slides up */}
@@ -46,7 +47,16 @@ export const ToolCard = ({ icon, module, title, description, tags, link }: ToolC
         {/* Text Content */}
         <div className="mt-[1.563vw]">
           <ModuleTag text={module} />
-          <h3 className="mt-[0.885vw] text-[1.563vw]! leading-[1.875vw]! ">{title}</h3>
+          <h3 className="mt-[0.885vw] text-[1.563vw]! leading-[1.875vw]! ">{title} {subTag?.trim() !== "" && (
+ <span className="rounded-full border leading-[1.253vw] inline-flex font-medium border-[#D1D5DB] bg-[#FFFFFF] px-[0.7vw] py-[0.2vw] ml-[0.625vw] text-[0.833vw]"
+    style={{
+      boxShadow: '0px 3.21px 8.02px 0px rgba(0, 151, 158, 0.25)'
+    }}
+  >
+    {subTag}
+  </span>
+)}
+</h3>
         </div>
         {/* Bottom Tags */}
         <div className="flex flex-col justify-between h-full">
