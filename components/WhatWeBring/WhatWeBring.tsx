@@ -38,7 +38,7 @@ const WhatWeBring: React.FC = () => {
 
   const horizontalDistancePx = Math.max(
     0,
-    totalWidth - viewportW - lastCardWidth - gap - pr + lastCardWidth + 50
+    totalWidth - viewportW - lastCardWidth - gap - pr + lastCardWidth + 500
   );
 
   // raw buffers
@@ -112,14 +112,14 @@ const WhatWeBring: React.FC = () => {
               <br />
               {whatWeBringHeader.headingLine2}
             </h2>
-            <p className="p18 max-w-3xl pt-0 text-right text-gray-300">{whatWeBringHeader.description}</p>
+            <p className="p18 w-[38.594vw] pt-0 text-right text-gray-300">{whatWeBringHeader.description}</p>
           </div>
 
           {/* Horizontal scroller */}
           <motion.div
             ref={scrollerRef}
             style={{ x }}
-            className="flex w-max gap-11 pt-15 pr-11 pb-16 will-change-transform"
+            className="flex w-max gap-8 pt-15 pr-11 pb-16"
           >
             {cardData.map((card) => (
               <WhatWeBringCard

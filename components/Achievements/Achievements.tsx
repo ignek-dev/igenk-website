@@ -30,7 +30,7 @@ const Achievements = () => {
           <p className="mb-[1.458vw] max-w-[588px] p18 text-gray-300">
             {achievementsSection.description}
           </p>
-          <ScheduleMeetingButton isFullWidth={false} btnName={achievementsSection.buttonText} />
+          {/* <ScheduleMeetingButton isFullWidth={false} btnName={achievementsSection.buttonText} /> */}
         </div>
 
         {/* Right Column: Stats Grid */}

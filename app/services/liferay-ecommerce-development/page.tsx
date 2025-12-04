@@ -208,7 +208,7 @@ export default function LiferayEcommerceDevelopmentPage() {
       </section>
 
       <div ref={containerRef} className="relative" style={{ height: `${containerHeight}px` }}>
-        <section className="sticky top-[3.75vw] h-screen overflow-hidden bg-[#f7f7f7] text-black">
+        <section className="sticky top-[5.75vw] h-screen overflow-hidden bg-[#f7f7f7] text-black">
           <div className="mx-auto w-full py-[3.333vw]">
             {/* Heading Row */}
             <div className="global-container flex flex-row items-center gap-10 md:grid-cols-2">
@@ -226,9 +226,9 @@ export default function LiferayEcommerceDevelopmentPage() {
                 className="relative flex min-w-max gap-0 will-change-transform"
                 style={{ x: smoothX }}
               >
-                <div className="relative flex min-w-max gap-[8.833vw]">
+                <div className="relative flex min-w-max">
                   {/* ✅ Perfectly aligned horizontal line */}
-                  <div className="absolute top-[2.0835vw] left-0 z-0 h-[4px] w-[90%] bg-black"></div>
+                  <div className="absolute top-[2.0835vw] left-0 z-0 h-[4px] w-[88%] bg-black"></div>
 
                   {steps.map((step, index) => (
                     <div key={index} className="flex w-[24.875vw] flex-col gap-[2.188vw]">
@@ -243,7 +243,7 @@ export default function LiferayEcommerceDevelopmentPage() {
                         </h3>
 
                         {/* ✅ Description */}
-                        <p className="p20 bottom-0 mt-[1.458vw] w-[25.354vw] text-left text-gray-600">
+                        <p className="p20 bottom-0 mt-[1.458vw] w-[19.354vw] text-left text-gray-600">
                           {step.description}
                         </p>
                       </div>
