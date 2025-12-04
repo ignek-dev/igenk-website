@@ -1,3 +1,5 @@
+import { head } from "lodash"
+
 export const featureTabs = [
   "Application Maintenance Support",
   "Annual Maintenance Contracts",
@@ -98,3 +100,30 @@ export const LiferaySupportMaintenanceData = [
     desc: "Our team provides continuous advice and support, helping your Liferay portal evolve with your business needs.",
   },
 ]
+export const supportBanner = {
+  label: "Liferay Services",
+  heading: "Liferay Support",
+  heading2: "and Maintenance",
+  description:
+    "Get expert Liferay Support and Maintenance with proactive monitoring, timely updates, and dependable technical assistance for smooth platform performance.",
+};
+
+export const supportCore = {
+  heading: "Liferay Support And Maintenance",
+  description:
+    "We keep your Liferay environment resilient through proactive monitoring, thorough diagnostics, and planned upgrades—backed by clear SLAs.",
+};
+
+export const supportActivities = {
+  heading: "Key Activities Under Our Liferay ",
+  heading2: "Support And Maintenance Service",
+  description:
+    "Our dedicated Liferay team offers ongoing Liferay Support and Maintenance to address the challenges of a business.",
+};
+
+export const liferaySupportCta = {
+  heading: "24×7 Liferay Support and Maintenance Services",
+  description:
+    "Proactive monitoring, updates, and troubleshooting for uninterrupted portal performance.",
+  buttonText: "Get Support and Maintanance for Liferay Services",
+};

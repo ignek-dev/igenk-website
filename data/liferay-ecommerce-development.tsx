@@ -190,3 +190,36 @@ export const caseStudies = [
       "Curabitur at lacus ac velit ornare lobortis. Vestibulum suscipit nulla quis orci. Donec posuere vulputate arcu.",
   },
 ]
+
+export const ecommerceHero = {
+  titleLine1: "Liferay",
+  titleLine2: "Ecommerce",
+  titleLine3: "Development",
+  description:
+    "Liferay Ecommerce Development empowers businesses to build integrated digital commerce platforms that enhance customer experiences.",
+};
+
+export const ecommerceOptimization = {
+  heading: "Liferay Ecommerce Performance & Scalability Optimization",
+  description:
+    "Our Liferay Ecommerce Development services include performance tuning, scalability planning, and resource optimization to guarantee fast load times, responsive interactions, and minimal downtime.",
+};
+
+export const ecommerceDevLiferay = {
+  heading: "Ecommerce Development Using Liferay",
+  description:
+    "Liferay Ecommerce Development Service streamlines online retail operations with customizable storefronts, product management, order processing, and marketing tools for businesses seeking a strong online presence.",
+};
+
+export const ecommerceProcess = {
+  heading: "Our Liferay Ecommerce Development Process",
+  description:
+    "Liferay Ecommerce enables easy creation and management of digital shopping experiences, combining strong content tools with seamless transactions for improved efficiency and user satisfaction.",
+};
+
+export const ecommerceTalkToExpert = {
+  heading: "Transform Your Online Store with Liferay Ecommerce Development",
+  description:
+    "Optimize product management, checkout, payment options, and multichannel sales with ease.",
+  buttonText: "Explore E-Commerce Solutions",
+};

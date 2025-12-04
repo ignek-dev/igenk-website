@@ -6,11 +6,15 @@ import WhatMake from "components/Common/WhatMake"
 import {
   activities,
   featureTabs,
+  liferaySupportCta,
   LiferaySupportMaintenanceData,
   LiferaySupportMaintenanceSubContent,
   LiferaySupportMaintenanceTitle1,
   LiferaySupportMaintenanceTitle2,
+  supportActivities,
+  supportBanner,
   supportChecklist,
+  supportCore,
 } from "data/liferay-support-and-maintenance"
 
 const metadata: Metadata = {
@@ -39,17 +43,17 @@ export default function LiferaySupportMaintenancePage() {
       <section className="global-container pt-[7.917vw] pb-[3.802vw] bg-black text-white">
         <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_10%_0%,#0E7BF8_0%,#00979E_40%,transparent_65%)] opacity-25" />
 
-        <div className="inline-flex items-center rounded-full border border-white px-[1.51vw] py-[0.521vw] p18 text-white">
+        {/* <div className="inline-flex items-center rounded-full border border-white px-[1.51vw] py-[0.521vw] p18 text-white">
           Liferay Services
-        </div>
+        </div> */}
         <div className="flex items-end justify-between mt-[2.031vw]">
           <h1 className="">
-            Liferay Support
+            {supportBanner.heading}
             <br />
-            And Maintenance
+            {supportBanner.heading2}
           </h1>
           <p className="text-right p18 text-white w-[38.438vw]">
-            Get expert Liferay Support and Maintenance with proactive monitoring, timely updates, and dependable technical assistance for smooth platform performance.
+            {supportBanner.description}
           </p>
         </div>
 
@@ -74,11 +78,10 @@ export default function LiferaySupportMaintenancePage() {
         <div className="flex justify-between">
           <div className="w-[33.229vw]">
             <h2>
-              Liferay Support And Maintenance
+              {supportCore.heading}
             </h2>
             <p className="text-[#374151] p18 mt-[1.458vw]">
-              We keep your Liferay environment resilient through proactive monitoring, thorough diagnostics, and
-              planned upgrades—backed by clear SLAs.
+              {supportCore.description}
             </p>
           </div>
           <div className="flex w-[40.729vw] flex-col ">
@@ -100,11 +103,10 @@ export default function LiferaySupportMaintenancePage() {
 
         <div className="flex items-center justify-between">
           <h2 className="">
-            Key Activities Under Our Liferay <br /> Support And Maintenance Service
+            {supportActivities.heading} <br /> {supportActivities.heading2}
           </h2>
           <p className="w-[28.906vw] p18 text-[#E5E7EB] text-right">
-            Our dedicated Liferay team offers ongoing Liferay  Support and Maintenance to address the challenges of a
-            business.
+            {supportActivities.description}
           </p>
         </div>
 
@@ -134,9 +136,9 @@ export default function LiferaySupportMaintenancePage() {
         subContext={LiferaySupportMaintenanceSubContent}
       />
       <TalkToExpert
-        heading="24×7 Liferay Support and Maintenance Services"
-        description="Proactive monitoring, updates, and troubleshooting for uninterrupted portal performance."
-        buttonText="Get Support and Maintanance for Liferay Services"
+        heading={liferaySupportCta.heading}
+        description={liferaySupportCta.description}
+        buttonText={liferaySupportCta.buttonText}
       />
       <BlogSection />
 
