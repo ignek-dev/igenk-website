@@ -217,7 +217,7 @@ export default function LiferayEcommerceDevelopmentPage() {
             {/* Heading Row */}
             <div className="global-container flex flex-row items-center gap-10 md:grid-cols-2">
               <h2 className="text-black">{ecommerceProcess.heading}</h2>
-              <p className="p18 text-right w-[46.875vw] leading-relaxed text-gray-500">
+              <p className="p18 text-right w-[46.875vw] leading-relaxed text-[#4B5563]">
                 {ecommerceProcess.description}
               </p>
             </div>

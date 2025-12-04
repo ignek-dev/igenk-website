@@ -149,8 +149,8 @@ export default function LiferayMigrationPage() {
       {/* Migration Process timeline */}
       <section className="bg-black text-white">
         <div className="global-container mx-auto w-full py-[3.333vw]">
-          <div className="flex flex-row gap-[10.417vw] items-start gap-10 lg:grid-cols-[0.9fr_1.1fr]">
-            <div className="sticky top-[10.417vw] flex w-[74.698vw] flex-col gap-[1.458vw]">
+          <div className="flex flex-row gap-[8.417vw] items-start gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+            <div className="sticky top-[10.417vw] flex w-[72.698vw] flex-col gap-[1.458vw]">
               <h2 className="leading-[60px] font-semibold">Our Liferay Migration Process</h2>
               <p className="p18 text-gray-100">
                 {liferayMigrationProcess.description}

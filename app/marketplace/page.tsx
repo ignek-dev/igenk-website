@@ -14,6 +14,7 @@ const toolsData = [
       "Automate your entire Liferay blog workflow with AI technology that generates content, images, and styles, all at once.",
     tags: ["Blog Generation","Generative AI", "Content Automation"],
     link: "https://marketplace.liferay.com/p/ai-blog-workspace",
+    subTag:"",
   },
   {
     id: 2,
@@ -24,6 +25,7 @@ const toolsData = [
       "Create extensions in bulk with automation, enabling developers to save time and simplify their Liferay project workflows.",
     tags: ["Batch Automation","Objects","Liferay Client Extension"],
     link: "https://marketplace.liferay.com/p/batch-client-extension-generator",
+    subTag:"",
   },
   {
     id: 3,
@@ -34,6 +36,7 @@ const toolsData = [
       "Enable simple and secure email OTP login for Liferay CE user overcome verification to visitors and better protect the portal in general.",
     tags: ["OAuth", "MFA","2FA For Community Edition"],
     link: "https://marketplace.liferay.com/p/email-otp-authentication-for-community-edition-of-liferay",
+    subTag:"",
   },
   {
     id: 4,
@@ -44,6 +47,7 @@ const toolsData = [
       "A custom fragment that enhances Liferay’s Collection Display by allowing one item to be highlighted with a unique layout and styling for better visual emphasis.",
     tags: ["Collection Layout", "Highlighted Item","Custom Grid"],
     link: "https://marketplace.liferay.com/p/collection-display-grid-view-with-item-highlight",
+    subTag:"",
   },
   {
     id: 5,
@@ -54,6 +58,7 @@ const toolsData = [
       "A global sticky-notes widget that lets users quickly create, edit, and manage notes across all pages, stored locally in the browser.",
     tags: ["Productivity", "Notes Panel","LocalStorage"],
     link: "https://marketplace.liferay.com/p/sticky-notes-for-the-portal",
+    subTag:"",
   },
   {
     id: 6,
@@ -64,6 +69,7 @@ const toolsData = [
       "Creates object definitions based on your service file and migrates existing data from legacy tables; also handles relationships between the tables.",
     tags: ["Liferay service", "Objects","Migration Automation"],
     link: "#",
+    subTag:"Coming Soon",
   },
 ]
 
@@ -122,6 +128,7 @@ export default function MarketplacePage() {
                 description={tool.description}
                 tags={tool.tags}
                 link={tool.link}
+                subTag={tool.subTag}
               />
             ))}
           </div>
