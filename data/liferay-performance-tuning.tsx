@@ -228,7 +228,7 @@ export const item = [
 
 export const liferayPerformanceTuning = {
   label: "Liferay Services",
-  heading: "Liferay Performance Tuning",
+  heading: "Liferay",
   heading2: "Performance Tuning",
   description:
     "Optimize your Liferay Portal with specialized Liferay Performance Tuning, ",
