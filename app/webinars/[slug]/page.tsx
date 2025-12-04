@@ -19,6 +19,7 @@ interface AgendaItem {
 interface WhyWatchData {
   title: string;
   description: string;
+  points?: string[];
 }
 
 interface WebinarData {
@@ -64,11 +65,11 @@ const webinarsDB: WebinarData[] = [
       "Explore the possibilities of Liferay, the industry-leading digital experience platform, in this special webinar.",
     aboutWebinar:
       "We're excited to announce our upcoming webinar: \"Customer Onboarding With Low Code/No-Code Capabilities of Liferay Portal\" While working with businesses, we have seen that the onboarding process for new customers is the biggest source of headaches for them, and we always concentrate on finding solutions for the business's problems.",
-    date: "26-27 Sep 2025",
+    date: "13 November 2024",
     location: "Virtual Webinar",
-    time: "7:30 PM - 8:00 PM",
+    time: "7:00 PM IST",
     pricing: "Free",
-    image: "/images/webinar/event-image.jpg",
+    image: "/images/webinar/Customer-Onboarding-With-Low-Code-No-Code-Capabilities-Of-Liferay-Portal.webp",
     additionalSections: [
       {
         title: "About IGNEK",
@@ -129,16 +130,16 @@ const webinarsDB: WebinarData[] = [
     id: "1",
     slug: "building-enterprise-liferay-1",
     title: "Building Enterprise Website With Liferay",
-    status: "upcoming", 
+    status: "past", 
     shortDescription: "Deliver better results with Liferay tools...",
     fullTitle: "Building Enterprise Website With Liferay DXP",
     heroDescription:
       "Join us to learn how Liferay DXP can transform your enterprise web presence with scalable, secure, and highly customizable solutions.",
     aboutWebinar:
       "In this session, we will dive deep into the architecture of Liferay DXP. We will cover module development, theme creation, and how to leverage the OSGi framework to build resilient enterprise applications.",
-    date: "26-27 September 2025",
+    date: "12 February 2025",
     location: "Virtual Webinar",
-    time: "8:30 AM - 7:30 PM",
+    time: "7:30 PM IST",
     pricing: "Free",
     image: "/images/webinar/card-event-image.png",
     additionalSections: [
@@ -197,7 +198,13 @@ const webinarsDB: WebinarData[] = [
     ],
     whyWatch: {
       title: "Why You Should Watch The Webinar",
-      description: "Join us to understand the core benefits of using Liferay DXP for large-scale enterprise applications."
+      description: "This webinar is designed for enterprise customers, content material creators, entrepreneurs, and developers who want to discover ways to:",
+      points: [
+        "Build and manage multilingual websites without huge coding.",
+        "Utilize Liferay's OOTB features for faster improvement and deployment.",
+        "Create enticing and handy virtual reports for a global target market.",
+        "Streamline content management workflows for multilingual content material."
+      ]
     }
   },
   // ... You can add other webinars here
@@ -283,33 +290,26 @@ export default function WebinarDetails({ params }: { params: Promise<{ slug: str
   // const webinarButtonClasses = "px-16 py-5 text-[1.041vw]"; 
 
   return (
-    <main className="w-full mt-[-1px]">
-      
+    <main className="mt-[-1px] w-full">
       {/* --- SECTION 1: HERO (Black Background) --- */}
-      <section className="relative bg-black text-white pt-[6vw] pb-[6vw] text-center overflow-hidden">
-        
+      <section className="relative overflow-hidden bg-black pt-[6vw] pb-[6vw] text-center text-white">
         {/* Optional: Blue Glow Effect behind text (Matches your reference image style) */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60%] h-[60%] bg-[#0E7BF8] opacity-10 blur-[120px] pointer-events-none" />
+        <div className="pointer-events-none absolute top-1/2 left-1/2 h-[60%] w-[60%] -translate-x-1/2 -translate-y-1/2 bg-[#0E7BF8] opacity-10 blur-[120px]" />
 
         <div className="global-container relative z-10 flex flex-col items-center">
-          
           {/* H1 Title */}
-          <h1 className="text-[3.75vw] font-bold leading-[1.2] mb-[2.24vw] max-w-[80vw]">
-            {data.fullTitle}
-          </h1>
+          <h1 className="mb-[2.24vw] max-w-[80vw] text-[3.75vw] leading-[1.2] font-bold">{data.fullTitle}</h1>
 
           {/* Description */}
-          <p className="p18 text-[1.041vw] leading-[1.6] text-white max-w-[55vw] mb-[2.24vw]">
-            {data.heroDescription}
-          </p>
+          <p className="p18 mb-[2.24vw] max-w-[55vw] text-[1.041vw] leading-[1.6] text-white">{data.heroDescription}</p>
 
           {/* CTA Button using your Component */}
           <div className="flex justify-center">
-            <ScheduleMeetingButton 
-              btnName={ctaText} 
+            <ScheduleMeetingButton
+              btnName={ctaText}
               isFullWidth={false}
               onClick={scrollToForm}
-              showIcon={false} // <--- Hides icon here 
+              showIcon={false} // <--- Hides icon here
               // customClasses={webinarButtonClasses}
               //  sizeVariant="webinar-hero"
             />
@@ -319,93 +319,80 @@ export default function WebinarDetails({ params }: { params: Promise<{ slug: str
 
       {/* --- SECTION 2: DETAILS & CONTENT (Light Background) --- */}
       <section className="global-container bg-[#F9FAF7] pt-[3.333vw] pb-[3.333vw] text-black">
-        
         {/* 1. About Webinar Text */}
         <div className="mb-[1.875vw]">
-          <h2 className="text-[2.5vw] font-semibold mb-[1.667vw]">About Webinar</h2>
-          <p className="text-[1.041vw] leading-[1.6] text-[#374151]">
-            {data.aboutWebinar}
-          </p>
+          <h2 className="mb-[1.667vw] text-[2.5vw] font-semibold">About Webinar</h2>
+          <p className="text-[1.041vw] leading-[1.6] text-[#374151]">{data.aboutWebinar}</p>
         </div>
 
         {/* 2. Key Details Grid (Flex implementation with Dividers) */}
-        <div className="flex w-full mb-[1.875vw] items-stretch">
-          
+        <div className="mb-[1.875vw] flex w-full items-stretch">
           {/* Date: Aligned Left. Max Width ~280px */}
-          <div className="flex flex-col gap-[1.2vw] w-full max-w-[14.58vw]">
+          <div className="flex w-full max-w-[14.58vw] flex-col gap-[1.2vw]">
             <h4 className="text-[1.25vw] text-black">Date</h4>
-            <p className="p24 text-[#4B5563]! font-medium!">{data.date}</p>
+            <p className="p24 font-medium! text-[#4B5563]!">{data.date}</p>
           </div>
 
-          {/* DIVIDER: 
-          */}
-          <div className="w-[1px] bg-gray-300 mx-[6.09vw]"></div>
+          {/* DIVIDER:
+           */}
+          <div className="mx-[6.09vw] w-[1px] bg-gray-300"></div>
 
           {/* Location */}
-          <div className="flex flex-col gap-[1.2vw] w-full max-w-[10.58vw]">
+          <div className="flex w-full max-w-[10.58vw] flex-col gap-[1.2vw]">
             <h4 className="text-[1.25vw] text-black">Location</h4>
-            <p className="p24 text-[#4B5563]! font-medium!">{data.location}</p>
+            <p className="p24 font-medium! text-[#4B5563]!">{data.location}</p>
           </div>
 
           {/* DIVIDER */}
-          <div className="w-[1px] bg-gray-300 mx-[6.09vw]"></div>
+          <div className="mx-[6.09vw] w-[1px] bg-gray-300"></div>
 
           {/* Timing */}
-          <div className="flex flex-col gap-[1.2vw] w-full max-w-[12.58vw]">
+          <div className="flex w-full max-w-[12.58vw] flex-col gap-[1.2vw]">
             <h4 className="text-[1.25vw] text-black">Timing</h4>
-            <p className="p24 text-[#4B5563]! font-medium!">{data.time}</p>
+            <p className="p24 font-medium! text-[#4B5563]!">{data.time}</p>
           </div>
 
           {/* DIVIDER */}
-          <div className="w-[1px] bg-gray-300 mx-[6.09vw]"></div>
+          <div className="mx-[6.09vw] w-[1px] bg-gray-300"></div>
 
           {/* Pricing: Aligned Right. ml-auto pushes it to end if space allows. */}
-          <div className="flex flex-col gap-[1.2vw] w-full max-w-[5.58vw]">
+          <div className="flex w-full max-w-[5.58vw] flex-col gap-[1.2vw]">
             <h4 className="text-[1.25vw] text-black">Pricing</h4>
-            <p className="p24 text-[#4B5563]! font-medium! capitalize">{data.pricing}</p>
+            <p className="p24 font-medium! text-[#4B5563]! capitalize">{data.pricing}</p>
           </div>
         </div>
 
         {/* 3. Event Banner Image */}
-        <div className="w-full relative aspect-[1534/753] rounded-[1.5vw] overflow-hidden shadow-lg mb-[3.021vw]">
-           <Image
-             src={data.image}
-             alt={data.title}
-             fill
-             className="object-cover"
-             priority
-           />
+        <div className="relative mb-[3.021vw] aspect-[1534/753] w-full overflow-hidden rounded-[1.5vw] shadow-lg">
+          <Image src={data.image} alt={data.title} fill className="object-cover" priority />
         </div>
 
         {/* 4. Dynamic "About Host" & "About Technology" Sections */}
         <div className="flex flex-col gap-[3.021vw]">
           {data.additionalSections.map((section, index) => (
             <div key={index}>
-              <h2 className="text-[2.5vw] font-semibold mb-[1.5vw]">{section.title}</h2>
-              <p className="text-[1.041vw] leading-[1.6] text-[#374151]">
-                {section.description}
-              </p>
+              <h2 className="mb-[1.5vw] text-[2.5vw] font-semibold">{section.title}</h2>
+              <p className="text-[1.041vw] leading-[1.6] text-[#374151]">{section.description}</p>
             </div>
           ))}
         </div>
-
       </section>
 
       {/* --- SECTION 3: AGENDA (Black Background) --- */}
       {/* Renders only if agenda items exist */}
       {data.agenda && data.agenda.length > 0 && (
-        <section className="bg-black text-white pt-[3.333vw] pb-[3.333vw]">
-          <div className="global-container flex flex-col lg:flex-row gap-[1.875vw] relative">
-            
+        <section className="bg-black pt-[3.333vw] pb-[3.333vw] text-white">
+          <div className="global-container relative flex flex-col gap-[1.875vw] lg:flex-row">
             {/* LEFT: Sticky Header */}
             {/* 'lg:w-1/3' gives it about 33% width. 'sticky top-[10vw]' keeps it pinned. */}
-            <div className="lg:w-1/2 flex flex-col items-start h-fit sticky top-[8vw]">
-              <h2 className="text-[2.5vw] font-bold mb-[1.458vw]">Agenda Of Webinar</h2>
-              <p className="p18 text-gray-300 mb-[1.458vw] leading-[1.6] max-w-lg">
-                In this webinar, you&apos;ll learn how to use Liferay Portal in order to meet the expectations of today&apos;s market. We will also cover :
+            <div className="sticky top-[8vw] flex h-fit flex-col items-start lg:w-1/2">
+              <h2 className="mb-[1.458vw] text-[2.5vw] font-bold">Agenda Of Webinar</h2>
+              <p className="p18 mb-[1.458vw] max-w-lg leading-[1.6] text-gray-300">
+                In this webinar, you&apos;ll learn how to use Liferay Portal in order to meet the expectations of
+                today&apos;s market. We will also cover :
               </p>
-              <ScheduleMeetingButton 
-                btnName={ctaText} 
+              <ScheduleMeetingButton
+                btnName={ctaText}
                 isFullWidth={false}
                 onClick={scrollToForm}
                 showIcon={false} // <--- Hides icon here
@@ -416,134 +403,135 @@ export default function WebinarDetails({ params }: { params: Promise<{ slug: str
 
             {/* RIGHT: Scrollable Cards */}
             {/* 'lg:w-2/3' gives it the remaining width. */}
-            <div className="lg:w-2/3 flex flex-col gap-[2.5vw]">
+            <div className="flex flex-col gap-[2.5vw] lg:w-2/3">
               {data.agenda.map((item) => (
-                <div 
-                  key={item.id} 
-                  className="w-full border border-[#1F2937] rounded-[0.417vw] p-[1.875vw] px-[1.458vw] bg-black hover:bg-[#0a0a0a] transition-colors"
+                <div
+                  key={item.id}
+                  className="w-full rounded-[0.417vw] border border-[#1F2937] bg-black p-[1.875vw] px-[1.458vw] transition-colors hover:bg-[#0a0a0a]"
                 >
-                  <h4 className="text-[1.25vw] font-semibold mb-[1.458vw]">
-                    {item.title}
-                  </h4>
-                  
+                  <h4 className="mb-[1.458vw] text-[1.25vw] font-semibold">{item.title}</h4>
+
                   {/* Separator Line */}
-                  <div className="w-full h-[1px] bg-[#2d333b] mb-[1.458vw]"></div>
-                  
-                  <p className="p18 text-gray-300 leading-[1.6]">
-                    {item.description}
-                  </p>
+                  <div className="mb-[1.458vw] h-[1px] w-full bg-[#2d333b]"></div>
+
+                  <p className="p18 leading-[1.6] text-gray-300">{item.description}</p>
                 </div>
               ))}
             </div>
-            
           </div>
         </section>
       )}
 
       {/* --- SECTION 4: WHY WATCH & FORM (Light Background) --- */}
       <section id="webinar-registration-form" className="bg-[#F9FAF7] pt-[3.333vw] pb-[3.333vw]">
-        <div className="global-container flex flex-col lg:flex-row gap-[7.4vw] relative">
-          
+        <div className="global-container relative flex flex-col gap-[7.4vw] lg:flex-row">
           {/* LEFT: Sticky Text */}
-          <div className="lg:w-1/2 flex flex-col items-start h-fit sticky top-[8vw]">
-            <h2 className="text-[2.5vw] font-bold mb-[1.25vw] leading-tight">
-              {data.whyWatch.title}
-            </h2>
-            <p className="p20 text-black leading-[1.6] max-w-xl ">
-              {data.whyWatch.description}
-            </p>
+          <div className="sticky top-[8vw] flex h-fit flex-col items-start lg:w-1/2">
+            <h2 className="mb-[1.25vw] text-[2.5vw] leading-tight font-bold">{data.whyWatch.title}</h2>
+            <p className="p20 mb-[1.5vw] max-w-xl leading-[1.6] text-black">{data.whyWatch.description}</p>
+
+            {/* 2. Render Modern Bullet Points */}
+            {data.whyWatch.points && (
+              <ul className="flex flex-col gap-[1.25vw]">
+                {data.whyWatch.points.map((point, index) => (
+                  <li key={index} className="flex items-start gap-[1vw]">
+                    {/* ICON CONTAINER: aligned with text top */}
+                    {/* Using your brand blue #0E7BF8 for the accent */}
+                    <div className="mt-[0.25vw] shrink-0 text-black">
+                      <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" className="h-[28px] w-[28px]">
+                        {/* A clean, filled check-circle icon (Modern Standard) */}
+                        <path
+                          fillRule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                    </div>
+
+                    {/* TEXT CONTENT */}
+                    <span className="text-[0.938vw] leading-[1.5] font-normal text-black">{point}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
 
           {/* RIGHT: Form Card */}
           <div className="lg:w-2/3">
-             <div className="w-full bg-white rounded-[2.917vw] border-[1.4px] border-[#EBECF2] p-[2.917vw]">
-                
-                {/* Header: */}
-                <h3 className="text-[1.875vw] font-semibold text-[#19213D] mb-[4.688vw]">
-                  {ctaText}
-                </h3>
+            <div className="w-full rounded-[2.917vw] border-[1.4px] border-[#EBECF2] bg-white p-[2.917vw]">
+              {/* Header: */}
+              <h3 className="mb-[4.688vw] text-[1.875vw] font-semibold text-[#19213D]">{ctaText}</h3>
 
-                <form onSubmit={handleSubmit} className="flex flex-col gap-[2.3vw]">
-                  
-                  {/* Row 1: Name Fields */}
-                  <div className="flex gap-[1.75vw]">
-                    <div className="w-1/2 flex flex-col gap-2">
-                       <label className="text-[1.041vw] font-medium text-[#19213D] pb-[0.729vw]">
-                         First name*
-                       </label>
-                       <input
-                         name="first_name"
-                         required
-                         type="text"
-                         placeholder="John"
-                         className="w-full h-[3.5vw] px-4 rounded-lg border border-gray-200 outline-none focus:border-black transition-colors text-[1vw] autofill-text-dark"
-                       />
-                    </div>
-                    <div className="w-1/2 flex flex-col gap-2">
-                       <label className="text-[1.041vw] font-medium text-[#19213D] pb-[0.729vw]">
-                         Last name*
-                       </label>
-                       <input
-                         name="last_name"
-                         required 
-                         type="text"
-                         placeholder="Carter"
-                         className="w-full h-[3.5vw] px-4 rounded-lg border border-gray-200 outline-none focus:border-black transition-colors text-[1vw] autofill-text-dark"
-                       />
-                    </div>
+              <form onSubmit={handleSubmit} className="flex flex-col gap-[2.3vw]">
+                {/* Row 1: Name Fields */}
+                <div className="flex gap-[1.75vw]">
+                  <div className="flex w-1/2 flex-col gap-2">
+                    <label className="pb-[0.729vw] text-[1.041vw] font-medium text-[#19213D]">First name*</label>
+                    <input
+                      name="first_name"
+                      required
+                      type="text"
+                      placeholder="John"
+                      className="autofill-text-dark h-[3.5vw] w-full rounded-lg border border-gray-200 px-4 text-[1vw] transition-colors outline-none focus:border-black"
+                    />
                   </div>
-
-                  {/* Row 2: Email */}
-                  <div className="flex flex-col gap-2">
-                     <label className="text-[1.041vw] font-medium text-[#19213D] pb-[0.729vw]">
-                       Email address*
-                     </label>
-                     <input 
-                       name="email"
-                       required 
-                       type="email" 
-                       placeholder="john@xyz.com"
-                       className="w-full h-[3.5vw] px-4 rounded-lg border border-gray-200 outline-none focus:border-black transition-colors text-[1vw] autofill-text-dark"
-                     />
+                  <div className="flex w-1/2 flex-col gap-2">
+                    <label className="pb-[0.729vw] text-[1.041vw] font-medium text-[#19213D]">Last name*</label>
+                    <input
+                      name="last_name"
+                      required
+                      type="text"
+                      placeholder="Carter"
+                      className="autofill-text-dark h-[3.5vw] w-full rounded-lg border border-gray-200 px-4 text-[1vw] transition-colors outline-none focus:border-black"
+                    />
                   </div>
+                </div>
 
-                  {/* Row 3: Designation */}
-                  <div className="flex flex-col ">
-                     <label className="text-[1.041vw] font-medium text-[#19213D] pb-[0.729vw]">
-                       Designation *
-                     </label>
-                     <input
-                       name="designation" 
-                       required 
-                       type="text"
-                       placeholder="Liferay Developer"
-                       className="w-full h-[3.5vw] px-4 rounded-lg border border-gray-200 outline-none focus:border-black transition-colors text-[1vw] autofill-text-dark"
-                     />
+                {/* Row 2: Email */}
+                <div className="flex flex-col gap-2">
+                  <label className="pb-[0.729vw] text-[1.041vw] font-medium text-[#19213D]">Email address*</label>
+                  <input
+                    name="email"
+                    required
+                    type="email"
+                    placeholder="john@xyz.com"
+                    className="autofill-text-dark h-[3.5vw] w-full rounded-lg border border-gray-200 px-4 text-[1vw] transition-colors outline-none focus:border-black"
+                  />
+                </div>
+
+                {/* Row 3: Designation */}
+                <div className="flex flex-col">
+                  <label className="pb-[0.729vw] text-[1.041vw] font-medium text-[#19213D]">Designation *</label>
+                  <input
+                    name="designation"
+                    required
+                    type="text"
+                    placeholder="Liferay Developer"
+                    className="autofill-text-dark h-[3.5vw] w-full rounded-lg border border-gray-200 px-4 text-[1vw] transition-colors outline-none focus:border-black"
+                  />
+                </div>
+
+                {/* Submit Button: 23px radius (1.2vw), Black BG */}
+                <div className="mt-[1.198vw]">
+                  <button
+                    type="submit"
+                    disabled={loading}
+                    className="w-full rounded-[1.2vw] bg-black py-[1.5vw] text-[1.1vw] font-medium text-white transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50"
+                  >
+                    {loading ? "Processing..." : ctaText}
+                  </button>
+
+                  {/* Status Messages */}
+                  <div className="mt-3 h-[1.2vw] text-[0.9vw] font-medium">
+                    {status.type === "success" && <span className="text-green-600">{status.message}</span>}
+                    {status.type === "error" && <span className="text-red-500">{status.message}</span>}
                   </div>
-
-                  {/* Submit Button: 23px radius (1.2vw), Black BG */}
-                  <div className="mt-[1.198vw]">
-                    <button 
-                      type="submit"
-                      disabled={loading}
-                      className="w-full bg-black text-white font-medium py-[1.5vw] rounded-[1.2vw] hover:opacity-90 transition-opacity text-[1.1vw] disabled:opacity-50 disabled:cursor-not-allowed"
-                    >
-                     {loading ? "Processing..." : ctaText}
-                    </button>
-
-                    {/* Status Messages */}
-                    <div className="mt-3 text-[0.9vw] font-medium h-[1.2vw]">
-                        {status.type === "success" && <span className="text-green-600">{status.message}</span>}
-                        {status.type === "error" && <span className="text-red-500">{status.message}</span>}
-                    </div>
-                  </div>
-
-                </form>
-             </div>
+                </div>
+              </form>
+            </div>
           </div>
-
         </div>
       </section>
     </main>
-  );
+  )
 }
