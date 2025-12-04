@@ -149,6 +149,7 @@ text {
   }
 }
 
+/* --- Base Mobile Defaults --- */
 .auto-grid {
   display: grid;
   margin: 0 auto;
@@ -157,56 +158,205 @@ text {
 
 .auto-grid ul li {
   margin-bottom: 28px;
-  font-size: 20px;
+  font-size: 16px; /* Base size for mobile */
 }
 
 .auto-grid .footer-text-header {
-  font-size: 24px;
+  font-size: 20px; /* Base header for mobile */
 }
 
+/* --- Mobile (Phones) --- */
 @media (max-width: 789px) {
   .auto-grid {
     grid-template-columns: 1fr;
   }
-
-  .auto-grid ul li {
-    font-size: 16px;
-  }
-
-  .auto-grid .footer-text-header {
-    font-size: 20px;
-  }
 }
 
-@media (min-width: 780px) and (max-width: 1023px) {
+/* --- Tablets (780px - 1279px) --- */
+/* Sections are side-by-side, but lists are still vertical */
+@media (min-width: 780px) and (max-width: 1279px) {
   .auto-grid {
     grid-template-columns: repeat(2, max-content);
     justify-content: space-around;
   }
+  .auto-grid ul li { font-size: 16px; }
+  .auto-grid .footer-text-header { font-size: 22px; }
+}
 
-  .auto-grid ul li {
-    font-size: 16px;
+/* --- Laptops (1280px - 1439px) --- */
+/* Activate 3x3 Grid here, but keep fonts readable (don't shrink too much) */
+@media (min-width: 1280px) and (max-width: 1439px) {
+  .auto-grid {
+    display: flex;
+    flex-direction: row;
+    gap: 60px; /* Reduced gap for smaller laptops */
   }
 
   .auto-grid .footer-text-header {
-    font-size: 20px;
+    font-size: 24px; /* Readable fixed size */
+  }
+  
+  .auto-grid ul li {
+    font-size: 18px; /* Readable fixed size */
+  }
+
+  /* Activate Grid Layout */
+  .auto-grid ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 40px;
+    row-gap: 20px;
+    margin-top: 28px;
+  }
+
+  .auto-grid ul li {
+    margin-bottom: 0;
+    white-space: nowrap;
   }
 }
 
-@media (min-width: 1024px) and (max-width: 1439px) {
-  .auto-grid {
-    grid-template-columns: repeat(2, max-content);
-    justify-content: space-around;
-  }
-}
-
+/* --- Desktops (1440px +) --- */
+/* Use VW scaling to match Figma 1920px perfectly */
 @media (min-width: 1440px) {
   .auto-grid {
-    grid-template-columns: repeat(4, max-content);
-    justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    /* 156px gap @ 1920px = 8.125vw */
+    gap: 8.125vw; 
+  }
+
+  .auto-grid .footer-text-header {
+    /* 24px @ 1920px = 1.25vw */
+    font-size: 1.25vw; 
+    line-height: 1.563vw;
   }
 
   .auto-grid ul li {
-    max-width: 20vw;
+    /* 20px @ 1920px = 1.25vw */
+    font-size: 1.042vw;
+    line-height: 1.25vw;
+  }
+
+  /* Activate Grid Layout with VW gaps */
+  .auto-grid ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* 60px gap @ 1920px = 3.125vw */
+    column-gap: 2.604vw; 
+    /* 32px gap @ 1920px = 1.66vw */
+    row-gap: 1.458vw; 
+    
+    margin-top: 1.25vw;
+  }
+
+  .auto-grid ul li {
+    margin-bottom: 0;
+    max-width: none;
+    white-space: nowrap;
+  }
+  
+  /* Prevent shrinking below content width */
+  .auto-grid > div {
+    min-width: max-content;
+  }
+}
+/* =========================================
+   Bottom Contact Section (Emails, Call, Office)
+   ========================================= */
+
+/* --- 1. Mobile & Small Tablet Defaults (Fixed Minimum Sizes) --- */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Stack vertically */
+  gap: 40px;
+}
+
+/* Minimum readable sizes (matches Top Section Mobile) */
+.contact-header {
+  font-family: var(--font-poppins);
+  font-weight: 600;
+  font-size: 20px; /* Never goes below 20px */
+  color: white;
+  margin-bottom: 16px;
+}
+
+.contact-title {
+  font-family: var(--font-poppins);
+  font-weight: 600;
+  font-size: 16px; /* Never goes below 16px */
+  color: white;
+  display: block;
+  transition: color 0.3s ease;
+}
+
+.contact-title:hover {
+  color: #00979E;
+}
+
+.contact-sub {
+  font-family: var(--font-poppins);
+  font-weight: 400;
+  font-size: 14px; /* Readable sub-text */
+  color: #9CA3AF;
+  margin-top: 4px;
+}
+
+.contact-group {
+  margin-bottom: 24px;
+}
+
+/* --- 2. Standard Laptops (1280px - 1439px) --- */
+/* Scale up slightly for better laptop visibility */
+@media (min-width: 1280px) and (max-width: 1439px) {
+  .contact-grid {
+    grid-template-columns: repeat(3, max-content);
+    gap: 60px; /* Reduced gap for laptops */
+  }
+
+  .contact-header {
+    font-size: 24px; /* Matches Top Section Laptop Header */
+    margin-bottom: 20px;
+  }
+
+  .contact-title {
+    font-size: 18px; /* Matches Top Section Laptop Item */
+  }
+
+  .contact-sub {
+    font-size: 14px;
+  }
+}
+
+/* --- 3. Large Screens (1440px +) --- */
+@media (min-width: 1440px) {
+  .contact-grid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: start;
+    
+    /* Gap: 123px @ 1920px = 6.406vw */
+    gap: 6.406vw; 
+  }
+
+  .contact-header {
+    /* 24px @ 1920px */
+    font-size: 1.25vw; 
+    margin-bottom: 1.25vw;
+  }
+
+  .contact-title {
+    /* 20px @ 1920px */
+    font-size: 1.042vw; 
+  }
+
+  .contact-sub {
+    /* 16px @ 1920px */
+    font-size: 0.833vw; 
+    margin-top: 0.208vw;
+  }
+
+  .contact-group {
+    /* approx 32px spacing */
+    margin-bottom: 0.938vw; 
   }
 }

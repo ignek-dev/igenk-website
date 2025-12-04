@@ -15,6 +15,8 @@ export default function Footer() {
         { label: "Career", href: "/career" },
         { label: "Case Study", href: "/case-study" },
         { label: "Blogs", href: "/blog" },
+        { label: "Life At IGNEK", href: "/life-at-ignek" },
+        { label: "Marketplace", href: "/marketplace" },
       ],
     },
     {
@@ -28,30 +30,30 @@ export default function Footer() {
         { label: "Customer Experience", href: "/contact" },
       ],
     },
-    {
-      title: "Liferay Services",
-      items: [
-        { label: "Development and Customization", href: "/services/liferay-development-and-customization" },
-        // { label: "Theme Development", href: "/services/liferay-theme-development" },
-        { label: "Expert Advice", href: "/services/liferay-expert-advice" },
-        { label: "Proof Of Concept", href: "/services/liferay-proof-of-concept" },
-        { label: "Ecommerce Development", href: "/services/liferay-ecommerce-development" },
-        { label: "Migration", href: "/services/liferay-migration" },
-        { label: "Support And Maintenance", href: "/services/liferay-support-and-maintenance" },
-        { label: "Performance Tuning", href: "/services/liferay-performance-tuning" },
-        { label: "Upgradation", href: "/services/liferay-upgrade" },
-        { label: "Architecture Service", href: "/services/liferay-architecture-design" },
-        { label: "Consultation", href: "/services/liferay-consulting-and-implementation-services" },
-      ],
-    },
-    {
-      title: "Integrations",
-      items: [
-        { label: "Matomo Integration with Liferay", href: "/contact" },
-        { label: "Microsoft Teams integration with Liferay", href: "/contact" },
-        { label: "Jira Integration With Liferay", href: "/contact" },
-      ],
-    },
+    // {
+    //   title: "Liferay Services",
+    //   items: [
+    //     { label: "Development and Customization", href: "/services/liferay-development-and-customization" },
+    //     // { label: "Theme Development", href: "/services/liferay-theme-development" },
+    //     { label: "Expert Advice", href: "/services/liferay-expert-advice" },
+    //     { label: "Proof Of Concept", href: "/services/liferay-proof-of-concept" },
+    //     { label: "Ecommerce Development", href: "/services/liferay-ecommerce-development" },
+    //     { label: "Migration", href: "/services/liferay-migration" },
+    //     { label: "Support And Maintenance", href: "/services/liferay-support-and-maintenance" },
+    //     { label: "Performance Tuning", href: "/services/liferay-performance-tuning" },
+    //     { label: "Upgradation", href: "/services/liferay-upgrade" },
+    //     { label: "Architecture Service", href: "/services/liferay-architecture-design" },
+    //     { label: "Consultation", href: "/services/liferay-consulting-and-implementation-services" },
+    //   ],
+    // },
+    // {
+    //   title: "Integrations",
+    //   items: [
+    //     { label: "Matomo Integration with Liferay", href: "/contact" },
+    //     { label: "Microsoft Teams integration with Liferay", href: "/contact" },
+    //     { label: "Jira Integration With Liferay", href: "/contact" },
+    //   ],
+    // },
     // {
     //   title: "Hire Us",
     //   items: [
@@ -70,7 +72,7 @@ export default function Footer() {
         className="footer-sidebar global-container mx-auto flex w-full border-b border-white pl-4 md:pl-8"
         style={{ paddingRight: "0px !important" }}
       >
-        <div className="relative w-[80%] pt-12 pr-4 pb-20 md:pt-16 md:pr-8 md:pb-4">
+        <div className="relative w-[80%] pt-12 pb-12 md:pt-16  lg:pb-[94px]">
           <motion.div
             className="pointer-events-none absolute right-0 bottom-0 h-full w-full rounded-br-[19rem] border-r-2 border-b-2 border-white"
             initial={{ width: 0 }}
@@ -83,7 +85,7 @@ export default function Footer() {
               {menus.map((menu) => (
                 <div key={menu.title}>
                   <p className="footer-text-header leading-[1.9rem] font-semibold! text-white">{menu.title}</p>
-                  <ul className="mt-9 space-y-8 tracking-[2%] text-white">
+                  <ul className="mt-6 tracking-[2%] text-white">
                     {menu.items.map((it) => (
                       <li className="" key={it.label}>
                         <Link href={it.href} className="cursor-pointer hover:text-white">
@@ -103,50 +105,54 @@ export default function Footer() {
       {/* Bottom section: contacts + big logo + motto + bottom bar */}
       <div className="global-container mx-auto flex w-full pl-4 md:pl-8" style={{ paddingRight: "0px !important" }}>
         <div className="w-[80%] pt-12 pr-4 pb-20 md:pt-16 md:pr-8 md:pb-4">
-          <div className="grid sm:grid-cols-2 md:grid-cols-4">
-            <div>
-              <p className="text-2xl leading-[1.9rem] font-semibold text-white">Emails</p>
-              <div className="mt-4 space-y-3 text-white">
-                <div>
-                  <Link href="mailto:sales@ignek.com" className="p20 font-semibold! hover:text-white">
-                    sales@ignek.com
-                  </Link>
-                  <div className="p16 text-[#9CA3AF]">(For sales inquiry)</div>
-                </div>
-                <div>
-                  <Link href="mailto:hr@ignek.com" className="p20 font-semibold! hover:text-white">
-                    hr@ignek.com
-                  </Link>
-                  <div className="p16 text-[#9CA3AF]">(For hiring inquiry)</div>
-                </div>
-              </div>
-            </div>
-            <div>
-              <p className="text-2xl leading-[1.9rem] font-semibold text-white">Call</p>
-              <div className="mt-4 space-y-3 text-white">
-                <div>
-                  <Link href="tel:+916351576580" className="p20 font-semibold! hover:text-white">
-                    (+91) 635 157 6580
-                  </Link>
-                  <div className="p16 text-[#9CA3AF]">(For sales inquiry)</div>
-                </div>
-                <div>
-                  <Link href="tel:+919328495160" className="p20 font-semibold! hover:text-white">
-                    (+91) 932 849 5160
-                  </Link>
-                  <div className="p16 text-[#9CA3AF]">(For hiring inquiry)</div>
-                </div>
-              </div>
-            </div>
-            <div>
-              <p className="text-2xl leading-[1.9rem] font-semibold text-white">Office</p>
-              <p className="p20 whitespace-wrap mt-4 mb-3 min-w-xl font-semibold! text-white [@media(max-width:1700px)]:min-w-auto">
-                E 910-912, Ganesh Glory 11, Jagatpur Road, SG Highway, Ahmedabad, Gujarat - 382470 (Headquarter) <br />
-              </p>
-              <span className="p20 mt-4 min-w-3xl font-semibold! whitespace-nowrap text-white">
-                Dubai, United Arab Emirates (UAE Branch)
-              </span>
-            </div>
+          <div className="contact-grid">
+        {/* 1. Emails Column */}
+      <div>
+        <p className="contact-header">Emails</p>
+        <div className="contact-group">
+          <Link href="mailto:sales@ignek.com" className="contact-title">
+            sales@ignek.com
+          </Link>
+          <div className="contact-sub">(For sales inquiry)</div>
+        </div>
+        <div className="contact-group">
+          <Link href="mailto:hr@ignek.com" className="contact-title">
+            hr@ignek.com
+          </Link>
+          <div className="contact-sub">(For hiring inquiry)</div>
+        </div>
+      </div>
+           {/* 2. Call Column */}
+      <div>
+        <p className="contact-header">Call</p>
+        <div className="contact-group">
+          <Link href="tel:+916351576580" className="contact-title">
+            (+91) 635 157 6580
+          </Link>
+          <div className="contact-sub">(For sales inquiry)</div>
+        </div>
+        <div className="contact-group">
+          <Link href="tel:+919328495160" className="contact-title">
+            (+91) 932 849 5160
+          </Link>
+          <div className="contact-sub">(For hiring inquiry)</div>
+        </div>
+      </div>
+          {/* 3. Office Column */}
+      <div className="office-col">
+        <p className="contact-header">Office</p>
+        <div className="contact-group">
+          <p className="contact-title">
+            Ahmedabad, India
+          </p>
+          {/* Optional: Add full address in sub-text if needed, or keep clean as per screenshot */}
+        </div>
+        <div className="contact-group">
+          <p className="contact-title">
+            Dubai, United Arab Emirates
+          </p>
+        </div>
+      </div>
           </div>
           {/* Big brand logo */}
           <div
