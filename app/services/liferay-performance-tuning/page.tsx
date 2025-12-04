@@ -1,11 +1,12 @@
 "use client"
 import { Metadata } from "next"
 import Image from "next/image"
-import { useState } from "react"
+import {  useEffect,useRef } from "react"
 import { BlogSection } from "components/Common"
 import CaseStudy from "components/Common/CaseStudy"
 import TalkToExpert from "components/Common/TalkToExpert"
 import WhatMake from "components/Common/WhatMake"
+import React, { useState } from "react"
 import {
   caseStudies,
   featureTabs,
@@ -44,7 +45,40 @@ const metadata: Metadata = {
 }
 
 export default function LiferayPerformanceTuningPage() {
-  const [activeIndex, setActiveIndex] = useState(0)
+  const [activeIndex, setActiveIndex] = useState(0);
+const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+const sectionRef = useRef<HTMLDivElement>(null);
+
+useEffect(() => {
+  const handleScroll = () => {
+    if (!sectionRef.current) return;
+
+    const sectionTop = sectionRef.current.offsetTop;
+    const sectionBottom = sectionTop + sectionRef.current.offsetHeight;
+    const scrollPosition = window.scrollY + window.innerHeight / 1;
+
+    // Check if we're within the section bounds
+    if (scrollPosition >= sectionTop && scrollPosition <= sectionBottom) {
+      // Find active card based on scroll position
+      for (let i = cardRefs.current.length - 1; i >= 0; i--) {
+        const card = cardRefs.current[i];
+        if (card) {
+          const cardTop = card.offsetTop;
+          if (scrollPosition >= cardTop) {
+            setActiveIndex(i);
+            break;
+          }
+        }
+      }
+    }
+  };
+
+  window.addEventListener('scroll', handleScroll);
+  handleScroll(); // Initial check
+
+  return () => window.removeEventListener('scroll', handleScroll);
+}, []);
+
   return (
     <main className="pb-0">
       <section className="relative bg-black text-white">
@@ -52,7 +86,6 @@ export default function LiferayPerformanceTuningPage() {
         <div className="global-container mx-auto w-full pt-[7.865vw] pb-[3.854vw]">
           <div className="relative grid items-start justify-between gap-10 md:grid-cols-2">
             <div className="">
-             
               <h1 className="mt-[2.031vw] w-[40.156vw]">
                 {liferayPerformanceTuning.heading}
                 <br />
@@ -66,7 +99,7 @@ export default function LiferayPerformanceTuningPage() {
           </div>
 
           {/* Feature tabs */}
-          <div className="mt-[3.177vw] inline-flex flex-wrap gap-[1.563vw]  ">
+          <div className="mt-[3.177vw] inline-flex flex-wrap gap-[1.563vw]">
             {featureTabs.map((label, index) => (
               <span
                 key={index}
@@ -86,11 +119,15 @@ export default function LiferayPerformanceTuningPage() {
             <p className="p18 text-[#374151]">{liferayPerformanceFeatures.description}</p>
           </div>
 
-          <div className="mt-[2.604vw] grid grid-cols-1 divide-y divide-gray-200 md:grid-cols-3 md:divide-x-2 md:divide-y-0">
-            {liferayPerformanceFeatures.features.slice(0, 3).map((feature, index) => (
+          <div className="mt-[2.604vw] grid grid-cols-1 divide-y divide-gray-200 md:grid-cols-3 md:divide-x-3 md:divide-y-0">
+            {liferayPerformanceFeatures.features.slice(0, 3).map((feature, index, arr) => (
               <div
                 key={index}
-                className="flex flex-col items-center gap-[0.417vw] pt-[2.604vw] pr-[0.625vw] pb-[3.698vw] text-center"
+                className={`flex flex-col items-center gap-[0.417vw] pt-[2.604vw] pb-[3.698vw] text-center ${
+                  index === 0 ? "pr-[2.1vw] pl-0" : ""
+                } ${index === arr.length - 1 ? "pr-0 pl-[2.1vw]" : ""} ${
+                  index !== 0 && index !== arr.length - 1 ? "px-[2.1vw]" : ""
+                } `}
               >
                 <h3 className="h-[4.5vw] w-[19.688vw] text-center text-[1.563vw]!">{feature.title}</h3>
                 <p className="p20 mt-[0.156vw] text-gray-500">{feature.description}</p>
@@ -98,11 +135,15 @@ export default function LiferayPerformanceTuningPage() {
             ))}
           </div>
 
-          <div className="grid grid-cols-1 divide-y-2 divide-gray-200 border-t-2  border-gray-200 md:grid-cols-3 md:divide-x-2 md:divide-y-0">
-            {liferayPerformanceFeatures.features.slice(3, 6).map((feature, index) => (
+          <div className="grid grid-cols-1 divide-y-2 divide-gray-200 border-t-3 border-gray-200 md:grid-cols-3 md:divide-x-3 md:divide-y-0">
+            {liferayPerformanceFeatures.features.slice(3, 6).map((feature, index, arr) => (
               <div
                 key={index}
-                className="flex flex-col items-center gap-[0.417vw] pt-[2.604vw] pr-[0.625vw] pb-[3.698vw] text-center"
+                className={`flex flex-col items-center gap-[0.417vw] pt-[2.604vw] pb-[3.698vw] text-center ${
+                  index === 0 ? "pr-[2.1vw] pl-0" : ""
+                } ${index === arr.length - 1 ? "pr-0 pl-[2.1vw]" : ""} ${
+                  index !== 0 && index !== arr.length - 1 ? "px-[2.1vw]" : ""
+                } `}
               >
                 <h3 className="w-[19.688vw] text-[1.563vw]! font-semibold">{feature.title}</h3>
                 <p className="p20 text-gray-500">{feature.description}</p>
@@ -138,72 +179,77 @@ export default function LiferayPerformanceTuningPage() {
                   <Image src={item?.image ?? ""} alt="Progress icon" width={44} height={44} />
                   <h3 className="h-[4.688vw] w-[17.292vw] text-[1.563vw]! font-medium!">{item.title}</h3>
                   <p className="p20 h-[6.25vw] text-white/80">{item.desc}</p>
-                  {!isLastRow && <hr className="bottom-0 left-0 mb-[3.333vw] mt-[2.292vw] w-full border-b border-white/20" />}
+                  {!isLastRow && (
+                    <hr className="bottom-0 left-0 mt-[2.292vw] mb-[3.333vw] w-full border-b border-white/20" />
+                  )}
                 </div>
               )
             })}
           </div>
         </div>
       </section>
+      
       {/* What We Do With Our Liferay DXP Performance Tuning Services */}
-      <section className="bg-[#f7f7f7] text-black">
-        <div className="global-container mx-auto w-full px-4 py-[3.333vw]">
-          <div className="relative flex flex-row items-center justify-between">
-            <h2 className="w-[43.802vw] text-[#000000]">
-              {liferayPerformanceWhatWeDo.heading}<br /> {liferayPerformanceWhatWeDo.heading2}
-            </h2>
-            <p className="p18 text[#4B5563] bottom-0 max-w-[35.5vw] text-right">
-              {liferayPerformanceWhatWeDo.description}
-            </p>
-          </div>
+    <section className="bg-[#f7f7f7] text-black" ref={sectionRef}>
+  <div className="global-container mx-auto w-full px-4 pt-[3.333vw] ">
+    <div className="relative flex flex-row items-center justify-between">
+      <h2 className="w-[43.802vw] text-[#000000]">
+        {liferayPerformanceWhatWeDo.heading}
+        <br /> {liferayPerformanceWhatWeDo.heading2}
+      </h2>
+      <p className="p18 text[#4B5563] bottom-0 max-w-[35.5vw] text-right">
+        {liferayPerformanceWhatWeDo.description}
+      </p>
+    </div>
 
-          <section className="pt-[3.333vw]">
-            <div className="flex">
-              {/* Left column */}
-
-              <div className="mr-[3.021vw] max-w-[34.583vw] space-y-6 scroll-auto">
-                {items.map((item, index) => (
-                  <div
-                    key={item.title}
-                    className={`group cursor-pointer border-l-4 pl-[1.667vw] transition-all duration-300 ${
-                      activeIndex === index
-                        ? "border-black text-black"
-                        : "border-gray-300 text-gray-600 hover:border-black hover:text-black"
-                    } ${index !== items.length - 1 ? "mb-[2.917vw]" : "mb-0"} `}
-                    onMouseEnter={() => setActiveIndex(index)}
-                  >
-                    <h3 className="text-[1.563vw]! font-semibold! text-black">{item.title}</h3>
-                    <p className="p16 mt-[0.417vw] max-w-[27.969vw] text-gray-700">{item.desc}</p>
-                  </div>
-                ))}
-              </div>
-
-              {/* Right column */}
-              <div className="sticky top-60 h-full w-5xl rounded-xl border border-gray-200 bg-white p-[1.458vw] shadow-sm transition-all duration-500">
-                <h3 className="text-[1.563vw]! font-semibold!">{item[activeIndex]?.title}</h3>
-                <ul className="mt-[1.25vw] flex flex-col gap-[1.25vw]">
-                  {item[activeIndex]?.details.map((text) => (
-                    <li key={text} className="flex items-center gap-[1.042vw]">
-                      <span className="flex aspect-square h-[1.458vw] w-[1.458vw] shrink-0 items-center justify-center rounded-full bg-black">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="12" viewBox="0 0 16 12" fill="none">
-                          <path
-                            d="M1 7L5 11L15 1"
-                            stroke="white"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                          />
-                        </svg>
-                      </span>
-                      <span className="p20 text-gray-800">{text}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+    <section className="pt-[3.333vw] pb-[3.333vw] ">
+      <div className="flex">
+        {/* Left column */}
+        <div className="mr-[3.021vw] max-w-[34.583vw] space-y-6 scroll-auto">
+          {items.map((item, index) => (
+            <div
+              key={item.title}
+              ref={(el) => {
+                if (el) cardRefs.current[index] = el;
+              }}
+              className={`group cursor-pointer border-l-4 pl-[1.667vw] transition-all duration-300 ${
+                activeIndex === index
+                  ? "border-black text-black"
+                  : "border-gray-300 text-gray-600 hover:border-black hover:text-black"
+              } ${index !== items.length - 1 ? "mb-[2.917vw]" : "mb-0"} `}
+            >
+              <h3 className="text-[1.563vw]! font-semibold! text-black">{item.title}</h3>
+              <p className="p16 mt-[0.417vw] max-w-[27.969vw] text-gray-700">{item.desc}</p>
             </div>
-          </section>
+          ))}
         </div>
-      </section>
+
+        {/* Right column */}
+        <div className="sticky top-[14.583vw] h-full w-5xl rounded-xl border border-gray-200 bg-white p-[1.458vw] shadow-sm transition-all duration-500">
+          <h3 className="text-[1.563vw]! font-semibold!">{item[activeIndex]?.title}</h3>
+          <ul className="mt-[1.25vw] flex flex-col gap-[1.25vw]">
+            {item[activeIndex]?.details.map((text) => (
+              <li key={text} className="flex items-center gap-[1.042vw]">
+                <span className="flex aspect-square h-[1.458vw] w-[1.458vw] shrink-0 items-center justify-center rounded-full bg-black">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="12" viewBox="0 0 16 12" fill="none">
+                    <path
+                      d="M1 7L5 11L15 1"
+                      stroke="white"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </span>
+                <span className="p20 text-gray-800">{text}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </section>
+  </div>
+</section>
       <CaseStudy caseStudies={caseStudies} />
       <WhatMake
         WhatMakeData={LiferayPerformanceTuningData}
