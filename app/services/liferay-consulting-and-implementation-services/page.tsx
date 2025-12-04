@@ -86,7 +86,7 @@ export default function LiferayConsultationPage() {
           <div className="grid grid-cols-1 items-center gap-6 md:grid-cols-5">
             {/* Left Side: Text Content */}
             <div className="col-span-3">
-              <div className="p18 banner-tab">{liferayHeroData.tag}</div>
+              {/* <div className="p18 banner-tab">{liferayHeroData.tag}</div> */}
               <h1 className="mt-[2.031vw]">
                 {liferayHeroData.titleLine1}
                 <br />
