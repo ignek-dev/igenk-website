@@ -189,11 +189,11 @@ export const LiferayTechnologicalStacks = () => {
   }, [])
 
   return (
-    <section className="relative bg-[#F6F6F6] py-16 text-black">
-      <div className="mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[192px]">
+    <section className="relative bg-[#F6F6F6] py-[3.333vw] text-black">
+      <div className="global-container">
         <div className="w-full">
-          <h2 className="text-5xl leading-tight font-bold tracking-tight">Liferay Technological Stacks</h2>
-          <p className="mt-4 text-xl text-black/80">
+          <h2 className="">Liferay Technological Stacks</h2>
+          <p className="p18 mt-[1.458vw] text-black/80">
             Liferay runs on a strong mix of technologies that keep it stable and future-ready. It uses Java as its core
             language, supports multiple databases, and allows integration with many other systems. The platform also
             uses modern front-end tools to make websites look great and work smoothly on all devices.
@@ -201,9 +201,9 @@ export const LiferayTechnologicalStacks = () => {
         </div>
 
         {/* Main layout */}
-        <div className="relative mt-16 flex flex-col md:flex-row md:gap-16" ref={containerRef}>
+        <div className="item-start relative mt-[3.385vw] flex flex-col md:flex-row md:gap-16" ref={containerRef}>
           {/* Left Side */}
-          <div className="relative z-10 flex w-full flex-col gap-4 md:w-1/4">
+          <div className="relative z-10 flex w-full flex-col gap-y-[3.125vw] md:w-1/4">
             {stackData.map((item, index) => (
               <div
                 key={index}
@@ -211,14 +211,14 @@ export const LiferayTechnologicalStacks = () => {
                   itemsRef.current[index] = el
                 }}
                 onMouseEnter={() => handleHover(index)}
-                className={`relative flex cursor-pointer items-center rounded-lg p-4 transition-all duration-300 ${
-                  activeIndex === index ? "bg-blue-600 text-white shadow-md" : "bg-white text-black hover:bg-blue-100"
+                className={`relative flex max-w-[362px] cursor-pointer items-center border-l-[5px] border-[#D1D5DB] p-[20px] pl-[32px] transition-all duration-300 ${
+                  activeIndex === index ? "bg-blue-600 text-white shadow-md" : "text-black hover:bg-blue-100"
                 }`}
                 style={{ minHeight: "90px" }}
               >
-                <div className="pl-2">
-                  <h3 className="text-xl font-semibold">{item.category}</h3>
-                  <p className={`mt-1 text-sm ${activeIndex === index ? "text-white/90" : "text-black/70"}`}>
+                <div>
+                  <p className="text-[1.563vw] font-medium">{item.category}</p>
+                  <p className={`mt-[4px] text-[0.833vw] ${activeIndex === index ? "text-white/90" : "text-black/70"}`}>
                     {item.description}
                   </p>
                 </div>
@@ -227,18 +227,34 @@ export const LiferayTechnologicalStacks = () => {
           </div>
 
           {/* Right Side */}
-          <div className="absolute left-[30%] w-[70%] transition-all duration-300" style={{ top: `${topOffset}px` }}>
-            <div className="grid grid-cols-4 gap-6 overflow-hidden">
-              {stackData[activeIndex]?.technologies?.map((tech, index) => (
-                <div
-                  key={index}
-                  className="relative flex h-[140px] flex-col items-center justify-center rounded-xl bg-white shadow-sm transition hover:shadow-lg"
-                >
-                  <Image src={tech.logo} alt={tech.name} width={64} height={64} className="object-contain" />
-                  <span className="mt-3 text-sm font-medium text-black/90">{tech.name}</span>
+          <div className="w-full transition-all duration-300 md:w-3/4">
+            {(() => {
+              const cols = 4
+              const items = stackData[activeIndex]?.technologies ?? []
+              const total = items.length
+
+              return (
+                <div className="tech-grid grid grid-cols-4 overflow-hidden">
+                  {items.map((tech, index) => {
+                    const colIndex = index % cols
+                    const lastCol = colIndex === cols - 1
+                    const lastRow = index >= total - cols
+
+                    return (
+                      <div
+                        key={index}
+                        className={`tech-cell relative flex flex-col items-center justify-center p-6 transition ${
+                          lastCol ? "tech-cell--last-col" : ""
+                        } ${lastRow ? "tech-cell--last-row" : ""} `}
+                      >
+                        <Image src={tech.logo} alt={tech.name} width={100} height={100} className="object-contain" />
+                        <span className="mt-3 text-sm font-medium text-black/90">{tech.name}</span>
+                      </div>
+                    )
+                  })}
                 </div>
-              ))}
-            </div>
+              )
+            })()}
           </div>
         </div>
       </div>
