@@ -27,23 +27,23 @@ const digitalExperienceLinks = [
 
 // Data for the "Liferay Services" section (Original Data)
 const liferayServicesLinks = [
-  { text: "Consulting Page", href: "/services/liferay-consulting-and-implementation-services" },
-  { text: "Performance Tuning", href: "/services/liferay-performance-tuning" },
-  { text: "Proof Of Concept", href: "/services/liferay-proof-of-concept" },
-  { text: "Support & Maintenance", href: "/services/liferay-support-and-maintenance" },
-  { text: "Architecture", href: "/services/liferay-architecture-design" },
-  { text: "Ecommerce Development", href: "/services/liferay-ecommerce-development" },
   { text: "Development & Customization", href: "/services/liferay-development-and-customization" },
-  { text: "Expert Advice", href: "/services/liferay-expert-advice" },
   { text: "Upgradation", href: "/services/liferay-upgrade" },
-  // { text: "Hire Liferay Devloper", href: "/services/liferay-hire-developer" },
   { text: "Migration", href: "/services/liferay-migration" },
+  { text: "Architecture", href: "/services/liferay-architecture-design" },
+  { text: "Performance Tuning", href: "/services/liferay-performance-tuning" },
+  { text: "Ecommerce Development", href: "/services/liferay-ecommerce-development" },
+  { text: "Consulting Page", href: "/services/liferay-consulting-and-implementation-services" },
+  { text: "Support & Maintenance", href: "/services/liferay-support-and-maintenance" },
+  { text: "Proof Of Concept", href: "/services/liferay-proof-of-concept" },
+  { text: "Expert Advice", href: "/services/liferay-expert-advice" },
+  // { text: "Hire Liferay Devloper", href: "/services/liferay-hire-developer" },
   // { text: "Theme Development", href: "/services/liferay-theme-development" },
 ]
 
 // NEW LOGIC: Explicitly split the links into two arrays for Flex columns
-const liferayCol1 = liferayServicesLinks.slice(0, 5);
-const liferayCol2 = liferayServicesLinks.slice(5, 10);
+const liferayCol1 = liferayServicesLinks.slice(0, 5)
+const liferayCol2 = liferayServicesLinks.slice(5, 10)
 
 // Data for the Marquee
 const marqueeStats = [
@@ -62,14 +62,29 @@ const MarqueeGroup = () => (
     {marqueeStats.map((stat, index) => (
       <div key={index} className="flex items-center">
         {/* Text */}
-        <span className="text-[0.9vw] font-medium text-white opacity-80 whitespace-nowrap">{stat}</span>
+        <span className="text-[0.9vw] font-medium whitespace-nowrap text-white opacity-80">{stat}</span>
         {/* Separator Dot */}
         <div className="mx-6 flex items-center justify-center">
-           <Image src="/images/icon/Ellipse.png" alt="dot" width={6} height={6} />
+          <Image src="/images/icon/Ellipse.png" alt="dot" width={6} height={6} />
         </div>
       </div>
     ))}
   </div>
+)
+
+// --- REUSABLE STAR COMPONENT ---
+const StarIcon = ({ className }: { className?: string }) => (
+  <svg viewBox="0 0 24 24" className={className} xmlns="http://www.w3.org/2000/svg">
+    {/* Define the gradient */}
+    <defs>
+      <linearGradient id="starGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stopColor="#FFFFFF" />
+        <stop offset="100%" stopColor="#1024FF" />
+      </linearGradient>
+    </defs>
+    {/* Apply the gradient to the path */}
+    <path fill="url(#starGradient)" d="M12 0L14.5 9.5L24 12L14.5 14.5L12 24L9.5 14.5L0 12L9.5 9.5L12 0Z" />
+  </svg>
 )
 
 // --- Main ServicesMegaMenu Component ---
@@ -127,7 +142,7 @@ export default function ServicesMegaMenu({ onClose }: MegaMenuProps) {
                       href={link.href}
                       className="flex items-center gap-[0.625vw] text-white transition-colors hover:text-white"
                     >
-                      <div className="flex h-[40px] w-[40px] items-center justify-center flex-shrink-0">
+                      <div className="flex h-[40px] w-[40px] flex-shrink-0 items-center justify-center">
                         <Image src={link.iconUrl} alt={link.text} width={36} height={40} className="object-contain" />
                       </div>
                       <span className="p20">{link.text}</span>
@@ -141,13 +156,12 @@ export default function ServicesMegaMenu({ onClose }: MegaMenuProps) {
             <div className="mx-[2.8125rem] w-[1px] bg-white"></div>
 
             {/* Liferay Services Section */}
-            <div className="flex-1 flex flex-col justify-between">
+            <div className="flex flex-1 flex-col justify-between">
               <div>
                 <h5 className="mb-[1.875vw] font-medium">Liferay Services</h5>
-                
+
                 {/* REPLACED GRID WITH FLEX COLUMNS */}
-                <div className="flex gap-[6.95rem]">
-                  
+                <div className="flex gap-[3.65rem]">
                   {/* Column 1 (First 5 items) */}
                   <ul className="flex flex-col gap-y-[1.5rem]">
                     {liferayCol1.map((link) => (
@@ -177,46 +191,78 @@ export default function ServicesMegaMenu({ onClose }: MegaMenuProps) {
                       </li>
                     ))}
                   </ul>
-
                 </div>
-
               </div>
 
               {/* NEW SECTION: Button + Marquee */}
-              {/* mt-6 adds the 24px spacing requested */}
-              <div className="mt-6 flex w-full items-center overflow-hidden">
-                
+              <div className="mt-6 flex w-full items-center overflow-visible">
                 {/* Hire Liferay Experts Button */}
                 <a
-                  href="/services/liferay-hire-developer" 
-                  className="group mr-6 flex flex-shrink-0 items-center gap-3 rounded-[30px] border border-[#ffffff33] bg-[#ffffff0d] pl-[1.458vw] pr-[1.25vw] py-[0.833vw] transition-all hover:bg-[#ffffff20]"
+                  href="/services/liferay-hire-developer"
+                  className="group /* HOVER STATE: Blue + Yellow Shadow */ relative mr-8 flex flex-shrink-0 items-center gap-3 rounded-[1.563vw] border border-[#ffffff33] bg-[#ffffff0d] py-[0.833vw] pr-[1.25vw] pl-[1.458vw] transition-all duration-300 ease-in-out hover:border-[#0B63CE] hover:bg-[#0B63CE] hover:shadow-[0px_2px_30px_0px_#FFD12E80]"
                   onClick={onClose}
                 >
-                  <span className="p20 font-medium text-white">Hire Liferay Experts</span>
-                  <svg 
-                    viewBox="0 0 24 24" 
-                    fill="none" 
+                  {/* --- STAR ANIMATION ELEMENTS --- */}
+
+                  {/* LEFT SIDE STARS (2 Stars) */}
+                  {/* Left 1: Bottom-Left (Large) */}
+                  <div className="absolute top-1/2 left-4 -z-10 w-[1.042vw] h-[1.042vw] -translate-y-1/2 rotate-[-13.52deg] scale-0 opacity-0 transition-all duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)] group-hover:-translate-x-8 group-hover:translate-y-6 group-hover:scale-100 group-hover:opacity-100">
+                    <StarIcon />
+                  </div>
+                  {/* Left 2: Top-Left (Small) */}
+                  <div className="absolute top-1/2 left-2 -z-10 w-[0.769vw] h-[0.769vw] -translate-y-1/2 rotate-[-78.26deg] scale-0 opacity-0 transition-all delay-75 duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)] group-hover:-translate-x-7 group-hover:-translate-y-7 group-hover:scale-100 group-hover:opacity-100">
+                    <StarIcon />
+                  </div>
+
+                  {/* RIGHT SIDE STARS (3 Stars) */}
+                  {/* Right 1: Top-Right (Small) */}
+                  <div className="absolute top-1/2 right-3 -z-10 w-[0.625vw] h-[0.625vw] -translate-y-1/2 rotate-[10.95deg] scale-0 opacity-0 transition-all delay-100 duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)] group-hover:translate-x-6 group-hover:-translate-y-8 group-hover:scale-100 group-hover:opacity-100">
+                    <StarIcon />
+                  </div>
+                  {/* Right 2: Middle-Right (Medium) */}
+                  <div className="absolute top-1/2 right-1 -z-10 w-[0.942vw] h-[0.942vw] -translate-y-1/2 rotate-[-22.46deg] scale-0 opacity-0 transition-all delay-75 duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)] group-hover:translate-x-8 group-hover:-translate-y-1 group-hover:scale-100 group-hover:opacity-100">
+                    <StarIcon />
+                  </div>
+                  {/* Right 3: Bottom-Right (Small) */}
+                  <div className="absolute top-1/2 right-4 -z-10 w-[0.833vw] h-[0.833vw] -translate-y-1/2 rotate-[24.87deg] scale-0 opacity-0 transition-all delay-150 duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)] group-hover:translate-x-6 group-hover:translate-y-7 group-hover:scale-100 group-hover:opacity-100">
+                    <StarIcon />
+                  </div>
+
+                  <span className="p20 relative z-10 font-medium text-white">Hire Liferay Experts</span>
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
                     xmlns="http://www.w3.org/2000/svg"
-                    className="w-[1.25vw] h-[1.25vw]transition-transform group-hover:translate-x-1"
+                    className="relative z-10 h-[1.25vw] w-[1.25vw] transition-transform group-hover:translate-x-1"
                   >
-                    <path d="M5 12H19" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    <path d="M12 5L19 12L12 19" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M5 12H19" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    <path
+                      d="M12 5L19 12L12 19"
+                      stroke="white"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
                   </svg>
                 </a>
 
                 {/* Marquee Animation */}
-                <div className="relative flex flex-1 overflow-hidden w-[10vw]">
-                   <div className="animate-marquee-medium flex items-center">
-                      <MarqueeGroup />
-                      <MarqueeGroup />
-                      <MarqueeGroup />
-                      <MarqueeGroup />
-                   </div>
+                <div
+                  className="relative flex w-[10vw] flex-1 overflow-hidden"
+                  style={{
+                    maskImage: "linear-gradient(to right, black 85%, transparent 100%)",
+                    WebkitMaskImage: "linear-gradient(to right, black 85%, transparent 100%)",
+                  }}
+                >
+                  <div className="animate-marquee-custom flex items-center">
+                    <MarqueeGroup />
+                    <MarqueeGroup />
+                    <MarqueeGroup />
+                    <MarqueeGroup />
+                  </div>
                 </div>
-
               </div>
               {/* End New Section */}
-
             </div>
           </div>
         </div>
