@@ -1,11 +1,13 @@
+import { title } from "process"
+
 export const homepageData = {
   hero: {
-    headingLine1: "We are",
+    headingLine1: "We are the",
     headingItalic: "Liferay Boutique",
     headingLine3: "Company",
 
     description:
-      "Helping enterprises utilise Liferay to its highest potential through strategy-led, best-practice implementations.",
+      "We utilise Liferay to its highest potential through a strategic Liferay-first approach- delivering best-practice implementations that maximise value and position IGNEK as a trusted Liferay implementation partner.",
 
     button: {
       text: "Discover More",
@@ -56,43 +58,43 @@ export const partners = [
 export const EndToEndSectionData = {
   heading: "Your End-to-End Liferay Implementation Partner",
   description:
-    "We help enterprises utilise Liferay to its highest potential through thoughtful, best-practice implementations. From discovery to design, engineering, and optimisation, we craft digital experiences that are scalable, intuitive, and built to deliver long-term value.",
+    "We help enterprises utilise Liferay to its highest potential through thoughtful, best-practice implementations. From discovery to design, engineering and optimisation, we craft scalable, intuitive digital experiences built for long-term value.",
 
   digitalExperience: {
     title: "Digital Experience",
     description:
-      "We craft unified and personalized digital experiences using Liferay DXP, ensuring customer engagement, consistency, and business growth across all digital touchpoints.",
+      "We design purposeful and connected digital experiences on Liferay DXP — blending strategy, design, and engineering to create journeys that feel seamless, consistent, and built for enterprise-grade growth while maximising the value of your Liferay investment.",
 
     accordion: [
       {
         title: "DX Strategy",
         content:
-          "We define data-driven digital transformation strategies that align technology, business goals, and customer needs for long-term growth.",
+          "We craft Liferay-focused digital experience strategies that align platform capabilities, business goals, and user needs for sustained enterprise success and measurable Liferay outcomes.",
       },
       {
         title: "DX Design",
         content:
-          "Our design experts create user-centric interfaces and seamless journeys that elevate brand identity and enhance engagement.",
+          "We design purposeful, intuitive Liferay experiences that create seamless journeys, strengthen brand presence, and elevate user engagement through a consistent Liferay-first design approach.",
       },
       {
         title: "DX Engineering",
         content:
-          "We engineer scalable, secure, and high-performing digital platforms leveraging Liferay DXP to accelerate transformation and innovation.",
+          "We engineer scalable, secure, and high-performing digital platforms leveraging Liferay DXP to accelerate transformation and innovation, built on best-practice Liferay implementation standards.",
       },
       {
         title: "DX Intelligence",
         content:
-          "We integrate analytics and AI-driven insights to optimize performance, personalize experiences, and support informed business decisions.",
+          "We leverage Liferay’s analytics and intelligence capabilities to optimise performance, personalise experiences, and enable smarter enterprise decisions across your Liferay ecosystem.",
       },
       {
         title: "DX Marketing",
         content:
-          "We help businesses deliver targeted campaigns and consistent messaging using integrated digital marketing strategies and tools.",
+          "We use Liferay’s experience tools to deliver personalised journeys, consistent messaging, and targeted interactions across every digital touchpoint, aligning marketing experiences with platform best practices.",
       },
       {
         title: "DX Infrastructure",
         content:
-          "We build reliable, cloud-ready infrastructures that support scalability, performance, and security across enterprise digital ecosystems.",
+          "We build resilient, cloud-ready Liferay infrastructures supporting scalability, performance, and security for enterprise digital ecosystems, ensuring long-term platform reliability.",
       },
     ],
   },
@@ -100,46 +102,46 @@ export const EndToEndSectionData = {
   staffAugmentation: {
     title: "Staff Augmentation",
     description:
-      "We provide expert Liferay developers and consultants through flexible staff augmentation models, ensuring rapid scalability, domain expertise, and seamless project delivery.",
+      "We provide expert Liferay engineers and consultants through flexible staff augmentation models, ensuring rapid scalability, domain expertise, and seamless Liferay delivery.",
 
     accordion: [
       {
         title: "Technical Excellence",
         content:
-          "Delivering innovative, scalable, and reliable Liferay solutions built with unmatched technical expertise and industry best practices.",
+          "Delivering innovative, scalable, and reliable Liferay solutions built with strong technical expertise and Liferay best practices.",
       },
       {
         title: "Value-Based Pricing",
-        content: "Offering transparent, outcome-driven pricing models that align with your business value.",
+        content: "Offering transparent, outcome-driven pricing models that align with your business value and Liferay needs.",
       },
       {
         title: "Training",
-        content: "Empowering teams with expert-led Liferay platform training for efficiency and innovation.",
+        content: "Empowering teams with expert-led Liferay platform training for efficiency, innovation, and a Liferay-first mindset.",
       },
     ],
   },
 }
 
 export const frameContent = [
-  "DELIVER SEAMLESS JOURNEYS",
-  "PERSONALIZE EVERY INTERACTION",
-  "TRANSFORM CUSTOMER TOUCHPOINTS",
-  "AUTOMATE WHAT MATTERS",
-  "TURN DATA INTO DECISIONS",
-  "LEAD WITH STRATEGY",
+  "Utilise Liferay to Its Highest Potential",
+  "Implement Liferay the Right Way",
+  "Maximise Your Liferay Investment",
+  "Liferay First Approach ",
+  "Unlock Liferay’s Full Capabilities",
+  "Deliver Liferay Excellence Every Time",
 ]
 
 export const capabilitiesData = {
-  capabilitiesHeading: "Our Capabilities",
+  capabilitiesHeading: "Our Liferay Capabilities",
 
   capabilitiesSubtext:
-    "We build flexible platforms and scalable digital experiences using Liferay DXP, empowering enterprises with agility, performance, and future-ready digital growth.",
+    "We build scalable platforms and meaningful digital experiences on Liferay DXP, empowering enterprises with best-practice implementation, performance, and future-ready digital growth.",
 
   capabilities: [
     {
       iconSrc: "/images/our-capabilities/platform-selection.svg",
       title: "Platform Selection",
-      description: "Choose the right Liferay platform to achieve scalable digital transformation goals.",
+      description: "Evaluate whether Liferay is the right platform to meet your requirements.",
     },
     {
       iconSrc: "/images/our-capabilities/omni-channel.svg",
@@ -149,76 +151,76 @@ export const capabilitiesData = {
     {
       iconSrc: "/images/our-capabilities/platform-upgrade.svg",
       title: "Platform upgrades",
-      description: "Upgrade to the latest Liferay DXP for enhanced performance and security.",
+      description: "Upgrade to the newest Liferay DXP version for improved performance, stability, and long-term security.",
     },
     {
       iconSrc: "/images/our-capabilities/cms.svg",
       title: "CMS",
-      description: "Empower content teams with flexible, easy-to-manage Liferay CMS solutions.",
+      description: "Empower teams with flexible, intuitive Liferay CMS capabilities for efficient, effortless content management.",
     },
     {
       iconSrc: "/images/our-capabilities/personalization.svg",
       title: "Personalization",
-      description: "Engage users with behavior-based, contextual, and data-driven personalized experiences.",
+      description: "Deliver tailored, context-aware Liferay experiences driven by user behaviour, platform intelligence, and insight.",
     },
     {
       iconSrc: "/images/our-capabilities/search.svg",
       title: "Search",
-      description: "Enhance content discovery and user experience with advanced Liferay search.",
+      description: "Enhance content discovery and user experience with advanced Liferay search and indexing.",
     },
     {
       iconSrc: "/images/our-capabilities/commerce.svg",
       title: "Commerce",
-      description: "Build seamless, integrated Liferay Commerce experiences for digital shopping journeys.",
+      description: "Build seamless, integrated Liferay Commerce experiences that elevate digital shopping and purchasing journeys.",
     },
     {
       iconSrc: "/images/our-capabilities/dam.svg",
       title: "DAM",
-      description: "Manage and distribute digital assets efficiently with Liferay DAM.",
+      description: "Manage and distribute digital assets efficiently with Liferay DAM tools and features.",
     },
     {
       iconSrc: "/images/our-capabilities/workflow-automation.svg",
       title: "Workflow Automation",
-      description: "Automate processes, improve governance, and boost efficiency using Liferay workflows.",
+      description: "Automate processes, strengthen governance, and enhance efficiency using Liferay’s powerful and enterprise-grade workflow capabilities.",
     },
     {
       iconSrc: "/images/our-capabilities/multisite-management.svg",
       title: "Multisite Management",
-      description: "Control multiple sites easily with centralized Liferay platform management.",
+      description: "Manage multiple sites effortlessly through Liferay’s centralised, streamlined platform controls for enterprises.",
     },
     {
       iconSrc: "/images/our-capabilities/integrations.svg",
       title: "Integrations",
-      description: "Connect enterprise systems and tools seamlessly with Liferay DXP.",
+      description: "Connect enterprise systems and tools seamlessly with Liferay DXP integration capabilities.",
     },
     {
       iconSrc: "/images/our-capabilities/headless-architecture.svg",
       title: "Headless Architecture",
-      description: "Deliver flexible, API-driven experiences through Liferay headless architecture.",
+      description: "Deliver flexible, API-driven experiences through Liferay’s modern, scalable headless architecture.",
     },
     {
       iconSrc: "/images/our-capabilities/lowcode.svg",
       title: "Lowcode",
-      description: "Develop faster with Liferay low-code tools and simplified workflows.",
+      description: "Build faster using Liferay’s object-based low-code features and streamlined workflow automation tools.",
     },
     {
       iconSrc: "/images/our-capabilities/security-governance.svg",
       title: "Security & Governance",
-      description: "Ensure enterprise-grade data protection, compliance, and secure Liferay environments.",
+      description: "Ensure robust security, compliance, and governance through Liferay’s enterprise-grade capabilities.",
     },
     {
       iconSrc: "/images/our-capabilities/artificial-intelligence.svg",
       title: "Artificial intelligence",
-      description: "Leverage AI insights to personalize experiences and automate smarter decisions.",
+      description: "Leverage Liferay’s AI capabilities to deliver smarter, adaptive, and insight-driven digital experiences.",
     },
   ],
 }
 
 export const flexiblePlatforms = {
-  titleLine1: "Flexible Platforms.",
-  titleLine2: "Scalable Experiences.",
+  titleLine1: "One Platform.",
+  titleLine2: "Endless Digital Possibilities.",
   description:
-    "We specialize in Liferay DXP framework development, offering expert Liferay Consulting, Liferay Implementation, and Liferay Portal Development Services that help enterprises create connected, scalable, and high-performing digital ecosystems built for the future. Our team ensures seamless integration, optimized performance, and personalized user experiences that accelerate digital transformation and business growth.",
+    "Liferay DXP is a unified digital experience platform that empowers enterprises to build portals, intranets, websites, and customer solutions with speed and flexibility. With powerful out-of-the-box features, strong security, seamless integrations, and low-code tools, Liferay enables scalable experiences and long-term digital transformation across the entire Liferay ecosystem while reducing complexity and enhancing operational efficiency.",
 
   image: "/images/liferay_image.webp",
 
@@ -236,37 +238,37 @@ export const cardData = [
     cardNumber: "01",
     title: "Enterprise Websites",
     description:
-      "We build robust and scalable enterprise websites powered by Liferay DXP, enabling organizations to deliver personalized, secure, and high-performing digital experiences. Our solutions align with your brand goals, ensuring seamless integration, user-centric design, and long-term adaptability. With our expertise, we help enterprises transform their online presence into a powerful digital ecosystem that drives engagement and growth.",
+      "We build scalable, secure enterprise websites on Liferay DXP using best-practice implementation. Our approach blends strategy, design, and integration to strengthen brand presence, enhance engagement, and create adaptable digital foundations for long-term enterprise growth.",
   },
   {
     cardNumber: "02",
     title: "Employee Experience",
     description:
-      "Our employee experience solutions create connected, engaging, and efficient digital workplaces on Liferay DXP. With a focus on collaboration, accessibility, and personalization, we boost productivity and satisfaction. By integrating modern tools and intuitive interfaces, we empower employees to work smarter, communicate seamlessly, and drive a culture of innovation and performance.",
+      "We create modern Liferay-powered intranets that connect teams, streamline communication, and improve productivity. With intuitive design, smart integrations, and secure collaboration tools, we help enterprises build workplaces that empower employees and support long-term organisational growth across their Liferay environment.",
   },
   {
     cardNumber: "03",
     title: "Digital Commerce",
     description:
-      "We deliver end-to-end Liferay Commerce solutions that transform how businesses sell and engage online. From product management and secure payments to personalized shopping experiences, our platforms enable seamless, data-driven commerce. We help enterprises scale effortlessly, boost customer loyalty, and drive higher conversions through innovative, flexible, and future-ready digital commerce architectures.",
+      "We build Liferay Commerce solutions that unify product management, pricing, and ordering into seamless digital experiences. Our implementations enhance personalization, streamline operations, and empower enterprises to drive smarter sales, stronger loyalty, and scalable revenue growth through their Liferay ecosystem.",
   },
   {
     cardNumber: "04",
     title: "Partner Experience",
     description:
-      "We create unified partner experience solutions on Liferay DXP that strengthen collaboration and transparency. By centralizing communication, resources, and performance insights, we help organizations build stronger partner relationships. Our tailored portals enable seamless onboarding, real-time updates, and mutual growth through trust and efficiency.",
+      "We build Liferay-powered partner portals that streamline collaboration, centralize resources, and enhance partner performance. With secure access, seamless integrations, and intuitive self-service tools, enterprises strengthen relationships, reduce operational friction, and scale partner ecosystems with Liferay-first delivery.",
   },
   {
     cardNumber: "05",
     title: "Supplier Experience",
     description:
-      "Our supplier experience platforms streamline communication and operations between enterprises and their suppliers. Built on Liferay DXP, these solutions ensure visibility, compliance, and efficiency across the supply chain. With intuitive workflows and self-service tools, we simplify procurement, strengthen relationships, and enhance supplier engagement.",
+      "We create Liferay-based supplier portals that simplify procurement, automate workflows, and improve supplier collaboration. With secure access, real-time visibility, and integrated processes, enterprises reduce manual effort, enhance efficiency, and build stronger, more connected supply ecosystems on Liferay.",
   },
   {
     cardNumber: "06",
     title: "Customer Experience",
     description:
-      "We design personalized customer experience solutions powered by Liferay DXP to build trust and loyalty. By connecting data, content, and insights, we enable brands to deliver consistent, meaningful interactions across every touchpoint. The result — smoother journeys, stronger engagement, and lasting customer satisfaction.",
+      "We build Liferay-powered customer portals that deliver seamless self-service, personalised experiences, and real-time access to information. Our solutions enhance engagement, reduce support dependency, and help enterprises strengthen relationships through intuitive, connected digital touchpoints within their Liferay ecosystem.",
   },
 ]
 
@@ -274,85 +276,93 @@ export const whatWeBringHeader = {
   headingLine1: "What We Bring To Your",
   headingLine2: "Digital Experience",
   description:
-    "We empower businesses to deliver exceptional digital experiences through innovative strategies, design, and technology built on the power of Liferay DXP.",
+    "We guide enterprises with tailored Liferay strategies that shape clear roadmaps, unify digital priorities, and accelerate meaningful, long-term experience growth across their Liferay ecosystem.",
 }
 
 export const statData = [
   {
-    number: "80+",
-    title: "Project Completed",
-    description: "We’ve successfully delivered a diverse range of digital products—from corporate websites to complex enterprise solutions.",
+    number: "30+",
+    title: "Delivered Liferay Solutions",
+    description: "We deliver impactful Liferay solutions across industries with proven precision and platform expertise.",
   },
   {
     number: "50+",
-    title: "In House Developers",
-    description: "Our experienced and dedicated team of developers ensures quality, security, and on-time delivery in every project.",
+    title: "Liferay Experts Onboard",
+    description: "Our certified Liferay experts ensure secure, reliable, high-quality delivery aligned with Liferay standards.",
   },
   {
     number: "98%",
     title: "Client Satisfaction Rate",
-    description: "We focus on collaboration, transparency, and innovation—earning the trust and satisfaction of clients across industries.",
+    description: "Trusted by global enterprises through transparent collaboration, consistent excellence, and Liferay-first implementation practices.",
   },
   {
     number: "10+",
-    title: "Years Of Experience",
-    description: "With over a decade in the industry, we bring deep expertise, proven methodologies, and strategic insights to every project.",
+    title: "Decade of Liferay Excellence",
+    description: "More than ten years delivering high-impact, enterprise-grade Liferay digital experiences with proven long-term results.",
   },
 ]
 
 export const achievementsSection = {
-  headingLine1: "Delivering Impact,",
-  headingLine2: "Defined by Liferay Success",
+  headingLine1: "Empowering Enterprises,",
+  headingLine2: "Through Liferay-First Thinking",
   description:
-    "We design and develop digital solutions that adapt and grow with your business needs. Our platforms are built to deliver seamless performance, exceptional user experiences, and long-term scalability.",
+    "We deliver Liferay-first digital solutions that enhance performance, elevate experiences, and drive sustained, long-term enterprise growth.",
   buttonText: "Schedule Meeting",
 }
 
+export const blogSectionData = {
+  title: "Expert Knowledge Shaping",
+  titleHighlight: " Modern Liferay Engineering",
+  description:
+    "Learn from deep technical insights on Liferay, React integrations, and scalable, robust platform architectures.",
+};
+
+
 export const faqItems = [
   {
-    title: "What Services Do You Offer?",
+    title: "What makes IGNEK different from other Liferay service providers?",
     content:
-      "We offer end-to-end digital solutions including UX/UI design, custom development, digital transformation, staff augmentation, and integration services across platforms like Liferay, ReactJS, and more.",
+      "We are a pure Liferay boutique company - focused exclusively on Liferay, driven by best-practice engineering, and committed to delivering measurable enterprise value through minimal customisation.",
   },
   {
-    title: "Do You Work With Small Businesses Or Only Large Enterprises?",
+    title: "How do you partner with IT agencies for Liferay delivery?",
     content:
-      "We work with businesses of all sizes, from startups to large enterprises. Our solutions are tailored to meet the unique needs and goals of each client.",
+      "We offer white-label Liferay expertise, dedicated teams, and end-to-end delivery support that integrates with your teams, delivery processes, and standards to strengthen your overall Liferay implementation.",
   },
   {
-    title: "How do you ensure project quality and timelines?",
+    title: "How do you maximise value from our Liferay investment?",
     content:
-      "We follow agile methodologies, conduct regular quality checks, and maintain transparent communication with clients to ensure projects are delivered on time and to the highest quality standards.",
+      "By leveraging OOTB features, clean architecture, performance optimisation, and strategic guidance to ensure you utilise Liferay to its maximum potential.",
   },
   {
-    title: "Can I hire a dedicated developer or team for my project?",
+    title: "Can you handle Liferay upgrades and migrations?",
     content:
-      "Yes, we provide flexible engagement models, including dedicated developer or team hiring, to seamlessly integrate with your existing operations.",
+      "Yes—we manage full Liferay upgrades and complex migrations with structured planning, zero-downtime approaches, and proven frameworks for data and feature migration.",
   },
   {
-    title: "What technologies do you specialize in?",
+    title: "Do you follow Liferay’s best practices and OOTB-first approach?",
     content:
-      "Our expertise spans a wide range of modern technologies including Java, React, Spring Boot, Liferay, ElasticSearch, TypeScript, and more.",
+      "Absolutely. We follow a Liferay-first approach—prioritising recommended patterns, OOTB components, and low-customisation principles to ensure scalability, reliability, and long-term platform maintainability.",
   },
 ]
 
 export const heroCTASection = {
-  headingLine1: "Flexible Platforms.",
-  headingLine2: "Scalable Experiences.",
+  headingLine1: "How We Support ",
+  headingLine2: "Your Liferay Journey",
   description:
-    "We design and develop digital solutions that adapt and grow with your business needs. Our platforms are built to deliver seamless performance, exceptional user experiences, and long-term scalability.",
+    "Whether you build on Liferay, run your business on Liferay, or plan to adopt it, our specialised services ensure you maximise the return on your Liferay investment.",
 }
 
 export const expertCardContent = {
-  headingLine1: "Connect directly with our CEO to",
-  headingLine2: "fast-track your",
+  headingLine1: "Get Expert Guidance for Your",
+  headingLine2: "Liferay Needs",
   highlightText: "Digital Journey.",
   expertImage: "/images/bhavinImage.png",
-  expertName: "Bhavin Panchani",
-  expertDesignation: "CEO @ IGNEK",
+  expertName: "Parth Panchani",
+  expertDesignation: "Liferay Business Advisor @ IGNEK",
   ctaText: "Schedule Meeting",
   emailLabel: "Prefer email ?",
-  email: "sales@ignek.com",
+  email: "parth@ignek.com",
 }
 
 export const ratingsData = [
