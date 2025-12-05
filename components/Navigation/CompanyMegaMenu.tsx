@@ -1,6 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import "../../styles/icon-arrow.css"
+import { aboutDigitalExperienceData, companyLinks, contactDetails } from "data/Navigation";
 
 // --- Data for the Mega Menu ---
 // --- Icon Components (can be in their own file or here) ---
@@ -60,43 +61,6 @@ export const IconInstagram = () => (
     className="social-icon"
   />
 )
-
-const companyLinks = [
-  {
-    image: "/images/mega-menu/AboutUS.png",
-    title: "About Us",
-    description: "We are a digital solutions company focused on innovation and quality.",
-    href: "/about-us",
-  },
-  {
-    image: "/images/mega-menu/Careers.png", // Replace with your actual image path
-    title: "Careers",
-    description: "Join our team and grow your skills through exciting real-world projects.",
-    href: "/career",
-  },
-  {
-    image: "/images/mega-menu/LifeAtIgnek.png",
-    title: "Life#IGNEK",
-    subheading: "Coming soon",
-    description: "Experience a collaborative, creative, and energetic work culture at IGNEK.",
-    href: "#",
-  },
-]
-
-const contactDetails = {
-  general: [
-    { icon: "/images/icon/mail.png", text: "connect@ignek.com", href: "mailto:connect@ignek.com" },
-    { icon: "/images/icon/teams.png", text: "info@ignek.com", href: "mailto:info@ignek.com" },
-  ],
-  sales: [
-    { icon: "/images/icon/mail.png", text: "sales@ignek.com", href: "mailto:sales@ignek.com" },
-    { icon: "/images/icon/whatsapp.png", text: "(+91) 635 157 6580", href: "tel:+916351576580" },
-  ],
-  hr: [
-    { icon: "/images/icon/mail.png", text: "hr@ignek.com", href: "mailto:hr@ignek.com" },
-    { icon: "/images/icon/whatsapp.png", text: "(+91) 932 849 5160", href: "tel:+919328495160" },
-  ],
-}
 
 const socialLinks = [
   { icon: <IconLinkedIn />, href: "https://www.linkedin.com/company/ignek-infotech/about/", label: "LinkedIn" },
@@ -159,16 +123,15 @@ export default function CompanyMegaMenu({ onClose }: MegaMenuProps) {
           {/* Right Side: Content */}
           <div className="col-span-7 pt-9">
             <p className="align-middle text-[1.6667vw]! leading-[2.2917vw] font-semibold! tracking-[-0.02em]">
-              We&apos;re the Top #1 Digital experience development company contributing towards a smart World
+              {aboutDigitalExperienceData.title}
             </p>
             <p className="p18 mt-4 max-w-4xl text-left! text-[#D1D5DB]">
-              IGNEK delivers smart, high-quality digital experiences that transform businesses, through expert
-              engineering, modern design, and reliable technology solutions.
+              {aboutDigitalExperienceData.description}
             </p>
 
             <div className="mt-16 flex border-white/10">
               <div className="relative w-1/3 flex-grow border-r border-[#4B5563] pr-[2.375rem]">
-                <h5 className="mb-6.5 font-medium">General</h5>
+                <h5 className="mb-6.5 font-medium">{aboutDigitalExperienceData.subtitle1}</h5>
                 <ul className="space-y-2">
                   {contactDetails.general.map((item) => (
                     <li key={item.text}>
@@ -193,7 +156,7 @@ export default function CompanyMegaMenu({ onClose }: MegaMenuProps) {
 
               {/* Sales sections */}
               <div className="relative flex-grow-[1.2] border-r border-[#4B5563] px-[2.375rem]">
-                <h5 className="mb-6.5 font-medium">Sales</h5>
+                <h5 className="mb-6.5 font-medium">{aboutDigitalExperienceData.subtitle2}</h5>
                 <ul className="space-y-2">
                   {contactDetails.sales.map((item) => (
                     <li key={item.text}>
@@ -219,7 +182,7 @@ export default function CompanyMegaMenu({ onClose }: MegaMenuProps) {
 
               {/* HR sections */}
               <div className="w-1/3.5 relative flex-grow pl-[2.375rem]">
-                <h5 className="mb-6.5 font-medium">HR</h5>
+                <h5 className="mb-6.5 font-medium">{aboutDigitalExperienceData.subtitle3}</h5>
                 <ul className="space-y-2">
                   {contactDetails.hr.map((item) => (
                     <li key={item.text}>
@@ -255,7 +218,7 @@ export default function CompanyMegaMenu({ onClose }: MegaMenuProps) {
                   height={41}
                   className="flex-shrink-0 rounded-md"
                 />
-                <p className="p20 max-w-[23.438vw] font-semibold! text-white">Ahmedabad, India.</p>
+                <p className="p20 max-w-[23.438vw] font-semibold! text-white">{aboutDigitalExperienceData.location}</p>
               </div>
               <div className="flex items-center gap-[1.042vw]">
                 {socialLinks.map((social) => (

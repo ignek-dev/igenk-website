@@ -77,3 +77,21 @@ export const jobs = [
       },
     },
   ]
+
+export const careerHeroData = {
+  badgeText: "Career at IGNEK",
+  description:
+    "At IGNEK we value people and it include their growth, learning, and perks that help you succeed personally and professionally.",
+};
+
+export const careerPerksIntroData = {
+  title: "More Than Just a Job",
+  description:
+    "At IGNEK to enjoy perks that inspire—learning, flexibility, and a workplace that values your well-being.",
+};
+
+export const openRolesIntroData = {
+  title: "Apply at IGNEK",
+  description:
+    "Explore careers at IGNEK, find your perfect role, and join our team to make an impact that matters.",
+};

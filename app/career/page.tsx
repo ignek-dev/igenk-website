@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { jobs, perks } from "data/career"
+import { careerHeroData, careerPerksIntroData, jobs, openRolesIntroData, perks } from "data/career"
 import JobCard from "../../components/career/JobCard"
 
 export default function CareerPage() {
@@ -18,7 +18,8 @@ export default function CareerPage() {
           <div className="grid items-end gap-10 lg:grid-cols-2">
             <div>
               <div className="p18 banner-tab">
-                Career at IGNEK
+                {careerHeroData.badgeText}
+
               </div>
 
               <div className="text-mask-container mt-3">
@@ -38,8 +39,7 @@ export default function CareerPage() {
               </div>
             </div>
             <p className="pb-12 text-right text-[1.042vw] leading-[30px] font-normal tracking-[0] text-white/80  sm:leading-[28px] t md:justify-self-end">
-              At IGNEK we value people and it include their growth, learning, and perks that help you succeed personally
-              and professionally.
+              {careerHeroData.description}
             </p>
           </div>
         </div>
@@ -49,9 +49,9 @@ export default function CareerPage() {
       <section className="border-t border-white/20 bg-black text-white">
         <div className="mx-auto w-full px-4 py-[3.333vw] md:px-8 global-container">
           <div className="grid items-start gap-10 md:grid-cols-2">
-            <h2 className="text-[2.5vw] font-semibold leading-[3.125vw]">More Than Just a Job</h2>
+            <h2 className="text-[2.5vw] font-semibold leading-[3.125vw]">{careerPerksIntroData.title}</h2>
             <p className="max-w-xl  text-right text-[0.938vw] leading-[1.563vw] font-normal tracking-[0] text-white/80  md:justify-self-end">
-              At IGNEK to enjoy perks that inspire—learning, flexibility, and a workplace that values your well-being.
+              {careerPerksIntroData.description}
             </p>
           </div>
 
@@ -101,10 +101,10 @@ export default function CareerPage() {
         <div className="mx-auto w-full px-4 py-[3.333vw] md:px-8 global-container">
           <div className="grid items-start gap-10 md:grid-cols-2">
             <h2 className="text-4xl leading-tight font-semibold tracking-[-0.02em] text-balance sm:text-3xl md:text-5xl">
-              <span className="block">Apply at IGNEK</span>
+              <span className="block">{openRolesIntroData.title}</span>
             </h2>
             <p className="max-w-xl self-center text-right text-[20px] leading-[30px] font-normal tracking-[0] text-gray-700 sm:text-[18px] sm:leading-[28px] md:justify-self-end">
-              Explore careers at IGNEK, find your perfect role, and join our team to make an impact that matters.
+              {openRolesIntroData.description}
             </p>
           </div>
 
