@@ -97,7 +97,7 @@ export default function LiferayDevelopmentAndCustomizationPage() {
                   className={`flex items-center gap-[1.25vw] rounded-lg bg-white ${
                     index === 0 ? "pt-0" : "pt-[1.771vw]"
                   } ${index === developmentServices.length - 1 ? "pb-0" : "pb-[1.771vw]"} ${
-                    index !== developmentServices.length - 1 ? "border-b border-gray-200" : ""
+                    index !== developmentServices.length - 1 ? "border-b border-b-2 border-[#D1D5DB]" : ""
                   } `}
                 >
                   <span className="flex h-[2.188vw] w-[2.188vw] items-center justify-center rounded-full bg-black">
@@ -149,7 +149,7 @@ export default function LiferayDevelopmentAndCustomizationPage() {
                   </span>
 
                   {/* Right Text */}
-                  <p className="w-full text-1.042vw leading-relaxed text-white">{item}</p>
+                  <p className="w-full text-[1.042vw] leading-relaxed text-white">{item}</p>
                 </div>
               ))}
             </div>
@@ -167,9 +167,9 @@ export default function LiferayDevelopmentAndCustomizationPage() {
           </p>
           <div>
             <section className="w-full mt-2.604vw text-white">
-              <div className="grid w-full grid-cols-1 border-t border-gray-300 first:border-t-0 md:grid-cols-2">
+              <div className="grid w-full gap-x-[2.188vw] grid-cols-1 border-t border-gray-300 first:border-t-0 md:grid-cols-2">
                 {liferayIntegrationServices.map((item, index) => (
-                  <div key={index} className="flex items-center space-x-6 border-b border-gray-300 px-6 py-[1.875vw] pl-0">
+                  <div key={index} className="flex items-center space-x-6 border-b border-gray-300 px-6 pr-0 py-[1.875vw] pl-0">
                     {/* Left Number */}
                     <span className="flex h-[3.333vw] w-[3.333vw] shrink-0 items-center justify-center bg-black text-xl leading-none font-bold text-white">
                       {index + 1 < 10 ? `0${index + 1}` : index + 1}
