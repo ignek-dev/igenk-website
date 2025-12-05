@@ -7,36 +7,8 @@ import BlogCard, { BlogData } from "components/Blogmain/BlogCards"
 import TechCard from "components/Blogmain/TechCards"
 import { WPPost } from "components/BlogSidebar/BlogSidebar"
 import DOMPurify from "dompurify"
-const cardData = [
-  {
-    id: 15,
-    iconWhite: "/images/blogs/Liferay-whilte.svg",
-    iconBlue: "/images/blogs/Liferay-blue.svg",
-    title: "Liferay",
-    description: "Insights and best practices for modern Liferay development",
-  },
-  {
-    id: 16,
-    iconWhite: "/images/blogs/React-white.svg",
-    iconBlue: "/images/blogs/React-blue.svg",
-    title: "React",
-    description: "Guides and tips for building dynamic React applications",
-  },
-  {
-    id: 21,
-    iconWhite: "/images/blogs/Spring-boot-white.svg",
-    iconBlue: "/images/blogs/Spring-Boot.svg",
-    title: "Spring Boot",
-    description: "Technical tutorials for creating robust Spring Boot services",
-  },
-  {
-    id: 237,
-    iconWhite: "/images/blogs/Nodejs-white.svg",
-    iconBlue: "/images/blogs/Nodejs.svg",
-    title: "Node.js",
-    description: "Expert advice for scalable and efficient Node.js development",
-  },
-]
+import { blogCategorySection, blogHeroSection, blogSection, cardData } from "data/blog"
+
 
 const PER_PAGE = 9
 const API_URL = "https://insights.ignek.com/wp-json/wp/v2/posts"
@@ -203,14 +175,14 @@ export default function BlogsContent() {
           <div className="relative grid items-start gap-[0.521vw] md:grid-cols-2">
             <div>
               <h1 className="mt-9 bg-[linear-gradient(0deg,#FFFFFF,#FFFFFF),linear-gradient(0deg,rgba(0,0,0,0.23),rgba(0,0,0,0.23))] bg-clip-text text-transparent">
-                Liferay Blog:
+                {blogHeroSection.heading}
                 <br />
-                Insights on DXP, Java & ReactJS
+                {blogHeroSection.heading2}
 
               </h1>
             </div>
             <p className="p18 absolute bottom-0 max-w-[41.646vw] justify-self-end text-right text-white">
-             Explore our latest tech and solution blogs to stay informed on trends, innovations, and best practices across industries, helping you for operational excellence.
+             {blogHeroSection.description}
             </p>
           </div>
         </div>
@@ -222,15 +194,15 @@ export default function BlogsContent() {
           <div className="mb-[2.25rem] grid grid-cols-1 items-end gap-8 md:grid-cols-2">
             <div>
               <h2 className="tracking-tight text-[#000000]">
-                Check Out Our Newly
+                {blogSection.heading}
                 <br />
-                Written Blogs
+                {blogSection.headingSpan}
               </h2>
             </div>
 
             <div className="flex h-full items-end">
               <p className="p18 w-full text-right text-[#374151]">
-                Stay updated with our newly written blogs, covering trends, insights, and innovations to help your business stay ahead.
+                {blogSection.description}
 
               </p>
             </div>
@@ -374,7 +346,7 @@ export default function BlogsContent() {
           {/* Category Section */}
           <div className="flex flex-col py-16">
             <h2 className="mb-9 text-5xl leading-tight font-semibold tracking-tight text-[#000000]">
-              Browse By Category
+              {blogCategorySection.heading}
             </h2>
 
             <div className="flex justify-between gap-[0.677vw]">
@@ -397,7 +369,7 @@ export default function BlogsContent() {
 
           {/* Blog Grid Section */}
           <div className="">
-            <h2 className="mb-9 tracking-tight text-[#000000]">Browse Latest Blog</h2>
+            <h2 className="mb-9 tracking-tight text-[#000000]">{blogCategorySection.heading2}</h2>
 
             {loading ? (
               <div className="flex items-center justify-center py-12">

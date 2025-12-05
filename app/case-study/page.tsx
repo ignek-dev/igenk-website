@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import PortfolioList from "components/PortfolioList/PortfolioList"
+import { liferaySuccessStoriesSection } from "data/case-study"
 
 const metadata: Metadata = {
   title: "IGNEK Portfolios : Liferay, ReactJS, Healthcare &amp; More",
@@ -34,14 +35,14 @@ export default async function PortfolioPage() {
           <div className="relative grid justify-between items-end gap-[2.083vw] md:grid-cols-2">
 
               <h1 className="font-semibold leading-tight text-[3.75vw] sm:text-[2.5vw] md:text-[3.75vw]">
-                Liferay 
+                 {liferaySuccessStoriesSection.heading} 
                 <br/>
-                 Success Stories
+                  {liferaySuccessStoriesSection.heading2}
 
               </h1>
 
             <p className="text-right text-[0.938vw] ">
-              Browse Liferay success stories and DXP project case studies that demonstrate real customer value and high-impact digital outcomes.
+              {liferaySuccessStoriesSection.description}
             </p>
 
           </div>
