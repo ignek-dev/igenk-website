@@ -74,13 +74,13 @@ export default function LiferayHireDeveloper() {
 
         {/* Main Content with updated padding */}
         <div className="global-container py-[4.688vw]">
-          <div className="grid grid-cols-1 items-center gap-6 md:grid-cols-2">
+          <div className="grid grid-cols-1 items-center gap-6 md:grid-cols-2 mt-13">
             {/* Left Side: Text Content */}
             <div>
-              <div className="inline-flex w-fit items-center rounded-full border border-white px-8.5 py-[8.8px] text-lg font-normal">
+              <div className="inline-flex mt-[63px] w-fit items-center rounded-full border border-white px-8.5 py-[8.8px] text-lg font-normal">
                 Hire Us
               </div>
-              <h1 className="line-height-[88px] letter-spacing-[-0.02em] mt-13 text-7xl leading-tight font-bold sm:text-5xl md:text-7xl">
+              <h1 className="mt-[3.229vw]">
                 Hire Liferay
                 <br />
                 <span className="block">Developer</span>

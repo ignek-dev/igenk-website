@@ -20,8 +20,6 @@ const TalkToExpert = ({
           <p className="p18 text-gray-400">
             {description}
           </p>
-
-          <ScheduleMeetingButton isFullWidth={false} btnName={buttonText} />
         </div>
 
         {/* Right Column: TalkToExpertCard */}
