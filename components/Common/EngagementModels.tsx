@@ -16,11 +16,7 @@ const engagementModelsData = [
     title: "Time & Materials",
     description:
       "Gain total control over your predetermined market schedule with a versatile time and materials model for Liferay development.",
-    features: [
-      "Ongoing Development Needs",
-      "Supports Part & Full time Dev Needs",
-      "Better control over your project",
-    ],
+    features: ["Ongoing Development Needs", "Supports Part & Full time Dev Needs", "Better control over your project"],
   },
   {
     icon: "/images/liferay-pages-image/liferay-consultation-page/chat-message.png",
@@ -49,12 +45,12 @@ export default function EngagementModels({ title, description }: EngagementModel
             <h2 className="text-[#000000]">{title}</h2>
           </div>
           <div className="flex h-full items-center justify-end">
-            <p className="p18 w-full text-right text-[#374151]">{description}</p>
+            <p className="p18 w-full max-w-xl text-right text-[#374151]">{description}</p>
           </div>
         </div>
 
         {/* Engagement Cards */}
-        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-[2.083vw] md:grid-cols-2 lg:grid-cols-3">
           {engagementModelsData.map((model) => {
             const isHovered = hoveredModel === model.title
             return (
@@ -62,7 +58,7 @@ export default function EngagementModels({ title, description }: EngagementModel
                 key={model.title}
                 onMouseEnter={() => setHoveredModel(model.title)}
                 onMouseLeave={() => setHoveredModel(null)}
-                className={`flex flex-col justify-between h-full rounded-2xl border p-7 shadow-md transition-colors duration-300 ${
+                className={`flex min-h-[33.333vw] min-w-[25.208vw] flex-col rounded-2xl border p-[1.354vw] shadow-md transition-colors duration-300 ${
                   isHovered ? "border-blue-700 bg-[#0B63CE] text-white" : "border-gray-200 bg-white text-black"
                 }`}
               >
@@ -72,23 +68,24 @@ export default function EngagementModels({ title, description }: EngagementModel
                   alt={`${model.title} icon`}
                   width={44}
                   height={44}
-                  className={`mb-8 ${isHovered ? "brightness-0 invert" : ""}`}
+                  className={`mb-[1.667vw] ${isHovered ? "brightness-0 invert" : ""}`}
                 />
 
-              <div>
+                <div>
+                  {/* Card Title */}
+                  <h4 className="mb-[1.667vw]">{model.title}</h4>
 
-                {/* Card Title */}
-                <h4 className="mb-8">{model.title}</h4>
+                  {/* Divider */}
+                  <hr className={`mb-[1.667vw] border-t ${isHovered ? "border-white/30" : "border-[#D1D5DB]"}`} />
 
-                {/* Divider */}
-                <hr className={`mb-8 border-t ${isHovered ? "border-white/30" : "border-[#D1D5DB]"}`} />
-
-                {/* Card Description */}
-                <p className={`mb-4 p20  ${isHovered ? "text-white/90" : "text-gray-600"}`}>{model.description}</p>
-              </div>
+                  {/* Card Description */}
+                  <p className={`p20 mb-[1.667vw] ${isHovered ? "text-white/90" : "text-gray-600"}`}>
+                    {model.description}
+                  </p>
+                </div>
 
                 {/* Card Features */}
-                <div className="mt-auto space-y-3">
+                <div className="">
                   {model.features.map((feature, index) => (
                     <div
                       key={index}
@@ -96,7 +93,11 @@ export default function EngagementModels({ title, description }: EngagementModel
                         index === model.features.length - 1 ? "border-b-0" : ""
                       }`}
                     >
-                      <div className="flex items-center gap-4 py-4">
+                      <div
+                        className={`flex items-center gap-4 ${index === 0 ? "pt-0" : "pt-[2.083vw]"} ${
+                          index === model.features.length - 1 ? "pb-0" : "pb-[2.083vw]"
+                        }`}
+                      >
                         <div
                           className={`flex h-[2.1875vw] w-[2.1875vw] flex-shrink-0 items-center justify-center rounded-full transition-colors duration-300 ${
                             isHovered ? "bg-white" : "bg-black"

@@ -10,8 +10,7 @@ import WordsFromCEO from "components/Common/WordsFromCEO"
 import LiferayTechnologicalStacks from "components/LiferayTechnologicalStacks"
 import { easySteps, expertiseStats, teamOffersServices, whyHireFromIgnek } from "data/liferay-hire-developer"
 
-
- const metadata: Metadata = {
+const metadata: Metadata = {
   title: "Hire Liferay Developer | 1-Week Risk-Free Trial - IGNEK",
   description:
     "Hire Liferay developer from us and set up your own Liferay Development team to elevate your Liferay portal development projects.",
@@ -19,7 +18,8 @@ import { easySteps, expertiseStats, teamOffersServices, whyHireFromIgnek } from 
   openGraph: {
     url: "https://www.ignek.com/hire-liferay-developer/",
     title: "Hire Liferay Developer | 1-Week Risk-Free Trial - IGNEK",
-    description: "Hire Liferay developer from us and set up your own Liferay Development team to elevate your Liferay portal development projects.",
+    description:
+      "Hire Liferay developer from us and set up your own Liferay Development team to elevate your Liferay portal development projects.",
     images: [
       {
         width: 1200,
@@ -30,11 +30,11 @@ import { easySteps, expertiseStats, teamOffersServices, whyHireFromIgnek } from 
   },
 }
 
-
 export default function LiferayHireDeveloper() {
   const LiferayHireTitle1 = "Why Hire Liferay Developer"
   const LiferayHireTitle2 = "From IGNEK?"
-  const LiferayHireSubContent = "At IGNEK, our Liferay Consultant bring over a decade of experience, crafting secure, scalable solutions across various industries. Hire Liferay developer for innovative problem-solving."
+  const LiferayHireSubContent =
+    "At IGNEK, our Liferay Consultant bring over a decade of experience, crafting secure, scalable solutions across various industries. Hire Liferay developer for innovative problem-solving."
 
   const LiferayHireData = [
     {
@@ -73,7 +73,7 @@ export default function LiferayHireDeveloper() {
         <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_10%_0%,#0E7BF8_0%,#00979E_40%,transparent_65%)] opacity-25" />
 
         {/* Main Content with updated padding */}
-        <div className="mx-auto w-full px-4 pt-50 pb-16 md:px-8 md:pt-48 md:pb-16 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
+        <div className="global-container py-[4.688vw]">
           <div className="grid grid-cols-1 items-center gap-6 md:grid-cols-2">
             {/* Left Side: Text Content */}
             <div>
@@ -107,7 +107,7 @@ export default function LiferayHireDeveloper() {
 
           {/* Marquee Animation Bar */}
           <div className="relative flex w-full overflow-hidden pt-22">
-            <div className="animate-marquee-fast flex min-w-full flex-shrink-0 items-center justify-around">
+            <div className="animate-marquee-medium flex min-w-full flex-shrink-0 items-center justify-around">
               {expertiseStats.map((stat, index) => (
                 <React.Fragment key={index}>
                   <span className="mx-8 text-xl font-medium">{stat}</span>
@@ -125,19 +125,19 @@ export default function LiferayHireDeveloper() {
         </div>
       </section>
       {/* Why Hire Liferay Developer From IGNEK? */}
-      <section className="bg-[#F6F6F6] py-[64px] text-black">
-        <div className="mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
+      <section className="bg-[#F6F6F6] py-[3.333vw] text-black">
+        <div className="global-container">
           {/* Section Header */}
           <div className="w-full">
-            <h2 className="text-5xl leading-tight font-bold tracking-tight">Why Hire Liferay Developer From IGNEK?</h2>
-            <p className="mt-4 text-lg text-black/80">
+            <h2>Why Hire Liferay Developer From IGNEK?</h2>
+            <p className="p18 mt-[1.458vw] text-gray-500">
               At IGNEK, our Liferay Consultant bring over a decade of experience, crafting secure, scalable solutions
               across various industries. Hire Liferay developer for innovative problem-solving.
             </p>
           </div>
 
           {/* Grid Structure */}
-          <div className="mt-12 grid grid-cols-1 gap-x-42 gap-y-13.5 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-[2.5vw] grid grid-cols-1 gap-x-42 gap-y-[2.813vw] md:grid-cols-2 lg:grid-cols-3">
             {whyHireFromIgnek.map((item, index) => (
               <div key={index}>
                 {/* Icon */}
@@ -152,8 +152,8 @@ export default function LiferayHireDeveloper() {
                 </div>
 
                 {/* Title Container with fixed height */}
-                <div className="mt-9">
-                  <h3 className="line-height-[44px] letter-spacing-[-0.02em] text-4xl font-semibold whitespace-pre">
+                <div className="mt-[1.875vw]">
+                  <h3 className="whitespace-pre">
                     {/* Map over the title array to create line breaks */}
                     {item.title.map((line, lineIndex) => (
                       <span key={lineIndex} className="block">
@@ -164,26 +164,26 @@ export default function LiferayHireDeveloper() {
                 </div>
 
                 {/* Divider */}
-                <hr className="my-9 border-t border-[#6B7280]" />
+                <hr className="my-[1.875vw] border-t border-[#6B7280]" />
 
                 {/* Description */}
-                <p className="text-base leading-relaxed text-[#4B5563]">{item.description}</p>
+                <p className="p16 text-[#4B5563]">{item.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
       {/* Get A Certified Liferay Developer In Just 3 Easy Steps */}{" "}
-      <section className="bg-black py-[64px] text-white">
-        <div className="mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
-          <div className="grid grid-cols-1 gap-16 md:grid-cols-2">
+      <section className="bg-black py-[3.333vw] text-white">
+        <div className="global-container">
+          <div className="grid grid-cols-1 gap-[3.438vw] md:grid-cols-2">
             {/* Left Side: Heading and Description */}
-            <div className="flex flex-col justify-start pt-10">
-              <h2 className="line-height-[60px] letter-spacing-[-0.02em] text-5xl leading-tight font-semibold tracking-tight text-[#FFFFFF]">
+            <div className="flex flex-col justify-start">
+              <h2 className="min-w-[36.719vw] text-[#FFFFFF]">
                 Get A Certified Liferay
                 <span className="block">Developer In Just 3 Easy Steps</span>
               </h2>
-              <p className="mt-6 max-w-lg text-xl text-[#E5E7EB]">
+              <p className="p18 mt-[1.458vw] max-w-lg text-[#E5E7EB]">
                 Hire Liferay developer in just three effortless steps with us! With our refined process, finding the
                 perfect Liferay Consultant for your project is quick, efficient, and hassle-free.
               </p>
@@ -201,17 +201,19 @@ export default function LiferayHireDeveloper() {
                     <div className="absolute top-35 left-[32px] h-[calc(100%+4.7rem)] w-[1.23px] bg-[#EAEAFF]"></div>
                   )}
                   {/* Step Number Circle */}
-                  <div className="z-10 flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-full bg-blue-700 text-2xl font-bold">
+                  <div className="z-10 flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-full bg-[#0C63CE] text-2xl font-bold">
                     {stepItem.step}
                   </div>
 
                   {/* Step Card */}
-                  <div className="ml-12 w-full rounded-2xl bg-[#FFFFFF] p-7.5 shadow-lg">
+                  <div className="ml-[2.5vw] w-full rounded-2xl bg-[#FFFFFF] p-[1.51vw] shadow-lg">
                     {/* Icon Container */}
-                    <div className="mb-7 flex h-18 w-18 items-center justify-center rounded-full">
+                    <div className="mb-[1.458vw] flex h-18 w-18 items-center justify-center rounded-full">
                       <Image src={stepItem.icon} alt="step icon" width={72} height={72} objectFit="contain" />
                     </div>
-                    <h3 className="line-height-[36px] mb-4.5 text-3xl font-normal text-[#03030F]">{stepItem.title}</h3>
+                    <p className="line-height-[36px] mb-[0.885vw] text-[1.563vw] font-medium text-[#03030F]">
+                      {stepItem.title}
+                    </p>
                     <p className="text-lg text-[#03030F]/70">{stepItem.description}</p>
                   </div>
                 </div>
@@ -231,14 +233,12 @@ export default function LiferayHireDeveloper() {
         description="Engage with the Liferay-focused technology partner to get your simple & complex Liferay requirements implemented."
       />
       {/* Services Our Liferay Development Team Offers */}
-      <section className="bg-black py-[64px] text-white">
-        <div className="mx-auto w-full px-4 md:px-8 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
+      <section className="bg-black pt-[3.333vw] pb-[0.416px] text-white">
+        <div className="global-container">
           {/* Section Header */}
           <div className="w-full">
-            <h2 className="text-5xl leading-tight font-bold tracking-tight">
-              Services Our Liferay Development Team Offers
-            </h2>
-            <p className="mt-4 text-xl text-white/80">
+            <h2 className="">Services Our Liferay Development Team Offers</h2>
+            <p className="p18 mt-[1.458vw] text-gray-100">
               Explore our expertise in Liferay! We’re experienced and ready to help with everything, from building
               user-friendly interfaces to managing backend systems. Whether you need a custom portal, smooth
               integration, or ongoing support, we’ve got you covered. Partner with us today and make the most of Liferay
@@ -246,34 +246,37 @@ export default function LiferayHireDeveloper() {
             </p>
           </div>
           {/* Services Grid */}
-          <div className="mt-16 grid auto-rows-[minmax(260px,auto)] grid-cols-1 md:grid-cols-2">
+          <div className="mt-[3.542vw] grid grid-cols-1 gap-x-[4.375vw] md:grid-cols-2">
             {teamOffersServices.map((service, index) => (
-              <div key={index} className="flex h-full flex-col justify-between p-7">
+              <div key={index} className={`flex h-full group flex-col justify-between pb-[2.917vw]`}>
                 {/* Inner Flex for Icon and Text */}
-                <div className="flex items-start gap-6">
+                <div className="flex w-full items-start">
                   {/* Icon */}
-                  <div className="flex h-[115px] w-[125px] flex-shrink-0 items-center justify-center rounded-full border border-[#1F2937] p-4 shadow-[0px_0px_0px_0.42px_#F4F4F51A]">
+                  <div
+                    className="flex h-[116px] w-[116px] flex-shrink-0 items-center justify-center rounded-full border border-[#1F2937] group-hover:bg-[#1d3fff] transition-all duration-300 ease-in"
+                    style={{
+                     boxShadow: "rgba(29, 63, 255, 0.18) 0px 0px 24px 8px;"
+                    }}
+                  >
                     <Image
                       src={service.icon}
                       alt={`${service.title} icon`}
-                      width={83}
-                      height={83}
+                      width={77}
+                      height={70}
                       objectFit="contain"
                     />
                   </div>
 
                   {/* Title + Description */}
-                  <div className="flex max-w-[330px] flex-col justify-start [@media(min-width:1440px)]:max-w-[340px] [@media(min-width:1536px)]:max-w-[360px] [@media(min-width:1800px)]:max-w-[380px]">
-                    <h3 className="mb-3 text-3xl leading-tight font-semibold text-[#FFFFFF] [@media(min-width:1440px)]:text-2xl [@media(min-width:1536px)]:text-[28px] [@media(min-width:1800px)]:text-3xl">
-                      {service.title}
-                    </h3>
+                  <div className="ml-[27px] flex w-full flex-col justify-start">
+                    <p className="mb-[8px] text-[1.563vw] font-medium">{service.title}</p>
 
                     <p className="line-clamp-none text-lg leading-relaxed text-[#E5E7EB]">{service.description}</p>
                   </div>
                 </div>
 
                 {/* Divider */}
-                {index < teamOffersServices.length - 2 && <hr className="mt-14 border-t border-[#6B7280]" />}
+                {index < teamOffersServices.length - 2 && <hr className="mt-[2.917vw] border-t border-[#6B7280]" />}
               </div>
             ))}
           </div>
@@ -284,7 +287,12 @@ export default function LiferayHireDeveloper() {
       {/* Words from CEO */}
       <WordsFromCEO />
       {/* <section className="bg-white text-black"></section> */}
-      <WhatMake WhatMakeData={LiferayHireData} titleText1={LiferayHireTitle1} titleText2={LiferayHireTitle2} subContext={LiferayHireSubContent} />
+      <WhatMake
+        WhatMakeData={LiferayHireData}
+        titleText1={LiferayHireTitle1}
+        titleText2={LiferayHireTitle2}
+        subContext={LiferayHireSubContent}
+      />
       <TalkToExpert />
       <BlogSection />
     </main>
