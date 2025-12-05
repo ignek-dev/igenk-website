@@ -991,3 +991,43 @@ html {
   inset: var(--offset);
 }
 
+/* Optional: wrap inside .tech-grid to avoid any possible collisions */
+.tech-grid {
+  --line-color: #e5e7eb;
+  --dot-color:  #d1d5db;
+  --dot-size:   8px;
+  --dot-offset: calc(var(--dot-size) / 2 * -1);
+}
+
+.tech-grid .tech-cell {
+  border-right: 1px solid var(--line-color);
+  border-bottom: 1px solid var(--line-color);
+}
+
+.tech-grid .tech-cell::after {
+  content: "";
+  position: absolute;
+  right: var(--dot-offset);
+  bottom: var(--dot-offset);
+  width: var(--dot-size);
+  height: var(--dot-size);
+  background: var(--dot-color);
+  border-radius: 50%;
+  pointer-events: none;
+  box-shadow: 0 0 0 3px white;
+}
+
+.tech-grid .tech-cell--last-col {
+  border-right: 0;
+}
+.tech-grid .tech-cell--last-col::after {
+  display: none;
+}
+
+.tech-grid .tech-cell--last-row {
+  border-bottom: 0;
+}
+.tech-grid .tech-cell--last-row::after {
+  display: none;
+}
+
