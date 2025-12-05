@@ -15,7 +15,7 @@ export default function Footer() {
         { label: "Career", href: "/career" },
         { label: "Case Study", href: "/case-study" },
         { label: "Blogs", href: "/blog" },
-        { label: "Life At IGNEK", href: "/life-at-ignek" },
+        { label: "Life At IGNEK", href: "#" },
         { label: "Marketplace", href: "/marketplace" },
       ],
     },

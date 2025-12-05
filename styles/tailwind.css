@@ -484,6 +484,33 @@ h5 {
   animation: marquee 10s linear infinite;
 }
 
+@keyframes sliderCycleSmooth {
+  0% {
+    opacity: 1;
+    transform: translateX(100%);  
+  }
+
+  
+  10% {
+    opacity: 1;
+    transform: translateX(0); 
+  }
+
+  85% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-350px);  /* ← Into the button like before */
+  }
+}
+
+/* Should match interval timing */
+.animate-slider-cycle {
+  animation: sliderCycleSmooth 6.2s linear forwards;
+}
+
 .text-mask-container {
   position: relative;
   width: 100%;

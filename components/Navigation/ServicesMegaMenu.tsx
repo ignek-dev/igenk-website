@@ -1,7 +1,12 @@
 // components/ServicesMegaMenu.tsx
-import React from "react"
+import React, { useEffect, useState } from "react"
 import Image from "next/image"
 import CalendlyButton from "components/CalendlyPopupButton/CalendlyButton"
+
+interface SliderItem{
+  text: string,
+  icon: string,
+}
 
 interface MegaMenuProps {
   onClose: () => void
@@ -46,31 +51,49 @@ const liferayCol1 = liferayServicesLinks.slice(0, 5)
 const liferayCol2 = liferayServicesLinks.slice(5, 10)
 
 // Data for the Marquee
-const marqueeStats = [
-  "Certified Developers",
-  "24×7 Support",
-  "Dedicated Team",
-  "Fast Delivery",
-  "Proven Expertise",
-  "On-Demand Developers",
-  "Long-Term Dev Support",
+// UPDATED: Slider Data with specific mapped Icons
+const sliderData: SliderItem[] = [
+  { 
+    text: "Certified Developers", 
+    icon: "/images/mega-menu/sevices-megamenu/certified-liferay-developers.svg" 
+  },
+  { 
+    text: "24×7 Support", 
+    icon: "/images/mega-menu/sevices-megamenu/expert-support.svg" 
+  },
+  { 
+    text: "Dedicated Team", 
+    icon: "/images/mega-menu/sevices-megamenu/dedicated-skilled-team.svg" 
+  },
+  { 
+    text: "Fast Delivery", 
+    icon: "/images/mega-menu/sevices-megamenu/fast-project-delivery.svg" 
+  },
+  { 
+    text: "Proven Expertise", 
+    icon: "/images/mega-menu/sevices-megamenu/proven-technical-expertise.svg" 
+  },
+  { 
+    text: "On-Demand Developers", 
+    icon: "/images/mega-menu/sevices-megamenu/on-demand-developers.svg" 
+  },
 ]
 
 // Helper Component for Marquee Items
-const MarqueeGroup = () => (
-  <div className="flex shrink-0 items-center">
-    {marqueeStats.map((stat, index) => (
-      <div key={index} className="flex items-center">
-        {/* Text */}
-        <span className="text-[0.9vw] font-medium whitespace-nowrap text-white opacity-80">{stat}</span>
-        {/* Separator Dot */}
-        <div className="mx-6 flex items-center justify-center">
-          <Image src="/images/icon/Ellipse.png" alt="dot" width={6} height={6} />
-        </div>
-      </div>
-    ))}
-  </div>
-)
+// const MarqueeGroup = () => (
+//   <div className="flex shrink-0 items-center">
+//     {marqueeStats.map((stat, index) => (
+//       <div key={index} className="flex items-center">
+//         {/* Text */}
+//         <span className="text-[0.9vw] font-medium whitespace-nowrap text-white opacity-80">{stat}</span>
+//         {/* Separator Dot */}
+//         <div className="mx-6 flex items-center justify-center">
+//           <Image src="/images/icon/Ellipse.png" alt="dot" width={6} height={6} />
+//         </div>
+//       </div>
+//     ))}
+//   </div>
+// )
 
 // --- REUSABLE STAR COMPONENT ---
 const StarIcon = ({ className }: { className?: string }) => (
@@ -89,6 +112,21 @@ const StarIcon = ({ className }: { className?: string }) => (
 
 // --- Main ServicesMegaMenu Component ---
 export default function ServicesMegaMenu({ onClose }: MegaMenuProps) {
+ // 1. Set Interval to 4000ms (4 seconds)
+  // This matches the animation duration (approx 3.9s animation + 0.1s buffer)
+  const [currentIndex, setCurrentIndex] = useState<number>(0)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % sliderData.length)
+    }, 6200)
+
+    return () => clearInterval(interval)
+  }, [])
+
+  // Cast the fallback to SliderItem to satisfy strict TypeScript checks
+  const currentSlide = (sliderData[currentIndex] || sliderData[0]) as SliderItem
+
   return (
     <>
       <div className="global-container mx-auto w-full px-4 py-[clamp(20px,2vw,38px)] pb-15.5 md:px-8">
@@ -199,7 +237,7 @@ export default function ServicesMegaMenu({ onClose }: MegaMenuProps) {
                 {/* Hire Liferay Experts Button */}
                 <a
                   href="/services/liferay-hire-developer"
-                  className="group /* HOVER STATE: Blue + Yellow Shadow */ relative mr-8 flex flex-shrink-0 items-center gap-3 rounded-[1.563vw] border border-[#ffffff33] bg-[#ffffff0d] py-[0.833vw] pr-[1.25vw] pl-[1.458vw] transition-all duration-300 ease-in-out hover:border-[#0B63CE] hover:bg-[#0B63CE] hover:shadow-[0px_2px_30px_0px_#FFD12E80]"
+                  className="group relative mr-6 flex flex-shrink-0 items-center gap-2 rounded-[1.563vw] border border-[#ffffff33] bg-[#ffffff0d] py-[0.833vw] pr-[1.25vw] pl-[1.458vw] transition-all duration-300 ease-in-out hover:border-[#0B63CE] hover:bg-[#0B63CE] hover:shadow-[0px_2px_30px_0px_#FFD12E80]"
                   onClick={onClose}
                 >
                   {/* --- STAR ANIMATION ELEMENTS --- */}
@@ -246,19 +284,26 @@ export default function ServicesMegaMenu({ onClose }: MegaMenuProps) {
                   </svg>
                 </a>
 
-                {/* Marquee Animation */}
-                <div
-                  className="relative flex w-[10vw] flex-1 overflow-hidden"
-                  style={{
-                    maskImage: "linear-gradient(to right, black 85%, transparent 100%)",
-                    WebkitMaskImage: "linear-gradient(to right, black 85%, transparent 100%)",
-                  }}
+               {/* --- SLIDER SECTION --- */}
+                {/* Added 'mask-image' to fade the text as it slides left towards the button */}
+                <div 
+                  className="flex flex-1 items-center overflow-hidden"
+                  // style={{
+                  //    maskImage: "linear-gradient(to right, transparent 0%, black 10%, black 100%)",
+                  //    WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 10%, black 100%)"
+                  // }}
                 >
-                  <div className="animate-marquee-custom flex items-center">
-                    <MarqueeGroup />
-                    <MarqueeGroup />
-                    <MarqueeGroup />
-                    <MarqueeGroup />
+                  <div key={currentIndex} className="animate-slider-cycle flex items-center ml-[40px]">
+                    <Image
+                      src={currentSlide.icon}
+                      alt={currentSlide.text}
+                      width={32}
+                      height={32}
+                      className="flex-shrink-0"
+                    />
+                    <span className="p20 ml-[6px] whitespace-nowrap font-medium text-white">
+                      {currentSlide.text}
+                    </span>
                   </div>
                 </div>
               </div>
