@@ -29,7 +29,7 @@ export default function Webinar() {
 
       <section className="global-container bg-[##F9FAF7] pt-[3.333vw] pb-[3.333vw] text-black">
          {/* Header part */}
-          <div className="flex  justify-between items-center mb-[1.875vw]">
+          <div className="flex  justify-between items-baseline-last mb-[1.875vw]">
               <h2 className="">
                 {liferayWebinarsPage.pastWebinars.heading} <br/> {liferayWebinarsPage.pastWebinars.headingLine2}
               </h2>
