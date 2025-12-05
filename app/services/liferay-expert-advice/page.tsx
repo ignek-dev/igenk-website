@@ -1,5 +1,6 @@
 "use client"
 import { Metadata } from "next"
+import { useState, useEffect, useRef } from "react"
 import ScheduleMeetingButton from "components/Button/ScheduleMeetingButton"
 import { BlogSection } from "components/Common"
 import TalkToExpert from "components/Common/TalkToExpert"
@@ -35,7 +36,31 @@ const metadata: Metadata = {
 }
 
 export default function LiferayExpertAdvicePage() {
- 
+  const [visibleCards, setVisibleCards] = useState(new Set())
+  const cardRefs = useRef([])
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setVisibleCards((prev) => {
+              const updated = new Set(prev)
+              updated.add(entry.target.dataset.index)
+              return updated
+            })
+          }
+        })
+      },
+      { threshold: 0.2 }
+    )
+
+    cardRefs.current.forEach((ref) => {
+      if (ref) observer.observe(ref)
+    })
+
+    return () => observer.disconnect()
+  }, [])
 
   return (
     <main className="pb-0">
@@ -73,15 +98,15 @@ export default function LiferayExpertAdvicePage() {
 
       <section className="bg-white text-black">
         <div className="global-container mx-auto w-full py-[3.333vw]">
-          <div className="flex flex-row items-start gap-[8.75vw]">
-            <div className="flex flex-col gap-[1.458vw]">
+          <div className="flex  flex-row items-start gap-[8.75vw]">
+            <div className="flex sticky top-[10.417vw] flex-col gap-[1.458vw]">
               <h2 className="">Liferay Expert Advice Service</h2>
-              <p className="p18 mt-4 max-w-[44.229vw] text-gray-600">
+              <p className="p18  max-w-[44.229vw] text-gray-600">
                 Gain actionable insights through our Liferay Expert Advice Service and Liferay Consultation, helping you
                 enhance performance, implement new features, and create smooth, engaging user experiences.
               </p>
             </div>
-            <div className="w-full space-y-[1.979vw] md:justify-self-end">
+            <div className="w-full space-y-[1.979vw] pt-[0.417vw] md:justify-self-end">
               {expoerAdvices.map((txt, index) => (
                 <div
                   key={index}
@@ -97,7 +122,7 @@ export default function LiferayExpertAdvicePage() {
                       />
                     </svg>
                   </span>
-                  <span className="p-3 text-sm text-[18px] font-medium text-black">{txt}</span>
+                  <span className=" p20  text-black">{txt}</span>
                 </div>
               ))}
             </div>
@@ -108,8 +133,8 @@ export default function LiferayExpertAdvicePage() {
       <section className="global-container bg-black py-[3.333vw] text-white">
         <div className="flex w-full flex-row items-start gap-[10.573vw]">
           {/* Left Column */}
-          <div className="sticky top-10 flex flex-col gap-[1.458vw]">
-            <h1 className="w-[33.073vw] text-white">Solutions For Architecture To Production</h1>
+          <div className="sticky top-[10.417vw] flex flex-col gap-[1.458vw]">
+            <h2 className="w-[33.073vw] text-white">Solutions For Architecture To Production</h2>
             <p className="p18 text-gray-100">
               From production releases to architecture design, our Liferay Expert Advice Services offer tailored
               strategies and hands-on support to improve efficiency, scalability, and overall platform performance.
@@ -120,31 +145,29 @@ export default function LiferayExpertAdvicePage() {
           </div>
 
           {/* Right Column */}
-          <div className="relative flex z-  flex-col items-end">
-            <div  className="relative">
+          <div className="relative flex z-10 flex-col items-end">
+            <div className="relative">
               {solutions.map((item, index) => (
                 <div
                   key={index}
-                   style={{ top: `calc(10vw + ${index * 6}vw)` }}
-                       className={`sticky mb-10 transition-opacity duration-500 bg-black    `}                >
-                  {index!==0?<hr />:<hr className="hidden"/>} 
-                  <div className="flex items-baseline gap-[3.438vw] mt-7">
-                   
+                  ref={(el) => (cardRefs.current[index] = el)}
+                  data-index={index}
+                  style={{ top: `calc(10vw + ${index * 6}vw)` }}
+                  className={`sticky mb-10 transition-all duration-500 bg-black`}
+                >
+                  {index !== 0 ? <hr className={`${visibleCards.has(String(index)) ? "mt-0" : "mt-10"}`} /> : <hr className="hidden" />}
+                  <div className="flex items-baseline gap-[3.438vw] mt-6">
                     <span className="text-[1.563vw] leading-[3.125vw] font-normal text-white">
                       ({item.number})
                     </span>
                     <div className="flex flex-col gap-[1.458vw]">
-                     
-                      <h3 className="w-[17.76vw] text-[1.563vw]! leading-[1.875vw]! font-normal! text-white">
+                      <h3 className="w-[22.76vw] text-[1.563vw] leading-[1.875vw] font-normal text-white">
                         {item.title}
                       </h3>
                       <p className="p20 text-gray-100">{item.desc}</p>
-                      
                     </div>
                   </div>
-                   
                 </div>
-                
               ))}
             </div>
           </div>
