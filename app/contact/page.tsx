@@ -1,4 +1,5 @@
 "use client"
+import { contactContent, contactLeftSection, officeLocationsData, officeLocationsSection } from "data/contact"
 import { Metadata } from "next"
 import Image from "next/image"
 import React from "react"
@@ -147,7 +148,7 @@ export default function ContactPage() {
       if (response.ok) {
         setStatus({ type: "success", message: "Thanks for your message. We will get back to you soon." })
         form.reset()
-        setPhone("") 
+        setPhone("")
 
         // ⏳ Hide message after 4 seconds
         setTimeout(() => {
@@ -175,10 +176,11 @@ export default function ContactPage() {
         <div className="global-container mx-auto w-full">
           {/* Top Section: Title and Description */}
           <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-5">
-            <h1 className="text-[4.688vw]! leading-[4.875vw] font-medium! text-white md:col-span-2">Contact Us</h1>
+            <h1 className="text-[4.688vw]! leading-[4.875vw] font-medium! text-white md:col-span-2">
+              {contactContent.title}
+            </h1>
             <p className="font-regular p20 right-0 tracking-normal text-[#FFFFFF] md:col-span-3 md:text-right">
-              Get in touch for inquiries about our properties. We&apos;re here to offer expert advice, personalized
-              solutions, and exceptional service to meet all your needs effectively.
+              {contactContent.description}
             </p>
           </div>
 
@@ -189,31 +191,27 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 gap-16 md:grid-cols-2">
             {/* Left Side: "Lets Start Conversation" */}
             <div className="flex flex-col">
-              <h2 className="font-semibold">Let's Start the Conversation</h2>
+              <h2 className="font-semibold">{contactLeftSection.title}</h2>
               <p className="font-regular! p18 mt-3 max-w-xl text-left! text-lg text-[#FFFFFF]">
-                We at IGNEK appreciate your questions, comments, and teamwork. Whether you have enquiries about our
-                projects or would like to discuss our services.
+                {contactLeftSection.description}
               </p>
 
               {/* Info Blocks */}
               <div className="mt-9 flex flex-col gap-8 sm:flex-row sm:gap-26">
-                <div className="flex max-w-[304px] flex-col gap-2">
-                  <h3 className="p18 font-medium! text-[#DBD3D3]">Email Address</h3>
-                  <a href="mailto:sales@ignek.com" className="p16 text-white hover:text-blue-400">
-                    sales@ignek.com
-                  </a>
-                </div>
-                <div className="flex max-w-[304px] flex-col gap-2">
-                  <h3 className="p18 font-medium! text-[#DBD3D3]">Phone Number</h3>
-                  <a href="tel:+016351575560" className="p16 text-white hover:text-blue-400">
-                    +91 63515 76580
-                  </a>
-                </div>
+                {contactLeftSection.infoBlocks.map((item) => (
+                  <div key={item.id} className="flex max-w-[304px] flex-col gap-2">
+                    <h3 className="p18 font-medium! text-[#DBD3D3]">{item.label}</h3>
+
+                    <a href={item.href} className="p16 text-white hover:text-blue-400">
+                      {item.value}
+                    </a>
+                  </div>
+                ))}
               </div>
 
               {/* Follow Us */}
               <div className="mt-9 flex flex-col gap-8 sm:flex-row sm:items-center sm:gap-32">
-                <p className="p18 font-medium! text-[#FFFFFF]">Follow Us On</p>
+                <p className="p18 font-medium! text-[#FFFFFF]">{contactLeftSection.title2}</p>
                 <div className="flex space-x-5">
                   <a
                     href="https://www.facebook.com/ignekinfo/"
@@ -326,102 +324,63 @@ export default function ContactPage() {
           <div className="mb-22.5 grid grid-cols-1 items-end gap-8 md:grid-cols-2">
             <div>
               <h2 className="font-semibold text-[#000000]">
-                Our Offices Locations in India
+                {officeLocationsSection.title}
                 <br />
-                and the United Arab Emirates
+                {officeLocationsSection.title2}
               </h2>
             </div>
             <div className="flex h-full items-center justify-center">
               <p className="p18 text-right text-[#374151]">
-                We have offices in India and the United Arab Emirates, providing <br /> seamless regional support and
-                collaboration for our global clients.{" "}
+                {officeLocationsSection.description} <br /> {officeLocationsSection.description2}{" "}
               </p>
             </div>
           </div>
 
           {/* Locations List */}
           <div className="flex flex-col gap-7.5">
-            {/* Location 1: Ahmedabad */}
-            <div className="flex flex-col md:flex-row md:items-start md:gap-10">
-              {/* Left Side: Image */}
-              <div className="">
-                <Image
-                  src="/images/ahmedabad.png"
-                  alt="Ahmedabad Office Location"
-                  width={853}
-                  height={341}
-                  objectFit="contain"
-                  className="h-[341px] w-[853px]"
-                />
-              </div>
-              {/* Right Side: Details (Flex container for content and divider) */}
-              <div className="mt-6 flex flex-col md:mt-0 md:w-1/2 md:pl-3.5">
+            {officeLocationsData.map((item) => (
+              <div key={item.id} className="flex flex-col md:flex-row md:items-start md:gap-10">
+                {/* Image */}
                 <div>
-                  {" "}
-                  {/* Wrapper for the actual details */}
-                  <h3 className="text-[#151314]">Ahmedabad, India</h3>
+                  <Image src={item.image} alt={item.alt} width={853} height={341} className="h-[341px] w-[853px]" />
+                </div>
+
+                {/* Right Side Content */}
+                <div className="mt-6 flex flex-col md:mt-0 md:w-1/2 md:pl-3.5">
+                  {/* City + Address */}
+                  <h3 className="text-[#151314]">{item.city}</h3>
+
                   <p className="p18 mt-4 text-left! text-[#4D464A]">
-                    E 910- 912, Ganesh Glory 11, Jagatpur Road, SG Highway,
-                    <br />
-                    Ahmedabad, Gujarat – 382470
+                    {item.address.map((line, index) => (
+                      <span key={index}>
+                        {line}
+                        <br />
+                      </span>
+                    ))}
                   </p>
+
+                  {/* Email + Phone */}
                   <div className="mt-24 flex flex-col gap-8 sm:flex-row sm:items-center sm:gap-30">
                     <div className="flex min-w-[232px] flex-col gap-1">
-                      <p className="p20 text-[#766C72]">Email Address</p>
-                      <a href="mailto:sales@ignek.com" className="p18 font-medium text-[#151314] hover:text-blue-600">
-                        sales@ignek.com
+                      <p className="p20 text-[#766C72]">{item.contact.emailLabel}</p>
+                      <a href={item.contact.emailHref} className="p18 font-medium text-[#151314] hover:text-blue-600">
+                        {item.contact.email}
                       </a>
                     </div>
+
                     <div className="flex flex-col gap-1">
-                      <p className="p20 font-medium text-[#766C72]">Phone Number</p>
-                      <a href="tel:+916351578580" className="p18 font-medium text-[#151314] hover:text-blue-600">
-                        (+91) 63515 76580
+                      <p className="p20 font-medium text-[#766C72]">{item.contact.phoneLabel}</p>
+                      <a href={item.contact.phoneHref} className="p18 font-medium text-[#151314] hover:text-blue-600">
+                        {item.contact.phone}
                       </a>
                     </div>
                   </div>
-                </div>
 
-                {/* --- Divider now *inside* the right-hand details column --- */}
-                <hr className="mt-25 w-full border-t border-[#DBD3D3]" />
-              </div>
-            </div>
-
-            {/* Location 2: UAE (starts after the divider of Location 1's details) */}
-            <div className="flex flex-col md:flex-row md:items-start md:gap-10">
-              {/* Left Side: Image */}
-              <div className="">
-                <Image
-                  src="/images/uae.png"
-                  alt="United Arab Emirates Office Location"
-                  width={853}
-                  height={341}
-                  className="h-[341px]"
-                />
-              </div>
-              {/* Right Side: Details (no divider here as it's the last location) */}
-              <div className="mt-6 md:mt-4 md:w-1/2 md:pl-3.5">
-                <h3 className="text-[#151314]">United Arab Emirates</h3>
-                <p className="p18 mt-4 text-left! text-[#4D464A]">
-                  Office Number: 09-106, Arabian Sky Business center ,
-                  <br />
-                  Umm Hurrair 2 Dubai UAE
-                </p>
-                <div className="mt-24 flex flex-col gap-8 sm:flex-row sm:gap-30">
-                  <div className="flex min-w-[232px] flex-col gap-1">
-                    <p className="p20 font-medium text-[#766C72]">Email Address</p>
-                    <a href="mailto:connect@ignek.com" className="p18 font-medium text-[#151314] hover:text-blue-600">
-                      connect@ignek.com
-                    </a>
-                  </div>
-                  <div className="flex flex-col gap-1">
-                    <p className="p20 font-medium text-[#766C72]">Phone Number</p>
-                    <a href="tel:+4146781903" className="p18 font-medium text-[#151314] hover:text-blue-600">
-                      +97 154 219 8252
-                    </a>
-                  </div>
+                  {/* Divider */}
+                  {item.showDivider && <hr className="mt-25 w-full border-t border-[#DBD3D3]" />}
                 </div>
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
