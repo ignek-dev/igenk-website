@@ -6,6 +6,7 @@ import { BlogData } from "components/Blogmain/BlogCards"
 import { WPPost } from "components/BlogSidebar/BlogSidebar"
 import posts from "../Blog/blogs.json"
 import { useInView } from "../../hooks/useInView"
+import { blogSectionData } from "data/homepage-content"
 
 type BlogItem = {
   id: string
@@ -80,15 +81,14 @@ export default function BlogSection() {
       <div className="global-container p-16">
         <div className="grid items-center gap-10 md:grid-cols-2">
           <h2 className={` ${isInView ? "animate-when-visible animate-slide-left animation-delay-200" : "opacity-0"}`}>
-            Explore What's Shaping <br /> Digital Today
+            {blogSectionData.title} <br /> {blogSectionData.titleHighlight}
           </h2>
           <p
             className={`p18 max-w-[100%] justify-self-center text-right leading-relaxed text-[#101012] text-gray-700 ${
               isInView ? "animate-when-visible animate-slide-right animation-delay-200" : "opacity-0"
             }`}
           >
-            Explore our blogs for expert insights, trends, and innovations driving digital transformation and shaping
-            the future.
+            {blogSectionData.description}
           </p>
         </div>
 
