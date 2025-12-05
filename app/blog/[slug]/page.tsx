@@ -20,7 +20,7 @@ import "prismjs/plugins/line-numbers/prism-line-numbers";
 
 import BlogSidebar from "components/BlogSidebar/BlogSidebar";
 import ExploreServices from "components/ExploreServices/ExploreServices";
-import { blogCSSLink } from "data/blogCss";
+import { blogCSSLink } from "components/Blog/blogCss";
 
 interface WPPost {
     id: number;

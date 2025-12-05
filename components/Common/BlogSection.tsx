@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation"
 import { useCallback, useEffect, useState } from "react"
 import { BlogData } from "components/Blogmain/BlogCards"
 import { WPPost } from "components/BlogSidebar/BlogSidebar"
-import posts from "../../data/blogs.json"
+import posts from "../Blog/blogs.json"
 import { useInView } from "../../hooks/useInView"
 
 type BlogItem = {

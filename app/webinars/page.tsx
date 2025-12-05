@@ -5,55 +5,7 @@ import Link from "next/link";
 
 // --- Interfaces ---
 
-interface WebinarData {
-  id: string;
-  title: string;
-  category: "Webinar" | "Event";
-  date?: string; 
-  time?: string;
-  location?: string;
-  cost?: string;
-  link: string;
-  image: string; // The full banner image for the featured one, or card image for the list
-}
-
-// --- Mock Data ---
-
-// This represents the "Blue Card" area. 
-// Ideally, the "Register Now" button is part of this image design.
-const featuredWebinar: WebinarData = {
-  id: "featured-1",
-  title: "Customer Onboarding with Low Code",
-  category: "Webinar",
-  link: "/webinars/customer-onboarding-liferay", 
-  image: "/images/webinar/event-image.jpg", // The detailed blue banner image
-};
-
-const upcomingWebinars: WebinarData[] = [
-  {
-    id: "1",
-    title: "Customer Onboarding With Low Code/No Code Capabilities Of Liferay Portal",
-    category: "Webinar",
-    location: "Virtual",
-    date: "13 November 2024",
-    time: "7:00 PM IST",
-    cost: "FREE",
-    link: "/webinars/customer-onboarding-liferay",
-    image: "/images/webinar/Customer-Onboarding-With-Low-Code-No-Code-Capabilities-Of-Liferay-Portal.webp",
-  },
-  {
-    id: "2",
-    title: "BUILDING ENTERPRISE WEBSITE WITH LIFERAY",
-    category: "Webinar",
-    location: "Virtual",
-    date: "12 February 2025",
-    time: "7:00 PM IST",
-    cost: "FREE",
-    link: "/webinars/building-enterprise-liferay-1",
-    image: "/images/webinar/card-event-image.png",
-  },
-
-];
+import { featuredWebinar, liferayWebinarsPage, upcomingWebinars, webinarSection } from "../../data/Webinar";
 
 export default function Webinar() {
   
@@ -64,14 +16,13 @@ export default function Webinar() {
         {/* <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_10%_0%,#0E7BF8_0%,#00979E_40%,transparent_65%)] opacity-25" /> */}
         <div className="flex items-end justify-between">
           <h1 className="text-[#FFFFFF]">
-            Liferay DXP
+            {liferayWebinarsPage.hero.headingLine1}
 
             <br />
-            <span className="block">Learning Webinars</span>
+            <span className="block">{liferayWebinarsPage.hero.headingLine2}</span>
           </h1>
           <p className="w-[39.992vw] text-right text-[0.938vw] leading-[1.458vw]">
-            Deepen your understanding of Liferay DXP through technical webinars packed with practical insights, architecture guidance, and implementation strategies.
-
+            {liferayWebinarsPage.hero.description}
           </p>
         </div>
       </section>
@@ -80,12 +31,10 @@ export default function Webinar() {
          {/* Header part */}
           <div className="flex  justify-between items-center mb-[1.875vw]">
               <h2 className="">
-                Past Liferay <br/> Webinars
-                & Recorded Sessions
+                {liferayWebinarsPage.pastWebinars.heading} <br/> {liferayWebinarsPage.pastWebinars.headingLine2}
               </h2>
               <p className="text-[#374151] text-[0.938vw] leading-[1.563vw] text-right w-[35.75vw]">
-                Catch up on past Liferay webinars covering DXP, development best practices, and real-world implementation strategies for digital experiences.
-
+                {liferayWebinarsPage.pastWebinars.description}
               </p>
             </div>
      {/* 1. FEATURED IMAGE CARD (Dynamic Banner) */}
@@ -110,9 +59,9 @@ export default function Webinar() {
        {/* 2. GRID SECTION TITLE */}
         <div className="mb-[2.396vw] mt-[3.333vw]">
             <h2 className="text-3xl hidden md:text-4xl font-bold leading-tight">
-                Check Out Our Newly
+                {webinarSection.heading}
                 <br />
-                Upcoming Webinars
+                {webinarSection.headingLine2}
             </h2>
         </div>
 
