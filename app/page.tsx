@@ -15,7 +15,7 @@ import { homepageData, partners } from "data/homepage-content"
 import { BlogSection } from "../components/Common"
 
 export const metadata: Metadata = {
-  title: "Ignek - Transform Your Digital Experience",
+  title: "IGNEK | Liferay Boutique Consulting & Development Company",
   description:
     "Leading digital transformation company providing cutting-edge solutions for modern businesses. Transform your digital experience with Ignek today.",
   twitter: {
