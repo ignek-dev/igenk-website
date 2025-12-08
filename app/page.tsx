@@ -38,7 +38,6 @@ export const metadata: Metadata = {
 export default function HomePage() {
   const { hero } = homepageData
   return (
-    // enable smooth scrolling for anchor links
     <main className="scroll-smooth">
       <section className="relative overflow-hidden bg-black text-white">
         {/* Top-left subtle radial gradient using provided colors */}
