@@ -178,7 +178,7 @@ export const liferayIntegrationData = {
 }
 
 export const liferayPortalCustomizationData = {
-  title: "Liferay Portal Customization Services",
+  title: "Liferay Portal<br/>Customization Services",
   description:
     "Transform your Liferay experience with custom solutions that make your platform faster, smarter, and easier to use.",
 }
