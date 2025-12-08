@@ -21,7 +21,7 @@ const HeroCTASection: React.FC = () => {
         <div
           className={`${
             isInView ? "animate-when-visible animate-slide-left" : "opacity-0"
-          } flex h-full flex-col justify-between min-w-[44.531vw]`}
+          } z-50 flex h-full flex-col justify-between min-w-[44.531vw]`}
         >
           <h2 className="">
             {heroCTASection.headingLine1}

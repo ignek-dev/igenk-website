@@ -32,7 +32,7 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
           initial={false}
           animate={{ rotate: isOpen ? 0 : 45 }}
           transition={{ duration: 0.3, ease: "easeOut" }}
-          className="text-2xl text-gray-400"
+          className="text-2xl text-gray-400 cursor-pointer"
         >
           <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path

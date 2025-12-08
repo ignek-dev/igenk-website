@@ -94,6 +94,14 @@ const config = typescriptEslint.config(
         },
       ],
     },
+        overrides: [
+      {
+        files: ["**/*.d.ts"],
+        rules: {
+          "@typescript-eslint/no-namespace": "off"
+        }
+      }
+    ]
   }
 )
 

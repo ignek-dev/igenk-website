@@ -248,7 +248,7 @@ export const LiferayTechnologicalStacks = () => {
                         } ${lastRow ? "tech-cell--last-row" : ""} `}
                       >
                         <Image src={tech.logo} alt={tech.name} width={100} height={100} className="object-contain" />
-                        <span className="mt-3 text-sm font-medium text-black/90">{tech.name}</span>
+                        <span className="mt-[0.625vw] text-[1.042vw] font-medium text-black/90">{tech.name}</span>
                       </div>
                     )
                   })}

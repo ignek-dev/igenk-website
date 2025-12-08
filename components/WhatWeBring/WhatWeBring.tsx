@@ -1,140 +1,175 @@
 "use client"
 
-import React, { useEffect, useRef, useState } from "react"
-import { motion, useScroll, useSpring, useTransform } from "framer-motion"
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion"
+import React, { useCallback, useLayoutEffect, useRef, useState } from "react"
 import WhatWeBringCard from "./WhatWeBringCard"
 import { cardData, whatWeBringHeader } from "data/homepage-content"
 
-const START_BUFFER_FRAC = 0.15
-const END_BUFFER_FRAC = 0.25
-
-const MAX_TOP_BUFFER_PX_DESKTOP = 120
-const MAX_TOP_BUFFER_PX_MOBILE = 64
-
 const WhatWeBring: React.FC = () => {
-  const containerRef = useRef<HTMLDivElement | null>(null)
+  const sectionRef = useRef<HTMLDivElement | null>(null)
   const stickyRef = useRef<HTMLDivElement | null>(null)
-  const scrollerRef = useRef<HTMLDivElement | null>(null)
-
-  const [containerHeight, setContainerHeight] = useState<number>(0)
-  const [topBufferPx, setTopBufferPx] = useState<number>(0)
-  const [bottomBufferPx, setBottomBufferPx] = useState<number>(0)
-  const [travelPx, setTravelPx] = useState(0)
-
-  useEffect(() => {
-    function recompute() {
-  const scroller = scrollerRef.current;
-  if (!scroller) return;
-
-  const totalWidth = scroller.scrollWidth;
-  const viewportW = window.innerWidth;
-  const viewportH = window.innerHeight;
-
-  const gap = 44;
-  const pr  = 44;
-
-  const lastCard = scroller.lastElementChild as HTMLElement | null;
-  const lastCardWidth = lastCard?.offsetWidth || 0;
-
-  const horizontalDistancePx = Math.max(
-    0,
-    totalWidth - viewportW - lastCardWidth - gap - pr + lastCardWidth + 400
-  );
-
-  // raw buffers
-  const rawTopPx = Math.round(START_BUFFER_FRAC * viewportH);
-  const rawBottomPx = Math.round(END_BUFFER_FRAC * viewportH);
-
-  // clamp top buffer — smaller on mobile
-  const maxTopPx = 64; // tweak values to taste
-  const topPx = Math.min(rawTopPx, maxTopPx);
-
-  // optionally clamp bottom too (if you want)
-  const maxBottomPx = 200;
-  const bottomPx = Math.min(rawBottomPx, maxBottomPx);
-
-  const newContainerHeight = horizontalDistancePx + viewportH + topPx + bottomPx;
-
-  setContainerHeight(newContainerHeight);
-  setTopBufferPx(topPx);
-  setBottomBufferPx(bottomPx);
-  setTravelPx(horizontalDistancePx);
-}
-
-
-    recompute()
-    window.addEventListener("resize", recompute)
-    return () => window.removeEventListener("resize", recompute)
-  }, [])
-
-  // useScroll scoped to the containerRef — returns progress 0..1 while scrolling through container
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end end"], // full scroll over the container's height
+  const trackRef = useRef<HTMLDivElement | null>(null)
+  const cardsViewportRef = useRef<HTMLDivElement | null>(null)
+  const [layout, setLayout] = useState({
+    stickyHeight: 0,
+    scrollDistance: 0,
+    sectionHeight: 0,
   })
 
-  const computeRaw = () => {
-    // Avoid division by zero if containerHeight not ready
-    if (containerHeight <= 0) return { start: START_BUFFER_FRAC, end: 1 - END_BUFFER_FRAC }
+  const progress = useMotionValue(0)
+  const progressRef = useRef(0)
 
-    const start = topBufferPx / containerHeight // progress value where movement starts
-    const end = 1 - bottomBufferPx / containerHeight // progress value where movement ends
-    // clamp to sensible min/max
-    const s = Math.min(Math.max(start, 0), 0.5)
-    const e = Math.max(Math.min(end, 1), 0.5)
-    return { start: s, end: e }
-  }
+  const updateProgress = useCallback(
+    (nextValue: number) => {
+      if (layout.scrollDistance <= 0) return
+      const clamped = Math.max(0, Math.min(1, nextValue))
+      progressRef.current = clamped
+      progress.set(clamped)
+    },
+    [layout.scrollDistance, progress]
+  )
 
-  const { start, end } = computeRaw()
+  useLayoutEffect(() => {
+    const computeLayout = () => {
+      const stickyHeight = stickyRef.current?.offsetHeight ?? 0
+      const trackWidth = trackRef.current?.scrollWidth ?? 0
+      const containerWidth = cardsViewportRef.current?.offsetWidth ?? window.innerWidth
+      const horizontalOverflow = Math.max(0, trackWidth - containerWidth)
 
-  // Make a four-point transform so we have explicit pause at beginning and end
-  const rawX = useTransform(scrollYProgress, [0, start, end, 1], ["0px", "0px", `-${travelPx}px`, `-${travelPx}px`])
+      // keep section height tightly bound to visible content while ensuring sticky has a tiny scroll runway
+      const extra = horizontalOverflow > 0 ? 1 : 0
 
-  const x = useSpring(rawX, { stiffness: 90, damping: 16 })
+      setLayout({
+        stickyHeight,
+        scrollDistance: horizontalOverflow,
+        sectionHeight: stickyHeight + extra,
+      })
+    }
+
+    computeLayout()
+
+    const resizeObserver = new ResizeObserver(() => computeLayout())
+    if (stickyRef.current) resizeObserver.observe(stickyRef.current)
+    if (trackRef.current) resizeObserver.observe(trackRef.current)
+    window.addEventListener("resize", computeLayout)
+
+    return () => {
+      resizeObserver.disconnect()
+      window.removeEventListener("resize", computeLayout)
+    }
+  }, [])
+
+  useLayoutEffect(() => {
+    const sectionEl = sectionRef.current
+    if (!sectionEl || layout.scrollDistance <= 0) return
+
+    const isWithinSection = () => {
+      const cardsEl = cardsViewportRef.current
+      if (!cardsEl) return false
+      const rect = cardsEl.getBoundingClientRect()
+      const viewportHeight = window.innerHeight || document.documentElement.clientHeight
+      // Activate horizontal scroll only when the cards strip is fully visible in the viewport
+      return rect.top >= 0 && rect.bottom <= viewportHeight
+    }
+
+    const handleWheel = (event: WheelEvent) => {
+      if (!isWithinSection()) return
+      const delta = event.deltaY
+      if (
+        (delta > 0 && progressRef.current >= 1) ||
+        (delta < 0 && progressRef.current <= 0)
+      ) {
+        return
+      }
+
+      event.preventDefault()
+      const next = progressRef.current + delta / (layout.scrollDistance || 1)
+      updateProgress(next)
+    }
+
+    let touchStartY = 0
+    const handleTouchStart = (event: TouchEvent) => {
+      const firstTouch = event.touches[0]
+      if (!firstTouch) return
+      touchStartY = firstTouch.clientY
+    }
+
+    const handleTouchMove = (event: TouchEvent) => {
+      if (!isWithinSection()) return
+      const firstTouch = event.touches[0]
+      if (!firstTouch) return
+      const currentY = firstTouch.clientY
+      const delta = touchStartY - currentY
+      touchStartY = currentY
+
+      if (
+        (delta > 0 && progressRef.current >= 1) ||
+        (delta < 0 && progressRef.current <= 0)
+      ) {
+        return
+      }
+
+      event.preventDefault()
+      const next = progressRef.current + delta / (layout.scrollDistance || 1)
+      updateProgress(next)
+    }
+
+    sectionEl.addEventListener("wheel", handleWheel, { passive: false })
+    sectionEl.addEventListener("touchstart", handleTouchStart, { passive: false })
+    sectionEl.addEventListener("touchmove", handleTouchMove, { passive: false })
+
+    return () => {
+      sectionEl.removeEventListener("wheel", handleWheel)
+      sectionEl.removeEventListener("touchstart", handleTouchStart)
+      sectionEl.removeEventListener("touchmove", handleTouchMove)
+    }
+  }, [layout.scrollDistance, layout.stickyHeight, updateProgress])
+
+  const xMotion = useTransform(progress, (value) => -value * layout.scrollDistance)
+  const x = useSpring(xMotion, { stiffness: 160, damping: 26, mass: 0.6 })
 
   return (
-    // tall parent — scroll passes through this and the sticky child remains visible during scroll
-    <div ref={containerRef} style={{ height: containerHeight }} className="relative bg-black">
-      {/* Top pause buffer (px) to ensure initial pause — keeps first cards visible */}
-      {containerHeight > 0 && <div style={{ height: topBufferPx }} />}
-      {/* <div style={{ height: topBufferPx }} /> */}
-
-      <section
+    <section
+      ref={sectionRef}
+      style={{ minHeight: layout.sectionHeight || undefined }}
+      className="relative bg-black text-white"
+    >
+      <div
         ref={stickyRef}
-        className="sticky top-0 z-10 flex items-center overflow-hidden py-[3.333vw] text-white"
-        style={{ height: "100vh" }}
+        className="sticky top-0 z-10 flex items-center overflow-hidden py-[3.333vw]"
       >
-        <div className="global-container w-full">
-          {/* Header */}
-          <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
+        <div className="w-full global-container">
+          <div className="flex flex-col items-center gap-8 lg:flex-row lg:justify-between">
             <h2>
-              {whatWeBringHeader.headingLine1}
+                {whatWeBringHeader.headingLine1}
               <br />
-              {whatWeBringHeader.headingLine2}
+                {whatWeBringHeader.headingLine2}
             </h2>
-            <p className="p18 w-[38.594vw] pt-0 text-right text-gray-300">{whatWeBringHeader.description}</p>
+            <p className="max-w-[46.594vw] text-right p18 text-gray-300">
+                 {whatWeBringHeader.description}
+            </p>
           </div>
 
-          {/* Horizontal scroller */}
-          <motion.div
-            ref={scrollerRef}
-            style={{ x }}
-            className="flex w-max gap-8 pt-15 pr-11 pb-16"
-          >
-            {cardData.map((card) => (
-              <WhatWeBringCard
-                key={card.cardNumber}
-                cardNumber={card.cardNumber}
-                title={card.title}
-                description={card.description}
-              />
-            ))}
-          </motion.div>
+          <div ref={cardsViewportRef} className="pt-[3.177vw]">
+            <motion.div
+              ref={trackRef}
+              style={{ x }}
+              className="flex space-x-11"
+            >
+              {cardData.map((card) => (
+                <div key={card.cardNumber} className="flex-shrink-0">
+                  <WhatWeBringCard
+                    cardNumber={card.cardNumber}
+                    title={card.title}
+                    description={card.description}
+                  />
+                </div>
+              ))}
+            </motion.div>
+          </div>
         </div>
-      </section>
-
-      <div style={{ height: bottomBufferPx }} />
-    </div>
+      </div>
+    </section>
   )
 }
 
