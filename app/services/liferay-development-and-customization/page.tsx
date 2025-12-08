@@ -59,7 +59,7 @@ export default function LiferayDevelopmentAndCustomizationPage() {
                 <span className="block">{liferayDevCustomizationHeroData.titleLine3}</span>
               </h1>
             </div>
-            <p className="absolute bottom-0 max-w-xl text-right text-[0.938vw] text-white md:justify-self-end">
+            <p className="absolute bottom-0 max-w-xl font-normal! text-right p18 text-white md:justify-self-end">
               {liferayDevCustomizationHeroData.description}
             </p>
           </div>
@@ -81,22 +81,22 @@ export default function LiferayDevelopmentAndCustomizationPage() {
       <section className="bg-white text-black">
         <div className="global-container py-[3.333vw]">
           <div className="grid items-start gap-[7.656vw] md:grid-cols-2">
-            <div>
+            <div className="md:sticky md:top-[10vw] md:h-fit">
               <h2>
                 {liferayDevelopmentServicesData.title.split(" ").slice(0, 2).join(" ")}
                 <br /> {liferayDevelopmentServicesData.title.split(" ").slice(2).join(" ")}
               </h2>
-              <p className="mt-[1.458vw] max-w-[100%] p18 text-gray-700">
+              <p className="mt-[1.458vw] max-w-[100%] p18 font-normal! text-gray-700">
                 {liferayDevelopmentServicesData.description}
               </p>
             </div>
-            <div className="grid w-full md:justify-self-end">
+            <div className="grid w-full md:justify-self-end pt-[8px]">
               {developmentServices.map((txt, index) => (
                 <div
                   key={index}
                   className={`flex items-center gap-[1.25vw] rounded-lg bg-white ${
-                    index === 0 ? "pt-0" : "pt-[1.771vw]"
-                  } ${index === developmentServices.length - 1 ? "pb-0" : "pb-[1.771vw]"} ${
+                    index === 0 ? "pt-0" : "pt-[1.875vw]"
+                  } ${index === developmentServices.length - 1 ? "pb-0" : "pb-[1.875vw]"} ${
                     index !== developmentServices.length - 1 ? "border-b border-b-2 border-[#D1D5DB]" : ""
                   } `}
                 >
@@ -106,7 +106,7 @@ export default function LiferayDevelopmentAndCustomizationPage() {
                       height="30"
                       viewBox="0 0 12 12"
                       className="text-white"
-                      fill="none"
+                      fill="none"                       
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
@@ -118,7 +118,7 @@ export default function LiferayDevelopmentAndCustomizationPage() {
                       />
                     </svg>
                   </span>
-                  <span className="text-[1.042vw] font-medium text-black">{txt}</span>
+                  <span className="p20 text-black">{txt}</span>
                 </div>
               ))}
             </div>
@@ -132,7 +132,7 @@ export default function LiferayDevelopmentAndCustomizationPage() {
             <h2>
               {liferayCustomizationData.title}
             </h2>
-            <p className="absolute max-w-xl text-right p18 text-white md:justify-self-end">
+            <p className="absolute max-w-xl text-right p18 font-normal! text-white md:justify-self-end">
               {liferayCustomizationData.description}
             </p>
           </div>
@@ -162,7 +162,7 @@ export default function LiferayDevelopmentAndCustomizationPage() {
           <h2>
             {liferayIntegrationData.title}
           </h2>
-          <p className="mt-[1.458vw] mb-[0.729vw] text-lg leading-relaxed text-[#101012] text-gray-700">
+          <p className="mt-[1.458vw] mb-[0.729vw] p18  text-[#101012] text-gray-700">
             {liferayIntegrationData.description}
           </p>
           <div>
@@ -216,7 +216,7 @@ export default function LiferayDevelopmentAndCustomizationPage() {
                     </div>
 
                     {/* Description */}
-                    <p className="pt-[1.25vw] text-[0.833vw] leading-[24px] text-white">{item.description}</p>
+                    <p className="pt-[1.25vw] text-[0.833vw] font-normal! leading-[24px] text-white">{item.description}</p>
                   </div>
                 )
               })}
