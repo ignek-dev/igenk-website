@@ -32,3 +32,4 @@ export const partners = [
     image: "/images/partner/youngsoftIndia.svg",
   },
 ]
+//
