@@ -484,31 +484,34 @@ h5 {
   animation: marquee 10s linear infinite;
 }
 
-@keyframes sliderCycleSmooth {
+@keyframes slideOut {
   0% {
-    opacity: 1;
-    transform: translateX(100%);  
-  }
-
-  
-  10% {
-    opacity: 1;
-    transform: translateX(0); 
-  }
-
-  85% {
-    opacity: 1;
     transform: translateX(0);
+    opacity: 1;
   }
   100% {
+    transform: translateX(-350px); /* slides into button */
     opacity: 1;
-    transform: translateX(-350px);  /* ← Into the button like before */
   }
 }
 
-/* Should match interval timing */
-.animate-slider-cycle {
-  animation: sliderCycleSmooth 6.2s linear forwards;
+@keyframes slideIn {
+  0% {
+    transform: translateX(100%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-out {
+  animation: slideOut 0.25s ease-in forwards;
+}
+
+.animate-slide-in {
+  animation: slideIn 0.45s ease-out forwards;
 }
 
 .text-mask-container {

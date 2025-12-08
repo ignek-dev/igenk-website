@@ -38,7 +38,7 @@ const liferayServicesLinks = [
   { text: "Architecture", href: "/services/liferay-architecture-design" },
   { text: "Performance Tuning", href: "/services/liferay-performance-tuning" },
   { text: "Ecommerce Development", href: "/services/liferay-ecommerce-development" },
-  { text: "Consulting Page", href: "/services/liferay-consulting-and-implementation-services" },
+  { text: "Consulting", href: "/services/liferay-consulting-and-implementation-services" },
   { text: "Support & Maintenance", href: "/services/liferay-support-and-maintenance" },
   { text: "Proof Of Concept", href: "/services/liferay-proof-of-concept" },
   { text: "Expert Advice", href: "/services/liferay-expert-advice" },
@@ -119,13 +119,14 @@ export default function ServicesMegaMenu({ onClose }: MegaMenuProps) {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % sliderData.length)
-    }, 6200)
+    }, 5000)
 
     return () => clearInterval(interval)
   }, [])
 
   // Cast the fallback to SliderItem to satisfy strict TypeScript checks
   const currentSlide = (sliderData[currentIndex] || sliderData[0]) as SliderItem
+   const next = sliderData[(currentIndex + 1) % sliderData.length] as SliderItem
 
   return (
     <>
@@ -286,26 +287,32 @@ export default function ServicesMegaMenu({ onClose }: MegaMenuProps) {
 
                {/* --- SLIDER SECTION --- */}
                 {/* Added 'mask-image' to fade the text as it slides left towards the button */}
-                <div 
-                  className="flex flex-1 items-center overflow-hidden"
-                  // style={{
-                  //    maskImage: "linear-gradient(to right, transparent 0%, black 10%, black 100%)",
-                  //    WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 10%, black 100%)"
-                  // }}
-                >
-                  <div key={currentIndex} className="animate-slider-cycle flex items-center ml-[40px]">
-                    <Image
-                      src={currentSlide.icon}
-                      alt={currentSlide.text}
-                      width={32}
-                      height={32}
-                      className="flex-shrink-0"
-                    />
-                    <span className="p20 ml-[6px] whitespace-nowrap font-medium text-white">
-                      {currentSlide.text}
+                <div className="relative flex flex-1 items-center overflow-hidden h-[40px]">
+
+                  {/* SLIDE OUT */}
+                  <div
+                    key={"out-" + currentIndex}
+                    className="absolute left-[40px] top-0 flex items-center animate-slide-out"
+                  >
+                    <Image src={next.icon} alt="" width={32} height={32} />
+                    <span className="p20 ml-[6px] items-center whitespace-nowrap font-medium text-white">
+                      {next.text}
                     </span>
                   </div>
+
+                  {/* SLIDE IN */}
+                  <div
+                    key={"in-" + currentIndex}
+                    className="absolute left-[40px] top-0 flex items-center animate-slide-in"
+                  >
+                    <Image src={next.icon} alt="" width={32} height={32} />
+                    <span className="p20 ml-[6px] items-center whitespace-nowrap font-medium text-white">
+                      {next.text}
+                    </span>
+                  </div>
+
                 </div>
+                
               </div>
               {/* End New Section */}
             </div>
