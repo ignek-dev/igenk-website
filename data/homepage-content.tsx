@@ -354,9 +354,9 @@ export const heroCTASection = {
 }
 
 export const expertCardContent = {
-  headingLine1: "Get Expert Guidance for Your",
-  headingLine2: "Liferay Needs",
-  highlightText: "Digital Journey.",
+  headingLine1: "Get Expert Guidance ",
+  headingLine2: "for Your",
+  highlightText: "Liferay Needs",
   expertImage: "/images/bhavinImage.png",
   expertName: "Parth Panchani",
   expertDesignation: "Liferay Business Advisor @ IGNEK",
