@@ -118,7 +118,7 @@ export default function LiferayDevelopmentAndCustomizationPage() {
                       />
                     </svg>
                   </span>
-                  <span className="text-[1.042vw] font-medium text-black">{txt}</span>
+                  <span className="p20 text-black">{txt}</span>
                 </div>
               ))}
             </div>
