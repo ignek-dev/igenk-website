@@ -233,7 +233,7 @@ export default function LiferayHireDeveloper() {
         description="Engage with the Liferay-focused technology partner to get your simple & complex Liferay requirements implemented."
       />
       {/* Services Our Liferay Development Team Offers */}
-      <section className="bg-black pt-[3.333vw] pb-[0.416px] text-white">
+      <section className="bg-black pt-[3.333vw] pb-[0.417vw] text-white">
         <div className="global-container">
           {/* Section Header */}
           <div className="w-full">
@@ -271,7 +271,7 @@ export default function LiferayHireDeveloper() {
                   <div className="ml-[27px] flex w-full flex-col justify-start">
                     <p className="mb-[8px] text-[1.563vw] font-medium">{service.title}</p>
 
-                    <p className="line-clamp-none text-lg leading-relaxed text-[#E5E7EB]">{service.description}</p>
+                    <p className="line-clamp-none p20 leading-relaxed text-[#E5E7EB]">{service.description}</p>
                   </div>
                 </div>
 
