@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useEffect, useRef, useState } from "react"
-import { Canvas, extend, useFrame } from "@react-three/fiber"
+import { Canvas, extend, useFrame, useThree } from "@react-three/fiber"
 import * as THREE from "three"
 import { shaderMaterial } from "@react-three/drei"
 
@@ -54,18 +54,26 @@ void main() {
 }
 `
 
+
+const uniforms: Record<string, unknown> = {
+  uTime: 0,
+  uMouse: new THREE.Vector2(),
+  uTexture: null as unknown as THREE.Texture | null,
+  uStrength: 0,
+};
+
 const BulgeShaderMaterial = shaderMaterial(
   {
     uTime: 0,
     uMouse: new THREE.Vector2(),
-    uTexture: null,
-    uStrength: 0, // NEW
-  },
+    uTexture: null as unknown as THREE.Texture | null,
+    uStrength: 0,
+  } as any, 
   vertexShader,
   fragmentShader
-)
+) as any;
 
-extend({ BulgeShaderMaterial })
+extend({ BulgeShaderMaterial });
 
 declare global {
   namespace JSX {
@@ -84,7 +92,7 @@ function BulgeTextPlane() {
   const [hovering, setHovering] = useState(false) // NEW
 
   useEffect(() => {
-    const canvasWidth = 1500
+    const canvasWidth = 1200
     const canvasHeight = 400
 
     const canvas = document.createElement("canvas")
@@ -97,12 +105,12 @@ function BulgeTextPlane() {
     ctx.textBaseline = "top"
     ctx.textAlign = "left"
 
-    const startX = 0
+    const startX = 30 
     let y = 0
 
-    const lines = ["Transform Your", "DIGITAL EXPERIENCE", "With IGNEK Today"]
+    const lines = ["We are the", "Liferay Boutique", "Company"]
     const styles = ["normal", "italic", "normal"]
-    const weights = ["800", "800", "800"]
+    const weights = ["700", "700", "700"]
     const fontSizes = [132, 132, 132]
 
     // defensive: iterate only up to the shortest array length
@@ -114,7 +122,7 @@ function BulgeTextPlane() {
       const fontSize = fontSizes[i] ?? 132
       const text = lines[i] ?? ""
 
-      ctx.font = `${style} ${weight} ${fontSize}px "Inter", Arial, sans-serif`
+      ctx.font = `${style} ${weight} ${fontSize}px "Poppins", Arial, sans-serif`
       ctx.fillText(text, startX, y)
       y += fontSize * 1.05
     }
@@ -157,7 +165,42 @@ function BulgeTextPlane() {
   )
 }
 
+function getCameraZ() {
+  if (typeof window === "undefined") return 11;
+  const w = window.innerWidth;
+  if (w >= 1920) return 14;     // 1920
+  if (w >= 1536) return 18;   // 1536
+  if (w >= 1440) return 19;     // 1440
+  return 11;                    // smaller screens fallback
+}
+
+function CameraSync({ camZ }: { camZ: number }) {
+  const { camera } = useThree();
+  useEffect(() => {
+    camera.position.set(0, 0, camZ);
+    camera.updateProjectionMatrix();
+  }, [camZ, camera]);
+  return null;
+}
 export default function Scene() {
+
+    const [camZ, setCamZ] = useState(() => getCameraZ());
+
+  useEffect(() => {
+    let raf = 0;
+    const handle = () => {
+      if (raf) cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => {
+        setCamZ(getCameraZ());
+      });
+    };
+    window.addEventListener("resize", handle);
+    return () => {
+      window.removeEventListener("resize", handle);
+      if (raf) cancelAnimationFrame(raf);
+    };
+  }, []);
+
   return (
     <div
       style={{
@@ -168,7 +211,8 @@ export default function Scene() {
         maxHeight: "500px",
       }}
     >
-      <Canvas style={{ width: "100%", height: "500px" }} camera={{ position: [0, 0, 11], fov: 40 }}>
+        <Canvas style={{ width: "100%", height: "500px" }} camera={{ position: [0, 0, camZ], fov: 30 }}>
+        <CameraSync camZ={camZ} />
         <ambientLight />
         <BulgeTextPlane />
       </Canvas>
