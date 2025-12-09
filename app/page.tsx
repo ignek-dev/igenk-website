@@ -50,9 +50,9 @@ export default function HomePage() {
         </div>
 
         <div className="global-container w-full py-16">
-          
-             <Scenes/>
-         
+          <h1>
+            <Scenes />
+          </h1>
           <div className="mt-[3.646vw] grid items-start gap-8 md:grid-cols-2">
             <p className="p20 max-w-xl leading-[30px] text-[#F3F4F6]">{hero.description} </p>
 

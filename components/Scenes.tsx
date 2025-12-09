@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useEffect, useRef, useState } from "react"
-import { Canvas, extend, useFrame } from "@react-three/fiber"
+import { Canvas, extend, useFrame, useThree } from "@react-three/fiber"
 import * as THREE from "three"
 import { shaderMaterial } from "@react-three/drei"
 
@@ -54,6 +54,7 @@ void main() {
 }
 `
 
+
 const uniforms: Record<string, unknown> = {
   uTime: 0,
   uMouse: new THREE.Vector2(),
@@ -91,7 +92,7 @@ function BulgeTextPlane() {
   const [hovering, setHovering] = useState(false) // NEW
 
   useEffect(() => {
-    const canvasWidth = 1500
+    const canvasWidth = 1200
     const canvasHeight = 400
 
     const canvas = document.createElement("canvas")
@@ -104,7 +105,7 @@ function BulgeTextPlane() {
     ctx.textBaseline = "top"
     ctx.textAlign = "left"
 
-    const startX = 0
+    const startX = 30 
     let y = 0
 
     const lines = ["We are the", "Liferay Boutique", "Company"]
@@ -164,7 +165,42 @@ function BulgeTextPlane() {
   )
 }
 
+function getCameraZ() {
+  if (typeof window === "undefined") return 11;
+  const w = window.innerWidth;
+  if (w >= 1920) return 14;     // 1920
+  if (w >= 1536) return 18;   // 1536
+  if (w >= 1440) return 19;     // 1440
+  return 11;                    // smaller screens fallback
+}
+
+function CameraSync({ camZ }: { camZ: number }) {
+  const { camera } = useThree();
+  useEffect(() => {
+    camera.position.set(0, 0, camZ);
+    camera.updateProjectionMatrix();
+  }, [camZ, camera]);
+  return null;
+}
 export default function Scene() {
+
+    const [camZ, setCamZ] = useState(() => getCameraZ());
+
+  useEffect(() => {
+    let raf = 0;
+    const handle = () => {
+      if (raf) cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => {
+        setCamZ(getCameraZ());
+      });
+    };
+    window.addEventListener("resize", handle);
+    return () => {
+      window.removeEventListener("resize", handle);
+      if (raf) cancelAnimationFrame(raf);
+    };
+  }, []);
+
   return (
     <div
       style={{
@@ -175,7 +211,8 @@ export default function Scene() {
         maxHeight: "500px",
       }}
     >
-      <Canvas style={{ width: "100%", height: "500px" }} camera={{ position: [0, 0, 11], fov: 40 }}>
+        <Canvas style={{ width: "100%", height: "500px" }} camera={{ position: [0, 0, camZ], fov: 30 }}>
+        <CameraSync camZ={camZ} />
         <ambientLight />
         <BulgeTextPlane />
       </Canvas>
