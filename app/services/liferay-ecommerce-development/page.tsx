@@ -46,7 +46,7 @@ export default function LiferayEcommerceDevelopmentPage() {
   const containerRef = useRef<HTMLDivElement | null>(null)
   const scrollerRef = useRef<HTMLDivElement | null>(null)
   const [maxScroll, setMaxScroll] = useState(0)
-  const [scrollMultiplier] = useState(1.5)
+  const [scrollMultiplier] = useState(1)
   const [progress, setProgress] = useState(0)
 
   const x = useMotionValue(0)
@@ -60,7 +60,7 @@ export default function LiferayEcommerceDevelopmentPage() {
       const totalWidth = scroller.scrollWidth
       const viewportW = window.innerWidth
 
-      const maxScrollDistance = Math.max(0, totalWidth - viewportW)
+      const maxScrollDistance = Math.max(0, totalWidth - viewportW + 50)
 
       setMaxScroll(maxScrollDistance)
     }
@@ -212,7 +212,7 @@ export default function LiferayEcommerceDevelopmentPage() {
       </section>
 
       <div ref={containerRef} className="relative" style={{ height: `${containerHeight}px` }}>
-        <section className="sticky top-[5.75vw] h-screen overflow-hidden bg-[#f7f7f7] text-black">
+        <section className="sticky top-[5.75vw] flex h-screen flex-col justify-center overflow-hidden bg-[#f7f7f7] text-black">
           <div className="mx-auto w-full py-[3.333vw]">
             {/* Heading Row */}
             <div className="global-container flex flex-row items-center gap-10 md:grid-cols-2">
@@ -229,9 +229,9 @@ export default function LiferayEcommerceDevelopmentPage() {
                 className="relative flex min-w-max gap-0 will-change-transform"
                 style={{ x: smoothX }}
               >
-                <div className="relative flex min-w-max gap-[4.833vw]">
+                <div className="relative flex min-w-max gap-[4.833vw] pr-[10vw]">
                   {/* ✅ Perfectly aligned horizontal line */}
-                  <div className="absolute top-[2.0835vw] left-0 z-0 h-[4px] w-[89%] bg-black"></div>
+                  <div className="absolute top-[2.0835vw] left-0 z-0 h-[4px] w-[85%] bg-black"></div>
 
                   {steps.map((step, index) => (
                     <div key={index} className="flex w-[24.875vw] flex-col gap-[2.188vw]">

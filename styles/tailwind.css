@@ -507,7 +507,7 @@ h5 {
 }
 
 .animate-slide-out {
-  animation: slideOut 0.25s ease-in forwards;
+  animation: slideOut 0.15s ease-in forwards;
 }
 
 .animate-slide-in {
