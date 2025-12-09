@@ -76,7 +76,7 @@ export default function LiferaySupportMaintenancePage() {
       {/* Support & Maintenance core with checklist */}
       <section className="bg-[#F6F6F6] global-container text-black py-[3.333vw]">
         <div className="flex justify-between">
-          <div className="w-[33.229vw]">
+          <div className="w-[33.229vw] sticky top-[200px] h-[100%]">
             <h2>
               {supportCore.heading}
             </h2>

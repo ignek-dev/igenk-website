@@ -40,13 +40,15 @@ const metadata: Metadata = {
 export default function LiferayArchitectureDesignPage() {
   const containerRef = useRef<HTMLDivElement | null>(null)
   const sectionRef = useRef<HTMLDivElement | null>(null)
-  const [isDragging, setIsDragging] = useState(false)
-  const [startX, setStartX] = useState(0)
-  const [scrollStart, setScrollStart] = useState(0)
-  const [targetScroll, setTargetScroll] = useState<number | null>(null)
-  const [isInView, setIsInView] = useState(false)
 
-  // Intersection Observer to detect when section is in view
+  const [isDragging, setIsDragging] = useState(false)
+  const dragStartX = useRef(0)
+  const dragStartScroll = useRef(0)
+
+  const [isInView, setIsInView] = useState(false)
+  const [isStickyActive, setIsStickyActive] = useState(false)
+
+  // detect intersection to know when to enable horizontal handling
   useEffect(() => {
     const section = sectionRef.current
     if (!section) return
@@ -59,53 +61,208 @@ export default function LiferayArchitectureDesignPage() {
         }
       },
       {
-        threshold: 0.3,
-        rootMargin: "0px",
+        // leave threshold low so it becomes active when a chunk of the section is visible
+        threshold: 0.25,
       }
     )
 
     observer.observe(section)
     return () => observer.disconnect()
   }, [])
-  // Handle page scroll for horizontal scrolling
-  // Add this state
-  const [isStickyActive, setIsStickyActive] = useState(false)
 
-  // Handle page scroll for horizontal scrolling with sticky behavior
-  // Handle page scroll for horizontal scrolling with sticky behavior
+  // sticky state (so header can become sticky at the same offset you used)
   useEffect(() => {
-    if (!containerRef.current || !sectionRef.current) return
-
-    const handlePageScroll = () => {
-      const container = containerRef.current
+    const onScroll = () => {
       const section = sectionRef.current
-      if (!container || !section) return
-
-      const sectionRect = section.getBoundingClientRect()
-      const windowHeight = window.innerHeight
-
-      // Start horizontal scroll only when first half of section is scrolled (50% from top)
-      const startScroll = windowHeight * 0.5
-      // End horizontal scroll when section is almost at the top (10% from top)
-      const endScroll = -sectionRect.height * 0.1
-
-      let progress = 0
-
-      // Only start progress when section top passes the 50% mark
-      if (sectionRect.top < startScroll) {
-        progress = 1 - Math.max(0, (sectionRect.top - endScroll) / (startScroll - endScroll))
-      }
-
-      const clampedProgress = Math.max(0, Math.min(1, progress))
-      const maxScroll = container.scrollWidth - container.clientWidth
-      const targetScrollLeft = clampedProgress * maxScroll
-
-      container.scrollLeft = targetScrollLeft
+      if (!section) return
+      const rect = section.getBoundingClientRect()
+      // activate sticky when the top of the section reaches the offset you used previously
+      const stickyOffset = 137
+      setIsStickyActive(rect.top <= stickyOffset && rect.bottom > stickyOffset)
     }
 
-    window.addEventListener("scroll", handlePageScroll, { passive: true })
-    return () => window.removeEventListener("scroll", handlePageScroll)
+    window.addEventListener("scroll", onScroll, { passive: true })
+    onScroll()
+    return () => window.removeEventListener("scroll", onScroll)
   }, [])
+
+  // wheel and touch mapping to horizontal scroll
+  useEffect(() => {
+    const container = containerRef.current
+    const section = sectionRef.current
+    if (!container || !section) return
+
+    let rafId: number | null = null
+
+    const clamp = (v: number, a = 0, b = Infinity) => Math.min(Math.max(v, a), b)
+
+    // performs the actual scrollLeft change on next animation frame for smoothness
+    const animateScrollTo = (targetLeft: number) => {
+      if (rafId !== null) cancelAnimationFrame(rafId)
+      rafId = requestAnimationFrame(() => {
+        container.scrollLeft = targetLeft
+        rafId = null
+      })
+    }
+
+    const onWheel = (e: WheelEvent) => {
+      // only intercept when our section is visible (controlled by IntersectionObserver)
+      if (!isInView) return
+
+      const maxScroll = Math.max(0, container.scrollWidth - container.clientWidth)
+      if (maxScroll <= 0) return // nothing to do
+
+      const deltaY = e.deltaY
+
+      const atLeft = container.scrollLeft <= 0
+      const atRight = container.scrollLeft >= maxScroll - 1 // small epsilon
+
+      // If user attempts to scroll past bounds, allow page to scroll normally.
+      // We only preventDefault when we're actually moving the horizontal track.
+      if ((deltaY < 0 && atLeft) || (deltaY > 0 && atRight)) {
+        return
+      }
+
+      e.preventDefault()
+      e.stopPropagation()
+
+      // adjust sensitivity here if needed
+      const sensitivity = 1 // 1 = direct mapping; <1 slower; >1 faster
+      const next = clamp(container.scrollLeft + deltaY * sensitivity, 0, maxScroll)
+
+      animateScrollTo(next)
+    }
+
+    // Touch handling for phones
+    let touchStartY = 0
+    let lastTouchY = 0
+
+    const onTouchStart = (e: TouchEvent) => {
+      if (!e.touches?.[0]) return
+      touchStartY = e.touches[0].clientY
+      lastTouchY = touchStartY
+    }
+
+    const onTouchMove = (e: TouchEvent) => {
+      if (!isInView) return
+      if (!e.touches?.[0]) return
+
+      const currentY = e.touches[0].clientY
+      const delta = lastTouchY - currentY
+      lastTouchY = currentY
+
+      const maxScroll = Math.max(0, container.scrollWidth - container.clientWidth)
+      if (maxScroll <= 0) return
+
+      const atLeft = container.scrollLeft <= 0
+      const atRight = container.scrollLeft >= maxScroll - 1
+
+      if ((delta < 0 && atLeft) || (delta > 0 && atRight)) {
+        // allow page scrolling when track is at bounds
+        return
+      }
+
+      e.preventDefault()
+      e.stopPropagation()
+
+      const sensitivity = 1
+      const next = clamp(container.scrollLeft + delta * sensitivity, 0, maxScroll)
+      animateScrollTo(next)
+    }
+
+    section.addEventListener("wheel", onWheel, { passive: false })
+    section.addEventListener("touchstart", onTouchStart, { passive: true })
+    section.addEventListener("touchmove", onTouchMove, { passive: false })
+
+    return () => {
+      section.removeEventListener("wheel", onWheel as any)
+      section.removeEventListener("touchstart", onTouchStart as any)
+      section.removeEventListener("touchmove", onTouchMove as any)
+      if (rafId !== null) cancelAnimationFrame(rafId)
+    }
+  }, [isInView])
+
+  // Drag-to-scroll (mouse + touch) for the horizontal strip
+  useEffect(() => {
+    const container = containerRef.current
+    if (!container) return
+
+    const onPointerDown = (e: PointerEvent) => {
+      // Only left mouse button or touch
+      if ((e as any).button !== undefined && (e as any).button !== 0) return
+      setIsDragging(true)
+      dragStartX.current = (e as PointerEvent).clientX
+      dragStartScroll.current = container.scrollLeft
+      // capture pointer to continue receiving events outside element
+      // @ts-ignore - some environments have setPointerCapture on HTMLElement
+      if ((e.target as HTMLElement).setPointerCapture) {
+        try {
+          ;(e.target as HTMLElement).setPointerCapture(e.pointerId)
+        } catch (err) {
+          // ignore
+        }
+      }
+    }
+
+    const onPointerMove = (e: PointerEvent) => {
+      if (!isDragging) return
+      const dx = dragStartX.current - e.clientX
+      container.scrollLeft = dragStartScroll.current + dx
+    }
+
+    const onPointerUp = (e: PointerEvent) => {
+      setIsDragging(false)
+      // release pointer capture if possible
+      // @ts-ignore
+      if ((e.target as HTMLElement).releasePointerCapture) {
+        try {
+          ;(e.target as HTMLElement).releasePointerCapture(e.pointerId)
+        } catch (err) {
+          // ignore
+        }
+      }
+    }
+
+    container.addEventListener("pointerdown", onPointerDown)
+    window.addEventListener("pointermove", onPointerMove)
+    window.addEventListener("pointerup", onPointerUp)
+
+    // Fallback for touch (older browsers)
+    let touchDragging = false
+    let touchStartX = 0
+    let touchStartScroll = 0
+    const onTouchStartDrag = (ev: TouchEvent) => {
+      if (!ev.touches?.[0]) return
+      touchDragging = true
+      touchStartX = ev.touches[0].clientX
+      touchStartScroll = container.scrollLeft
+      setIsDragging(true)
+    }
+    const onTouchMoveDrag = (ev: TouchEvent) => {
+      if (!touchDragging) return
+      if (!ev.touches?.[0]) return
+      const dx = touchStartX - ev.touches[0].clientX
+      container.scrollLeft = touchStartScroll + dx
+    }
+    const onTouchEndDrag = () => {
+      touchDragging = false
+      setIsDragging(false)
+    }
+
+    container.addEventListener("touchstart", onTouchStartDrag, { passive: true })
+    container.addEventListener("touchmove", onTouchMoveDrag, { passive: false })
+    container.addEventListener("touchend", onTouchEndDrag, { passive: true })
+
+    return () => {
+      container.removeEventListener("pointerdown", onPointerDown)
+      window.removeEventListener("pointermove", onPointerMove)
+      window.removeEventListener("pointerup", onPointerUp)
+
+      container.removeEventListener("touchstart", onTouchStartDrag as any)
+      container.removeEventListener("touchmove", onTouchMoveDrag as any)
+      container.removeEventListener("touchend", onTouchEndDrag as any)
+    }
+  }, [isDragging])
 
   return (
     <main className="">
@@ -115,7 +272,6 @@ export default function LiferayArchitectureDesignPage() {
         <div className="global-container mx-auto w-full pt-[3.333vw] pb-[3.802vw]">
           <div className="relative grid items-start gap-10 text-[3.75vw] md:grid-cols-2">
             <div>
-         
               <h1 className="mt-[2.031vw] leading-tight font-semibold">
                 {liferayArchitectureHeroData.titleLine1}
                 <br />
@@ -144,13 +300,9 @@ export default function LiferayArchitectureDesignPage() {
         </div>
       </section>
 
+      {/* ===== Horizontal scroll section (UPDATED) ===== */}
       <section ref={sectionRef} className="relative">
-        {/*
-    1. The section needs significant vertical height to define the scroll duration.
-       You will need to set this height dynamically or manually via a class/style.
-       Example: style={{ height: '300vh' }}
-       In a real app, you might calculate the required height based on containerRef.scrollWidth.
-  */}
+        {/* An invisible tall layer gives page vertical scroll room while sticky header remains */}
         <div
           style={{ height: "300vh" }}
           className="pointer-events-none absolute top-[137px] left-0 h-[300vh] w-full"
@@ -158,20 +310,16 @@ export default function LiferayArchitectureDesignPage() {
         />
 
         <div className="mx-auto w-full">
-          {/* The inner container holding the horizontal content should be sticky, 
-      effectively "pinning" it to the top of the screen while the parent section's 
-      300vh of scroll is being consumed.
-      
-      We rely on the isStickyActive state to conditionally apply the 'sticky' class,
-      although typically in this setup, the sticky class is always present, and the
-      JS controls the content's horizontal movement while pinned.
-      
-      However, since your JS logic toggles isStickyActive, we'll use that here.
-    */}
           <div className={`w-full ${isStickyActive ? "sticky top-[137px]" : ""}`}>
             <div
-              className="flex cursor-grab overflow-x-auto [-ms-overflow-style:'none'] [scrollbar-width:'none'] [&::-webkit-scrollbar]:hidden"
               ref={containerRef}
+              // Use cursor-grab while not dragging and grabbing cursor while dragging
+              className={`flex ${isDragging ? "cursor-grabbing" : "cursor-grab"} overflow-x-auto [-ms-overflow-style:'none'] [scrollbar-width:'none'] [&::-webkit-scrollbar]:hidden`}
+              // Prevent native touch scrolling on the container for smoother custom touch control:
+              // (we still handle touch at section level to map vertical to horizontal)
+              onTouchMove={(e) => {
+                // no-op to allow our touch handlers to control scrolling (prevents passive defaults)
+              }}
             >
               {systemArchitecure.map((item, index) => (
                 <div
@@ -195,6 +343,7 @@ export default function LiferayArchitectureDesignPage() {
           </div>
         </div>
       </section>
+
       <section className="bg-black text-white">
         <div className="global-container mx-auto w-full px-4 py-[3.333vw]">
           <div className="relative grid items-start gap-10 md:grid-cols-2">
@@ -231,7 +380,6 @@ export default function LiferayArchitectureDesignPage() {
         titleText2={LiferayArchitectureTitle2}
         subContext={LiferayArchitectureSubContent}
       />
-      {/* <HeroCTASection /> */}
       <TalkToExpert
         heading={talkToExpertArcData.heading}
         description={talkToExpertArcData.description}

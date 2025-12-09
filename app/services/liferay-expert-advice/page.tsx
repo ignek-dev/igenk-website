@@ -73,7 +73,7 @@ export default function LiferayExpertAdvicePage() {
         <div className="global-container mx-auto w-full pt-12 pb-[3.802vw]">
           <div className="relative grid items-start gap-10 md:grid-cols-2">
             <div>
-              <h1 className="mt-[12.396vw]">
+              <h1 className="mt-[7.865vw]">
                 Liferay
                 <br />
                 <span className="block">Expert Advice</span>
@@ -142,9 +142,9 @@ export default function LiferayExpertAdvicePage() {
               From production releases to architecture design, our Liferay Expert Advice Services offer tailored
               strategies and hands-on support to improve efficiency, scalability, and overall platform performance.
             </p>
-            <div>
+            {/* <div>
               <ScheduleMeetingButton isFullWidth={false} btnName="Schedule a Call" />
-            </div>
+            </div> */}
           </div>
 
           {/* Right Column */}

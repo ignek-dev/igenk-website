@@ -81,7 +81,7 @@ export default function LiferayDevelopmentAndCustomizationPage() {
       <section className="bg-white text-black">
         <div className="global-container py-[3.333vw]">
           <div className="grid items-start gap-[7.656vw] md:grid-cols-2">
-            <div>
+            <div className="sticky top-[200px]">
               <h2>
                 {liferayDevelopmentServicesData.title.split(" ").slice(0, 2).join(" ")}
                 <br /> {liferayDevelopmentServicesData.title.split(" ").slice(2).join(" ")}
