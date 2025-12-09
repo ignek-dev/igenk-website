@@ -41,7 +41,7 @@ export default function EndToEndSection() {
           <div className={getAnimationClass("animate-slide-left", "animation-delay-200")}>
             <div>
               <p className="text-[2.083vw] font-semibold">{EndToEndSectionData.digitalExperience.title}</p>
-              <p className="p18 mt-[1.25vw] max-w-xl text-white/80">
+              <p className="p18 mt-[1.25vw] max-w-xl text-[#E5E7EB]">
                 {EndToEndSectionData.digitalExperience.description}
               </p>
             </div>
@@ -64,7 +64,7 @@ export default function EndToEndSection() {
         <div className="mt-[4.688vw] grid gap-12 md:grid-cols-2 md:gap-14 lg:mt-24 lg:gap-16">
           <div className={getAnimationClass("animate-slide-left", "animation-delay-200")}>
             <p className="text-[2.083vw] font-semibold md:text-[40px]">{EndToEndSectionData.staffAugmentation.title}</p>
-            <p className="mt-[1.25vw] max-w-xl p18 text-white/80">
+            <p className="mt-[1.25vw] max-w-xl p18 text-[#E5E7EB]">
               {EndToEndSectionData.staffAugmentation.description}
             </p>
           </div>

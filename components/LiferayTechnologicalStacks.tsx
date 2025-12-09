@@ -227,7 +227,7 @@ export const LiferayTechnologicalStacks = () => {
           </div>
 
           {/* Right Side */}
-          <div className="w-full transition-all duration-300 md:w-3/4">
+          <div className="w-full transition-all duration-300 md:w-3/4 sticky top-[30%] h-[100%]">
             {(() => {
               const cols = 4
               const items = stackData[activeIndex]?.technologies ?? []
@@ -243,12 +243,12 @@ export const LiferayTechnologicalStacks = () => {
                     return (
                       <div
                         key={index}
-                        className={`tech-cell relative flex flex-col items-center justify-center p-6 transition ${
+                        className={`tech-cell relative flex flex-col items-center justify-center py-6 px-7 transition ${
                           lastCol ? "tech-cell--last-col" : ""
                         } ${lastRow ? "tech-cell--last-row" : ""} `}
                       >
-                        <Image src={tech.logo} alt={tech.name} width={100} height={100} className="object-contain" />
-                        <span className="mt-3 text-sm font-medium text-black/90">{tech.name}</span>
+                        <Image src={tech.logo} alt={tech.name} width={130} height={130} className="object-contain" />
+                        <span className="mt-[0.625vw] text-[1.042vw] font-medium text-black/90">{tech.name}</span>
                       </div>
                     )
                   })}

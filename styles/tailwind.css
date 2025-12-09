@@ -1003,7 +1003,7 @@ html {
 
 .fancy-white::before {
   content: "";
-  background: conic-gradient(transparent 270deg, #00ffff, #00ffff);
+  background: conic-gradient(transparent 270deg, #00979E,  #00979E);
   position: absolute;
   top: 50%;
   left: 50%;

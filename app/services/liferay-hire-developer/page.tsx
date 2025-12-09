@@ -80,12 +80,12 @@ export default function LiferayHireDeveloper() {
               <div className="inline-flex mt-[63px] w-fit items-center rounded-full border border-white px-8.5 py-[8.8px] text-lg font-normal">
                 Hire Us
               </div>
-              <h1 className="mt-[3.229vw]">
+              <h1 className="mt-[2.708vw]">
                 Hire Liferay
                 <br />
                 <span className="block">Developer</span>
               </h1>
-              <p className="line-height-[28px] mt-10 max-w-xl text-lg font-normal">
+              <p className="line-height-[28px] mt-10 max-w-3xl text-lg font-normal">
                 We’re a team of certified Liferay developer and Liferay Consultant with deep expertise spanning various
                 versions of the Liferay Portal. Our “Liferay first” approach has saved clients significant costs and
                 time, resulting in successful deliveries. Hire our Liferay developer for cost-effective solutions and
@@ -176,7 +176,7 @@ export default function LiferayHireDeveloper() {
       {/* Get A Certified Liferay Developer In Just 3 Easy Steps */}{" "}
       <section className="bg-black py-[3.333vw] text-white">
         <div className="global-container">
-          <div className="grid grid-cols-1 gap-[3.438vw] md:grid-cols-2">
+          <div className="grid grid-cols-1 md:grid-cols-2">
             {/* Left Side: Heading and Description */}
             <div className="flex flex-col justify-start">
               <h2 className="min-w-[36.719vw] text-[#FFFFFF]">
@@ -190,7 +190,7 @@ export default function LiferayHireDeveloper() {
             </div>
 
             {/* Right Side: Stepper and Cards */}
-            <div className="relative flex flex-col items-start justify-start">
+            <div className="relative flex flex-col items-start justify-start ml-[5.438vw]">
               {easySteps.map((stepItem, index) => (
                 <div
                   key={stepItem.step}
@@ -206,7 +206,7 @@ export default function LiferayHireDeveloper() {
                   </div>
 
                   {/* Step Card */}
-                  <div className="ml-[2.5vw] w-full rounded-2xl bg-[#FFFFFF] p-[1.51vw] shadow-lg">
+                  <div className="ml-[2.5vw] w-[29.167vw] rounded-2xl bg-[#FFFFFF] p-[1.51vw] shadow-lg">
                     {/* Icon Container */}
                     <div className="mb-[1.458vw] flex h-18 w-18 items-center justify-center rounded-full">
                       <Image src={stepItem.icon} alt="step icon" width={72} height={72} objectFit="contain" />
@@ -233,7 +233,7 @@ export default function LiferayHireDeveloper() {
         description="Engage with the Liferay-focused technology partner to get your simple & complex Liferay requirements implemented."
       />
       {/* Services Our Liferay Development Team Offers */}
-      <section className="bg-black pt-[3.333vw] pb-[0.416px] text-white">
+      <section className="bg-black pt-[3.333vw] pb-[0.417vw] text-white">
         <div className="global-container">
           {/* Section Header */}
           <div className="w-full">
@@ -271,7 +271,7 @@ export default function LiferayHireDeveloper() {
                   <div className="ml-[27px] flex w-full flex-col justify-start">
                     <p className="mb-[8px] text-[1.563vw] font-medium">{service.title}</p>
 
-                    <p className="line-clamp-none text-lg leading-relaxed text-[#E5E7EB]">{service.description}</p>
+                    <p className="line-clamp-none p20 leading-relaxed text-[#E5E7EB]">{service.description}</p>
                   </div>
                 </div>
 
