@@ -54,18 +54,25 @@ void main() {
 }
 `
 
+const uniforms: Record<string, unknown> = {
+  uTime: 0,
+  uMouse: new THREE.Vector2(),
+  uTexture: null as unknown as THREE.Texture | null,
+  uStrength: 0,
+};
+
 const BulgeShaderMaterial = shaderMaterial(
   {
     uTime: 0,
     uMouse: new THREE.Vector2(),
-    uTexture: null,
-    uStrength: 0, // NEW
-  },
+    uTexture: null as unknown as THREE.Texture | null,
+    uStrength: 0,
+  } as any, 
   vertexShader,
   fragmentShader
-)
+) as any;
 
-extend({ BulgeShaderMaterial })
+extend({ BulgeShaderMaterial });
 
 declare global {
   namespace JSX {
@@ -100,9 +107,9 @@ function BulgeTextPlane() {
     const startX = 0
     let y = 0
 
-    const lines = ["Transform Your", "DIGITAL EXPERIENCE", "With IGNEK Today"]
+    const lines = ["We are the", "Liferay Boutique", "Company"]
     const styles = ["normal", "italic", "normal"]
-    const weights = ["800", "800", "800"]
+    const weights = ["700", "700", "700"]
     const fontSizes = [132, 132, 132]
 
     // defensive: iterate only up to the shortest array length
@@ -114,7 +121,7 @@ function BulgeTextPlane() {
       const fontSize = fontSizes[i] ?? 132
       const text = lines[i] ?? ""
 
-      ctx.font = `${style} ${weight} ${fontSize}px "Inter", Arial, sans-serif`
+      ctx.font = `${style} ${weight} ${fontSize}px "Poppins", Arial, sans-serif`
       ctx.fillText(text, startX, y)
       y += fontSize * 1.05
     }

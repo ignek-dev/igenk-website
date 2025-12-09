@@ -50,14 +50,9 @@ export default function HomePage() {
         </div>
 
         <div className="global-container w-full py-16">
-          <h1 className="letter-spacing-[0.04em] !text-[6.875vw] !leading-[6.9vw] font-extrabold">
-            {/* {hero.headingLine1} */}
-            {/* <br /> */}
-            {/* <span className="italic">{hero.headingItalic}</span> */}
-            {/* <br /> */}
-            {/* <span>{hero.headingLine3}</span> */}
+          
              <Scenes/>
-          </h1>
+         
           <div className="mt-[3.646vw] grid items-start gap-8 md:grid-cols-2">
             <p className="p20 max-w-xl leading-[30px] text-[#F3F4F6]">{hero.description} </p>
 
