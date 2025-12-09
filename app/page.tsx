@@ -17,7 +17,7 @@ import Scenes from "../components/Scenes"
 import Scene from "components/Scenes"
 
 export const metadata: Metadata = {
-  title: "Ignek - Transform Your Digital Experience",
+  title: "IGNEK | Liferay Boutique Consulting & Development Company",
   description:
     "Leading digital transformation company providing cutting-edge solutions for modern businesses. Transform your digital experience with Ignek today.",
   twitter: {
