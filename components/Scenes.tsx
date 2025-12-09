@@ -54,13 +54,14 @@ void main() {
 }
 `
 
+
 const BulgeShaderMaterial = shaderMaterial(
   {
     uTime: 0,
     uMouse: new THREE.Vector2(),
     uTexture: null,
-    uStrength: 0, // NEW
-  },
+    uStrength: 0,
+  } as any,
   vertexShader,
   fragmentShader
 )
