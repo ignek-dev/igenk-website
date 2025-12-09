@@ -218,7 +218,8 @@ export const capabilitiesData = {
 
 export const flexiblePlatforms = {
   titleLine1: "One Platform.",
-  titleLine2: "Endless Digital Possibilities.",
+  titleLine2: "Endless Digital Possibilities ",
+  titleteal:"- Liferay DXP",
   description:
     "Liferay DXP is a unified digital experience platform that empowers enterprises to build portals, intranets, websites, and customer solutions with speed and flexibility. With powerful out-of-the-box features, strong security, seamless integrations, and low-code tools, Liferay enables scalable experiences and long-term digital transformation across the entire Liferay ecosystem while reducing complexity and enhancing operational efficiency.",
 
