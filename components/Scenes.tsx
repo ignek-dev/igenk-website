@@ -10,50 +10,64 @@ const vertexShader = `
 uniform float uTime;
 uniform vec2 uMouse;
 uniform float uStrength;
-
+ 
 varying vec2 vUv;
 varying float vElevation;
-
+ 
 float circle(vec2 uv, vec2 circlePosition, float radius) {
   float dist = distance(circlePosition, uv);
   return 1.0 - smoothstep(0.0, radius, dist);
 }
-
+ 
 float elevation(float radius, float intensity) {
   float circleShape = circle(vUv, uMouse, radius);
-  circleShape = pow(circleShape, 1.3);
+  circleShape = pow(circleShape, 1.0);
   return circleShape * intensity;
 }
-
+ 
 void main() {
   vUv = uv;
   vec3 pos = position;
-
+ 
   float e = elevation(0.33, 2.2);
-
+ 
   // fade based on strength uniform
   pos.z += e * uStrength;
-
+ 
   vElevation = e * uStrength;
-
+vUv = uv;
+ 
   gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
 }
 `
-
+ 
 const fragmentShader = `
 uniform sampler2D uTexture;
 varying vec2 vUv;
 varying float vElevation;
-
+ 
 void main() {
-  vec4 color = texture2D(uTexture, vUv);
+    vec4 color = texture2D(uTexture, vUv);
+ 
+    // base shadow: darker at bottom
+    float thinShadowBand = smoothstep(1.0, 0.90, vUv.y);
+ 
+    // bulge shadow: stronger where bulge exists, stronger toward bottom
+    float bulgeShadow = vElevation * 0.35 * thinShadowBand;
+ 
+    // combine shadows
+   float totalShadow = clamp(bulgeShadow, 0.0, 1.0);
+ 
+    // final color: mix text color with black shadow
+     vec3 finalColor = mix(color.rgb, vec3(0.0), totalShadow);
+ 
+    // optional: add highlight on bulge
+    float highlight = vElevation * 0.02;
+    finalColor += highlight;
 
-  float highlight = vElevation * 0.15;
-
-  gl_FragColor = vec4(color.rgb + highlight, color.a);
+    gl_FragColor = vec4(finalColor, color.a);
 }
 `
-
 
 const uniforms: Record<string, unknown> = {
   uTime: 0,
@@ -166,13 +180,25 @@ function BulgeTextPlane() {
 }
 
 function getCameraZ() {
-  if (typeof window === "undefined") return 11;
+  if (typeof window === "undefined") return 19;
+
   const w = window.innerWidth;
-  if (w >= 1920) return 14;     // 1920
-  if (w >= 1536) return 18;   // 1536
-  if (w >= 1440) return 19;     // 1440
-  return 11;                    // smaller screens fallback
+
+  if (w >= 1440 && w < 1536) {
+    const t = (w - 1440) / (1536 - 1440);    
+    return 19 - t * (19 - 18);               
+  }
+
+  if (w >= 1536 && w < 1920) {
+    const t = (w - 1536) / (1920 - 1536);    
+    return 18 - t * (18 - 14);               
+  }
+
+  if (w >= 1920) return 14;
+
+  return 19;
 }
+
 
 function CameraSync({ camZ }: { camZ: number }) {
   const { camera } = useThree();
