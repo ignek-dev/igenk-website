@@ -77,64 +77,59 @@ export default function InsightsMegaMenu({ onClose }: MegaMenuProps) {
   const [error, setError] = useState(false)
 
   useEffect(() => {
-    async function fetchLatest() {
+    async function loadData() {
       try {
-        // ---- Read cache safely ----
-        const cachedRaw = localStorage.getItem("latest_blog_image");
-
+        // 1. Attempt to read from Cache (populated by Prefetcher)
+        const cachedRaw = localStorage.getItem("latest_blog_image")
+        
         if (cachedRaw) {
           try {
-            const parsed: unknown = JSON.parse(cachedRaw);
+            const parsed = JSON.parse(cachedRaw) as CachedBlogImage
 
-            if (
-              typeof parsed === "object" &&
-              parsed !== null &&
-              "image" in parsed &&
-              "timestamp" in parsed
-            ) {
-              const cache = parsed as CachedBlogImage;
-              const isExpired =
-                Date.now() - cache.timestamp > 24 * 60 * 60 * 1000;
+            // Validate that parsed is an object and has the properties we need
+            if (parsed && typeof parsed === 'object' && parsed.image && parsed.timestamp) {
+              const isExpired = Date.now() - parsed.timestamp > 24 * 60 * 60 * 1000
 
-              if (!isExpired && cache.image) {
-                setLatestImage(cache.image);
-                setLoading(false);
-                return; // STOP — no API call
+              if (!isExpired) {
+                setLatestImage(parsed.image)
+                setLoading(false)
+                return // EXIT: Data found in cache, no need to fetch
               }
             }
-          } catch {
-            console.warn("Invalid cache");
+          } catch (e) {
+            console.warn("Invalid cache in Menu:", e)
           }
         }
 
-        // ---- Fetch from API ----
+        // 2. Fallback Fetch (If prefetch didn't finish or cache expired)
         const res = await fetch(
           "https://insights.ignek.com/wp-json/wp/v2/posts?per_page=1&_embed",
           { cache: "no-store" }
-        );
+        )
 
-        const data = (await res.json()) as WPPost[];
-        const img = data?.[0]?._embedded?.["wp:featuredmedia"]?.[0]?.source_url;
+        const data = (await res.json()) as WPPost[]
+        const img = data?.[0]?._embedded?.["wp:featuredmedia"]?.[0]?.source_url
 
         if (img) {
-          setLatestImage(img);
+          setLatestImage(img)
+          // Update cache for next time
           localStorage.setItem(
             "latest_blog_image",
             JSON.stringify({ image: img, timestamp: Date.now() })
-          );
+          )
         } else {
-          setError(true);
+          setError(true)
         }
       } catch (err) {
-        console.error("Failed to fetch latest blog image:", err);
-        setError(true);
+        console.error("Failed to fetch latest blog image in Menu:", err)
+        setError(true)
       } finally {
-        setLoading(false);
+        setLoading(false)
       }
     }
 
-    fetchLatest();
-  }, []);
+    loadData()
+  }, [])
 
 const handleClick = (e: React.MouseEvent) => {
   e.stopPropagation();

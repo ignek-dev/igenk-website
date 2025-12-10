@@ -1,6 +1,7 @@
 import Image from "next/image"
 import React from "react"
 import ScheduleMeetingButton from "components/Button/ScheduleMeetingButton"
+import { expertCardContent } from "data/homepage-content"
 
 interface TalkToExpertCardProps {
   title: string
@@ -12,21 +13,23 @@ const TalkToExpertCard: React.FC<TalkToExpertCardProps> = ({ title }) => {
   
   {/* Title */}
   <h3 className="text-[1.563vw]! leading-[1.875vw] font-bold text-white mb-[2.34375vw]">
-    {title}
+        {expertCardContent.headingLine1} <br />
+        {expertCardContent.headingLine2}{" "}
+        <span className="text-[#00979E]">{expertCardContent.highlightText}</span>
   </h3>
 
   {/* Profile Section */}
   <div className="flex items-center  gap-[1.3542vw] mb-[2.23958vw]">
     <Image
-      src="/images/bhavinImage.png"
-      alt="Bhavin Panchani"
+      src={expertCardContent.expertImage}
+      alt={expertCardContent.expertName}
       width={110}
       height={110}
       className="rounded-full object-cover"
     />
     <div className="flex flex-col gap-[0.5vw]">
-      <p className="text-[1.563vw] font-semibold text-white">Bhavin Panchani</p>
-      <p className="text-[1.042vw] text-white">CEO @ IGNEK</p>
+      <p className="text-[1.563vw] font-semibold text-white">{expertCardContent.expertName}</p>
+      <p className="text-[1.042vw] text-white">{expertCardContent.expertDesignation}</p>
     </div>
   </div>
 
@@ -37,12 +40,12 @@ const TalkToExpertCard: React.FC<TalkToExpertCardProps> = ({ title }) => {
 
   {/* Prefer Email */}
   <div className="pt-[0.5vw] text-[#FFFFFF]">
-    <p className="mb-[0.3vw] p18 text-[#FFFFFF]">Prefer email?</p>
+    <p className="mb-[0.3vw] p18 text-[#FFFFFF]">{expertCardContent.emailLabel}</p>
     <a
-      href="mailto:sales@ignek.com"
+      href={`mailto:${expertCardContent.email}`}
       className="group flex items-center justify-between p18 text-white"
     >
-      sales@ignek.com
+      {expertCardContent.email}
       <div className="flex items-center">
         <div className="mt-[-2vw] rounded-full border border-white p-[0.5vw] flex items-center justify-center">
           <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" viewBox="0 0 14 12" fill="none">

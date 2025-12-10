@@ -44,33 +44,49 @@ const metadata: Metadata = {
 }
 export default function LiferayEcommerceDevelopmentPage() {
   const containerRef = useRef<HTMLDivElement | null>(null)
-  const scrollerRef = useRef<HTMLDivElement | null>(null)
-  const [maxScroll, setMaxScroll] = useState(0)
-  const [scrollMultiplier] = useState(1.5)
-  const [progress, setProgress] = useState(0)
+  // Ref for the "Visible Content" (Header + Timeline) - logic borrowed from WhatWeBring
+  const stickyContentRef = useRef<HTMLElement | null>(null)
 
+  const scrollerRef = useRef<HTMLDivElement | null>(null)
+
+  const [isMounted, setIsMounted] = useState(false)
+
+const [layout, setLayout] = useState({
+    maxScroll: 0,
+    contentHeight: 0, // Store the actual height of the sticky content
+  })
   const x = useMotionValue(0)
   const smoothX = useSpring(x, { stiffness: 200, damping: 25 })
 
   useEffect(() => {
-    function calculateMaxScroll() {
+    setIsMounted(true)
+    function calculateLayout() {
       const scroller = scrollerRef.current
-      if (!scroller) return
+      const stickyContent = stickyContentRef.current
+      
+      if (!scroller || !stickyContent) return
 
+      // 1. Calculate Horizontal Scroll Distance
       const totalWidth = scroller.scrollWidth
       const viewportW = window.innerWidth
+      const maxScrollDistance = Math.max(0, totalWidth - viewportW + 50)
 
-      const maxScrollDistance = Math.max(0, totalWidth - viewportW)
+      // 2. Calculate Vertical Content Height (Intrinsic Height)
+      const currentContentHeight = stickyContent.offsetHeight
 
-      setMaxScroll(maxScrollDistance)
+      setLayout({
+        maxScroll: maxScrollDistance,
+        contentHeight: currentContentHeight
+      })
     }
 
-    calculateMaxScroll()
-    window.addEventListener("resize", calculateMaxScroll)
-    const timeout = setTimeout(calculateMaxScroll, 100)
+    calculateLayout()
+    window.addEventListener("resize", calculateLayout)
+    // Small timeout to ensure fonts/DOM are settled
+    const timeout = setTimeout(calculateLayout, 100)
 
     return () => {
-      window.removeEventListener("resize", calculateMaxScroll)
+      window.removeEventListener("resize", calculateLayout)
       clearTimeout(timeout)
     }
   }, [])
@@ -81,20 +97,25 @@ export default function LiferayEcommerceDevelopmentPage() {
       if (!container) return
 
       const containerRect = container.getBoundingClientRect()
+    // Calculate how much we have scrolled RELATIVE to the container's available scroll space
+      // We subtract window.innerHeight because the scroll finishes when the bottom of the container hits the bottom of the screen
       const scrollEnd = containerRect.height - window.innerHeight
+
+      // Safety check to avoid division by zero
+      if (scrollEnd <= 0) {
+        x.set(0)
+        return
+      }
 
       if (containerRect.top <= 0 && containerRect.bottom >= window.innerHeight) {
         const scrolled = Math.abs(containerRect.top)
         const progressValue = scrolled / scrollEnd
         const clampedProgress = Math.max(0, Math.min(1, progressValue))
-        x.set(-clampedProgress * maxScroll)
-        setProgress(clampedProgress)
+        x.set(-clampedProgress * layout.maxScroll)
       } else if (containerRect.top > 0) {
         x.set(0)
-        setProgress(0)
       } else {
-        x.set(-maxScroll)
-        setProgress(1)
+        x.set(-layout.maxScroll)
       }
     }
 
@@ -102,9 +123,11 @@ export default function LiferayEcommerceDevelopmentPage() {
     handleScroll()
 
     return () => window.removeEventListener("scroll", handleScroll)
-  }, [maxScroll, x])
+  }, [layout.maxScroll, x])
 
-  const containerHeight = maxScroll * scrollMultiplier + (typeof window !== "undefined" ? window.innerHeight : 800)
+  // Total height = The actual content height + the distance we need to scroll horizontally
+  // This mimics the logic: sectionHeight = stickyHeight + horizontalOverflow
+  const containerHeight = (layout.contentHeight || 800) + layout.maxScroll
 
   return (
     <main className="pb-0">
@@ -211,8 +234,8 @@ export default function LiferayEcommerceDevelopmentPage() {
         </div>
       </section>
 
-      <div ref={containerRef} className="relative" style={{ height: `${containerHeight}px` }}>
-        <section className="sticky top-[5.75vw] h-screen overflow-hidden bg-[#f7f7f7] text-black">
+      <div ref={containerRef} className="relative bg-[#f7f7f7]" style={isMounted ? { height: `${containerHeight}px` } : undefined}>
+        <section ref={stickyContentRef} className="sticky top-[5.75vw] flex h-auto flex-col overflow-hidden bg-[#f7f7f7] text-black">
           <div className="mx-auto w-full py-[3.333vw]">
             {/* Heading Row */}
             <div className="global-container flex flex-row items-center gap-10 md:grid-cols-2">
@@ -229,9 +252,9 @@ export default function LiferayEcommerceDevelopmentPage() {
                 className="relative flex min-w-max gap-0 will-change-transform"
                 style={{ x: smoothX }}
               >
-                <div className="relative flex min-w-max gap-[4.833vw]">
+                <div className="relative flex min-w-max gap-[4.833vw] pr-[10vw]">
                   {/* ✅ Perfectly aligned horizontal line */}
-                  <div className="absolute top-[2.0835vw] left-0 z-0 h-[4px] w-[89%] bg-black"></div>
+                  <div className="absolute top-[2.0835vw] left-0 z-0 h-[4px] w-[85%] bg-black"></div>
 
                   {steps.map((step, index) => (
                     <div key={index} className="flex w-[24.875vw] flex-col gap-[2.188vw]">

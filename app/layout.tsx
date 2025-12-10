@@ -4,6 +4,7 @@ import { Poppins } from "next/font/google"
 import BottomBar from "components/Common/BottomBar"
 import { Footer } from "../components/Common"
 import Navigation from "../components/Navigation/Navigation"
+import BlogImagePrefetcher from "../components/Common/BlogImagePrefetcher"
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -32,6 +33,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body className="min-h-screen bg-white text-black">
+        <BlogImagePrefetcher />
         <Navigation />
         {children}
         <Footer />
