@@ -105,99 +105,49 @@ function BulgeTextPlane() {
 
   const [hovering, setHovering] = useState(false) // NEW
 
-useEffect(() => {
-  let raf = 0;
-  const DPR = Math.max(1, window.devicePixelRatio || 1);
+  useEffect(() => {
+    const canvasWidth = 1200
+    const canvasHeight = 400
 
-  const build = () => {
-    // responsive canvas width/height
-    const vw = Math.max(900, Math.min(window.innerWidth * 0.8, 1600));
+    const canvas = document.createElement("canvas")
+    canvas.width = canvasWidth
+    canvas.height = canvasHeight
 
-    // keep fonts strictly between 130 and 160 (responsive but clamped)
-    const baseFont = Math.round(Math.min(160, Math.max(130, vw / 8)));
+    const ctx = canvas.getContext("2d")!
+    ctx.clearRect(0, 0, canvas.width, canvas.height)
+    ctx.fillStyle = "white"
+    ctx.textBaseline = "top"
+    ctx.textAlign = "left"
 
-    // per-line font sizes (you can still tweak individual multipliers if needed)
-    const fontSizes = [baseFont, baseFont, baseFont, baseFont];
+    const startX = 30 
+    let y = 0
 
-    // vertical spacing: ensure canvas height can contain all lines (add extra padding)
-    const lineHeight = Math.ceil(baseFont * 1.06);
-    const neededHeight = Math.ceil(lineHeight * fontSizes.length + 80); // extra 80px padding
+    const lines = ["We are the", "Liferay Boutique", "Company"]
+    const styles = ["normal", "italic", "normal"]
+    const weights = ["700", "700", "700"]
+    const fontSizes = [132, 132, 132]
 
-    // create HiDPI canvas
-    const canvasW = Math.floor(vw * DPR);
-    const canvasH = Math.floor(neededHeight * DPR);
-
-    const canvas = document.createElement("canvas");
-    canvas.width = canvasW;
-    canvas.height = canvasH;
-    canvas.style.width = `${Math.floor(vw)}px`;
-    canvas.style.height = `${Math.floor(neededHeight)}px`;
-
-    const ctx = canvas.getContext("2d")!;
-    ctx.setTransform(DPR, 0, 0, DPR, 0, 0); // scale context for DPR
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    // text color and baseline
-    ctx.fillStyle = "#d3d3d3"; // your gray hex
-    ctx.textBaseline = "top";
-    ctx.textAlign = "left";
-
-    const startX = 30;
-    let y = baseFont * 0.35;
-
-    const lines = ["WE ARE", "LIFERAY", "BOUTIQUE", "COMPANY"];
-    const styles = ["normal", "italic", "italic", "italic"];
-    const weights = ["700", "700", "700", "700"];
-
-    const count = Math.min(lines.length, styles.length, weights.length, fontSizes.length);
+    // defensive: iterate only up to the shortest array length
+    const count = Math.min(lines.length, styles.length, weights.length, fontSizes.length)
 
     for (let i = 0; i < count; i++) {
-      const style = styles[i] ?? "normal";
-      const weight = weights[i] ?? "700";
-      const fontSize = fontSizes[i] ?? baseFont;
-      ctx.font = `${style} ${weight} ${fontSize}px "Roboto", Arial, sans-serif`;
-      ctx.fillText(lines[i] ?? "", startX, y);
-      y += fontSize * 1.06;
+      const style = styles[i] ?? "normal"
+      const weight = weights[i] ?? "700"
+      const fontSize = fontSizes[i] ?? 132
+      const text = lines[i] ?? ""
+
+      ctx.font = `${style} ${weight} ${fontSize}px "Poppins", Arial, sans-serif`
+      ctx.fillText(text, startX, y)
+      y += fontSize * 1.05
     }
 
-    const tex = new THREE.CanvasTexture(canvas);
-    tex.minFilter = THREE.LinearFilter;
-    tex.magFilter = THREE.LinearFilter;
-    tex.needsUpdate = true;
+    const tex = new THREE.CanvasTexture(canvas)
+    tex.minFilter = THREE.LinearFilter
+    tex.magFilter = THREE.LinearFilter
 
-    // dispose previous texture if any
-    setTexture((prev) => {
-      if (prev) prev.dispose();
-      return tex;
-    });
-
-    setPlaneSize({ width: canvasW / DPR, height: canvasH / DPR });
-  };
-
-  // initial build
-  build();
-
-  const onResize = () => {
-    if (raf) cancelAnimationFrame(raf);
-    raf = requestAnimationFrame(build);
-  };
-
-  window.addEventListener("resize", onResize);
-  window.addEventListener("orientationchange", onResize);
-
-  return () => {
-    window.removeEventListener("resize", onResize);
-    window.removeEventListener("orientationchange", onResize);
-    if (raf) cancelAnimationFrame(raf);
-    // dispose current texture
-    setTexture((prev) => {
-      if (prev) prev.dispose();
-      return undefined;
-    });
-  };
-}, []);
-
-
+    setTexture(tex)
+    setPlaneSize({ width: canvasWidth, height: canvasHeight })
+  }, [])
 
   useFrame((state) => {
     if (!materialRef.current) return
@@ -223,7 +173,7 @@ useEffect(() => {
       onPointerOver={() => setHovering(true)}
       onPointerOut={() => setHovering(false)}
     >
-      <planeGeometry args={[planeWidth, planeHeight, 128, 700]} />
+      <planeGeometry args={[planeWidth, planeHeight, 128, 128]} />
       {texture && <bulgeShaderMaterial ref={materialRef} uTexture={texture} />}
     </mesh>
   )
@@ -284,10 +234,10 @@ export default function Scene() {
         justifyContent: "flex-start",
         background: "black",
         width: "100%",
-        maxHeight: "800px",
+        maxHeight: "500px",
       }}
     >
-        <Canvas style={{ width: "100%", height: "500px" }} camera={{ position: [0, 0, camZ], fov:30 }}>
+        <Canvas style={{ width: "100%", height: "500px" }} camera={{ position: [0, 0, camZ], fov: 30 }}>
         <CameraSync camZ={camZ} />
         <ambientLight />
         <BulgeTextPlane />
