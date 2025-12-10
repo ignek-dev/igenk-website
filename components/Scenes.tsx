@@ -55,13 +55,6 @@ void main() {
 `
 
 
-const uniforms: Record<string, unknown> = {
-  uTime: 0,
-  uMouse: new THREE.Vector2(),
-  uTexture: null as unknown as THREE.Texture | null,
-  uStrength: 0,
-};
-
 const BulgeShaderMaterial = shaderMaterial(
   {
     uTime: 0,
