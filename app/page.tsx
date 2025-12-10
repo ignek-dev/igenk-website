@@ -11,13 +11,12 @@ import OurCapabilities from "components/OurCapabilities/OurCapabilities"
 import RatingsSection from "components/Ratings/RatingsSection"
 import SuccessStories from "components/success-stories/SuccessStories"
 import WhatWeBring from "components/WhatWeBring/WhatWeBring"
-import { homepageData, partners } from "data/homepage-content"
+import { partners } from "data/homepage-content"
 import { BlogSection } from "../components/Common"
-import Scenes from "../components/Scenes"
-import Scene from "components/Scenes"
+
 
 export const metadata: Metadata = {
-  title: "IGNEK | Liferay Boutique Consulting & Development Company",
+  title: "Ignek - Transform Your Digital Experience",
   description:
     "Leading digital transformation company providing cutting-edge solutions for modern businesses. Transform your digital experience with Ignek today.",
   twitter: {
@@ -38,10 +37,8 @@ export const metadata: Metadata = {
 }
 
 export default function HomePage() {
-  const { hero } = homepageData
   return (
-    // enable smooth scrolling for anchor links
-    <main className="scroll-smooth">
+    <main className="">
       <section className="relative overflow-hidden bg-black text-white">
         {/* Top-left subtle radial gradient using provided colors */}
         <div className="pointer-events-none absolute top-0 left-0 -z-10 h-full w-full">
@@ -49,30 +46,34 @@ export default function HomePage() {
           <div className="absolute right-[-150px] bottom-[-150px] h-[500px] w-[500px] rounded-full bg-[#0E7BF8] opacity-15 blur-[100px]" />
         </div>
 
-          <h1 className="mt-[3.125vw]">
-            <Scenes />
+        <div className="mx-auto w-full px-4 py-16 pb-12 md:px-6 md:pb-16 lg:pb-16 [@media(min-width:1440px)]:px-[192px] [@media(min-width:1920px)]:px-[192px]">
+          <h1 className="!text-[6.875vw] letter-spacing-[0.04em] font-extrabold !leading-[6.9vw]">
+            Transform Your
+            <br />
+            <span className="italic">DIGITAL EXPERIENCE</span>
+            <br />
+            <span>With IGNEK Today</span>
           </h1>
-
-        <div className="global-container w-full pb-16">
-          
-          <div className="mt-[1.646vw] grid items-start gap-8 md:grid-cols-2">
-            <p className="p20 max-w-xl leading-[30px] text-[#F3F4F6]">{hero.description} </p>
+          <div className="mt-20 grid items-start gap-8 md:grid-cols-2">
+            <p className="max-w-xl text-xl text-white/80 sm:text-xl leading-[30px]">
+              Transform your digital landscape with cutting-edge DXP solutions tailored to your unique business needs.
+            </p>
 
             <div className="pb-3 md:self-end md:justify-self-end">
               <a
-                href={hero.button.link}
+                href="#discover"
                 className="group flex items-center justify-center gap-2 rounded-full bg-black/30 px-3 py-3 text-sm text-white transition-colors"
               >
                 <div className="flex h-8 w-8 items-center justify-center rounded-full border border-[#00979E] bg-black/30">
-                  <Image src={hero.button.icon} alt="discover-now" width={18} height={18} />
+                  <Image src="/images/icon/discover-arrow.png" alt="discover-now" width={18} height={18} />
                 </div>
-                <span className="pr-2 text-xl font-semibold">{hero.button.text}</span>
+                <span className="pr-2 text-xl font-semibold">Discover More</span>
               </a>
             </div>
           </div>
 
           {/* Divider line matching text color */}
-          <div className="mt-[3.49vw] border-t border-white/30" />
+          <div className="mt-17.5 border-t border-white/30" />
 
           {/* Logos row: 7 items with spacing and responsive wrap */}
           <div className="mt-12 overflow-hidden">
@@ -92,10 +93,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Wrap the EndToEndSection with a section that has the matching id */}
-      <section id="discover">
-        <EndToEndSection />
-      </section>
+      {/* MODIFICATION: Replace the entire section with our new component */}
+      <EndToEndSection />
 
       <IntermediateFrame />
       <OurCapabilities />
