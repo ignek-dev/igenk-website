@@ -119,7 +119,7 @@ export default function ServicesMegaMenu({ onClose }: MegaMenuProps) {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % sliderData.length)
-    }, 5000)
+    }, 3000)
 
     return () => clearInterval(interval)
   }, [])
@@ -292,7 +292,7 @@ export default function ServicesMegaMenu({ onClose }: MegaMenuProps) {
                   {/* SLIDE OUT */}
                   <div
                     key={"out-" + currentIndex}
-                    className="absolute left-[40px] top-0 flex items-center animate-slide-out"
+                    className="absolute left-[40px] top-1.5 flex items-center animate-slide-out"
                   >
                     <Image src={next.icon} alt="" width={32} height={32} />
                     <span className="p20 ml-[6px] items-center whitespace-nowrap font-medium text-white">
@@ -303,7 +303,7 @@ export default function ServicesMegaMenu({ onClose }: MegaMenuProps) {
                   {/* SLIDE IN */}
                   <div
                     key={"in-" + currentIndex}
-                    className="absolute left-[40px] top-0 flex items-center animate-slide-in"
+                    className="absolute left-[40px] top-1 flex items-center animate-slide-in"
                   >
                     <Image src={next.icon} alt="" width={32} height={32} />
                     <span className="p20 ml-[6px] items-center whitespace-nowrap font-medium text-white">

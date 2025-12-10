@@ -23,7 +23,7 @@ export const toolsData = [
   },
    {
     id: 3,
-    icon: "/images/marketplace/service-builder-migration-utility.png",
+    icon: "/images/mega-menu/solution-mega-icons/service-builder.png",
     module: "Data Migration",
     title: "Service Builder Schema-to-Object Converter",
     description:
@@ -34,7 +34,7 @@ export const toolsData = [
   },
     {
     id: 4,
-    icon: "/images/marketplace/email-authentication.png",
+    icon: "/images/mega-menu/solution-mega-icons/liferay-ce-email-mfa.png",
     module: "Identity Management & Governance",
     title: "Liferay CE Email MFA",
     description:
@@ -45,7 +45,7 @@ export const toolsData = [
   },
   {
     id: 5,
-    icon: "/images/marketplace/collection-display.png",
+    icon: "/images/mega-menu/solution-mega-icons/collection-display-grid-view-with-item-highlight.png",
     module: "Content Management and Operations",
     title: "Collection display grid view with Item Highlight",
     description:
