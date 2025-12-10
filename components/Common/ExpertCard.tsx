@@ -21,7 +21,7 @@ const ExpertCard: React.FC = () => {
           alt={expertCardContent.expertName}
           width={110}
           height={110}
-          className="rounded-full border-2 border-[#00979E] object-cover"
+          className="rounded-full object-cover"
         />
         <div>
           <p className="text-[0.9375vw] font-semibold text-white">{expertCardContent.expertName}</p>

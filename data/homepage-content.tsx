@@ -358,12 +358,12 @@ export const expertCardContent = {
   headingLine1: "Get Expert Guidance ",
   headingLine2: "for Your",
   highlightText: "Liferay Needs",
-  expertImage: "/images/bhavinImage.png",
+  expertImage: "/images/Parth_Image.webp",
   expertName: "Parth Panchani",
   expertDesignation: "Liferay Business Advisor @ IGNEK",
   ctaText: "Schedule Meeting",
   emailLabel: "Prefer email ?",
-  email: "parth@ignek.com",
+  email: "parth.panchani@ignek.com",
 }
 
 export const ratingsData = [
