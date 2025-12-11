@@ -3,25 +3,25 @@ export const aboutPageData = {
   heroMaskVideo: "/images/career/multi-color-bg.mp4",
 
   whyCompaniesTrust: {
-    heading: ["Why Companies", "Trust IGNEK"],
+    heading: ["Why Companies", "Trust IGNEK?"],
     intro:
-      "Companies trust IGNEK for proven Liferay expertise, innovation, reliability, and transformative digital experience solutions.",
+      "We deliver consistent, reliable, and practical Liferay-driven solutions that help organisations build scalable systems and long-term digital value.",
 
     sections: [
       {
         title: "Digital Excellence",
         description:
-          "We craft scalable, high-performing solutions that empower businesses to embrace innovation and achieve measurable results.",
+          "We build high-performing, maintainable solutions that help organisations adopt modern capabilities and achieve tangible, long-term results.",
       },
       {
         title: "Future-Ready Solutions",
         description:
-          "From modern web applications to enterprise platforms, we design systems built for adaptability, growth, and long-term success.",
+          "From enterprise platforms to custom implementations, our systems are engineered for stability, adaptability, and sustainable growth.",
       },
       {
         title: "Collaborative Approach",
         description:
-          "Our team works hand-in-hand with clients, ensuring every project reflects their vision while meeting the highest standards of quality.",
+          "We work closely with stakeholders, ensuring every solution reflects business needs while meeting the highest standards of quality and clarity.",
       },
     ],
   },
