@@ -115,7 +115,7 @@ const stackData = [
     description: "Build interactive web elements.",
     technologies: [
       { name: "Material UI", logo: "/images/tech-logos/Material_UI.svg" },
-      { name: "Clay", logo: "/images/tech-logos/cluyUi.png" },
+      { name: "Clay", logo: "/images/tech-logos/clay-logo.png" },
       { name: "Chakra UI", logo: "/images/tech-logos/Chakra_UI.svg" },
       { name: "React Bootstrap", logo: "/images/tech-logos/React Bootstrap.svg" },
     ],
