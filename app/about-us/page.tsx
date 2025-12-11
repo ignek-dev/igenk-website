@@ -9,15 +9,15 @@ import { BackgroundLines } from "components/Common/BackgroundLines"
 import { aboutPageData } from "data/about-content"
 
 export const metadata: Metadata = {
-  title: "Learn About Our Team  - IGNEK Architecture Design Services - IGNEK",
+  title: "About IGNEK | Liferay Boutique Company",
   description:
-    "Serving large organizations and start-ups for over 5 years, IGNEK is an expert in developing and deploying business solutions powered by cutting-edge technology.",
+    "A leading Liferay Boutique Company and trusted Liferay Consulting Partner. We specialize in delivering digital experience platform solutions with expert Liferay development and consulting services.",
 
   openGraph: {
     url: "https://www.ignek.com/about-us/",
-    title: "Learn About Our Team  - IGNEK Architecture Design Services - IGNEK",
+    title: "About IGNEK | Liferay Boutique Company",
     description:
-      "Serving large organizations and start-ups for over 5 years, IGNEK is an expert in developing and deploying business solutions powered by cutting-edge technology.",
+      "A leading Liferay Boutique Company and trusted Liferay Consulting Partner. We specialize in delivering digital experience platform solutions with expert Liferay development and consulting services.",
     images: [
       {
         width: 1200,

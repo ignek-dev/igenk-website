@@ -1,6 +1,27 @@
+import { Metadata } from "next"
 import Image from "next/image"
 import { careerHeroData, careerPerksIntroData, jobs, openRolesIntroData, perks } from "data/career"
 import JobCard from "../../components/career/JobCard"
+
+export const metadata: Metadata = {
+  title: "IGNEK Careers | Join Liferay Experts & Grow",
+  description:
+    "Explore IGNEK Careers — join a Liferay-first boutique team that values learning, growth, and enterprise-grade projects. View open roles and apply today.",
+
+  openGraph: {
+    url: "https://www.ignek.com/career/",
+    title: "IGNEK Careers | Join Liferay Experts & Grow",
+    description:
+      "Explore IGNEK Careers — join a Liferay-first boutique team that values learning, growth, and enterprise-grade projects. View open roles and apply today.",
+    images: [
+      {
+        width: 1200,
+        height: 630,
+        url: "/og-image.png",
+      },
+    ],
+  },
+}
 
 export default function CareerPage() {
 
@@ -48,8 +69,8 @@ export default function CareerPage() {
       {/* Perks & Benefits */}
       <section className="border-t border-white/20 bg-black text-white">
         <div className="mx-auto w-full px-4 py-[3.333vw] md:px-8 global-container">
-          <div className="grid items-start gap-10 md:grid-cols-2">
-            <h2 className="text-[2.5vw] font-semibold leading-[3.125vw]">{careerPerksIntroData.title}</h2>
+          <div className="grid items-center gap-10 md:grid-cols-2">
+            <h2 className="text-[2.5vw] font-semibold leading-[3.125vw]">{careerPerksIntroData.title} <br /> {careerPerksIntroData.title2}</h2>
             <p className="max-w-xl  text-right text-[0.938vw] leading-[1.563vw] font-normal tracking-[0] text-white/80  md:justify-self-end">
               {careerPerksIntroData.description}
             </p>
