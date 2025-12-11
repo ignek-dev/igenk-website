@@ -59,7 +59,7 @@ export default function ServicesMegaMenu({ onClose }: MegaMenuProps) {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % sliderData.length)
-    }, 3000)
+    }, 2000)
 
     return () => clearInterval(interval)
   }, [])

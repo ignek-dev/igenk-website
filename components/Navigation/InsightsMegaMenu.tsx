@@ -3,6 +3,7 @@ import { featuredEvent, insightLinks } from "data/Navigation";
 import Image from "next/image"
 import Link from "next/link"
 import { useEffect, useState } from "react"
+import Loader from "components/UI/Loader/Loader"
 
 interface MegaMenuProps {
   onClose: () => void;
@@ -151,10 +152,9 @@ const handleClick = (e: React.MouseEvent) => {
               <div className="flex items-center overflow-hidden border-white/20 bg-black/20 transition-all duration-300 group-hover:border-white/40">
                 {/* Loader */}
                 {loading && (
-                  <div className="flex flex-col items-center justify-center gap-4">
-                    <div className="h-10 w-10 animate-spin rounded-full border-4 border-white/30 border-t-white"></div>
-                    <p className="text-white">Loading latest blog…</p>
-                  </div>
+                   <div className="flex w-full h-full items-center justify-center py-20">
+                     <Loader />
+                   </div>
                 )}
 
                 {/* Error */}
