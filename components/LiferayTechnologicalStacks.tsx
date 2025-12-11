@@ -59,7 +59,7 @@ const stackData = [
     category: "APIs",
     description: " Facilitate system communication efficiently.",
     technologies: [
-      { name: "RESTful APIs", logo: "/images/tech-logos/REST_APIs.png" },
+      { name: "RESTful APIs", logo: "/images/tech-logos/REST_APIs.jpg" },
       { name: "Rest Builder", logo: "/images/tech-logos/Rest_Builder.png" },
       { name: "Soap", logo: "/images/tech-logos/Soap.png" },
       { name: "JAX RS", logo: "/images/tech-logos/JAX_RS.png" },
