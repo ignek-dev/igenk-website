@@ -26,7 +26,6 @@ export const aboutPageData = {
     ],
   },
 
-  // Used for mask text
   maskedHeadingSvg: "/images/about/about-us-text.svg",
 }
 
