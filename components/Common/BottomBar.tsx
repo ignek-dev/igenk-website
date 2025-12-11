@@ -1,5 +1,6 @@
 // components/BottomBar.tsx
 
+import { footerLegalLinksData } from "data/Footer"
 import Image from "next/image"
 import React from "react"
 
@@ -30,23 +31,20 @@ const BottomBar: React.FC = () => {
         {/* Left Section: Copyright and Legal Links */}
         <div className="flex items-center" style={{ gap: "12.5vw" }}>
           <div className="p18 flex flex-col gap-[0.833vw] text-white md:flex-row">
-            <p className="flex-shrink-0">©2025 IGNEK. All rights reserved</p>
+            <p className="flex-shrink-0">{footerLegalLinksData.copyright}</p>
             <div className="flex flex-wrap justify-center" style={{ columnGap: "0.469vw", rowGap: "0.208vw" }}>
-              <a href="/contact" className="transition-colors hover:text-white">
-                Privacy Policy
-              </a>
-              <span className="text-white">|</span>
-              <a href="/contact" className="transition-colors hover:text-white">
-                Terms & Conditions
-              </a>
-              <span className="text-white">|</span>
-              <a href="/contact" className="transition-colors hover:text-white">
-                Cookies Policy
-              </a>
-              <span className="text-white">|</span>
-              <a href="/contact" className="transition-colors hover:text-white">
-                Map
-              </a>
+              {footerLegalLinksData.links.map((item, index) => (
+        <div key={index} className="flex items-center">
+          <a href={item.href} className="transition-colors hover:text-white">
+            {item.label}
+          </a>
+
+          {/* Add separator except after last item */}
+          {index !== footerLegalLinksData.links.length - 1 && (
+            <span className="text-white mx-[0.2vw]">|</span>
+          )}
+        </div>
+      ))}
             </div>
           </div>
 

@@ -51,8 +51,8 @@ export default function CareerPage() {
                   playsInline
                   className="masked-hero-video"
                   style={{
-                    maskImage: "url(/images/career/tex.svg)",
-                    WebkitMaskImage: "url(/images/career/tex.svg)",
+                    maskImage: "url(/images/career/career.svg)",
+                    WebkitMaskImage: "url(/images/career/career.svg)",
                   }}
                 >
                   <source src="/images/career/multi-color-bg.mp4" type="video/mp4" />
