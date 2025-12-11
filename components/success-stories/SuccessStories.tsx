@@ -106,10 +106,10 @@ const SuccessStories: React.FC = () => {
               <React.Fragment key={index}>
                 {/* Title + Description only for first card */}
                 {index === 0 && (
-                  <div className="mx-auto mb-[2.604vw] max-w-3xl text-center">
-                    <h2 className="global-container mb-[0.833vw]">Success Stories</h2>
+                  <div className="mx-auto mb-[2.604vw] max-w-6xl text-center">
+                    <h2 className="global-container mb-[0.833vw]">Liferay Solutions We’ve Successfully Delivered.</h2>
 
-                    <p className="p18 mt-1 text-gray-600">Discover the impactful solutions <br/>we've successfully executed.</p>
+                    <p className="p18 mt-1 text-gray-600">Explore the transformative <br />Liferay solutions we’ve implemented.</p>
                   </div>
                 )}
 
