@@ -260,7 +260,7 @@ export const stackData = [
     category: "APIs",
     description: " Facilitate system communication efficiently.",
     technologies: [
-      { name: "RESTful APIs", logo: "/images/tech-logos/REST_APIs.png" },
+      { name: "RESTful APIs", logo: "/images/tech-logos/REST_APIs.jpg" },
       { name: "Rest Builder", logo: "/images/tech-logos/Rest_Builder.png" },
       { name: "Soap", logo: "/images/tech-logos/Soap.png" },
       { name: "JAX RS", logo: "/images/tech-logos/JAX_RS.png" },
@@ -316,7 +316,7 @@ export const stackData = [
     description: "Build interactive web elements.",
     technologies: [
       { name: "Material UI", logo: "/images/tech-logos/Material_UI.svg" },
-      { name: "Clay", logo: "/images/tech-logos/cluyUi.png" },
+      { name: "Clay", logo: "/images/tech-logos/clay-logo.png" },
       { name: "Chakra UI", logo: "/images/tech-logos/Chakra_UI.svg" },
       { name: "React Bootstrap", logo: "/images/tech-logos/React Bootstrap.svg" },
     ],
