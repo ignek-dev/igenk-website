@@ -49,11 +49,13 @@ export default function HomePage() {
           <div className="absolute right-[-150px] bottom-[-150px] h-[500px] w-[500px] rounded-full bg-[#0E7BF8] opacity-15 blur-[100px]" />
         </div>
 
-        <div className="global-container w-full py-16">
-          <h1>
+          <h1 className="mt-[2.188vw]">
             <Scenes />
           </h1>
-          <div className="mt-[3.646vw] grid items-start gap-8 md:grid-cols-2">
+
+        <div className="global-container w-full pb-16">
+          
+          <div className="mt-[0.450vw] grid items-start gap-8 md:grid-cols-2">
             <p className="p20 max-w-xl leading-[30px] text-[#F3F4F6]">{hero.description} </p>
 
             <div className="pb-3 md:self-end md:justify-self-end">
