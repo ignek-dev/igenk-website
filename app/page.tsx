@@ -19,14 +19,14 @@ import Scene from "components/Scenes"
 export const metadata: Metadata = {
   title: "IGNEK | Liferay Boutique Consulting & Development Company",
   description:
-    "Leading digital transformation company providing cutting-edge solutions for modern businesses. Transform your digital experience with Ignek today.",
+    "IGNEK is a Liferay Boutique Company and trusted Liferay Consulting Partner delivering development, portal implementation, DXP services, and enterprise solutions that maximise your Liferay investment.",
   twitter: {
     card: "summary_large_image",
   },
   openGraph: {
     url: "https://ignek.com/",
-    title: "Ignek - Transform Your Digital Experience",
-    description: "Leading digital transformation company providing cutting-edge solutions for modern businesses.",
+    title: "IGNEK | Liferay Boutique Consulting & Development Company",
+    description: "IGNEK is a Liferay Boutique Company and trusted Liferay Consulting Partner delivering development, portal implementation, DXP services, and enterprise solutions that maximise your Liferay investment.",
     images: [
       {
         width: 1200,

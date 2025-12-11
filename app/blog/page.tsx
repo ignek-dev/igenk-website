@@ -1,6 +1,27 @@
-"use client"
+import { Metadata } from "next"
 import { Suspense } from "react"
 import BlogsContent from "./BlogsContent"
+
+export const metadata: Metadata = {
+  title: "Liferay Blog | DXP, Java & React Tutorials and Insights",
+  description:
+    "Explore expert Liferay blog insights with DXP tutorials, Java guides, ReactJS best practices, and engineering articles crafted for enterprise development teams.",
+  twitter: {
+    card: "summary_large_image",
+  },
+  openGraph: {
+    url: "https://ignek.com/blog/",
+    title: "Liferay Blog | DXP, Java & React Tutorials and Insights",
+    description: "Explore expert Liferay blog insights with DXP tutorials, Java guides, ReactJS best practices, and engineering articles crafted for enterprise development teams.",
+    images: [
+      {
+        width: 1200,
+        height: 630,
+        url: "/og-image.png",
+      },
+    ],
+  },
+}
 
 export default function Blogs() {
   return (
