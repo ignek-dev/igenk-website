@@ -18,6 +18,7 @@ import "prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard";
 import "prismjs/plugins/line-numbers/prism-line-numbers";
 import BlogSidebar from "components/BlogSidebar/BlogSidebar";
 import ExploreServices from "components/ExploreServices/ExploreServices";
+import Loader from "components/UI/Loader/Loader";
 
 const POST_API = "https://insights.ignek.com/wp-json/wp/v2/posts/40578?_embed";
 
@@ -162,7 +163,13 @@ export default function PostRenderer() {
         Prism.highlightAllUnder(contentEl);
     }, [post]);
 
-    if (loading) return <p>Loading post…</p>;
+     if (loading) {
+    return (
+      <div className="flex h-screen w-full items-center justify-center bg-black">
+        <Loader />
+      </div>
+    );
+  }
     if (error) return <p style={{ color: "red" }}>Error: {error}</p>;
     if (!post) return null;
 

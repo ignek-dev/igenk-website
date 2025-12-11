@@ -8,6 +8,7 @@ import TechCard from "components/Blogmain/TechCards"
 import { WPPost } from "components/BlogSidebar/BlogSidebar"
 import DOMPurify from "dompurify"
 import { blogCategorySection, blogHeroSection, blogSection, cardData } from "data/blog"
+import Loader from "components/UI/Loader/Loader"
 
 
 const PER_PAGE = 9
@@ -372,8 +373,8 @@ export default function BlogsContent() {
             <h2 className="mb-9 tracking-tight text-[#000000]">{blogCategorySection.heading2}</h2>
 
             {loading ? (
-              <div className="flex items-center justify-center py-12">
-                <div className="h-12 w-12 animate-spin rounded-full border-b-2 border-black"></div>
+              <div className="flex w-full min-h-[50vh] items-center justify-center">
+                <Loader />
               </div>
             ) : blogs.length === 0 ? (
               <div className="py-12 text-center">

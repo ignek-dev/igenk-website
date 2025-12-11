@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
 import MarqueeOverlay from "components/MarqueeOverlay/MarqueeOverlay";
 import Filters from "components/PortfolioFilters/Filters";
+import Loader from "components/UI/Loader/Loader";
 
 export interface WPPortfolioPost {
     id: number;
@@ -113,7 +114,9 @@ export default function PortfolioList() {
             <section className="w-full md:w-3/4 lg:w-4/5">
                 {
                     loading ? (
-                        <div className="p-10 text-center text-gray-500 text-lg">Loading...</div>
+                        <div className="flex w-full min-h-[50vh] items-center justify-center">
+                            <Loader />
+                        </div>
                     ) : (
                         <>
                             {posts?.length > 0 ? (

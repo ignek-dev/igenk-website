@@ -14,6 +14,8 @@ import { BlogSection } from "components/Common";
 import CaseStudy from "components/Common/CaseStudy";
 import { caseStudies } from "data/case-study";
 
+import Loader from "components/UI/Loader/Loader";
+
 
 // --- TypeScript type for WordPress portfolio post ---
 interface WPPortfolioPost {
@@ -84,7 +86,14 @@ export default function PortfolioRenderer({ params }: { params: Promise<{ id: st
         }
     }, [post]);
 
-    if (loading) return <p>Loading…</p>;
+// 2. Updated Loading UI
+    if (loading) {
+      return (
+        <div className="flex h-screen w-full items-center justify-center bg-black">
+          <Loader />
+        </div>
+      );
+    }
     if (error) return <p style={{ color: "red" }}>Error: {error}</p>;
     if (!post) return null;
 

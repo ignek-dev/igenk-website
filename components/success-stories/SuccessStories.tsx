@@ -3,6 +3,7 @@
 import React, { useCallback, useEffect, useState } from "react"
 import { WPPortfolioPost } from "components/PortfolioList/PortfolioList"
 import SuccessStoryCard, { Story } from "./SuccessStoryCard"
+import Loader from "components/UI/Loader/Loader"
 
 // CHANGED: Consolidated Provided Services data
 export const commonProvidedServices = [
@@ -23,9 +24,11 @@ export const commonProvidedServices = [
 const API_BASE = "https://insights.ignek.com/wp-json/wp/v2/portfolio"
 const SuccessStories: React.FC = () => {
   const [posts, setPosts] = useState<Story[]>([])
+  const [loading, setLoading] = useState(true)
   const fetchPosts = useCallback(async (idsToFilter: number[]) => {
     try {
-      window.scrollTo({ top: 0, behavior: "smooth" })
+      setLoading(true)
+      // window.scrollTo({ top: 0, behavior: "smooth" })
 
       // Build API params
       const params = new URLSearchParams({
@@ -60,6 +63,9 @@ const SuccessStories: React.FC = () => {
       setPosts(mappedStories)
     } catch (err) {
       console.error("Error fetching posts:", err)
+    }finally {
+      // Stop Loading
+      setLoading(false)
     }
   }, [])
 
@@ -102,6 +108,12 @@ const SuccessStories: React.FC = () => {
           {/* Cards Container */}
 
           <div className="card-stack relative flex flex-col space-y-10">
+            {loading ? (
+               <div className="flex min-h-[600px] w-full items-center justify-center">
+                 <Loader />
+               </div>
+            ) : (
+              <>
             {posts.map((story, index) => (
               <React.Fragment key={index}>
                 {/* Title + Description only for first card */}
@@ -120,11 +132,13 @@ const SuccessStories: React.FC = () => {
                     top: "200px",
                     zIndex: 10 + index,
                   }}
-                >
+                  >
                   <SuccessStoryCard story={story} />
                 </div>
               </React.Fragment>
             ))}
+            </>
+            )}
           </div>
         </div>
       </div>

@@ -7,6 +7,7 @@ import { WPPost } from "components/BlogSidebar/BlogSidebar"
 import posts from "../Blog/blogs.json"
 import { useInView } from "../../hooks/useInView"
 import { blogSectionData } from "data/homepage-content"
+import Loader from "components/UI/Loader/Loader"
 
 type BlogItem = {
   id: string
@@ -14,8 +15,16 @@ type BlogItem = {
   excerpt: string
   image: string
 }
-// const PER_PAGE = 4;
+
+// Interface for our Cache
+interface CachedBlogSection {
+  data: BlogData[];
+  timestamp: number;
+}
+
 const API_URL = "https://insights.ignek.com/wp-json/wp/v2/posts"
+const CACHE_KEY = "ignek_blog_section_cache"
+const CACHE_DURATION = 24 * 60 * 60 * 1000 // 24 Hours
 export default function BlogSection() {
   const list = posts as BlogItem[]
   const main = list[0]
@@ -24,12 +33,29 @@ export default function BlogSection() {
   const [error, setError] = useState<string | null>(null)
   // const currentPage = 1;
   // const [totalPages, setTotalPages] = useState(1);
-  console.log("loading", error, loading)
+  // console.log("loading", error, loading)
   const fetchBlogs = useCallback(async (idsToFilter: number[]) => {
     try {
+      const cachedRaw = localStorage.getItem(CACHE_KEY)
+      if (cachedRaw) {
+        try {
+          const parsed = JSON.parse(cachedRaw) as CachedBlogSection
+          const now = Date.now()
+          
+          // If cache is valid (exists and not expired)
+          if (parsed && parsed.data && (now - parsed.timestamp < CACHE_DURATION)) {
+            setBlogs(parsed.data)
+            setLoading(false)
+            return // STOP HERE - Do not call API
+          }
+        } catch (e) {
+          console.warn("Invalid cache format", e)
+        }
+      }
+
       setLoading(true)
       setError(null)
-      window.scrollTo({ top: 0, behavior: "smooth" })
+      // window.scrollTo({ top: 0, behavior: "smooth" })
 
       const res = await fetch(`${API_URL}?per_page=100&categories=15&_embed`, { cache: "no-store" })
 
@@ -60,6 +86,12 @@ export default function BlogSection() {
       }))
 
       setBlogs(formatted)
+      // 3. Save to Cache
+      localStorage.setItem(CACHE_KEY, JSON.stringify({
+        data: formatted,
+        timestamp: Date.now()
+      }))
+
     } catch (err) {
       console.error("Failed to fetch blogs:", err)
       setError(err instanceof Error ? err.message : "Failed to fetch blogs")
@@ -72,10 +104,16 @@ export default function BlogSection() {
     const ids = [40578, 40314, 39874, 39138] // example IDs
     fetchBlogs(ids)
   }, [fetchBlogs])
+  
   const router = useRouter()
-
   const [sectionRef, isInView] = useInView({ threshold: 0.2, triggerOnce: true })
-  if (blogs?.length < 1) return <div className="text-black">Loading.......</div>
+  if (blogs?.length < 1 || loading) {
+    return (
+      <section className="bg-white text-black min-h-[600px] flex items-center justify-center">
+         <Loader />
+      </section>
+    )
+  }
   return (
     <section className="bg-white text-black">
       <div className="global-container p-16">

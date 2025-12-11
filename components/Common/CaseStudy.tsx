@@ -3,6 +3,7 @@ import Image from "next/image"
 import { useRouter } from "next/navigation"
 import React, { useCallback, useEffect, useState } from "react"
 import { WPPortfolioPost } from "components/PortfolioList/PortfolioList"
+import Loader from "components/UI/Loader/Loader"
 export interface CaseStudy {
   id: number
   image: string
@@ -20,26 +21,29 @@ const CaseStudy: React.FC<CaseStudyCarouselProps> = ({ caseStudies }) => {
   const [posts, setPosts] = useState<WPPortfolioPost[]>([])
   // const [currentPage, setCurrentPage] = useState(1);
   // const [totalPages, setTotalPages] = useState(1);
-  // const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
   // const [error, setError] = useState<string | null>(null);
   const currentPage = 1
   const router = useRouter()
   // const PER_PAGE = 10;
   const API_BASE = "https://insights.ignek.com/wp-json/wp/v2/portfolio"
-  // useEffect(() => {
-  //   if (!posts.length) return; // only run when data is ready
+  useEffect(() => {
+  if (!posts.length) return;
 
-  //   const interval = setInterval(() => {
-  //     setActiveIndex((prev) => (prev + 1) % posts.length);
-  //   }, 4000); // change every 4 seconds
+  const interval = setInterval(() => {
+    setActiveIndex((prev) =>
+      prev === posts.length - 1 ? 0 : prev + 1
+    );
+  }, 4000);
 
-  //   return () => clearInterval(interval);
-  // }, [posts]);
+  return () => clearInterval(interval);
+}, [posts]);
 
   const fetchPosts = useCallback(
     async (idsToFilter: number[]) => {
       try {
-        window.scrollTo({ top: 0, behavior: "smooth" })
+        // window.scrollTo({ top: 0, behavior: "smooth" })
+        setLoading(true)
 
         // Build API params
         const params = new URLSearchParams({
@@ -64,6 +68,8 @@ const CaseStudy: React.FC<CaseStudyCarouselProps> = ({ caseStudies }) => {
         setPosts(filteredPosts)
       } catch (err) {
         console.error("Error fetching posts:", err)
+      }finally {
+        setLoading(false)
       }
     },
     [currentPage]
@@ -75,20 +81,32 @@ const CaseStudy: React.FC<CaseStudyCarouselProps> = ({ caseStudies }) => {
     fetchPosts(categoryIds)
   }, [fetchPosts])
   return (
-    <section className="overflow-hidden bg-black py-16 text-white">
+    <section className="relative min-h-[600px] overflow-hidden bg-black py-16 text-white">
       <div className="max-w-7xl px-[192px]">
         <p className="mb-[1.823vw] px-4 text-[1.667vw] font-semibold">Related Case Studies</p>
 
-        <div className="relative flex transition-transform duration-700 ease-in-out gap-[34px]">
+        {loading ? (
+          <div className="absolute inset-0 z-10 flex w-full items-center justify-center">
+            {/* You can adjust the scale or margin if needed */}
+            <Loader />
+          </div>
+        ) : (
+        <div
+          className="relative flex gap-[34px] transition-transform duration-[1500ms]"
+          style={{
+            width: `${posts.length * 100}%`,
+            transform: `translateX(-${activeIndex * (108 / posts.length)}%)`,
+          }}
+        >
           {posts.map((item) => (
             <div
               key={item.id}
-              className="w-full max-w-[61.1458vw] flex-shrink-0 transition-transform duration-[2000ms]"
-              style={{
-                transform: `translateX(-${activeIndex * 100}%)`,
-                width: `${posts.length * 100}%`,
-                transitionTimingFunction: "cubic-bezier(0.4, 0, 0.2, 1)",
-              }}
+              className="w-full max-w-[61.1458vw] flex-shrink-0"
+              // style={{
+              //   transform: `translateX(-${activeIndex * 100}%)`,
+              //   width: `${posts.length * 100}%`,
+              //   transitionTimingFunction: "cubic-bezier(0.4, 0, 0.2, 1)",
+              // }}
             >
               <div className="flex max-h-[19.896vw] flex-col gap-8 rounded-2xl border border-gray-800 bg-[#0f0f0f] p-[1.667vw] md:flex-row">
                 {/* Image */}
@@ -117,7 +135,7 @@ const CaseStudy: React.FC<CaseStudyCarouselProps> = ({ caseStudies }) => {
                     dangerouslySetInnerHTML={{ __html: item.excerpt.rendered }}
                   />
                   <button
-                    className="fancy w-[max-content] cursor-pointer rounded-2xle px-12 py-[0.8333vw] transition-all"
+                    className="fancy rounded-2xle w-[max-content] cursor-pointer px-12 py-[0.8333vw] transition-all"
                     onClick={() => router.push(`/case-study/${item.slug}`)}
                   >
                     <span className="relative z-10 flex items-center justify-center gap-3 rounded-full bg-black text-[15px] font-medium text-white">
@@ -129,6 +147,7 @@ const CaseStudy: React.FC<CaseStudyCarouselProps> = ({ caseStudies }) => {
             </div>
           ))}
         </div>
+        )}
       </div>
     </section>
   )
