@@ -1,3 +1,5 @@
+import { title } from "process"
+
 export const aboutPageData = {
   heroTag: "About IGNEK",
   heroMaskVideo: "/images/career/multi-color-bg.mp4",
@@ -32,7 +34,7 @@ export const aboutPageData = {
 export const coreValuesHeader = {
   heading: "Our Core Values",
   subheading:
-    "Our commitment to integrity, innovation, and teamwork drives us to deliver exceptional Liferay solutions globally.",
+    "Guiding principles that shape how we design, deliver, and support Liferay solutions—grounded in integrity, engineering discipline, and long-term client value.",
 }
 
 export type CoreValue = {
@@ -47,27 +49,39 @@ export const CORE_VALUES: CoreValue[] = [
     number: "01",
     title: "Integrity",
     description:
-      "We uphold honesty and transparency in every Liferay project, building lasting trust with our clients.",
+      "We commit to honesty, accountability, and transparency — ensuring every partnership is built on trust and long-term credibility.",
     img: "/images/about/integrity-img.png",
   },
   {
     number: "02",
     title: "Collaboration",
     description:
-      "Through teamwork and open communication, we create impactful Liferay solutions that drive shared success.",
+      "We believe the best outcomes come from shared ownership, open dialogue, and a mindset of solving challenges together.",
     img: "/images/about/collaboration-img.png",
   },
   {
     number: "03",
-    title: "Growth",
+    title: "Innovation",
     description:
-      "We foster continuous learning and innovation, empowering our team and clients to achieve sustainable growth.",
+      "We don’t chase trends. We engineer meaningful solutions that deliver real value, drive efficiency, and future-proof digital ecosystems.",
     img: "/images/about/growth-img.png",
   },
   {
     number: "04",
-    title: "Adaptability",
-    description: "We embrace change with agility, evolving our Liferay solutions to meet dynamic business needs.",
+    title: "Excellence as a Standard",
+    description: "From design to delivery, we bring precision, discipline, and quality engineering to every project — no shortcuts, no compromises.",
+    img: "/images/about/adaptability-img.png",
+  },
+  {
+    number: "05",
+    title: "Growth Through Learning",
+    description: "We continuously evolve, adapt, and embrace new technologies to ensure our clients stay ahead in an ever-changing digital world.",
+    img: "/images/about/adaptability-img.png",
+  },
+  {
+    number: "06",
+    title: "Impact That Lasts",
+    description: "Every solution we build aims to create measurable, sustainable impact — not just for today, but for the long road ahead.",
     img: "/images/about/adaptability-img.png",
   },
 ]
@@ -205,7 +219,7 @@ export const teamSectionContent = {
   titleLine2: "behind the magic",
 
   description:
-    "Our passionate team of innovators and experts brings IGNEK's vision and Liferay excellence to life.",
+    "Our passionate team of Managers, Liferay engineers, architects, and innovators powers IGNEK’s mission, turning complex challenges into performant, scalable, and future-ready digital experiences.",
 
   members: [
     {
@@ -272,10 +286,10 @@ export type TestimonialData = {
 }
 
 export const testimonialSectionContent = {
-  title: "Words That Inspire",
+  title: "Words That Inspire Us",
 
   description:
-    "Our clients’ feedback drives us to innovate and excel as Liferay digital experience experts.",
+    "Our clients’ trust and feedback fuel our commitment to deliver reliable, high-performing, and future-ready Liferay digital experiences.",
 
   testimonials: [
     {
@@ -314,3 +328,43 @@ export const testimonialSectionContent = {
     },
   ] as TestimonialData[],
 }
+
+export const cardsData = [
+  {
+    title: "Business Acceleration",
+    desc: "We accelerate delivery through optimised architectures, reusable components, and proven Liferay implementation frameworks.",
+  },
+  {
+    title: "Custom Expertise",
+    desc: "We design solutions that maximise Liferay’s out-of-the-box capabilities — reducing custom code and improving long-term maintainability.",
+  },
+  {
+    title: "Collaborative Success",
+    desc: "We work as an extension of your team, ensuring aligned decisions, transparent communication, and predictable project outcomes.",
+  },
+  {
+    title: "Cutting-Edge Technologies",
+    desc: "We apply modern engineering practices and cloud-ready architectures to build scalable, future-proof digital platforms.",
+  },
+  {
+    title: "Well-Tested Delivery",
+    desc: "Every solution is validated through strict QA processes to ensure performance, stability, and enterprise-grade security.",
+  },
+  {
+    title: "Enterprise Solutions",
+    desc: "We build Liferay platforms that integrate seamlessly with enterprise systems and support multi-site, multi-experience needs.",
+  },
+  {
+    title: "Round-the-Clock Support",
+    desc: "Our experts provide continuous monitoring and support to maintain high availability and long-term platform performance.",
+  },
+]
+
+export const whatMakesUsStandOutData = {
+  title: "What Sets IGNEK",
+  titleLine2: "Apart?",
+
+  description:
+    "We combine deep Liferay expertise with a disciplined delivery approach, ",
+  descLine2: "enabling organisations to build reliable, future-ready digital platforms.", 
+};

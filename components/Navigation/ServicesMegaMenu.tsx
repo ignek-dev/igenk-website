@@ -2,49 +2,14 @@
 import React, { useEffect, useState } from "react"
 import Image from "next/image"
 import CalendlyButton from "components/CalendlyPopupButton/CalendlyButton"
+import { digitalExperienceLinks, featuredService, liferayServicesLinks, serviceTitleData, sliderData, SliderItem } from "data/Navigation"
 
-interface SliderItem{
-  text: string,
-  icon: string,
-}
 
 interface MegaMenuProps {
   onClose: () => void
 }
 
-// Data for the card on the left
-const featuredService = {
-  imageSrc: "/images/mega-menu/Services-megamenu.jpg",
-  title: "Build With The<br /> Top 3% of<br /> Tech Experts!",
-  buttonText: "Book Consultant Now",
-  buttonHref: "#",
-}
 
-// Data for the "Digital Experience" section
-const digitalExperienceLinks = [
-  { text: "DX Strategy", href: "/contact", iconUrl: "/images/mega-menu/dx-strategy.png" },
-  { text: "DX Design", href: "/contact", iconUrl: "/images/mega-menu/dx-design.png" },
-  { text: "DX Engineering", href: "/contact", iconUrl: "/images/mega-menu/dx-engineering.png" },
-  { text: "DX Intelligence", href: "/contact", iconUrl: "/images/mega-menu/dx-intelligence.png" },
-  { text: "DX Marketing", href: "/contact", iconUrl: "/images/mega-menu/dx-marketing.png" },
-  { text: "DX Infrastructure", href: "/contact", iconUrl: "/images/mega-menu/dx-infrastructure.png" },
-]
-
-// Data for the "Liferay Services" section (Original Data)
-const liferayServicesLinks = [
-  { text: "Development & Customization", href: "/services/liferay-development-and-customization" },
-  { text: "Upgradation", href: "/services/liferay-upgrade" },
-  { text: "Migration", href: "/services/liferay-migration" },
-  { text: "Architecture", href: "/services/liferay-architecture-design" },
-  { text: "Performance Tuning", href: "/services/liferay-performance-tuning" },
-  { text: "Ecommerce Development", href: "/services/liferay-ecommerce-development" },
-  { text: "Consulting", href: "/services/liferay-consulting-and-implementation-services" },
-  { text: "Support & Maintenance", href: "/services/liferay-support-and-maintenance" },
-  { text: "Proof Of Concept", href: "/services/liferay-proof-of-concept" },
-  { text: "Expert Advice", href: "/services/liferay-expert-advice" },
-  // { text: "Hire Liferay Devloper", href: "/services/liferay-hire-developer" },
-  // { text: "Theme Development", href: "/services/liferay-theme-development" },
-]
 
 // NEW LOGIC: Explicitly split the links into two arrays for Flex columns
 const liferayCol1 = liferayServicesLinks.slice(0, 5)
@@ -52,32 +17,7 @@ const liferayCol2 = liferayServicesLinks.slice(5, 10)
 
 // Data for the Marquee
 // UPDATED: Slider Data with specific mapped Icons
-const sliderData: SliderItem[] = [
-  { 
-    text: "Certified Developers", 
-    icon: "/images/mega-menu/sevices-megamenu/certified-liferay-developers.svg" 
-  },
-  { 
-    text: "24×7 Support", 
-    icon: "/images/mega-menu/sevices-megamenu/expert-support.svg" 
-  },
-  { 
-    text: "Dedicated Team", 
-    icon: "/images/mega-menu/sevices-megamenu/dedicated-skilled-team.svg" 
-  },
-  { 
-    text: "Fast Delivery", 
-    icon: "/images/mega-menu/sevices-megamenu/fast-project-delivery.svg" 
-  },
-  { 
-    text: "Proven Expertise", 
-    icon: "/images/mega-menu/sevices-megamenu/proven-technical-expertise.svg" 
-  },
-  { 
-    text: "On-Demand Developers", 
-    icon: "/images/mega-menu/sevices-megamenu/on-demand-developers.svg" 
-  },
-]
+
 
 // Helper Component for Marquee Items
 // const MarqueeGroup = () => (
@@ -173,7 +113,7 @@ export default function ServicesMegaMenu({ onClose }: MegaMenuProps) {
           <div className="flex flex-grow">
             {/* Digital Experience Section */}
             <div className="w-1/3.5">
-              <h5 className="mb-[1.875vw] font-medium whitespace-pre">Digital Experience</h5>
+              <h5 className="mb-[1.875vw] font-medium whitespace-pre">{serviceTitleData.title1}</h5>
               <ul className="flex flex-col gap-[1.25vw]">
                 {digitalExperienceLinks.map((link) => (
                   <li key={link.text} className="flex h-[40px] items-center">
@@ -197,7 +137,7 @@ export default function ServicesMegaMenu({ onClose }: MegaMenuProps) {
             {/* Liferay Services Section */}
             <div className="flex flex-1 flex-col justify-between">
               <div>
-                <h5 className="mb-[1.875vw] font-medium">Liferay Services</h5>
+                <h5 className="mb-[1.875vw] font-medium">{serviceTitleData.title2}</h5>
 
                 {/* REPLACED GRID WITH FLEX COLUMNS */}
                 <div className="flex gap-[3.65rem]">
