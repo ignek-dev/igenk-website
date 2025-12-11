@@ -20,6 +20,7 @@ import "prismjs/plugins/line-numbers/prism-line-numbers";
 
 import BlogSidebar from "components/BlogSidebar/BlogSidebar";
 import ExploreServices from "components/ExploreServices/ExploreServices";
+import Loader from "components/UI/Loader/Loader";
 import { blogCSSLink } from "components/Blog/blogCss";
 
 interface WPPost {
@@ -198,7 +199,13 @@ export default function BlogDetails() {
         Prism.highlightAllUnder(contentRef.current);
     }, [post]);
 
-    if (loading) return <p>Loading post…</p>;
+     if (loading) {
+    return (
+      <div className="flex h-screen w-full items-center justify-center bg-black">
+        <Loader />
+      </div>
+    );
+  }
     if (error) return <p className="text-red-500">Error: {error}</p>;
     if (!post) return null;
 
