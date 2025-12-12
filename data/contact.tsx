@@ -3,13 +3,13 @@ import { title } from "process";
 export const contactContent = {
   title: "Contact Us",
   description:
-    "Get in touch for inquiries about our properties. We're here to offer expert advice, personalized solutions, and exceptional service to meet all your needs effectively.",
+    "Get in touch with our team for inquiries about Liferay DXP solutions, technical guidance, or collaboration opportunities. We’re here to provide expert advice, tailored support, and clear direction for your digital initiatives.",
 };
 
 export const contactLeftSection = {
   title: "Let's Start the Conversation",
   description:
-    "We at IGNEK appreciate your questions, comments, and teamwork. Whether you have enquiries about our projects or would like to discuss our services.",
+    "At IGNEK, we value meaningful conversations. Whether you’re evaluating a new Liferay project, need clarification on our services, or want guidance from our experts, we’re ready to assist with clarity and confidence.",
   infoBlocks: [
     {
       id: 1,
@@ -33,8 +33,8 @@ export const officeLocationsSection = {
   title2: "and United Arab Emirates",
 
   description:
-    "We have offices in India and the United Arab Emirates, providing ",
-    description2: "seamless regional support and collaboration for our global clients.",
+    "We operate from India and the United Arab Emirates, enabling responsive ",
+    description2: "regional engagement, dedicated support, and seamless collaboration for clients across the globe.",
 };
 
 export const officeLocationsData = [
