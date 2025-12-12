@@ -7,15 +7,15 @@ import PhoneInput, { isValidPhoneNumber } from "react-phone-number-input"
 import "react-phone-number-input/style.css"
 
 const metadata: Metadata = {
-  title: "Contact Us | Liferay Development, Customization & Consulting Experts",
+  title: "Contact IGNEK | Speak With Liferay DXP Experts",
   description:
-    "Contact our team for Liferay development, customization, support, and digital transformation services tailored to your business needs.",
+    "Contact IGNEK for Liferay DXP consulting, support, and implementation inquiries. Connect with our experts for guidance on digital experience solutions.",
 
   openGraph: {
     url: "https://www.ignek.com/contact-us/",
-    title: "Contact Us | Liferay Development, Customization & Consulting Experts",
+    title: "Contact IGNEK | Speak With Liferay DXP Experts",
     description:
-      "Contact our team for Liferay development, customization, support, and digital transformation services tailored to your business needs.",
+      "Contact IGNEK for Liferay DXP consulting, support, and implementation inquiries. Connect with our experts for guidance on digital experience solutions.",
     images: [
       {
         width: 1200,
