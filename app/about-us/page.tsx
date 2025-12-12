@@ -44,7 +44,7 @@ export default function AboutUs() {
 
               {/* Masked Text Video */}
               <div
-                className="relative mt-[1.25vw] h-[17.5vw] w-[45.885vw] self-start overflow-hidden"
+                className="relative mt-[1.25vw] h-[17.5vw] w-[65.885vw] self-start overflow-hidden"
                 style={{
                   WebkitMaskImage: `url(${maskedHeadingSvg})`,
                   maskImage: `url(${maskedHeadingSvg})`,
@@ -61,7 +61,7 @@ export default function AboutUs() {
                   loop
                   muted
                   playsInline
-                  className="absolute top-0 left-0 h-[17.5vw] w-[45.885vw] object-cover"
+                  className="absolute top-0 left-0 h-[17.5vw] w-[65.885vw] object-cover"
                 >
                   <source src={heroMaskVideo} type="video/mp4" />
                 </video>

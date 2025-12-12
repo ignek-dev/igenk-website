@@ -1,11 +1,30 @@
 "use client"
+import { Metadata } from "next"
 import { useState } from "react"
 import { Pagination } from "components/marketplace/Pagination"
 import { ToolCard } from "components/marketplace/ToolCard"
 import { featuredModulesSection, liferayMarketplaceHero, toolsData } from "data/marketplace"
 
 // --- Data for the cards ---
+const metadata: Metadata = {
+  title: "Liferay Marketplace Modules | Apps, Plugins & Extensions",
+  description:
+    "Enhance your Liferay DXP platform with IGNEK’s marketplace modules, plugins, and extensions. Easy to integrate, upgrade-safe, and designed for scalable digital experiences.",
 
+  openGraph: {
+    url: "https://www.ignek.com/marketplace/",
+    title: "Liferay Marketplace Modules | Apps, Plugins & Extensions",
+    description:
+      "Enhance your Liferay DXP platform with IGNEK’s marketplace modules, plugins, and extensions. Easy to integrate, upgrade-safe, and designed for scalable digital experiences.",
+    images: [
+      {
+        width: 1200,
+        height: 630,
+        url: "/og-image.png",
+      },
+    ],
+  },
+}
 
 export default function MarketplacePage() {
   // --- Pagination State ---
