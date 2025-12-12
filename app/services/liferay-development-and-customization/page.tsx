@@ -21,15 +21,15 @@ import {
 } from "data/liferay-development-and-customization"
 
 const metadata: Metadata = {
-  title: "Liferay Development and Customization Services - IGNEK",
+  title: "Liferay Development & Customization Services | IGNEK",
   description:
-    "Our Liferay Development and Customization Services, to create custom portals and applications perfectly suited to your business needs.",
+    "Expert Liferay development and customization services to build scalable, secure, and tailored digital experiences aligned with your business needs.",
 
   openGraph: {
     url: "https://www.ignek.com/services/liferay-development-and-customization/",
-    title: "Liferay Development and Customization Services - IGNEK",
+    title: "Liferay Development & Customization Services | IGNEK",
     description:
-      "Our Liferay Development and Customization Services, to create custom portals and applications perfectly suited to your business needs.",
+      "Expert Liferay development and customization services to build scalable, secure, and tailored digital experiences aligned with your business needs.",
     images: [
       {
         width: 1200,
