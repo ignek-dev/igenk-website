@@ -22,7 +22,7 @@ const FlexiblePlatforms = () => {
         >
           <h2 className="">
             {flexiblePlatforms.titleLine1}
-            <span className="block">{flexiblePlatforms.titleLine2}</span>
+            <span className="block">{flexiblePlatforms.titleLine2}</span>{flexiblePlatforms.titleline3}
             <span className="text-[#00979E]">{flexiblePlatforms.titleteal}</span>
           </h2>
           <p className="mt-[0.833vw] p18 text-gray-600">
@@ -43,19 +43,19 @@ const FlexiblePlatforms = () => {
             alt="Liferay Digital Experience Platform"
             layout="fill"
             objectFit="cover"
-            className="transition-transform w-full duration-500 group-hover:scale-105"
+            className="transition-transform w-full duration-500"
           />
 
           {/* 2. Bottom Shadow Effect */}
-          <div className="absolute right-0 bottom-0 left-0 h-2/3 bg-gradient-to-t from-black/60 to-transparent" />
+          {/* <div className="absolute right-0 bottom-0 left-0 h-2/3 bg-gradient-to-t from-black/60 to-transparent" /> */}
 
           {/* 3. Text Overlay (Visible on Hover) */}
-          <div className="absolute inset-0 flex flex-col justify-end bg-black/40 p-6 text-white opacity-0 transition-opacity duration-500 group-hover:opacity-100 md:p-10">
+          {/* <div className="absolute inset-0 flex flex-col justify-end bg-black/40 p-6 text-white opacity-0 transition-opacity duration-500 group-hover:opacity-100 md:p-10">
             <h3 className="text-4xl font-bold">{flexiblePlatforms?.platforms?.[0]?.platformName}</h3>
             <div className="mt-[0.833vw] max-w-2xl p18 leading-relaxed text-gray-200">
               {flexiblePlatforms?.platforms?.[0]?.hoverDescription}
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>
