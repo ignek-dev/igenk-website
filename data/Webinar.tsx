@@ -54,14 +54,14 @@ export const liferayWebinarsPage = {
     headingLine1: "Liferay DXP",
     headingLine2: "Learning Webinars",
     description:
-      "Deepen your understanding of Liferay DXP through technical webinars packed with practical insights, architecture guidance, and implementation strategies.",
+      "Strengthen your expertise in Liferay DXP through focused technical webinars designed to deliver practical insights, architecture fundamentals, and real-world implementation strategies.",
   },
 
   pastWebinars: {
     heading: "Past Liferay ",
     headingLine2: " Webinars & Recorded Sessions",
     description:
-      "Catch up on past Liferay webinars covering DXP, development best practices, and real-world implementation strategies for digital experiences.",
+      "Browse previously hosted Liferay webinars featuring expert-led sessions on DXP capabilities, technical best practices, and proven approaches for building scalable digital experiences.",
   },
 };
 

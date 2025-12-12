@@ -1,36 +1,13 @@
 // components/Liferay/EngagementModels.tsx
 "use client"
+import { engagementModelsinfo, EngagementModelsProps } from "data/liferay-hire-developer"
 import Image from "next/image"
 import { useState } from "react"
 
 // Data for the engagement models
-const engagementModelsData = [
-  {
-    icon: "/images/liferay-pages-image/liferay-consultation-page/experties.png",
-    title: "Dedicated Team",
-    description: "Opt for a Liferay Dedicated Team to Leverage Cost-Efficiency and Unmatched Technical Expertise.",
-    features: ["Achieve Cost Efficiency", "Enhance IT Infrastructure", "Optimize Project Management"],
-  },
-  {
-    icon: "/images/liferay-pages-image/liferay-consultation-page/add-friend.png",
-    title: "Time & Materials",
-    description:
-      "Gain total control over your predetermined market schedule with a versatile time and materials model for Liferay development.",
-    features: ["Ongoing Development Needs", "Supports Part & Full time Dev Needs", "Better control over your project"],
-  },
-  {
-    icon: "/images/liferay-pages-image/liferay-consultation-page/chat-message.png",
-    title: "Fix Price",
-    description:
-      "Implement your requirements with a clear idea and a predetermined budget to shield your product from fluctuating costs.",
-    features: ["Minimal financial risk", "Involves the development of an MVP", "Well-defined Scope & Requirements"],
-  },
-]
 
-interface EngagementModelsProps {
-  title: React.ReactNode
-  description: string
-}
+
+
 
 export default function EngagementModels({ title, description }: EngagementModelsProps) {
   // The hover state is now managed inside this component
@@ -51,7 +28,7 @@ export default function EngagementModels({ title, description }: EngagementModel
 
         {/* Engagement Cards */}
         <div className="grid grid-cols-1 gap-[2.083vw] md:grid-cols-2 lg:grid-cols-3">
-          {engagementModelsData.map((model) => {
+          {engagementModelsinfo.map((model) => {
             const isHovered = hoveredModel === model.title
             return (
               <div

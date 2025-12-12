@@ -1,7 +1,9 @@
 "use client"
+import { featuredEvent, insightLinks } from "data/Navigation";
 import Image from "next/image"
 import Link from "next/link"
 import { useEffect, useState } from "react"
+import Loader from "components/UI/Loader/Loader"
 
 interface MegaMenuProps {
   onClose: () => void;
@@ -33,42 +35,7 @@ const IconArrowRight = ({ className }: { className?: string }) => (
 )
 
 // --- Data for the Insight Links ---
-const insightLinks = [
-  {
-    icon: "/images/icon/blogs.png",
-    title: "Blogs",
-    description: "The latest industry news, updates and info.",
-    href: "/blog",
-  },
-  {
-    icon: "/images/icon/case-studies.png",
-    title: "Case Studies",
-    description: "Take a closer look at the projects we've delivered",
-    href: "/case-study",
-  },
-  {
-    icon: "/images/icon/webinars.png",
-    title: "Webinars",
-    description: "Watch our latest organized webinar",
-    href: "/webinars",
-  },
-  {
-    icon: "/images/mega-menu/marketplace.png",
-    title: "Marketplace",
-    description: "Modules that make Liferay experience effortless.",
-    href: "/marketplace",
-  },
-]
 
-// --- Dynamic Event Data ---
-// To update the event, just change the data in this object
-const featuredEvent = {
-  title: "Gain the insights that matter. Apply actionable techniques to build more resilient digital experiences.",
-  // The path starts from the `public` directory
-  imageSrc: "/images/mega-menu/upcoming-webinar.svg",
-  imageAlt: "Customer Onboarding with Low Code/No-Code Capabilities of Liferay Portal Webinar",
-  href: "/webinars", // Link to the webinar page
-}
 
 // --- Main InsightsMegaMenu Component ---
 export default function InsightsMegaMenu({ onClose }: MegaMenuProps) {
@@ -185,10 +152,9 @@ const handleClick = (e: React.MouseEvent) => {
               <div className="flex items-center overflow-hidden border-white/20 bg-black/20 transition-all duration-300 group-hover:border-white/40">
                 {/* Loader */}
                 {loading && (
-                  <div className="flex flex-col items-center justify-center gap-4">
-                    <div className="h-10 w-10 animate-spin rounded-full border-4 border-white/30 border-t-white"></div>
-                    <p className="text-white">Loading latest blog…</p>
-                  </div>
+                   <div className="flex w-full h-full items-center justify-center py-20">
+                     <Loader />
+                   </div>
                 )}
 
                 {/* Error */}

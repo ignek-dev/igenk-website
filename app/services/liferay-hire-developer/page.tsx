@@ -8,18 +8,18 @@ import TalkToExpert from "components/Common/TalkToExpert"
 import WhatMake from "components/Common/WhatMake"
 import WordsFromCEO from "components/Common/WordsFromCEO"
 import LiferayTechnologicalStacks from "components/LiferayTechnologicalStacks"
-import { easySteps, expertiseStats, teamOffersServices, whyHireFromIgnek } from "data/liferay-hire-developer"
+import { easySteps, engagementModelsData, expertiseStats, hireLiferayHeroData, hireLiferayStepsData, hireLiferayWhyData, LiferayHireData, LiferayHireSubContent, LiferayHireTitle1, LiferayHireTitle2, liferayServicesHeaderData, teamOffersServices, whyHireFromIgnek } from "data/liferay-hire-developer"
 
 const metadata: Metadata = {
-  title: "Hire Liferay Developer | 1-Week Risk-Free Trial - IGNEK",
+  title: "Hire Liferay Developers | Certified Liferay DXP Experts",
   description:
-    "Hire Liferay developer from us and set up your own Liferay Development team to elevate your Liferay portal development projects.",
+    "Hire certified Liferay developers for secure, scalable, and cost-efficient Liferay DXP solutions. Get expert consulting, fast onboarding, and reliable delivery.",
 
   openGraph: {
     url: "https://www.ignek.com/hire-liferay-developer/",
-    title: "Hire Liferay Developer | 1-Week Risk-Free Trial - IGNEK",
+    title: "Hire Liferay Developers | Certified Liferay DXP Experts",
     description:
-      "Hire Liferay developer from us and set up your own Liferay Development team to elevate your Liferay portal development projects.",
+      "Hire certified Liferay developers for secure, scalable, and cost-efficient Liferay DXP solutions. Get expert consulting, fast onboarding, and reliable delivery.",
     images: [
       {
         width: 1200,
@@ -31,37 +31,7 @@ const metadata: Metadata = {
 }
 
 export default function LiferayHireDeveloper() {
-  const LiferayHireTitle1 = "Why Hire Liferay Developer"
-  const LiferayHireTitle2 = "From IGNEK?"
-  const LiferayHireSubContent =
-    "At IGNEK, our Liferay Consultant bring over a decade of experience, crafting secure, scalable solutions across various industries. Hire Liferay developer for innovative problem-solving."
 
-  const LiferayHireData = [
-    {
-      title: "Certified Liferay Developer",
-      desc: "Our developers are certified in Liferay, meaning they’ve undergone rigorous training and testing to prove their proficiency. You can trust their knowledge and abilities.",
-    },
-    {
-      title: "Transparent Communication",
-      desc: "We believe in transparent communication throughout the development process. You’ll always be kept in the loop, with regular updates and open dialogue to address any concerns or questions.",
-    },
-    {
-      title: "Flexible Hiring Models",
-      desc: "Choose from our flexible hiring models! Tailored to suit your needs, whether it’s hourly, part-time, or full-time. Get the flexibility you need to scale your team as your project demands.",
-    },
-    {
-      title: "Fully Signed NDA",
-      desc: "Our fully signed NDA ensures complete confidentiality. Protect your sensitive information with our legally binding agreements. Peace of mind guaranteed.",
-    },
-    {
-      title: "Cost-Effective",
-      desc: "Hiring a dedicated Liferay Developer from IGNEK is cost-effective. You get access to top-tier talent without the overhead costs associated with in-house hiring.",
-    },
-    {
-      title: "Easy Exit Policy",
-      desc: "Our Easy Exit Policy ensures a hassle-free process when ending services. We prioritize your satisfaction, making transitions smooth and transparent.",
-    },
-  ]
 
   // Data for the marquee animation
 
@@ -78,18 +48,15 @@ export default function LiferayHireDeveloper() {
             {/* Left Side: Text Content */}
             <div>
               <div className="inline-flex mt-[63px] w-fit items-center rounded-full border border-white px-8.5 py-[8.8px] text-lg font-normal">
-                Hire Us
+                {hireLiferayHeroData.badgeText}
               </div>
               <h1 className="mt-[2.708vw]">
-                Hire Liferay
+                {hireLiferayHeroData.title.line1}
                 <br />
-                <span className="block">Developer</span>
+                <span className="block">{hireLiferayHeroData.title.line2}</span>
               </h1>
               <p className="line-height-[28px] mt-10 max-w-3xl text-lg font-normal">
-                We’re a team of certified Liferay developer and Liferay Consultant with deep expertise spanning various
-                versions of the Liferay Portal. Our “Liferay first” approach has saved clients significant costs and
-                time, resulting in successful deliveries. Hire our Liferay developer for cost-effective solutions and
-                faster time-to-market.
+                {hireLiferayHeroData.description}
               </p>
             </div>
 
@@ -129,10 +96,9 @@ export default function LiferayHireDeveloper() {
         <div className="global-container">
           {/* Section Header */}
           <div className="w-full">
-            <h2>Why Hire Liferay Developer From IGNEK?</h2>
+            <h2>{hireLiferayWhyData.title}</h2>
             <p className="p18 mt-[1.458vw] text-gray-500">
-              At IGNEK, our Liferay Consultant bring over a decade of experience, crafting secure, scalable solutions
-              across various industries. Hire Liferay developer for innovative problem-solving.
+              {hireLiferayWhyData.description}
             </p>
           </div>
 
@@ -180,12 +146,11 @@ export default function LiferayHireDeveloper() {
             {/* Left Side: Heading and Description */}
             <div className="flex flex-col justify-start">
               <h2 className="min-w-[36.719vw] text-[#FFFFFF]">
-                Get A Certified Liferay
-                <span className="block">Developer In Just 3 Easy Steps</span>
+                {hireLiferayStepsData.title.line1}
+                <span className="block">{hireLiferayStepsData.title.line2}</span>
               </h2>
               <p className="p18 mt-[1.458vw] max-w-lg text-[#E5E7EB]">
-                Hire Liferay developer in just three effortless steps with us! With our refined process, finding the
-                perfect Liferay Consultant for your project is quick, efficient, and hassle-free.
+                {hireLiferayStepsData.description}
               </p>
             </div>
 
@@ -226,23 +191,20 @@ export default function LiferayHireDeveloper() {
       <EngagementModels
         title={
           <>
-            Engagement Model For Hiring
-            <span className="block">Dedicated Liferay Developer</span>
+            {engagementModelsData.titleLine1}
+            <span className="block">{engagementModelsData.titleLine2}</span>
           </>
         }
-        description="Engage with the Liferay-focused technology partner to get your simple & complex Liferay requirements implemented."
+        description={engagementModelsData.description}
       />
       {/* Services Our Liferay Development Team Offers */}
       <section className="bg-black pt-[3.333vw] pb-[0.417vw] text-white">
         <div className="global-container">
           {/* Section Header */}
           <div className="w-full">
-            <h2 className="">Services Our Liferay Development Team Offers</h2>
+            <h2 className="">{liferayServicesHeaderData.title}</h2>
             <p className="p18 mt-[1.458vw] text-gray-100">
-              Explore our expertise in Liferay! We’re experienced and ready to help with everything, from building
-              user-friendly interfaces to managing backend systems. Whether you need a custom portal, smooth
-              integration, or ongoing support, we’ve got you covered. Partner with us today and make the most of Liferay
-              for your business.
+              {liferayServicesHeaderData.description}
             </p>
           </div>
           {/* Services Grid */}

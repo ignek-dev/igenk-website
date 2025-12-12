@@ -1,6 +1,7 @@
 // components/SolutionsMegaMenu.tsx
 // --- Data for the Mega Menu ---
 "use client"
+import { aiLinks, initialIntegrationsConfig, IntegrationLink, marketplaceLinks, solutionsLinks, solutionTitleData } from "data/Navigation";
 import Image from "next/image"
 import Link from "next/link"
 import { useEffect, useState } from "react";
@@ -11,84 +12,14 @@ interface MegaMenuProps {
 }
 
 // 1. Define the interface for our link data
-interface IntegrationLink {
-  id: number;
-  text: string;
-  icon: string;
-  href: string; // This will start as empty/fallback and get updated
-}
+
 
 interface WPPost {
   id: number;
   slug: string;
 }
 
-const solutionsLinks = [
-  { text: "Enterprise Websites", href: "/contact", icon: "/images/mega-menu/solution-mega-icons/solution-e1.svg" },
-  { text: "Employee Experience", href: "/contact", icon: "/images/mega-menu/solution-mega-icons/solution-e2.svg" },
-  { text: "Digital Commerce", href: "/contact", icon: "/images/mega-menu/solution-mega-icons/solution-e3.svg" },
-  { text: "Partner Experience", href: "/contact", icon: "/images/mega-menu/solution-mega-icons/solution-e4.svg" },
-  { text: "Supplier Experience", href: "/contact", icon: "/images/mega-menu/solution-mega-icons/solution-e5.svg" },
-  { text: "Customer Experience", href: "/contact", icon: "/images/mega-menu/solution-mega-icons/solution-e6.svg" },
-]
 
-// 2. Static configuration (Icons and Titles)
-// We use the 'id' here to fetch the correct slug later.
-const initialIntegrationsConfig: IntegrationLink[] = [
-  { id: 35704, text: "Matomo Integration with Liferay", href: "", icon: "/images/mega-menu/Integartion-e1.png" },
-  { id: 2379, text: "Microsoft Teams Integration with Liferay", href: "", icon: "/images/mega-menu/Integration-e2.png" },
-  { id: 21796, text: "Jira Integration with Liferay", href: "", icon: "/images/mega-menu/Integration-e3.png" },
-  { id: 29103, text: "Twilio Integration with Liferay", href: "", icon: "/images/mega-menu/Integration-e4.png" },
-  { id: 18883, text: "ZOOM Integration with Liferay", href: "", icon: "/images/mega-menu/Integration-e5.png" },
-  { id: 17663, text: "Sonar Integration with Liferay", href: "", icon: "/images/mega-menu/Integration-e6.png" },
-]
-
-const marketplaceLinks = [
-  {
-    text: "Batch Client Extension Generator",
-    href: "https://marketplace.liferay.com/p/batch-client-extension-generator",
-    icon: "/images/mega-menu/marketplace-e2.png",
-  },
-  {
-    text: "AI Blog Workspace",
-    href: "https://marketplace.liferay.com/p/ai-blog-workspace",
-    icon: "/images/mega-menu/marketplace-e1.png",
-  },
-  {
-    text: "Service Builder Migration Utility",
-    href: "#",
-    subheading: "Coming Soon",
-    icon: "/images/mega-menu/solution-mega-icons/service-builder.png",
-  },
-  {
-    text: "Liferay CE Email MFA",
-    href: "https://marketplace.liferay.com/p/email-otp-authentication-for-community-edition-of-liferay",
-    icon: "/images/mega-menu/solution-mega-icons/liferay-ce-email-mfa.png",
-  },
-  {
-    text: "Collection display grid view with Item Highlight",
-    href: "https://marketplace.liferay.com/p/collection-display-grid-view-with-item-highlight",
-    icon: "/images/mega-menu/solution-mega-icons/collection-display-grid-view-with-item-highlight.png",
-  },
-  {
-    text: "Sticky Notes for the Portal",
-    href: "https://marketplace.liferay.com/p/sticky-notes-for-the-portal",
-    icon: "/images/mega-menu/solution-mega-icons/sticky-notes-for-a-portal-option.png",
-  },
-]
-
-const aiLinks = [
-  {
-    text: "Virtual Assistants for Enterprise Experiences",
-    href: "/contact",
-    icon: "/images/mega-menu/solution-mega-icons/liferay-ai-1.svg",
-  },
-  { text: "Personalization & Engagement", href: "/contact", icon: "/images/mega-menu/solution-mega-icons/liferay-ai-2.svg" },
-  { text: "Intelligent Search & Knowledge Discovery", href: "/contact", icon: "/images/mega-menu/solution-mega-icons/liferay-ai-3.svg" },
-  { text: "Autonomous Workflow Optimization", href: "/contact", icon: "/images/mega-menu/solution-mega-icons/liferay-ai-4.svg" },
-  { text: "Predictive Business Intelligence", href: "/contact", icon: "/images/mega-menu/solution-mega-icons/liferay-ai-5.svg" },
-  { text: "AI-Enhanced Document Intelligence", href: "/contact", icon: "/images/mega-menu/solution-mega-icons/liferay-ai-6.svg" },
-]
 
 // --- CACHE VARIABLES (Defined Outside Component) ---
 // These persist in memory as long as the page is not refreshed.
@@ -149,7 +80,7 @@ export default function SolutionsMegaMenu({ onClose }: MegaMenuProps) {
           {/* Left Group (Solutions & Integrations) */}
           <div className="flex gap-[5.21vw]">
             <div>
-              <h5 className="mb-9">Solutions</h5>
+              <h5 className="mb-9">{solutionTitleData.title1}</h5>
               <ul className="space-y-6">
                 {solutionsLinks.map((link, index) => (
                   <li key={`sol-${index}`}>
@@ -169,7 +100,7 @@ export default function SolutionsMegaMenu({ onClose }: MegaMenuProps) {
               </ul>
             </div>
             <div>
-              <h5 className="mb-9">Integrations</h5>
+              <h5 className="mb-9">{solutionTitleData.title2}</h5>
               <ul className="space-y-6">
                 {integrations.map((link, index) => (
                   <li key={`int-${index}`}>
@@ -191,7 +122,7 @@ export default function SolutionsMegaMenu({ onClose }: MegaMenuProps) {
 
           <div className="flex gap-[5.21vw]">
             <div>
-              <h5 className="mb-9">Liferay Marketplace</h5>
+              <h5 className="mb-9">{solutionTitleData.title3}</h5>
               <ul className="space-y-6">
                 {marketplaceLinks.map((link, index) => (
                   <li key={`mp-${index}`}>
@@ -223,7 +154,7 @@ export default function SolutionsMegaMenu({ onClose }: MegaMenuProps) {
               </ul>
             </div>
             <div>
-              <h5 className="mb-9">Liferay + AI</h5>
+              <h5 className="mb-9">{solutionTitleData.title4}</h5>
               <ul className="space-y-6">
                 {aiLinks.map((link, index) => (
                   <li key={`ai-${index}`}>

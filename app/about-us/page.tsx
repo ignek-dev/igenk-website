@@ -9,15 +9,15 @@ import { BackgroundLines } from "components/Common/BackgroundLines"
 import { aboutPageData } from "data/about-content"
 
 export const metadata: Metadata = {
-  title: "Learn About Our Team  - IGNEK Architecture Design Services - IGNEK",
+  title: "About IGNEK | Liferay Boutique Company",
   description:
-    "Serving large organizations and start-ups for over 5 years, IGNEK is an expert in developing and deploying business solutions powered by cutting-edge technology.",
+    "A leading Liferay Boutique Company and trusted Liferay Consulting Partner. We specialize in delivering digital experience platform solutions with expert Liferay development and consulting services.",
 
   openGraph: {
     url: "https://www.ignek.com/about-us/",
-    title: "Learn About Our Team  - IGNEK Architecture Design Services - IGNEK",
+    title: "About IGNEK | Liferay Boutique Company",
     description:
-      "Serving large organizations and start-ups for over 5 years, IGNEK is an expert in developing and deploying business solutions powered by cutting-edge technology.",
+      "A leading Liferay Boutique Company and trusted Liferay Consulting Partner. We specialize in delivering digital experience platform solutions with expert Liferay development and consulting services.",
     images: [
       {
         width: 1200,
@@ -44,7 +44,7 @@ export default function AboutUs() {
 
               {/* Masked Text Video */}
               <div
-                className="relative mt-[1.25vw] h-[17.5vw] w-[45.885vw] self-start overflow-hidden"
+                className="relative mt-[1.25vw] h-[17.5vw] w-[65.885vw] self-start overflow-hidden"
                 style={{
                   WebkitMaskImage: `url(${maskedHeadingSvg})`,
                   maskImage: `url(${maskedHeadingSvg})`,
@@ -61,7 +61,7 @@ export default function AboutUs() {
                   loop
                   muted
                   playsInline
-                  className="absolute top-0 left-0 h-[17.5vw] w-[45.885vw] object-cover"
+                  className="absolute top-0 left-0 h-[17.5vw] w-[65.885vw] object-cover"
                 >
                   <source src={heroMaskVideo} type="video/mp4" />
                 </video>

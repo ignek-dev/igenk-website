@@ -1,3 +1,5 @@
+import { title } from "process";
+
 export const perks = [
     { title: ["5 Days", "Working"], icon: "/images/career/gibly-images/5-days-working.png" },
     { title: ["Festival", "Celebration"], icon: "/images/career/gibly-images/festival-celebration.png" },
@@ -9,7 +11,7 @@ export const perks = [
     { title: ["Training &", "Development"], icon: "/images/career/gibly-images/training-development.png" },
     { title: ["Enterprise", "Projects"], icon: "/images/career/gibly-images/enterprise-project.png" },
     { title: ["Leave Carry", "Forward"], icon: "/images/career/gibly-images/leave-carry-forward.png" },
-    { title: ["Yearly ", "Domenstic Trip"], icon: "/images/career/gibly-images/yearly-trip.png" },
+    { title: ["Yearly ", "Domestic Trip"], icon: "/images/career/gibly-images/yearly-trip.png" },
     { title: ["WFH", "Benefits"], icon: "/images/career/gibly-images/hybrid-work.png" },
     { title: ["Fun", "Activities"], icon: "/images/career/gibly-images/fun-activities.png" },
     { title: ["Flexible", "Timing"], icon: "/images/career/gibly-images/flexible-timing.png" },
@@ -81,17 +83,18 @@ export const jobs = [
 export const careerHeroData = {
   badgeText: "Career at IGNEK",
   description:
-    "At IGNEK we value people and it include their growth, learning, and perks that help you succeed personally and professionally.",
+    "At IGNEK, your growth comes first. We empower you with meaningful work, continuous learning, and an environment designed to help you advance—professionally, personally, and with purpose.",
 };
 
 export const careerPerksIntroData = {
   title: "More Than Just a Job",
+  title2: "Life at IGNEK",
   description:
-    "At IGNEK to enjoy perks that inspire—learning, flexibility, and a workplace that values your well-being.",
+    "At IGNEK, work feels different. We’ve built a culture that inspires learning, celebrates individuality, and supports your well-being at the workplace.",
 };
 
 export const openRolesIntroData = {
   title: "Apply at IGNEK",
   description:
-    "Explore careers at IGNEK, find your perfect role, and join our team to make an impact that matters.",
+    "Explore careers at IGNEK, discover the role that fits your strengths, and join a team that’s shaping meaningful impact every day.",
 };

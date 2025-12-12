@@ -14,6 +14,8 @@ import "../../../components/Portfolio/PortfolioRenderer.css";
 import { BlogSection } from "components/Common";
 import CaseStudy from "components/Common/CaseStudy";
 
+import Loader from "components/UI/Loader/Loader";
+
 
 const caseStudies = [
   { id: 1, image: "/images/liferay-pages-image/caseStudy.png", tag: "Corporate", title: "Music License Management Portal: Onboarding & Data Integrity", description: "Lorem ipsum dolor sit amet..." },
@@ -99,10 +101,17 @@ export default function PortfolioRenderer() {
     }
   }, [post]);
 
-  if (loading) return <p>Loading…</p>;
+  if (loading) {
+    return (
+      <div className="flex h-screen w-full items-center justify-center bg-black">
+        <Loader />
+      </div>
+    );
+  }
+
   if (error) return <p className="text-red-500">Error: {error}</p>;
   if (!post) return <p>No post found.</p>;
-
+  
   return (
     <>
       <main>
