@@ -11,15 +11,15 @@ import LiferayTechnologicalStacks from "components/LiferayTechnologicalStacks"
 import { easySteps, engagementModelsData, expertiseStats, hireLiferayHeroData, hireLiferayStepsData, hireLiferayWhyData, LiferayHireData, LiferayHireSubContent, LiferayHireTitle1, LiferayHireTitle2, liferayServicesHeaderData, teamOffersServices, whyHireFromIgnek } from "data/liferay-hire-developer"
 
 const metadata: Metadata = {
-  title: "Hire Liferay Developer | 1-Week Risk-Free Trial - IGNEK",
+  title: "Hire Liferay Developers | Certified Liferay DXP Experts",
   description:
-    "Hire Liferay developer from us and set up your own Liferay Development team to elevate your Liferay portal development projects.",
+    "Hire certified Liferay developers for secure, scalable, and cost-efficient Liferay DXP solutions. Get expert consulting, fast onboarding, and reliable delivery.",
 
   openGraph: {
     url: "https://www.ignek.com/hire-liferay-developer/",
-    title: "Hire Liferay Developer | 1-Week Risk-Free Trial - IGNEK",
+    title: "Hire Liferay Developers | Certified Liferay DXP Experts",
     description:
-      "Hire Liferay developer from us and set up your own Liferay Development team to elevate your Liferay portal development projects.",
+      "Hire certified Liferay developers for secure, scalable, and cost-efficient Liferay DXP solutions. Get expert consulting, fast onboarding, and reliable delivery.",
     images: [
       {
         width: 1200,

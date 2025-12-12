@@ -2,7 +2,7 @@ export const liferaySuccessStoriesSection = {
   heading: "Liferay",
   heading2: "Success Stories",
   description:
-    "Browse Liferay success stories and DXP project case studies that demonstrate real customer value and high-impact digital outcomes.",
+    "See how enterprises unlock real value with Liferay DXP through best-practice implementations, scalable architectures, and measurable digital outcomes—delivered the IGNEK way.",
 };
 
 export const caseStudies = [

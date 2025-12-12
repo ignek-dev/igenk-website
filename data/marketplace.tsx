@@ -67,15 +67,15 @@ export const toolsData = [
   },
 ]
 export const liferayMarketplaceHero = {
-  heading: "Explore the Liferay",
-  headingSpan: "Marketplace Module",
+  heading: "Liferay DXP ",
+  headingSpan: "Marketplace Solutions",
   description:
-    "Explore modules, plugins, and add-ons to optimize development, extend functionality, and create scalable Liferay DXP solutions.",
+    "Extend and enhance your Liferay DXP platform with purpose-built modules, plugins, and extensions engineered to simplify development, accelerate delivery, and scale digital experiences effortlessly.",
 };
 
 export const featuredModulesSection = {
   heading: "Featured Liferay",
   headingSpan: "Marketplace Modules",
   description:
-    "Explore our curated collection of Liferay Marketplace modules, apps, and plugins designed to extend functionality, streamline integrations, and enhance your DXP platform.",
+    "Explore our curated suite of Liferay Marketplace solutions—designed to extend platform capabilities, streamline integrations, and deliver upgrade-safe, enterprise-ready enhancements for your DXP ecosystem.",
 };
