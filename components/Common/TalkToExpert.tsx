@@ -3,8 +3,8 @@ import ScheduleMeetingButton from "components/Button/ScheduleMeetingButton"
 import TalkToExpertCard from "./TalkToExpertCard"
 
 const TalkToExpert = ({
-  heading = "Maximize Your Business with Expert Liferay Consulting Services",
-  description = "Get personalized guidance to optimize, customize, and enhance your Liferay platform efficiently.",
+  heading = "Ready to Hire Certified Liferay Developers?",
+  description = "Connect with our team to discuss your requirements and get expert guidance on your Liferay project.",
   buttonText = "Build Your Liferay Portal",
 }) => {
   return (

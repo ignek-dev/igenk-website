@@ -3,14 +3,14 @@ import PortfolioList from "components/PortfolioList/PortfolioList"
 import { liferaySuccessStoriesSection } from "data/case-study"
 
 const metadata: Metadata = {
-  title: "IGNEK Portfolios : Liferay, ReactJS, Healthcare &amp; More",
+  title: "Liferay Case Studies | Enterprise Success Stories",
   description:
-    "Discover IGNEK’s portfolios featuring Liferay, ReactJS, Healthcare, and more. Explore our successful projects and innovative solutions.",
+    "Explore Liferay case studies showcasing enterprise-grade DXP implementations, customer success stories, and proven outcomes delivered through our Liferay-first approach.",
 
   openGraph: {
     url: "https://www.ignek.com/case-study/",
-    title: "IGNEK Portfolios : Liferay, ReactJS, Healthcare &amp; More",
-    description: "Discover IGNEK’s portfolios featuring Liferay, ReactJS, Healthcare, and more. Explore our successful projects and innovative solutions.",
+    title: "Liferay Case Studies | Enterprise Success Stories",
+    description: "Explore Liferay case studies showcasing enterprise-grade DXP implementations, customer success stories, and proven outcomes delivered through our Liferay-first approach.",
     images: [
       {
         width: 1200,

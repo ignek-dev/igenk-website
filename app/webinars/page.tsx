@@ -1,11 +1,31 @@
 "use client";
-
+import { Metadata } from "next"
 import Image from "next/image";
 import Link from "next/link";
 
 // --- Interfaces ---
 
 import { featuredWebinar, liferayWebinarsPage, upcomingWebinars, webinarSection } from "../../data/Webinar";
+
+const metadata: Metadata = {
+  title: "Liferay Webinars | Expert-Led DXP Training Sessions",
+  description:
+    "Explore expert-led Liferay DXP webinars featuring technical training, best practices, and on-demand sessions to help you build scalable digital experiences.",
+
+  openGraph: {
+    url: "https://www.ignek.com/webinars/",
+    title: "Liferay Webinars | Expert-Led DXP Training Sessions",
+    description:
+      "Explore expert-led Liferay DXP webinars featuring technical training, best practices, and on-demand sessions to help you build scalable digital experiences.",
+    images: [
+      {
+        width: 1200,
+        height: 630,
+        url: "/og-image.png",
+      },
+    ],
+  },
+}
 
 export default function Webinar() {
   
