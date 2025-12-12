@@ -278,7 +278,7 @@ export default function Scene() {
         justifyContent: "flex-start",
         background: "black",
         width: "100%",
-        maxHeight: "800px",
+        maxHeight: "900px",
       }}
     >
         <Canvas style={{ width: "100%", height: "500px" }} camera={{ position: [0, 0, camZ], fov:30 }}>
