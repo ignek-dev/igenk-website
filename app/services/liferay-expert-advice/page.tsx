@@ -157,7 +157,7 @@ export default function LiferayExpertAdvicePage() {
                     cardRefs.current[index] = el
                   }}
                   data-index={index}
-                  style={{ top: `calc(10vw + ${index * 6}vw)` }}
+                  style={{ top: `calc(10vw + ${index * 6.5}vw)` }}
                   className={`sticky mb-10 bg-black transition-all duration-500`}
                 >
                   {index !== 0 ? (
