@@ -1,35 +1,35 @@
 export const featureTabs = [
-  "Data-driven Optimization",
-  "Empower Digital Builders",
-  "Seamless B2B Buying",
-  "Low/no-code Empowerment",
+  "Liferay-First Upgrade Strategy",
+  "Stability, Security & Performance Focus",
+  "Minimal Customisation, Maximum Value",
+  "Enterprise-Ready Modernisation",
 ]
 
 export const supprotAndMaintanceServices = [
   {
-    text: "Enhanced Functionality",
+    text: "Liferay’s Current & Future Roadmap",
     description:
-      "Liferay DXP 7.4 Upgrade introduces advanced features that streamline business processes, improve user experiences, and foster better collaboration across teams. These enhancements enable organizations to create more engaging and personalized digital experiences. ",
+      "By upgrading, organisations align their implementation with supported APIs, modern development patterns, and Liferay’s active innovation roadmap—reducing long-term risk and avoiding dead-end customisations.",
   },
   {
-    text: "Optimized Performance ",
+    text: "Reduced Operational Complexity",
     description:
-      "With the latest upgrade, expect improved load times and system responsiveness. Liferay DXP 7.4 Upgrade is designed to handle higher traffic volumes efficiently, ensuring that users enjoy a smooth and fast experience on your platforms.",
+      "A well-executed 7.4 upgrade simplifies the platform by replacing legacy patterns with out-of-the-box capabilities, resulting in cleaner architecture and more predictable operations.",
   },
   {
-    text: "Stronger Security",
+    text: "Improved Delivery Velocity",
     description:
-      "Security is a top priority, and Liferay DXP 7.4 Upgrade delivers robust security enhancements to protect your digital assets. This includes improved authentication mechanisms, better data encryption, and compliance with the latest security standards, helping organizations mitigate risks effectively.",
+      "Liferay DXP 7.4 enables teams to build and evolve experiences faster through low-code tooling, improved content management, and clearer separation of concerns. This allows digital teams to respond to business needs without heavy development cycles.",
   },
   {
-    text: "Support for New Features",
+    text: "Enterprise-Grade Security & Governance",
     description:
-      "The Liferay DXP 7.4 Upgrade provides provides access to the latest tools and innovations. This allows businesses to integrate new functionalities that enhance operational efficiency, such as improved content management capabilities and advanced analytics.",
+      "Running on a modern Liferay baseline ensures access to current security updates, improved authentication models, and governance capabilities expected in enterprise environments—supporting compliance, data protection, and platform resilience.",
   },
   {
-    text: "Seamless Integration",
+    text: "Foundation for Experience Growth",
     description:
-      "Liferay DXP 7.4 Upgrade offers better integration capabilities with other systems and applications, ensuring that organizations can create a cohesive digital ecosystem. This helps streamline workflows and facilitates data sharing across platforms.",
+      "Rather than extending legacy implementations, upgrading to 7.4 provides a stable foundation on which enterprises can incrementally introduce personalization, headless delivery, workflow automation, and experience optimisation—without repeated rework.",
   },
 ]
 
@@ -40,8 +40,9 @@ export const upgradePhases = [
       {
         title: "Assessment Of Current Environment",
         points: [
-          "Analyze the existing application architecture, identifying customizations and integrations.",
-          "Evaluate the performance and security aspects of the current system.",
+          "Analyse existing architecture, customisations, and integrations",
+          "Assess performance, stability, and security",
+          "Identify technical risks and remediation paths",
         ],
       },
       {
@@ -56,8 +57,9 @@ export const upgradePhases = [
       {
         title: "Compatibility Check",
         points: [
-          "Verify that the current database version is compatible with Liferay DXP 7.4.",
-          "Review custom modules and themes for compatibility issues.",
+          "Database compatibility",
+          "Custom module and theme validation",
+          "Deprecated API and OSGi dependency checks",
         ],
       },
     ],
@@ -68,12 +70,12 @@ export const upgradePhases = [
       {
         title: "Setting Up The Environment",
         points: [
-          "Prepare the new server environment for Liferay DXP 7.4 installation.",
-          "Install necessary software dependencies (Java, application server, database).",
+          "Prepare target infrastructure for Liferay DXP 7.4",
+          "Install required dependencies (Java, server, DB)",
         ],
       },
       {
-        title: "Database Upgrade Steps",
+        title: "Database Upgrade",
         points: [
           "Stop the Liferay server to ensure data integrity.",
           "Create a new schema for the upgraded version and import existing data.",
@@ -81,7 +83,7 @@ export const upgradePhases = [
         ],
       },
       {
-        title: "Upgrading Extensions And Custom Modules",
+        title: "Extension & Custom Module Upgrade",
         points: [
           "Upgrade Extensions and Custom Modules.",
           "Modify code based on API changes and dependencies.",
@@ -135,61 +137,61 @@ export const upgradePhases = [
 
 export const features = [
   {
-    title: "Advanced Personalization",
-    desc: "Create custom experiences for different user segments using enhanced personalization tools.",
+    title: "Experience Personalisation",
+    desc: "Deliver contextual, role-based experiences with simplified governance and consistent delivery across touchpoints.",
   },
   {
-    title: "Low-Code Experience Creation",
-    desc: "Use low-code capabilities to design and customize digital experiences without extensive coding knowledge.",
+    title: "Low-Code Agility",
+    desc: "Adapt, extend, and configure faster using object-based, low-code tools—reducing dependency on heavy development cycles.",
   },
   {
-    title: "Improved Workflow Automation",
-    desc: "Automate content approvals, publishing processes, and task management more efficiently.",
+    title: "Workflow & Governance",
+    desc: "Automate content and business processes with greater control, clarity, and operational consistency.",
   },
   {
-    title: "Headless CMS Flexibility",
-    desc: "Utilize headless CMS features to deliver content across various channels and devices.",
+    title: "Headless & Multi-Channel Ready",
+    desc: "Reuse content and services across web, mobile, and external channels through API-driven delivery.",
   },
   {
-    title: "Integrated SEO & Accessibility Audits",
-    desc: "We monitor performance, availability, user experience, security, backup, and updates.",
+    title: "Operational Insight",
+    desc: "Gain better visibility into platform performance and usage to support proactive optimisation.",
   },
   {
-    title: "DocuSign Integration",
-    desc: "Simplify document management through DocuSign integration for sending, tracking, & managing contracts.",
+    title: "Simplified Integrations",
+    desc: "Connect external systems through a stable, flexible integration layer without added complexity.",
   },
 ]
 
 export const dxpUpgradeServices = [
   {
-    text: "Liferay <br/> Expertise",
+    text: "Pure Liferay <br/>Focus",
     description:
-      "Our team of certified professionals has extensive experience in Liferay implementations and upgrades, ensuring a seamless transition to DXP 7.4 with minimal disruptions.",
+      "IGNEK is a Liferay boutique company. Our engineers work exclusively with Liferay—deeply understanding its architecture, release patterns, and best-practice evolution.",
   },
   {
-    text: "Customized <br/> Upgrade Strategies ",
+    text: "Best-Practice, <br/>OOTB-First Approach",
     description:
-      "We develop tailored upgrade strategies based on a thorough assessment of your current environment, aligning the upgrade with your specific business objectives.",
+      "We prioritise Liferay’s out-of-the-box capabilities and recommended patterns—minimising unnecessary customisation while improving maintainability, performance, and future upgrade readiness.",
   },
   {
-    text: "Comprehensive <br/> Upgrade Process",
+    text: "Risk-Controlled <br/>Delivery",
     description:
-      "Our structured upgrade process covers all phases, including pre-upgrade assessment, database migrations, custom module updates, and post-upgrade testing, ensuring no detail is overlooked.",
+      "Our upgrade methodology is designed to reduce risk at every stage—through detailed assessments, controlled execution, and validation-led promotion. This ensures platform continuity while enabling modernisation.",
   },
   {
-    text: "Enhanced </br> Security",
+    text: "Enterprise-Grade <br/>Security & Stability",
     description:
-      "We implement the latest security features of Liferay DXP 7.4 to protect your digital assets, ensuring compliance and safeguarding sensitive information throughout the upgrade.",
+      "We align every upgrade with Liferay’s latest security standards, authentication models, and platform hardening practices—strengthening resilience across the digital ecosystem.",
   },
   {
-    text: "Seamless </br>Integration",
+    text: "Integration <br/>Continuity",
     description:
-      "Our focus on maximizing the capabilities of Liferay DXP 7.4 includes ensuring seamless integration with existing systems, enhancing functionality, and creating a cohesive digital ecosystem.",
+      "We ensure existing enterprise systems, identity providers, content repositories, and business tools continue to work cohesively—without disrupting operational workflows.",
   },
   {
-    text: "Ongoing Support </br/> and Training",
+    text: "Enablement <br/>Beyond Go-Live",
     description:
-      "We provide comprehensive training for your team post-upgrade and offer ongoing support to address any issues or questions, ensuring your organization fully leverages the new features.",
+      "Upgrading is only valuable if teams can fully leverage the platform. We provide structured knowledge transfer, documentation, and post-upgrade guidance—so your organisation can confidently evolve on Liferay 7.4.",
   },
 ]
 
@@ -272,50 +274,49 @@ export const dynamicSteps = [
 export const liferayDxUpgradeHero = {
   badge: "Liferay Services",
   headingLine1: "Liferay",
-  headingLine2: "DXP 7.4 Upgrade",
+  headingLine2: "DXP 7.4 Upgrade Services",
   description:
-    "Liferay DXP 7.4 introduces advanced features, enhanced performance, and stronger security for a more powerful digital experience.",
+    "We help enterprises move to Liferay DXP 7.4 using a structured, best-practice upgrade approach that prioritises platform stability, out-of-the-box capabilities, and long-term maintainability—while minimising risk, downtime, and unnecessary customisation.",
   subSection: {
-    title: "Liferay DXP 7.4 Upgrade",
+    title: "Why Upgrade to Liferay DXP 7.4?",
     description:
-      "Learn how the 7.4 upgrade transforms your digital platform, making it faster, smarter, and more secure.",
+      "Liferay DXP 7.4 represents a fundamental shift in how enterprises build, manage, and evolve digital experiences on the Liferay platform. It is designed to reduce operational complexity, improve platform stability, and enable teams to deliver experiences faster—while staying aligned with Liferay’s long-term product direction and best practices.",
   },
 };
 
 export const liferayDxUpgradeBenefits = {
-  titleLine1: "Key Benefits of Liferay",
-  titleLine2: "DXP 7.4 Upgrade",
+  titleLine1: "What Enterprises Gain by ",
+  titleLine2: "Upgrading to Liferay DXP 7.4",
   description:
-    "Liferay DXP 7.4 Upgrade is essential for organizations aiming to enhance their digital experience capabilities and stay competitive in today’s fast-paced environment. Here are several compelling reasons to consider the upgrade.",
+    "For organisations running older versions, upgrading to 7.4 is less about accessing new features and more about establishing a stable, future-ready foundation that supports clean delivery, predictable operations, and continuous evolution of digital experiences.",
 };
 
 export const liferayDxUpgradeProcess = {
-  title: "Liferay DXP 7.4 Upgrade Process",
+  title: "Our Liferay DXP 7.4 Upgrade Approach",
   description:
-    "Our Liferay DXP 7.4 upgrade process ensures smooth migration, improved ",
+    "At IGNEK, Liferay upgrades are platform re-alignments that strengthen architecture, ",
   description2:
-    "performance, enhanced security, and feature-rich functionality with minimal downtime.",
+    "reduce maintenance, and future-proof your DXP 7.4 platform.",
 };
 
 export const enhanceDigitalExperience = {
-  titlePart1: "Enhance Digital Experiences with",
-  titlePart2: "the Liferay DXP 7.4 Upgrade",
+  titlePart1: "POST-UPGRADE CAPABILITIES &",
+  titlePart2: "EXPERIENCE ENABLEMENT",
 
   descriptionPart1:
-    "Our dedicated Liferay team offers ongoing Liferay Support",
+    "Upgrading to Liferay DXP 7.4 establishes a modern, stable foundation ",
   descriptionPart2:
-    "and Maintenance to address the challenges of a dynamic",
+    "that allows enterprises to evolve digital experiences with greater speed, control, and confidence.",
 };
 
 export const whyChooseIgnek = {
-  titlePart1: "Why Choose IGNEK For Liferay DXP 7.4 Upgrade Services?",
+  titlePart1: "Why Enterprises Choose IGNEK for Liferay DXP 7.4 Upgrades",
 
   descriptionPart1:
-    "Liferay DXP 7.4 Upgrade is a pivotal step for organizations looking to enhance their digital experience. At IGNEK, we specialize in",
+    "Upgrading Liferay is not a version change—it is a platform decision that impacts stability, scalability, and long-term digital maturity. Enterprises partner with IGNEK because we approach upgrades with the same discipline, precision, and strategic intent as a full-scale Liferay implementation.",
 };
 
 export const talkToExpertUpgrade = {
-  headingPart1: "Future-Proof Your Portal with Liferay 7.4 Upgrade",
-  descriptionPart1: "Upgrade to 7.4 for stronger security, scalability, and smarter digital experiences.",
-  button:"Upgrade Your Liferay",
+  headingPart1: "Assess Your Liferay Upgrade Readiness",
+  descriptionPart1: "Get expert guidance from Liferay specialists who focus exclusively on delivering clean, best-practice Liferay upgrades with long-term value in mind.",
 };

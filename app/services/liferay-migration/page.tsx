@@ -18,15 +18,15 @@ import {
 } from "data/liferay-migration"
 
 const metadata: Metadata = {
-  title: "Liferay Migration Services - IGNEK",
+  title: "Liferay DXP Migration Services | Enterprise Portal Experts",
   description:
-    "Move smoothly with Liferay Migration Services! Upgrade your digital platform hassle-free with our expert guidance. Elevate your business today!",
+    "Migrate to Liferay DXP with confidence. IGNEK delivers secure, best-practice Liferay migrations with minimal downtime and long-term platform stability.",
 
   openGraph: {
     url: "https://www.ignek.com/services/liferay-migration/",
-    title: "Liferay Migration Services - IGNEK",
+    title: "Liferay DXP Migration Services | Enterprise Portal Experts",
     description:
-      "Move smoothly with Liferay Migration Services! Upgrade your digital platform hassle-free with our expert guidance. Elevate your business today!",
+      "Migrate to Liferay DXP with confidence. IGNEK delivers secure, best-practice Liferay migrations with minimal downtime and long-term platform stability.",
     images: [
       {
         width: 1200,
@@ -151,7 +151,7 @@ export default function LiferayMigrationPage() {
         <div className="global-container mx-auto w-full py-[3.333vw]">
           <div className="flex flex-row gap-[8.417vw] items-start gap-10 lg:grid-cols-[0.9fr_1.1fr]">
             <div className="sticky top-[10.417vw] flex w-[72.698vw] flex-col gap-[1.458vw]">
-              <h2 className="leading-[60px] font-semibold">Our Liferay Migration Process</h2>
+              <h2 className="leading-[60px] font-semibold">{liferayMigrationProcess.title}</h2>
               <p className="p18 text-gray-100">
                 {liferayMigrationProcess.description}
               </p>

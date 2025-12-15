@@ -20,6 +20,7 @@ import {
   industriesWeServeSection,
   LiferayConsultationData,
   LiferayConsultationSubContent,
+  liferayconsultationTalk,
   LiferayConsultationTitle1,
   LiferayConsultationTitle2,
   liferayConsultingData,
@@ -35,15 +36,15 @@ import {
 import { useInView } from "hooks/useInView"
 
 const metadata: Metadata = {
-  title: "Liferay Consulting Company - IGNEK",
+  title: "Liferay Consulting & Implementation Services | IGNEK",
   description:
-    "Get expert guidance and seamless integration with our Liferay Consulting & Implementation Services. Elevate your digital platform effortlessly.",
+    "IGNEK delivers strategic Liferay consulting, implementation, integration, migration, and support services to help enterprises build scalable digital experiences.",
 
   openGraph: {
     url: "https://ignek.com/services/liferay-consulting-and-implementation-services",
-    title: "Liferay Consulting Company - IGNEK",
+    title: "Liferay Consulting & Implementation Services | IGNEK",
     description:
-      "Get expert guidance and seamless integration with our Liferay Consulting & Implementation Services. Elevate your digital platform effortlessly.",
+      "IGNEK delivers strategic Liferay consulting, implementation, integration, migration, and support services to help enterprises build scalable digital experiences.",
     images: [
       {
         width: 1200,
@@ -566,7 +567,10 @@ export default function LiferayConsultationPage() {
         titleText2={LiferayConsultationTitle2}
         subContext={LiferayConsultationSubContent}
       />
-      <TalkToExpert />
+      <TalkToExpert
+        heading={liferayconsultationTalk.heading}
+        description={liferayconsultationTalk.description}
+      />
       <BlogSection />
     </main>
   )
