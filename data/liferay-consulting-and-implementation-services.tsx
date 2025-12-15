@@ -1,5 +1,5 @@
 export const expertiseStats = [
-  "Scalable Solution Architecture",
+  "Scalable Liferay Solution Architecture",
   "Customized Liferay Solutions",
   "User-Centric Consulting Approach",
   "Strategic Deployment Guidance",
@@ -8,64 +8,46 @@ export const expertiseStats = [
 
 export const liferayProjectFeatures = [
   {
-    title: "Highly Customizable",
+    title: "Highly Extensible Platform",
     description:
-      "Liferay customization options encompass creating custom modules, Client extension, widget templates, model listeners, service wrappers, JSP overrides, global translation overrides, OSGI service modifications, portlet filters, and many more.",
+      "Liferay provides a rich set of out-of-the-box features that reduce the need for heavy customisation, while still allowing extensibility through recommended patterns such as client extensions and modular architecture.",
     icon: "/images/liferay-pages-image/liferay-consultation-page/Highly-Customizable.svg",
   },
   {
-    title: "User-Friendly Interface",
+    title: "Enterprise-Grade Scalability",
     description:
-      "Liferay’s user-friendly design shines through its intuitive interface and easy navigation, making it accessible to all users. Its adaptability and robust features enable organizations to effortlessly create personalized, engaging web experiences, strengthening connections with their audiences.",
+      "Designed to support growing organisations, Liferay DXP scales efficiently across users, sites, and applications—without compromising performance or stability.",
     icon: "/images/liferay-pages-image/liferay-consultation-page/User-Friendly.svg",
   },
   {
-    title: "Highly Scalable",
+    title: "Unified Digital Experience Platform",
     description:
-      "Liferay handles growing demands effortlessly, adapting to both startups and large enterprises. It keeps your web platform efficient and responsive as your needs expand, making it a reliable choice for any business.",
+      "Liferay enables enterprises to manage portals, intranets, customer platforms, and partner experiences from a single, unified platform.",
     icon: "/images/liferay-pages-image/liferay-consultation-page/Highly-Scalable.svg",
   },
   {
-    title: "One portal for all solutions",
+    title: "Seamless Enterprise Integrations",
     description:
-      "Liferay is the ultimate single portal solution, combining various functionalities and services. It streamlines content management and collaboration, making it the go-to platform for integrated solutions that enhance efficiency and productivity.",
+      "With strong API and integration capabilities, Liferay connects easily with enterprise systems such as IAM, CRM, ERP, and third-party services.",
     icon: "/images/liferay-pages-image/liferay-consultation-page/One-portal.svg",
   },
   {
-    title: "Integration",
+    title: "Built-In Collaboration & Workflow",
     description:
-      "Liferay excels in integrations with Google Sign-In, Google Drive, Facebook Sign-In, DocuSign, LDAP, SMTP, Amazon S3, and Google Analytics, and also supports custom integrations. This versatility helps organizations seamlessly add essential functionalities, ensuring a smooth and feature-rich user experience while connecting diverse systems.",
+      "Content management, collaboration tools, and workflow automation are native to the platform—supporting governance, efficiency, and operational control.",
     icon: "/images/liferay-pages-image/liferay-consultation-page/Integration.svg",
   },
   {
-    title: "Collaboration tools",
+    title: "Security & Compliance",
     description:
-      "Liferay is a powerful teamwork tool with features for managing web content, blogs, message boards, chat, and document sharing. These tools enhance collaboration, communication, and productivity, helping teams work together more effectively and creatively.",
+      "Liferay aligns with enterprise security standards and best practices, supporting secure authentication, role-based access, and compliance requirements.",
     icon: "/images/liferay-pages-image/liferay-consultation-page/Collaboration-tools.svg",
   },
   {
-    title: "Security",
+    title: "Personalisation & Analytics",
     description:
-      "Liferay prioritizes security, aligning with industry standards like OWASP Top 10 and CWE/SANS Top 25, to ensure robust protection against web application vulnerabilities and common software weaknesses.",
+      "Through native personalisation and analytics capabilities, enterprises can continuously optimise experiences based on user behaviour and insights.",
     icon: "/images/liferay-pages-image/liferay-consultation-page/Security.svg",
-  },
-  {
-    title: "Wide range of OOTB Features",
-    description:
-      "Liferay’s rich array of features covers content management, collaboration tools, user authentication, and more, providing organizations with a complete digital experience platform to effectively engage, oversee, and enhance their interactions with audiences.",
-    icon: "/images/liferay-pages-image/liferay-consultation-page/Wide-range.svg",
-  },
-  {
-    title: "Personalization",
-    description:
-      "Liferay’s personalization capability enables tailored digital experiences by presenting users with content, services, and interfaces that align with their individual preferences, ensuring heightened engagement and satisfaction.",
-    icon: "/images/liferay-pages-image/liferay-consultation-page/Personalization.svg",
-  },
-  {
-    title: "Analytics",
-    description:
-      "Liferay’s Analytics Cloud provides Site, Page, Content, Form Analytics, Audience Segmentation, and A/B Testing. It delivers insights to optimize content and enhance user experiences, supporting data-driven decisions to refine digital strategies and engage audiences.",
-    icon: "/images/liferay-pages-image/liferay-consultation-page/Analytics.svg",
   },
 ]
 
@@ -73,47 +55,47 @@ export const consultingServices = [
   {
     number: "01",
     title: "Liferay Development & Customization",
-    desc: "We help businesses turn ideas into reality with tailored Liferay Consulting and development services. Our team builds digital solutions that perfectly fit your goals — from portal design to complex integrations. With years of Liferay Implementation experience, we craft platforms that are scalable, secure, and future-ready, backed by our end-to-end Liferay professional services.",
+    desc: "We design and implement enterprise-grade digital platforms on Liferay DXP, aligned with business objectives and platform best practices. Our implementations prioritise clean architecture, scalability, security, and maintainability, ensuring your platform remains adaptable as enterprise needs evolve.",
   },
   {
     number: "02",
     title: "Liferay Upgradation",
-    desc: "Stay ahead with seamless Liferay DXP upgrades handled by our experienced Liferay Consulting Company. We make version transitions smooth, minimize downtime, and ensure every feature works as it should. Our team combines Liferay Consulting and Liferay Implementation expertise to enhance performance, stability, and user experience — so your platform grows with your business.",
+    desc: "We manage structured Liferay DXP upgrades with minimal disruption and clear risk mitigation. Our upgrade approach ensures version compatibility, performance stability, and long-term platform support—while modernising architecture to align with current Liferay standards.",
   },
   {
     number: "03",
     title: "Liferay Proof of Concept",
-    desc: "Before investing in a full solution, test your idea with our Liferay Proof of Concept service. Our experts in Liferay Consulting and Liferay DXP Consulting help you evaluate the platform’s potential, validate features, and explore possibilities. It’s a smart, low-risk way to see how Liferay Implementation can bring your digital vision to life.",
+    desc: "Our Liferay PoC services help enterprises validate platform suitability, architecture decisions, and functional feasibility before full-scale implementation. This reduces delivery risk and provides early clarity on scope, approach, and expected outcomes.",
   },
   {
     number: "04",
     title: "Liferay Architecture Design",
-    desc: "A strong foundation leads to long-term success. Our architects specialize in Liferay Consulting and Liferay DXP Consulting to design scalable, secure, and flexible architectures. Whether you’re planning a new Liferay Implementation or optimizing an existing one, we ensure your system is built to handle future growth and evolving business needs.",
+    desc: "We design enterprise-ready Liferay architectures focused on scalability, security, governance, and extensibility. Whether starting fresh or refining an existing platform, our architecture designs follow OOTB-first principles and Liferay-recommended patterns.",
   },
   {
     number: "05",
     title: "Liferay Migration",
-    desc: "Moving to Liferay DXP doesn’t have to be complicated. Our Liferay Consulting Company handles every step — from strategy and data migration to configuration and testing. With our proven Liferay Consulting and Liferay Implementation expertise, we ensure your transition is seamless, preserving your content, structure, and performance along the way.",
+    desc: "We handle end-to-end migrations to Liferay DXP, covering strategy, data, content, integrations, and validation. Our structured migration approach ensures continuity, performance, and platform integrity throughout the transition.",
   },
   {
     number: "06",
     title: "Liferay Performance Tuning",
-    desc: "If your portal feels slow or unstable, our Liferay Consulting experts can help. We conduct in-depth performance audits, identify bottlenecks, and fine-tune your setup for maximum speed and reliability. Through our specialized Liferay DXP Consulting and Liferay Implementation practices, we help you deliver a faster, smoother digital experience for your users.",
+    desc: "We conduct deep technical audits to identify bottlenecks and performance risks across Liferay environments. Our optimisation services improve response times, stability, and scalability—ensuring consistent enterprise-grade performance.",
   },
   {
     number: "07",
     title: "Liferay Support & Maintenance",
-    desc: "Your digital platform deserves ongoing care. Our Liferay Consulting Company provides reliable support and maintenance services to keep your portal running smoothly. From issue resolution and version updates to continuous optimization, we combine Liferay Consulting and Liferay professional services to ensure stability, security, and peace of mind.",
+    desc: "We provide proactive Liferay support and maintenance services to keep platforms secure, stable, and optimised. Our support model focuses on continuous improvement, preventive monitoring, and long-term platform health.",
   },
   {
     number: "08",
     title: "Liferay Ecommerce Development",
-    desc: "Bring your online business to life with Liferay for Web Development tailored for eCommerce. Our Liferay Consulting team builds feature-rich, secure, and scalable eCommerce portals that drive conversions. With deep expertise in Liferay Implementation and Liferay DXP Consulting, we create digital stores that combine seamless functionality with outstanding user experience.",
+    desc: "We implement Liferay Commerce solutions that integrate seamlessly with enterprise systems. Our approach enables scalable, secure, and personalised commerce experiences aligned with business processes and customer expectations.",
   },
   {
     number: "09",
     title: "Liferay Expert Advice",
-    desc: "Sometimes, you just need the right guidance. Our Liferay Consulting experts provide honest, strategic advice to help you make smart platform decisions. Whether it’s improving an existing solution or planning a new Liferay Implementation, our experienced consultants — backed by one of the most trusted Liferay Consulting Companies — ensure you’re moving in the right direction.",
+    desc: "Our consulting advisors provide independent, strategic guidance across architecture, upgrades, optimisation, and roadmap planning. We help enterprises make informed Liferay decisions that align technology investments with long-term digital strategy.",
   },
 ]
 
@@ -122,7 +104,7 @@ export const liferaySolutions = [
     id: "Liferay DXP", // Use title as unique ID
     title: "Liferay DXP",
     description:
-      "We help you get the most out of Liferay DXP with tailored solutions that enhance performance, scalability, and user experience.",
+      "We design and implement enterprise portals, intranets, and digital experience platforms on Liferay DXP—leveraging out-of-the-box capabilities to deliver scalable, secure, and maintainable solutions.",
     iconActive: "/images/liferay-pages-image/liferay-consultation-page/Liferay-dxp.png",
     iconInactive: "/images/liferay-pages-image/liferay-consultation-page/liferay-blue.png",
   },
@@ -130,7 +112,7 @@ export const liferaySolutions = [
     id: "Liferay Commerce",
     title: "Liferay Commerce",
     description:
-      "Build powerful, customizable online stores with seamless integrations and a smooth shopping experience using Liferay Commerce.", // Add description for all cards
+      "We implement Liferay Commerce as an integrated part of the digital experience connecting product management, pricing, ordering, and customer journeys within a unified Liferay platform.", // Add description for all cards
     iconActive: "/images/liferay-pages-image/liferay-consultation-page/commerce-white.png",
       iconInactive: "/images/liferay-pages-image/liferay-consultation-page/Liferay-commerce.png",
   },
@@ -138,7 +120,7 @@ export const liferaySolutions = [
     id: "Analytics Cloud",
     title: "Analytics Cloud",
     description:
-      "Gain real-time insights into user behavior and engagement with Liferay Analytics Cloud to make smarter business decisions.", // Add description for all cards
+      "We help enterprises leverage Liferay Analytics Cloud to gain actionable insight into user behaviour, content performance, and engagement—supporting data-driven optimisation across the Liferay ecosystem.", // Add description for all cards
     iconActive: "/images/liferay-pages-image/liferay-consultation-page/cloud-white.png",
       iconInactive: "/images/liferay-pages-image/liferay-consultation-page/Analytics-cloud.png",
   },
@@ -146,7 +128,7 @@ export const liferaySolutions = [
     id: "DXP Cloud",
     title: "DXP Cloud",
     description:
-      "Deploy, scale, and manage your digital solutions effortlessly with Liferay DXP Cloud, ensuring speed, security, and high availability.", // Add description for all cards
+      "We enable cloud-ready Liferay deployments using Liferay DXP Cloud—supporting scalability, security, and operational reliability through modern infrastructure and platform best practices.", // Add description for all cards
     iconActive: "/images/liferay-pages-image/liferay-consultation-page/dxp-white.png",
       iconInactive: "/images/liferay-pages-image/liferay-consultation-page/Dxp-cloud.png",
   },
@@ -244,69 +226,65 @@ export const endToEndServices = [
     number: "01",
     name: "Analysis",
     description:
-      "We understand your goals and analyze existing systems to create a clear, effective Liferay Consulting strategy that aligns with your business vision, ensuring informed decisions and measurable progress.",
+      "We assess business objectives, technical landscape, and platform readiness to define a clear Liferay strategy and implementation roadmap.",
   },
   {
     number: "02",
     name: "Design",
     description:
-      "Our experts design clean, user-friendly Liferay interfaces that enhance user experience, improve engagement, and ensure seamless digital interactions through creative layouts and intuitive navigation.",
+      "We design intuitive user experiences and platform architectures aligned with Liferay’s design philosophy and enterprise standards.",
   },
   {
     number: "03",
     name: "Development",
     description:
-      "We develop powerful, scalable Liferay solutions tailored to your business objectives, driving innovation, efficiency, and long-term digital success with clean code and advanced technical implementation.",
+      "We implement scalable, secure Liferay solutions using clean architecture, OOTB capabilities, and best-practice engineering patterns.",
   },
   {
     number: "04",
     name: "Testing",
     description:
-      "We ensure your Liferay platforms run smoothly, remain secure, and deliver consistent, high-quality performance across multiple devices, browsers, and environments through detailed quality assurance checks.",
+      "We validate performance, security, and reliability across environments to ensure enterprise-grade quality and consistency.",
   },
   {
     number: "05",
     name: "Deployment",
     description:
-      "Our team handles seamless Liferay deployment with zero downtime and full integration into your setup for reliable, enterprise-ready performance supported by automation and real-time monitoring tools.",
+      "We manage structured deployments with automation and governance—ensuring stable, production-ready releases.",
   },
   {
     number: "06",
     name: "Maintenance",
     description:
-      "We provide continuous Liferay support and maintenance to keep your systems updated, stable, optimized, and performing at their best every day with proactive issue detection and regular improvements.",
+      "We continuously optimise platform performance, security, and usability to support evolving enterprise needs.",
   },
 ]
 
-export const LiferayConsultationTitle1 = "Why Choose IGNEK For Liferay"
-export const LiferayConsultationTitle2 = "Development and Customization?"
+export const LiferayConsultationTitle1 = "Why Enterprises Choose IGNEK For Liferay"
+export const LiferayConsultationTitle2 = "Consulting & Implementation Services?"
 export const LiferayConsultationSubContent =
-  "At IGNEK, Our expert engineers use up to date software’s and vast knowledge to craft solutions that match your needs and expectations. Putting clients first is our thing, and we’re proud to support our very first business client till today!"
+  "Enterprises choose IGNEK because we operate as a pure Liferay boutique company—bringing focused platform expertise, disciplined engineering, and a consulting-led mindset to every engagement."
 
 export const LiferayConsultationData = [
   {
-    title: "Proven Liferay Expertise",
-    desc: "With years of hands-on experience in Liferay DXP consulting, implementation, and customization, our certified experts design and deploy solutions that are robust, scalable, and future-ready.",
+    title: "Liferay-Only Focus",
+    desc: "We work exclusively with Liferay. This deep platform specialisation allows us to deliver cleaner architectures, faster implementations, and better long-term outcomes.",
   },
   {
-    title: "Solutions for Every Business",
-    desc: "We don’t believe in one-size-fits-all. Our custom Liferay Consulting Services align with your business objectives — ensuring optimized workflows, faster deployments, and improved ROI.",
+    title: "Liferay-First, OOTB-Driven Approach",
+    desc: "We maximise Liferay’s out-of-the-box capabilities, minimising unnecessary customisation while ensuring maintainability and upgrade readiness.",
   },
   {
-    title: "Strategic Consulting Mindset",
-    desc: "Beyond coding, we think strategically. Our consultants help you align Liferay’s capabilities with your long-term digital goals, ensuring your platform drives measurable business value.",
+    title: "Enterprise-Grade Engineering",
+    desc: "Our solutions are built with strong architectural discipline, performance optimisation, and security best practices aligned with Liferay standards.",
   },
   {
-    title: "Agile & Transparent Delivery",
-    desc: "Our agile Liferay Implementation process ensures flexibility, clear communication, and complete visibility at every stage so you stay informed and in control.",
+    title: "Consulting-Led Delivery",
+    desc: "We don’t just implement—we advise. Our consultants guide platform decisions, architecture choices, and roadmap planning to reduce risk and maximise ROI.",
   },
   {
-    title: "Continuous Optimization & Support",
-    desc: "We go beyond deployment with proactive Liferay Support & Maintenance Services, performance audits, and ongoing enhancements to keep your platform secure and high-performing.",
-  },
-  {
-    title: "Measurable Business Outcomes",
-    desc: "From improved user engagement to reduced operational costs, every Liferay solution we build is focused on delivering tangible, data-driven results that move your business forward.",
+    title: "Proven Delivery Experience",
+    desc: "With years of hands-on Liferay implementation experience, we deliver predictable outcomes across complex enterprise environments.",
   },
 ]
 
@@ -352,61 +330,61 @@ export interface LiferayConsultingCategory {
 }
 
 export const liferayConsultingData: LiferayConsultingCategory[] = [
-  {
+    {
     id: "portal",
     label: "Portal",
     services: [
-      "Intuitive UI development",
-      "Flexible enterprise integrations",
-      "Built-in tools and accelerators",
+      "Simplified UI development",
+      "Flexible enterprise integration framework",
+      "Out-of-the-box tools",
       "Secure single sign-on (SSO)",
-      "Customizable fields and modules",
-      "Rules engine setup",
-      "User groups, organizations, and site management",
-      "Headless API support",
+      "Custom fields",
+      "Rules engine integration",
+      "User groups, organizations, and sites",
       "Service-oriented architecture (SOA)",
-      "User personalization features",
-      "Multi-tenant architecture",
-      "Custom extension and configuration options",
+      "User personalization",
+      "Multi-tenancy support",
+      "Built-in customization features",
       "Role-based content delivery",
-      "One-click configuration setup",
-      "Drag-and-drop UI elements",
-      "Workflow and approval framework",
-      "User-driven workflow automation",
-      "Monitoring & analytics",
-      "Liferay Sync for desktop access",
-      "Search and tagging capabilities",
+      "Single-click configuration",
+      "Dynamic drag-and-drop UI",
+      "Workflow framework",
+      "User-driven workflow & approval",
+      "Auditing & performance monitoring",
+      "Liferay Sync desktop integration",
+      "Search & tagging",
       "Multi-language support",
-      "OpenSocial integrations",
+      "OpenSocial support",
+      "Headless & API-first support",
     ],
   },
   {
-    id: "enterprise-crm",
-    label: "Enterprise CRM",
+    id: "enterprise-cms",
+    label: "Enterprise CMS",
     services: [
-      "Advanced web publishing tools",
-      "Documents & media management",
-      "Multiple repository mounting",
-      "Custom content categories & asset publisher",
+      "Web publishing",
+      "Unified documents & media management",
+      "Multiple content repository mounting",
+      "User-defined content categories & asset publisher",
       "Workspace publishing",
       "Rich text editors",
-      "Content templates & structures",
-      "Template comments & versioning",
+      "Web content structures & templates",
+      "Template and structure comments",
       "Microsoft Office® integration",
       "One-click page creation",
-      "Site creation templates",
-      "Workflow & approval management",
-      "Live editing & scheduling",
-      "Staging & rollout options",
-      "Document conversion & bulk upload",
-      "Drag-and-drop site map",
+      "Quick site creation",
+      "User-driven workflow & approval",
+      "Live page editing & scheduling",
+      "Staging and website planning",
+      "Document conversion & multi-file uploads",
+      "Drag-and-drop site maps",
       "Faceted search",
-      "Multi-tier search indexing",
+      "Multi-tier search",
       "Dynamic tagging",
       "SEO optimization",
-      "Simple third-party integrations",
-      "Vanity URLs & virtual hosting",
-      "Localization support",
+      "Easy third-party integration",
+      "Virtual hosting & vanity URLs",
+      "Multi-language support",
       "Customizable pages",
     ],
   },
@@ -418,44 +396,44 @@ export const liferayConsultingData: LiferayConsultingCategory[] = [
       "Wikis",
       "Message boards",
       "Blogs",
-      "RSS Feeds",
+      "RSS feeds",
       "Activity tracking",
       "Instant messaging",
-      "Email integrations",
+      "Email integration",
       "Shared calendars",
-      "Tags & categories",
       "Announcements & alerts",
       "Dynamic data lists",
       "Polls",
-      "Social equity scoring",
+      "Social equity",
+      "Tags & categories",
     ],
   },
   {
     id: "ecommerce",
     label: "E-Commerce",
     services: [
-      "Custom e-commerce development",
-      "Modern storefront UI",
-      "Product management system",
-      "Flexible promotions & pricing",
+      "End-to-end e-commerce solution",
+      "Intuitive online storefront",
+      "Product management",
+      "Flexible pricing & promotions",
       "Integrated payment gateways",
-      "Custom shopping cart",
+      "Customizable shopping cart",
       "Order management system",
-      "CRM connectivity",
-      "Customer support modules",
-      "Scalable platform architecture",
-      "Theme customization",
-      "Personalized shopping experiences",
-      "Omni-channel selling",
-      "AI-ready product suggestions",
-      "Real-time inventory control",
+      "CRM integration",
+      "Customer support features",
+      "Scalable architecture",
+      "Custom themes & templates",
+      "Personalized shopping experience",
+      "Multi-channel selling",
+      "Dynamic product recommendations",
+      "Real-time inventory management",
       "Secure checkout",
-      "Mobile-first commerce",
+      "Mobile commerce compatibility",
       "Customer reviews & ratings",
       "Analytics & reporting",
       "Responsive design",
-      "Social commerce integrations",
-      "SEO-optimized structure",
+      "Social media integration",
+      "SEO-ready architecture",
     ],
   },
 ]
@@ -465,7 +443,7 @@ export const liferayHeroData = {
   titleLine1: "Liferay Consulting &",
   titleLine2: "Implementation Services",
   description:
-    "Optimize your digital ecosystem through tailored Liferay Consulting for seamless implementation, customization, and dedicated support.",
+    "As a Liferay boutique consulting company, IGNEK helps enterprises design, implement, and optimise Liferay DXP using a Liferay-first, OOTB-driven approach. We focus on clean architecture, best-practice implementation, and long-term platform value—ensuring your Liferay investment remains scalable, maintainable, and future-ready.",
   image: {
     src: "/images/liferay-pages-image/liferay-consultation-page/Liferay-dxp.png",
     alt: "Liferay DXP",
@@ -489,7 +467,7 @@ export const liferayDigitalEdgeData = {
   ],
   heading: "Powering Your Digital Growth with Liferay Expertise",
   description:
-    "Simplifying complexity and driving transformation with expert Liferay Consulting services.",
+    "Our Liferay consulting engagements are focused on outcomes—not just delivery.",
   images: {
     glow: {
       src: "/images/liferay-pages-image/rgb-radiant.png",
@@ -506,7 +484,7 @@ export const liferayConsultingServicesSection = {
   heading: "Our Liferay",
   headingSpan: "Consulting Services",
   description:
-    "Our Liferay Consulting Services help you maximize the potential of the Liferay platform. From development to support, we’re here to ensure you create top-notch digital experiences for your users.",
+    "We provide a comprehensive range of Liferay consulting and implementation services designed to help enterprises build, modernise, and optimise digital platforms on Liferay DXP.",
   button: {
     name: "Schedule Meeting",
     isFullWidth: false,
@@ -514,35 +492,35 @@ export const liferayConsultingServicesSection = {
 }
 
 export const liferaySolutionsSection = {
-  title: "We Provide Top-Notch",
-  titleSpan: "Liferay Solutions",
+  title: "Liferay Ecosystem ",
+  titleSpan: "Expertise",
   descriptions:
-    "We deliver top-quality Liferay Consulting Services. From setup to support, we’ve got you covered for all your digital needs.",
+    "We work across the full Liferay ecosystem, enabling enterprises to design, implement, and scale digital experiences using Liferay’s enterprise-grade platforms.",
 }
 
 export const liferayWhyChooseSection = {
-  sectionTitle: "Why Liferay Can Be Best Choice For Your Project ?",
+  sectionTitle: "Why Liferay DXP Is the Right Platform for Enterprises",
   sectionDescription:
-    "Explore our expertise in Liferay! We’re experienced and ready to help with everything, from building user-friendly interfaces to managing backend systems. Whether you need a custom portal, smooth integration, or ongoing support, we’ve got you covered. Partner with us today and make the most of Liferay for your business.",
+    "Liferay DXP is built for enterprises that require scalability, flexibility, security, and governance across complex digital ecosystems. It enables organisations to deliver unified digital experiences while reducing platform complexity through powerful out-of-the-box capabilities and extensible architecture.",
 }
 
 export const industriesWeServeSection = {
-  heading: "Industries We Serve",
+  heading: "Industries We Support with Liferay Consulting",
   description:
-    "We help every industry grow digitally through tailored Liferay Consulting and innovative technology solutions.",
+    "We work with enterprises across industries to design and implement Liferay-powered digital platforms that address sector-specific challenges, regulatory needs, and scalability requirements. ",
 };
 
 export const liferayConsultingServicesHeader = {
-  headingLine1: "Our Liferay",
-  headingLine2: "Consulting Services",
+  headingLine1: "Liferay Capabilities",
+  headingLine2: "We Implement",
   description:
-    "Through expert Liferay Consulting, we design and implement secure, flexible, and user-centric digital platforms for every business need.",
+    "We implement Liferay capabilities in a way that balances out-of-the-box strength, enterprise governance, and future scalability.",
 };
 
 export const endToEndLiferayConsultingSection = {
-  heading: "We Offer end-to-end Liferay Consulting Services",
+  heading: "Liferay Capabilities We Implement",
   description:
-    "Our team helps you at every step of your Liferay journey, including planning, setup, improvements, and ongoing support, making your digital transformation easier, faster, and more effective.",
+    "Our delivery approach is consulting-led and execution-focused, ensuring every Liferay engagement is structured, predictable, and aligned with long-term platform value. We guide enterprises across the full Liferay lifecycle—reducing risk, improving clarity, and ensuring consistent delivery quality.",
 };
 
 export const ceoSectionData = {
@@ -568,9 +546,16 @@ export const ceoSectionData = {
 
 export const engagementModelsData = {
   title: {
-    line1: "Our Liferay Consulting",
-    line2: "Services Engagement Models",
+    line1: "Liferay Capabilities ",
+    line2: "We Implement",
   },
   description:
-    "Engage with the Liferay-focused technology partner to get your simple & complex Liferay requirements implemented.",
+    "We offer flexible engagement models designed to align with enterprise delivery needs, budget structures, and project complexity—while maintaining consistent Liferay consulting quality and delivery standards.",
 }
+
+export const liferayconsultationTalk = {
+  heading: "Get Expert Guidance for Your Liferay Initiativet",
+  description:
+    "Whether you are planning a new Liferay implementation, optimising an existing platform, or preparing for an upgrade, our Liferay consultants provide clear guidance, practical recommendations, and enterprise-grade delivery support.",
+  buttonText: "Start Your Migration",
+};
