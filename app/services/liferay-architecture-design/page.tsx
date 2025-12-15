@@ -18,15 +18,15 @@ import {
 } from "data/liferay-architecture-design"
 
 const metadata: Metadata = {
-  title: "Liferay Architecture Design Services - IGNEK",
+  title: "Liferay Architecture Design Services | Enterprise Liferay Experts – IGNEK",
   description:
-    "Let us create an Liferay Architecture Design for your platform. We'll make it work smoothly and perfectly suited to your needs.",
+    "Design scalable, secure Liferay architectures with IGNEK. Expert Liferay architecture design services built on best practices for long-term enterprise growth.",
 
   openGraph: {
     url: "https://www.ignek.com/services/liferay-architecture-design/",
-    title: "Liferay Architecture Design Services - IGNEK",
+    title: "Liferay Architecture Design Services | Enterprise Liferay Experts – IGNEK",
     description:
-      "Let us create an Liferay Architecture Design for your platform. We'll make it work smoothly and perfectly suited to your needs.",
+      "Design scalable, secure Liferay architectures with IGNEK. Expert Liferay architecture design services built on best practices for long-term enterprise growth.",
     images: [
       {
         width: 1200,
