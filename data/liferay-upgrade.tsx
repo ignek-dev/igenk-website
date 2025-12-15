@@ -260,7 +260,7 @@ export const caseStudies = [
   },
 ]
 export const dynamicSteps = [
-  { number: 1, title: "Digital Workflows" },
+  { number: 1, title: "Digital Workflows Management" },
   { number: 2, title: "Personalized Experiences" },
   { number: 3, title: "Integration Capabilities" },
   { number: 4, title: "Enhanced Collaboration Tools" },

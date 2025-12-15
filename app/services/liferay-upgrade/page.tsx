@@ -54,8 +54,40 @@ export default function LiferayUpgradePage() {
   const [scrollStart, setScrollStart] = useState(0)
   const [targetScroll, setTargetScroll] = useState<number | null>(null)
 
+  const [stepWidth, setStepWidth] = useState(260) // Default to 260px
+
   const phases = upgradePhases
   const maxRows = Math.max(...phases.map((p) => p.sections.length))
+
+  // Helper function to get the current step width based on breakpoints
+    const calculateStepWidth = () => {
+        const width = window.innerWidth
+        if (width >= 1024) { // Matches lg:w-[260px] or default
+            return 260
+        } else if (width >= 768) { // Matches md:w-[240px]
+            return 240
+        } else if (width >= 640) { // Matches sm:w-[220px]
+            return 220
+        } else { // Default w-[260px]
+            return 260
+        }
+    }
+
+    // NEW EFFECT: Recalculate width on mount and on resize
+    useEffect(() => {
+        const handleResize = () => {
+            setStepWidth(calculateStepWidth())
+        }
+
+        // Set initial width
+        setStepWidth(calculateStepWidth())
+
+        // Add event listener for window resize
+        window.addEventListener("resize", handleResize)
+        
+        // Cleanup event listener
+        return () => window.removeEventListener("resize", handleResize)
+    }, [])
 
   // Custom smooth scroll logic (2-second easing)
   useEffect(() => {
@@ -151,13 +183,15 @@ export default function LiferayUpgradePage() {
               onMouseLeave={handleMouseLeave}
             >
               {/* INNER SCROLLABLE TRACK */}
-              <div className="relative flex flex-nowrap pr-[320px]">
+              <div className="relative flex flex-nowrap">
                 {/* 👇 THE CONNECTOR LINE — FULL WIDTH, SCROLLS WITH CONTENT */}
                 <div
                   className="pointer-events-none absolute top-[125px] z-0"
-                  style={{ width: dynamicSteps.length * 260 + "px" }}
+                  style={{ width: (dynamicSteps.length - 1) * stepWidth + "px",
+                            // Position the line 50% into the first item's 260px width.
+                            left: stepWidth / 2 + "px", }}
                 >
-                  <div className="mx-6 h-1 bg-gray-200"></div>
+                  <div className="h-1 bg-gray-200"></div>
                 </div>
 
                 {/* 👇 LOOP ITEMS */}
@@ -179,7 +213,7 @@ export default function LiferayUpgradePage() {
                     {/* DOT */}
                     <div
                       className={`p24 relative z-20 flex h-[4.167vw] w-[4.167vw] items-center justify-center rounded-full bg-black font-medium text-white ${
-                        index === 0 ? "mt-[35px]" : index % 2 !== 0 ? "mt-[88px]" : "mt-0"
+                        index === 0 ? "mt-[0px]" : index % 2 !== 0 ? "mt-[88px]" : "mt-0"
                       }`}
                     >
                       {step.number}
