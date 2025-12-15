@@ -570,7 +570,6 @@ export default function LiferayConsultationPage() {
       <TalkToExpert
         heading={liferayconsultationTalk.heading}
         description={liferayconsultationTalk.description}
-        buttonText={liferayconsultationTalk.buttonText}
       />
       <BlogSection />
     </main>

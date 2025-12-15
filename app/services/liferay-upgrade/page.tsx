@@ -420,7 +420,6 @@ export default function LiferayUpgradePage() {
       <TalkToExpert
         heading={talkToExpertUpgrade.headingPart1}
         description={talkToExpertUpgrade.descriptionPart1}
-        buttonText={talkToExpertUpgrade.button}
       />
       <BlogSection />
     </main>
