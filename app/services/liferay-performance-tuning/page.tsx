@@ -25,15 +25,15 @@ import {
 } from "data/liferay-performance-tuning"
 
 const metadata: Metadata = {
-  title: "Liferay Performance Tuning Services - IGNEK",
+  title: "Liferay Performance Tuning Services | Enterprise Liferay Experts - IGNEK",
   description:
-    "Optimize your Liferay site's speed and efficiency with our Liferay Performance Tuning Services. Enhance user experience and drive better results.",
+    "Improve Liferay performance with expert tuning, diagnostics, and optimisation. IGNEK delivers stable, scalable Liferay platforms built for enterprise workloads.",
 
   openGraph: {
     url: "https://www.ignek.com/services/liferay-performance-tuning/",
-    title: "Liferay Performance Tuning Services - IGNEK",
+    title: "Liferay Performance Tuning Services | Enterprise Liferay Experts - IGNEK",
     description:
-      "Optimize your Liferay site's speed and efficiency with our Liferay Performance Tuning Services. Enhance user experience and drive better results.",
+      "Improve Liferay performance with expert tuning, diagnostics, and optimisation. IGNEK delivers stable, scalable Liferay platforms built for enterprise workloads.",
     images: [
       {
         width: 1200,
@@ -114,7 +114,8 @@ useEffect(() => {
             </div>
             <p className="p18 absolute bottom-0 mt-[3.177vw] text-right md:justify-self-end">
               {liferayPerformanceTuning.description} <br />
-              {liferayPerformanceTuning.description2}
+              {liferayPerformanceTuning.description2} <br />
+              {liferayPerformanceTuning.description3}
             </p>
           </div>
 

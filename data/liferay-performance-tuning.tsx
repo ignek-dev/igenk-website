@@ -32,43 +32,42 @@ export const items = [
 ]
 
 export const featureTabs = [
-  "Enhanced User Interaction Speed",
-
-  "Data Load Optimization",
-  "Configuration Fine-Tuning",
-  "Comprehensive Performance Analysis",
-  "Proactive Monitoring and Maintenance",
+  "Performance Diagnostics",
+  "Platform Optimisation",
+  "Scalability & Load Readiness",
+  "Stability & Reliability Engineering",
+  "Continuous Performance Monitoring",
 ]
 
-export const LiferayPerformanceTuningTitle1 = "Why Choose IGNEK For Liferay"
+export const LiferayPerformanceTuningTitle1 = "Why Enterprises Choose IGNEK For Liferay"
 export const LiferayPerformanceTuningTitle2 = "Performance Tuning?"
 export const LiferayPerformanceTuningSubContent =
-  "At IGNEK, Our expert engineers use up to date software’s and vast knowledge to craft solutions that match your needs and expectations. Putting clients first is our thing, and we’re proud to support our very first business client till today!"
+  "At IGNEK, our engineers combine hands-on expertise with modern performance tools to deliver precise, impactful optimization. From our first client to today, we stay committed to building long-term success."
 
 export const LiferayPerformanceTuningData = [
   {
-    title: "Performance Experts",
-    desc: "Our specialists analyze and fine-tune your portal for maximum speed, reliability, and efficiency.",
+    title: "Pure Liferay Performance Expertise",
+    desc: "We specialise exclusively in Liferay. Our tuning approach is grounded in deep platform knowledge, real-world enterprise workloads, and a clear understanding of how Liferay behaves at scale.",
   },
   {
-    title: "Customized Optimization",
-    desc: "We tailor performance strategies to your unique configurations, user load, and business requirements.",
+    title: "Diagnostics Before Optimisation",
+    desc: "We don’t apply generic fixes. Every tuning engagement starts with structured analysis and evidence-based diagnostics to ensure performance improvements are targeted, measurable, and safe.",
   },
   {
-    title: "Proactive Issue Resolution",
-    desc: "We identify bottlenecks and optimize resources before they impact user experience.",
+    title: "Platform-First, OOTB-Aligned Approach",
+    desc: "Optimisation decisions respect Liferay’s architecture and recommended patterns. This ensures performance gains remain stable, upgrade-safe, and maintainable over time.",
   },
   {
-    title: "Scalability-First Approach",
-    desc: "Prepare your portal for growth with optimized caching, clustering, and distributed deployments.",
+    title: "Scalability and Stability Focus",
+    desc: "We tune platforms to perform consistently under growth, peak traffic, and complex integrations—reducing risk and improving operational confidence.",
   },
   {
-    title: "End-to-End Performance Audits",
-    desc: "From code profiling to server tuning, we monitor and optimize continuously for lasting improvements.",
+    title: "End-to-End Performance Visibility",
+    desc: "Our assessments cover the full stack—from JVM and application behaviour to database interaction and infrastructure—eliminating blind spots that cause recurring issues.",
   },
   {
-    title: "Ongoing Support & Monitoring",
-    desc: "We provide continuous guidance, ensuring your portal remains fast, stable, and future-ready.",
+    title: "Continuous Optimisation Mindset",
+    desc: "Performance tuning is not a one-time activity. We support ongoing monitoring, refinement, and advisory services to keep platforms healthy as usage and demands evolve.",
   },
 ]
 
@@ -109,43 +108,43 @@ export const caseStudies = [
 
 export const serviceDate = [
   {
-    title: "Enhanced User Experience",
-    desc: "Delivering a faster, more responsive Liferay Portal through optimized resource allocation for efficient CPU, memory & disk use.",
+    title: "Consistent User Experience",
+    desc: "Improved response times and reduced latency ensure users experience predictable, smooth interactions across the platform—regardless of load or complexity.",
     image: "/images/liferay-pages-image/Enhanced-User-Experience.svg",
   },
   {
-    title: "Scalability",
-    desc: "Prepare your Liferay environment for growth with scalable configurations, clustering, and distributed deploy.",
+    title: "Scalable Platform Behaviour",
+    desc: "We align the platform to handle growth confidently, ensuring Liferay scales without degradation as traffic, content, and integrations increase.",
     image: "/images/liferay-pages-image/Scalability.svg",
   },
   {
-    title: "Load Testing Excellence",
-    desc: "We are very transparent in terms of work, culture & communication to build trust & strong bonding among employees",
+    title: "Production-Ready Load Assurance",
+    desc: "Through controlled load validation, we confirm the platform performs reliably under real-world enterprise usage scenarios before issues surface in production.",
     image: "/images/liferay-pages-image/Load-Testing-Excellence.svg",
   },
   {
-    title: "Database Performance",
-    desc: "Optimize database access with tuned configurations, indexing, and query optimizations for enhanced performance.",
+    title: "Efficient Data Processing",
+    desc: "Optimised data access patterns improve throughput and reduce contention, enabling the platform to support complex content and transactional workloads efficiently.",
     image: "/images/liferay-pages-image/Database-Performance.svg",
   },
   {
-    title: "Tailored Portal Configuration",
-    desc: "Customize Liferay Portal settings to fit your organization’s requirements, ensuring the platform meets your business needs.",
+    title: "Aligned Platform Configuration",
+    desc: "Liferay configuration is tuned to match how the platform is actually used—ensuring resources are allocated appropriately and unnecessary overhead is removed.",
     image: "/images/liferay-pages-image/Tailored-Portal-Configuration.svg",
   },
   {
-    title: "Web and Application Server Optimization",
-    desc: "Fine-tune web and application server settings, including thread pools and connections, to maximize performance.",
+    title: "Optimised Server & Runtime Behaviour",
+    desc: "Application and web server configurations are refined to maximise throughput, improve concurrency handling, and reduce runtime contention.",
     image: "/images/liferay-pages-image/Web-Application-Server.svg",
   },
   {
-    title: "Reliability and Fault Tolerance",
-    desc: "Increase the reliability of your portal with fine-tuned settings for clustering, failover mechanisms, and session replication.",
+    title: "Resilient & Fault-Tolerant Operations",
+    desc: "The platform is structured to recover gracefully from failures, reducing downtime and improving overall system reliability.",
     image: "/images/liferay-pages-image/Reliability-and-Fault.svg",
   },
   {
-    title: "Java Virtual Machine Fine-Tuning",
-    desc: "Optimize JVM settings, including heap size and garbage collection, for improved Java application performance.",
+    title: "Optimised JVM Performance",
+    desc: "Runtime behaviour is stabilised through controlled memory management and garbage collection strategies aligned with enterprise workloads.",
     image: "/images/liferay-pages-image/JVM-Fine-Tuning.svg",
   },
 ]
@@ -155,73 +154,70 @@ export const item = [
     title: "JVM Memory Tuning",
     desc: "Optimize heap memory, adjust GC threads, and tune memory usage for peak JVM performance.",
     details: [
-      "Optimize Heap Memory → Set Initial Heap Size, Set Maximum Heap Size",
-      "Optimize Garbage Collection → Choose Garbage Collector Selection, Adjust GC Threads Numbers",
-      "Set Metaspace",
-      "Set Thread Stack Size",
-      "Generate Heap Dump on OutOfMemory Error",
-      "Use JVM Memory Tuning tools like JVisualVM or JConsole",
+      "Optimize heap sizing (initial, max)",
+      "OConfigure garbage collectors & GC threads",
+      "Adjust Metaspace & thread stack size",
+      "Generate heap dumps for debugging",
+      "Use tools like JVisualVM, JConsole",
     ],
   },
   {
     title: "Code Optimization",
     desc: "Improve code efficiency and reduce CPU overhead for faster execution.",
     details: [
-      "Search Indexing Optimization",
-      "Improve code reviews and efficiency with code splitting.",
-      "Minimize Database Queries",
-      "Data Lazy Loading",
-      "Use Efficient Algorithms and Data Structures",
-      "Optimize Loops and Iterations",
-      "Review External Dependencies",
-      "Avoid Heavy Transactions and Excessive Logging",
+      "Optimize search indexing",
+      "Improve code efficiency through splitting & refactoring",
+      "Reduce unnecessary database calls",
+      "Implement lazy loading",
+      "Use optimized algorithms and data structures",
+      "Clean up loops, iterations, and external dependencies",
+      "Reduce heavy transactions & log overhead",
     ],
   },
   {
     title: "Liferay theme optimization",
     desc: "Enhance UI responsiveness and reduce CSS/JS load times.",
     details: [
-      "Minification and Compression of CSS and Javascript files",
+      "Minify & compress CSS/JS",
       "Optimize and compress images",
-      "Lazy loading of the resources",
-      "CSS Sprites to combine multiple images into a single image file",
-      "Remove Unused CSS and JavaScript",
-      "CDN Integration",
-      "Keep External Dependencies Minimal",
+      "Apply lazy loading",
+      "Use CSS sprites",
+      "Remove unused assets",
+      "Leverage CDN for faster delivery",
     ],
   },
   {
-    title: "Database Thread Pool & Connection Pool Optimization",
+    title: "Database Thread & Connection Pool Tuning",
     desc: "Tune database connection pools to reduce latency.",
     details: [
-      "Fine-tune Thread and Connection Pools",
-      "Monitor and adjust connection pool settings based on database usage",
-      "Implement database connection pooling strategies",
-      "Regularly review and optimize database queries and transactions to reduce connection pool contention and improve overall performance.",
+      "Optimize thread and connection pools",
+      "Fine-tune connection handling",
+      "Reduce pool contention",
+      "Improve transaction efficiency",
     ],
   },
   {
-    title: "Portal Tuning by Disabling Unnecessary Filters & enabling JS & CSS Caching",
+    title: "Portal Tuning & Filter Optimization",
     desc: "Improve overall page rendering time by optimizing filters and caching.",
-    details: ["Disable Unnecessary Filters", "Enable JavaScript & CSS Caching", "Optimize Web Server Configuration"],
+    details: ["Disable Unnecessary Filters", "Enable JavaScript & CSS Caching", "Refine portal-level performance configurations"],
   },
   {
-    title: "Web server configuration improves performance",
+    title: "Web Server Configuration Optimization",
     desc: "Fine-tune web server parameters for higher throughput.",
     details: [
-      "Utilize caching mechanisms such as content caching, reverse proxy caching, and HTTP caching headers to reduce server load and improve response times.",
-      "Implement load balancing and clustering techniques to distribute incoming traffic across multiple servers for improved scalability and fault tolerance.",
-      "Utilize content delivery networks (CDNs) to cache and deliver static assets closer to end-users, reducing latency and improving overall website performance.",
+      "Implement caching (content, reverse proxy, HTTP headers)",
+      "Enable load balancing & clustering",
+      "Use CDNs for faster asset delivery",
     ],
   },
   {
     title: "Load Testing and Tuning",
     desc: "Simulate heavy traffic to find and fix performance bottlenecks.",
     details: [
-      "Utilize tools like Apache JMeter or Gatling for load testing to simulate real-world scenarios and identify bottlenecks",
-      "Analyze results to optimize system configurations such as thread pools, caching, and scalability",
-      "Implement caching strategies and horizontal scaling to handle peak loads effectively.",
-      "Monitor key performance metrics and iterate on tuning efforts for continuous optimization.",
+      "Use JMeter, Gatling for performance simulations",
+      "Analyze bottlenecks and adjust configurations",
+      "Implement scaling and caching strategies",
+      "Monitor key metrics for continuous improvement",
     ],
   },
 ]
@@ -231,66 +227,68 @@ export const liferayPerformanceTuning = {
   heading: "Liferay",
   heading2: "Performance Tuning",
   description:
-    "Optimize your Liferay Portal with specialized Liferay Performance Tuning, ",
+    "We approaches performance tuning as a platform discipline—diagnosing ",
   description2:  
-    "improving speed, stability, and resource efficiency for superior user experience.",
+    "bottlenecks across architecture, configuration, and runtime behaviour to ",
+  description3:
+    "restore stability, scalability, and predictable performance at enterprise scale.",
 };
 
 export const liferayPerformanceFeatures = {
-  heading: "Common Liferay Performance Challenges We Solve",
+  heading: "Common Liferay Performance Challenges We Address",
   description:
-    "Through expert Liferay Performance Tuning, we identify bottlenecks, optimize configurations, and deliver faster, more scalable, and reliable Liferay DXP experiences.",
+    "Performance degradation in Liferay typically emerges from accumulated architectural, configuration, and operational decisions—not from a single failing component. Our performance engagements focus on identifying systemic constraints and restoring platform balance so Liferay performs consistently under real enterprise workloads.",
   features: [
     {
-      title: "Slow Page Load Times",
+      title: "Unpredictable Page Response",
       description:
-        "Delays caused by unoptimized code, heavy themes, or large assets are resolved through Liferay Performance Tuning.",
+        "We address experience slowdowns caused by rendering overhead, asset delivery inefficiencies, and request-processing bottlenecks—ensuring consistent response times across user journeys.",
     },
     {
-      title: "Inefficient Database Queries",
+      title: "Data Access Inefficiencies",
       description:
-        "Poorly optimized queries slow down portals; we refine indexing and database performance for faster results.",
+        "We identify and correct database interaction patterns that limit throughput, including query behaviour, indexing strategy, and transactional load that impacts overall platform responsiveness.",
     },
     {
-      title: "High Server Resource Usage",
+      title: "Resource Saturation",
       description:
-        "Memory leaks, unbalanced loads, or heavy CPU usage are minimized with fine-tuned Liferay DXP Performance Tuning.",
+        "When CPU, memory, or thread resources are over-consumed, platform stability suffers. We rebalance resource utilisation to restore predictable runtime behaviour.",
     },
     {
-      title: "Scalability Issues Under Heavy Traffic",
+      title: "Scaling Constraints Under Load",
       description:
-        "We prepare portals to handle spikes in traffic with clustering, caching, and distributed deployment.",
+        "We resolve limitations that surface during peak usage by aligning caching strategies, clustering models, and deployment topology with Liferay’s scalability patterns.",
     },
     {
-      title: "Poor Search and Indexing Performance",
+      title: "Search & Indexing Bottlenecks",
       description:
-        "Slow or inaccurate search results are fixed with optimized indexing and search tuning for seamless user experiences.",
+        "We stabilise indexing behaviour and optimise search execution to ensure fast, reliable discovery across content-heavy platforms.",
     },
     {
-      title: "Frequent Downtime and Instability",
+      title: "Operational Instability",
       description:
-        "Through proactive monitoring and fault-tolerant setups, we ensure reliable and stable Liferay Portal performance.",
+        "Recurring restarts, degraded sessions, or inconsistent behaviour are symptoms of deeper platform issues. We focus on stabilising the environment to ensure reliability over time.",
     },
   ],
 };
 
 export const liferayPerformanceOutcome = {
-  heading: "Outcome Of Our Liferay",
-  heading2: "Performance Tuning Services",
+  heading: "Measured Platform Improvements ",
+  heading2: "After Liferay Performance Tuning",
   description:
-    "Liferay Performance Tuning improves portal speed, stability, scalability, security, and resource efficiency for optimal performance.",
+    "Our tuning engagements are designed to produce measurable improvements that enterprises can rely on long-term. It restores confidence in the platform by improving operational predictability.",
 };
 
 export const liferayPerformanceWhatWeDo = {
-  heading: "What We Do With Our Liferay DXP ",
-  heading2: " Performance Tuning Services",
+  heading: "Liferay Performance Tuning ",
+  heading2: "Execution Areas",
   description:
-    "We optimize Liferay DXP performance through server tuning, JVM tweaks, and database enhancements to boost speed, stability, and scalability.",
+    "We focus on the runtime, configuration, and architectural layers that directly influence platform behaviour under enterprise workloads. Each tuning activity is driven by diagnostics, evidence, and measurable impact—not assumptions.",
 };
 
 export const talkToExpertPerformance = {
-  heading: "Liferay Optimization for Peak Performance",
-  description: "Reduce bottlenecks, enhance throughput, and ensure stable portal operations.",
+  heading: "Get Expert Guidance on Liferay Performance Tuning",
+  description: "Sustainable performance is achieved through the right architectural decisions, disciplined tuning, and continuous optimisation. We help enterprises restore platform stability, improve scalability, and ensure their Liferay environments perform reliably under real-world demand.",
   buttonText: "Start Performance Tuning",
 };
 
