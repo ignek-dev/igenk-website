@@ -94,7 +94,7 @@ export const featuredEvent = {
 // Service data navigation component
 
 export const featuredService = {
-  imageSrc: "/images/mega-menu/Services-megamenu.jpg",
+  imageSrc: "/images/mega-menu/sevices-megamenu/Services-megamenu.webp",
   title: "Build With The<br /> Top 3% of<br /> Tech Experts!",
   buttonText: "Book Consultant Now",
   buttonHref: "#",

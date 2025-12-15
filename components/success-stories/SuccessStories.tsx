@@ -5,6 +5,15 @@ import { WPPortfolioPost } from "components/PortfolioList/PortfolioList"
 import SuccessStoryCard, { Story } from "./SuccessStoryCard"
 import Loader from "components/UI/Loader/Loader"
 
+// --- Interfaces & Constants for Caching ---
+interface CachedSuccessStories {
+  data: Story[];
+  timestamp: number;
+}
+
+const CACHE_KEY = "ignek_success_stories_cache"
+const CACHE_DURATION = 24 * 60 * 60 * 1000 // 24 Hours
+
 // CHANGED: Consolidated Provided Services data
 export const commonProvidedServices = [
   { name: "Java", iconSrc: "/images/success-stories/java.png" },
@@ -27,6 +36,22 @@ const SuccessStories: React.FC = () => {
   const [loading, setLoading] = useState(true)
   const fetchPosts = useCallback(async (idsToFilter: number[]) => {
     try {
+      const cachedRaw = localStorage.getItem(CACHE_KEY)
+      if (cachedRaw) {
+        try {
+          const parsed = JSON.parse(cachedRaw) as CachedSuccessStories
+          const now = Date.now()
+          
+          // Check if cache exists, has data, and is not older than 24 hours
+          if (parsed && parsed.data && (now - parsed.timestamp < CACHE_DURATION)) {
+            setPosts(parsed.data)
+            setLoading(false)
+            return // STOP HERE - Do not call API
+          }
+        } catch (e) {
+          console.warn("Invalid cache for success stories", e)
+        }
+      }
       setLoading(true)
       // window.scrollTo({ top: 0, behavior: "smooth" })
 
@@ -61,6 +86,12 @@ const SuccessStories: React.FC = () => {
       }))
 
       setPosts(mappedStories)
+
+      localStorage.setItem(CACHE_KEY, JSON.stringify({
+        data: mappedStories,
+        timestamp: Date.now()
+      }))
+      
     } catch (err) {
       console.error("Error fetching posts:", err)
     }finally {

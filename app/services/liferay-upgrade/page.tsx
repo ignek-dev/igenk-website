@@ -26,15 +26,15 @@ import {
 } from "data/liferay-upgrade"
 
 const metadata: Metadata = {
-  title: "Liferay DXP 7.4 Upgrade Services | Seamless Migration",
+  title: "Liferay DXP 7.4 Upgrade Services | Best Practice Migration",
   description:
-    "Liferay DXP 7.4 Upgrade  for seamless migration and enhanced performance. Experience full support for new features transform your digital journey today!	",
+    "Upgrade to Liferay DXP 7.4 with best-practice consulting, secure migration, minimal downtime, and scalable enterprise performance from Liferay experts.",
 
   openGraph: {
     url: "https://www.ignek.com/services/liferay-dxp-7-4-upgrade/",
-    title: "Liferay DXP 7.4 Upgrade Services | Seamless Migration",
+    title: "Liferay DXP 7.4 Upgrade Services | Best Practice Migration",
     description:
-      "Liferay DXP 7.4 Upgrade  for seamless migration and enhanced performance. Experience full support for new features transform your digital journey today!	",
+      "Upgrade to Liferay DXP 7.4 with best-practice consulting, secure migration, minimal downtime, and scalable enterprise performance from Liferay experts.",
     images: [
       {
         width: 1200,
@@ -420,7 +420,6 @@ export default function LiferayUpgradePage() {
       <TalkToExpert
         heading={talkToExpertUpgrade.headingPart1}
         description={talkToExpertUpgrade.descriptionPart1}
-        buttonText={talkToExpertUpgrade.button}
       />
       <BlogSection />
     </main>

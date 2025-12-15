@@ -2,39 +2,39 @@ export const featureTabs = ["System Architecture", "Database Architecture", "Dep
 
 export const keyActivityArchitecureSystem = [
   {
-    text: "Understand Business Goals",
+    text: "Business Intent",
     description:
-      "We align Liferay Architecture Design with your business goals, identifying key requirements, user journeys, and expectations to build a solution that drives measurable results.",
+      "We start by understanding why the platform exists — user journeys, operational priorities, growth plans, and constraints. Architecture decisions are then shaped to support outcomes, not assumptions.",
   },
   {
-    text: "System Components & frameworks",
+    text: "Platform Capability Alignment",
     description:
-      "Through our Liferay Portal Architecture Services, we define scalable system components, frameworks, and infrastructure that ensure reliability, security, and long-term performance.",
+      "We evaluate how Liferay’s native capabilities can be applied before introducing custom solutions. This ensures architecture remains aligned with the platform’s design philosophy and reduces long-term maintenance overhead.",
   },
   {
-    text: "Protocols & Communication Channels",
+    text: "System & Integration Boundaries",
     description:
-      "We establish secure and efficient communication protocols across web, database, and API layers, ensuring smooth interoperability within your Liferay ecosystem.",
+      "We define clear boundaries across the Liferay ecosystem — including APIs, services, data ownership, and external integrations — to avoid coupling that limits future change.",
   },
   {
-    text: "Aligning OOTB features with Use Cases.",
+    text: "Security, Governance & Control",
     description:
-      "Our experts map your business needs to Liferay’s OOTB features, reducing custom development and enhancing delivery speed with proven Liferay capabilities.",
+      "Architecture establishes how access, data, and workflows are governed across the platform. This creates consistency, compliance, and operational confidence across enterprise teams.",
   },
   {
-    text: "Draw Diagrams",
+    text: "Operational Readiness",
     description:
-      "With our Liferay High Level Design Service, we create architectural, workflow, and deployment diagrams that provide clarity and transparency for all technical stakeholders.",
+      "We consider how the platform will be deployed, monitored, supported, and upgraded — ensuring architecture decisions support reliability, visibility, and controlled change in production environments.",
   },
   {
-    text: "System Testing",
+    text: "Clarity for Delivery Teams",
     description:
-      "We perform unit and integration testing under our Liferay Architecture Design process to ensure performance, scalability, and code quality using industry best practices.",
+      "Our architectural outputs provide shared understanding across stakeholders — enabling engineering teams to build with confidence and avoid fragmented implementation decisions.",
   },
   {
-    text: "Monitoring and Analytics",
+    text: "Designed for Continuous Evolution",
     description:
-      "Our team configures advanced monitoring tools and analytics dashboards to track portal health, performance, and user behavior for continuous improvement.",
+      "The architecture anticipates future upgrades, expansion, and modernisation — allowing the platform to evolve incrementally without structural rework.",
   },
   {
     text: "Custom Development & Customization",
@@ -43,34 +43,34 @@ export const keyActivityArchitecureSystem = [
   },
 ]
 
-export const LiferayArchitectureTitle1 = "Why Choose IGNEK For Liferay"
+export const LiferayArchitectureTitle1 = "Why Enterprises Choose IGNEK For Liferay"
 export const LiferayArchitectureTitle2 = "Architecture Design Service?"
 export const LiferayArchitectureSubContent =
-  "At IGNEK, Our expert engineers use up to date software’s and vast knowledge to craft solutions that match your needs and expectations. Putting clients first is our thing, and we’re proud to support our very first business client till today!"
+  "Designing Liferay architecture requires more than technical knowledge, it requires a deep understanding of how the platform behaves at enterprise scale and how architectural decisions impact long-term value. Enterprises choose IGNEK because we design Liferay architectures that are practical, disciplined, and built to last."
 export const LiferayArchitectureData = [
   {
-    title: "Proven Liferay Expertise",
-    desc: "Our architects bring years of hands-on experience designing scalable, secure, and high-performing Liferay environments tailored to your business goals.",
+    title: "Pure Liferay Focus",
+    desc: "This singular focus gives us deep insight into the platform’s architecture patterns, evolution, and best practices, enabling us to design solutions that align with how Liferay is intended to be implemented and extended.",
   },
   {
-    title: "Business-Aligned Architecture",
-    desc: "We design solutions that align technical frameworks with real business needs — ensuring performance, flexibility, and measurable impact.",
+    title: "Architecture Led by Platform Discipline",
+    desc: "Our designs prioritise Liferay’s out-of-the-box strengths and recommended patterns. This ensures architectures remain clean, supportable, and ready for future upgrades without excessive rework.",
   },
   {
-    title: "Future-Ready Solutions",
-    desc: "We build with tomorrow in mind, ensuring your Liferay architecture supports future integrations, scalability, and cloud-readiness.",
+    title: "Business-Aligned Engineering",
+    desc: "We translate business objectives into architectural direction — ensuring performance, scalability, and flexibility are built into the foundation, not addressed later through patches or workarounds.",
   },
   {
-    title: "Optimized Performance & Security",
-    desc: "Every design focuses on speed, resilience, and compliance, ensuring a stable and secure digital ecosystem",
+    title: "Enterprise-Grade Security & Reliability",
+    desc: "Security, governance, and resilience are embedded into every architectural decision. Our designs support compliance, controlled access, and operational stability across complex enterprise environments.",
   },
   {
-    title: "Collaborative Approach",
-    desc: "We work hand-in-hand with your teams to understand challenges, define priorities, and deliver architectures that truly fit.",
+    title: "Built for Change, Not Just Delivery",
+    desc: "We design architectures that anticipate evolution — from cloud adoption and modular expansion to integration growth and platform upgrades — allowing enterprises to adapt without structural redesign.ith your teams to understand challenges, define priorities, and deliver architectures that truly fit.",
   },
   {
-    title: "Comprehensive Documentation & Support",
-    desc: "From blueprints to deployment guidance, we provide complete architectural documentation and ongoing expert assistance.",
+    title: "Clear Direction for Delivery Teams",
+    desc: "Our architectural outputs provide clarity and confidence for engineering teams, reducing ambiguity and ensuring consistent implementation across the Liferay ecosystem.",
   },
 ]
 
@@ -78,32 +78,32 @@ export const systemArchitecure = [
   {
     text: "Architecture Blueprint",
     description:
-      "High-level design document outlining systems, data flow, and integration strategy.",
+      "A clear, high-level system design that defines platform structure, data flow, integrations, and runtime behavior—ensuring all stakeholders share a unified architectural vision.",
   },
   {
     text: "Technical Stack",
     description:
-      "Optimized technology mix ensuring scalability, security, and performance.",
+      "A carefully selected technology stack optimized for security, scalability, and performance, aligned with Liferay best practices and enterprise standards.",
   },
   {
     text: "Security and Compliance",
     description:
-      "Detailed measures for data protection, authentication, and access control.",
+      "Architecture built with security at its core—covering authentication models, access control, encryption standards, compliance requirements, and governance frameworks.",
   },
   {
     text: "Performance Optimization",
     description:
-      "Architecture designed for speed, resilience, and high availability.",
+      "Designs focused on high availability, fault tolerance, low latency, and consistent performance under enterprise workloads.",
   },
   {
     text: "Strategy Document",
     description:
-      "Defined roadmap for environment setup, CI/CD, and rollout planning.",
+      "A comprehensive architectural roadmap covering environment setup, CI/CD pipelines, deployment models, and rollout strategy—reducing risk and accelerating execution.",
   },
   {
     text: "Future Scalability",
     description:
-      "Clear strategy for upgrades, extensions, and cloud readiness.",
+      "Blueprints that support upgrades, modular expansion, cloud adoption, and microservices readiness—ensuring your Liferay platform evolves with your business.",
   },
 ]
 
@@ -113,22 +113,22 @@ export const liferayArchitectureHeroData = {
   titleLine2: "Architecture",
   titleLine3: "Design",
   description:
-    "Get Liferay architecture design and optimization services that enhance",
+    "IGNEK designs enterprise-grade Liferay architectures focused on performance, security, and ",
   description2:  
-    "performance, scalability, security, integrations, and user experience.",
+    "long-term platform stability, ensuring your digital ecosystem is engineered to evolve, not just operate.",
 }
 
 export const liferayArchitectureKeyData = {
-  titleLine1: "Key Activities Under Our Liferay Architecture Design Services",
+  titleLine1: "How We Shape Liferay Architecture Decisions",
   description:
-    "We provide Liferay Portal architecture design documents covering security,",
+    "Our work focuses on translating enterprise intent into architectural ",
   description2:  
-    "scalability, integrations, content management, and monitoring.",
+    "direction that teams can confidently execute and sustain.",
 }
 
 export const talkToExpertArcData = {
-  heading: "Design Scalable Solutions with Experienced Liferay Architecture Experts",
+  heading: "Design Scalable Liferay Solutions with Confidence",
   description:
-    "Craft efficient system designs that enhance portal performance and stability.",
+    "IGNEK partners with organisations to design Liferay architectures that support growth, simplify delivery, and stand the test of time — built on platform discipline and best-practice engineering.",
   buttonText: "Explore Architecture Solutions",
 }
