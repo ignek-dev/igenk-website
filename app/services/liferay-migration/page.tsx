@@ -129,9 +129,9 @@ export default function LiferayMigrationPage() {
                       <path
                         d="M1 10L7 16L22 1"
                         stroke="white"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                       />
                     </svg>
                     </div>

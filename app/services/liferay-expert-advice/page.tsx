@@ -1,6 +1,6 @@
 "use client"
 import { Metadata } from "next"
-import { useEffect,useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import ScheduleMeetingButton from "components/Button/ScheduleMeetingButton"
 import { BlogSection } from "components/Common"
 import TalkToExpert from "components/Common/TalkToExpert"
@@ -41,22 +41,22 @@ export default function LiferayExpertAdvicePage() {
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        const idx = (entry.target as HTMLElement).dataset.index
-        if (!idx) return
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const idx = (entry.target as HTMLElement).dataset.index
+            if (!idx) return
 
-        setVisibleCards((prev) => {
-          const updated = new Set(prev)
-          updated.add(idx)
-          return updated
+            setVisibleCards((prev) => {
+              const updated = new Set(prev)
+              updated.add(idx)
+              return updated
+            })
+          }
         })
-      }
-    })
-  },
-  { threshold: 0.2 }
-)
+      },
+      { threshold: 0.2 }
+    )
 
     cardRefs.current.forEach((ref) => {
       if (ref) observer.observe(ref)
@@ -149,7 +149,7 @@ export default function LiferayExpertAdvicePage() {
 
           {/* Right Column */}
           <div className="relative z-10 flex flex-col items-end">
-            <div className="relative">
+            <div className="relative w-full">
               {solutions.map((item, index) => (
                 <div
                   key={index}
@@ -157,25 +157,26 @@ export default function LiferayExpertAdvicePage() {
                     cardRefs.current[index] = el
                   }}
                   data-index={index}
-                  style={{ top: `calc(10vw + ${index * 6.5}vw)` }}
-                  className={`sticky mb-10 bg-black transition-all duration-500`}
+                  style={{ top: `calc(8.417vw + ${index * 8}vw)` }}
+                  className={`sticky flex w-full flex-col justify-start bg-black transition-all duration-500`}
                 >
-                  {index !== 0 ? (
-                    <hr className={`${visibleCards.has(String(index)) ? "mt-0" : "mt-10"}`} />
-                  ) : (
-                    <hr className="hidden" />
-                  )}
-                  <div className="mt-6 flex items-baseline gap-[3.438vw]">
-                    <span className="text-[1.563vw] leading-[3.125vw] font-normal text-white">({item.number})</span>
-                    <div className="flex flex-col gap-[1.458vw]">
-                      <h3 className="w-[22.76vw] text-[1.563vw] leading-[1.875vw] font-normal text-white">
-                        {item.title}
-                      </h3>
-                      <p className="p20 text-gray-100">{item.desc}</p>
+                  {/* Separator Line: Using border-t is more stable than <hr> for sticky layouts */}
+                  <div className={`w-full border-t border-[#6B7280] ${index === 0 ? "border-none" : ""}`}></div>
+
+                  <div className="pt-[1.5vw] pb-[4vw]">
+                    <div className="flex items-baseline gap-[3.438vw]">
+                      <span className="text-[1.563vw] leading-[3.125vw] font-normal text-white">({item.number})</span>
+                      <div className="flex flex-col gap-[1.458vw]">
+                        <h3 className="w-[22.76vw] text-[1.563vw] leading-[1.875vw] font-normal text-white">
+                          {item.title}
+                        </h3>
+                        <p className="p20 text-gray-100">{item.desc}</p>
+                      </div>
                     </div>
                   </div>
                 </div>
               ))}
+              <div className="h-[50vh]" />
             </div>
           </div>
         </div>
