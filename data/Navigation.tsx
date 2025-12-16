@@ -42,10 +42,10 @@ export const contactDetails = {
 
 export const aboutDigitalExperienceData = {
   title:
-    "We're the Top #1 Digital experience development company contributing towards a smart World",
+    "We are a Liferay-Focused Digital Experience Company Enabling Smarter Enterprise Solutions",
 
   description:
-    "IGNEK delivers smart, high-quality digital experiences that transform businesses, through expert engineering, modern design, and reliable technology solutions.",
+    "IGNEK designs and delivers enterprise-grade digital experiences on Liferay, combining disciplined engineering, purposeful design, and platform-first implementation to support long-term business growth.",
   subtitle1: "General", 
   subtitle2: "Sales", 
   subtitle3: "HR",    
