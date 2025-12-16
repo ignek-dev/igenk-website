@@ -19,14 +19,14 @@ import {
 
 
 const metadata: Metadata = {
-  title: "Liferay POC Services - Enhance Your Business with IGNEK",
+  title: "Liferay POC Services | Proof of Concept for Liferay DXP - IGNEK",
   description:
-    "Explore IGNEK's Liferay POC services. Test Liferay’s features and see how it can enhance your business with a tailored trial run.",
+    "Validate your Liferay strategy with a structured Proof of Concept. IGNEK helps enterprises assess feasibility, architecture, and platform fit before full implementation.",
 
   openGraph: {
     url: "https://www.ignek.com/services/liferay-poc/",
-    title: "Liferay POC Services - Enhance Your Business with IGNEK",
-    description: "Explore IGNEK's Liferay POC services. Test Liferay’s features and see how it can enhance your business with a tailored trial run.",
+    title: "Liferay POC Services | Proof of Concept for Liferay DXP - IGNEK",
+    description: "Validate your Liferay strategy with a structured Proof of Concept. IGNEK helps enterprises assess feasibility, architecture, and platform fit before full implementation.",
     images: [
       {
         width: 1200,

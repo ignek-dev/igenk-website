@@ -6,25 +6,30 @@ import { BlogSection } from "components/Common"
 import TalkToExpert from "components/Common/TalkToExpert"
 import WhatMake from "components/Common/WhatMake"
 import {
+  expertAdviceHero,
+  expertAdviceSection,
+  expertAdviceSolutions,
   expoerAdvices,
   featureTabs,
   LiferayExpertAdviceData,
   LiferayExpertAdviceSubContent,
   LiferayExpertAdviceTitle1,
   LiferayExpertAdviceTitle2,
+  liferayExpertCTA,
   solutions,
 } from "data/liferayExpert"
+import { configure } from "@testing-library/react"
 
 const metadata: Metadata = {
-  title: "Liferay Expert Advice | Optimize Your Digital Experience - IGNEK",
+  title: "Liferay Expert Advice | Strategic Liferay Consulting - IGNEK",
   description:
-    "Discover unparalleled Liferay expert advice and services to enhance your digital experience platform. Contact us to elevate your Liferay environment.",
+    "Get expert Liferay advice to assess architecture, performance, and platform direction. IGNEK helps enterprises make informed, upgrade-safe Liferay decisions.",
 
   openGraph: {
     url: "https://www.ignek.com/services/liferay-expert-advice/",
-    title: "Liferay Expert Advice | Optimize Your Digital Experience - IGNEK",
+    title: "Liferay Expert Advice | Strategic Liferay Consulting - IGNEK",
     description:
-      "Discover unparalleled Liferay expert advice and services to enhance your digital experience platform. Contact us to elevate your Liferay environment.",
+      "Get expert Liferay advice to assess architecture, performance, and platform direction. IGNEK helps enterprises make informed, upgrade-safe Liferay decisions.",
     images: [
       {
         width: 1200,
@@ -74,14 +79,13 @@ export default function LiferayExpertAdvicePage() {
           <div className="relative grid items-start gap-10 md:grid-cols-2">
             <div>
               <h1 className="mt-[7.865vw]">
-                Liferay
+                {expertAdviceHero.heading}
                 <br />
-                <span className="block">Expert Advice</span>
+                <span className="block">{expertAdviceHero.heading2}</span>
               </h1>
             </div>
             <p className="p18 absolute bottom-0 max-w-[40vw] text-right text-white md:justify-self-end">
-              Our Liferay Expert Advice Services are here to provide you with the guidance and expertise you need to
-              ensure your digital experience platform performs at its best.
+              {expertAdviceHero.description}
             </p>
           </div>
 
@@ -103,10 +107,9 @@ export default function LiferayExpertAdvicePage() {
         <div className="global-container mx-auto w-full py-[3.333vw]">
           <div className="flex flex-row items-start gap-[8.75vw]">
             <div className="sticky top-[10.417vw] flex flex-col gap-[1.458vw]">
-              <h2 className="">Liferay Expert Advice Service</h2>
+              <h2 className="">{expertAdviceSection.heading}</h2>
               <p className="p18 max-w-[44.229vw] text-gray-600">
-                Gain actionable insights through our Liferay Expert Advice Service and Liferay Consultation, helping you
-                enhance performance, implement new features, and create smooth, engaging user experiences.
+                {expertAdviceSection.description}
               </p>
             </div>
             <div className="w-full space-y-[1.979vw] pt-[0.417vw] md:justify-self-end">
@@ -137,10 +140,9 @@ export default function LiferayExpertAdvicePage() {
         <div className="flex w-full flex-row items-start gap-[10.573vw]">
           {/* Left Column */}
           <div className="sticky top-[10.417vw] flex flex-col gap-[1.458vw]">
-            <h2 className="w-[33.073vw] text-white">Solutions For Architecture To Production</h2>
+            <h2 className="w-[33.073vw] text-white">{expertAdviceSolutions.heading}</h2>
             <p className="p18 text-gray-100">
-              From production releases to architecture design, our Liferay Expert Advice Services offer tailored
-              strategies and hands-on support to improve efficiency, scalability, and overall platform performance.
+              {expertAdviceSolutions.description}
             </p>
             {/* <div>
               <ScheduleMeetingButton isFullWidth={false} btnName="Schedule a Call" />
@@ -188,9 +190,9 @@ export default function LiferayExpertAdvicePage() {
         subContext={LiferayExpertAdviceSubContent}
       />
       <TalkToExpert
-        heading="Get Professional Guidance for Liferay Optimization"
-        description="Schedule a Liferay consultation today and start optimizing your environment effectively."
-        buttonText="Consult Our Experts"
+        heading={liferayExpertCTA.heading}
+        description={liferayExpertCTA.description}
+        buttonText={liferayExpertCTA.buttonText}
       />
       <BlogSection />
 
