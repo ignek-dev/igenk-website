@@ -1144,6 +1144,22 @@ html {
     letter-spacing: 0%;
   }
 
+  .p18{
+    font-family: Poppins;
+    font-weight: 400;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    letter-spacing: 0%;
+  }
+
+  .p16{
+    font-family: Poppins;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    letter-spacing: 0%;
+  }
+  
   .p14 {
     font-family: Poppins;
     font-weight: 400;
