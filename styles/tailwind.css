@@ -1090,8 +1090,8 @@ html {
 ================================ */
 @media (width >=48rem) and (width < 64rem) {
   .global-container {
-    padding-left: 1.667vw !important;
-    padding-right: 1.667vw !important;
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
   }
 }
 
@@ -1101,8 +1101,8 @@ html {
 ================================ */
 @media (width < 48rem) {
   .global-container {
-    padding-left: 0.833vw !important;
-    padding-right: 0.833vw !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
   }
 
   h1 {
@@ -1159,7 +1159,7 @@ html {
     line-height: 1.5rem;
     letter-spacing: 0%;
   }
-  
+
   .p14 {
     font-family: Poppins;
     font-weight: 400;
