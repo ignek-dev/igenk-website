@@ -68,19 +68,19 @@ export const CORE_VALUES: CoreValue[] = [
   },
   {
     number: "04",
-    title: "Excellence as a Standard",
+    title: "Excellence",
     description: "From design to delivery, we bring precision, discipline, and quality engineering to every project — no shortcuts, no compromises.",
     img: "/images/about/adaptability-img.png",
   },
   {
     number: "05",
-    title: "Growth Through Learning",
+    title: "Growth",
     description: "We continuously evolve, adapt, and embrace new technologies to ensure our clients stay ahead in an ever-changing digital world.",
     img: "/images/about/adaptability-img.png",
   },
   {
     number: "06",
-    title: "Impact That Lasts",
+    title: "Impact",
     description: "Every solution we build aims to create measurable, sustainable impact — not just for today, but for the long road ahead.",
     img: "/images/about/adaptability-img.png",
   },
@@ -219,7 +219,11 @@ export const teamSectionContent = {
   titleLine2: "behind the magic",
 
   description:
-    "Our passionate team of Managers, Liferay engineers, architects, and innovators powers IGNEK’s mission, turning complex challenges into performant, scalable, and future-ready digital experiences.",
+    "Our passionate team of Managers, Liferay engineers, architects, and innovators ",
+  descLine2:
+    "powers IGNEK’s mission, turning complex challenges into performant, scalable, and ",
+  descLine3:
+    "future-ready digital experiences.",
 
   members: [
     {

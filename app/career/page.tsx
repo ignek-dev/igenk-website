@@ -120,11 +120,11 @@ export default function CareerPage() {
       {/* Open Roles */}
       <section className="bg-[#F6F6F6] pb-0 text-black">
         <div className="mx-auto w-full px-4 py-[3.333vw] md:px-8 global-container">
-          <div className="grid items-start gap-10 md:grid-cols-2">
+          <div className="grid items-start gap-10 auto-grid">
             <h2 className="text-4xl leading-tight font-semibold tracking-[-0.02em] text-balance sm:text-3xl md:text-5xl">
               <span className="block">{openRolesIntroData.title}</span>
             </h2>
-            <p className="max-w-xl self-center text-right text-[20px] leading-[30px] font-normal tracking-[0] text-gray-700 sm:text-[18px] sm:leading-[28px] md:justify-self-end">
+            <p className="max-w-3xl self-center text-right text-[20px] leading-[30px] font-normal tracking-[0] text-gray-700 sm:text-[18px] sm:leading-[28px] md:justify-self-end">
               {openRolesIntroData.description}
             </p>
           </div>
