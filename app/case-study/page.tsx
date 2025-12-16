@@ -41,7 +41,7 @@ export default async function PortfolioPage() {
 
               </h1>
 
-            <p className="text-right text-[0.938vw] ">
+            <p className="text-right text-[0.938vw] pb-2">
               {liferaySuccessStoriesSection.description}
             </p>
 

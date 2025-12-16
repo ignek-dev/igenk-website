@@ -4,7 +4,7 @@ export const cardData = [
     iconWhite: "/images/blogs/Liferay-whilte.svg",
     iconBlue: "/images/blogs/Liferay-blue.svg",
     title: "Liferay",
-    description: "Actionable insights, tutorials, and best practices for building modern, scalable Liferay DXP solutions.",
+    description: "Actionable insights, tutorials, and best practices for building modern, Liferay solutions.",
   },
   {
     id: 16,
@@ -18,7 +18,7 @@ export const cardData = [
     iconWhite: "/images/blogs/Spring-boot-white.svg",
     iconBlue: "/images/blogs/Spring-Boot.svg",
     title: "Spring Boot",
-    description: "Clear technical walkthroughs for building robust, reliable, and production-ready Spring Boot services.",
+    description: "Clear technical walkthroughs for building robust and reliable Spring Boot services.",
   },
   {
     id: 237,
@@ -33,7 +33,7 @@ export const blogHeroSection = {
   heading: "Liferay Blog:",
   heading2: "Insights on DXP, Java & ReactJS",
   description:
-    "Stay updated with expert insights, engineering practices, and hands-on tutorials across Liferay DXP, Java, and ReactJS—crafted to help teams build scalable, high-quality digital experiences.",
+    "Stay updated with expert insights, engineering practices, and hands-on tutorials across Liferay DXP, Java, and ReactJS—crafted to help teams build scalable, high-quality digital experiences. Explore real-world use cases, best practices, and practical guidance drawn from deep enterprise delivery experience.",
 };
 
 export const blogSection = {

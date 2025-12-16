@@ -54,7 +54,9 @@ const Team: React.FC = () => {
 
           {/* Description */}
           <p className="text-right text-[0.938vw] leading-[1.458vw] text-[#E5E7EB]">
-            {teamSectionContent.description}
+            {teamSectionContent.description}<br/>
+            {teamSectionContent.descLine2}<br/>
+            {teamSectionContent.descLine3}
           </p>
         </div>
       </div>
