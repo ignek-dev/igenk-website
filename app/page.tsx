@@ -55,7 +55,7 @@ export default function HomePage() {
 
         <div className="global-container w-full pb-16">
           
-          <div className="mt-[0.450vw] grid items-start gap-8 md:grid-cols-2">
+          <div className="mt-[0.850vw] grid items-start gap-8 md:grid-cols-2">
             <p className="p20 max-w-xl leading-[30px] text-[#F3F4F6]">{hero.description} </p>
 
             <div className="pb-3 md:self-end md:justify-self-end">
