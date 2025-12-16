@@ -1107,56 +1107,56 @@ html {
 
   h1 {
     font-weight: 600;
-    font-size: 2.5vw;
-    line-height: 3.125vw;
+    font-size: 3rem;
+    line-height: 3.75rem;
     letter-spacing: -2%;
   }
 
   h2 {
     font-family: Poppins;
     font-weight: 600;
-    font-size: 1.458vw;
-    line-height: 1.667vw;
+    font-size: 1.75rem;
+    line-height: 2rem;
     letter-spacing: 0%;
   }
 
   h3 {
     font-family: Poppins;
     font-weight: 600;
-    font-size: 1.25vw;
-    line-height: 1.667vw;
+    font-size: 1.5rem;
+    line-height: 2rem;
     letter-spacing: 0%;
   }
 
   h4 {
     font-family: Poppins;
     font-weight: 500;
-    font-size: 1.172vw;
-    line-height: 1.406vw;
+    font-size: 1.406rem;
+    line-height: 1.688rem;
     letter-spacing: 0%;
   }
 
    h5 {
     font-family: Poppins;
     font-weight: 500;
-    font-size: 0.729vw;
-    line-height: 0.938vw;
+    font-size: 0.875rem;
+    line-height: 1.125rem;
     letter-spacing: 0%;
   }
 
   .p14 {
     font-family: Poppins;
     font-weight: 400;
-    font-size: 0.729vw;
-    line-height: 1.042vw;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
     letter-spacing: 0%;
   }
 
    .p12 {
     font-family: Poppins;
     font-weight: 400;
-    font-size: 0.625vw;
-    line-height: 0.864vw;
+    font-size: 0.75rem;
+    line-height: 1.036rem;
     letter-spacing: 0%;
   }
 }
