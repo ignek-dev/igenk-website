@@ -18,14 +18,14 @@ import {
 } from "data/liferay-support-and-maintenance"
 
 const metadata: Metadata = {
-  title: "Liferay Support And Maintenance Services - IGNEK",
+  title: "Liferay Support and Maintenance Services | Enterprise Support - IGNEK",
   description:
-    "Keep your Liferay platform running smoothly with our Liferay Support And Maintenance Services. Get expert assistance and ensure continuous operation!",
+    "Ensure long-term stability and reliability with expert Liferay support and maintenance. IGNEK delivers proactive, enterprise-grade Liferay platform support.",
 
   openGraph: {
     url: "https://www.ignek.com/services/liferay-support-and-maintenance/",
-    title: "Liferay Support And Maintenance Services - IGNEK",
-    description: "Keep your Liferay platform running smoothly with our Liferay Support And Maintenance Services. Get expert assistance and ensure continuous operation!",
+    title: "Liferay Support and Maintenance Services | Enterprise Support - IGNEK",
+    description: "Ensure long-term stability and reliability with expert Liferay support and maintenance. IGNEK delivers proactive, enterprise-grade Liferay platform support.",
     images: [
       {
         width: 1200,

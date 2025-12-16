@@ -24,15 +24,15 @@ import {
 } from "data/liferay-ecommerce-development"
 
 const metadata: Metadata = {
-  title: "Liferay Ecommerce Development Company - IGNEK",
+  title: "Liferay Ecommerce Development Services | Enterprise Commerce - IGNEK",
   description:
-    "Get top-notch Liferay Ecommerce Development services tailored to your business needs. Boost sales, enhance user experience, and grow your online store efficiently.",
+    "Design and implement enterprise-grade ecommerce with Liferay Commerce. IGNEK delivers scalable, secure Liferay ecommerce solutions built for B2B and complex use cases.",
 
   openGraph: {
     url: "https://www.ignek.com/services/liferay-ecommerce-development/",
-    title: "Liferay Ecommerce Development Company - IGNEK",
+    title: "Liferay Ecommerce Development Services | Enterprise Commerce - IGNEK",
     description:
-      "Get top-notch Liferay Ecommerce Development services tailored to your business needs. Boost sales, enhance user experience, and grow your online store efficiently.",
+      "Design and implement enterprise-grade ecommerce with Liferay Commerce. IGNEK delivers scalable, secure Liferay ecommerce solutions built for B2B and complex use cases.",
     images: [
       {
         width: 1200,

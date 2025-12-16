@@ -1,50 +1,50 @@
 export const featureTabs = [
-  "Discuss PoC requirements",
-  "Help validate the assumption.",
-  "Functionality Identification",
-  "Demonstrate Customized Prototype",
+  "Liferay POC Strategy & Validation",
+  "OOTB Capability Assessment",
+  "Architecture & Feasibility Analysis",
 ]
 
 export const liferayPOCServices = [
-  "Know your industry and understand the requirements",
-  "Map high-level requirements against Liferay OOTB features",
-  "Create a full Liferay demo using mapped OOTB features",
-  "Identify customization and custom development needs",
-  "Identify Integration needs with third-party services",
-  "Liferay POC Services will help to define a more accurate project & and timeline",
-  "Define hardware needs from non-functional requirements.",
-  "Identify risks and outline them for communication",
+  "Align business use cases with real enterprise scenarios",
+  "Map high-level requirements to Liferay OOTB capabilities",
+  "Configure a focused Liferay environment for key use cases",
+  "Identify required customisation and extension points",
+  "Assess integration feasibility with enterprise systems",
+  "Define hardware needs from non-functional requirements",
+  "Identify technical, architectural, and operational risks",
+  "Provide inputs for realistic scope, timelines, and delivery planning",
+  "Validate upgrade safety, scalability, and platform viability",
 ]
 
-export const LiferayProofOfConceptTitle1 = "Why Choose IGNEK For Liferay"
+export const LiferayProofOfConceptTitle1 = "Why Enterprises Choose IGNEK For Liferay"
 export const LiferayProofOfConceptTitle2 = "Proof Of Concept?"
 export const LiferayProofOfConceptSubContent =
-  "At IGNEK, Our expert engineers use up to date software’s and vast knowledge to craft solutions that match your needs and expectations. Putting clients first is our thing, and we’re proud to support our very first business client till today!"
+  "Our Liferay POC engagements are grounded in real implementation experience, platform discipline, and clear decision-making criteria. We focus on validating feasibility, not showcasing features."
 
 export const LiferayProofOfConceptData = [
   {
-    title: "Deep Liferay Expertise",
-    desc: "Our team brings years of hands-on experience in Liferay implementations, ensuring your PoC reflects real-world possibilities.",
+    title: "Deep Liferay Platform Expertise",
+    desc: "Our consultants bring hands-on experience from real-world Liferay implementations, ensuring the POC reflects how the platform behaves in production—not in theory.",
   },
   {
-    title: "Client-Centric Approach",
-    desc: "We collaborate closely to understand your goals, ensuring the PoC truly validates your business needs and assumptions.",
+    title: "Decision-Focused Validation",
+    desc: "Every POC activity is designed to answer critical questions around platform fit, architecture, scalability, and long-term viability—supporting confident go/no-go decisions.",
   },
   {
-    title: "Rapid Prototyping",
-    desc: "Get a functional prototype quickly showcasing how Liferay’s capabilities align with your specific project requirements.",
+    title: "OOTB-First, Upgrade-Safe Thinking",
+    desc: "We prioritise Liferay’s out-of-the-box capabilities and recommended extension patterns to ensure future upgrades remain predictable and low risk.",
   },
   {
-    title: "Risk Mitigation",
-    desc: "We identify potential challenges early, helping you make informed decisions before committing to full-scale implementation.",
+    title: "Early Risk Identification",
+    desc: "Technical, architectural, and operational risks are surfaced early—before timelines, budgets, and expectations are locked.",
   },
   {
-    title: "Technical Transparency",
-    desc: "Our experts document every feature, integration, and customization need to give you full visibility into the project scope.",
+    title: "Clear Documentation & Transparency",
+    desc: "Findings are documented clearly, including capability coverage, constraints, and implications—giving stakeholders full visibility into what lies ahead.",
   },
   {
-    title: "Future-Ready Insights",
-    desc: "Beyond validation, we provide clear guidance on scalability, integration options, and long-term digital growth opportunities.",
+    title: "Aligned to Real Implementation Outcomes",
+    desc: "Our POCs are structured to transition seamlessly into delivery—reducing rework and accelerating the path to implementation if you proceed.",
   },
 ]
 
@@ -92,19 +92,18 @@ export const liferayPocHeroData = {
   },
 
   description:
-    "Liferay PoC Services help you assess whether Liferay suits your project by demonstrating customizable portal features aligned with your requirements.",
+    "We delivers structured Liferay Proof of Concept engagements that assess platform fit, architectural feasibility, and real-world capability alignment—helping enterprises make informed, low-risk decisions with confidence.",
 }
 
 export const liferayPocWhatWeDoData = {
   title: "What We Do With Liferay POC Services",
 
   description:
-    "Our Liferay PoC services align your needs with Liferay’s out-of-the-box capabilities. We provide a functional prototype to gauge if Liferay Proof of Concept meets your objectives, document feature comparisons, highlight time-to-market reductions, and assess future project risks.",
+    "Our POC engagements are designed to assess feasibility, surface constraints early, and align business expectations with platform realities before full implementation begins. Each activity focuses on reducing uncertainty and establishing a clear, evidence-based foundation for decision-making.",
 }
 
 export const talkToExpertPocData = {
-  heading: "Validate ideas swiftly with Liferay Proof of Concept.",
-  description:
-    "Quickly evaluate Liferay functionality to confirm ideas before full-scale implementation.",
+  heading: "Validate Your Liferay Strategy with a Proof of Concept",
+  description: "Make informed platform decisions before committing to full-scale delivery. IGNEK’s Liferay Proof of Concept services help enterprises validate feasibility, assess architectural fit, and understand real-world implications—reducing risk and enabling confident next steps.",
   buttonText: "Request PoC Consultation",
 }

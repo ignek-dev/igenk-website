@@ -1,17 +1,16 @@
 import { head } from "lodash"
 
 export const featureTabs = [
-  "Application Maintenance Support",
+  "Enterprise Liferay Platform Support",
   "Annual Maintenance Contracts",
-  "Application Monitoring",
-  "Troubleshooting & Bug Fixes",
+  "Performance & Stability Assurance",
 ]
 
 export const supportChecklist = [
-  "24×7 availability with SLA‑backed response times",
-  "Incident tracking, analysis, and root‑cause resolution",
+  "24×7 Availability with SLA-Driven Response",
+  "Incident Tracking & Root-Cause Resolution",
   "Performance review and optimization across the stack",
-  "Release management, patching, and version upgrades",
+  "Release, Patch & Version Management",
   "Security audits and vulnerability fixes",
   "Backup & disaster recovery readiness",
 ]
@@ -19,85 +18,85 @@ export const supportChecklist = [
 export const activities = [
   {
     num: "01",
-    title: "Monitoring",
-    desc: "We monitor performance, availability, user experience, security, logs, content, integrations, database, resources, scalability, backup, and updates.",
+    title: "Platform Monitoring",
+    desc: "We continuously monitor platform health across performance, availability, security, integrations, logs, and infrastructure to identify risks before they impact business operations.",
   },
   {
     num: "02",
     title: "Content & Configuration",
-    desc: "After deployment, adapt Liferay to changing needs through configuration tweaks and content updates, ensuring continual relevance",
+    desc: "We manage configuration changes and content adjustments in a controlled manner, ensuring the platform adapts to evolving business needs without introducing instability.",
   },
   {
     num: "03",
-    title: "Debugging & Bug fixing",
-    desc: "Rapidly resolve post-launch issues, ensuring Liferay Portal's seamless performance with expert debugging and bug-fixing support.",
+    title: "Debugging & Issue Resolution",
+    desc: "Production issues are diagnosed methodically and resolved with precision, ensuring minimal disruption while addressing root causes—not just symptoms.",
   },
   {
     num: "04",
     title: "Enhancement & Development",
-    desc: "We offer post-production Liferay development, unlocking its full potential of Liferay with dynamic enhancements for sustained success.",
+    desc: "We support controlled post-production enhancements that extend platform capabilities while maintaining architectural integrity and upgrade safety.",
   },
   {
     num: "05",
     title: "Regular Updates",
-    desc: "We ensure your Liferay Server remains up-to-date by installing diverse patches, including Fix Packs, Security Fix Packs, Hotfixes, Service Packs, and Rolling Releases provided by Liferay.",
+    desc: "Fix Packs, security updates, hotfixes, and rolling releases are applied through planned, low-risk processes aligned with Liferay’s recommended upgrade paths.",
   },
   {
     num: "06",
     title: "Backup and Recovery",
-    desc: "Ensure data integrity with scheduled backups and implement a robust disaster recovery plan for reliability.",
+    desc: "We implement and validate backup strategies and disaster recovery readiness to safeguard enterprise data and ensure business continuity.",
   },
   {
     num: "07",
     title: "License Management",
-    desc: "Maintain Liferay compliance by monitoring licensing terms, tracking renewals, and ensuring adherence to usage limits.",
+    desc: "We monitor licensing usage, renewals, and compliance to ensure the platform remains aligned with Liferay’s licensing requirements.",
   },
   {
     num: "08",
-    title: "Performance Tuning",
-    desc: "Periodically review and optimize the performance of Liferay, making adjustments to configurations as needed.",
+    title: "Performance Optimisation",
+    desc: "Regular performance reviews and tuning ensure the platform remains responsive and stable as usage patterns evolve.",
   },
   {
     num: "09",
     title: "Testing Environment",
-    desc: "Maintain a separate testing environment to validate updates and changes before applying them to the production environment.",
+    desc: "Changes are validated in controlled environments before production release to reduce risk and maintain platform stability.",
   },
   {
     num: "10",
     title: "Regular Audits",
-    desc: "Conduct regular audits of the Liferay implementation to identify and address any inefficiencies or areas for improvement.",
+    desc: "Periodic audits identify inefficiencies, technical debt, and optimisation opportunities with supporting continuous improvement across the Liferay environment.",
   },
 ]
 
-export const LiferaySupportMaintenanceTitle1 = "Why Choose IGNEK For Liferay Support And Maintenance Service?"
+export const LiferaySupportMaintenanceTitle1 = "Why Enterprises Choose IGNEK For Liferay Support And Maintenance Service?"
 export const LiferaySupportMaintenanceTitle2 = ""
 export const LiferaySupportMaintenanceSubContent =
-  "At IGNEK, Our expert engineers use up to date software’s and vast knowledge to craft solutions that match your needs and expectations. Putting clients first is our thing, and we’re proud to support our very first business client till today!"
+  "Supporting an enterprise Liferay platform requires more than reactive ticket handling. It demands deep platform knowledge, disciplined operational processes, and an understanding of how Liferay evolves over time. Organisations choose IGNEK because we provide structured, proactive support that protects platform health and enables confident long-term ownership."
 
 export const LiferaySupportMaintenanceData = [
   {
-    title: "Proactive Monitoring",
-    desc: "We continuously track performance, security, and integrations to prevent issues before they arise.",
+    title: "Proactive Platform Monitoring",
+    desc: "We continuously track platform performance, security, and integrations to identify and address risks before they affect business operations.",
   },
   {
-    title: "Rapid Issue Resolution",
-    desc: "Our experts quickly identify, debug, and resolve post-launch issues for seamless portal operation.",
+    title: "Rapid, Structured Issue Resolution",
+    desc: "Issues are analysed and resolved through controlled, traceable processes—ensuring clarity, accountability, and minimal disruption.",
   },
   {
-    title: "Customized Maintenance",
-    desc: "We tailor updates, patches, and enhancements to fit your specific Liferay environment and business goals.",
+    title: "Tailored Maintenance & Enhancements",
+    desc: "Maintenance activities are aligned to your platform architecture, usage patterns, and business priorities—avoiding unnecessary change while enabling evolution.",
   },
   {
-    title: "Security & Compliance Focus",
-    desc: "We conduct audits, apply patches, and ensure licensing compliance for worry-free operations.",
+    title: "Security & Compliance Discipline",
+    desc: "We manage security updates, vulnerability remediation, and licensing compliance to reduce exposure and maintain enterprise governance standards.",
   },
   {
-    title: "Performance-Driven Approach",
-    desc: "Through periodic tuning, backups, and recovery planning, we maintain optimal portal speed, stability, and resilience.",
+    title: "Performance-Driven Operations",
+    desc: "Regular performance assessments and tuning ensure your Liferay environment remains stable, responsive, and resilient as demand grows.",
   },
   {
     title: "Ongoing Expert Guidance",
-    desc: "Our team provides continuous advice and support, helping your Liferay portal evolve with your business needs.",
+    desc: "Our consultants provide continuous guidance to help you plan upgrades, enhancements, and optimisation—ensuring your platform evolves with confidence.",
   },
 ]
 export const supportBanner = {
@@ -105,25 +104,24 @@ export const supportBanner = {
   heading: "Liferay Support",
   heading2: "and Maintenance",
   description:
-    "Get expert Liferay Support and Maintenance with proactive monitoring, timely updates, and dependable technical assistance for smooth platform performance.",
-};
+    "We helps organisations protect platform stability, manage risk, and evolve their Liferay environments with confidence—without compromising performance, security, or upgrade readiness.",
+}
 
 export const supportCore = {
-  heading: "Liferay Support And Maintenance",
+  heading: "Professional Liferay Support for Your Enterprise",
   description:
-    "We keep your Liferay environment resilient through proactive monitoring, thorough diagnostics, and planned upgrades—backed by clear SLAs.",
-};
+    "Our support model is designed to provide predictable operations through proactive monitoring, structured incident handling, and disciplined platform maintenance—backed by clearly defined service levels.",
+}
 
 export const supportActivities = {
   heading: "Key Activities Under Our Liferay ",
   heading2: "Support And Maintenance Service",
   description:
-    "Our dedicated Liferay team offers ongoing Liferay Support and Maintenance to address the challenges of a business.",
-};
+    "Our Liferay support and maintenance activities are structured to provide continuous visibility, controlled change, and long-term platform reliability across enterprise environments.",
+}
 
 export const liferaySupportCta = {
   heading: "24×7 Liferay Support and Maintenance Services",
-  description:
-    "Proactive monitoring, updates, and troubleshooting for uninterrupted portal performance.",
+  description: "Ensure predictable operations and long-term stability for your Liferay platform. IGNEK delivers enterprise-grade support and maintenance services designed to safeguard performance, security, and reliability—while enabling controlled evolution as your business grows.",
   buttonText: "Get Support and Maintanance for Liferay Services",
-};
+}

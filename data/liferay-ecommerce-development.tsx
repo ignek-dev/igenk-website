@@ -1,46 +1,46 @@
 export const featureTabs = [
-  "Integrated shopping platform",
-  "Personalized customer experience",
-  "Multichannel sales support",
-  "Seamless checkout process",
+  "Liferay Commerce Architecture",
+  "B2B & Enterprise Ecommerce",
+  "Integrated Digital Commerce",
+  "Secure Transactions",  
 ]
 export const ecommerceDevelopment = [
   {
     text: "Load Testing & Benchmarking",
     description:
-      "Simulate traffic spikes and measure system performance to prevent bottlenecks.",
+      "We validate platform behaviour under realistic traffic conditions to identify capacity limits, execution bottlenecks, and response degradation before they impact customers.",
   },
   {
     text: "Caching Strategies Implementation",
     description:
-      "Implement efficient caching mechanisms to reduce server load and improve page speed.",
+      "Caching is designed and applied intentionally across application, content, and integration layers to reduce latency while preserving data accuracy and transactional integrity.",
   },
   {
     text: "Server & Infrastructure Optimization",
     description:
-      "Fine-tune web and application servers, thread pools, and database connections for maximum throughput.",
+      "We align web servers, application servers, and runtime resources to support sustained ecommerce workloads with consistent throughput and controlled resource utilisation.",
   },
   {
     text: "Database Performance Tuning",
     description:
-      "Optimize queries, indexing, and connection pooling to ensure fast data access and transaction handling.",
+      "Commerce transactions depend on reliable data access. We optimise database interaction patterns to support high concurrency, fast response times, and stable order processing.",
   },
   {
     text: "Scalable Architecture Planning",
     description:
-      "Design architecture for horizontal and vertical scaling to handle growing traffic and transactions.",
+      "The ecommerce platform is structured to scale horizontally and vertically—supporting growth in users, catalogs, orders, and integrations without architectural rework.",
   },
   {
     text: "Continuous Monitoring & Optimization",
     description:
-      "Monitor system performance, identify potential issues, and continuously optimize for peak efficiency.",
+      "Performance is monitored continuously to detect emerging constraints early, enabling proactive optimisation as traffic patterns and business demands evolve.",
   },
 ]
 export const ecommerceDevelopmentUsingLiferay = [
   {
     text: "Product and Catalog Management",
     description:
-      "Liferay’s Ecommerce Development enables businesses to effortlessly create, manage, and organize product catalogs, set prices and variants, and structure multiple catalogs for different customer segments, regions, or sales channels, making product management seamless and efficient.",
+      "Using Liferay’s Ecommerce Development, we enable businesses to effortlessly create, manage, and organize product catalogs, set prices and variants, and structure multiple catalogs for different customer segments, regions, or sales channels, making product management seamless and efficient.",
   },
   {
     text: "Cart Management",
@@ -82,77 +82,77 @@ export const ecommerceDevelopmentUsingLiferay = [
 export const steps = [
   {
     number: 1,
-    title: "Pre-Development Analysis and Planning",
+    title: "Discovery & Commerce Strategy",
     description:
-      "We thoroughly explore your business needs and craft a comprehensive development blueprint, outlining essential milestones, budgetary considerations, and a timeline for execution.",
+      "We begin by understanding commerce objectives, purchasing models, user journeys, and enterprise constraints. This phase defines scope, platform alignment, and delivery direction—ensuring the solution supports real business workflows.",
   },
   {
     number: 2,
-    title: "Prototyping",
+    title: "Experience & Flow Validation",
     description:
-      "You'll receive prototypes for the product, category, and homepage. After UI/UX testing and optimization, we'll seek your approval before proceeding to the design phase.",
+      "Commerce journeys are validated early through structured prototypes and flow reviews. This ensures product discovery, cart behaviour, and checkout logic are aligned with business rules before implementation begins.",
   },
   {
     number: 3,
-    title: "Design Development",
+    title: "Design & Platform Alignment",
     description:
-      "Pre-built themes are available, but for a distinctive impact, we specialize in custom designs tailored to your customers' specific needs and business goals.",
+      "We align visual design, information architecture, and commerce components with Liferay Commerce standards—ensuring consistency, accessibility, and upgrade safety across storefronts and touchpoints.",
   },
   {
     number: 4,
-    title: "Store Development",
+    title: "Commerce Implementation",
     description:
-      "Pre-built themes are available, but for a distinctive impact, we specialize in custom designs tailored to your customers' specific needs and business goals.",
+      "We implement catalog structures, pricing models, order workflows, and commerce features using Liferay-recommended patterns—prioritising OOTB capabilities and minimising unnecessary customisation.",
   },
   {
     number: 5,
-    title: "Extensions and Integrations",
+    title: "Enterprise Integrations",
     description:
-      "Your store integrates with extensions and third-party systems as needed. Unsure which system fits? We guide you in choosing and integrating the best solution.",
+      "Commerce platforms rarely operate in isolation. We integrate Liferay Commerce with ERP, CRM, payment gateways, identity systems, and other enterprise services using clean, API-driven integration patterns.",
   },
   {
     number: 6,
-    title: "Quality Control",
+    title: "Quality Assurance & Validation",
     description:
-      "Thorough testing of features and integrations is conducted meticulously, ensuring any bugs are swiftly addressed to mitigate security risks and safeguard against potential data loss.",
+      "We validate functionality, integrations, workflows, and transaction behaviour through structured testing—ensuring stability, accuracy, and performance across real-world usage scenarios.",
   },
   {
     number: 7,
-    title: "Project Release",
+    title: "Go-Live & Platform Continuity",
     description:
-      "Your store is live and functional! After project completion, you can continue working with us for ongoing e-commerce consultation and comprehensive post-release support.",
+      "Deployment is executed through controlled rollout and verification. Post-launch, we ensure platform stability and provide guidance for optimisation, scaling, and future enhancements.",
   },
 ]
 
-export const LiferayEcommerceDevelopmentTitle1 = "Why Choose IGNEK For Liferay"
+export const LiferayEcommerceDevelopmentTitle1 = "Why Enterprise Choose IGNEK For Liferay"
 export const LiferayEcommerceDevelopmentTitle2 = "Ecommerce Development?"
 export const LiferayEcommerceDevelopmentSubContent =
-  "At IGNEK, Our expert engineers use up to date software’s and vast knowledge to craft solutions that match your needs and expectations. Putting clients first is our thing, and we’re proud to support our very first business client till today!"
+  "Enterprise ecommerce on Liferay demands more than storefront development. It requires platform discipline, deep integration expertise, and a clear understanding of how commerce fits within a broader digital ecosystem. Enterprises choose IGNEK because we deliver Liferay Commerce solutions that are stable, scalable, and designed for long-term ownership."
 
 export const LiferayEcommerceDevelopmentData = [
   {
-    title: "Custom-Built Storefronts",
-    desc: "We craft e-commerce experiences that align perfectly with your brand identity and customer expectations.",
+    title: "CLiferay Commerce Focus",
+    desc: "We work exclusively with Liferay. This focused expertise allows us to design commerce solutions that align with the platform’s intended architecture, evolution roadmap, and best practices.",
   },
   {
-    title: "System Integrations",
-    desc: "From payment gateways to ERP and CRM systems, we ensure smooth connectivity for operational efficiency.",
+    title: "Enterprise & B2B Commerce Expertise",
+    desc: "Our implementations support complex B2B and enterprise scenarios—contract pricing, role-based access, approval flows, multi-catalog setups, and integrated procurement journeys.",
   },
   {
-    title: "Enhanced User Experience",
-    desc: "We optimize navigation, search, and checkout processes for engaging, frictionless customer journeys.",
+    title: "OOTB-First, Upgrade-Safe Implementations",
+    desc: "We prioritise Liferay Commerce’s out-of-the-box capabilities and recommended extension patterns. This keeps solutions maintainable, reduces technical debt, and ensures smooth future upgrades.",
   },
   {
-    title: "Data-Driven Personalization",
-    desc: "Leverage analytics and behavioral insights to offer targeted recommendations and boost conversions.",
+    title: "Integration-Driven Architecture",
+    desc: "Commerce rarely stands alone. We design Liferay Commerce as part of a connected ecosystem—integrated cleanly with ERP, CRM, identity, payment, and external systems.",
   },
   {
-    title: "Scalable & Future-Ready",
-    desc: "Our solutions are built to grow with your business, supporting high traffic, multi-store setups, and evolving needs.",
+    title: "Performance, Scalability & Stability by Design",
+    desc: "Performance and scalability are embedded into the architecture from day one, ensuring commerce platforms remain reliable under growing traffic, catalogs, and transaction volumes.",
   },
   {
-    title: "End-to-End Support",
-    desc: "From planning and development to post-launch maintenance, we ensure your Liferay commerce platform runs flawlessly.",
+    title: "Consulting-Led Delivery",
+    desc: "We guide enterprises through decisions, not just execution—helping align commerce capabilities with business processes, operational realities, and long-term digital strategy.",
   },
 ]
 
@@ -196,30 +196,30 @@ export const ecommerceHero = {
   titleLine2: "Ecommerce",
   titleLine3: "Development",
   description:
-    "Liferay Ecommerce Development empowers businesses to build integrated digital commerce platforms that enhance customer experiences.",
+    "Build enterprise-grade digital commerce on Liferay—designed for complex B2B and B2C scenarios, deep integrations, and long-term scalability. IGNEK deliver Liferay Commerce implementations that align platform capabilities with business workflows, ensuring stability, performance, and upgrade-safe growth.",
 };
 
 export const ecommerceOptimization = {
   heading: "Liferay Ecommerce Performance & Scalability Optimization",
   description:
-    "Our Liferay Ecommerce Development services include performance tuning, scalability planning, and resource optimization to guarantee fast load times, responsive interactions, and minimal downtime.",
+    "Our Liferay Commerce implementations are engineered to handle high traffic, complex catalog structures, and transaction-heavy workflows without compromising stability or user experience.",
 };
 
 export const ecommerceDevLiferay = {
-  heading: "Ecommerce Development Using Liferay",
+  heading: "Liferay Ecommerce Development for Enterprises",
   description:
-    "Liferay Ecommerce Development Service streamlines online retail operations with customizable storefronts, product management, order processing, and marketing tools for businesses seeking a strong online presence.",
+    "We design and implement Liferay Ecommerce solutions that support complex product models, integrated enterprise systems, and consistent experiences across channels without sacrificing control or scalability.",
 };
 
 export const ecommerceProcess = {
   heading: "Our Liferay Ecommerce Development Process",
   description:
-    "Liferay Ecommerce enables easy creation and management of digital shopping experiences, combining strong content tools with seamless transactions for improved efficiency and user satisfaction.",
+    "Our delivery approach is designed to reduce risk, maintain platform integrity, and ensure the commerce solution scales alongside business and operational complexity.",
 };
 
 export const ecommerceTalkToExpert = {
-  heading: "Transform Your Online Store with Liferay Ecommerce Development",
+  heading: "Build Enterprise Commerce on Liferay with Confidence",
   description:
-    "Optimize product management, checkout, payment options, and multichannel sales with ease.",
+    "Enterprise commerce succeeds when it is built on a platform designed for integration, scalability, and long-term ownership. IGNEK helps organisations implement Liferay Commerce in a way that supports complex business models, connected systems, and sustained digital growth.",
   buttonText: "Explore E-Commerce Solutions",
 };
