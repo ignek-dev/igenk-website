@@ -1176,3 +1176,15 @@ html {
     letter-spacing: 0%;
   }
 }
+
+.portfolio-content.elementor-content h2{
+  font-size: 2.776vw !important;
+}
+
+.portfolio-content.elementor-content p{
+  font-size: 1.25vw !important;
+}
+
+.portfolio-detail-page ul li{
+  font-size: 1.094vw !important;
+}
