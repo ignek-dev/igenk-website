@@ -85,12 +85,12 @@ export default function ServicesMegaMenu({ onClose }: MegaMenuProps) {
               />
 
               {/* Gradient Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent"></div>
-              <div
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+              {/* <div
                 className="absolute bottom-[1.40vw] left-0 h-[0.129vw] w-full"
                 style={{ backgroundColor: "#00979E" }}
-              ></div>
-              <div className="absolute inset-0 flex flex-col justify-end text-white">
+              ></div> */}
+              {/* <div className="absolute inset-0 flex flex-col justify-end text-white">
                 <div className="mr-[0.833vw] px-[1.667vw] pb-[0.417vw]">
                   <h4 className="font-bold" dangerouslySetInnerHTML={{ __html: featuredService.title }}></h4>
                 </div>
@@ -105,7 +105,7 @@ export default function ServicesMegaMenu({ onClose }: MegaMenuProps) {
                     </button>
                   }
                 />
-              </div>
+              </div> */}
             </div>
           </div>
 

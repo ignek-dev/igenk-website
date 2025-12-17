@@ -82,7 +82,7 @@ const FormInput = ({ label, placeholder, name, type = "text", required = false }
   <div className="relative z-0 w-full">
     <label
       htmlFor={label}
-      className="text-medium top-1 z-10 origin-[0] -translate-y-8 scale-75 transform text-3xl text-white duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-8 peer-focus:scale-75 peer-focus:text-white"
+      className="text-medium top-1 z-10 origin-[0] -translate-y-8 scale-75 transform text-xl lg:text-3xl text-white duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-8 peer-focus:scale-75 peer-focus:text-white"
     >
       {label}
     </label>
@@ -91,7 +91,7 @@ const FormInput = ({ label, placeholder, name, type = "text", required = false }
       id={label}
       name={name}
       required={required}
-      className="peer block w-full appearance-none border-0 border-b-2 border-gray-600 bg-transparent px-0 py-3.5 text-xl text-white placeholder-[#DBD3D3] focus:border-white focus:ring-0 focus:outline-none"
+      className="peer block w-full appearance-none border-0 border-b-2 border-gray-600 bg-transparent px-0 py-3.5 text-base lg:text-xl text-white placeholder-[#DBD3D3] focus:border-white focus:ring-0 focus:outline-none"
       placeholder={placeholder} // visible only on focus
     />
   </div>
@@ -101,7 +101,7 @@ const FormTextArea = ({ label, placeholder, name, rows = 6, required = false }: 
   <div className="relative z-0 w-full">
     <label
       htmlFor={label}
-      className="text-medium top-1 z-10 origin-[0] -translate-y-8 scale-75 transform text-3xl text-white duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-8 peer-focus:scale-75 peer-focus:text-white"
+      className="text-medium top-1 z-10 origin-[0] -translate-y-8 scale-75 transform text-xl lg:text-3xl text-white duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-8 peer-focus:scale-75 peer-focus:text-white"
     >
       {label}
     </label>
@@ -110,7 +110,7 @@ const FormTextArea = ({ label, placeholder, name, rows = 6, required = false }: 
       name={name}
       required={required}
       rows={rows}
-      className="peer block w-full appearance-none border-0 border-b-2 border-gray-600 bg-transparent px-0 py-3.5 text-xl text-white placeholder-[#DBD3D3] focus:border-white focus:ring-0 focus:outline-none"
+      className="peer block w-full appearance-none border-0 border-b-2 border-gray-600 bg-transparent px-0 py-3.5 text-base md:text-xl text-white placeholder-[#DBD3D3] focus:border-white focus:ring-0 focus:outline-none"
       placeholder={placeholder} // visible only on focus
     />
   </div>
@@ -171,24 +171,24 @@ export default function ContactPage() {
   }
   return (
     <main className="bg-black text-white">
-      <section className="relative -mt-px pt-44 pb-16 md:pb-16">
+      <section className="relative -mt-px pt-32 pb-16 md:pt-44 md:pb-16">
         {/* Main Content with standard padding */}
-        <div className="global-container mx-auto w-full">
+        <div className="global-container mx-auto w-full px-5 md:px-10 lg:px-0">
           {/* Top Section: Title and Description */}
-          <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-5">
-            <h1 className="text-[4.688vw]! leading-[4.875vw] font-medium! text-white md:col-span-2">
+          <div className="grid grid-cols-1 items-center gap-6 lg:grid-cols-5 lg:gap-10">
+            <h1 className="font-semibold lg:font-medium! text-white lg:col-span-2">
               {contactContent.title}
             </h1>
-            <p className="font-regular p20 right-0 tracking-normal text-[#FFFFFF] md:col-span-3 md:text-right">
+            <p className="font-regular p20 p18 right-0 tracking-normal text-[#FFFFFF]   lg:col-span-3 lg:text-right">
               {contactContent.description}
             </p>
           </div>
 
           {/* Divider */}
-          <hr className="my-12 border-t border-[#4D464A]" />
+          <hr className="my-5.5 sm:my-5.5 md:my-8 lg:my-12 border-t border-[#4D464A]" />
 
           {/* Bottom Section: Info and Form */}
-          <div className="grid grid-cols-1 gap-16 md:grid-cols-2">
+          <div className="grid grid-cols-1 gap-16 lg:grid-cols-2">
             {/* Left Side: "Lets Start Conversation" */}
             <div className="flex flex-col">
               <h2 className="font-semibold">{contactLeftSection.title}</h2>
@@ -197,7 +197,7 @@ export default function ContactPage() {
               </p>
 
               {/* Info Blocks */}
-              <div className="mt-9 flex flex-col gap-8 sm:flex-row sm:gap-26">
+              <div className="mt-9 flex flex-row gap-6 sm:gap-26">
                 {contactLeftSection.infoBlocks.map((item) => (
                   <div key={item.id} className="flex max-w-[304px] flex-col gap-2">
                     <h3 className="p18 font-medium! text-[#DBD3D3]">{item.label}</h3>
@@ -210,9 +210,9 @@ export default function ContactPage() {
               </div>
 
               {/* Follow Us */}
-              <div className="mt-9 flex flex-col gap-8 sm:flex-row sm:items-center sm:gap-32">
+              <div className="mt-9 flex flex-row gap-12  sm:items-center sm:gap-32">
                 <p className="p18 font-medium! text-[#FFFFFF]">{contactLeftSection.title2}</p>
-                <div className="flex space-x-5">
+                <div className="flex space-x-3 sm:space-x-5">
                   <a
                     href="https://www.facebook.com/ignekinfo/"
                     className="text-white/80 hover:text-white"
@@ -251,7 +251,7 @@ export default function ContactPage() {
             {/* Right Side: Form */}
             <div className="w-full">
               <form action="#" method="POST" onSubmit={handleSubmit}>
-                <div className="grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2">
+                <div className="grid grid-cols-1 gap-x-8 gap-y-9 md:gap-y-12 sm:grid-cols-2">
                   {/* Form Inputs */}
                   <FormInput label="Full Name" placeholder="ex. John Carter" name="name" required />
                   <FormInput
@@ -264,7 +264,7 @@ export default function ContactPage() {
                   <div className="relative z-0 w-full">
                     <label
                       htmlFor="Phone Number"
-                      className="text-medium top-1 z-10 origin-[0] -translate-y-8 scale-75 transform text-3xl text-white duration-300"
+                      className="text-medium top-1 z-10 origin-[0] -translate-y-8 scale-75 transform text-xl lg:text-3xl text-white duration-300"
                     >
                       Phone Number
                     </label>
@@ -275,7 +275,7 @@ export default function ContactPage() {
                       onChange={setPhone}
                       id="Phone Number"
                       name="phone"
-                      className="peer block w-full appearance-none border-0 border-b-2 border-gray-600 bg-black bg-transparent px-0 py-3.5 text-xl text-white placeholder-[#DBD3D3] focus:border-white focus:ring-0 focus:outline-none"
+                      className="peer block w-full appearance-none border-0 border-b-2 border-gray-600 bg-black bg-transparent px-0 py-3.5 text-base lg:text-xl text-white placeholder-[#DBD3D3] focus:border-white focus:ring-0 focus:outline-none"
                       placeholder="Enter phone number"
                       countrySelectProps={{
                         className: "PhoneInputCountrySelect", // <-- Apply your custom class here
@@ -298,7 +298,7 @@ export default function ContactPage() {
                 </div>
 
                 {/* Submit Button */}
-                <div className="mt-16">
+                <div className="mt-8.5 sm:mt-16">
                   <button
                     type="submit"
                     disabled={loading}
@@ -321,7 +321,7 @@ export default function ContactPage() {
       <section className="bg-white py-[64px] text-black">
         <div className="global-container mx-auto w-full px-4 md:px-8">
           {/* Header part */}
-          <div className="mb-22.5 grid grid-cols-1 items-end gap-8 md:grid-cols-2">
+          <div className="mb-6 sm:mb-14.5 lg:mb-22.5 grid grid-cols-1 items-end gap-4 lg:gap-8 lg:grid-cols-2">
             <div>
               <h2 className="font-semibold text-[#000000]">
                 {officeLocationsSection.title}
@@ -329,8 +329,8 @@ export default function ContactPage() {
                 {officeLocationsSection.title2}
               </h2>
             </div>
-            <div className="flex h-full items-center justify-center">
-              <p className="p18 text-right text-[#374151]">
+            <div className="md:flex h-full items-center justify-center">
+              <p className="p18 lg:text-right text-[#374151]">
                 {officeLocationsSection.description} <br /> {officeLocationsSection.description2}{" "}
               </p>
             </div>
@@ -339,14 +339,14 @@ export default function ContactPage() {
           {/* Locations List */}
           <div className="flex flex-col gap-7.5">
             {officeLocationsData.map((item) => (
-              <div key={item.id} className="flex flex-col md:flex-row md:items-start md:gap-10">
+              <div key={item.id} className="flex flex-col lg:flex-row lg:items-start lg:gap-10">
                 {/* Image */}
                 <div>
-                  <Image src={item.image} alt={item.alt} width={853} height={341} className="h-[341px] w-[853px]" />
+                  <Image src={item.image} alt={item.alt} width={853} height={341} className="h-[284px] w-[361px] sm:h[284px] w[710px] lg:h-[341px] w-[853px] " />
                 </div>
 
                 {/* Right Side Content */}
-                <div className="mt-6 flex flex-col md:mt-0 md:w-1/2 md:pl-3.5">
+                <div className="mt-6 flex flex-col lg:mt-0 lg:w-1/2 lg:pl-3.5">
                   {/* City + Address */}
                   <h3 className="text-[#151314]">{item.city}</h3>
 
@@ -360,24 +360,27 @@ export default function ContactPage() {
                   </p>
 
                   {/* Email + Phone */}
-                  <div className="mt-24 flex flex-col gap-8 sm:flex-row sm:items-center sm:gap-30">
+                  <div className="mt-5 lg:mt-24 flex flex-col gap-6 sm:flex-row sm:items-center sm:gap-30">
                     <div className="flex min-w-[232px] flex-col gap-1">
-                      <p className="p20 text-[#766C72]">{item.contact.emailLabel}</p>
-                      <a href={item.contact.emailHref} className="p18 font-medium text-[#151314] hover:text-blue-600">
+                      <p className="p18 md:p20 text-[#766C72]">{item.contact.emailLabel}</p>
+                      <a href={item.contact.emailHref} className="p18 font-medium text-[#151314]">
                         {item.contact.email}
                       </a>
                     </div>
 
-                    <div className="flex flex-col gap-1">
-                      <p className="p20 font-medium text-[#766C72]">{item.contact.phoneLabel}</p>
-                      <a href={item.contact.phoneHref} className="p18 font-medium text-[#151314] hover:text-blue-600">
+                    <div className="flex min-w-[232px] flex-col gap-1">
+                      <p className="p18 md:p20 font-medium text-[#766C72]">{item.contact.phoneLabel}</p>
+                      <a href={item.contact.phoneHref} className="p18 font-medium text-[#151314]">
                         {item.contact.phone}
                       </a>
                     </div>
                   </div>
 
                   {/* Divider */}
-                  {item.showDivider && <hr className="mt-25 w-full border-t border-[#DBD3D3]" />}
+                  {item.showDivider && (
+  <hr className="mt-25 hidden w-full border-t border-[#DBD3D3] lg:block" />
+)}
+
                 </div>
               </div>
             ))}
