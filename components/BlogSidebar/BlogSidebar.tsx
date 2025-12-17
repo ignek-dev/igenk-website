@@ -157,7 +157,7 @@ const BlogSidebar = ({ categoryId }: BlogSidebarProps) => {
   const router = useRouter()
 
  return (
-    <div className="mx-auto grid max-w-[1440px] gap-[1.875vw] pr-[2.604vw] pl-[4.271vw]">
+    <div className="mx-auto grid max-w-[1440px] gap-[1.875vw] pr-[2.604vw] pl-[4.271vw] sticky top-[6.25vw] self-start max-lg:hidden lg:col-span-4 lg:pt-0">
       {/* --- Social Icons --- */}
       <div>
         <h2 className="mt-[2.292vw] mb-[0.208vw] text-[1.667vw]! leading-[2.083vw] font-medium! text-black">Share On</h2>
@@ -216,6 +216,7 @@ const BlogSidebar = ({ categoryId }: BlogSidebarProps) => {
       </div>
 
       {/* --- Author Card --- */}
+      <div>
       <div className="rounded-[1.042vw] border-[0.089vw] border-[#E5E7EB] bg-white p-[2.375vw] text-center shadow">
         <h2 className="mb-[2.083vw] text-[1.875vw]! font-semibold! tracking-wide">AUTHOR</h2>
         <h3 className="mb-[0.052vw] text-[1.563vw]! font-semibold! text-gray-900">Bhavin Panchani</h3>
@@ -249,6 +250,7 @@ const BlogSidebar = ({ categoryId }: BlogSidebarProps) => {
             </a>
           ))}
         </div>
+      </div>
       </div>
     </div>
   )

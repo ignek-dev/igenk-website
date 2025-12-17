@@ -222,9 +222,9 @@ export default function PostRenderer() {
                             ref={contentRef}
                             dangerouslySetInnerHTML={{ __html: cleanHTML }}
                         />
-                        <div className="px-[80px] mb-[40px]">
+                        {/* <div className="px-[80px] mb-[40px]">
                             <ExploreServices />
-                        </div>
+                        </div> */}
                     </article>
                 </div>
 

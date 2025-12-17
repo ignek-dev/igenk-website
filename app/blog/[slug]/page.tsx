@@ -247,15 +247,15 @@ export default function BlogDetails() {
                 <div className="grid grid-cols-1 lg:grid-cols-12 ">
                     {/* MAIN CONTENT */}
                     <div className="lg:col-span-8 border-r border-[#E3E3E3]">
-                        <article className="wp-post font-sans">
+                        <article className="wp-post">
                             <div
                                 ref={contentRef}
                                 className="entry-content prose max-w-none text-gray-800 leading-relaxed"
                                 dangerouslySetInnerHTML={{ __html: cleanHTML }}
                             />
-                            <div className="px-[80px] mb-[40px]">
+                            {/* <div className="px-[80px] mb-[40px]">
                                 <ExploreServices />
-                            </div>
+                            </div> */}
                         </article>
                     </div>
 
