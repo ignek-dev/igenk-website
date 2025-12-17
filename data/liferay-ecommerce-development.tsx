@@ -131,7 +131,7 @@ export const LiferayEcommerceDevelopmentSubContent =
 
 export const LiferayEcommerceDevelopmentData = [
   {
-    title: "CLiferay Commerce Focus",
+    title: "Liferay Commerce Focus",
     desc: "We work exclusively with Liferay. This focused expertise allows us to design commerce solutions that align with the platform’s intended architecture, evolution roadmap, and best practices.",
   },
   {
