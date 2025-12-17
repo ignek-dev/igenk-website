@@ -17,7 +17,7 @@ const ModuleTag = ({ text }: { text: string }) => {
   return (
     <p
       className={`
-          inline-block py-[0.313vw] rounded-full border border-[#00979E] text-[0.896vw] leading-[1.344vw] px-[1.042vw]
+          inline-block  rounded-full border border-[#00979E] px-3 py-1 text-xs leading-5 lg:text-[0.896vw] lg:leading-[1.344vw] lg:px-[1.042vw] lg:py-[0.313vw]
       `}
     >
       {text}
@@ -26,7 +26,7 @@ const ModuleTag = ({ text }: { text: string }) => {
 }
 
 const DetailTag = ({ text }: { text: string }) => (
-  <span className="rounded-full border leading-[1.253vw] font-medium border-[#D1D5DB] bg-[#FFFFFF] px-[0.896vw] py-[0.448vw] text-[0.833vw]"
+  <span className="rounded-full border font-medium px-3 py-1 text-xs leading-4 border-[#D1D5DB] bg-[#FFFFFF] lg:px-[0.896vw] lg:py-[0.448vw] lg:text-[0.833vw] lg:leading-[1.253vw]"
     style={{
       boxShadow: '0px 3.21px 8.02px 0px rgba(0, 151, 158, 0.25)'
     }}
@@ -38,16 +38,16 @@ const DetailTag = ({ text }: { text: string }) => (
 export const ToolCard = ({ icon, module, title, description, tags, link,subTag }: ToolCardProps) => {
   const isComingSoon = subTag?.trim() !== ""
   return (
-    <div className="group relative h-full w-[25.208vw] overflow-hidden rounded-[0.896vw] border border-[#E5E7EB] px-[1.094vw] pt-[1.094vw] pb-[1.667vw] shadow-sm transition-all duration-300 ease-in-out hover:shadow-md">
+    <div className="group relative h-full w-full lg:w-[25.208vw] overflow-hidden rounded-2xl lg:rounded-[0.896vw] border border-[#E5E7EB] p-5 pb-8 lg:px-[1.094vw] lg:pt-[1.094vw] lg:pb-[1.667vw] shadow-sm transition-all duration-300 ease-in-out hover:shadow-md">
       {/* This container holds all content that slides up */}
       <div className="flex h-full flex-col transition-all duration-300 ease-in-out group-hover:-translate-y-[25%]">
         {" "}
         <div className="flex w-full justify-between items-start transition-all duration-300 ease-in-out group-hover:-translate-y-4 group-hover:opacity-0">
-          <Image src={icon} alt={`${title} icon`} width={100} height={100} className="h-[5.208vw] w-[5.208vw]" />
+          <Image src={icon} alt={`${title} icon`} width={100} height={100} className="h-16 w-16 lg:h-[5.208vw] lg:w-[5.208vw]" />
           {/* SubTag Logic */}
           {subTag?.trim() !== "" && (
             <span 
-              className="rounded-full border leading-[1.253vw] font-medium border-[#D1D5DB] bg-[#FFFFFF] px-[0.7vw] py-[0.2vw] text-[0.833vw]"
+              className="rounded-full border  font-medium border-[#D1D5DB] bg-[#FFFFFF] px-3 py-1 text-xs leading-4 lg:px-[0.7vw] lg:py-[0.2vw] lg:text-[0.833vw] lg:leading-[1.253vw]"
               style={{
                 boxShadow: '0px 3.21px 8.02px 0px rgba(0, 151, 158, 0.25)'
               }}
@@ -58,15 +58,15 @@ export const ToolCard = ({ icon, module, title, description, tags, link,subTag }
         </div>
 
         {/* Text Content */}
-        <div className="mt-[1.563vw]">
+        <div className="mt-6 lg:mt-[1.563vw]">
           <ModuleTag text={module} />
-          <h3 className="mt-[0.885vw] text-[1.563vw]! leading-[1.875vw]! ">{title}</h3>
+          <h3 className="mt-4 text-2xl lg:mt-[0.885vw] lg:text-[1.563vw]! lg:leading-[1.875vw]! ">{title}</h3>
         </div>
 
         {/* Bottom Tags */}
         <div className="flex flex-col justify-between h-full">
-          <p className="line-height-[1.25vw] mt-[0.885vw] text-[0.833vw] text-[#4B5563]">{description}</p>
-          <div className="mt-[0.885vw] flex flex-wrap gap-[0.885vw]">
+          <p className="mt-4 text-sm leading-relaxed text-[#4B5563] lg:line-height-[1.25vw] lg:mt-[0.885vw] lg:text-[0.833vw]">{description}</p>
+          <div className="mt-4 lg:mt-[0.885vw] flex flex-wrap gap-2 lg:gap-[0.885vw]">
             {tags.map((tag) => (
               <DetailTag key={tag} text={tag} />
             ))}
@@ -75,10 +75,10 @@ export const ToolCard = ({ icon, module, title, description, tags, link,subTag }
       </div>
 
       {/* --- Hover Button --- */}
-      <div className="absolute -bottom-1 left-0 w-full px-[1.094vw] pt-[1.094vw] pb-[1.667vw] opacity-0 transition-all duration-300 ease-in-out group-hover:bottom-0 group-hover:opacity-100">
+      <div className="absolute -bottom-1 left-0 w-full p-5 pb-6 lg:px-[1.094vw] lg:pt-[1.094vw] lg:pb-[1.667vw] opacity-0 transition-all duration-300 ease-in-out group-hover:bottom-0 group-hover:opacity-100">
         <Link
           href={link}
-          className={`block w-full cursor-pointer rounded-full bg-[#0C64CE] py-[0.807vw] text-center text-base font-semibold text-white transition-colors hover:bg-blue-700
+          className={`block w-full cursor-pointer rounded-full bg-[#0C64CE] py-3 text-base lg:py-[0.807vw] text-center font-semibold text-white transition-colors hover:bg-blue-700
           ${isComingSoon ? "pointer-events-none opacity-90 cursor-default" : ""}
           `}
           style={{

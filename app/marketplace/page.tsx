@@ -41,35 +41,37 @@ export default function MarketplacePage() {
   return (
     <main className="">
       {/* Hero */}
-      <section className="relative bg-black global-container pt-[7.865vw] pb-[4.427vw] text-white">
+      <section className="relative bg-black global-container pt-32 pb-16 lg:pt-[7.865vw] lg:pb-[4.427vw] text-white">
         {/* <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_10%_0%,#0E7BF8_0%,#00979E_40%,transparent_65%)] opacity-25" /> */}
-          <div className="flex justify-between items-end">
+          <div className="flex flex-col gap-6 lg:flex-row lg:justify-between lg:items-end lg:gap-0">
               <h1 className="text-[#FFFFFF]">
                 {liferayMarketplaceHero.heading}
                 <br />
                 <span className="block">{liferayMarketplaceHero.headingSpan}</span>
               </h1>
-            <p className="w-[34.479vw] text-[0.938vw] leading-[1.458vw] text-right">
+            <p className="w-full text-left text-lg 
+            md:text-xl lg:w-[34.479vw] lg:text-[0.938vw] lg:leading-[1.458vw] lg:text-right">
               {liferayMarketplaceHero.description}
             </p>
         </div>
       </section>
 
-      <section className="bg-[##F9FAF7] pt-[3.333vw] pb-[3.333vw] global-container text-black">
+      <section className="bg-[##F9FAF7] py-16 lg:pt-[3.333vw] lg:pb-[3.333vw] global-container text-black">
           {/* Header part */}
-          <div className="flex justify-between items-center mb-[3.75vw]">
+          <div className="flex flex-col gap-6 mb-12 lg:flex-row lg:justify-between lg:items-center lg:mb-[3.75vw] lg:gap-0">
               <h2 className="">
                 {featuredModulesSection.heading} 
                 <br />
                 {featuredModulesSection.headingSpan}
               </h2>
-              <p className="text-[#374151] text-[0.938vw] leading-[1.563vw] text-right w-[42.75vw]">
+              <p className="w-full text-left text-[#374151] text-lg
+              md:text-xl lg:text-[0.938vw] lg:leading-[1.563vw] lg:text-right lg:w-[42.75vw]">
                 {featuredModulesSection.description}
               </p>
             </div>
 
           {/* --- Grid --- */}
-          <div className="grid grid-cols-1 gap-[2.083vw] md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-10 lg:gap-[2.083vw] lg:grid-cols-3">
             {currentTools.map((tool) => (
               <ToolCard
                 key={tool.id}
@@ -86,7 +88,9 @@ export default function MarketplacePage() {
 
           {/* --- Pagination (now dynamic) --- */}
           {totalPages > 1 && (
-            <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={setCurrentPage} />
+            <div className="mt-12 lg:mt-0">
+              <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={setCurrentPage} />
+            </div>
           )}
       </section>
     </main>
