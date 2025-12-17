@@ -11,8 +11,8 @@ interface CachedSuccessStories {
   timestamp: number;
 }
 
-const CACHE_KEY = "ignek_success_stories_cache"
-const CACHE_DURATION = 24 * 60 * 60 * 1000 // 24 Hours
+// const CACHE_KEY = "ignek_success_stories_cache"
+// const CACHE_DURATION = 24 * 60 * 60 * 1000 //24 Hours
 
 // CHANGED: Consolidated Provided Services data
 export const commonProvidedServices = [
@@ -28,12 +28,52 @@ export const commonProvidedServices = [
   { name: "TypeScript", iconSrc: "/images/success-stories/typescript.png" },
 ]
 
+// --- HARDCODED DATA (Replaces API Call) ---
+const hardcodedStories: Story[] = [
+  {
+    id: 1,
+    // UPDATE THIS SLUG to match your actual case study URL
+    slug: "mri-portal-portfolio", 
+    // UPDATE THIS IMAGE PATH to your actual image
+    imageSrc: "/images/portfolio/Music-License-Management-Portal-Onboarding-&-Data-Integrity.webp", 
+    tag: "Corporate",
+    title: "Music License Management Portal : Onboarding & Data Integrity",
+    description: "This portal is designed to management of music rights, featuring a user-friendly onboarding process for clients. It allows publishers, authors, and musicians to publish their music and content . Through integration with the main OTT platform, the portal...",
+    services: [] // Services are handled by commonProvidedServices in the card
+  },
+  {
+    id: 2,
+    // UPDATE THIS SLUG to match your actual case study URL
+    slug: "liferay-dxp-based-intranet-portal-migration",
+    // UPDATE THIS IMAGE PATH to your actual image
+    imageSrc: "/images/portfolio/Liferay-DXP-Based-Intranet-Portal-Migration-from-7.0-to-7.4.webp", 
+    tag: "Corporate",
+    title: "Liferay DXP Based Intranet Portal Migration from 7.0 to 7.4",
+    description: "We created this project to upgrade the intranet portal from Liferay version 7.0 DXP to 7.4 DXP, including the development and redesign of key modules. As part of the Liferay 7.0 to 7.4 Upgrade, we migrated data and code while integrating advanced...",
+    services: []
+  },
+  {
+    id: 3,
+    // UPDATE THIS SLUG to match your actual case study URL
+    slug: "employee-intranet-portal-for-government-entity",
+    // UPDATE THIS IMAGE PATH to your actual image
+    imageSrc: "/images/portfolio/Employee-Intranet-Portal-for-Government-Entity.webp", 
+    tag: "Government",
+    title: "Employee Intranet Portal for Government Entity",
+    description: "This Employee Intranet Portal was developed for collaboration among all internal and external users through an open, flexible, and user-friendly solution. Key features include a Space Reservation System for booking venues, Business Opportunity...",
+    services: []
+  }
+]
+
 // Dummy Data - Updated to use commonProvidedServices
 
-const API_BASE = "https://insights.ignek.com/wp-json/wp/v2/portfolio"
+// const API_BASE = "https://insights.ignek.com/wp-json/wp/v2/portfolio"
+
 const SuccessStories: React.FC = () => {
-  const [posts, setPosts] = useState<Story[]>([])
-  const [loading, setLoading] = useState(true)
+  const [posts, setPosts] = useState<Story[]>(hardcodedStories)
+  const [loading, setLoading] = useState(false)
+
+  /* // --- COMMENTED OUT API LOGIC FOR FUTURE USE ---
   const fetchPosts = useCallback(async (idsToFilter: number[]) => {
     try {
       const cachedRaw = localStorage.getItem(CACHE_KEY)
@@ -91,7 +131,7 @@ const SuccessStories: React.FC = () => {
         data: mappedStories,
         timestamp: Date.now()
       }))
-      
+
     } catch (err) {
       console.error("Error fetching posts:", err)
     }finally {
@@ -105,6 +145,8 @@ const SuccessStories: React.FC = () => {
     const categoryIds = [19498, 32037, 32555]
     fetchPosts(categoryIds)
   }, [fetchPosts])
+  */
+
   // Use the context hook here as well
 
   const [stuck, setStuck] = useState<Map<number, boolean>>(new Map())
