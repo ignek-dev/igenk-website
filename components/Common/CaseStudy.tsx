@@ -4,6 +4,16 @@ import { useRouter } from "next/navigation"
 import React, { useCallback, useEffect, useState } from "react"
 import { WPPortfolioPost } from "components/PortfolioList/PortfolioList"
 import Loader from "components/UI/Loader/Loader"
+
+interface LocalCaseStudy {
+  id: number
+  slug: string
+  imageSrc: string
+  tag: string
+  title: string
+  excerpt: string
+}
+
 export interface CaseStudy {
   id: number
   image: string
@@ -15,18 +25,46 @@ interface CaseStudyCarouselProps {
   caseStudies: CaseStudy[]
 }
 
+const hardcodedPosts: LocalCaseStudy[] = [
+  {
+    id: 1,
+    slug: "mri-portal-portfolio",
+    imageSrc: "/images/portfolio/Music-License-Management-Portal-Onboarding-&-Data-Integrity.webp",
+    tag: "Corporate",
+    title: "Music License Management Portal : Onboarding & Data Integrity",
+    excerpt: "This portal is designed to management of music rights, featuring a user-friendly onboarding process for clients. It allows publishers..."
+  },
+  {
+    id: 2,
+    slug: "employee-intranet-portal-for-government-entity",
+    imageSrc: "/images/portfolio/Employee-Intranet-Portal-for-Government-Entity.webp",
+    tag: "Government",
+    title: "Employee Intranet Portal for Government Entity",
+    excerpt: "This Employee Intranet Portal was developed for collaboration among all internal and external users through an open, flexible, and..."
+  },
+  {
+    id: 3,
+    slug: "liferay-dxp-based-intranet-portal-migration",
+    imageSrc: "/images/portfolio/Liferay-DXP-Based-Intranet-Portal-Migration-from-7.0-to-7.4.webp",
+    tag: "Corporate",
+    title: "Liferay DXP Based Intranet Portal Migration from 7.0 to 7.4",
+    excerpt: "We created this project to upgrade the intranet portal from Liferay version 7.0 DXP to 7.4 DXP, including the development and redesign..."
+  }
+]
+
 const CaseStudy: React.FC<CaseStudyCarouselProps> = ({ caseStudies }) => {
-  console.log(caseStudies)
+  // console.log(caseStudies)
   const [activeIndex, setActiveIndex] = useState(0)
-  const [posts, setPosts] = useState<WPPortfolioPost[]>([])
+  const [posts, setPosts] = useState<LocalCaseStudy[]>(hardcodedPosts)
   // const [currentPage, setCurrentPage] = useState(1);
   // const [totalPages, setTotalPages] = useState(1);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   // const [error, setError] = useState<string | null>(null);
-  const currentPage = 1
+  // const currentPage = 1
   const router = useRouter()
   // const PER_PAGE = 10;
-  const API_BASE = "https://insights.ignek.com/wp-json/wp/v2/portfolio"
+  // const API_BASE = "https://insights.ignek.com/wp-json/wp/v2/portfolio"
+  
   useEffect(() => {
   if (!posts.length) return;
 
@@ -39,6 +77,7 @@ const CaseStudy: React.FC<CaseStudyCarouselProps> = ({ caseStudies }) => {
   return () => clearInterval(interval);
 }, [posts]);
 
+  /* // --- COMMENTED OUT API LOGIC ---
   const fetchPosts = useCallback(
     async (idsToFilter: number[]) => {
       try {
@@ -80,6 +119,8 @@ const CaseStudy: React.FC<CaseStudyCarouselProps> = ({ caseStudies }) => {
     const categoryIds = [19498, 32037, 32555]
     fetchPosts(categoryIds)
   }, [fetchPosts])
+  */
+ 
   return (
     <section className="relative min-h-[600px] overflow-hidden bg-black py-16 text-white">
       <div className="max-w-7xl px-[192px]">
@@ -112,8 +153,10 @@ const CaseStudy: React.FC<CaseStudyCarouselProps> = ({ caseStudies }) => {
                 {/* Image */}
                 <div className="h-[16.5625vw] max-w-[424px] flex-shrink-0 overflow-hidden rounded-xl md:w-1/2">
                   <Image
-                    src={item._embedded?.["wp:featuredmedia"]?.[0]?.source_url || "/images/portfolio/portfolioImg.png"}
-                    alt={item.title.rendered}
+                    // src={item._embedded?.["wp:featuredmedia"]?.[0]?.source_url || "/images/portfolio/portfolioImg.png"} //API
+                    // alt={item.title.rendered} //API
+                    src={item.imageSrc}
+                    alt={item.title}
                     width={424}
                     height={300}
                     objectFit="cover"
@@ -124,15 +167,18 @@ const CaseStudy: React.FC<CaseStudyCarouselProps> = ({ caseStudies }) => {
                 {/* Content */}
                 <div className="flex w-full flex-col md:w-1/2">
                   <span className="p16 mb-[1.6146vw] inline-block w-[max-content] rounded-full border border-[#00979E] px-4 py-1 text-white">
-                    {item._embedded?.["wp:term"]?.[0]?.[0]?.name || "General"}
+                    {/* {item._embedded?.["wp:term"]?.[0]?.[0]?.name || "General"} */}
+                    {item.tag}
                   </span>
                   <h3
                     className="mb-[0.9375vw] line-clamp-2"
-                    dangerouslySetInnerHTML={{ __html: item.title.rendered }}
+                    // dangerouslySetInnerHTML={{ __html: item.title.rendered }}
+                    dangerouslySetInnerHTML={{ __html: item.title }}
                   />
                   <p
                     className="p16 mb-[1.1979vw] line-clamp-2 text-gray-400"
-                    dangerouslySetInnerHTML={{ __html: item.excerpt.rendered }}
+                    // dangerouslySetInnerHTML={{ __html: item.excerpt.rendered }}
+                    dangerouslySetInnerHTML={{ __html: item.excerpt }}
                   />
                   <button
                     className="fancy rounded-2xle w-[max-content] cursor-pointer px-12 py-[0.8333vw] transition-all"
