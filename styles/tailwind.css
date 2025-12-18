@@ -11,6 +11,27 @@
   If we ever want to remove these styles, we need to add an explicit border
   color utility to any element that depends on these defaults.
 */
+
+@theme {
+  /* Mobile */
+  --text-p12: 0.75rem;
+  --text-p14: 0.875rem;
+  --text-p16: 1rem;
+  --text-p18: 1.125rem;
+
+  /* Tablet (rem-based) 
+  --text-p14-md: 0.875rem;
+  --text-p16-md: 1rem;
+  --text-p18-md: 1.125rem; */
+
+  /* Desktop (vw-based — SAME AS YOUR CURRENT DESIGN) */
+  --text-p20-lg: 1.041vw;
+  --text-p14-lg: 0.729vw;
+  --text-p16-lg: 0.833vw;
+  --text-p18-lg: 0.9375vw;
+  --text-p24-lg: 1.25vw;
+}
+
 .glow-bg {
   background: radial-gradient(83.98% 108.86% at 54.7% 46.41%,
       #1D3FFF 0%,
@@ -78,6 +99,93 @@ select:-webkit-autofill {
     flex-shrink: 0;
     aspect-ratio: 91 / 43;
   }
+
+  /* ===== Paragraph Utilities (NEW) ===== */
+  .text-p12 {
+    font-family: Poppins;
+    font-weight: 400;
+    font-size: var(--text-p12);
+    line-height: 1.036rem;
+    letter-spacing: 0%;
+  }
+
+  .text-p14 {
+    font-family: Poppins;
+    font-weight: 400;
+    font-size: var(--text-p14);
+    line-height: 1.25rem;
+  }
+
+  .text-p16 {
+    font-family: Poppins;
+    font-weight: 400;
+    font-size: var(--text-p16);
+    line-height: 1.5rem;
+  }
+
+  .text-p18 {
+    font-family: Poppins;
+    font-weight: 400;
+    font-size: var(--text-p18);
+    line-height: 1.75rem;
+  }
+
+  /* ===== TABLET (md) ===== */
+  @media (min-width: 768px) {
+    .md\:text-p12 {
+      font-size: 0.75rem;
+      line-height: 1.036rem;
+    }
+
+    .md\:text-p14 {
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+    }
+
+    .md\:text-p16 {
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
+
+    .md\:text-p18 {
+      font-size: 1.125rem;
+      line-height: 1.75rem;
+    }
+
+    .md\:text-p20 {
+      font-size: 1.25rem;
+      line-height: 1.875rem;
+    }
+  }
+
+  /* Desktop overrides — EXACT SAME SIZES AS BEFORE */
+  @media (min-width: 1024px) {
+    .lg\:text-p14 {
+      font-size: var(--text-p14-lg);
+      line-height: 1.041vw;
+    }
+
+    .lg\:text-p16 {
+      font-size: var(--text-p16-lg);
+      line-height: 1.25vw;
+    }
+
+    .lg\:text-p18 {
+      font-size: var(--text-p18-lg);
+      line-height: 1.458vw;
+    }
+
+    .lg\:text-p20 {
+      font-size: var(--text-p20-lg);
+      line-height: 1.5625vw;
+    }
+
+    .lg\:text-p24 {
+      font-size: var(--text-p24-lg);
+      line-height: 1.667vw;
+    }
+  }
+
 }
 
 /* From Uiverse.io by pradipkaityuiux */
@@ -144,7 +252,6 @@ h5 {
   /* 36px */
   letter-spacing: 0%;
 }
-
 
 .p24 {
   font-family: Poppins;
@@ -1093,26 +1200,27 @@ html {
     padding-left: 2rem !important;
     padding-right: 2rem !important;
   }
-   h1 {
+
+  h1 {
     font-weight: 600;
-    font-size: 3rem;
-    line-height: 3.75rem;
+    font-size: 4.5rem;
+    line-height: 5.5rem;
     letter-spacing: -2%;
   }
 
   h2 {
     font-family: Poppins;
     font-weight: 600;
-    font-size: 1.75rem;
-    line-height: 2rem;
+    font-size: 3rem;
+    line-height: 3.75rem;
     letter-spacing: 0%;
   }
 
   h3 {
     font-family: Poppins;
     font-weight: 600;
-    font-size: 1.5rem;
-    line-height: 2rem;
+    font-size: 1.875rem;
+    line-height: 2.25rem;
     letter-spacing: 0%;
   }
 
@@ -1124,7 +1232,7 @@ html {
     letter-spacing: 0%;
   }
 
-   h5 {
+  h5 {
     font-family: Poppins;
     font-weight: 500;
     font-size: 0.875rem;
@@ -1132,7 +1240,7 @@ html {
     letter-spacing: 0%;
   }
 
-  .p18{
+  .p18 {
     font-family: Poppins;
     font-weight: 400;
     font-size: 1.125rem;
@@ -1140,7 +1248,7 @@ html {
     letter-spacing: 0%;
   }
 
-  .p16{
+  .p16 {
     font-family: Poppins;
     font-weight: 400;
     font-size: 1rem;
@@ -1156,7 +1264,7 @@ html {
     letter-spacing: 0%;
   }
 
-   .p12 {
+  .p12 {
     font-family: Poppins;
     font-weight: 400;
     font-size: 0.75rem;
@@ -1206,7 +1314,7 @@ html {
     letter-spacing: 0%;
   }
 
-   h5 {
+  h5 {
     font-family: Poppins;
     font-weight: 500;
     font-size: 0.875rem;
@@ -1214,7 +1322,7 @@ html {
     letter-spacing: 0%;
   }
 
-  .p18{
+  .p18 {
     font-family: Poppins;
     font-weight: 400;
     font-size: 1.125rem;
@@ -1222,7 +1330,7 @@ html {
     letter-spacing: 0%;
   }
 
-  .p16{
+  .p16 {
     font-family: Poppins;
     font-weight: 400;
     font-size: 1rem;
@@ -1238,7 +1346,7 @@ html {
     letter-spacing: 0%;
   }
 
-   .p12 {
+  .p12 {
     font-family: Poppins;
     font-weight: 400;
     font-size: 0.75rem;
@@ -1247,17 +1355,17 @@ html {
   }
 }
 
-.portfolio-content.elementor-content h2{
+.portfolio-content.elementor-content h2 {
   font-size: 2.776vw !important;
 }
 
 .portfolio-detail-page .elementor a,
 .portfolio-detail-page span.elementor-icon-list-text,
 .portfolio-content.elementor-content h4,
-.portfolio-detail-page ul li{
+.portfolio-detail-page ul li {
   font-size: 1.111vw !important;
 }
 
-.portfolio-content.elementor-content p{
+.portfolio-content.elementor-content p {
   font-size: 1.25vw !important;
 }
