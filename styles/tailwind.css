@@ -34,130 +34,6 @@
   ::file-selector-button {
     border-color: var(--color-gray-200, currentColor);
   }
-
-  /* You can optionally add a shared font-family here or configure it in tailwind.config.js */
-
-  h1 {
-    font-weight: 600; /* Medium weight for mobile */
-    font-size: 3rem;
-    line-height: 3.75rem;
-    letter-spacing: -2%;
-  }
-
-  h2 {
-    font-weight: 600;
-    font-size: 1.75rem;
-    line-height: 2rem;
-  }
-
-  h3 {
-    font-weight: 600;
-    font-size: 1.5rem;
-    line-height: 2rem;
-  }
-
-  h4 {
-    font-weight: 500;
-    font-size: 1.406rem;
-    line-height: 1.688rem;
-  }
-
-  h5 {
-    font-weight: 500;
-    font-size: 0.875rem;
-    line-height: 1.125rem;
-  }
-}
-
-@layer utilities {
-
-  /* Mobile/Tablet default (REM units) */
-  .p24, .p20, .p18, .p16, .p14, .p12 {
-    font-family: Poppins;
-    font-weight: 400;
-  }
-
-  .p24 {
-    font-size: 1.25rem; /* Approximation based on original VW, using rem for mobile */
-    line-height: 1.667rem;
-  }
-  .p20 {
-    font-size: 1.041rem;
-    line-height: 1.5625rem;
-  }
-  .p18 {
-    font-size: 1.125rem; 
-    line-height: 1.75rem;
-  }
-  .p16 {
-    font-size: 1rem;
-    line-height: 1.5rem;
-  }
-  .p14 {
-     font-size: 0.875rem;
-     line-height: 1.25rem;
-  }
-  .p12 {
-     font-size: 0.75rem;
-     line-height: 1.036rem;
-  }
-  .global-container {
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
-  }
-
-
-  /* --- 4. Desktop Overrides (VW units) --- */
-  /* This media query applies only to screens wider than Tailwind's default 'lg' breakpoint (1024px) */
-  @media (min-width: 64rem) { /* 64rem is 1024px, a common desktop breakpoint */
-
-    /* Headings Overrides (using VW) */
-    h1 {
-      font-weight: 700; /* Bold weight for desktop */
-      font-size: 3.75vw;
-      line-height: 4.583vw;
-    }
-    h2 {
-      font-size: 2.5vw;
-      line-height: 3.125vw;
-    }
-    h3 {
-      font-size: 1.875vw;
-      line-height: 2.291vw;
-    }
-    h4 {
-      font-size: 1.5625vw;
-      line-height: 1.875vw;
-    }
-    h5 {
-      font-size: 1.458vw;
-      line-height: 1.875vw;
-    }
-
-    /* Paragraph Overrides (using VW) */
-    .p24 {
-      font-size: 1.25vw;
-      line-height: 1.667vw;
-    }
-    .p20 {
-      font-size: 1.041vw;
-      line-height: 1.5625vw;
-    }
-    .p18 {
-      font-size: 0.9375vw;
-      line-height: 1.458vw;
-    }
-    .p16 {
-      font-size: 0.833vw;
-      line-height: 1.25vw;
-    }
-    /* Add desktop VW overrides for p14 and p12 here if needed */
-
-    .global-container {
-      padding-left: 4rem !important; /* Adjust as needed for desktop */
-      padding-right: 4rem !important;
-    }
-  }
 }
 
 /* ---- Autofill Fix (Place Here) ---- */
@@ -186,6 +62,23 @@ select:-webkit-autofill {
   transition: background-color 9999s ease-in-out 0s;
 }
 
+@layer utilities {
+
+  /* Global padding across website */
+  .global-container {
+    padding-left: 10vw !important;
+    /* default mobile */
+    padding-right: 10vw !important;
+  }
+
+  /* Logo responsive sizes */
+  .logo-responsive {
+    width: 9.479vw;
+    height: 4.479vw;
+    flex-shrink: 0;
+    aspect-ratio: 91 / 43;
+  }
+}
 
 /* From Uiverse.io by pradipkaityuiux */
 /* Styles for PhoneInput country select */
@@ -206,6 +99,89 @@ select:-webkit-autofill {
 }
 
 /* Global fonts*/
+h1 {
+  font-weight: 700;
+  font-style: bold;
+  font-size: 3.75vw;
+  line-height: 4.583vw;
+  letter-spacing: -2%;
+}
+
+h2 {
+  font-family: Poppins;
+  font-weight: 600;
+  font-style: semibold;
+  font-size: 2.5vw;
+  line-height: 3.125vw;
+  letter-spacing: -2%;
+}
+
+h3 {
+  font-family: Poppins;
+  font-weight: 600;
+  font-style: semibold;
+  font-size: 1.875vw;
+  line-height: 2.291vw;
+  letter-spacing: -2%;
+}
+
+h4 {
+  font-family: Poppins;
+  font-weight: 500;
+  font-style: medium;
+  font-size: 1.5625vw;
+  line-height: 1.875vw;
+  letter-spacing: 0%;
+}
+
+h5 {
+  font-family: Poppins;
+  font-weight: 500;
+  font-style: medium;
+  font-size: 1.458vw;
+  /* 28px */
+  line-height: 1.875vw;
+  /* 36px */
+  letter-spacing: 0%;
+}
+
+
+.p24 {
+  font-family: Poppins;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.25vw;
+  line-height: 1.667vw;
+  letter-spacing: 0%;
+}
+
+.p20 {
+  font-family: Poppins;
+  font-weight: 400;
+  font-style: regular;
+  font-size: 1.041vw;
+  line-height: 1.5625vw;
+  letter-spacing: 0%;
+}
+
+.p18 {
+  font-family: Poppins;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 0.9375vw;
+  line-height: 1.458vw;
+  letter-spacing: 0%;
+}
+
+.p16 {
+  font-family: Poppins;
+  font-weight: 400;
+  font-style: regular;
+  font-size: 0.833vw;
+  line-height: 1.25vw;
+  letter-spacing: 0%;
+  vertical-align: middle;
+}
 
 .banner-tab {
   border: 1px solid white;
@@ -1112,7 +1088,164 @@ html {
    TABLET
    768px – 1023px
 ================================ */
+@media (width >=48rem) and (width < 64rem) {
+  .global-container {
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+  }
+   h1 {
+    font-weight: 600;
+    font-size: 3rem;
+    line-height: 3.75rem;
+    letter-spacing: -2%;
+  }
 
+  h2 {
+    font-family: Poppins;
+    font-weight: 600;
+    font-size: 1.75rem;
+    line-height: 2rem;
+    letter-spacing: 0%;
+  }
+
+  h3 {
+    font-family: Poppins;
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    letter-spacing: 0%;
+  }
+
+  h4 {
+    font-family: Poppins;
+    font-weight: 500;
+    font-size: 1.406rem;
+    line-height: 1.688rem;
+    letter-spacing: 0%;
+  }
+
+   h5 {
+    font-family: Poppins;
+    font-weight: 500;
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    letter-spacing: 0%;
+  }
+
+  .p18{
+    font-family: Poppins;
+    font-weight: 400;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    letter-spacing: 0%;
+  }
+
+  .p16{
+    font-family: Poppins;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    letter-spacing: 0%;
+  }
+
+  .p14 {
+    font-family: Poppins;
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    letter-spacing: 0%;
+  }
+
+   .p12 {
+    font-family: Poppins;
+    font-weight: 400;
+    font-size: 0.75rem;
+    line-height: 1.036rem;
+    letter-spacing: 0%;
+  }
+}
+
+/* ===============================
+   MOBILE
+   < 768px
+================================ */
+@media (width < 48rem) {
+  .global-container {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  h1 {
+    font-weight: 600;
+    font-size: 3rem;
+    line-height: 3.75rem;
+    letter-spacing: -2%;
+  }
+
+  h2 {
+    font-family: Poppins;
+    font-weight: 600;
+    font-size: 1.75rem;
+    line-height: 2rem;
+    letter-spacing: 0%;
+  }
+
+  h3 {
+    font-family: Poppins;
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    letter-spacing: 0%;
+  }
+
+  h4 {
+    font-family: Poppins;
+    font-weight: 500;
+    font-size: 1.406rem;
+    line-height: 1.688rem;
+    letter-spacing: 0%;
+  }
+
+   h5 {
+    font-family: Poppins;
+    font-weight: 500;
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    letter-spacing: 0%;
+  }
+
+  .p18{
+    font-family: Poppins;
+    font-weight: 400;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    letter-spacing: 0%;
+  }
+
+  .p16{
+    font-family: Poppins;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    letter-spacing: 0%;
+  }
+
+  .p14 {
+    font-family: Poppins;
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    letter-spacing: 0%;
+  }
+
+   .p12 {
+    font-family: Poppins;
+    font-weight: 400;
+    font-size: 0.75rem;
+    line-height: 1.036rem;
+    letter-spacing: 0%;
+  }
+}
 
 .portfolio-content.elementor-content h2{
   font-size: 2.776vw !important;
