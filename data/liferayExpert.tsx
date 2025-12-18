@@ -1,8 +1,8 @@
 import { head } from "lodash"
 
 export const featureTabs = [
-  "Liferay Platform Consultation",
-  "Architecture & Technical Advisory",
+  "Platform Consultation",
+  "Technical Advisory",
   "Performance & Stability Guidance",
   "Upgrade & Migration Readiness",
 ]
@@ -27,17 +27,17 @@ export const solutions = [
   {
     number: "03",
     title: "Liferay Performance & Stability Advisory",
-    desc: "Expert analysis of performance bottlenecks, configuration gaps, and resource utilisation. Recommendations focus on scalability, caching strategy, database efficiency, and platform tuning aligned with Liferay standards.",
+    desc: "Expert analysis of performance bottlenecks, configuration gaps, and resource utilisation. Recommendations focus on scalability, caching strategy, database efficiency, and platform tuning with Liferay standards.",
   },
   {
     number: "04",
     title: "Liferay Production Release Advisory",
-    desc: "Guidance to stabilise production releases by assessing deployment pipelines, compatibility risks, and environment readiness. We help teams identify release blockers early and ensure smoother rollouts across environments.",
+    desc: "Guidance to stabilise production releases by assessing deployment pipelines, compatibility risks, and environment readacross environments.",
   },
 ]
 
-export const LiferayExpertAdviceTitle1 = "Why Enterprises Choose IGNEK For Liferay Expert Advice: Elevate Your Digital Experience?"
-export const LiferayExpertAdviceTitle2 = ""
+export const LiferayExpertAdviceTitle1 = "Why Enterprises Choose IGNEK For Liferay Expert "
+export const LiferayExpertAdviceTitle2 = "Advice?"
 export const LiferayExpertAdviceSubContent =
   "Enterprises turn to IGNEK when they need clarity, not assumptions around their Liferay decisions. Our expert advice is grounded in real-world Liferay delivery experience, platform discipline, and a deep understanding of how Liferay evolves at enterprise scale."
 
@@ -79,7 +79,7 @@ export const expertAdviceHero = {
 export const expertAdviceSection = {
   heading: "Liferay Expert Advice Service",
   description:
-    "Our Liferay Expert Advice services provide enterprises with objective, experience-led guidance across platform design, implementation, and optimisation. We help teams evaluate decisions before they become commitments ensuring your Liferay DXP remains stable, scalable, and aligned with best-practice platform usage.",
+    "We help teams evaluate decisions before they become commitments ensuring your Liferay DXP remains stable, scalable, and aligned with best-practice platform usage.",
 }
 
 export const expertAdviceSolutions = {

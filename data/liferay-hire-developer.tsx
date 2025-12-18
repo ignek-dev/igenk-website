@@ -9,19 +9,19 @@ export const whyHireFromIgnek = [
     icon: "/images/icon/certified-developer.png",
     title: ["Certified Liferay", "Developer"],
     description:
-      "Our developers are certified Liferay specialists with deep platform expertise and hands-on experience across multiple DXP versions. Their training ensures precise implementation, clean architecture, and dependable technical decision-making.",
+      "Our developers are certified Liferay specialists with deep platform expertise and hands-on experience across multiple DXP versions.",
   },
   {
     icon: "/images/icon/Transparent-Communication.svg", // Replace with the correct icon path
     title: ["Transparent", "Communication"],
     description:
-      "We maintain clear, structured communication throughout your engagement. You receive regular updates, proactive progress visibility, and open dialogue at every stage to ensure alignment and address questions without delay.",
+      "You receive regular updates, proactive progress visibility, and open dialogue at every stage to ensure alignment and address questions without delay.",
   },
   {
     icon: "/images/icon/Flexible-Hiring.svg", // Replace with the correct icon path
     title: ["Flexible", "Hiring Models"],
     description:
-      "Choose from flexible hiring options tailored to your needs—hourly, part-time, or full-time. Scale your Liferay team quickly and efficiently as your project evolves, without administrative overhead or long-term commitment.",
+      "Choose from flexible hiring options tailored to your needs—hourly, part-time, or full-time. Scale your Liferay team quickly and efficiently as your project evolves.",
   },
   {
     icon: "/images/icon/Fully-Signed-NDA.svg", // Replace with the correct icon path
@@ -48,19 +48,19 @@ export const easySteps = [
     icon: "/images/icon/search-circle.svg",
     title: "Define Project Requirements",
     description:
-      "Share your objectives, functional needs, technical expectations, existing architecture details, and delivery timelines. This helps us identify the exact Liferay skillset required.",
+      "Share your objectives, requirements, architecture details, and timelines to help us identify the right engineer.",
   },
   {
     step: "02",
     icon: "/images/icon/Screening-Select.svg",
     title: "Screening & Select",
-    description: "We shortlist developers aligned with your requirements, platform version, and complexity level. You interview and evaluate them to ensure the right technical and cultural fit.",
+    description: "We shortlist developers aligned with your requirements, platform version, and complexity level.",
   },
   {
     step: "03",
     icon: "/images/icon/Onboard-Developer.svg",
     title: "Onboard Developer",
-    description: "Once selected, your developer is onboarded immediately with all required access, documentation, and setup — enabling the team to start contributing from day one.",
+    description: "Once selected, your developer is onboarded — enabling the team to start contributing from day one.",
   },
 ]
 
@@ -69,38 +69,38 @@ export const teamOffersServices = [
     icon: "/images/icon/Development-and-Customization .svg", // Replace with your icon path
     title: "Development and Customization",
     description:
-      "Engineer tailored functionalities, custom modules, and component enhancements using Liferay-first architecture. We minimise customisation while ensuring your platform aligns with precise business needs.",
+      "Engineer tailored functionalities, custom modules, and component enhancements using Liferay-first architecture.",
   },
   {
     icon: "/images/icon/Theme-Development.svg", // Replace with your icon path
     title: "Liferay Frontend Development",
-    description: "Deliver intuitive, performant, and consistent frontend experiences built on Liferay’s modern frameworks — ensuring speed, accessibility, and brand alignment without compromising platform integrity.",
+    description: "Deliver intuitive, performant, and consistent frontend experiences built on Liferay’s modern frameworks — ensuring speed, accessibility, and brand alignment.",
   },
   {
     icon: "/images/icon/Expert-Advice.svg", // Replace with your icon path
     title: "Expert Advice",
-    description: "Get strategic guidance on platform architecture, solution design, upgrades, performance optimisation, and Liferay best practices to ensure long-term platform sustainability.",
+    description: "Get strategic guidance on platform architecture, solution design, upgrades, performance optimisation with Liferay best practices.",
   },
   {
     icon: "/images/icon/Proof-Of-Concept.svg", // Replace with your icon path
     title: "Proof Of Concept",
-    description: "Validate ideas quickly with working prototypes that confirm feasibility, reduce risk, and support data-driven decision-making before committing to full-scale implementation.",
+    description: "Validate ideas quickly with working prototypes that confirm feasibility, reduce risk, and support data-driven decision-making.",
   },
   {
     icon: "/images/icon/Ecommerce-Development.svg", // Replace with your icon path
     title: "Ecommerce Development",
     description:
-      "Build seamless, enterprise-grade digital commerce solutions using Liferay Commerce for B2B and B2C operations — enabling integrated catalog, pricing, and transaction experiences.",
+      "Build seamless, enterprise-grade digital commerce solutions using Liferay Commerce for B2B and B2C operations.",
   },
   {
     icon: "/images/icon/Migration.svg", // Replace with your icon path
     title: "Migration",
-    description: "Transition from older Liferay versions or legacy systems with structured, secure, and efficient migration processes — ensuring data integrity, compatibility, and minimal business disruption.",
+    description: "Transition from older Liferay versions or legacy systems with structured, secure, and efficient migration processes.",
   },
   {
     icon: "/images/icon/Support-And-Maintenance.svg", // Replace with your icon path
     title: "Support And Maintenance",
-    description: "Maintain platform stability with continuous monitoring, issue resolution, security updates, and performance improvements to keep your Liferay ecosystem reliable and up to date.",
+    description: "Maintain platform stability with continuous monitoring, issue resolution, security updates, and performance improvements.",
   },
   {
     icon: "/images/icon/Performance-Tuning.svg", // Replace with your icon path
@@ -110,7 +110,7 @@ export const teamOffersServices = [
   {
     icon: "/images/icon/Upgradation.svg", // Replace with your icon path
     title: "Upgradation",
-    description: "Upgrade to the latest Liferay DXP versions with confidence — unlocking modern features, enhanced security, and improved maintainability through a structured upgrade framework.",
+    description: "Upgrade to the latest Liferay DXP versions with confidence — unlocking modern features, enhanced security, and improved maintainability.",
   },
   {
     icon: "/images/icon/Liferay-Architecture.svg", // Replace with your icon path
@@ -163,7 +163,7 @@ export const hireLiferayHeroData = {
   },
 
   description:
-    "We are a Liferay Boutique Company with certified Liferay developers and consultants specialising exclusively in Liferay DXP. With deep, multi-version expertise and a strict Liferay-first delivery approach, we help enterprises reduce development effort, accelerate implementation, and build secure, scalable digital platforms. Hire dedicated Liferay developers to maximise your Liferay investment and achieve faster time-to-market.",
+    "We help enterprises reduce development effort, accelerate implementation, and build secure, scalable digital platforms. Hire dedicated Liferay developers to maximise your Liferay investment and achieve faster time-to-market.",
 };
 
 export const hireLiferayWhyData = {
@@ -183,11 +183,11 @@ export const hireLiferayStepsData = {
 };
 
 export const engagementModelsData = {
-  titleLine1: "Engagement Model For Hiring",
-  titleLine2: "Dedicated Liferay Developer",
+  titleLine1: "Engagement Model For ",
+  titleLine2: "Hiring Liferay Developer",
 
   description:
-    "Choose the engagement model that aligns with your delivery goals, budget structure, and long-term platform roadmap. Every model ensures transparent collaboration and Liferay-aligned engineering.",
+    "Choose the engagement model that aligns with your delivery goals, budget structure, and long-term platform roadmap.",
 };
 
 export const liferayServicesHeaderData = {
@@ -201,7 +201,7 @@ export const liferayTechStacksData = {
   title: "Liferay Technological Stacks",
 
   description:
-    "Liferay DXP is built on a mature, enterprise-grade technology ecosystem. Its architecture enables seamless integration, strong security, and scalable performance — making it suitable for complex, multi-system environments. Our developers work across the full Liferay technological stack to ensure you maximise the platform’s capabilities.",
+    "Liferay DXP is built on a mature, enterprise-grade technology ecosystem. Its architecture enables seamless integration, strong security, and scalable performance — making it suitable for complex, multi-system environments.",
 };
 
 export const stackData = [
@@ -376,7 +376,7 @@ export const engagementModelsinfo = [
   {
     icon: "/images/liferay-pages-image/liferay-consultation-page/experties.png",
     title: "Dedicated Team",
-    description: "A full Liferay-focused team working exclusively on your long-term initiatives, ensuring continuity, accountability, and platform-first execution.",
+    description: "A full Liferay-focused team working exclusively on your long-term initiatives, ensuring continuity and accountability.",
     features: ["High cost efficiency", "Strengthened engineering capacity", "Consistent delivery"],
   },
   {
@@ -394,3 +394,11 @@ export const engagementModelsinfo = [
     features: ["Minimal financial risk", "Ideal for MVPs and pilot projects", "Predictable outcomes"],
   },
 ]
+
+
+
+export const talkToExperthire = {
+  headingPart1: "Ready to Hire Certified Liferay Developers?",
+  descriptionPart1: "Connect with our team to discuss your requirements and get expert guidance on your Liferay project, including architecture, implementation approach, and long-term platform strategy.",
+  buttonText: "Talk to an Expert",
+};

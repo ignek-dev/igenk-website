@@ -1,9 +1,10 @@
 import { head } from "lodash"
 
 export const featureTabs = [
-  "Enterprise Liferay Platform Support",
-  "Annual Maintenance Contracts",
+  "Liferay Platform Support",
+  "Maintenance Contracts",
   "Performance & Stability Assurance",
+  "Troubleshooting and Bug Fixes",
 ]
 
 export const supportChecklist = [
@@ -19,59 +20,59 @@ export const activities = [
   {
     num: "01",
     title: "Platform Monitoring",
-    desc: "We continuously monitor platform health across performance, availability, security, integrations, logs, and infrastructure to identify risks before they impact business operations.",
+    desc: "We proactively monitor performance, availability, security, integrations, and infrastructure to detect risks.",
   },
   {
     num: "02",
     title: "Content & Configuration",
-    desc: "We manage configuration changes and content adjustments in a controlled manner, ensuring the platform adapts to evolving business needs without introducing instability.",
+    desc: "Configuration and content changes are managed in a controlled way to support evolving needs.",
   },
   {
     num: "03",
     title: "Debugging & Issue Resolution",
-    desc: "Production issues are diagnosed methodically and resolved with precision, ensuring minimal disruption while addressing root causes—not just symptoms.",
+    desc: "Issues are analysed and resolved systematically to minimise disruption and address root causes.",
   },
   {
     num: "04",
     title: "Enhancement & Development",
-    desc: "We support controlled post-production enhancements that extend platform capabilities while maintaining architectural integrity and upgrade safety.",
+    desc: "We deliver controlled enhancements that extend platform capabilities while preserving architecture.",
   },
   {
     num: "05",
     title: "Regular Updates",
-    desc: "Fix Packs, security updates, hotfixes, and rolling releases are applied through planned, low-risk processes aligned with Liferay’s recommended upgrade paths.",
+    desc: "Fix packs, security updates, and releases are applied through planned and low-risk processes.",
   },
   {
     num: "06",
     title: "Backup and Recovery",
-    desc: "We implement and validate backup strategies and disaster recovery readiness to safeguard enterprise data and ensure business continuity.",
+    desc: "We enforce tested backup and recovery strategies to protect enterprise data and ensure business continuity.",
   },
   {
     num: "07",
     title: "License Management",
-    desc: "We monitor licensing usage, renewals, and compliance to ensure the platform remains aligned with Liferay’s licensing requirements.",
+    desc: "We monitor licensing usage, renewals, and compliance to ensure the platform remains aligned with Liferay.",
   },
   {
     num: "08",
     title: "Performance Optimisation",
-    desc: "Regular performance reviews and tuning ensure the platform remains responsive and stable as usage patterns evolve.",
+    desc: "Regular performance reviews and tuning ensure the platform remains responsive and stable.",
   },
   {
     num: "09",
     title: "Testing Environment",
-    desc: "Changes are validated in controlled environments before production release to reduce risk and maintain platform stability.",
+    desc: "Changes are validated in controlled environments before production release to reduce risk.",
   },
   {
     num: "10",
     title: "Regular Audits",
-    desc: "Periodic audits identify inefficiencies, technical debt, and optimisation opportunities with supporting continuous improvement across the Liferay environment.",
+    desc: "Periodic audits identify inefficiencies, technical debt, and optimisation opportunities across environment.",
   },
 ]
 
 export const LiferaySupportMaintenanceTitle1 = "Why Enterprises Choose IGNEK For Liferay Support And Maintenance Service?"
 export const LiferaySupportMaintenanceTitle2 = ""
 export const LiferaySupportMaintenanceSubContent =
-  "Supporting an enterprise Liferay platform requires more than reactive ticket handling. It demands deep platform knowledge, disciplined operational processes, and an understanding of how Liferay evolves over time. Organisations choose IGNEK because we provide structured, proactive support that protects platform health and enables confident long-term ownership."
+  "Organisations choose IGNEK because we provide structured, proactive support that protects platform health and enables confident long-term ownership."
 
 export const LiferaySupportMaintenanceData = [
   {
@@ -117,7 +118,7 @@ export const supportActivities = {
   heading: "Key Activities Under Our Liferay ",
   heading2: "Support And Maintenance Service",
   description:
-    "Our Liferay support and maintenance activities are structured to provide continuous visibility, controlled change, and long-term platform reliability across enterprise environments.",
+    "Our Liferay support and maintenance activities are structured to provide continuous visibility, controlled change, and long-term platform reliability.",
 }
 
 export const liferaySupportCta = {

@@ -1,7 +1,8 @@
 export const featureTabs = [
-  "Liferay POC Strategy & Validation",
+  "Liferay POC Strategy",
   "OOTB Capability Assessment",
   "Architecture & Feasibility Analysis",
+  "Integration & Customisation Insight",
 ]
 
 export const liferayPOCServices = [
@@ -16,8 +17,8 @@ export const liferayPOCServices = [
   "Validate upgrade safety, scalability, and platform viability",
 ]
 
-export const LiferayProofOfConceptTitle1 = "Why Enterprises Choose IGNEK For Liferay"
-export const LiferayProofOfConceptTitle2 = "Proof Of Concept?"
+export const LiferayProofOfConceptTitle1 = "Why Enterprises Choose IGNEK For Liferay Proof Of"
+export const LiferayProofOfConceptTitle2 = " Concept?"
 export const LiferayProofOfConceptSubContent =
   "Our Liferay POC engagements are grounded in real implementation experience, platform discipline, and clear decision-making criteria. We focus on validating feasibility, not showcasing features."
 

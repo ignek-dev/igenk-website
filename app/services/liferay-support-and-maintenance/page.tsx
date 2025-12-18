@@ -52,7 +52,7 @@ export default function LiferaySupportMaintenancePage() {
             <br />
             {supportBanner.heading2}
           </h1>
-          <p className="text-right p18 text-white w-[38.438vw]">
+          <p className="text-right p18 pb-3 text-white w-[38.438vw]">
             {supportBanner.description}
           </p>
         </div>
