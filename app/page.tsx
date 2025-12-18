@@ -55,18 +55,18 @@ export default function HomePage() {
 
         <div className="global-container w-full pb-16">
           
-          <div className="mt-[0.850vw] grid items-start gap-8 md:grid-cols-2">
-            <p className="p20 max-w-xl leading-[30px] text-[#F3F4F6]">{hero.description} </p>
+          <div className="mt-[0.850vw] grid items-start gap-8 sm:grid-cols-[28.125rem_auto] lg:grid-cols-2">
+            <p className="p18 sm:p16 max-w-xl leading-[30px] text-[#F3F4F6]">{hero.description} </p>
 
             <div className="pb-3 md:self-end md:justify-self-end">
               <a
                 href={hero.button.link}
                 className="group flex items-center justify-center gap-2 rounded-full bg-black/30 px-3 py-3 text-sm text-white transition-colors"
               >
-                <div className="flex h-8 w-8 items-center justify-center rounded-full border border-[#00979E] bg-black/30">
+                <div className="flex sm:h-5 sm:w-5 lg:h-8 lg:w-8 items-center justify-center rounded-full border border-[#00979E] bg-black/30">
                   <Image src={hero.button.icon} alt="discover-now" width={18} height={18} />
                 </div>
-                <span className="pr-2 text-xl font-semibold">{hero.button.text}</span>
+                <span className="pr-2 sm:text-[0.938rem] lg:text-xl font-semibold">{hero.button.text}</span>
               </a>
             </div>
           </div>

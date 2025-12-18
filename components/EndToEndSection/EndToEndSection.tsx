@@ -25,13 +25,13 @@ export default function EndToEndSection() {
     <section ref={sectionRef} className="relative bg-black text-white">
       <div className="global-container w-full py-[3.333vw]">
         {/* Top Heading */}
-        <div className="grid gap-10 items-center md:grid-cols-2 md:gap-12 lg:gap-0">
+        <div className="grid gap-10 items-center lg:grid-cols-2 sm:gap-4 lg:gap-0">
           <div>
             <h2 className={`${getAnimationClass("animate-slide-top")}`}>
               {EndToEndSectionData.heading}
             </h2>
           </div>
-          <p className={`${getAnimationClass("animate-slide-top")} p18 max-w-4xl text-right text-white/80`}>
+          <p className={`${getAnimationClass("animate-slide-top")} p18 max-w-4xl sm:text-left lg:text-right text-white/80`}>
             {EndToEndSectionData.description}
           </p>
         </div>
