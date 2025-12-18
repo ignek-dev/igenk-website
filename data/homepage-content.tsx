@@ -313,10 +313,10 @@ export const achievementsSection = {
 }
 
 export const blogSectionData = {
-  title: "Expert Knowledge Shaping",
-  titleHighlight: " Modern Liferay Engineering",
+  title: "Explore What's Shaping ",
+  titleHighlight: "Digital Today",
   description:
-    "Learn from deep technical insights on Liferay, React integrations, and scalable, robust platform architectures.",
+    "Explore our blogs for expert insights, trends, and innovations driving digital transformation and shaping the future.",
 };
 
 

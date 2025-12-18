@@ -84,7 +84,7 @@ export const insightLinks = [
 ]
 
 export const featuredEvent = {
-  title: "Explore practical platform insights and architectural thinking that help enterprises build resilient, long-lasting digital experiences.",
+  title: "Explore practical platform insights that help enterprises build resilient, long-lasting digital experiences.",
   // The path starts from the `public` directory
   imageSrc: "/images/mega-menu/upcoming-webinar.svg",
   imageAlt: "Customer Onboarding with Low Code/No-Code Capabilities of Liferay Portal Webinar",

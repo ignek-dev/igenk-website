@@ -510,7 +510,7 @@ export default function LiferayConsultationPage() {
             </div>
 
             {/* Right Column: Interactive Pillars */}
-            <div className="relative flex h-[500px] w-full items-start justify-between gap-5">
+            <div className="relative flex h-[420px] w-full items-start justify-between gap-5">
               {endToEndServices.map((service, index) => (
                 <div
                   key={index}

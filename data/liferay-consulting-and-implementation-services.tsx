@@ -8,31 +8,31 @@ export const expertiseStats = [
 
 export const liferayProjectFeatures = [
   {
-    title: "Highly Extensible Platform",
+    title: "Extensible Platform",
     description:
       "Liferay provides a rich set of out-of-the-box features that reduce the need for heavy customisation, while still allowing extensibility through recommended patterns such as client extensions and modular architecture.",
     icon: "/images/liferay-pages-image/liferay-consultation-page/Highly-Customizable.svg",
   },
   {
-    title: "Enterprise-Grade Scalability",
+    title: "Scalable Architecture",
     description:
       "Designed to support growing organisations, Liferay DXP scales efficiently across users, sites, and applications—without compromising performance or stability.",
     icon: "/images/liferay-pages-image/liferay-consultation-page/User-Friendly.svg",
   },
   {
-    title: "Unified Digital Experience Platform",
+    title: "Unified Digital Platform",
     description:
       "Liferay enables enterprises to manage portals, intranets, customer platforms, and partner experiences from a single, unified platform.",
     icon: "/images/liferay-pages-image/liferay-consultation-page/Highly-Scalable.svg",
   },
   {
-    title: "Seamless Enterprise Integrations",
+    title: "Enterprise Integrations",
     description:
       "With strong API and integration capabilities, Liferay connects easily with enterprise systems such as IAM, CRM, ERP, and third-party services.",
     icon: "/images/liferay-pages-image/liferay-consultation-page/One-portal.svg",
   },
   {
-    title: "Built-In Collaboration & Workflow",
+    title: "Collaboration & Workflow",
     description:
       "Content management, collaboration tools, and workflow automation are native to the platform—supporting governance, efficiency, and operational control.",
     icon: "/images/liferay-pages-image/liferay-consultation-page/Integration.svg",
@@ -260,8 +260,8 @@ export const endToEndServices = [
   },
 ]
 
-export const LiferayConsultationTitle1 = "Why Enterprises Choose IGNEK For Liferay"
-export const LiferayConsultationTitle2 = "Consulting & Implementation Services?"
+export const LiferayConsultationTitle1 = "Why Enterprises Choose IGNEK For Liferay Consulting"
+export const LiferayConsultationTitle2 = " & Implementation Services?"
 export const LiferayConsultationSubContent =
   "Enterprises choose IGNEK because we operate as a pure Liferay boutique company—bringing focused platform expertise, disciplined engineering, and a consulting-led mindset to every engagement."
 
@@ -441,9 +441,9 @@ export const liferayConsultingData: LiferayConsultingCategory[] = [
 export const liferayHeroData = {
   tag: "Liferay Services",
   titleLine1: "Liferay Consulting &",
-  titleLine2: "Implementation Services",
+  titleLine2: "Implementation Service",
   description:
-    "As a Liferay boutique consulting company, IGNEK helps enterprises design, implement, and optimise Liferay DXP using a Liferay-first, OOTB-driven approach. We focus on clean architecture, best-practice implementation, and long-term platform value—ensuring your Liferay investment remains scalable, maintainable, and future-ready.",
+    "We focus on clean architecture, best-practice implementation, and long-term platform value—ensuring your Liferay investment remains scalable, maintainable, and future-ready.",
   image: {
     src: "/images/liferay-pages-image/liferay-consultation-page/Liferay-dxp.png",
     alt: "Liferay DXP",
@@ -495,7 +495,7 @@ export const liferaySolutionsSection = {
   title: "Liferay Ecosystem ",
   titleSpan: "Expertise",
   descriptions:
-    "We work across the full Liferay ecosystem, enabling enterprises to design, implement, and scale digital experiences using Liferay’s enterprise-grade platforms.",
+    "We work across the full Liferay ecosystem, enabling enterprises to design, implement, and scale digital experiences using Liferay’s platforms.",
 }
 
 export const liferayWhyChooseSection = {
@@ -550,11 +550,11 @@ export const engagementModelsData = {
     line2: "We Implement",
   },
   description:
-    "We offer flexible engagement models designed to align with enterprise delivery needs, budget structures, and project complexity—while maintaining consistent Liferay consulting quality and delivery standards.",
+    "We offer flexible engagement models designed to align with enterprise delivery needs, budget structures, and project complexity.",
 }
 
 export const liferayconsultationTalk = {
-  heading: "Get Expert Guidance for Your Liferay Initiativet",
+  heading: "Get Expert Guidance for Your Liferay Initiatives",
   description:
     "Whether you are planning a new Liferay implementation, optimising an existing platform, or preparing for an upgrade, our Liferay consultants provide clear guidance, practical recommendations, and enterprise-grade delivery support.",
   buttonText: "Start Your Migration",

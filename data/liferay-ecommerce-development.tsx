@@ -8,39 +8,39 @@ export const ecommerceDevelopment = [
   {
     text: "Load Testing & Benchmarking",
     description:
-      "We validate platform behaviour under realistic traffic conditions to identify capacity limits, execution bottlenecks, and response degradation before they impact customers.",
+      "We validate platform behaviour under realistic traffic conditions to identify capacity limits, execution bottlenecks, and response degradation.",
   },
   {
     text: "Caching Strategies Implementation",
     description:
-      "Caching is designed and applied intentionally across application, content, and integration layers to reduce latency while preserving data accuracy and transactional integrity.",
+      "Caching is designed and applied intentionally across application, content, and integration layers to reduce latency while preserving data accuracy.",
   },
   {
     text: "Server & Infrastructure Optimization",
     description:
-      "We align web servers, application servers, and runtime resources to support sustained ecommerce workloads with consistent throughput and controlled resource utilisation.",
+      "We align web servers, application servers, and runtime resources to support sustained ecommerce workloads with consistent throughput.",
   },
   {
     text: "Database Performance Tuning",
     description:
-      "Commerce transactions depend on reliable data access. We optimise database interaction patterns to support high concurrency, fast response times, and stable order processing.",
+      "We optimise database interaction patterns to support high concurrency, fast response times, and stable order processing.",
   },
   {
     text: "Scalable Architecture Planning",
     description:
-      "The ecommerce platform is structured to scale horizontally and vertically—supporting growth in users, catalogs, orders, and integrations without architectural rework.",
+      "The ecommerce platform is structured to scale horizontally and vertically—supporting growth in users, catalogs, orders, and integrations.",
   },
   {
     text: "Continuous Monitoring & Optimization",
     description:
-      "Performance is monitored continuously to detect emerging constraints early, enabling proactive optimisation as traffic patterns and business demands evolve.",
+      "Performance is monitored continuously to detect emerging constraints early, enabling proactive optimisation as traffic patterns and evolve.",
   },
 ]
 export const ecommerceDevelopmentUsingLiferay = [
   {
     text: "Product and Catalog Management",
     description:
-      "Using Liferay’s Ecommerce Development, we enable businesses to effortlessly create, manage, and organize product catalogs, set prices and variants, and structure multiple catalogs for different customer segments, regions, or sales channels, making product management seamless and efficient.",
+      "We enable businesses to effortlessly create, manage, and organize product catalogs, set prices and variants, and structure multiple catalogs for different customer segments, regions, or sales channels, making product management seamless and efficient.",
   },
   {
     text: "Cart Management",
@@ -55,7 +55,7 @@ export const ecommerceDevelopmentUsingLiferay = [
   {
     text: "Order Management",
     description:
-      "Through Liferay Ecommerce Development, businesses can streamline the entire order lifecycle, manage deliveries efficiently, handle subscription-based orders, and provide administrators with intuitive tools to ensure smooth order processing and fulfillment.",
+      "Through Liferay Ecommerce Development, businesses can streamline the entire order lifecycle, manage deliveries efficiently, handle subscription-based orders, and provide administrators with intuitive tools to ensure smooth order processing.",
   },
   {
     text: "Personalization and Targeting",
@@ -84,7 +84,7 @@ export const steps = [
     number: 1,
     title: "Discovery & Commerce Strategy",
     description:
-      "We begin by understanding commerce objectives, purchasing models, user journeys, and enterprise constraints. This phase defines scope, platform alignment, and delivery direction—ensuring the solution supports real business workflows.",
+      "We begin by understanding commerce objectives, purchasing models, user journeys, and enterprise constraints. This phase defines scope, platform alignment, and delivery direction.",
   },
   {
     number: 2,
@@ -124,10 +124,10 @@ export const steps = [
   },
 ]
 
-export const LiferayEcommerceDevelopmentTitle1 = "Why Enterprise Choose IGNEK For Liferay"
-export const LiferayEcommerceDevelopmentTitle2 = "Ecommerce Development?"
+export const LiferayEcommerceDevelopmentTitle1 = "Why Enterprise Choose IGNEK For Liferay Ecommerce"
+export const LiferayEcommerceDevelopmentTitle2 = " Development?"
 export const LiferayEcommerceDevelopmentSubContent =
-  "Enterprise ecommerce on Liferay demands more than storefront development. It requires platform discipline, deep integration expertise, and a clear understanding of how commerce fits within a broader digital ecosystem. Enterprises choose IGNEK because we deliver Liferay Commerce solutions that are stable, scalable, and designed for long-term ownership."
+  "Enterprises choose IGNEK because we deliver Liferay Commerce solutions that are stable, scalable, and designed for long-term ownership."
 
 export const LiferayEcommerceDevelopmentData = [
   {
@@ -196,7 +196,7 @@ export const ecommerceHero = {
   titleLine2: "Ecommerce",
   titleLine3: "Development",
   description:
-    "Build enterprise-grade digital commerce on Liferay—designed for complex B2B and B2C scenarios, deep integrations, and long-term scalability. IGNEK deliver Liferay Commerce implementations that align platform capabilities with business workflows, ensuring stability, performance, and upgrade-safe growth.",
+    "We deliver Liferay Commerce implementations that align platform capabilities with business workflows, ensuring stability, performance, and upgrade-safe growth.",
 };
 
 export const ecommerceOptimization = {
@@ -214,11 +214,11 @@ export const ecommerceDevLiferay = {
 export const ecommerceProcess = {
   heading: "Our Liferay Ecommerce Development Process",
   description:
-    "Our delivery approach is designed to reduce risk, maintain platform integrity, and ensure the commerce solution scales alongside business and operational complexity.",
+    "Our delivery approach is designed to reduce risk, maintain platform integrity, and ensure the commerce solution scales operational complexity.",
 };
 
 export const ecommerceTalkToExpert = {
-  heading: "Build Enterprise Commerce on Liferay with Confidence",
+  heading: "Build Enterprise Commerce on Liferay with Expert Guidance",
   description:
     "Enterprise commerce succeeds when it is built on a platform designed for integration, scalability, and long-term ownership. IGNEK helps organisations implement Liferay Commerce in a way that supports complex business models, connected systems, and sustained digital growth.",
   buttonText: "Explore E-Commerce Solutions",

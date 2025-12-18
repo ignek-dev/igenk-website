@@ -14,15 +14,15 @@ export const items = [
     desc: "Enhance UI responsiveness and speed with Liferay DXP Performance Tuning techniques for better UX.",
   },
   {
-    title: "Database Thread Pool & Connection Pool Optimization",
+    title: "Database Thread & Connection Pool Tuning",
     desc: "Fine-tune database connections to boost performance using our Liferay Performance optimization services.",
   },
   {
-    title: "Portal Tuning by Disabling Unnecessary Filters & enabling JS & CSS Caching",
+    title: "Portal Tuning & Filter Optimization",
     desc: "Increase portal speed with caching and filter optimizations via Liferay Portal Performance optimization services.",
   },
   {
-    title: "Web server configuration improves performance",
+    title: "Web Server Configuration Optimization",
     desc: "Maximize server efficiency and response times using Liferay DXP Performance Tuning best practices.",
   },
   {
@@ -35,12 +35,11 @@ export const featureTabs = [
   "Performance Diagnostics",
   "Platform Optimisation",
   "Scalability & Load Readiness",
-  "Stability & Reliability Engineering",
   "Continuous Performance Monitoring",
 ]
 
-export const LiferayPerformanceTuningTitle1 = "Why Enterprises Choose IGNEK For Liferay"
-export const LiferayPerformanceTuningTitle2 = "Performance Tuning?"
+export const LiferayPerformanceTuningTitle1 = "Why Enterprises Choose IGNEK For Liferay Performance"
+export const LiferayPerformanceTuningTitle2 = " Tuning?"
 export const LiferayPerformanceTuningSubContent =
   "At IGNEK, our engineers combine hands-on expertise with modern performance tools to deliver precise, impactful optimization. From our first client to today, we stay committed to building long-term success."
 
@@ -109,7 +108,7 @@ export const caseStudies = [
 export const serviceDate = [
   {
     title: "Consistent User Experience",
-    desc: "Improved response times and reduced latency ensure users experience predictable, smooth interactions across the platform—regardless of load or complexity.",
+    desc: "Improved response times and reduced latency ensure users experience predictable, smooth interactions across the platform.",
     image: "/images/liferay-pages-image/Enhanced-User-Experience.svg",
   },
   {
@@ -119,22 +118,22 @@ export const serviceDate = [
   },
   {
     title: "Production-Ready Load Assurance",
-    desc: "Through controlled load validation, we confirm the platform performs reliably under real-world enterprise usage scenarios before issues surface in production.",
+    desc: "Through controlled load validation, we confirm the platform performs reliably under real-world enterprise usage scenarios.",
     image: "/images/liferay-pages-image/Load-Testing-Excellence.svg",
   },
   {
     title: "Efficient Data Processing",
-    desc: "Optimised data access patterns improve throughput and reduce contention, enabling the platform to support complex content and transactional workloads efficiently.",
+    desc: "Optimised data access patterns improve throughput and reduce contention, enabling the platform to support transactional workloads.",
     image: "/images/liferay-pages-image/Database-Performance.svg",
   },
   {
     title: "Aligned Platform Configuration",
-    desc: "Liferay configuration is tuned to match how the platform is actually used—ensuring resources are allocated appropriately and unnecessary overhead is removed.",
+    desc: "Liferay configuration is tuned to match how the platform is actually used—ensuring resources are allocated appropriately.",
     image: "/images/liferay-pages-image/Tailored-Portal-Configuration.svg",
   },
   {
     title: "Optimised Server & Runtime Behaviour",
-    desc: "Application and web server configurations are refined to maximise throughput, improve concurrency handling, and reduce runtime contention.",
+    desc: "Application and web server configurations are refined to maximise throughput, improve concurrency handling, and runtime contention.",
     image: "/images/liferay-pages-image/Web-Application-Server.svg",
   },
   {
@@ -237,20 +236,20 @@ export const liferayPerformanceTuning = {
 export const liferayPerformanceFeatures = {
   heading: "Common Liferay Performance Challenges We Address",
   description:
-    "Performance degradation in Liferay typically emerges from accumulated architectural, configuration, and operational decisions—not from a single failing component. Our performance engagements focus on identifying systemic constraints and restoring platform balance so Liferay performs consistently under real enterprise workloads.",
+    "Performance degradation in Liferay typically emerges from accumulated architectural, configuration, and operational decisions—not from a single failing component. Our performance engagements focus on identifying systemic constraints and restoring platform balance so Liferay performs consistently.",
   features: [
     {
       title: "Unpredictable Page Response",
       description:
-        "We address experience slowdowns caused by rendering overhead, asset delivery inefficiencies, and request-processing bottlenecks—ensuring consistent response times across user journeys.",
+        "We address experience slowdowns caused by rendering overhead, asset delivery inefficiencies, and request-processing bottlenecks—ensuring consistent response.",
     },
     {
       title: "Data Access Inefficiencies",
       description:
-        "We identify and correct database interaction patterns that limit throughput, including query behaviour, indexing strategy, and transactional load that impacts overall platform responsiveness.",
+        "We identify and correct database interaction patterns that limit throughput, including query behaviour, indexing strategy, and transactional load.",
     },
     {
-      title: "Resource Saturation",
+      title: "Resource Utilisation Imbalance",
       description:
         "When CPU, memory, or thread resources are over-consumed, platform stability suffers. We rebalance resource utilisation to restore predictable runtime behaviour.",
     },
@@ -265,9 +264,9 @@ export const liferayPerformanceFeatures = {
         "We stabilise indexing behaviour and optimise search execution to ensure fast, reliable discovery across content-heavy platforms.",
     },
     {
-      title: "Operational Instability",
+      title: "Operational Performance Instability",
       description:
-        "Recurring restarts, degraded sessions, or inconsistent behaviour are symptoms of deeper platform issues. We focus on stabilising the environment to ensure reliability over time.",
+        "When compute resources are overstressed, platform reliability degrades. We optimise resource allocation to restore stability and consistent runtime performance.",
     },
   ],
 };
@@ -276,14 +275,14 @@ export const liferayPerformanceOutcome = {
   heading: "Measured Platform Improvements ",
   heading2: "After Liferay Performance Tuning",
   description:
-    "Our tuning engagements are designed to produce measurable improvements that enterprises can rely on long-term. It restores confidence in the platform by improving operational predictability.",
+    "Our tuning engagements are designed to produce measurable improvements that enterprises can rely on long-term.",
 };
 
 export const liferayPerformanceWhatWeDo = {
   heading: "Liferay Performance Tuning ",
   heading2: "Execution Areas",
   description:
-    "We focus on the runtime, configuration, and architectural layers that directly influence platform behaviour under enterprise workloads. Each tuning activity is driven by diagnostics, evidence, and measurable impact—not assumptions.",
+    "We focus on the runtime, configuration, and architectural layers that directly influence platform behaviour under enterprise workloads.",
 };
 
 export const talkToExpertPerformance = {

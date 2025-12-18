@@ -1,4 +1,4 @@
-export const LiferayDevelopmentAndCustomizationTitle1 = "Why Choose IGNEK For Liferay"
+export const LiferayDevelopmentAndCustomizationTitle1 = "Why Enterprise Choose IGNEK For Liferay"
 export const LiferayDevelopmentAndCustomizationTitle2 = "Development and Customization?"
 export const LiferayDevelopmentAndCustomizationSubContent =
   "At IGNEK, our engineering-first mindset, modern tooling, and deep Liferay expertise ensure every solution is purpose-built, stable, scalable, and aligned with your enterprise objectives. We’ve supported our very first client since day one — and that commitment still defines how we work."
@@ -6,27 +6,27 @@ export const LiferayDevelopmentAndCustomizationSubContent =
 export const LiferayDevelopmentAndCustomizationData = [
   {
     title: "Proven Liferay Development Expertise",
-    desc: "We architect and deliver high-performance portals using advanced module development, custom portlets, service extensions, and upgrade-safe enhancements across the entire Liferay stack.",
+    desc: "We design and deliver high-performance Liferay portals using custom modules, portlets, and upgrade-safe enhancements across the platform.",
   },
   {
     title: "Client-Centric Customization Approach",
-    desc: "Our Liferay specialists engineer custom workflows, UI behaviours, and platform extensions that align precisely with your business logic, brand standards, and operational frameworks.",
+    desc: "Our Liferay experts build tailored workflows, UI behaviours, and extensions aligned with your business logic and brand standards.",
   },
   {
     title: "Scalable & Secure Architecture",
-    desc: "We design enterprise-grade Liferay architectures optimized for scalability, high availability, security hardening, and future-proof development across cloud, hybrid, and on-prem deployments.",
+    desc: "We create enterprise-grade Liferay architectures focused on scalability, availability, security, and future-ready deployments.",
   },
   {
     title: "Seamless Integration Capabilities",
-    desc: "Through deep integration expertise, we connect Liferay with ERP, CRM, IAM, cloud platforms, and third-party systems to deliver unified, frictionless digital ecosystems.",
+    desc: "We integrate Liferay with ERP, CRM, IAM, cloud, and third-party systems to enable unified digital ecosystems.",
   },
   {
     title: "Performance-Driven Results",
-    desc: "Using advanced tuning, optimized caching strategies, refined indexing, and clean-coded extensions, we enhance throughput, stability, and overall platform performance.",
+    desc: "Through tuning, caching, optimized indexing, and clean extensions, we improve platform stability, throughput, and performance.",
   },
   {
     title: "Long-Term Partnership & Evolution",
-    desc: "As your dedicated Liferay development partner, we handle upgrades, enhancements, feature rollouts, and continuous optimization to keep your portal evolving in sync with your business.",
+    desc: "As your Liferay partner, we manage upgrades, enhancements, and continuous optimization to support ongoing business growth.",
   },
 ]
 
@@ -39,16 +39,16 @@ export const featureTabs = [
 ]
 
 export const developmentServices = [
-  "Develop public and private sites using Liferay sites, site templates, page templates, and layout frameworks designed for scalable global deployments.",
-  "Utilize Liferay’s native features—fragments, web content, and layout elements—to build flexible, maintainable, and component-driven digital experiences.",
-  "Build widget templates to standardise the rendering of Liferay assets across OOTB applications such as Asset Publisher, Web Content Display, Collection Display, and Search Results.",
-  "Implement enterprise-grade search experiences using Liferay facets, Elasticsearch, and Semantic Search to deliver rich, context-aware search results.",
-  "Enable structured content governance with scheduled publishing, Kaleo workflows, and Liferay’s user–role permissions model.",
-  "Deliver personalised page experiences by adapting content dynamically based on user roles, segments, and login context.",
-  "Leverage Liferay Objects to model and manage custom entities with full CRUD support, permissions, workflows, and headless APIs.",
-  "Utilise Liferay Segments to orchestrate personalised user journeys based on behaviour, preferences, and enterprise rules.",
-  "Implement Liferay Microservices Extensions to integrate external systems and modular services that extend platform capabilities.",
-  "Adopt Liferay Client Extensions for modern, modular front-end development that maximises flexibility and long-term scalability.",
+  "Develop public and private sites using Liferay sites, templates, and layouts to support scalable, secure, and globally deployed digital platforms.",
+  "Use Liferay fragments, web content, and layout elements to create flexible, maintainable, and component-driven enterprise digital experiences.",
+  "Build widget templates to standardise how Liferay assets render across OOTB apps including Asset Publisher, Web Content, and Search Results.",
+  "Implement enterprise-grade search using Liferay facets, Elasticsearch, and Semantic Search to deliver rich, context-aware discovery experiences.",
+  "Enable structured content governance through scheduled publishing, Kaleo workflows, and Liferay’s robust user and role permissions model.",
+  "Deliver personalised page experiences by dynamically adapting content based on user roles, segments, and authenticated access context.",
+  "Leverage Liferay Objects to manage custom entities with full CRUD operations, permissions, workflows, and scalable headless APIs.",
+  "Use Liferay Segments to orchestrate personalised user journeys driven by behaviour, preferences, and enterprise-defined business rules",
+  "Implement Liferay Microservices Extensions to integrate external systems and modular services that extend core platform capabilities.",
+  "Adopt Liferay Client Extensions for modern, modular front-end development that ensures flexibility, performance, and long-term scalability.",
 ]
 
 export const portalDevelopmentService = [
@@ -155,7 +155,7 @@ export const liferayDevCustomizationHeroData = {
   titleLine3: "Customization",
 
   description:
-    "We deliver Liferay-first development and customization services that streamline digital transformation and align your platform precisely with your business needs.",
+    "We deliver Liferay-first development and customization services that streamline digital transformation and align your platform precisely with your business needs through scalable, secure, enterprise-grade solutions.",
 }
 
 export const liferayDevelopmentServicesData = {
@@ -168,7 +168,7 @@ export const liferayDevelopmentServicesData = {
 export const liferayCustomizationData = {
   title: "Our Custom Module & Portlet Development Expertise",
   description:
-    "We engineer resilient, scalable, and extensible Liferay custom modules and portlets by combining preventive architecture with rapid, reliable delivery—ensuring your platform remains stable, secure, and future-ready.",
+    "We engineer scalable, resilient Liferay modules and portlets with reliable delivery to keep your platform stable, secure, and future-ready.",
 }
 
 export const liferayIntegrationData = {
@@ -180,12 +180,12 @@ export const liferayIntegrationData = {
 export const liferayPortalCustomizationData = {
   title: "Liferay Portal<br/>Customization Services",
   description:
-    "Purpose-built customizations engineered to extend Liferay’s core capabilities, strengthen platform performance, and implement upgrade-stable enhancements across the portal ecosystem.",
+    "Purpose-built customizations that extend Liferay capabilities, enhance performance, and deliver upgrade-stable portal enhancements.",
 }
 
 export const talkToExpertData = {
-  heading: "Expert Liferay Development and Customization Services",
+  heading: "Build a High-Performance Liferay Portal With Our Liferay Development and Customization Services",
   description:
-    "Transform your portal efficiently with our professional Liferay development and customization expertise.",
+    "Transform your portal efficiently with our professional Liferay development and customization expertise, delivering scalable, secure, and upgrade-safe solutions tailored to your business goals and enterprise requirements.",
   buttonText: "Start Your Customization",
 }

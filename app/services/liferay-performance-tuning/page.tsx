@@ -165,7 +165,7 @@ export default function LiferayPerformanceTuningPage() {
                   } ${index === arr.length - 1 ? "pr-0 pl-[2.1vw]" : ""} ${index !== 0 && index !== arr.length - 1 ? "px-[2.1vw]" : ""
                   } `}
               >
-                <h3 className="w-[19.688vw] text-[1.563vw]! font-semibold">{feature.title}</h3>
+                <h3 className="h-[4.5vw] w-[19.688vw] text-[1.563vw]! font-semibold">{feature.title}</h3>
                 <p className="p20 text-gray-500">{feature.description}</p>
               </div>
             ))}
@@ -228,7 +228,7 @@ export default function LiferayPerformanceTuningPage() {
             <div className="grid grid-cols-1 md:grid md:grid-cols-2">
               {/* Left column */}
               <div className="mr-[3.021vw] max-w-[34.583vw] space-y-6 scroll-auto">
-                {items.map((item, index) => (
+                {item.map((item, index) => (
                   <div
                     key={item.title}
                     ref={(el) => {
