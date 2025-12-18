@@ -1,6 +1,6 @@
 export const featureTabs = [
   "Seamless Migration to Liferay DXP",
-  "Zero Compromise Data Integrity and Security",
+  "Data Integrity and Security",
   "Minimal Downtime",
   "Future Ready Architecture",
 ]
@@ -8,7 +8,7 @@ export const featureTabs = [
 export const steps = [
   {
     title: "Discovery & Platform Assessment",
-    desc: "We begin by understanding your current ecosystem—platform architecture, integrations, content models, and operational constraints. This enables us to identify migration paths that preserve stability while removing technical debt",
+    desc: "We begin by understanding your current platform architecture, integrations, content models, and operational constraints. This enables us to identify migration paths that preserve stability while removing technical debt",
   },
   {
     title: "Migration Strategy & Roadmap",
@@ -73,7 +73,7 @@ export const features = [
 export const LiferayMigrationTitle1 = "Why Enterprises Choose IGNEK For Liferay"
 export const LiferayMigrationTitle2 = "DXP Migration?"
 export const LiferayMigrationSubContent =
-  "Upgrading Liferay is not a version change—it is a platform decision that impacts stability, scalability, and long-term digital maturity. Enterprises partner with IGNEK because we approach upgrades with the same discipline, precision, and strategic intent as a full-scale Liferay implementation."
+  "Enterprises partner with IGNEK because we approach upgrades with the same discipline, precision, and strategic intent as a full-scale Liferay implementation."
 
 export const LiferayMigrationData = [
   {
@@ -86,7 +86,7 @@ export const LiferayMigrationData = [
   },
   {
     title: "Structured, Risk-Controlled Delivery",
-    desc: "Our upgrade methodology is designed to reduce risk at every stage—through detailed assessments, controlled execution, and validation-led promotion. This ensures platform continuity while enabling modernisation.",
+    desc: "Our upgrade methodology is designed to reduce risk at every stage—through detailed assessments, controlled execution, and validation-led promotion.",
   },
   {
     title: "Enterprise-Grade Security & Stability",
@@ -98,7 +98,7 @@ export const LiferayMigrationData = [
   },
   {
     title: "Enablement Beyond Go-Live",
-    desc: "Upgrading is only valuable if teams can fully leverage the platform. We provide structured knowledge transfer, documentation, and post-upgrade guidance, so your organisation can confidently evolve on Liferay 7.4.",
+    desc: "We provide structured knowledge transfer, documentation, and post-upgrade guidance, so your organisation can confidently evolve on Liferay 7.4.",
   },
 ]
 
@@ -106,7 +106,7 @@ export const heroMigration = {
   titlePart1: "Liferay DXP",
   titlePart2: "Migration Services",
 
-  descriptionPart1: "We help enterprises migrate from legacy portals and older Liferay versions to the latest Liferay DXP with confidence. Our Liferay-first migration approach prioritises data integrity, platform stability, and future scalability — ensuring your digital ecosystem evolves without risk or rework.",
+  descriptionPart1: "We help enterprises migrate from legacy portals and older Liferay versions to the latest Liferay DXP with confidence. Your digital ecosystem evolves without risk or rework.",
 };
 
 export const whyMigrateLiferay = {
@@ -122,12 +122,12 @@ export const whyMigrateLiferay = {
 export const liferayMigrationProcess = {
   title: "Our Liferay Migration Process",
   description:
-    "At IGNEK, migration is not a technical exercise—it’s a controlled evolution of your digital platform. We apply a Liferay-first, best-practice-led approach that reduces complexity, protects business continuity, and ensures your platform is positioned for long-term scalability and performance.",
+    "We apply a Liferay-first, best-practice-led approach that reduces complexity, protects business continuity, and ensures your platform is positioned for long-term scalability and performance.",
   buttonText: "Schedule Meeting",
 };
 
 export const liferayMigrationTalk = {
-  heading: "Talk to a Liferay Migration Expert",
+  heading: "Consult a Liferay Migration Expert to Plan Your Upgrade",
   description:
     "Our consulting-led, Liferay-first migration approach ensures platform stability, data integrity, and long-term scalability without disrupting your business operations. Plan your migration the right way, aligned with Liferay best practices, OOTB capabilities, and enterprise-grade delivery standards.",
   buttonText: "Start Your Migration",

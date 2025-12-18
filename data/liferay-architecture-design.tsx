@@ -1,4 +1,4 @@
-export const featureTabs = ["System Architecture", "Database Architecture", "Deployment Architecture"]
+export const featureTabs = ["System Architecture", "Database Architecture", "Deployment Architecture", "Security & Compliance Architecture"]
 
 export const keyActivityArchitecureSystem = [
   {
@@ -9,7 +9,7 @@ export const keyActivityArchitecureSystem = [
   {
     text: "Platform Capability Alignment",
     description:
-      "We evaluate how Liferay’s native capabilities can be applied before introducing custom solutions. This ensures architecture remains aligned with the platform’s design philosophy and reduces long-term maintenance overhead.",
+      "We evaluate how Liferay’s native capabilities can be applied before introducing custom solutions. This ensures architecture remains aligned with the platform’s design philosophy and reduces long-term maintenance.",
   },
   {
     text: "System & Integration Boundaries",
@@ -43,14 +43,14 @@ export const keyActivityArchitecureSystem = [
   },
 ]
 
-export const LiferayArchitectureTitle1 = "Why Enterprises Choose IGNEK For Liferay"
-export const LiferayArchitectureTitle2 = "Architecture Design Service?"
+export const LiferayArchitectureTitle1 = "Why Enterprises Choose IGNEK For Liferay Architecture"
+export const LiferayArchitectureTitle2 = " Design Service?"
 export const LiferayArchitectureSubContent =
-  "Designing Liferay architecture requires more than technical knowledge, it requires a deep understanding of how the platform behaves at enterprise scale and how architectural decisions impact long-term value. Enterprises choose IGNEK because we design Liferay architectures that are practical, disciplined, and built to last."
+  "Designing Liferay architecture requires deep enterprise-scale understanding. Enterprises choose IGNEK because we design Liferay architectures that are practical, disciplined, and built to last."
 export const LiferayArchitectureData = [
   {
     title: "Pure Liferay Focus",
-    desc: "This singular focus gives us deep insight into the platform’s architecture patterns, evolution, and best practices, enabling us to design solutions that align with how Liferay is intended to be implemented and extended.",
+    desc: "This singular focus gives us deep insight into the platform’s architecture patterns, evolution, and best practices, enabling us to design solutions that align with how Liferay should be implemented.",
   },
   {
     title: "Architecture Led by Platform Discipline",
@@ -62,11 +62,11 @@ export const LiferayArchitectureData = [
   },
   {
     title: "Enterprise-Grade Security & Reliability",
-    desc: "Security, governance, and resilience are embedded into every architectural decision. Our designs support compliance, controlled access, and operational stability across complex enterprise environments.",
+    desc: "Our designs support compliance, controlled access, and operational stability across complex enterprise environments.",
   },
   {
     title: "Built for Change, Not Just Delivery",
-    desc: "We design architectures that anticipate evolution — from cloud adoption and modular expansion to integration growth and platform upgrades — allowing enterprises to adapt without structural redesign.ith your teams to understand challenges, define priorities, and deliver architectures that truly fit.",
+    desc: "We design architectures that anticipate evolution — from cloud adoption and modular expansion to integration growth and platform upgrades — allowing enterprises to adapt without structural redesign.",
   },
   {
     title: "Clear Direction for Delivery Teams",
@@ -78,7 +78,7 @@ export const systemArchitecure = [
   {
     text: "Architecture Blueprint",
     description:
-      "A clear, high-level system design that defines platform structure, data flow, integrations, and runtime behavior—ensuring all stakeholders share a unified architectural vision.",
+      "A clear, high-level system design that defines platform structure, data flow, integrations, and runtime behavior ensuring unified architectural vision.",
   },
   {
     text: "Technical Stack",
@@ -88,7 +88,7 @@ export const systemArchitecure = [
   {
     text: "Security and Compliance",
     description:
-      "Architecture built with security at its core—covering authentication models, access control, encryption standards, compliance requirements, and governance frameworks.",
+      "Architecture built with security covering authentication models, access control, encryption standards and governance frameworks.",
   },
   {
     text: "Performance Optimization",
@@ -98,12 +98,12 @@ export const systemArchitecure = [
   {
     text: "Strategy Document",
     description:
-      "A comprehensive architectural roadmap covering environment setup, CI/CD pipelines, deployment models, and rollout strategy—reducing risk and accelerating execution.",
+      "An architectural roadmap covering environment setup, CI/CD pipelines, deployment models, and rollout strategy reducing risk and accelerating execution.",
   },
   {
     text: "Future Scalability",
     description:
-      "Blueprints that support upgrades, modular expansion, cloud adoption, and microservices readiness—ensuring your Liferay platform evolves with your business.",
+      "Blueprints that support upgrades, modular expansion, cloud adoption, and microservices readiness ensuring platform evolves with your business.",
   },
 ]
 
@@ -127,7 +127,7 @@ export const liferayArchitectureKeyData = {
 }
 
 export const talkToExpertArcData = {
-  heading: "Design Scalable Liferay Solutions with Confidence",
+  heading: "Consult IGNEK to Design a Scalable Liferay Architecture",
   description:
     "IGNEK partners with organisations to design Liferay architectures that support growth, simplify delivery, and stand the test of time — built on platform discipline and best-practice engineering.",
   buttonText: "Explore Architecture Solutions",

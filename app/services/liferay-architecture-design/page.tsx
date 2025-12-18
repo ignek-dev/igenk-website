@@ -329,7 +329,7 @@ export default function LiferayArchitectureDesignPage() {
                   } ${index !== systemArchitecure.length - 1 ? "border-r border-[#9CA3AF]" : ""}`}
                   style={{ width: "22%" }}
                 >
-                  <div className="flex flex-col gap-[4.688vw]">
+                  <div className="flex flex-col gap-[2vw]">
                     <h3 className="mt-[3.802vw] h-[88px] max-w-[16.51vw] text-[1.875vw] leading-normal font-semibold text-gray-600">
                       {item.text}
                     </h3>

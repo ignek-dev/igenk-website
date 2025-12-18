@@ -8,7 +8,7 @@ import TalkToExpert from "components/Common/TalkToExpert"
 import WhatMake from "components/Common/WhatMake"
 import WordsFromCEO from "components/Common/WordsFromCEO"
 import LiferayTechnologicalStacks from "components/LiferayTechnologicalStacks"
-import { easySteps, engagementModelsData, expertiseStats, hireLiferayHeroData, hireLiferayStepsData, hireLiferayWhyData, LiferayHireData, LiferayHireSubContent, LiferayHireTitle1, LiferayHireTitle2, liferayServicesHeaderData, teamOffersServices, whyHireFromIgnek } from "data/liferay-hire-developer"
+import { easySteps, engagementModelsData, expertiseStats, hireLiferayHeroData, hireLiferayStepsData, hireLiferayWhyData, LiferayHireData, LiferayHireSubContent, LiferayHireTitle1, LiferayHireTitle2, liferayServicesHeaderData, talkToExperthire, teamOffersServices, whyHireFromIgnek } from "data/liferay-hire-developer"
 
 const metadata: Metadata = {
   title: "Hire Liferay Developers | Certified Liferay DXP Experts",
@@ -47,15 +47,15 @@ export default function LiferayHireDeveloper() {
           <div className="grid grid-cols-1 items-center gap-6 md:grid-cols-2 mt-13">
             {/* Left Side: Text Content */}
             <div>
-              <div className="inline-flex mt-[63px] w-fit items-center rounded-full border border-white px-8.5 py-[8.8px] text-lg font-normal">
+              {/* <div className="inline-flex mt-[63px] w-fit items-center rounded-full border border-white px-8.5 py-[8.8px] text-lg font-normal">
                 {hireLiferayHeroData.badgeText}
-              </div>
+              </div> */}
               <h1 className="mt-[2.708vw]">
                 {hireLiferayHeroData.title.line1}
                 <br />
                 <span className="block">{hireLiferayHeroData.title.line2}</span>
               </h1>
-              <p className="line-height-[28px] mt-10 max-w-3xl text-lg font-normal">
+              <p className="p18 mt-10 max-w-3xl">
                 {hireLiferayHeroData.description}
               </p>
             </div>
@@ -255,7 +255,11 @@ export default function LiferayHireDeveloper() {
         titleText2={LiferayHireTitle2}
         subContext={LiferayHireSubContent}
       />
-      <TalkToExpert />
+      <TalkToExpert
+        heading={talkToExperthire.headingPart1}
+        description={talkToExperthire.descriptionPart1}
+        buttonText={talkToExperthire.buttonText}
+      />
       <BlogSection />
     </main>
   )

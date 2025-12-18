@@ -419,7 +419,7 @@ export default function LiferayUpgradePage() {
 <section className="bg-[#f7f7f7] py-[64px] text-black md:py-[64px] lg:py-[64px]">
         <div className="global-container items-start">
           <div className="relative grid items-center gap-10 md:grid-cols-2">
-            <h2 className="">{whyChooseIgnek.titlePart1}</h2>
+            <h2 className="">{whyChooseIgnek.titlePart1} <br /> {whyChooseIgnek.titlePart2}</h2>
             <p className="p18 absolute max-w-2xl items-center text-right text-gray-700 md:justify-self-end">
               {whyChooseIgnek.descriptionPart1}
             </p>
@@ -429,8 +429,8 @@ export default function LiferayUpgradePage() {
               {dxpUpgradeServices.map((item, index) => (
                 <div key={index} className="flex flex-col">
                   <div className="flex items-center justify-between border-b border-gray-300 last:border-b-0">
-                    <p
-                      className="mb-[1.25vw] text-[30px] font-semibold"
+                    <h4
+                      className="mb-[1.25vw] font-semibold"
                       dangerouslySetInnerHTML={{ __html: item.text }}
                     />
                   </div>
