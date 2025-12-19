@@ -37,8 +37,8 @@ export const blogHeroSection = {
 };
 
 export const blogSection = {
-  heading: "Our Latest Insights to Power ",
-  headingSpan: "Your Digital Growth",
+  heading: "Our Latest Insights to Power Your Digital Growth",
+  // headingSpan: "Your Digital Growth",
   description:
     "Explore expert-curated articles designed to simplify complex digital topics. From practical implementation guides to strategic technology insights, our blogs help you make informed decisions and stay ahead in an evolving digital landscape.",
 };

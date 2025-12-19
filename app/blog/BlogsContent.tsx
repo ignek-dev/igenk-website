@@ -172,8 +172,8 @@ export default function BlogsContent() {
       {/* Hero */}
       <section className="relative bg-black text-white">
         <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_10%_0%,#0E7BF8_0%,#00979E_40%,transparent_65%)] opacity-25" />
-        <div className="global-container mx-auto w-full px-4 pt-12 pb-16 md:px-8 md:pt-20 md:pb-22">
-          <div className="relative grid items-start gap-[0.521vw] md:grid-cols-2">
+        <div className="global-container mx-auto w-full px-5 py-12 md:px-10 md:py-16 lg:px-8 lg:pt-12 lg:pb-16">
+          <div className="relative grid items-start gap-6 lg:gap-[0.521vw] lg:grid-cols-2">
             <div>
               <h1 className="mt-9 bg-[linear-gradient(0deg,#FFFFFF,#FFFFFF),linear-gradient(0deg,rgba(0,0,0,0.23),rgba(0,0,0,0.23))] bg-clip-text text-transparent">
                 {blogHeroSection.heading}
@@ -182,27 +182,28 @@ export default function BlogsContent() {
 
               </h1>
             </div>
-            <p className="p18 absolute bottom-0 max-w-[41.646vw] justify-self-end text-right text-white">
+            <p className="relative mt-4 text-lg text-gray-300 lg:p18 lg:absolute lg:bottom-0 lg:max-w-[41.646vw] lg:justify-self-end lg:text-right lg:text-white lg:mt-0"></p>
+            <p className="text-p18 relative mt-0  lg:absolute lg:bottom-0 lg:max-w-[41.646vw] lg:justify-self-end lg:text-right text-white">
              {blogHeroSection.description}
             </p>
           </div>
         </div>
       </section>
 
-      <section className="bg-[#F9FAF7] pt-[3.333vw] pb-[3.333vw] text-black">
+      <section className="bg-[#F9FAF7] py-12 lg:pt-[3.333vw] lg:pb-[3.333vw] text-black">
         <div className="global-container mx-auto w-full px-4 md:px-8">
           {/* Header part */}
-          <div className="mb-[2.25rem] grid grid-cols-1 items-end gap-8 md:grid-cols-2">
+          <div className="mb-10 grid grid-cols-1 gap-6 lg:mb-[2.25rem] lg:grid-cols-2 lg:items-end lg:gap-8">
             <div>
               <h2 className="tracking-tight text-[#000000]">
                 {blogSection.heading}
-                <br />
-                {blogSection.headingSpan}
+                {/* <br /> */}
+                {/* {blogSection.headingSpan} */}
               </h2>
             </div>
 
             <div className="flex h-full items-end">
-              <p className="p18 w-full text-right text-[#374151]">
+              <p className="p18 w-full lg:text-right text-[#374151]">
                 {blogSection.description}
 
               </p>
@@ -210,8 +211,8 @@ export default function BlogsContent() {
           </div>
 
           {/* Carousel Section */}
-          <div className="group relative mx-auto w-[100%]">
-            <div className="relative h-[640px] overflow-hidden rounded-[22px] shadow-lg">
+          <div className="group relative mx-auto w-full">
+            <div className="relative h-[300px] sm:h-[450px] lg:h-[640px] overflow-hidden rounded-[22px] shadow-lg">
               {featuredBlogs.length > 0
                 ? featuredBlogs.map((blog, index) => (
                     <div
@@ -229,20 +230,20 @@ export default function BlogsContent() {
                           alt={blog.title}
                           fill
                           sizes="(max-width: 768px) 100vw, 50vw"
-                          className="object-cover"
+                          className="object-fill lg:object-cover"
                           priority={index === 0}
                         />
                       </div>
 
                       {/* Overlay Content */}
                       <div
-                        className="absolute inset-0 flex cursor-pointer flex-col justify-end px-[4.375rem] pb-[3rem] text-white"
+                        className="absolute inset-0 flex cursor-pointer flex-col justify-end px-6 pb-8 md:px-10 lg:px-[4.375rem] lg:pb-[3rem] text-white"
                         style={{
                           background: "linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,100) 100%)",
                         }}
                         onClick={() => blog.slug && handleBlogClick(blog.slug)}
                       >
-                        <div className="inset-0 mb-[4.896vw] flex items-center justify-between">
+                        <div className="inset-0 mb-4 lg:mb-[4.896vw] flex items-center justify-between">
                           {featuredBlogs.length > 1 && (
                             <>
                               {/* Previous Arrow */}
@@ -251,7 +252,7 @@ export default function BlogsContent() {
                                   e.stopPropagation()
                                   prevSlide()
                                 }}
-                                className={`nav-round-btn relative top-1/2 z-20 flex h-16 w-16 -translate-y-1/2 transform items-center justify-center overflow-hidden transition-all duration-300 hover:bg-black ${
+                                className={`nav-round-btn relative top-1/2 z-20 flex h-12 w-12 -translate-y-1/2 transform items-center justify-center overflow-hidden transition-all duration-300 hover:bg-black lg:h-16 lg:w-16 ${
                                   isHovering ? "opacity-100" : "opacity-0"
                                 } `}
                                 aria-label="Previous slide"
@@ -298,15 +299,15 @@ export default function BlogsContent() {
                           )}
                         </div>
 
-                        <div className="p18 mb-[0.938vw] flex items-center space-x-2 font-normal text-[#E5E7EB] opacity-90">
-                          <span className="w-[9.5vw] rounded-full border border-[#D1D5DB] px-[1.042vw] py-[0.521vw] text-center text-[#E5E7EB]">
+                        <div className="p18 mb-4 lg:mb-[0.938vw] flex items-center space-x-2 font-normal text-[#E5E7EB] opacity-90">
+                          <span className=" rounded-full border border-[#D1D5DB] px-3 py-1 lg:w-[9.5vw] lg:px-[1.042vw] lg:py-[0.521vw] text-center text-[#E5E7EB]">
                             {blog.category}
                           </span>
                           <span>• {blog?.readTime}</span>
                         </div>
 
                         <h2
-                          className="mb-[0.938vw] text-[1.563vw]!"
+                          className="mb-4 lg:mb-[0.938vw] text-[1.563vw]!"
                           dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(blog.title) }}
                         />
                         <div className="flex items-center space-x-2 text-xl font-normal">
@@ -315,17 +316,17 @@ export default function BlogsContent() {
                             alt={"Author"}
                             width={40}
                             height={40}
-                            className="h-[2.083vw] w-[2.083vw] rounded-full  object-cover"
+                            className="h-8 w-8 rounded-full object-cover lg:h-[2.083vw] lg:w-[2.083vw]"
                           />
-                          <span className="p20 font-medium">{blog?.author}</span>
-                          <span className="p18 opacity-80">• {blog.date}</span>
+                          <span className="text-p12 md:text-p14 lg:text-p20 font-medium">{blog?.author}</span>
+                          <span className="text-p12 md:text-p14 lg:text-p18 opacity-80">• {blog.date}</span>
                         </div>
 
                         {/* Description on Hover */}
                         <div
                           className={`mt-4 transition-all duration-300 ease-in-out ${
                             isHovering ? "max-h-20 opacity-100" : "max-h-0 opacity-0"
-                          } overflow-hidden`}
+                          } overflow-hidden hidden lg:block`}
                         >
                           <p className="line-clamp-2 text-[0.938vw] leading-relaxed text-white/90">
                             {blog.desc
@@ -346,11 +347,11 @@ export default function BlogsContent() {
 
           {/* Category Section */}
           <div className="flex flex-col py-16">
-            <h2 className="mb-9 text-5xl leading-tight font-semibold tracking-tight text-[#000000]">
+            <h2 className="mb-9 text-4xl md:text-5xl leading-tight font-semibold tracking-tight text-[#000000]">
               {blogCategorySection.heading}
             </h2>
 
-            <div className="flex justify-between gap-[0.677vw]">
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:flex lg:justify-between lg:gap-[0.677vw]">
               {cardData.map((card, index) => {
                 const isSelected = selectedCategory === card.id
                 return (
@@ -382,7 +383,7 @@ export default function BlogsContent() {
               </div>
             ) : (
               <>
-                <div className="grid grid-cols-1 gap-[3.375rem] md:grid-cols-2 lg:grid-cols-3">
+                <div className="grid grid-cols-1 gap-10  md:grid-cols-2 lg:grid-cols-3 lg:gap-[3.375rem]">
                   {blogs.map((blog, index) => (
                     <div key={`${blog.id}-${index}`} onClick={() => blog.slug && handleBlogClick(blog.slug)}>
                       <BlogCard blog={blog} />
@@ -392,11 +393,11 @@ export default function BlogsContent() {
 
                 {/* Pagination */}
                 {totalPages > 1 && (
-                  <div className="justify-left mt-[2.656vw] flex">
-                    <ul className="p20 flex items-center gap-[0.438vw] font-medium">
+                  <div className="mt-12 flex justify-start lg:mt-[2.656vw]">
+                    <ul className="flex flex-wrap items-center gap-2 font-medium text-p14 lg:text-p20 lg:gap-[0.438vw]">
                       {/* First */}
                       <li
-                        className={`flex cursor-pointer items-center rounded-md border px-4 py-2 ${
+                        className={`flex cursor-pointer items-center rounded-md border px-4 py-2 text-sm lg:text-base  ${
                           currentPage === 1 ? "cursor-not-allowed border-gray-300" : "hover:bg-gray-100"
                         }`}
                         onClick={() => currentPage > 1 && handlePageChange(1)}
@@ -416,7 +417,7 @@ export default function BlogsContent() {
 
                       {/* Back */}
                       <li
-                        className={`flex cursor-pointer items-center rounded-md border px-4 py-2 ${
+                        className={`flex cursor-pointer items-center rounded-md border px-4 py-2 text-sm lg:text-base ${
                           currentPage === 1 ? "cursor-not-allowed border-gray-300" : "hover:bg-gray-100"
                         }`}
                         onClick={() => currentPage > 1 && handlePageChange(Math.max(1, currentPage - 1))}
@@ -447,7 +448,7 @@ export default function BlogsContent() {
                             <li
                               key={1}
                               onClick={() => handlePageChange(1)}
-                              className={`cursor-pointer rounded-md border px-4 py-2 hover:bg-gray-100 ${
+                              className={`cursor-pointer rounded-md border px-4 py-2 text-sm lg:text-base hover:bg-gray-100 ${
                                 currentPage === 1 ? "bg-black text-white" : ""
                               }`}
                             >
@@ -459,7 +460,7 @@ export default function BlogsContent() {
                             pages.push(
                               <li
                                 key="dots-start"
-                                className="cursor-default rounded-md border px-4 py-2 text-gray-500 select-none"
+                                className="cursor-default rounded-md border px-4 py-2 text-sm lg:text-base text-gray-500 select-none"
                               >
                                 ...
                               </li>
@@ -471,7 +472,7 @@ export default function BlogsContent() {
                             <li
                               key={i}
                               onClick={() => handlePageChange(i)}
-                              className={`cursor-pointer rounded-md border px-4 py-2 transition-all duration-200 ${
+                              className={`cursor-pointer rounded-md border px-4 py-2 text-sm lg:text-base transition-all duration-200 ${
                                 currentPage === i ? "border-black bg-black text-white" : "hover:bg-gray-100"
                               }`}
                             >
@@ -483,7 +484,7 @@ export default function BlogsContent() {
                         if (end < totalPages) {
                           if (end < totalPages - 1)
                             pages.push(
-                              <li key="dots-end" className="px-4 py-2 text-gray-500 select-none">
+                              <li key="dots-end" className="px-4 py-2 text-sm lg:text-base text-gray-500 select-none">
                                 ...
                               </li>
                             )
@@ -491,7 +492,7 @@ export default function BlogsContent() {
                             <li
                               key={totalPages}
                               onClick={() => handlePageChange(totalPages)}
-                              className={`cursor-pointer rounded-md border px-4 py-2 hover:bg-gray-100 ${
+                              className={`cursor-pointer rounded-md border px-4 py-2 text-sm lg:text-base hover:bg-gray-100 ${
                                 currentPage === totalPages ? "border-black bg-black text-white" : ""
                               }`}
                             >
@@ -505,7 +506,7 @@ export default function BlogsContent() {
 
                       {/* Next */}
                       <li
-                        className={`flex cursor-pointer items-center rounded-md border px-4 py-2 ${
+                        className={`flex cursor-pointer items-center rounded-md border px-4 py-2 text-sm lg:text-base ${
                           currentPage === totalPages
                             ? "cursor-not-allowed border-gray-300 text-gray-400"
                             : "hover:bg-gray-100"
@@ -529,7 +530,7 @@ export default function BlogsContent() {
 
                       {/* Last */}
                       <li
-                        className={`flex cursor-pointer items-center rounded-md border px-4 py-2 ${
+                        className={`flex cursor-pointer items-center rounded-md border px-4 py-2 text-sm lg:text-base ${
                           currentPage === totalPages
                             ? "cursor-not-allowed border-gray-300 text-gray-400"
                             : "hover:bg-gray-100"

@@ -27,10 +27,12 @@ export default function BlogCard({ blog }: BlogCardProps) {
     router.push(`/blog/${blog.slug}`);
   };
   return (
-    <div className="relative flex w-auto cursor-pointer flex-col transition" onClick={handleClick}>
+    <div className="group relative flex w-full cursor-pointer flex-col transition hover:-translate-y-1" onClick={handleClick}>
       {/* Image */}
-      <div className="h-[15.156vw] w-[24.167vw] overflow-hidden rounded-[0.990vw] p-[0.20vw] shadow">
-        <div className="relative h-full w-full">
+      <div className="w-full overflow-hidden bg-white shadow-sm
+        h-[220px] rounded-xl p-1
+        lg:h-[15.156vw] lg:w-[24.167vw] lg:rounded-[0.990vw] lg:p-[0.20vw] lg:shadow">
+        <div className="relative h-full w-full overflow-hidden rounded-lg lg:rounded-[0.833vw]">
           <Image
             src={blog.image}
             alt={blog.title}
@@ -42,8 +44,12 @@ export default function BlogCard({ blog }: BlogCardProps) {
       </div>
 
       {/* Category */}
-      <div className="p18 mt-[0.938vw] flex flex-wrap items-center gap-2 text-gray-500">
-        <span className="p18 w-[9.5vw] rounded-full border border-[#D1D5DB] px-[1.042vw] py-[0.521vw] text-center">
+      <div className="flex flex-wrap items-center text-gray-500
+        mt-4 gap-3 
+        text-p14 md:text-p16 lg:text-p18 lg:mt-[0.938vw] lg:gap-2">
+        <span className="rounded-full border border-[#D1D5DB] text-center
+          px-3 py-1
+          lg:w-[9.5vw] lg:px-[1.042vw] lg:py-[0.521vw] text-p16  md:text-p18">
           {blog.category}
         </span>
         <span>•</span>
@@ -52,22 +58,28 @@ export default function BlogCard({ blog }: BlogCardProps) {
 
       {/* Title */}
       <h3
-        className="loading-[1.875vw] mt-[1.042vw] line-clamp-2 h-[4.7vw] text-[1.563vw]! text-gray-900"
+        className="line-clamp-2 h-auto text-gray-900 font-bold
+          mt-3 text-xl!
+          lg:loading-[1.875vw] lg:mt-[1.042vw] lg:h-[4.7vw] lg:text-[1.563vw]!"
         dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(blog.title) }}
       />
 
       {/* Author Section fixed at bottom */}
-      <div className="mt-[1.615vw] flex items-center gap-3 text-lg font-normal text-gray-600">
+      <div className="flex items-center font-normal text-gray-600
+        mt-4 gap-2 
+        lg:mt-[1.615vw]">
         <Image
           src={blog.authPic}
           alt={blog.author}
           width={40}
           height={40}
-          className="h-10 w-10 rounded-full border border-gray-200 object-cover"
+          className="rounded-full border border-gray-200 object-cover
+            h-10 w-10
+            lg:h-[2.083vw] lg:w-[2.083vw]"
         />
-        <span className="p20">{blog.author}</span>
+        <span className="text-p16 md:text-p18 lg:text-p20">{blog.author}</span>
         <span>•</span>
-        <span className="p18 text-[#535862]">{blog.date}</span>
+        <span className="text-p14 lg:text-p18 text-[#535862]">{blog.date}</span>
       </div>
     </div>
   )
