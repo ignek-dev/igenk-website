@@ -18,6 +18,8 @@ import Scene from "components/Scenes"
 import SchemaInjector from "seo/schemaInjector"
 import { homeFaqSchema } from "seo/homeFaq.schema"
 
+import HeroTitle from "components/Common/HeroTitle"
+import WhatWeBringResponsive from "components/WhatWeBringWrapper"
 
 export const metadata: Metadata = {
   title: "IGNEK | Liferay Boutique Consulting & Development Company",
@@ -56,21 +58,19 @@ export default function HomePage() {
           <div className="absolute right-[-150px] bottom-[-150px] h-[500px] w-[500px] rounded-full bg-[#0E7BF8] opacity-15 blur-[100px]" />
         </div>
 
-          <h1 className="mt-[2.188vw]">
-            <Scenes />
-          </h1>
+          <HeroTitle />
 
         <div className="global-container w-full pb-16">
           
-          <div className="mt-[0.850vw] grid items-start gap-8 sm:grid-cols-[28.125rem_auto] lg:grid-cols-2">
-            <p className="p18 sm:p16 max-w-xl leading-[30px] text-[#F3F4F6]">{hero.description} </p>
+          <div className="mt-[0.850vw] grid items-start gap-8 sm:grid-cols-1 md:grid-cols-[25.125rem_auto] lg:grid-cols-2">
+            <p className="text-p14 md:text-p16 lg:text-p20 max-w-xl leading-[30px] text-[#F3F4F6]">{hero.description} </p>
 
             <div className="pb-3 md:self-end md:justify-self-end">
               <a
                 href={hero.button.link}
                 className="group flex items-center justify-center gap-2 rounded-full bg-black/30 px-3 py-3 text-sm text-white transition-colors"
               >
-                <div className="flex sm:h-5 sm:w-5 lg:h-8 lg:w-8 items-center justify-center rounded-full border border-[#00979E] bg-black/30">
+                <div className="flex sm:h-5 sm:w-5 lg:h-8 lg:w-8 p-1 items-center justify-center rounded-full border border-[#00979E] bg-black/30">
                   <Image src={hero.button.icon} alt="discover-now" width={18} height={18} />
                 </div>
                 <span className="pr-2 sm:text-[0.938rem] lg:text-xl font-semibold">{hero.button.text}</span>
@@ -109,7 +109,7 @@ export default function HomePage() {
       <FlexiblePlatforms />
 
       <ScrollContextProvider>
-        <WhatWeBring />
+        <WhatWeBringResponsive />
       </ScrollContextProvider>
       <SuccessStories />
 

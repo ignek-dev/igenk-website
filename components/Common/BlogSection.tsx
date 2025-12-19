@@ -117,12 +117,12 @@ export default function BlogSection() {
   return (
     <section className="bg-white text-black">
       <div className="global-container p-16">
-        <div className="grid items-center gap-10 md:grid-cols-2">
+        <div className="grid items-center gap-10 lg:grid-cols-2 grid-cols-1">
           <h2 className={` ${isInView ? "animate-when-visible animate-slide-left animation-delay-200" : "opacity-0"}`}>
             {blogSectionData.title} <br /> {blogSectionData.titleHighlight}
           </h2>
           <p
-            className={`p18 max-w-[100%] justify-self-center text-right leading-relaxed text-[#101012] text-gray-700 ${
+            className={`p18 max-w-[100%] justify-self-center text-left lg:text-right leading-relaxed text-[#101012] text-gray-700 ${
               isInView ? "animate-when-visible animate-slide-right animation-delay-200" : "opacity-0"
             }`}
           >
@@ -177,7 +177,7 @@ export default function BlogSection() {
                   />
                 </div>
                 <div className="ml-5">
-                  <div className="line-clamp-2 min-h-[2.5vw] text-[1.25vw]">{item.title}</div>
+                  <div className="line-clamp-2 min-h-[2.5vw] text-p16 font-bold md:text-[2rem] lg:text-p24">{item.title}</div>
                   <p
                     className="p16 mt-[10px] line-clamp-2 text-gray-700"
                     dangerouslySetInnerHTML={{ __html: item.desc ?? "" }}

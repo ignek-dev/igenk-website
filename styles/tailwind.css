@@ -18,6 +18,7 @@
   --text-p14: 0.875rem;
   --text-p16: 1rem;
   --text-p18: 1.125rem;
+  --text-p20: 1.25rem;
 
   /* Tablet (rem-based) 
   --text-p14-md: 0.875rem;
@@ -130,6 +131,13 @@ select:-webkit-autofill {
     line-height: 1.75rem;
   }
 
+  .text-p20 {
+    font-family: Poppins;
+    font-weight: 400;
+    font-size: var(--text-p20);
+    line-height: 1.875rem;
+  }
+
   /* ===== TABLET (md) ===== */
   @media (min-width: 768px) {
     .md\:text-p12 {
@@ -155,6 +163,11 @@ select:-webkit-autofill {
     .md\:text-p20 {
       font-size: 1.25rem;
       line-height: 1.875rem;
+    }
+
+    .md\:text-p24 {
+      font-size: 1.5rem;
+      line-height: 2.25rem;
     }
   }
 
@@ -1368,4 +1381,26 @@ html {
 
 .portfolio-content.elementor-content p {
   font-size: 1.25vw !important;
+}
+
+.hero-static-text {
+  font-family: "Roboto", Arial, sans-serif;
+  color: #d3d3d3;
+  line-height: 1.06;
+}
+
+/* Base font size = canvas logic converted to CSS */
+.hero-static-text .line {
+  font-weight: 700;
+  font-size: clamp(2.6rem, 7.5vw, 3.4rem);
+}
+
+/* Italic lines */
+.hero-static-text .italic {
+  font-style: italic;
+}
+
+/* Normal line */
+.hero-static-text .normal {
+  font-style: normal;
 }

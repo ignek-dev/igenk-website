@@ -10,7 +10,7 @@ import { flexiblePlatforms } from "data/homepage-content"
 const FlexiblePlatforms = () => {
   const [sectionRef, isInView] = useInView({ threshold: 0.2, triggerOnce: true })
   return (
-    <section ref={sectionRef} className="overflow-hidden bg-[#F9FAF7] text-black py-[3.333vw]">
+    <section ref={sectionRef} className="overflow-hidden bg-[#F9FAF7] text-black py-8 lg:py-[3.333vw]">
       <div className="global-container grid items-start gap-[3.073vw] lg:grid-cols-[29.479vw_auto]">
         {/* Left Column: Title and Description */}
         <div
@@ -25,14 +25,14 @@ const FlexiblePlatforms = () => {
             <span className="block">{flexiblePlatforms.titleLine2}</span>{flexiblePlatforms.titleline3}
             <span className="text-[#00979E]">{flexiblePlatforms.titleteal}</span>
           </h2>
-          <p className="mt-[0.833vw] p18 text-gray-600">
+          <p className="mt-[0.833vw] text-16 md:text-18 text-gray-600">
             {flexiblePlatforms.description}
           </p>
         </div>
 
         <div
-          className={`group relative min-h-[33.646vw] w-[47.292vw] overflow-hidden rounded-[20px] transition-all duration-[1500ms] ease-out ${
-            isInView
+          className={`group relative min-h-[500px] w-full lg:min-h-[33.646vw] lg:w-[47.292vw] overflow-hidden rounded-[20px] transition-all duration-[1500ms] ease-out ${
+            isInView 
               ? "animate-when-visible animate-slide-right animation-delay-200 translate-x-0 opacity-100"
               : "translate-x-20 opacity-0"
           }`}
@@ -42,8 +42,8 @@ const FlexiblePlatforms = () => {
             src={flexiblePlatforms.image}
             alt="Liferay Digital Experience Platform"
             layout="fill"
-            objectFit="cover"
-            className="transition-transform w-full duration-500"
+            // objectFit="cover"
+            className="object-full lg:object-cover transition-transform w-full duration-500"
           />
 
           {/* 2. Bottom Shadow Effect */}

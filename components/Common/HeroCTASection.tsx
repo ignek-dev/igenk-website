@@ -40,7 +40,7 @@ const HeroCTASection: React.FC = () => {
         <div
           className={`${
             isInView ? "animate-when-visible animate-slide-right animation-delay-200" : "opacity-0"
-          } flex justify-end`}
+          } block lg:flex justify-end`}
         >
           <div className="sticky top-24 ml-auto">
             <ExpertCard />
