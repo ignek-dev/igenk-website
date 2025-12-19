@@ -9,6 +9,8 @@ import WhatMake from "components/Common/WhatMake"
 import WordsFromCEO from "components/Common/WordsFromCEO"
 import LiferayTechnologicalStacks from "components/LiferayTechnologicalStacks"
 import { easySteps, engagementModelsData, expertiseStats, hireLiferayHeroData, hireLiferayStepsData, hireLiferayWhyData, LiferayHireData, LiferayHireSubContent, LiferayHireTitle1, LiferayHireTitle2, liferayServicesHeaderData, talkToExperthire, teamOffersServices, whyHireFromIgnek } from "data/liferay-hire-developer"
+import SchemaInjector from "seo/schemaInjector"
+import { hireLiferayFaqSchema } from "seo/hireLiferayFaq.schema"
 
 const metadata: Metadata = {
   title: "Hire Liferay Developers | Certified Liferay DXP Experts",
@@ -36,6 +38,11 @@ export default function LiferayHireDeveloper() {
   // Data for the marquee animation
 
   return (
+    <>
+      <SchemaInjector
+        id="hire-liferay-faq-schema"
+        schema={hireLiferayFaqSchema}
+      />
     <main className="pb-0">
       {/* Hero Section */}
       <section className="relative bg-[#0B63CE] text-white">
@@ -262,5 +269,6 @@ export default function LiferayHireDeveloper() {
       />
       <BlogSection />
     </main>
+    </>
   )
 }

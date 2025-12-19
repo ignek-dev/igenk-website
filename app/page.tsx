@@ -15,6 +15,9 @@ import { homepageData, partners } from "data/homepage-content"
 import { BlogSection } from "../components/Common"
 import Scenes from "../components/Scenes"
 import Scene from "components/Scenes"
+import SchemaInjector from "seo/schemaInjector"
+import { homeFaqSchema } from "seo/homeFaq.schema"
+
 
 export const metadata: Metadata = {
   title: "IGNEK | Liferay Boutique Consulting & Development Company",
@@ -40,7 +43,11 @@ export const metadata: Metadata = {
 export default function HomePage() {
   const { hero } = homepageData
   return (
-    // enable smooth scrolling for anchor links
+    <>
+      <SchemaInjector
+        id="home-faq-schema"
+        schema={homeFaqSchema}
+      />
     <main className="scroll-smooth">
       <section className="relative overflow-hidden bg-black text-white">
         {/* Top-left subtle radial gradient using provided colors */}
@@ -111,5 +118,6 @@ export default function HomePage() {
       <HeroCTASection />
       <RatingsSection />
     </main>
+  </>
   )
 }
