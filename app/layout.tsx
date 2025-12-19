@@ -5,6 +5,9 @@ import BottomBar from "components/Common/BottomBar"
 import { Footer } from "../components/Common"
 import Navigation from "../components/Navigation/Navigation"
 import BlogImagePrefetcher from "../components/Common/BlogImagePrefetcher"
+import SchemaInjector from "seo/schemaInjector"
+import { organizationSchema } from "seo/organization.schema"
+import { websiteSchema } from "seo/website.schema"
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -33,6 +36,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body className="min-h-screen bg-white text-black">
+        <SchemaInjector id="org-schema" schema={organizationSchema} />
+        <SchemaInjector id="website-schema" schema={websiteSchema} />
         <BlogImagePrefetcher />
         <Navigation />
         {children}
