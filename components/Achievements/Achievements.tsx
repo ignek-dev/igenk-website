@@ -27,7 +27,7 @@ const Achievements = () => {
             <br />
             {achievementsSection.headingLine2}
           </h2>
-          <p className="mb-[1.458vw] max-w-[588px] p18 text-gray-300">
+          <p className="mb-[1.458vw] max-w-[588px] text-p16 md:text-p18 text-gray-300">
             {achievementsSection.description}
           </p>
           {/* <ScheduleMeetingButton isFullWidth={false} btnName={achievementsSection.buttonText} /> */}

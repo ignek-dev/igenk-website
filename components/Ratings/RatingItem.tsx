@@ -14,12 +14,17 @@ interface RatingItemProps {
   logoAlt: string
   ratingValue: string
   isInView: boolean
+  index: number
 }
 
-const RatingItem: React.FC<RatingItemProps> = ({ logoSrc, logoAlt, ratingValue, isInView }) => {
+const RatingItem: React.FC<RatingItemProps> = ({ logoSrc, logoAlt, ratingValue, isInView, index }) => {
   return (
     <div
-      className={`flex flex-1 flex-col items-center justify-center p-8 ${
+      className={`flex flex-1 flex-col items-center justify-center p-8 
+        ${index === 2 ? "md:border-0 lg:border-[1px]" : ""} 
+        ${index === 1 ? "md:border-l-[1px] lg:border-l-0" : ""}
+        ${index === 3 ? "md:border-l-[1px] lg:border-l-0" : ""}
+        ${
         isInView ? "animate-when-visible animate-fade-in animate-delay-100" : "opacity-0"
       }`}
     >

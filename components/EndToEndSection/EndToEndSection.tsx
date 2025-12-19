@@ -23,7 +23,7 @@ export default function EndToEndSection() {
   return (
     // Attach the ref from the hook to the section
     <section ref={sectionRef} className="relative bg-black text-white">
-      <div className="global-container w-full py-[3.333vw]">
+      <div className="global-container w-full py-8 lg:py-[3.333vw]">
         {/* Top Heading */}
         <div className="grid gap-10 items-center lg:grid-cols-2 sm:gap-4 lg:gap-0">
           <div>
@@ -31,16 +31,16 @@ export default function EndToEndSection() {
               {EndToEndSectionData.heading}
             </h2>
           </div>
-          <p className={`${getAnimationClass("animate-slide-top")} p18 max-w-4xl sm:text-left lg:text-right text-white/80`}>
+          <p className={`${getAnimationClass("animate-slide-top")} text-p18 max-w-4xl sm:text-left lg:text-right text-white/80`}>
             {EndToEndSectionData.description}
           </p>
         </div>
 
         {/* Digital Experience */}
-        <div className="mt-[3.333vw] grid gap-[3.333vw] md:grid-cols-2">
+        <div className="mt-[3.333vw] grid gap-[3.333vw] grid-cols-1 lg:grid-cols-2">
           <div className={getAnimationClass("animate-slide-left", "animation-delay-200")}>
             <div>
-              <p className="text-[2.083vw] font-semibold">{EndToEndSectionData.digitalExperience.title}</p>
+              <p className="text-p20 md:text-[2.5rem] lg:text-[2.083vw] font-bold!">{EndToEndSectionData.digitalExperience.title}</p>
               <p className="p18 mt-[1.25vw] max-w-xl text-[#E5E7EB]">
                 {EndToEndSectionData.digitalExperience.description}
               </p>
@@ -61,9 +61,9 @@ export default function EndToEndSection() {
         </div>
 
         {/* Staff Augmentation */}
-        <div className="mt-[4.688vw] grid gap-12 md:grid-cols-2 md:gap-14 lg:mt-24 lg:gap-16">
+        <div className="mt-[4.688vw] grid gap-12 grid-cols-1 lg:grid-cols-2 md:gap-14 lg:mt-24 lg:gap-16">
           <div className={getAnimationClass("animate-slide-left", "animation-delay-200")}>
-            <p className="text-[2.083vw] font-semibold md:text-[40px]">{EndToEndSectionData.staffAugmentation.title}</p>
+            <p className="text-p20 md:text-[2.5rem] lg:text-[2.083vw] font-bold!">{EndToEndSectionData.staffAugmentation.title}</p>
             <p className="mt-[1.25vw] max-w-xl p18 text-[#E5E7EB]">
               {EndToEndSectionData.staffAugmentation.description}
             </p>

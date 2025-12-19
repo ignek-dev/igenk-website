@@ -10,7 +10,7 @@ const IntermediateFrame = () => {
         {marqueeContent.map((text, index) => (
           <p
             key={`${text}-${index}`}
-            className="text-[1.25vw] font-normal tracking-wide whitespace-nowrap text-black uppercase"
+            className="text-p18 md:text-p24 font-normal tracking-wide whitespace-nowrap text-black uppercase"
           >
             {text}
           </p>
