@@ -25,7 +25,7 @@ const FlexiblePlatforms = () => {
             <span className="block">{flexiblePlatforms.titleLine2}</span>{flexiblePlatforms.titleline3}
             <span className="text-[#00979E]">{flexiblePlatforms.titleteal}</span>
           </h2>
-          <p className="mt-[0.833vw] text-16 md:text-18 text-gray-600">
+          <p className="mt-[0.833vw] text-p16 md:text-p18 text-gray-600">
             {flexiblePlatforms.description}
           </p>
         </div>

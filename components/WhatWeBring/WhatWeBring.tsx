@@ -100,13 +100,13 @@ const WhatWeBring: React.FC = () => {
       >
         <div className="w-full global-container">
           {/* Header */}
-          <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
+          <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between lg:mt-[30px]">
             <h2>
               What We Bring To Your
               <br />
               Digital Experience
             </h2>
-            <p className="max-w-xl pt-0 text-right p18 text-gray-300">
+            <p className="max-w-xl pt-0 text-right text-p16 md:text-p18 text-gray-300">
               We empower businesses to deliver exceptional digital experiences through innovative strategies, design, and technology built on the power of Liferay DXP.
             </p>
           </div>
