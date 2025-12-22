@@ -9,7 +9,7 @@ const ExpertCard: React.FC = () => {
   return (
     <div className="flex flex-col gap-[2.188vw] rounded-2xl bg-[#1C1C1C] px-6 py-8 md:px-8 md:py-10 min-w-[28.906vw] min-h-[30.104vw]">
       {/* Top Heading */}
-      <p className="text-[1.458vw] leading-snug font-bold text-white">
+      <p className="lg:text-[1.458vw] md:text-[2.188rem] text-p18 leading-snug font-bold text-white">
         {expertCardContent.headingLine1} <br />
         {expertCardContent.headingLine2} <span className="text-[#00979E]">{expertCardContent.highlightText}</span>
       </p>
@@ -24,8 +24,8 @@ const ExpertCard: React.FC = () => {
           className="rounded-full object-cover"
         />
         <div>
-          <p className="text-[0.9375vw] font-semibold text-white">{expertCardContent.expertName}</p>
-          <p className="text-[1.042vw] text-gray-400">{expertCardContent.expertDesignation}</p>
+          <p className="text-p18 md:text-[2.188rem] lg:text-[1.458vw] font-bold text-white">{expertCardContent.expertName}</p>
+          <p className="text-[13px] md:text-[1.563rem] lg:text-p20 text-gray-400">{expertCardContent.expertDesignation}</p>
         </div>
       </div>
 
@@ -36,10 +36,10 @@ const ExpertCard: React.FC = () => {
 
       {/* Prefer Email */}
       <div className="pt-2">
-        <p className="mb-1 text-[0.938vw] text-gray-400">{expertCardContent.emailLabel}</p>
+        <p className="mb-1 text-[11px] md:text-[1.375rem] lg:text-[0.938vw] text-gray-400">{expertCardContent.emailLabel}</p>
         <a
           href={`mailto:${expertCardContent.email}`}
-          className="group flex items-center justify-between text-[0.833vw] font-semibold text-white"
+          className="group flex items-center justify-between text-[10px] md:text-p20 lg:text-[0.833vw] font-semibold text-white"
         >
           {expertCardContent.email}
           <div className="mt-4 flex items-center justify-between">

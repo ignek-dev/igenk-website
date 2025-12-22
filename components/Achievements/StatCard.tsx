@@ -24,8 +24,8 @@ const StatCard: React.FC<StatCardProps> = ({ number, title, description, isInVie
     >
       <div className="line-height-[88px] mb-[3.49vw] text-8xl font-semibold text-white">{number}</div>
       <div className="mb-[2.656vw] border-t border-gray-700" /> {/* Horizontal line */}
-      <p className="line-height-[32px] mb-[0.833vw] text-[1.25vw] font-semibold text-white">{title}</p>
-      <p className="w-full p18 leading-relaxed text-gray-400">{description}</p>
+      <p className="line-height-[32px] mb-[0.833vw] text-p20 md:text-p24 lg:text-p24 font-semibold text-white">{title}</p>
+      <p className="w-full text-p16 md:text-p18 leading-relaxed text-gray-400">{description}</p>
     </div>
   )
 }

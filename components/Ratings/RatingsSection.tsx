@@ -17,13 +17,12 @@ const RatingsSection: React.FC = () => {
   return (
     <section ref={sectionRef} className="bg-white">
       <div className="global-container overflow-x-hidden py-12">
-        <div className="flex flex-col items-center justify-between divide-y divide-gray-200 md:h-[192px] md:flex-row md:divide-x md:divide-y-0">
-          {ratingsData.map((rating, index) => (
+        <div className="flex flex-col flex-wrap lg:flex-nowrap items-center justify-between divide-y divide-gray-200 h-auto lg:h-[192px] md:flex-row lg:divide-x lg:divide-y-0 md:divide-x-0 md:divide-y">
+          {ratingsData.map((item, index) => (
             <RatingItem
-              key={index}
-              logoSrc={rating.logoSrc}
-              logoAlt={rating.logoAlt}
-              ratingValue={rating.ratingValue}
+              key={item.id}
+              {...item}
+              index={index}
               isInView={isInView}
             />
           ))}

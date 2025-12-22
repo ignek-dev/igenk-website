@@ -23,7 +23,7 @@ const ScheduleMeetingButton: React.FC<ScheduleMeetingButtonProps> = ({ btnName, 
           className={`group fancy relative items-center justify-center overflow-hidden rounded-full transition-transform duration-200 hover:scale-105 cursor-pointer ${isFullWidth ? "w-full" : "w-max"
             }`}
         >
-          <span className="relative z-10 flex items-center justify-center gap-3 rounded-full bg-black px-8 py-3 text-[1.042vw] font-medium text-white">
+          <span className="text-[13px] md:text-[1.563rem] relative z-10 flex items-center justify-center gap-3 rounded-full bg-black px-8 py-3 lg:text-[1.042vw] font-medium text-white">
             {/* Schedule Meeting */}
             {btnName ?? "Schedule Meeting"}
           {/* 3. Conditionally render the image */}

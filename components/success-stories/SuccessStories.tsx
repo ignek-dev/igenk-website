@@ -194,7 +194,7 @@ const SuccessStories: React.FC = () => {
                   <div className="mx-auto mb-[2.604vw] max-w-6xl text-center">
                     <h2 className="global-container mb-[0.833vw]">Liferay Solutions We’ve Successfully Delivered.</h2>
 
-                    <p className="p18 mt-1 text-gray-600">Explore the transformative <br />Liferay solutions we’ve implemented.</p>
+                    <p className="text-p16 md:text-p18 mt-1 text-gray-600">Explore the transformative <br />Liferay solutions we’ve implemented.</p>
                   </div>
                 )}
 
