@@ -5,43 +5,43 @@ import { commonProvidedServices } from "components/success-stories/SuccessStorie
 
 export default function MarqueeOverlay() {
     return (
-        <div className="absolute bottom-3 left-0 w-full overflow-hidden pl-[1.198vw]">
-            <p className="text-[0.833vw] text-[#FFFFFF] mb-[0.26vw] leading-[1.25vw]">Provided Services</p>
+        <div className="absolute bottom-3 left-0 w-full overflow-hidden pl-4 lg:pl-[1.198vw]">
+            <p className="mb-1 text-xs lg:text-[0.833vw] text-[#FFFFFF] lg:mb-[0.26vw] lg:leading-[1.25vw]">Provided Services</p>
             <div className="relative w-full overflow-hidden">
                 <div className="flex animate-marquee whitespace-nowrap items-center h-full">
                     {commonProvidedServices.map((service, i) => (
                         <div
                             key={i}
-                            className="flex items-center gap-3 px-4 h-[2.037vw] py-2 text-black font-medium text-base rounded-xl border border-[#E5E7EB] bg-white mr-4 shadow-sm"
+                            className="mr-3 flex items-center gap-2 rounded-lg border border-[#E5E7EB] bg-white px-3 py-1.5 text-black shadow-sm lg:mr-4 lg:h-[2.037vw] lg:gap-3 lg:rounded-xl lg:px-4 lg:py-2"
                         >
-                            <div className="flex items-center justify-center w-8">
+                            <div className="flex w-5 items-center justify-center lg:w-8">
                                 <Image
                                     src={service.iconSrc}
                                     alt={service.name}
                                     width={20}
                                     height={20}
-                                    className="object-contain h-[1.042vw] w-[1.042vw]"
+                                    className="h-4 w-4 object-contain lg:h-[1.042vw] lg:w-[1.042vw]"
                                 />
                             </div>
-                            <span className="whitespace-nowrap text-[0.746vw] leading-[0.746vw]">{service.name}</span>
+                            <span className="whitespace-nowrap text-xs font-medium lg:text-[0.746vw] lg:leading-[0.746vw]">{service.name}</span>
                         </div>
                     ))}
                     {/* Duplicate for seamless loop */}
                     {commonProvidedServices.map((service, i) => (
                         <div
                             key={`dup-${i}`}
-                            className="flex items-center gap-3 px-4 h-[2.037vw] py-2 text-black font-medium text-base rounded-xl border border-[#E5E7EB] bg-white mr-4 shadow-sm"
+                            className="mr-3 flex items-center gap-2 rounded-lg border border-[#E5E7EB] bg-white px-3 py-1.5 text-black shadow-sm lg:mr-4 lg:h-[2.037vw] lg:gap-3 lg:rounded-xl lg:px-4 lg:py-2"
                         >
-                            <div className="flex items-center justify-center w-8">
+                            <div className="flex w-5 items-center justify-center lg:w-8">
                                 <Image
                                     src={service.iconSrc}
                                     alt={service.name}
                                     width={20}
                                     height={20}
-                                    className="object-contain h-[1.042vw] w-[1.042vw]"
+                                    className="h-4 w-4 object-contain lg:h-[1.042vw] lg:w-[1.042vw]"
                                 />
                             </div>
-                            <span className="whitespace-nowrap text-[0.746vw] leading-[0.746vw]">{service.name}</span>
+                            <span className="whitespace-nowrap text-xs font-medium lg:text-[0.746vw] lg:leading-[0.746vw]">{service.name}</span>
                         </div>
                     ))}
                 </div>

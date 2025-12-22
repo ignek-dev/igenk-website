@@ -1,3 +1,5 @@
+import { ChevronDown, Search } from "lucide-react";
+
 interface FiltersProps {
     search: string;
     setSearch: (v: string) => void;
@@ -41,22 +43,22 @@ export default function Filters({
     ];
 
     return (
-        <aside className="sticky top-[8vw] w-auto max-w-fit bg-[#F1F5F5] px-[3.125vw] py-[1.719vw] rounded-2xl shadow-sm h-full">
+        <aside className="h-full w-full rounded-2xl bg-[#F1F5F5] p-6 shadow-sm lg:sticky lg:top-[8vw] lg:w-auto lg:max-w-fit lg:px-[3.125vw] lg:py-[1.719vw]">
 
-            <h4 className="font-medium text-[1.5625vw] leading-[1.67vw] mb-[1.6667vw]">
+            <h4 className="mb-4 text-xl font-medium lg:mb-[1.6667vw] lg:text-[1.5625vw] lg:leading-[1.67vw]">
                 Filters
             </h4>
 
             {/* Search */}
-            <div className="mb-[1.6667vw]">
-                <div className="flex items-center w-full bg-white rounded-full px-[0.833vw] py-[0.625vw] border border-gray-300">
+            <div className="mb-6 lg:mb-[1.6667vw]">
+                <div className="flex items-center w-full bg-white rounded-full px-4 py-2 lg:px-[0.833vw] lg:py-[0.625vw] border border-gray-300">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         viewBox="0 0 24 24"
                         strokeWidth="2"
                         stroke="#0C64CE"
-                        className="w-[1.25vw] h-[1.25vw] mr-[0.625vw]"
+                        className="mr-2 h-5 w-5 lg:mr-[0.625vw] lg:h-[1.25vw] lg:w-[1.25vw]"
                     >
                         <path
                             strokeLinecap="round"
@@ -70,14 +72,14 @@ export default function Filters({
                         placeholder="Search"
                         value={search}
                         onChange={(e) => setSearch(e.target.value)}
-                        className="w-full text-[1.041vw] bg-transparent focus:outline-none text-gray-700 placeholder-gray-400"
+                        className="w-full text-base lg:text-[1.041vw] bg-transparent focus:outline-none text-gray-700 placeholder-gray-400"
                     />
                 </div>
             </div>
 
             {/* Industry */}
-            <div className="mb-[1.6667vw]">
-                <h3 className="font-medium !font-medium !text-[1.25vw] text-black mb-[1.0417vw]">
+            <div className="mb-6 lg:mb-[1.6667vw]">
+                <h3 className="mb-4 text-xs! font-medium text-black lg:mb-[1.0417vw] lg:text-[1.25vw]!">
                     Search By Industry
                 </h3>
 
@@ -102,7 +104,7 @@ export default function Filters({
 
             {/* Technology */}
             <div>
-                <h3 className="font-medium !font-medium !text-[1.25vw] text-black mb-[1.0417vw]">
+                <h3 className="mb-4 text-xs! font-medium text-black lg:mb-[1.0417vw] lg:text-[1.25vw]!">
                     Search By Technology
                 </h3>
 
