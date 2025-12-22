@@ -25,8 +25,8 @@ export default function PortfolioList() {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
     const [searchTerm, setSearchTerm] = useState("");
-    const [selectedIndustry, setSelectedIndustry] = useState<number | null>(0);
-    const [selectedTechnology, setSelectedTechnology] = useState<number | null>(0);
+    const [selectedIndustry, setSelectedIndustry] = useState<number | null>(-1);
+    const [selectedTechnology, setSelectedTechnology] = useState<number | null>(-1);
     const [debouncedSearch, setDebouncedSearch] = useState(searchTerm);
     const router = useRouter();
     const PER_PAGE = 6;
@@ -55,11 +55,11 @@ export default function PortfolioList() {
             });
 
             if (debouncedSearch) params.append("search", debouncedSearch);
-            if (selectedIndustry !== null && selectedIndustry !== 0) {
+            if (selectedIndustry !== null && selectedIndustry !== 0 && selectedIndustry !== -1) {
                 params.append("case-study-category", String(selectedIndustry));
             }
 
-            if (selectedTechnology !== null && selectedTechnology !== 0) {
+            if (selectedTechnology !== null && selectedTechnology !== 0 && selectedTechnology !== -1) {
                 params.append("case-study-category", String(selectedTechnology));
             }
 
@@ -102,7 +102,7 @@ export default function PortfolioList() {
 
     console.log(error)
     return (
-        <div className="flex flex-col gap-10 md:flex-row lg:gap-[3.073vw] pt-0 pb-0 bg-[#F9FAF7]">
+        <div className="flex flex-col gap-0 lg:flex-row lg:gap-[3.073vw] pt-0 pb-0 bg-[#F9FAF7] ">
             <Filters
                 search={searchTerm}
                 setSearch={setSearchTerm}
@@ -111,7 +111,7 @@ export default function PortfolioList() {
                 selectedTechnology={selectedTechnology}
                 setSelectedTechnology={setSelectedTechnology}
             />
-            <section className="w-full md:w-3/4 lg:w-4/5">
+            <section className="w-full lg:w-4/5">
                 {
                     loading ? (
                         <div className="flex w-full min-h-[50vh] items-center justify-center">
@@ -138,7 +138,7 @@ export default function PortfolioList() {
                                                         }`}
                                                 >
                                                     {/* Image */}
-                                                    <div className="relative h-[250px] w-full rounded-xl md:h-[150px] lg:h-[17.76vw] lg:w-[29.896vw]">
+                                                    <div className="relative h-[250px] w-full rounded-xl lg:h-[17.76vw] lg:w-[29.896vw]">
                                                         <Image
                                                             src={imageUrl}
                                                             alt={item.title.rendered}
