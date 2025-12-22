@@ -183,7 +183,7 @@ export default function BlogsContent() {
               </h1>
             </div>
             <p className="relative mt-4 text-lg text-gray-300 lg:p18 lg:absolute lg:bottom-0 lg:max-w-[41.646vw] lg:justify-self-end lg:text-right lg:text-white lg:mt-0"></p>
-            <p className="text-p18 relative mt-0  lg:absolute lg:bottom-0 lg:max-w-[41.646vw] lg:justify-self-end lg:text-right text-white">
+            <p className="text-p16 lg:text-p18 relative mt-0  lg:absolute lg:bottom-0 lg:max-w-[41.646vw] lg:justify-self-end lg:text-right text-white">
              {blogHeroSection.description}
             </p>
           </div>
@@ -212,7 +212,7 @@ export default function BlogsContent() {
 
           {/* Carousel Section */}
           <div className="group relative mx-auto w-full">
-            <div className="relative h-[300px] sm:h-[450px] lg:h-[640px] overflow-hidden rounded-[22px] shadow-lg">
+            <div className="relative h-[300px] sm:h-[350px] lg:h-[640px] overflow-hidden rounded-[22px] shadow-lg">
               {featuredBlogs.length > 0
                 ? featuredBlogs.map((blog, index) => (
                     <div
@@ -230,14 +230,14 @@ export default function BlogsContent() {
                           alt={blog.title}
                           fill
                           sizes="(max-width: 768px) 100vw, 50vw"
-                          className="object-fill lg:object-cover"
+                          className="object-fill md:object-fill xl:object-cover"
                           priority={index === 0}
                         />
                       </div>
 
                       {/* Overlay Content */}
                       <div
-                        className="absolute inset-0 flex cursor-pointer flex-col justify-end px-6 pb-8 md:px-10 lg:px-[4.375rem] lg:pb-[3rem] text-white"
+                        className="absolute inset-0 flex cursor-pointer flex-col justify-end px-6 pb-7 md:px-10 lg:px-[4.375rem] lg:pb-[3rem] text-white"
                         style={{
                           background: "linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,100) 100%)",
                         }}
@@ -299,7 +299,7 @@ export default function BlogsContent() {
                           )}
                         </div>
 
-                        <div className="p18 mb-4 lg:mb-[0.938vw] flex items-center space-x-2 font-normal text-[#E5E7EB] opacity-90">
+                        <div className="text-p12 md:text-p16 lg:text-p18 mb-2 lg:mb-[0.938vw] flex items-center space-x-2 font-normal text-[#E5E7EB] opacity-90">
                           <span className=" rounded-full border border-[#D1D5DB] px-3 py-1 lg:w-[9.5vw] lg:px-[1.042vw] lg:py-[0.521vw] text-center text-[#E5E7EB]">
                             {blog.category}
                           </span>
@@ -307,7 +307,7 @@ export default function BlogsContent() {
                         </div>
 
                         <h2
-                          className="mb-4 lg:mb-[0.938vw] text-[1.563vw]!"
+                          className="mb-2 lg:mb-[0.938vw] text-p12! md:text-p16! lg:text-[1.563vw]!"
                           dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(blog.title) }}
                         />
                         <div className="flex items-center space-x-2 text-xl font-normal">

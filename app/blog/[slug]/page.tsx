@@ -263,7 +263,7 @@ export default function BlogDetails() {
                     </div>
 
                     {/* SIDEBAR */}
-                    <div className="order-2 lg:col-span-4 mt-10 lg:mt-0">
+                    <div className="order-2 lg:col-span-4 mt-0">
                         <BlogSidebar
                             categoryId={post?.categories?.[0] ?? 0}
                         />
