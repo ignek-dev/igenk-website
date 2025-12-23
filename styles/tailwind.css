@@ -1078,6 +1078,7 @@ h5 {
 
 /* WhatsMake Animation CSS */
 
+
 .whatsmake-card {
   transition:
     background-color 0.2s ease-in-out,
@@ -1431,3 +1432,17 @@ html {
 .hero-static-text .normal {
   font-style: normal;
 }
+
+ @media (max-width: 1023px) {
+.card-stack .stuck .whatsmake-card {
+  background-color: #fff;
+  color: #000;
+}
+ }
+
+ /* @media (min-width: 1024px) {
+  .card-stack .stuck .whatsmake-card {
+    background-color: #000;
+    color: #fff;
+  }
+} */
