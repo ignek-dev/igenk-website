@@ -93,6 +93,22 @@ select:-webkit-autofill {
     padding-right: 10vw !important;
   }
 
+  /* Tablet (2rem padding) */
+  @media (width >=48rem) and (width < 64rem) {
+  .global-container {
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+  }
+}
+
+/* Mobile (1rem padding) */
+@media (width < 48rem) {
+  .global-container {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+}
+
   /* Logo responsive sizes */
   .logo-responsive {
     width: 9.479vw;
@@ -308,6 +324,20 @@ h5 {
   border-radius: 2.083vw;
   padding: 0.521vw 1.51vw;
   width: fit-content;
+}
+
+@media (max-width: 640px) {
+  .banner-tab {
+    border-radius: 2rem;      /* Strong pill shape */
+    padding: 0.5rem 1.25rem;  /* Balanced spacing */
+  }
+}
+
+@media (max-width: 480px) {
+  .banner-tab {
+    border-radius: 1.35rem;
+    padding: 0.4rem 0.8rem;
+  }
 }
 
 /* Default → 1920px */
@@ -1209,11 +1239,7 @@ html {
    768px – 1023px
 ================================ */
 @media (width >=48rem) and (width < 64rem) {
-  .global-container {
-    padding-left: 2rem !important;
-    padding-right: 2rem !important;
-  }
-
+  
   h1 {
     font-weight: 600;
     font-size: 4.5rem;
@@ -1291,10 +1317,6 @@ html {
    < 768px
 ================================ */
 @media (width < 48rem) {
-  .global-container {
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
-  }
 
   h1 {
     font-weight: 600;
