@@ -25,8 +25,8 @@ export default function PortfolioList() {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
     const [searchTerm, setSearchTerm] = useState("");
-    const [selectedIndustry, setSelectedIndustry] = useState<number | null>(0);
-    const [selectedTechnology, setSelectedTechnology] = useState<number | null>(0);
+    const [selectedIndustry, setSelectedIndustry] = useState<number | null>(-1);
+    const [selectedTechnology, setSelectedTechnology] = useState<number | null>(-1);
     const [debouncedSearch, setDebouncedSearch] = useState(searchTerm);
     const router = useRouter();
     const PER_PAGE = 6;
@@ -55,11 +55,11 @@ export default function PortfolioList() {
             });
 
             if (debouncedSearch) params.append("search", debouncedSearch);
-            if (selectedIndustry !== null && selectedIndustry !== 0) {
+            if (selectedIndustry !== null && selectedIndustry !== 0 && selectedIndustry !== -1) {
                 params.append("case-study-category", String(selectedIndustry));
             }
 
-            if (selectedTechnology !== null && selectedTechnology !== 0) {
+            if (selectedTechnology !== null && selectedTechnology !== 0 && selectedTechnology !== -1) {
                 params.append("case-study-category", String(selectedTechnology));
             }
 
@@ -102,7 +102,7 @@ export default function PortfolioList() {
 
     console.log(error)
     return (
-        <div className="flex flex-col md:flex-row gap-[3.073vw] pt-0 pb-0 bg-[#F9FAF7]">
+        <div className="flex flex-col gap-0 lg:flex-row lg:gap-[3.073vw] pt-0 pb-0 bg-[#F9FAF7] ">
             <Filters
                 search={searchTerm}
                 setSearch={setSearchTerm}
@@ -111,7 +111,7 @@ export default function PortfolioList() {
                 selectedTechnology={selectedTechnology}
                 setSelectedTechnology={setSelectedTechnology}
             />
-            <section className="w-full md:w-3/4 lg:w-4/5">
+            <section className="w-full lg:w-4/5">
                 {
                     loading ? (
                         <div className="flex w-full min-h-[50vh] items-center justify-center">
@@ -130,19 +130,19 @@ export default function PortfolioList() {
                                         return (
                                             <div
                                                 key={item.id}
-                                                className={`py-12 ${index === 0 ? "pt-0" : ""} ${index < posts.length - 1 ? "border-b border-gray-300" : ""
+                                                className={`py-8 md:py-12 ${index === 0 ? "pt-0" : ""} ${index < posts.length - 1 ? "border-b border-gray-300" : ""
                                                     }`}
                                             >
                                                 <div
-                                                    className={`group bg-[#F9FAF7] pb-0 pt-0 flex flex-col md:flex-row gap-[2.396vw] overflow-hidden transition-all duration-500 ${!isImageLeft ? "md:flex-row-reverse" : ""
+                                                    className={`group bg-[#F9FAF7] pb-0 pt-0 flex flex-col md:flex-row gap-6 lg:gap-[2.396vw] overflow-hidden transition-all duration-500 ${!isImageLeft ? "md:flex-row-reverse" : ""
                                                         }`}
                                                 >
                                                     {/* Image */}
-                                                    <div className="relative rounded-xl h-[17.76vw]">
+                                                    <div className="relative h-[250px] w-full rounded-xl lg:h-[17.76vw] lg:w-[29.896vw]">
                                                         <Image
                                                             src={imageUrl}
                                                             alt={item.title.rendered}
-                                                            className="object-fill h-full rounded-xl transition-transform duration-500 max-w-[29.896vw] w-[29.896vw]"
+                                                            className="object-cover h-full w-full rounded-xl transition-transform duration-500"
                                                             height={341}
                                                             width={574}
                                                         />
@@ -153,11 +153,11 @@ export default function PortfolioList() {
 
 
                                                     {/* Text */}
-                                                    <div className="flex flex-col gap-[0.729vw] justify-center md:w-1/2 w-full relative">
-                                                        <div className="flex flex-wrap gap-[0.52vw] mb-[0.729vw]">
+                                                    <div className="relative flex w-full flex-col justify-center gap-3 md:w-1/2 lg:gap-[0.729vw]">
+                                                        <div className="flex flex-wrap mb-2 gap-2 lg:gap-[0.52vw] lg:mb-[0.729vw]">
                                                             {item._embedded?.["wp:term"]?.[0] && item._embedded?.["wp:term"]?.[0]?.length > 0 && (
                                                                 item._embedded?.["wp:term"]?.[0].map((term) => (
-                                                                    <span key={term?.name} className="text-[0.677vw] py-[0.4167vw] bg-white px-[0.833vw] rounded-full w-fit shadow-xl">
+                                                                    <span key={term?.name} className="w-fit rounded-full bg-white px-3 py-1 text-xs shadow-md lg:px-[0.833vw] lg:py-[0.4167vw] lg:text-[0.677vw] lg:shadow-xl">
                                                                         {term?.name || "General"}
                                                                     </span>
                                                                 ))
@@ -166,19 +166,19 @@ export default function PortfolioList() {
 
 
                                                         <h3
-                                                            className="!text-[1.563vw] !font-semibold leading-[1.563vw]"
+                                                            className="text-2xl! font-semibold! leading-tight! text-gray-900 lg:text-[1.563vw]! lg:leading-[1.563vw]!"
                                                             dangerouslySetInnerHTML={{ __html: item.title.rendered }}
                                                         />
 
                                                         <p
-                                                            className="text-[0.833vw] text-[#4B5563] leading-[1.25vw] line-clamp-3"
+                                                            className="line-clamp-3 text-sm text-[#4B5563] lg:text-[0.833vw] lg:leading-[1.25vw]"
                                                             dangerouslySetInnerHTML={{ __html: item.excerpt.rendered }}
                                                         />
 
                                                         <div className="transition-all duration-500 transform translate-y-5 opacity-0 group-hover:translate-y-0 group-hover:opacity-100">
                                                             <button
                                                                 onClick={() => router.push(`/case-study/${item.slug}`)}
-                                                                className="bg-[#0C64CE] text-white px-[1.25vw] py-[0.52vw] rounded-full shadow-md hover:bg-[#0C64CE] transition w-full text-[1.0417vw] cursor-pointer"
+                                                                className="w-full cursor-pointer rounded-full bg-[#0C64CE] px-6 py-2 text-base text-white shadow-md transition hover:bg-[#0C64CE] lg:px-[1.25vw] lg:py-[0.52vw] lg:text-[1.0417vw]"
                                                             >
                                                                 Read More
                                                             </button>
@@ -191,12 +191,12 @@ export default function PortfolioList() {
                                         );
                                     })}
                                     {/* Pagination */}
-                                    <div className="flex justify-left">
-                                        <ul className="flex items-center gap-2 text-[1.021vw] leading-[1.458vw]">
+                                    <div className="flex justify-start">
+                                        <ul className="flex items-center gap-2 text-sm font-medium lg:text-[1.021vw] lg:leading-[1.458vw]">
                                             {/* First */}
                                             <li
-                                                className={`px-4 py-2 border rounded-md cursor-pointer ${currentPage === 1
-                                                    ? "text-gray-400 border-gray-300 cursor-not-allowed"
+                                                className={`hidden cursor-pointer rounded-md border px-3 py-2 sm:block lg:px-4 ${currentPage === 1
+                                                    ? "cursor-not-allowed border-gray-300 text-gray-400"
                                                     : "hover:bg-gray-100"
                                                     }`}
                                                 onClick={() => currentPage > 1 && handlePageChange(1)}
@@ -206,8 +206,8 @@ export default function PortfolioList() {
 
                                             {/* Back */}
                                             <li
-                                                className={`px-4 py-2 border rounded-md cursor-pointer ${currentPage === 1
-                                                    ? "text-gray-400 border-gray-300 cursor-not-allowed"
+                                                className={`cursor-pointer rounded-md border px-3 py-2 lg:px-4 ${currentPage === 1
+                                                    ? "cursor-not-allowed border-gray-300 text-gray-400"
                                                     : "hover:bg-gray-100"
                                                     }`}
                                                 onClick={() => currentPage > 1 && handlePageChange(Math.max(1, currentPage - 1))}
@@ -218,8 +218,8 @@ export default function PortfolioList() {
                                             {/* Dynamic Page Numbers */}
                                             {(() => {
                                                 const pages = [];
-                                                const maxVisible = 5; // Number of visible page buttons
-                                                let start = Math.max(1, currentPage - 2);
+                                                const maxVisible = 3; // Number of visible page buttons
+                                                let start = Math.max(1, currentPage - 1);
                                                 const end = Math.min(totalPages, start + maxVisible - 1);
 
                                                 if (end - start < maxVisible - 1) {
@@ -232,7 +232,7 @@ export default function PortfolioList() {
                                                         <li
                                                             key={1}
                                                             onClick={() => handlePageChange(1)}
-                                                            className={`px-4 py-2 border rounded-md cursor-pointer hover:bg-gray-100 ${currentPage === 1 ? "bg-black text-white" : ""
+                                                            className={`cursor-pointer rounded-md border px-3 py-2 hover:bg-gray-100 lg:px-4 ${currentPage === 1 ? "bg-black text-white" : ""
                                                                 }`}
                                                         >
                                                             1
@@ -253,7 +253,7 @@ export default function PortfolioList() {
                                                         <li
                                                             key={i}
                                                             onClick={() => handlePageChange(i)}
-                                                            className={`px-4 py-2 border rounded-md cursor-pointer transition-all duration-200 ${currentPage === i
+                                                            className={`cursor-pointer rounded-md border px-3 py-2 transition-all duration-200 lg:px-4 ${currentPage === i
                                                                 ? "bg-black text-white border-black"
                                                                 : "hover:bg-gray-100"
                                                                 }`}
@@ -276,7 +276,7 @@ export default function PortfolioList() {
                                                         <li
                                                             key={totalPages}
                                                             onClick={() => handlePageChange(totalPages)}
-                                                            className={`px-4 py-2 border rounded-md cursor-pointer hover:bg-gray-100 ${currentPage === totalPages ? "bg-black text-white border-black" : ""
+                                                            className={`cursor-pointer rounded-md border px-3 py-2 hover:bg-gray-100 lg:px-4 ${currentPage === totalPages ? "bg-black text-white border-black" : ""
                                                                 }`}
                                                         >
                                                             {totalPages}
@@ -289,8 +289,8 @@ export default function PortfolioList() {
 
                                             {/* Next */}
                                             <li
-                                                className={`px-4 py-2 border rounded-md cursor-pointer ${currentPage === totalPages
-                                                    ? "text-gray-400 border-gray-300 cursor-not-allowed"
+                                                className={`cursor-pointer rounded-md border px-3 py-2 lg:px-4 ${currentPage === totalPages
+                                                    ? "cursor-not-allowed border-gray-300 text-gray-400"
                                                     : "hover:bg-gray-100"
                                                     }`}
                                                 onClick={() =>
@@ -302,8 +302,8 @@ export default function PortfolioList() {
 
                                             {/* Last */}
                                             <li
-                                                className={`px-4 py-2 border rounded-md cursor-pointer ${currentPage === totalPages
-                                                    ? "text-gray-400 border-gray-300 cursor-not-allowed"
+                                                className={`hidden cursor-pointer rounded-md border px-3 py-2 sm:block lg:px-4 ${currentPage === totalPages
+                                                    ? "cursor-not-allowed border-gray-300 text-gray-400"
                                                     : "hover:bg-gray-100"
                                                     }`}
                                                 onClick={() => currentPage < totalPages && handlePageChange(totalPages)}
@@ -315,7 +315,7 @@ export default function PortfolioList() {
 
                                 </>
                             ) : (
-                                <div className="p-10 text-center text-gray-500 text-lg">No Data Found.</div>
+                                <div className="p-10 text-center text-lg text-gray-500">No Data Found.</div>
                             )
                             }
 

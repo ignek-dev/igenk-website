@@ -228,7 +228,14 @@ pre.line-numbers code {
 
 .e-con-inner {
   width: 100%;
-  padding: 0px 80px;
+  padding: 0px 0px;
+}
+
+/* Desktop only (screens wider than 1024px) */
+@media screen and (min-width: 1024px) {
+  .e-con-inner {
+    padding: 0px 80px;
+  }
 }
 /*******************new*******************/
 /* Restore bullets for top-level list items */

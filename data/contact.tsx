@@ -29,8 +29,8 @@ export const contactLeftSection = {
   title2: "Follow Us On",
 };
 export const officeLocationsSection = {
-  title: "Our Offices Locations in India",
-  title2: "and United Arab Emirates",
+  title: "Our Offices Locations in India and United Arab Emirates",
+  // title2: "and United Arab Emirates",
 
   description:
     "We operate from India and the United Arab Emirates, enabling responsive ",

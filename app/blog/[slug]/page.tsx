@@ -168,10 +168,13 @@ export default function BlogDetails() {
         tables.forEach((table) => {
             Object.assign(table.style, {
                 borderCollapse: "collapse",
-                width: "fit-content",
+                width: "100%", // Changed to 100% for mobile
+                maxWidth: "100%",
                 background: "#f6f6f6",
                 margin: "20px 0",
                 fontFamily: "Arial, sans-serif",
+                display: "block", // Allows scrolling on mobile if needed
+                overflowX: "auto"
             });
 
             const rows = table.querySelectorAll("tr");
@@ -215,19 +218,19 @@ export default function BlogDetails() {
             <section className="relative bg-black text-white">
                 <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_10%_0%,#0E7BF8_0%,#00979E_40%,transparent_65%)] opacity-25" />
                 <div className="mx-auto w-full px-4 pt-12 pb-16 md:px-8 md:pt-20 md:pb-22 .global-container">
-                    <div className="text-center flex flex-col items-center justify-center px-6 py-16">
+                    <div className="text-center flex flex-col items-center justify-centerpx-0 py-8 lg:px-6 lg:py-16">
                         <h1 className="bg-[linear-gradient(0deg,#FFFFFF,#FFFFFF),linear-gradient(0deg,rgba(0,0,0,0.23),rgba(0,0,0,0.23))] bg-clip-text text-transparent text-5xl sm:text-6xl md:text-7xl font-bold leading-tight">
                             {post?.title?.rendered || "Untitled"}
                         </h1>
 
-                        <div className="max-w-2xl  text-[1.25vw] font-normal text-gray-200 sm:text-xl mt-[2.24vw]">
-                            <div className="flex items-center p24  space-x-2  text-white">
+                        <div className="max-w-2xl text-lg font-normal text-gray-200 sm:text-xl mt-6 lg:text-[1.25vw] lg:mt-[2.24vw]">
+                            <div className="flex items-center justify-center space-x-2 text-white text-p18 lg:text-p24">
                                 <Image
                                     src={"/images/blogs/blogAuthor.png"}
                                     alt={"authorI"}
                                     width={58}
                                     height={58}
-                                    className="w-[3.021vw] h-[3.021vw] object-cover rounded-full "
+                                    className="w-10 h-10 lg:w-[3.021vw] lg:h-[3.021vw] object-cover rounded-full"
                                 />
                                 <span className="">{"Bhavin Panchani"}</span>
                                 <span>•</span>
@@ -243,10 +246,10 @@ export default function BlogDetails() {
                     </div>
                 </div>
             </section>
-            <div className="blog-section pb-[2.917vw] bg-[#F9FAF7]">
-                <div className="grid grid-cols-1 lg:grid-cols-12 ">
+            <div className="blog-section pb-12 lg:pb-[2.917vw] bg-[#F9FAF7]">
+                <div className="flex flex-col lg:grid lg:grid-cols-12 ">
                     {/* MAIN CONTENT */}
-                    <div className="lg:col-span-8 border-r border-[#E3E3E3]">
+                    <div className="order-1 lg:col-span-8 lg:border-r lg:border-[#E3E3E3] p-5 lg:p-0">
                         <article className="wp-post">
                             <div
                                 ref={contentRef}
@@ -260,7 +263,7 @@ export default function BlogDetails() {
                     </div>
 
                     {/* SIDEBAR */}
-                    <div className="lg:col-span-4">
+                    <div className="order-2 lg:col-span-4 mt-0">
                         <BlogSidebar
                             categoryId={post?.categories?.[0] ?? 0}
                         />

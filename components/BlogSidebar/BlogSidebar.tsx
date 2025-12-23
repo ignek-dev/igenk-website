@@ -98,7 +98,7 @@ const BlogSidebar = ({ categoryId }: BlogSidebarProps) => {
   // const currentPage = 1
   const fetchBlogs = useCallback(async (idsToFilter: number[]) => {
     try {
-      window.scrollTo({ top: 0, behavior: "smooth" })
+      // window.scrollTo({ top: 0, behavior: "smooth" })
 
       const res = await fetch(`${API_URL}?per_page=100&categories=${categoryId}&_embed`, { cache: "no-store" })
 
@@ -157,11 +157,12 @@ const BlogSidebar = ({ categoryId }: BlogSidebarProps) => {
   const router = useRouter()
 
  return (
-    <div className="mx-auto grid max-w-[1440px] gap-[1.875vw] pr-[2.604vw] pl-[4.271vw] sticky top-[6.25vw] self-start max-lg:hidden lg:col-span-4 lg:pt-0">
+  // <div className="mx-auto grid w-full gap-6 px-4 pt-10 lg:max-w-[1440px] lg:gap-[1.875vw] lg:pr-[2.604vw] lg:pl-[4.271vw] lg:sticky lg:top-[6.25vw] lg:self-start max-lg:hidden lg:col-span-4 lg:pt-0"></div>
+    <div className="mx-auto grid w-full gap-6 px-4 pt-10 lg:max-w-[1440px] lg:gap-[1.875vw] lg:pr-[2.604vw] lg:pl-[4.271vw] lg:sticky lg:top-[6.25vw] lg:self-start  lg:col-span-4 lg:pt-0">
       {/* --- Social Icons --- */}
       <div>
-        <h2 className="mt-[2.292vw] mb-[0.208vw] text-[1.667vw]! leading-[2.083vw] font-medium! text-black">Share On</h2>
-        <div className="mt-0 flex gap-[0.326vw]">
+        <h2 className="mb-2 text-3xl! lg:mt-[2.292vw] lg:mb-[0.208vw] lg:text-[1.667vw]! lg:leading-[2.083vw] font-medium! text-black">Share On</h2>
+        <div className="mt-0 flex gap-2 lg:gap-[0.326vw]">
           {socialLinks.map((social) => {
             const href = typeof social.href === "function" ? social.href() : social.href
 
@@ -172,7 +173,7 @@ const BlogSidebar = ({ categoryId }: BlogSidebarProps) => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={social.label}
-                className="flex h-[2.813vw] w-[2.813vw] items-center justify-center rounded-full bg-black text-white"
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-black text-white lg:h-[2.813vw] lg:w-[2.813vw]"
               >
                 {social.icon}
               </a>
@@ -180,11 +181,11 @@ const BlogSidebar = ({ categoryId }: BlogSidebarProps) => {
           })}
         </div>
 
-        <h2 className="mt-[1.875vw] text-[1.667vw]! font-medium! text-black">Related Blogs</h2>
+        <h2 className="mt-8 text-2xl! lg:mt-[1.875vw] lg:text-[1.667vw]! font-medium! text-black">Related Blogs</h2>
       </div>
 
       {/* --- Related Blog Cards --- */}
-      <div className="grid gap-[1.641vw]">
+      <div className="grid gap-6 lg:gap-[1.641vw]">
         {blogs?.map((blog, index) => (
           <div key={blog?.id}>
             <div className="flex items-center overflow-hidden transition">
@@ -194,57 +195,57 @@ const BlogSidebar = ({ categoryId }: BlogSidebarProps) => {
                 alt="Blog thumbnail"
                 width={200}
                 height={130}
-                className="h-[6.771vw] w-full max-w-[10.417vw] rounded-[0.781vw]"
+                className="h-[100px] w-[140px] rounded-lg  lg:h-[6.771vw] lg:w-full lg:max-w-[10.417vw] lg:rounded-[0.781vw]"
               />
 
               {/* Text Container */}
-              <div className="ml-[0.729vw] flex h-[4.271vw] flex-1 flex-col justify-center gap-[0.104vw]">
-                <div className="p18 mt-[0.573vw] mb-[0.104vw] leading-snug text-[#101012]">{blog?.title}</div>
+              <div className="ml-4 flex flex-1 flex-col justify-center gap-1 lg:ml-[0.729vw] lg:h-[4.271vw] lg:gap-[0.104vw]">
+                <div className="text-p16 lg:text-p18 lg:mt-[0.573vw] lg:mb-[0.104vw] leading-snug text-[#101012]">{blog?.title}</div>
 
                 <div
                   onClick={() => router.push(`/blog/${blog.slug}`)}
-                  className="mt-auto flex cursor-pointer items-center gap-[0.104vw] text-[0.833vw] leading-[1.25vw] font-medium text-[#4A3AFF]"
+                  className="mt-auto flex cursor-pointer items-center gap-1 text-sm lg:gap-[0.104vw] lg:text-[0.833vw] lg:leading-[1.25vw] font-medium text-[#4A3AFF]"
                 >
-                    Read Now <ArrowRight size={20} />
+                    Read Now <ArrowRight size={20} className="h-4 w-4 lg:h-5 lg:w-5" />
                 </div>
               </div>
             </div>
 
-            {index !== blogs.length - 1 && <hr className="mt-[1.667vw] border-gray-300" />}
+            {index !== blogs.length - 1 && <hr className="mt-3 lg:mt-[1.667vw] border-gray-300" />}
           </div>
         ))}
       </div>
 
       {/* --- Author Card --- */}
       <div>
-      <div className="rounded-[1.042vw] border-[0.089vw] border-[#E5E7EB] bg-white p-[2.375vw] text-center shadow">
-        <h2 className="mb-[2.083vw] text-[1.875vw]! font-semibold! tracking-wide">AUTHOR</h2>
-        <h3 className="mb-[0.052vw] text-[1.563vw]! font-semibold! text-gray-900">Bhavin Panchani</h3>
-        <p className="pb-[1.458vw] text-[#121416]">CEO, IGNEK</p>
+      <div className="rounded-xl border border-[#E5E7EB] bg-white p-6 text-center shadow lg:rounded-[1.042vw] lg:border-[0.089vw] lg:p-[2.375vw]">
+        <h2 className="mb-3 text-2xl! font-semibold tracking-wide lg:mb-[2.083vw] lg:text-[1.875vw]!">AUTHOR</h2>
+        <h3 className="mb-2 text-xl! font-semibold text-gray-900 lg:mb-[0.052vw] lg:text-[1.563vw]!">Bhavin Panchani</h3>
+        <p className="pb-6 p14 text-[#121416] lg:pb-[1.458vw]">CEO, IGNEK</p>
 
-        <div className="mb-[1.875vw] flex justify-center">
+        <div className="mb-6 lg:mb-[1.875vw] flex justify-center">
           <Image
             src={"/images/blog/authorImg.png"}
             alt="Author"
             width={186}
             height={186}
-            className="max-h-[9.688vw] rounded-full object-cover"
+            className="h-32 w-32 rounded-full object-cover lg:max-h-[9.688vw] "
           />
         </div>
 
-        <p className="p16 mb-[1.875vw] leading-relaxed text-[#374151]">
+        <p className="mb-6  leading-relaxed text-p14 lg:text-p16! lg:mb-[1.875vw] text-[#374151]">
           Bhavin Panchani. Founder & Director. We were set up in early 2019 and are passionate about driving innovation
           through digital transformation.
         </p>
 
-        <div className="flex justify-center gap-[1.302vw]">
+        <div className="flex justify-center gap-4 lg:gap-[1.302vw]">
           {authorSocialLinks.map((social) => (
             <a
               href={social.href}
               key={social.label}
               aria-label={social.label}
               target="_blank"
-              className="flex size-[2.604vw] items-center justify-center rounded-full bg-black text-white"
+              className="flex h-10 w-10 lg:size-[2.604vw] items-center justify-center rounded-full bg-black text-white"
             >
               {social.icon}
             </a>

@@ -31,17 +31,17 @@ export default async function PortfolioPage() {
       <section className="relative bg-black text-white">
         <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_10%_0%,#0E7BF8_0%,#00979E_40%,transparent_65%)] opacity-25"></div>
 
-        <div className="mx-auto w-full px-4 pt-[7.8125vw] pb-[4.427vw] global-container">
-          <div className="relative grid justify-between items-end gap-[2.083vw] md:grid-cols-2">
+        <div className="mx-auto w-full px-5 py-12 lg:px-4 lg:pt-[7.8125vw] lg:pb-[4.427vw] global-container">
+          <div className="relative flex flex-col gap-6 lg:grid lg:grid-cols-2 lg:items-end lg:justify-between lg:gap-[2.083vw]">
 
-              <h1 className="font-semibold leading-tight text-[3.75vw] sm:text-[2.5vw] md:text-[3.75vw]">
+              <h1 className="font-semibold">
                  {liferaySuccessStoriesSection.heading} 
                 <br/>
                   {liferaySuccessStoriesSection.heading2}
 
               </h1>
 
-            <p className="text-right text-[0.938vw] pb-2">
+            <p className="lg:text-right text-p16 md:text-p18 pb-2">
               {liferaySuccessStoriesSection.description}
             </p>
 
@@ -49,7 +49,7 @@ export default async function PortfolioPage() {
         </div>
       </section>
 
-      <div className="pt-[1.875vw] bg-[#F9FAF7] px-[4.323vw] pb-[4.094vw]">
+      <div className="bg-[#F9FAF7] px-5 py-12 lg:pt-[1.875vw] lg:px-[4.323vw] lg:pb-[4.094vw]">
         {/* <section className="mb-8 text-center">
           <h1 className="text-3xl font-bold tracking-tight md:text-4xl">Our Portfolio</h1>
           <p className="mt-2 text-white/70">A curated list of our recent work and success stories.</p>
