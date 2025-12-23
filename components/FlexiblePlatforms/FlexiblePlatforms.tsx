@@ -31,7 +31,7 @@ const FlexiblePlatforms = () => {
         </div>
 
         <div
-          className={`group relative min-h-[500px] w-full lg:min-h-[33.646vw] lg:w-[47.292vw] overflow-hidden rounded-[20px] transition-all duration-[1500ms] ease-out ${
+          className={`group relative min-h-[250px] md:min-h-[500px] w-full lg:min-h-[33.646vw] lg:w-[47.292vw] overflow-hidden rounded-[20px] transition-all duration-[1500ms] ease-out ${
             isInView 
               ? "animate-when-visible animate-slide-right animation-delay-200 translate-x-0 opacity-100"
               : "translate-x-20 opacity-0"

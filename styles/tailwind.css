@@ -754,6 +754,11 @@ h5 {
     height: 450px;
   }
 
+  .fancy-white{
+    width: 130px !important;
+    height: 40px !important;
+  }
+
   .card-wrapper {
     /* Make cards take up more horizontal space on smaller screens */
     width: 60%;
@@ -1240,7 +1245,7 @@ html {
   h4 {
     font-family: Poppins;
     font-weight: 500;
-    font-size: 1.406rem;
+    font-size: 1.875rem;
     line-height: 1.688rem;
     letter-spacing: 0%;
   }
@@ -1292,8 +1297,8 @@ html {
 ================================ */
 @media (width < 48rem) {
   .global-container {
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
+    padding-left: 0.875rem !important;
+    padding-right: 0.875rem !important;
   }
 
   h1 {
@@ -1306,7 +1311,7 @@ html {
   h2 {
     font-family: Poppins;
     font-weight: 600;
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     line-height: 2rem;
     letter-spacing: 0%;
   }
@@ -1384,7 +1389,7 @@ html {
 }
 
 .hero-static-text {
-  font-family: "Roboto", Arial, sans-serif;
+  font-family: "Poppins", Arial, sans-serif;
   color: #d3d3d3;
   line-height: 1.06;
 }
@@ -1392,7 +1397,7 @@ html {
 /* Base font size = canvas logic converted to CSS */
 .hero-static-text .line {
   font-weight: 700;
-  font-size: clamp(2.6rem, 7.5vw, 3.4rem);
+  font-size: 60px;
 }
 
 /* Italic lines */

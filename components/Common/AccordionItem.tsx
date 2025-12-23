@@ -21,13 +21,13 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
   removeTopPadding = false,
 }) => {
   return (
-    <div className="w-full border-b border-gray-700">
+    <div className="w-full border-b border-gray-700 pb-[30px] pt-6">
       <button
         className={`flex w-full items-center justify-between pb-[1.563vw] text-left text-xl font-semibold text-white focus:outline-none
           ${removeTopPadding ? "pt-0" : "pt-[1.563vw]"}`}
         onClick={onToggle}
       >
-        <span className="text-p16 md:text-p24 font-semibold leading-[36px]">{title}</span>
+        <span className="text-p16 md:text-p24 font-semibold">{title}</span>
         <motion.span
           initial={false}
           animate={{ rotate: isOpen ? 0 : 45 }}

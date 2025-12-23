@@ -7,6 +7,7 @@ import Team from "components/About/Team"
 import { Testimonial } from "components/About/Testimonial"
 import { BackgroundLines } from "components/Common/BackgroundLines"
 import { aboutPageData } from "data/about-content"
+import StandoutSectionWrapper from "components/About/StandoutSectionWrapper"
 
 export const metadata: Metadata = {
   title: "About IGNEK | Liferay Boutique Company",
@@ -33,7 +34,7 @@ export default function AboutUs() {
   return (
     <div className="relative bg-[#0B0B0F] text-white">
       <BackgroundLines className="global-container relative flex flex-col items-start justify-center overflow-hidden bg-black text-white">
-        <section className="relative mt-[12.031vw] mb-[6.406vw] w-full">
+        <section className="relative mt-20 lg:mt-[12.031vw] mb-[6.406vw] w-full">
           <div className="grid items-end">
             {/* Left Column */}
             <div className="flex flex-col justify-center">
@@ -61,7 +62,7 @@ export default function AboutUs() {
                   loop
                   muted
                   playsInline
-                  className="absolute top-0 left-0 h-[17.5vw] w-[65.885vw] object-cover"
+                  className="absolute top-0 left-0 lg:h-[17.5vw] lg:w-[65.885vw] object-cover"
                 >
                   <source src={heroMaskVideo} type="video/mp4" />
                 </video>
@@ -72,14 +73,14 @@ export default function AboutUs() {
       </BackgroundLines>
 
       {/* About Company */}
-      <div className="global-container bg-[#F8F8F8] pt-[3.333vw] pb-[4.479vw]">
+      <div className="global-container bg-[#F8F8F8] pt-7 pb-7 md:pt-16 md:pb-16 lg:pt-[3.333vw] lg:pb-[4.479vw]">
         <div>
-          <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-[1fr_1.2fr] lg:gap-16">
+          <div className="grid grid-cols-1 items-start gap-2.5 lg:grid-cols-[1fr_1.2fr] lg:gap-16">
             {/* Left Column - Main Heading */}
             <div className="">
               <h2 className="font-bold text-black">
                 {whyCompaniesTrust.heading[0]}
-                <br />
+                <br className="hidden lg:block"/>
                 {whyCompaniesTrust.heading[1]}
               </h2>
             </div>
@@ -87,17 +88,17 @@ export default function AboutUs() {
             {/* Right Column - Content */}
             <div className="space-y-8">
               {/* Introductory Paragraph */}
-              <p className="mb-[1.042vw] pt-[1.563vw] text-right text-[0.938vw] leading-[1.563vw] text-[#374151]">
+              <p className="text-left lg:text-right text-p14 md:text-p18 text-[#374151]">
                 {whyCompaniesTrust.intro}
               </p>
 
               {whyCompaniesTrust.sections.map((section, i) => (
               <div key={i} className={i === 0 ? "mt-[4.375vw]" : "mt-[3.333vw]"}>
-                <h4 className="text-[1.563vw] !font-semibold text-black">
+                <h4 className="font-semibold! text-black">
                   {section.title}
                 </h4>
-                <div className="border-gray-[0.052vw] mt-[1.042vw] mb-[1.042vw] border"></div>
-                <p className="text-[1.042vw] leading-[1.563vw] text-[#374151]">
+                <div className="border-gray-[0.052vw] mt-5 mb-5 lg:mt-[1.042vw] lg:mb-[1.042vw] border"></div>
+                <p className="text-p14 md:text-p20 text-[#374151]">
                   {section.description}
                 </p>
               </div>
@@ -108,7 +109,7 @@ export default function AboutUs() {
       </div>
 
       {/* Standout Points*/}
-      <StandoutSection />
+      <StandoutSectionWrapper />
 
       {/* Background accents */}
       <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">

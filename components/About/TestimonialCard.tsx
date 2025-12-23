@@ -37,17 +37,20 @@ export const TestimonialCard: React.FC<{ data: TestimonialData }> = ({
   if (data.type === "video-review") {
     return (
       <div
-        className="flex bg-white rounded-3xl mr-[2.448vw] shadow-sm overflow-hidden min-w-[51.51vw]"
+        className=" flex flex-col md:flex-row
+    bg-white rounded-3xl
+    mr-4 lg:mr-[2.448vw]
+    min-w-[85vw] md:min-w-[85vw] lg:min-w-[51.51vw] shadow-sm overflow-hidden"
         style={{ scrollSnapAlign: "start" }}
       >
         {/* Video side */}
-        <div className="relative min-w-[26.042vw] h-full">
+        <div className="relative min-w-[50%] lg:min-w-[26.042vw] h-full">
           {/* Actual video */}
           <video
             ref={videoRef}
             playsInline
             onClick={handleVideoToggle}
-            className="rounded-l-3xl inset-0 w-full h-full object-cover cursor-pointer"
+            className="rounded-l-3xl rounded-r-3xl rounded-b-none  inset-0 w-full h-full object-cover cursor-pointer"
           >
             <source
               src={"/images/about/Testimonial - Global Digital Platform.mp4"}
@@ -82,7 +85,7 @@ export const TestimonialCard: React.FC<{ data: TestimonialData }> = ({
         </div>
 
         {/* Review side */}
-        <div className="p-[2.083vw] flex flex-col justify-between">
+        <div className="lg:p-[2.083vw] p-6 flex flex-col justify-between">
           <div>
             <div className="flex items-center h-[2.656vw] mb-[0.781vw]">
               <Image
@@ -93,7 +96,7 @@ export const TestimonialCard: React.FC<{ data: TestimonialData }> = ({
                 className="mr-[0.625vw] h-[2.656vw] w-auto"
               />
             </div>
-            <p className="text-[#6F6C90] text-[0.938vw] leading-[1.563vw]">
+            <p className="text-[#6F6C90] text-p12 lg:text-p18 py-0 lg:py-5">
               “{data.quote}”
             </p>
           </div>
@@ -121,7 +124,7 @@ export const TestimonialCard: React.FC<{ data: TestimonialData }> = ({
   // Text-only card
   return (
     <div
-      className="bg-white p-[2.083vw] rounded-3xl shadow-sm min-w-[26.042vw] mr-[2.448vw] flex flex-col justify-between"
+      className="bg-white lg:p-[2.083vw] p-6 rounded-3xl shadow-sm min-w-[50%] lg:min-w-[26.042vw] mr-[2.448vw] flex flex-col justify-between"
       style={{ scrollSnapAlign: "start" }}
     >
       <div>
@@ -131,10 +134,10 @@ export const TestimonialCard: React.FC<{ data: TestimonialData }> = ({
             alt={data.companyName!}
             width={100}
             height={100}
-            className="mr-[0.625vw] h-[2.656vw] w-auto "
+            className="mr-[0.625vw] h-7 lg:h-[2.656vw] w-auto "
           />
-         </div>
-        <p className="text-[#6F6C90] text-[0.938vw] leading-[1.563vw]">
+        </div>
+        <p className="text-[#6F6C90] text-p12 lg:text-p18 py-0 lg:py-5">
           “{data.quote}”
         </p>
       </div>

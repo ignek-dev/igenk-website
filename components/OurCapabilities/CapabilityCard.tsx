@@ -23,7 +23,7 @@ const CapabilityCard: React.FC<CapabilityCardProps> = ({ iconSrc, title, descrip
         loop
         muted
         playsInline
-        className="mb-4 h-[0.417vw] w-full rounded-full object-cover"
+        className="mb-4 h-2 md:h-[0.417vw] w-full rounded-full object-cover"
       >
         {/* Providing a fallback for browsers that don't support the video tag */}
         Your browser does not support the video tag.
