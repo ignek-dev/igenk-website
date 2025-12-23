@@ -25,13 +25,13 @@ const FlexiblePlatforms = () => {
             <span className="block">{flexiblePlatforms.titleLine2}</span>{flexiblePlatforms.titleline3}
             <span className="text-[#00979E]">{flexiblePlatforms.titleteal}</span>
           </h2>
-          <p className="mt-[0.833vw] text-16 md:text-18 text-gray-600">
+          <p className="mt-[0.833vw] text-p16 md:text-p18 text-gray-600">
             {flexiblePlatforms.description}
           </p>
         </div>
 
         <div
-          className={`group relative min-h-[500px] w-full lg:min-h-[33.646vw] lg:w-[47.292vw] overflow-hidden rounded-[20px] transition-all duration-[1500ms] ease-out ${
+          className={`group relative min-h-[250px] md:min-h-[500px] w-full lg:min-h-[33.646vw] lg:w-[47.292vw] overflow-hidden rounded-[20px] transition-all duration-[1500ms] ease-out ${
             isInView 
               ? "animate-when-visible animate-slide-right animation-delay-200 translate-x-0 opacity-100"
               : "translate-x-20 opacity-0"

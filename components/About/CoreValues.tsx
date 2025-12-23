@@ -10,33 +10,36 @@ const CoreValues = () => {
       <div className="flex flex-col items-center">
         <h2 className="text-[#000000]">{coreValuesHeader.heading}</h2>
 
-        <p className="w-[40.781vw] pt-[1.458vw] text-center text-[0.938vw] leading-[1.563vw] text-[#4B5563]">
+        <p className="w-auto lg:w-[40.781vw] pb-7  pt-[1.458vw] text-center text-p14 md:text-p18 lg:text-p18 text-[#4B5563]">
           {coreValuesHeader.subheading}
         </p>
       </div>
 
       {/* Values Section */}
-      <div className="mt-[1.979vw]">
+      <div className="">
         {CORE_VALUES.map((v, index) => (
           <div
             key={index}
-            className="group h-[9.948vw] bg-[#F5F5F6] pr-[2.188vw] pl-[1.979vw] duration-300 hover:bg-white"
+            className="group h-auto lg:h-[9.948vw] bg-[#F5F5F6] pr-[2.188vw] pl-[1.979vw] duration-300 hover:bg-white"
           >
-            <div className="relative flex h-full items-center px-0">
+            <div className="relative block lg:flex h-full items-center px-0">
+
+              <div className="flex items-center mt-0 md:mt-9 lg:mt-0">
               {/* Number */}
-              <p className="text-[1.563vw] leading-[1.875vw] font-medium text-[#000000]">{v.number}</p>
+              <p className="text-[1.25rem] md:text-[1.875rem] lg:text-[1.563vw] font-medium text-[#000000]">{v.number}</p>
 
               {/* Title */}
               <h2
-                className="truncate pl-[132px] !leading-[3.75vw] !font-normal text-[#000000] transition-transform duration-300 group-hover:pl-[15.625vw]"
+                className="truncate pl-9 lg:pl-[132px] font-light! text-[#000000] transition-transform duration-300 group-hover:pl-[15.625vw]"
                 // group-hover:translate-x-[8.906vw]
               >
                 {v.title}
               </h2>
+              </div>
 
               {/* Description */}
               <div className="ml-auto">
-                <p className="w-[38.177vw] text-right text-[1.25vw] leading-[1.667vw] font-normal text-[#4B5563]">
+                <p className="w-auto lg:w-[38.177vw] text-p14 md:text-p24 lg:text-p24 text-left lg:text-right pb-[28px] md:pb-9  mt-2.5 lg:mt-0 lg:mb-auto text-[#4B5563]">
                   {v.description}
                 </p>
               </div>

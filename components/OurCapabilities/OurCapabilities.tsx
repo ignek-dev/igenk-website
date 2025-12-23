@@ -17,7 +17,7 @@ const OurCapabilities: React.FC = () => {
   })
 
   return (
-    <section ref={sectionRef} className="bg-black py-8 lg:py-[3.333vw] text-white pb-[3.333vw]">
+    <section ref={sectionRef} className="bg-black py-[46px] lg:py-[3.333vw] text-white">
       <div className="w-full global-container">
         {/* Header Section */}
         <div className="mb-[5.052vw] flex flex-col lg:mb-20 lg:flex-row lg:items-end lg:justify-between">
@@ -29,7 +29,7 @@ const OurCapabilities: React.FC = () => {
             {capabilitiesData.capabilitiesHeading}
           </h2>
           <p
-            className={`max-w-3xl text-left lg:text-right text-p16 md:text-p18 text-gray-300 ${
+            className={`max-w-3xl text-left lg:text-right text-p16 md:text-p18 lg:text-p18 text-gray-300 ${
               isInView ? "animate-when-visible animate-slide-top" : "opacity-0"
             }`}
           >

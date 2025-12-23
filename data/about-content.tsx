@@ -366,7 +366,7 @@ export const cardsData = [
 
 export const whatMakesUsStandOutData = {
   title: "What Sets IGNEK",
-  titleLine2: "Apart?",
+  titleLine2: " Apart?",
 
   description:
     "We combine deep Liferay expertise with a disciplined delivery approach, ",

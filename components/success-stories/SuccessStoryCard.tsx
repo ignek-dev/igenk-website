@@ -20,7 +20,7 @@ const SuccessStoryCard: React.FC<{ story: Story }> = ({ story }) => {
   return (
     // The main card container
     <div className="rounded-2xl border border-[#E5E7EB] bg-white">
-      <div className="grid grid-cols-1 items-center gap-[3.073vw] p-[1.25vw] lg:grid-cols-2">
+      <div className="grid grid-cols-1 items-center gap-[3.073vw] p-8 lg:p-[1.25vw] lg:grid-cols-2">
         {/* Left Column: Image */}
         <div className="h-auto lg:h-[29.063vw] max-w-auto lg:max-w-[38.698vw] overflow-hidden rounded-[1.354vw]">
           <Image
@@ -35,25 +35,25 @@ const SuccessStoryCard: React.FC<{ story: Story }> = ({ story }) => {
         {/* Right Column: Content */}
         <div>
           <span
-            className="mb-[1.615vw] inline-block rounded-full border border-[#00979E] bg-white px-[1.823vw] py-1.5 text-[0.833vw] font-semibold text-gray-800"
+            className="mb-[1.615vw] inline-block rounded-full border border-[#00979E] bg-white px-[1.823vw] py-1.5 text-[0.563rem] md:text-p16 lg:text-p16 font-semibold text-gray-800"
             // style={{ boxShadow: "0px 0px 12px -2px #00979E" }}
           >
             {story.tag}
           </span>
-          <h3 className="mb-[0.938vw] text-[1.563vw] font-bold text-gray-900">{story.title}</h3>
+          <h3 className="mb-[0.938vw] text-[1.25rem]! md:text-[2.25rem]! lg:leading-12! font-bold text-gray-900">{story.title}</h3>
           <p
-            className="mb-[1.198vw] line-clamp-3 leading-relaxed text-gray-600"
+            className="mb-3 md:mb-[1.198vw] text-[10px] md:text-p16! line-clamp-3 leading-relaxed text-gray-600"
             dangerouslySetInnerHTML={{ __html: story.description }}
           />
           <Link
             href={`/case-study/${story.slug}`}
-            className="fancy-white relative mb-[1.354vw] inline-flex items-center gap-1 rounded-full 
+            className="fancy-white relative mb-5 lg:mb-[1.354vw] inline-flex items-center gap-1 rounded-full 
              border border-transparent bg-white px-5 py-2 text-sm font-semibold 
              text-gray-800 transition-all hover:bg-gray-50"
           >
-            <span className="relative z-10 text-black">Read case study</span>
+            <span className="relative text-[8px] md:text-p14! z-10 text-black">Read case study</span>
           </Link>
-          <p className="mb-[1.042vw] text-[1.041vw] font-semibold text-gray-800">Provided Services</p>
+          <p className="mb-3 md:mb-6 lg:mb-[1.042vw] text-[11px] md:text-p20 lg:text-[1.041vw] font-semibold text-gray-800">Provided Services</p>
           <div className="flex flex-wrap gap-[0.833vw]">
             {commonProvidedServices.map((service, idx) => (
               <TechnologyChip key={idx} iconSrc={service.iconSrc} name={service.name} />

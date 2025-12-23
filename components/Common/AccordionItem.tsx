@@ -21,13 +21,13 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
   removeTopPadding = false,
 }) => {
   return (
-    <div className="w-full border-b border-gray-700">
+    <div className="w-full border-b border-gray-700 pb-[30px] lg:pb-0 pt-6 lg:pt-0">
       <button
         className={`flex w-full items-center justify-between pb-[1.563vw] text-left text-xl font-semibold text-white focus:outline-none
           ${removeTopPadding ? "pt-0" : "pt-[1.563vw]"}`}
         onClick={onToggle}
       >
-        <span className="text-p16 md:text-p24 font-semibold leading-[36px]">{title}</span>
+        <span className="text-p16 md:text-p24 lg:text-p24 font-semibold">{title}</span>
         <motion.span
           initial={false}
           animate={{ rotate: isOpen ? 0 : 45 }}
@@ -52,7 +52,7 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
             transition={{ duration: 0.3, ease: "easeOut" }}
             className="overflow-hidden"
           >
-            <div className="pr-8 pb-[1.563vw] text-p14 md:text-p16 leading-[25px] text-gray-400">
+            <div className="pr-8 pb-[1.563vw] text-p14 md:text-p16 lg:text-p16 leading-[25px] text-gray-400">
               {content}
             </div>
           </motion.div>

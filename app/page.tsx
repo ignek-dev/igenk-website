@@ -62,10 +62,10 @@ export default function HomePage() {
 
         <div className="global-container w-full pb-16">
           
-          <div className="mt-[0.850vw] grid items-start gap-8 sm:grid-cols-1 md:grid-cols-[25.125rem_auto] lg:grid-cols-2">
+          <div className="mt-[0.850vw] grid items-start gap-[37px] sm:grid-cols-1 md:grid-cols-[25.125rem_auto] lg:grid-cols-2">
             <p className="text-p14 md:text-p16 lg:text-p20 max-w-xl leading-[30px] text-[#F3F4F6]">{hero.description} </p>
 
-            <div className="pb-3 md:self-end md:justify-self-end">
+            <div className="pb-[37px] md:pb-3 md:self-end md:justify-self-end">
               <a
                 href={hero.button.link}
                 className="group flex items-center justify-center gap-2 rounded-full bg-black/30 px-3 py-3 text-sm text-white transition-colors"
@@ -79,10 +79,10 @@ export default function HomePage() {
           </div>
 
           {/* Divider line matching text color */}
-          <div className="mt-[3.49vw] border-t border-white/30" />
+          <div className="mt-0 md:mt-[3.49vw] border-t border-white/30" />
 
           {/* Logos row: 7 items with spacing and responsive wrap */}
-          <div className="mt-12 overflow-hidden">
+          <div className="mt-[55px] md:mt-12 overflow-hidden">
             {/* Inner container is the animated flex row */}
             <div className="animate-marquee-fast flex gap-x-16 whitespace-nowrap">
               {/* We map the partners array twice for a seamless loop */}
