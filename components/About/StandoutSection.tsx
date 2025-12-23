@@ -95,19 +95,19 @@ const StandoutSection = () => {
 
         {/* Canvas container */}
         <div className="h-full flex flex-col justify-center">
-          <div className="flex justify-between items-center">
+          <div className="block lg:flex justify-between items-center">
             {/* H1 */}
             <h2
-              className="leading-[3.125vw] mt-[0.1vh] text-white capitalize"
+              className="mt-[0.1vh] text-white capitalize mb-4"
             >
               {whatMakesUsStandOutData.title}
-              <br />
+              <br className="hidden lg:block"/>
               {whatMakesUsStandOutData.titleLine2}
             </h2>
 
-            <p className="text-right text-[0.938vw] leading-[1.563vw] text-[#E5E7EB]">
+            <p className="text-left lg:text-right text-p14 md:text-p18 text-[#E5E7EB]">
               {whatMakesUsStandOutData.description}
-              <br />
+              <br className="hidden lg:block"/>
               {whatMakesUsStandOutData.descLine2}
             </p>
           </div>
