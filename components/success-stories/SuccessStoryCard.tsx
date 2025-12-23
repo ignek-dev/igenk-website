@@ -40,7 +40,7 @@ const SuccessStoryCard: React.FC<{ story: Story }> = ({ story }) => {
           >
             {story.tag}
           </span>
-          <h3 className="mb-[0.938vw] text-[1.25rem]! md:text-[2.25rem]! font-bold text-gray-900">{story.title}</h3>
+          <h3 className="mb-[0.938vw] text-[1.25rem]! md:text-[2.25rem]! lg:leading-12! font-bold text-gray-900">{story.title}</h3>
           <p
             className="mb-3 md:mb-[1.198vw] text-[10px] md:text-p16! line-clamp-3 leading-relaxed text-gray-600"
             dangerouslySetInnerHTML={{ __html: story.description }}
