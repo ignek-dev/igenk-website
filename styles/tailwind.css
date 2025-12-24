@@ -1078,6 +1078,7 @@ h5 {
 
 /* WhatsMake Animation CSS */
 
+
 .whatsmake-card {
   transition:
     background-color 0.2s ease-in-out,
@@ -1152,6 +1153,12 @@ h5 {
 
 .glow-box::before {
   top: 0px;
+}
+
+@media (max-width: 767px) {
+  .glow-box::before {
+    box-shadow: 0 0 0 #1F2937;
+  }
 }
 
 html {
@@ -1431,3 +1438,17 @@ html {
 .hero-static-text .normal {
   font-style: normal;
 }
+
+ @media (max-width: 1023px) {
+.card-stack .stuck .whatsmake-card {
+  background-color: #fff;
+  color: #000;
+}
+ }
+
+ /* @media (min-width: 1024px) {
+  .card-stack .stuck .whatsmake-card {
+    background-color: #000;
+    color: #fff;
+  }
+} */

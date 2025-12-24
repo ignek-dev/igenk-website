@@ -21,7 +21,6 @@ const metadata: Metadata = {
   title: "Liferay Architecture Design Services | Enterprise Liferay Experts – IGNEK",
   description:
     "Design scalable, secure Liferay architectures with IGNEK. Expert Liferay architecture design services built on best practices for long-term enterprise growth.",
-
   openGraph: {
     url: "https://www.ignek.com/services/liferay-architecture-design/",
     title: "Liferay Architecture Design Services | Enterprise Liferay Experts – IGNEK",
@@ -48,55 +47,76 @@ export default function LiferayArchitectureDesignPage() {
   const [isInView, setIsInView] = useState(false)
   const [isStickyActive, setIsStickyActive] = useState(false)
 
-  // detect intersection to know when to enable horizontal handling
+  // ===== Shared card renderer =====
+const ArchitectureCards = ({
+  items,
+  cardWidth = "22%",
+}: {
+  items: typeof systemArchitecure
+  cardWidth?: string | number
+}) => (
+  <>
+    {items.map((item, index) => (
+      <div
+        key={index}
+        className={`flex-shrink-0 px-[42px]! md:px-16 lg:px-[3.333vw] ${
+          index === 0 ? "ml-0 lg:ml-[7vw] pl-0" : ""
+        } ${index === items.length - 1 ? "mr-[20vw]" : ""} ${
+          index !== items.length - 1 ? "border-r border-[#9CA3AF]" : ""
+        }`}
+        style={{ width: cardWidth }}
+      >
+        <div className="flex flex-col gap-[2vw]">
+          <h3 className="mt-[3.802vw] h-[88px] max-w-[90%] lg:max-w-[16.51vw] text-gray-600">
+            {item.text}
+          </h3>
+          <p className="text-p12 md:text-p20 lg:text-p20 mt-auto mb-[3.802vw] w-auto lg:max-w-[20.729vw] leading-relaxed text-gray-500">
+            {item.description}
+          </p>
+        </div>
+      </div>
+    ))}
+  </>
+)
+
+
+  // ===== Intersection Observer for desktop horizontal scroll =====
   useEffect(() => {
     const section = sectionRef.current
     if (!section) return
-
     const observer = new IntersectionObserver(
       (entries) => {
         const entry = entries[0]
-        if (entry) {
-          setIsInView(entry.isIntersecting)
-        }
+        if (entry) setIsInView(entry.isIntersecting)
       },
-      {
-        // leave threshold low so it becomes active when a chunk of the section is visible
-        threshold: 0.25,
-      }
+      { threshold: 0.25 }
     )
-
     observer.observe(section)
     return () => observer.disconnect()
   }, [])
 
-  // sticky state (so header can become sticky at the same offset you used)
+  // ===== Sticky header logic =====
   useEffect(() => {
     const onScroll = () => {
       const section = sectionRef.current
       if (!section) return
       const rect = section.getBoundingClientRect()
-      // activate sticky when the top of the section reaches the offset you used previously
       const stickyOffset = 137
       setIsStickyActive(rect.top <= stickyOffset && rect.bottom > stickyOffset)
     }
-
     window.addEventListener("scroll", onScroll, { passive: true })
     onScroll()
     return () => window.removeEventListener("scroll", onScroll)
   }, [])
 
-  // wheel and touch mapping to horizontal scroll
+  // ===== Desktop horizontal scroll wheel/touch mapping =====
   useEffect(() => {
     const container = containerRef.current
     const section = sectionRef.current
     if (!container || !section) return
 
     let rafId: number | null = null
-
     const clamp = (v: number, a = 0, b = Infinity) => Math.min(Math.max(v, a), b)
-
-    // performs the actual scrollLeft change on next animation frame for smoothness
     const animateScrollTo = (targetLeft: number) => {
       if (rafId !== null) cancelAnimationFrame(rafId)
       rafId = requestAnimationFrame(() => {
@@ -106,65 +126,43 @@ export default function LiferayArchitectureDesignPage() {
     }
 
     const onWheel = (e: WheelEvent) => {
-      // only intercept when our section is visible (controlled by IntersectionObserver)
       if (!isInView) return
-
       const maxScroll = Math.max(0, container.scrollWidth - container.clientWidth)
-      if (maxScroll <= 0) return // nothing to do
+      if (maxScroll <= 0) return
 
       const deltaY = e.deltaY
-
       const atLeft = container.scrollLeft <= 0
-      const atRight = container.scrollLeft >= maxScroll - 1 // small epsilon
-
-      // If user attempts to scroll past bounds, allow page to scroll normally.
-      // We only preventDefault when we're actually moving the horizontal track.
-      if ((deltaY < 0 && atLeft) || (deltaY > 0 && atRight)) {
-        return
-      }
+      const atRight = container.scrollLeft >= maxScroll - 1
+      if ((deltaY < 0 && atLeft) || (deltaY > 0 && atRight)) return
 
       e.preventDefault()
       e.stopPropagation()
-
-      // adjust sensitivity here if needed
-      const sensitivity = 1 // 1 = direct mapping; <1 slower; >1 faster
+      const sensitivity = 1
       const next = clamp(container.scrollLeft + deltaY * sensitivity, 0, maxScroll)
-
       animateScrollTo(next)
     }
 
-    // Touch handling for phones
     let touchStartY = 0
     let lastTouchY = 0
-
     const onTouchStart = (e: TouchEvent) => {
       if (!e.touches?.[0]) return
       touchStartY = e.touches[0].clientY
       lastTouchY = touchStartY
     }
-
     const onTouchMove = (e: TouchEvent) => {
       if (!isInView) return
       if (!e.touches?.[0]) return
-
       const currentY = e.touches[0].clientY
       const delta = lastTouchY - currentY
       lastTouchY = currentY
-
       const maxScroll = Math.max(0, container.scrollWidth - container.clientWidth)
       if (maxScroll <= 0) return
-
       const atLeft = container.scrollLeft <= 0
       const atRight = container.scrollLeft >= maxScroll - 1
-
-      if ((delta < 0 && atLeft) || (delta > 0 && atRight)) {
-        // allow page scrolling when track is at bounds
-        return
-      }
+      if ((delta < 0 && atLeft) || (delta > 0 && atRight)) return
 
       e.preventDefault()
       e.stopPropagation()
-
       const sensitivity = 1
       const next = clamp(container.scrollLeft + delta * sensitivity, 0, maxScroll)
       animateScrollTo(next)
@@ -182,25 +180,20 @@ export default function LiferayArchitectureDesignPage() {
     }
   }, [isInView])
 
-  // Drag-to-scroll (mouse + touch) for the horizontal strip
+  // ===== Drag-to-scroll for desktop =====
   useEffect(() => {
     const container = containerRef.current
     if (!container) return
 
     const onPointerDown = (e: PointerEvent) => {
-      // Only left mouse button or touch
       if ((e as any).button !== undefined && (e as any).button !== 0) return
       setIsDragging(true)
-      dragStartX.current = (e as PointerEvent).clientX
+      dragStartX.current = e.clientX
       dragStartScroll.current = container.scrollLeft
-      // capture pointer to continue receiving events outside element
-      // @ts-ignore - some environments have setPointerCapture on HTMLElement
       if ((e.target as HTMLElement).setPointerCapture) {
         try {
           ;(e.target as HTMLElement).setPointerCapture(e.pointerId)
-        } catch (err) {
-          // ignore
-        }
+        } catch {}
       }
     }
 
@@ -212,14 +205,10 @@ export default function LiferayArchitectureDesignPage() {
 
     const onPointerUp = (e: PointerEvent) => {
       setIsDragging(false)
-      // release pointer capture if possible
-      // @ts-ignore
       if ((e.target as HTMLElement).releasePointerCapture) {
         try {
           ;(e.target as HTMLElement).releasePointerCapture(e.pointerId)
-        } catch (err) {
-          // ignore
-        }
+        } catch {}
       }
     }
 
@@ -227,7 +216,7 @@ export default function LiferayArchitectureDesignPage() {
     window.addEventListener("pointermove", onPointerMove)
     window.addEventListener("pointerup", onPointerUp)
 
-    // Fallback for touch (older browsers)
+    // touch fallback
     let touchDragging = false
     let touchStartX = 0
     let touchStartScroll = 0
@@ -264,13 +253,44 @@ export default function LiferayArchitectureDesignPage() {
     }
   }, [isDragging])
 
+  // ===== Mobile/Tablet carousel =====
+  const MobileArchitectureCarousel = () => {
+    const ref = useRef<HTMLDivElement>(null)
+
+    const scrollByCard = (dir: "left" | "right") => {
+      if (!ref.current) return
+      const cardWidth = ref.current.firstElementChild?.clientWidth || 300
+      ref.current.scrollBy({ left: dir === "left" ? -cardWidth : cardWidth, behavior: "smooth" })
+    }
+
+    return (
+      <section className="relative lg:hidden">
+        <div className="absolute right-4 top-4 z-10 flex gap-2">
+          {/* <button onClick={() => scrollByCard("left")} className="rounded-full border px-3 py-1">
+            ←
+          </button>
+          <button onClick={() => scrollByCard("right")} className="rounded-full border px-3 py-1">
+            →
+          </button> */}
+        </div>
+
+        <div
+          ref={ref}
+          className="flex overflow-x-auto scroll-smooth [-ms-overflow-style:'none'] [scrollbar-width:'none'] [&::-webkit-scrollbar]:hidden"
+        >
+          <ArchitectureCards items={systemArchitecure} cardWidth="50%"/>
+        </div>
+      </section>
+    )
+  }
+
   return (
-    <main className="">
+    <main>
       {/* Hero */}
       <section className="relative bg-black text-white">
         <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_10%_0%,#0E7BF8_0%,#00979E_40%,transparent_65%)] opacity-25" />
-        <div className="global-container mx-auto w-full pt-[3.333vw] pb-[3.802vw]">
-          <div className="relative grid items-start gap-10 text-[3.75vw] md:grid-cols-2">
+        <div className="global-container mx-auto w-full pt-[3.333vw] lg:pb-[3.802vw] md:pb-[50px] pb-[45px]">
+          <div className="static lg:relative block lg:grid items-start gap-10 text-[3.75vw] md:grid-cols-2">
             <div>
               <h1 className="mt-[2.031vw] leading-tight font-semibold">
                 {liferayArchitectureHeroData.titleLine1}
@@ -279,19 +299,19 @@ export default function LiferayArchitectureDesignPage() {
                 <span className="block">{liferayArchitectureHeroData.titleLine3}</span>
               </h1>
             </div>
-            <p className="p18 absolute bottom-0 text-right text-white md:justify-self-end">
+            <p className="mt-[18px] md:mt-[43px] lg:mt-0 text-p14 md:text-p18 lg:text-p18 static lg:absolute bottom-0 text-left lg:text-right text-white md:justify-self-end">
               {liferayArchitectureHeroData.description}
-              <br />
+              <br className="hidden lg:block" />
               {liferayArchitectureHeroData.description2}
             </p>
           </div>
 
           {/* Feature tabs */}
-          <div className="mt-[3.177vw] flex flex-wrap gap-[1.875vw]">
+          <div className="mt-[25px] md:mt-[18px] lg:mt-[3.177vw] flex flex-wrap gap-[1.875vw]">
             {featureTabs.map((label, index) => (
               <span
                 key={index}
-                className="p20 inline-flex items-center rounded-full border border-[#374151] px-[1.458vw] py-[0.833vw] text-lg text-white shadow-[0px_4px_10px_0px_#00979E40] transition-colors"
+                className="text-p12 md:text-p20 lg:text-p20 inline-flex items-center rounded-full border border-[#374151] px-[1.458vw] py-[0.833vw] text-lg text-white shadow-[0px_4px_10px_0px_#00979E40] transition-colors"
               >
                 {label}
               </span>
@@ -300,72 +320,45 @@ export default function LiferayArchitectureDesignPage() {
         </div>
       </section>
 
-      {/* ===== Horizontal scroll section (UPDATED) ===== */}
-      <section ref={sectionRef} className="relative">
-        {/* An invisible tall layer gives page vertical scroll room while sticky header remains */}
+      {/* ===== Desktop Horizontal Scroll ===== */}
+      <section ref={sectionRef} className="relative hidden lg:block">
         <div
           style={{ height: "300vh" }}
-          className="pointer-events-none absolute top-[137px] left-0 h-[300vh] w-full"
-          aria-hidden="true"
+          className="pointer-events-none absolute top-[137px] left-0 w-full"
         />
-
-        <div className="mx-auto w-full">
-          <div className={`w-full ${isStickyActive ? "sticky top-[137px]" : ""}`}>
-            <div
-              ref={containerRef}
-              // Use cursor-grab while not dragging and grabbing cursor while dragging
-              className={`flex ${isDragging ? "cursor-grabbing" : "cursor-grab"} overflow-x-auto [-ms-overflow-style:'none'] [scrollbar-width:'none'] [&::-webkit-scrollbar]:hidden`}
-              // Prevent native touch scrolling on the container for smoother custom touch control:
-              // (we still handle touch at section level to map vertical to horizontal)
-              onTouchMove={(e) => {
-                // no-op to allow our touch handlers to control scrolling (prevents passive defaults)
-              }}
-            >
-              {systemArchitecure.map((item, index) => (
-                <div
-                  key={index}
-                  className={`flex-shrink-0 px-[3.333vw] ${index === 0 ? "ml-[10vw] pl-0" : ""} ${
-                    index === systemArchitecure.length - 1 ? "mr-[20vw]" : ""
-                  } ${index !== systemArchitecure.length - 1 ? "border-r border-[#9CA3AF]" : ""}`}
-                  style={{ width: "22%" }}
-                >
-                  <div className="flex flex-col gap-[2vw]">
-                    <h3 className="mt-[3.802vw] h-[88px] max-w-[16.51vw] text-[1.875vw] leading-normal font-semibold text-gray-600">
-                      {item.text}
-                    </h3>
-                    <p className="p20 mt-auto mb-[3.802vw] max-w-[15.729vw] leading-relaxed text-gray-500">
-                      {item.description}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
+        <div className={`w-full ${isStickyActive ? "sticky top-[137px]" : ""}`}>
+          <div
+            ref={containerRef}
+            className={`flex ${isDragging ? "cursor-grabbing" : "cursor-grab"} overflow-x-auto [-ms-overflow-style:'none'] [scrollbar-width:'none'] [&::-webkit-scrollbar]:hidden`}
+          >
+            <ArchitectureCards items={systemArchitecure} cardWidth="22%"/>
           </div>
         </div>
       </section>
 
+      {/* ===== Mobile/Tablet Carousel ===== */}
+      <MobileArchitectureCarousel />
+
+      {/* ===== Key activity & WhatMake & TalkToExpert & BlogSection ===== */}
       <section className="bg-black text-white">
-        <div className="global-container mx-auto w-full px-4 py-[3.333vw]">
-          <div className="relative grid items-start gap-10 md:grid-cols-2">
-            <h2 className="w-[41.25vw] text-[2.5vw]! font-semibold">
+        <div className="global-container mx-auto w-full px-4 py-7 md:py-16 lg:py-[3.333vw]">
+          <div className="relative block lg:grid items-start gap-10 md:grid-cols-2">
+            <h2 className="w-auto lg:w-[41.25vw] font-semibold">
               {liferayArchitectureKeyData.titleLine1}
             </h2>
-            <p className="max-w-[31.25vw ] self-center text-right text-[0.938vw] font-normal text-white">
-              {liferayArchitectureKeyData.description} <br />
+            <p className="max-w-auto lg:max-w-[31.25vw] self-center text-left lg:text-right text-p14 md:text-p18 lg:text-p18 text-white mt-2.5 md:mt-7 lg:mt-0">
+              {liferayArchitectureKeyData.description} <br className="hidden lg:block"/>
               {liferayArchitectureKeyData.description2}
             </p>
           </div>
 
-          <div className="mt-[3.49vw] grid grid-cols-1 gap-[1.875vw]">
+          <div className="mt-[3.49vw] grid grid-cols-1 gap-[25px] md:gap-9 lg:gap-[1.875vw]">
             {keyActivityArchitecureSystem.map((item, index) => (
-              <div key={index} className="top-32 z-10 flex flex-col bg-black md:flex-row md:items-center">
-                {/* Left Text */}
-                <div className="flex w-[16.406vw] min-w-[16.406vw] py-[0.833vw] pr-[1.875vw] text-[1.563vw] leading-[1.875vw] font-semibold">
+              <div key={index} className="top-32 z-10 flex flex-col bg-black justify-between md:flex-row md:items-center">
+                <div className="flex md:w-[16.406vw] w-full min-w-[16.406vw] py-[0.833vw] pr-[1.875vw] text-[1.25rem] md:text-[1.875rem] lg:text-[1.563vw] lg:leading-[1.875vw] font-semibold md:leading-9">
                   {item.text}
                 </div>
-
-                {/* Description */}
-                <div className="p20 flex items-center rounded-lg border border-[#1F2937] px-[1.875vw] py-[0.938vw] py-[1.146vw]">
+                <div className="md:max-w-[28.313rem] lg:max-w-none text-p14 lg:text-p20 flex items-center rounded-lg border border-[#1F2937] mt-2.5 md:mt-0 px-[25px] md:px-9 lg:px-[1.875vw] py-[1.146vw]">
                   {item.description}
                 </div>
               </div>
