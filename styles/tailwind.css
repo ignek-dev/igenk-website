@@ -1155,6 +1155,12 @@ h5 {
   top: 0px;
 }
 
+@media (max-width: 767px) {
+  .glow-box::before {
+    box-shadow: 0 0 0 #1F2937;
+  }
+}
+
 html {
   scroll-behavior: smooth;
 }

@@ -54,7 +54,7 @@ useEffect(() => {
           <div className="flex-1 space-y-6 pt-1 lg:sticky top-[200px]">
             <h2 className="mb-2.5 md:mb-7 lg:mb-[1.458vw]">
               {titleText1}
-              <br />
+              <br className="hidden lg:block"/>
               {titleText2}
             </h2>
 
