@@ -2,26 +2,14 @@ import { Metadata } from "next"
 import Image from "next/image"
 import { careerHeroData, careerPerksIntroData, jobs, openRolesIntroData, perks } from "data/career"
 import JobCard from "../../components/career/JobCard"
+import { constructMetadata } from "seo/metadata.config"
 
-export const metadata: Metadata = {
+export const metadata: Metadata = constructMetadata({
   title: "IGNEK Careers | Join Liferay Experts & Grow",
-  description:
-    "Explore IGNEK Careers — join a Liferay-first boutique team that values learning, growth, and enterprise-grade projects. View open roles and apply today.",
-
-  openGraph: {
-    url: "https://www.ignek.com/career/",
-    title: "IGNEK Careers | Join Liferay Experts & Grow",
-    description:
-      "Explore IGNEK Careers — join a Liferay-first boutique team that values learning, growth, and enterprise-grade projects. View open roles and apply today.",
-    images: [
-      {
-        width: 1200,
-        height: 630,
-        url: "/og-image.png",
-      },
-    ],
-  },
-}
+  description: "Explore IGNEK Careers — join a Liferay-first boutique team that values learning, growth, and enterprise-grade projects. View open roles and apply today.",
+  canonicalUrl: "https://www.ignek.com/career/",
+  keywords: ["Liferay Careers", "Ignek Jobs", "Work at Ignek"],
+})
 
 export default function CareerPage() {
 
