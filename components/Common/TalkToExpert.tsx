@@ -8,7 +8,7 @@ const TalkToExpert = ({
   buttonText = "Build Your Liferay Portal",
 }) => {
   return (
-    <section className="bg-black py-[2.917vw] text-white ">
+    <section className="bg-black py-10 lg:py-[2.917vw] text-white ">
       <div className="mx-auto w-full px-4 md:px-8 grid grid-cols-1 items-start gap-[5.208vw] lg:grid-cols-12 global-container">
 
         {/* Left Column: Main Content */}
@@ -17,13 +17,13 @@ const TalkToExpert = ({
             {heading}
           </h2>
 
-          <p className="p18 text-gray-400">
+          <p className="text-p18 lg:text-p18! text-gray-400 mt-[30px] lg:mt-0">
             {description}
           </p>
         </div>
 
         {/* Right Column: TalkToExpertCard */}
-        <div className="lg:col-span-5 bg-[#121212] rounded-[1.25vw] w-[28.906vw]  mt-10 lg:mt-0">
+        <div className="lg:col-span-5 bg-[#121212] rounded-[1.25vw] w-auto lg:w-[28.906vw] mt-[35px] lg:mt-0">
           <TalkToExpertCard title="Talk To Expert" />
         </div>
 
