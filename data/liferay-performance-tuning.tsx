@@ -226,11 +226,11 @@ export const liferayPerformanceTuning = {
   heading: "Liferay",
   heading2: "Performance Tuning",
   description:
-    "We approaches performance tuning as a platform discipline—diagnosing ",
-  description2:  
-    "bottlenecks across architecture, configuration, and runtime behaviour to ",
-  description3:
-    "restore stability, scalability, and predictable performance at enterprise scale.",
+    "We approaches performance tuning as a platform discipline—diagnosing bottlenecks across architecture, configuration, and runtime behaviour to restore stability, scalability, and predictable performance at enterprise scale.restore stability, scalability, and predictable performance at enterprise scale.",
+  // description2:  
+  //   "bottlenecks across architecture, configuration, and runtime behaviour to ",
+  // description3:
+  //   "restore stability, scalability, and predictable performance at enterprise scale.",
 };
 
 export const liferayPerformanceFeatures = {
