@@ -8,15 +8,26 @@ import { Testimonial } from "components/About/Testimonial"
 import { BackgroundLines } from "components/Common/BackgroundLines"
 import { aboutPageData } from "data/about-content"
 import StandoutSectionWrapper from "components/About/StandoutSectionWrapper"
-import { constructMetadata } from "seo/metadata.config"
 
-export const metadata: Metadata = constructMetadata({
+export const metadata: Metadata = {
   title: "About IGNEK | Liferay Boutique Company",
-  description: "A leading Liferay Boutique Company and trusted Liferay Consulting Partner. We specialize in delivering digital experience platform solutions with expert Liferay development and consulting services.",
-  canonicalUrl: "https://www.ignek.com/about-us/",
-  ogTitle: "About IGNEK | Liferay Boutique Company",
-  keywords: ["About Ignek", "Liferay Partner", "Liferay Boutique Company"],
-})
+  description:
+    "A leading Liferay Boutique Company and trusted Liferay Consulting Partner. We specialize in delivering digital experience platform solutions with expert Liferay development and consulting services.",
+
+  openGraph: {
+    url: "https://www.ignek.com/about-us/",
+    title: "About IGNEK | Liferay Boutique Company",
+    description:
+      "A leading Liferay Boutique Company and trusted Liferay Consulting Partner. We specialize in delivering digital experience platform solutions with expert Liferay development and consulting services.",
+    images: [
+      {
+        width: 1200,
+        height: 630,
+        url: "/og-image.png",
+      },
+    ],
+  },
+}
 
 export default function AboutUs() {
   const { heroTag, heroMaskVideo, maskedHeadingSvg, whyCompaniesTrust } = aboutPageData

@@ -1,13 +1,44 @@
+"use client"
 import { Metadata } from "next"
-import { constructMetadata } from "seo/metadata.config"
-import LiferayExpertAdviceContent from "./ExpertAdviceContent"
+import { useEffect, useRef, useState } from "react"
+import ScheduleMeetingButton from "components/Button/ScheduleMeetingButton"
+import { BlogSection } from "components/Common"
+import TalkToExpert from "components/Common/TalkToExpert"
+import WhatMake from "components/Common/WhatMake"
+import {
+  expertAdviceHero,
+  expertAdviceSection,
+  expertAdviceSolutions,
+  expoerAdvices,
+  featureTabs,
+  LiferayExpertAdviceData,
+  LiferayExpertAdviceSubContent,
+  LiferayExpertAdviceTitle1,
+  LiferayExpertAdviceTitle2,
+  liferayExpertCTA,
+  solutions,
+} from "data/liferayExpert"
+import { configure } from "@testing-library/react"
 
-export const metadata: Metadata = constructMetadata({
+const metadata: Metadata = {
   title: "Liferay Expert Advice | Strategic Liferay Consulting - IGNEK",
-  description: "Get expert Liferay advice to assess architecture, performance, and platform direction. IGNEK helps enterprises make informed, upgrade-safe Liferay decisions.",
-  canonicalUrl: "https://www.ignek.com/services/liferay-expert-advice/",
-  keywords: ["Liferay Expert Advice", "Liferay Platform Audit", "Liferay Strategic Consulting"],
-})
+  description:
+    "Get expert Liferay advice to assess architecture, performance, and platform direction. IGNEK helps enterprises make informed, upgrade-safe Liferay decisions.",
+
+  openGraph: {
+    url: "https://www.ignek.com/services/liferay-expert-advice/",
+    title: "Liferay Expert Advice | Strategic Liferay Consulting - IGNEK",
+    description:
+      "Get expert Liferay advice to assess architecture, performance, and platform direction. IGNEK helps enterprises make informed, upgrade-safe Liferay decisions.",
+    images: [
+      {
+        width: 1200,
+        height: 630,
+        url: "/og-image.png",
+      },
+    ],
+  },
+}
 
 export default function LiferayExpertAdvicePage() {
   const [visibleCards, setVisibleCards] = useState(new Set())

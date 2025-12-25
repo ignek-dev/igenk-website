@@ -16,14 +16,25 @@ import {
   supportChecklist,
   supportCore,
 } from "data/liferay-support-and-maintenance"
-import { constructMetadata } from "seo/metadata.config"
 
-export const metadata: Metadata = constructMetadata({
+const metadata: Metadata = {
   title: "Liferay Support and Maintenance Services | Enterprise Support - IGNEK",
-  description: "Ensure long-term stability and reliability with expert Liferay support and maintenance. IGNEK delivers proactive, enterprise-grade Liferay platform support.",
-  canonicalUrl: "https://www.ignek.com/services/liferay-support-and-maintenance/",
-  keywords: ["Liferay Support", "Liferay Maintenance", "Liferay SLA Support"],
-})
+  description:
+    "Ensure long-term stability and reliability with expert Liferay support and maintenance. IGNEK delivers proactive, enterprise-grade Liferay platform support.",
+
+  openGraph: {
+    url: "https://www.ignek.com/services/liferay-support-and-maintenance/",
+    title: "Liferay Support and Maintenance Services | Enterprise Support - IGNEK",
+    description: "Ensure long-term stability and reliability with expert Liferay support and maintenance. IGNEK delivers proactive, enterprise-grade Liferay platform support.",
+    images: [
+      {
+        width: 1200,
+        height: 630,
+        url: "/og-image.png",
+      },
+    ],
+  },
+}
 
 
 export default function LiferaySupportMaintenancePage() {

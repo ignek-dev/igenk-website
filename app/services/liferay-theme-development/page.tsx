@@ -2,15 +2,6 @@ import { BlogSection } from "components/Common"
 import CaseStudy from "components/Common/CaseStudy"
 import TalkToExpert from "components/Common/TalkToExpert"
 import WhatMake from "components/Common/WhatMake"
-import { Metadata } from "next"
-import { constructMetadata } from "seo/metadata.config"
-
-export const metadata: Metadata = constructMetadata({
-  title: "Liferay Theme Development Services | Responsive UI & UX - IGNEK",
-  description: "Transform your Liferay portal with expert theme development. IGNEK crafts visually stunning, responsive, and user-centric Liferay themes tailored to your brand.",
-  canonicalUrl: "https://www.ignek.com/services/liferay-theme-development/",
-  keywords: ["Liferay Theme Development", "Liferay UI/UX", "Liferay Responsive Themes"],
-})
 
 export default function LiferayThemeDevelopmentPage() {
   const LiferayThemeDevelopmentTitle1 = "Why Choose IGNEK For Liferay Theme Development Service?"

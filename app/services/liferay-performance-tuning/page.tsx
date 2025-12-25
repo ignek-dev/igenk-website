@@ -1,13 +1,48 @@
+"use client"
 import { Metadata } from "next"
-import { constructMetadata } from "seo/metadata.config"
-import LiferayPerformanceTuningContent from "./PerformanceTuningContent"
+import Image from "next/image"
+import { useEffect, useRef } from "react"
+import { BlogSection } from "components/Common"
+import CaseStudy from "components/Common/CaseStudy"
+import TalkToExpert from "components/Common/TalkToExpert"
+import WhatMake from "components/Common/WhatMake"
+import React, { useState } from "react"
+import {
+  caseStudies,
+  featureTabs,
+  item,
+  items,
+  liferayPerformanceFeatures,
+  liferayPerformanceOutcome,
+  liferayPerformanceTuning,
+  LiferayPerformanceTuningData,
+  LiferayPerformanceTuningSubContent,
+  LiferayPerformanceTuningTitle1,
+  LiferayPerformanceTuningTitle2,
+  liferayPerformanceWhatWeDo,
+  serviceDate,
+  talkToExpertPerformance,
+} from "data/liferay-performance-tuning"
 
-export const metadata: Metadata = constructMetadata({
+const metadata: Metadata = {
   title: "Liferay Performance Tuning Services | Enterprise Liferay Experts - IGNEK",
-  description: "Improve Liferay performance with expert tuning, diagnostics, and optimisation. IGNEK delivers stable, scalable Liferay platforms built for enterprise workloads.",
-  canonicalUrl: "https://www.ignek.com/services/liferay-performance-tuning/",
-  keywords: ["Liferay Performance Tuning", "Liferay Optimization", "Liferay Speed Audit"],
-})
+  description:
+    "Improve Liferay performance with expert tuning, diagnostics, and optimisation. IGNEK delivers stable, scalable Liferay platforms built for enterprise workloads.",
+
+  openGraph: {
+    url: "https://www.ignek.com/services/liferay-performance-tuning/",
+    title: "Liferay Performance Tuning Services | Enterprise Liferay Experts - IGNEK",
+    description:
+      "Improve Liferay performance with expert tuning, diagnostics, and optimisation. IGNEK delivers stable, scalable Liferay platforms built for enterprise workloads.",
+    images: [
+      {
+        width: 1200,
+        height: 630,
+        url: "/og-image.png",
+      },
+    ],
+  },
+}
 
 export default function LiferayPerformanceTuningPage() {
   const [activeIndex, setActiveIndex] = useState(0)
