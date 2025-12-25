@@ -1,47 +1,14 @@
-"use client"
 import { Metadata } from "next"
-import { useEffect, useRef, useState } from "react"
-import { motion, useMotionValue, useSpring } from "framer-motion"
-import { BlogSection } from "components/Common"
-import CaseStudy from "components/Common/CaseStudy"
-import TalkToExpert from "components/Common/TalkToExpert"
-import WhatMake from "components/Common/WhatMake"
-import { caseStudies } from "data/liferay-consulting-and-implementation-services"
-import {
-  ecommerceDevelopment,
-  ecommerceDevelopmentUsingLiferay,
-  ecommerceDevLiferay,
-  ecommerceHero,
-  ecommerceOptimization,
-  ecommerceProcess,
-  ecommerceTalkToExpert,
-  featureTabs,
-  LiferayEcommerceDevelopmentData,
-  LiferayEcommerceDevelopmentSubContent,
-  LiferayEcommerceDevelopmentTitle1,
-  LiferayEcommerceDevelopmentTitle2,
-  steps,
-} from "data/liferay-ecommerce-development"
+import { constructMetadata } from "seo/metadata.config"
+import LiferayEcommerceDevelopmentContent from "./EcommerceContent"
 
-const metadata: Metadata = {
+export const metadata: Metadata = constructMetadata({
   title: "Liferay Ecommerce Development Services | Enterprise Commerce - IGNEK",
-  description:
-    "Design and implement enterprise-grade ecommerce with Liferay Commerce. IGNEK delivers scalable, secure Liferay ecommerce solutions built for B2B and complex use cases.",
+  description: "Design and implement enterprise-grade ecommerce with Liferay Commerce. IGNEK delivers scalable, secure Liferay ecommerce solutions built for B2B and complex use cases.",
+  canonicalUrl: "https://www.ignek.com/services/liferay-ecommerce-development/",
+  keywords: ["Liferay Ecommerce", "Liferay Commerce Development", "B2B Ecommerce Liferay"],
+})
 
-  openGraph: {
-    url: "https://www.ignek.com/services/liferay-ecommerce-development/",
-    title: "Liferay Ecommerce Development Services | Enterprise Commerce - IGNEK",
-    description:
-      "Design and implement enterprise-grade ecommerce with Liferay Commerce. IGNEK delivers scalable, secure Liferay ecommerce solutions built for B2B and complex use cases.",
-    images: [
-      {
-        width: 1200,
-        height: 630,
-        url: "/og-image.png",
-      },
-    ],
-  },
-}
 export default function LiferayEcommerceDevelopmentPage() {
   const containerRef = useRef<HTMLDivElement | null>(null)
   // Ref for the "Visible Content" (Header + Timeline) - logic borrowed from WhatWeBring

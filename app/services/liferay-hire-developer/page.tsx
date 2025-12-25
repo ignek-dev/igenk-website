@@ -1,36 +1,13 @@
-"use client"
 import { Metadata } from "next"
-import Image from "next/image"
-import React from "react"
-import { BlogSection } from "components/Common"
-import EngagementModels from "components/Common/EngagementModels"
-import TalkToExpert from "components/Common/TalkToExpert"
-import WhatMake from "components/Common/WhatMake"
-import WordsFromCEO from "components/Common/WordsFromCEO"
-import LiferayTechnologicalStacks from "components/LiferayTechnologicalStacks"
-import { easySteps, engagementModelsData, expertiseStats, hireLiferayHeroData, hireLiferayStepsData, hireLiferayWhyData, LiferayHireData, LiferayHireSubContent, LiferayHireTitle1, LiferayHireTitle2, liferayServicesHeaderData, talkToExperthire, teamOffersServices, whyHireFromIgnek } from "data/liferay-hire-developer"
-import SchemaInjector from "seo/schemaInjector"
-import { hireLiferayFaqSchema } from "seo/hireLiferayFaq.schema"
+import { constructMetadata } from "seo/metadata.config"
+import LiferayHireDeveloperContent from "./HireDeveloperContent"
 
-const metadata: Metadata = {
+export const metadata: Metadata = constructMetadata({
   title: "Hire Liferay Developers | Certified Liferay DXP Experts",
-  description:
-    "Hire certified Liferay developers for secure, scalable, and cost-efficient Liferay DXP solutions. Get expert consulting, fast onboarding, and reliable delivery.",
-
-  openGraph: {
-    url: "https://www.ignek.com/hire-liferay-developer/",
-    title: "Hire Liferay Developers | Certified Liferay DXP Experts",
-    description:
-      "Hire certified Liferay developers for secure, scalable, and cost-efficient Liferay DXP solutions. Get expert consulting, fast onboarding, and reliable delivery.",
-    images: [
-      {
-        width: 1200,
-        height: 630,
-        url: "/og-image.png",
-      },
-    ],
-  },
-}
+  description: "Hire certified Liferay developers for secure, scalable, and cost-efficient Liferay DXP solutions. Get expert consulting, fast onboarding, and reliable delivery.",
+  canonicalUrl: "https://www.ignek.com/services/liferay-hire-developer/",
+  keywords: ["Hire Liferay Developer", "Certified Liferay Developer", "Liferay Staff Augmentation"],
+})
 
 export default function LiferayHireDeveloper() {
 

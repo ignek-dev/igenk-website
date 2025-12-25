@@ -1,27 +1,14 @@
 import { Metadata } from "next"
 import { Suspense } from "react"
 import BlogsContent from "./BlogsContent"
+import { constructMetadata } from "seo/metadata.config"
 
-export const metadata: Metadata = {
+export const metadata: Metadata = constructMetadata({
   title: "Liferay Blog | DXP, Java & React Tutorials and Insights",
-  description:
-    "Explore expert Liferay blog insights with DXP tutorials, Java guides, ReactJS best practices, and engineering articles crafted for enterprise development teams.",
-  twitter: {
-    card: "summary_large_image",
-  },
-  openGraph: {
-    url: "https://ignek.com/blog/",
-    title: "Liferay Blog | DXP, Java & React Tutorials and Insights",
-    description: "Explore expert Liferay blog insights with DXP tutorials, Java guides, ReactJS best practices, and engineering articles crafted for enterprise development teams.",
-    images: [
-      {
-        width: 1200,
-        height: 630,
-        url: "/og-image.png",
-      },
-    ],
-  },
-}
+  description: "Explore expert Liferay blog insights with DXP tutorials, Java guides, ReactJS best practices, and engineering articles crafted for enterprise development teams.",
+  canonicalUrl: "https://www.ignek.com/blog/",
+  keywords: ["Liferay Blog", "DXP Tutorials", "Liferay Insights"],
+})
 
 export default function Blogs() {
   return (

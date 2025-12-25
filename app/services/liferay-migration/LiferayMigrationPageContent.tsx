@@ -1,23 +1,30 @@
-import { Metadata } from "next"
-import LiferayMigrationPageContent from "./LiferayMigrationPageContent"
-import { constructMetadata } from "seo/metadata.config"
+"use client"
+import { BlogSection } from "components/Common"
+import TalkToExpert from "components/Common/TalkToExpert"
+import WhatMake from "components/Common/WhatMake"
+import {
+  features,
+  featureTabs,
+  heroMigration,
+  LiferayMigrationData,
+  liferayMigrationProcess,
+  LiferayMigrationSubContent,
+  liferayMigrationTalk,
+  LiferayMigrationTitle1,
+  LiferayMigrationTitle2,
+  steps,
+  whyMigrateLiferay,
+} from "data/liferay-migration"
 
-export const metadata: Metadata = constructMetadata({
-  title: "Liferay DXP Migration Services | Enterprise Portal Experts",
-  description: "Migrate to Liferay DXP with confidence. IGNEK delivers secure, best-practice Liferay migrations with minimal downtime and long-term platform stability.",
-  canonicalUrl: "https://www.ignek.com/services/liferay-migration/",
-  keywords: ["Liferay Migration", "Liferay DXP Migration", "Enterprise Migration Service"],
-})
-
-export default function LiferayMigrationPage() {
+export default function LiferayMigrationPageContent() {
 
   return (
     <main className="">
       {/* Hero */}
       <section className="relative bg-black text-white">
         <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_10%_0%,#0E7BF8_0%,#00979E_40%,transparent_65%)] opacity-25" />
-        <div className="global-container mx-auto mt-[-1px] w-full pt-24 pb-12 lg:pt-[7.865vw] lg:pb-[3.802vw]">
-          <div className="relative grid items-start gap-10 grid-cols-1 lg:grid-cols-2">
+        <div className="global-container mx-auto mt-[-1px] w-full pt-[7.865vw] pb-[3.802vw]">
+          <div className="relative grid items-start gap-10 md:grid-cols-2">
             <div>
               
               <h1 className="text-gradient-liferay">
@@ -26,17 +33,17 @@ export default function LiferayMigrationPage() {
                 <span className="block">{heroMigration.titlePart2}</span>
               </h1>
             </div>
-            <p className="text-p16 md:text-p18 relative w-full text-left lg:absolute lg:bottom-0 lg:w-[28.646vw] lg:text-right lg:text-white md:justify-self-end">
+            <p className="p18 absolute bottom-0 w-[28.646vw] text-right md:justify-self-end">
               {heroMigration.descriptionPart1}
             </p>
           </div>
 
           {/* Feature tabs */}
-          <div className="mt-10 lg:mt-[3.177vw] flex flex-wrap gap-4 lg:gap-[1.875vw]">
+          <div className="mt-[3.177vw] flex flex-wrap gap-[1.875vw]">
             {featureTabs.map((label) => (
               <span
                 key={label}
-                className="text-p16 md:text-p20 inline-flex items-center rounded-full border border-[#374151] bg-black px-4 py-2 lg:px-[1.458vw] lg:py-[0.833vw] text-white shadow-[0_4px_10px_0_rgba(0,151,158,0.25)] transition-colors lg:rounded-[2.083vw] lg:shadow-[0_0.208vw_0.521vw_0_rgba(0,151,158,0.25)]"
+                className="p20 inline-flex items-center rounded-[2.083vw] border border-[#374151] bg-black px-[1.458vw] py-[0.833vw] text-white shadow-[0_0.208vw_0.521vw_0_rgba(0,151,158,0.25)] transition-colors"
               >
                 {label}
               </span>
@@ -47,21 +54,18 @@ export default function LiferayMigrationPage() {
 
       {/* Circular reasons section */}
       <section className="bg-[#f7f7f7] text-black">
-        <div className="mx-auto w-full py-16 lg:pt-[3.333vw] lg:pb-[3.333vw]">
-          <div className="relative flex flex-col items-center justify-center px-4 lg:px-[0.313vw] text-center">
+        <div className="mx-auto w-full pt-[3.333vw] pb-[3.333vw]">
+          <div className="relative flex flex-col items-center justify-center px-[0.313vw] text-center">
             {/* Outer Dotted Circle */}
-            <div className="relative flex items-center justify-center rounded-full border-dashed border-[#000000] border-[1px] lg:border-[0.104vw] 
-                            h-[75vw] w-[75vw] md:h-[70vw] md:w-[70vw] lg:h-[48.125vw] lg:w-[48.125vw]">
+            <div className="relative flex h-[48.125vw] w-[48.125vw] items-center justify-center rounded-full border-[0.104vw] border-dashed border-[#000000]">
               {/* Inner Dotted Circle */}
-              <div className="flex items-center justify-center rounded-full border-dashed border-[#000000] border-[1px] lg:border-[0.104vw]
-                              h-[60vw] w-[60vw] md:h-[50vw] md:w-[50vw] lg:h-[31.25vw] lg:w-[31.25vw]">
+              <div className="flex h-[31.25vw] w-[31.25vw] items-center justify-center rounded-full border-[0.104vw]  border-dashed border-[#000000]">
                 {/* Center Content */}
-                <div className="flex flex-col items-center gap-2 lg:gap-[1.823vw] text-center px-2">
+                <div className="flex max-w-[13.542vw] flex-col items-center gap-[1.823vw] text-center">
                   <div className="mx-auto flex items-center justify-center rounded-md">
                     <svg
                       width="91"
                       height="91"
-                      className="h-10 w-10 md:h-16 md:w-16 lg:h-[4.74vw] lg:w-[4.74vw]"
                       viewBox="0 0 91 91"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
@@ -85,10 +89,10 @@ export default function LiferayMigrationPage() {
                       </defs>
                     </svg>
                   </div>
-                  <h2 className="w-full text-[2vw]! leading-tight! font-medium lg:w-[26.146vw] lg:text-[1.875vw] lg:font-medium">
+                  <h2 className="w-[26.146vw] text-[1.875vw]! font-medium">
                     {whyMigrateLiferay.titlePart1} {whyMigrateLiferay.titlePart2}
                   </h2>
-                  <p className="text-[2vw]  text-gray-600 lg:text-[0.833vw] lg:w-[21.75vw]">
+                  <p className="text-[0.833vw]! w-[21.75vw] leading-relaxed text-gray-600">
                     {whyMigrateLiferay.descPart1} {whyMigrateLiferay.descPart2}
                   </p>
                 </div>
@@ -96,12 +100,11 @@ export default function LiferayMigrationPage() {
 
               {/* Circular Feature Points */}
               {features.map((feature, index) => (
-                <div key={index} className={`absolute ${feature.position} flex flex-col items-center`}>
-                  <div className="mb-1 flex items-center justify-center bg-black rounded-full 
-                                  h-[6vw] w-[6vw] lg:h-[2.917vw] lg:w-[2.917vw] lg:mb-[0.104vw]">
+                <div key={index} className={`absolute ${feature.position} flex flex-col`}>
+                  <div className="mb-[0.104vw] h-[2.917vw] w-[2.917vw] flex rounded-[2.552vw] items-center justify-center  bg-black ">
                    
-                   <div className="text-white p-1 lg:p-[36px]">
-                    <svg className="w-2 h-2 md:w-4 md:h-4 lg:w-[23px] lg:h-[17px]"  width="23" height="17" viewBox="0 0 23 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                   <div className="text-white p-[36px]">
+                    <svg width="23" height="17" viewBox="0 0 23 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path
                         d="M1 10L7 16L22 1"
                         stroke="white"
@@ -112,8 +115,7 @@ export default function LiferayMigrationPage() {
                     </svg>
                     </div>
                   </div>
-                 <p className={`${feature.heading} leading-tight font-medium text-gray-800 
-                                 text-[max(7px,1.6vw)] lg:text-[1.042vw]`}>
+                  <p className={`${feature.heading} text-[1.042vw] leading-snug font-medium text-gray-800`}>
                     {feature.title}
                   </p>
                 </div>
@@ -124,46 +126,45 @@ export default function LiferayMigrationPage() {
       </section>
 
       {/* Migration Process timeline */}
-      <section className="bg-black text-white py-16 lg:py-0">
-        <div className="global-container mx-auto w-full lg:py-[3.333vw]">
-          <div className="flex flex-col lg:flex-row gap-12 lg:gap-[8.417vw] items-start">
-            <div className="relative lg:sticky lg:top-[10.417vw] flex w-full lg:w-1/2 flex-col gap-6 lg:gap-[1.458vw]">
+      <section className="bg-black text-white">
+        <div className="global-container mx-auto w-full py-[3.333vw]">
+          <div className="flex flex-row gap-[8.417vw] items-start gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+            <div className="sticky top-[10.417vw] flex w-[72.698vw] flex-col gap-[1.458vw]">
               <h2 className="leading-[60px] font-semibold">{liferayMigrationProcess.title}</h2>
-              <p className="text-p16 lg:text-p18 text-gray-100">
+              <p className="p18 text-gray-100">
                 {liferayMigrationProcess.description}
               </p>
               {/* <ScheduleMeetingButton isFullWidth={false} btnName="Schedule Meeting" /> */}
             </div>
 
-            <div className="w-full lg:w-1/2">
+            <div>
               <div className="relative">
-                <div className="relative lg:mt-[0.313vw] flex flex-col">
+                <div className="relative mt-[0.313vw] flex flex-col">
                   {/* Vertical line */}
                   <div
-                    className="absolute top-0 left-5 md:left-7 lg:left-[1.999vw] h-[86%] md:h-[89%] bg-white w-[2px] lg:w-[4px]"  
-                    // style={{ width: "4px" }}
+                    className="absolute top-0 left-[1.999vw] h-[89%] bg-white"  
+                    style={{ width: "4px" }}
                   ></div>
 
                   {steps.map((step, index) => (
                     <div
                       key={index}
-                      className={`relative flex items-start ${index !== steps.length - 1 ? "" : "mb-10 lg:mb-0"}`}
+                      className={`relative flex items-start ${index !== steps.length - 1 ? "" : "mb-0"}`}
                     >
                       {/* Step circle */}
                       <div className="flex flex-col items-center">
-                        <div className="z-10 flex items-center justify-center rounded-full border-2 lg:border-4 border-white bg-black text-white
-                                        h-10 w-10 md:h-14 md:w-14 lg:h-[4.167vw] lg:w-[4.167vw] text-lg md:text-2xl">
+                        <div className="z-10 flex h-[4.167vw] w-[4.167vw] items-center justify-center rounded-full border-4 border-white bg-black text-2xl text-white">
                           {index + 1}
                         </div>
                       </div>
 
                       {/* Step content */}
-                      <div className="ml-6 lg:ml-[3.438vw] flex-1">
+                      <div className={`${index !== steps.length - 1 ? "max-w-[34.583vw]" : ""} ml-[3.438vw]`}>
                         <div className="flex items-center justify-between">
-                          <h3 className="text-xl! md:text-2xl! font-medium text-white lg:text-[1.563vw]! lg:font-medium">{step.title}</h3>
+                          <h3 className="text-[1.563vw]! font-medium! text-[#FFFFFF]">{step.title}</h3>
                         </div>
-                        <p className="text-gray-50 text-p16 md:text-p20 mt-2 lg:mt-[1.25vw]">{step.desc}</p>
-                        {index !== steps.length - 1 ? <hr className="mt-8 lg:mt-[2.708vw] mb-[2.708vw]" /> : ""}
+                        <p className="text-gray-50 p20  mt-[1.25vw]">{step.desc}</p>
+                        {index !== steps.length - 1 ? <hr className="mt-[2.708vw] mb-[2.708vw]" /> : ""}
                       </div>
                     </div>
                   ))}

@@ -16,26 +16,14 @@ import {
   LiferayProofOfConceptTitle2,
   talkToExpertPocData,
 } from "data/liferay-proof-of-concept"
+import { constructMetadata } from "seo/metadata.config"
 
-
-const metadata: Metadata = {
+export const metadata: Metadata = constructMetadata({
   title: "Liferay POC Services | Proof of Concept for Liferay DXP - IGNEK",
-  description:
-    "Validate your Liferay strategy with a structured Proof of Concept. IGNEK helps enterprises assess feasibility, architecture, and platform fit before full implementation.",
-
-  openGraph: {
-    url: "https://www.ignek.com/services/liferay-poc/",
-    title: "Liferay POC Services | Proof of Concept for Liferay DXP - IGNEK",
-    description: "Validate your Liferay strategy with a structured Proof of Concept. IGNEK helps enterprises assess feasibility, architecture, and platform fit before full implementation.",
-    images: [
-      {
-        width: 1200,
-        height: 630,
-        url: "/og-image.png",
-      },
-    ],
-  },
-}
+  description: "Validate your Liferay strategy with a structured Proof of Concept. IGNEK helps enterprises assess feasibility, architecture, and platform fit before full implementation.",
+  canonicalUrl: "https://www.ignek.com/services/liferay-proof-of-concept/",
+  keywords: ["Liferay Proof of Concept", "Liferay POC", "Liferay Feasibility Study"],
+})
 
 export default function LiferayProofOfConceptPage() {
   return (

@@ -10,37 +10,23 @@ import IntermediateFrame from "components/IntermediateFrame"
 import OurCapabilities from "components/OurCapabilities/OurCapabilities"
 import RatingsSection from "components/Ratings/RatingsSection"
 import SuccessStories from "components/success-stories/SuccessStories"
-import WhatWeBring from "components/WhatWeBring/WhatWeBring"
 import { homepageData, partners } from "data/homepage-content"
 import { BlogSection } from "../components/Common"
-import Scenes from "../components/Scenes"
-import Scene from "components/Scenes"
 import SchemaInjector from "seo/schemaInjector"
 import { homeFaqSchema } from "seo/homeFaq.schema"
 
 import HeroTitle from "components/Common/HeroTitle"
 import WhatWeBringResponsive from "components/WhatWeBringWrapper"
+import { constructMetadata } from "seo/metadata.config"
 
-export const metadata: Metadata = {
+export const metadata: Metadata = constructMetadata({
   title: "IGNEK | Liferay Boutique Consulting & Development Company",
-  description:
-    "IGNEK is a Liferay Boutique Company and trusted Liferay Consulting Partner delivering development, portal implementation, DXP services, and enterprise solutions that maximise your Liferay investment.",
-  twitter: {
-    card: "summary_large_image",
-  },
-  openGraph: {
-    url: "https://ignek.com/",
-    title: "IGNEK | Liferay Boutique Consulting & Development Company",
-    description: "IGNEK is a Liferay Boutique Company and trusted Liferay Consulting Partner delivering development, portal implementation, DXP services, and enterprise solutions that maximise your Liferay investment.",
-    images: [
-      {
-        width: 1200,
-        height: 630,
-        url: "/og-image.png",
-      },
-    ],
-  },
-}
+  description: "IGNEK is a Liferay Boutique Company and trusted Liferay Consulting Partner delivering development, portal implementation, DXP services, and enterprise solutions that maximise your Liferay investment.",
+  canonicalUrl: "https://www.ignek.com/",
+  ogTitle: "IGNEK | Liferay Boutique Consulting & Development Company",
+  ogDescription: "IGNEK is a Liferay Boutique Company and trusted Liferay Consulting Partner delivering development, portal implementation, DXP services, and enterprise solutions that maximise your Liferay investment.",
+  keywords: ["Liferay", "Liferay Consulting", "Liferay Development Solutions"],
+})
 
 export default function HomePage() {
   const { hero } = homepageData
