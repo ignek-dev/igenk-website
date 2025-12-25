@@ -1,25 +1,14 @@
 import type { Metadata } from "next"
 import PortfolioList from "components/PortfolioList/PortfolioList"
 import { liferaySuccessStoriesSection } from "data/case-study"
+import { constructMetadata } from "seo/metadata.config"
 
-const metadata: Metadata = {
+export const metadata: Metadata = constructMetadata({
   title: "Liferay Case Studies | Enterprise Success Stories",
-  description:
-    "Explore Liferay case studies showcasing enterprise-grade DXP implementations, customer success stories, and proven outcomes delivered through our Liferay-first approach.",
-
-  openGraph: {
-    url: "https://www.ignek.com/case-study/",
-    title: "Liferay Case Studies | Enterprise Success Stories",
-    description: "Explore Liferay case studies showcasing enterprise-grade DXP implementations, customer success stories, and proven outcomes delivered through our Liferay-first approach.",
-    images: [
-      {
-        width: 1200,
-        height: 630,
-        url: "/og-image.png",
-      },
-    ],
-  },
-}
+  description: "Explore Liferay case studies showcasing enterprise-grade DXP implementations, customer success stories, and proven outcomes delivered through our Liferay-first approach.",
+  canonicalUrl: "https://www.ignek.com/case-study/",
+  keywords: ["Liferay Case Studies", "Success Stories", "Liferay Projects"],
+})
 export const revalidate = 60
 
 export default async function PortfolioPage() {

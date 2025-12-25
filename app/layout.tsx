@@ -8,6 +8,7 @@ import BlogImagePrefetcher from "../components/Common/BlogImagePrefetcher"
 import SchemaInjector from "seo/schemaInjector"
 import { organizationSchema } from "seo/organization.schema"
 import { websiteSchema } from "seo/website.schema"
+import { baseMetadata } from "seo/metadata.config"
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -17,14 +18,7 @@ const poppins = Poppins({
 })
 
 
-export const metadata: Metadata = {
-  title: 'Ignek - Transform Your Digital Experience',
-  description: 'Leading digital transformation company...',
-  icons: {
-    icon: '/images/Favicon.png', // your favicon
-    apple: '/images/blogs/liferayIcon.png', // optional
-  },
-}
+export const metadata: Metadata = baseMetadata
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
