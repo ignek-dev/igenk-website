@@ -36,16 +36,16 @@ const JobCard = ({ job }: JobCardProps) => {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <div className="rounded-2xl border border-gray-100 bg-white p-6 py-10 text-black shadow-sm">
+    <div className="rounded-2xl border border-gray-100 bg-white p-5 py-8 lg:p-6 lg:py-10 text-black shadow-sm">
       {/* Top section: Posted Ago, Title, and View Details Button */}
-      <div className="grid grid-cols-[1fr_auto] items-end gap-4">
+      <div className="flex flex-col gap-4 md:grid md:grid-cols-[1fr_auto] md:items-end">
         <div>
           <div className="mb-2 inline-flex items-center rounded-[8px] bg-[#309689]/10 px-2 py-1 text-sm font-medium text-[#309689]">
             {job.postedAgo}
           </div>
-          <h3 className="text-[1.458vw]! font-semibold">{job.title}</h3>
+          <h3 className="text-2xl font-semibold lg:text-[1.458vw]!">{job.title}</h3>
         </div>
-        <button onClick={() => setIsOpen(!isOpen)} className="flex items-center gap-2 pr-3 pb-2 text-xl font-medium">
+        <button onClick={() => setIsOpen(!isOpen)} className="flex items-center gap-2 pr-3 pb-2 text-lg lg:text-xl font-medium w-fit">
           View Details
           <motion.div animate={{ rotate: isOpen ? 180 : 0 }}>
             <svg
@@ -65,29 +65,27 @@ const JobCard = ({ job }: JobCardProps) => {
       </div>
 
       {/* Bottom section: Info and Apply Button */}
-      <div className="mt-2 flex flex-wrap items-center justify-between gap-4">
-        <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-lg font-medium text-gray-600">
-          <span className="flex items-center gap-3">
-            <Image src="/images/icon/briefcase.png" alt="briefcase" width={24} height={24} /> {job.experience}
+      <div className="mt-4 lg:mt-2 flex flex-col md:flex-row md:items-center justify-between gap-6 md:gap-4">
+        <div className="flex flex-wrap items-center gap-x-4 gap-y-3 lg:gap-x-6 lg:gap-y-2 text-base lg:text-lg font-medium text-gray-600">
+          <span className="flex items-center gap-2 lg:gap-3">
+            <Image src="/images/icon/briefcase.png" alt="briefcase" width={20} height={20} className="w-5 h-5 lg:w-6 lg:h-6" /> {job.experience}
           </span>
           <span className="flex items-center gap-3">
-            <Image src="/images/icon/clock.png" alt="clock" width={24} height={24} /> {job.type}
+            <Image src="/images/icon/clock.png" alt="clock" width={20} height={20} className="w-5 h-5 lg:w-6 lg:h-6" /> {job.type}
           </span>
           <span className="flex items-center gap-3">
-            <Image src="/images/icon/wallet.png" alt="salary" width={24} height={24} /> {job.salary}
+            <Image src="/images/icon/wallet.png" alt="salary" width={20} height={20} className="w-5 h-5 lg:w-6 lg:h-6" /> {job.salary}
           </span>
           <span className="flex items-center gap-3">
-            <Image src="/images/icon/map-pin.png" alt="location" width={24} height={24} /> {job.location}
+            <Image src="/images/icon/map-pin.png" alt="location" width={20} height={20} className="w-5 h-5 lg:w-6 lg:h-6" /> {job.location}
           </span>
         </div>
-        <Link
-  href="#"
-  className="gap-8 rounded-full bg-black px-14 py-3.5 p20 text-white"
->
-  <span className="inline-block  transition-transform duration-300 hover:scale-110">
-    Apply Now
-  </span>
-</Link>
+       <Link
+          href="#"
+          className="w-full md:w-auto md:whitespace-nowrap text-center rounded-full bg-black px-8 py-3 text-sm lg:px-14 lg:py-3.5 lg:p20 text-white transition-transform duration-300 hover:scale-105"
+        >
+          Apply Now
+        </Link>
 
       </div>
 
@@ -101,26 +99,26 @@ const JobCard = ({ job }: JobCardProps) => {
             transition={{ duration: 0.3, ease: "easeOut" }}
             className="overflow-hidden"
           >
-            <div className=" border-gray-200 text-lg font-noraml text-[#1F2937]">
-              <h4 className="">About the Role</h4>
-              <p className="mt-2">{job.description.about}</p>
+            <div className=" border-t border-gray-100 pt-4 text-base lg:text-lg font-normal text-[#1F2937]">
+              <h4 className="font-semibold">About the Role</h4>
+              <p className="mt-2 text-p16 lg:text-lg">{job.description.about}</p>
 
-              <h4 className="mt-4 ">Key Responsibilities:</h4>
-              <ul className="mt-2 list-disc space-y-1 pl-5">
+              <h4 className="mt-4 font-semibold">Key Responsibilities:</h4>
+              <ul className="mt-2 list-disc space-y-1 pl-5 text-p16 lg:text-lg">
                 {job.description.responsibilities.map((item) => (
                   <li key={item}>{item}</li>
                 ))}
               </ul>
 
-              <h4 className="mt-4 ">Requirements:</h4>
-              <ul className="mt-2 list-disc space-y-1 pl-5">
+              <h4 className="mt-4 font-semibold">Requirements:</h4>
+              <ul className="mt-2 list-disc space-y-1 pl-5 text-p16 lg:text-lg">
                 {job.description.requirements.map((item) => (
                   <li key={item}>{item}</li>
                 ))}
               </ul>
 
-              <h4 className="mt-4 ">Preferred Skills:</h4>
-              <ul className="mt-2 list-disc space-y-1 pl-5">
+              <h4 className="mt-4 font-semibold">Preferred Skills:</h4>
+              <ul className="mt-2 list-disc space-y-1 pl-5 text-p16 lg:text-lg">
                 {job.description.preferred.map((item) => (
                   <li key={item}>{item}</li>
                 ))}
