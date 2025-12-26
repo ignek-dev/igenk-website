@@ -1,6 +1,6 @@
 "use client"
 
-import { liferayTechStacksData, stackData } from "data/liferay-hire-developer"
+import { liferayTechStacksData, stackData } from "data/hire-liferay-developer"
 import Image from "next/image"
 import React, { useEffect, useRef, useState } from "react"
 

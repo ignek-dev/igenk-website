@@ -30,8 +30,8 @@ export default function Navigation() {
 
   const isCareerPage = pathname === "/career" // Check if it's the career page
   const isAboutUsPage = pathname === '/about-us'
-  const isConsultingPage = pathname === "/services/liferay-consulting-and-implementation-services"
-  const isHireDeveloperPage = pathname === "/services/liferay-hire-developer"
+  const isConsultingPage = pathname === "/services/liferay-consulting"
+  const isHireDeveloperPage = pathname === "/services/hire-liferay-developer"
   const isBluePage = isConsultingPage || isHireDeveloperPage;
 
   const [isHeaderHovered, setIsHeaderHovered] = useState(false)

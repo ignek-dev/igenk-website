@@ -177,7 +177,7 @@ export default function PortfolioList() {
 
                                                         <div className="transition-all duration-500 transform translate-y-5 opacity-0 group-hover:translate-y-0 group-hover:opacity-100">
                                                             <button
-                                                                onClick={() => router.push(`/case-study/${item.slug}`)}
+                                                                onClick={() => router.push(`/portfolio/${item.slug}`)}
                                                                 className="w-full cursor-pointer rounded-full bg-[#0C64CE] px-6 py-2 text-base text-white shadow-md transition hover:bg-[#0C64CE] lg:px-[1.25vw] lg:py-[0.52vw] lg:text-[1.0417vw]"
                                                             >
                                                                 Read More

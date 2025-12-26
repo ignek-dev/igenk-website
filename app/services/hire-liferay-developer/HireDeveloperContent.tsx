@@ -22,7 +22,7 @@ import {
   talkToExperthire,
   teamOffersServices,
   whyHireFromIgnek,
-} from "data/liferay-hire-developer"
+} from "data/hire-liferay-developer"
 import SchemaInjector from "seo/schemaInjector"
 import { hireLiferayFaqSchema } from "seo/hireLiferayFaq.schema"
 

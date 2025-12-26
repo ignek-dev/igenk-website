@@ -5,7 +5,7 @@ import { BlogSection } from "components/Common"
 import CaseStudy from "components/Common/CaseStudy"
 import TalkToExpert from "components/Common/TalkToExpert"
 import WhatMake from "components/Common/WhatMake"
-import { caseStudies } from "data/liferay-consulting-and-implementation-services"
+import { caseStudies } from "data/liferay-consulting"
 import {
   ecommerceDevelopment,
   ecommerceDevelopmentUsingLiferay,

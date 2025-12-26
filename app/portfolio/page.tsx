@@ -6,7 +6,7 @@ import { constructMetadata } from "seo/metadata.config"
 export const metadata: Metadata = constructMetadata({
   title: "Liferay Case Studies | Enterprise Success Stories",
   description: "Explore Liferay case studies showcasing enterprise-grade DXP implementations, customer success stories, and proven outcomes delivered through our Liferay-first approach.",
-  canonicalUrl: "https://www.ignek.com/case-study/",
+  canonicalUrl: "https://www.ignek.com/portfolio/",
   keywords: ["Liferay Case Studies", "Success Stories", "Liferay Projects"],
 })
 export const revalidate = 60
