@@ -6,7 +6,7 @@ export const menus: { title: string; items: { label: string; href: string }[] }[
       items: [
         { label: "About", href: "/about-us" },
         { label: "Career", href: "/career" },
-        { label: "Case Study", href: "/case-study" },
+        { label: "Case Study", href: "/portfolio" },
         { label: "Blogs", href: "/blog" },
         { label: "Life At IGNEK", href: "#" },
         { label: "Marketplace", href: "/marketplace" },

@@ -1,4 +1,4 @@
-import { ceoSectionData } from "data/liferay-consulting-and-implementation-services"
+import { ceoSectionData } from "data/liferay-consulting"
 import Image from "next/image"
 import React from "react"
 

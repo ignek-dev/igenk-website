@@ -15,7 +15,7 @@ import {
   talkToExpertUpgrade,
   upgradePhases,
   whyChooseIgnek,
-} from "data/liferay-upgrade"
+} from "data/liferay-dxp-7-4-upgrade"
 
 const rowHeights = [
   "h-[28vw] md:h-[16rem] lg:h-[19.5vw]",

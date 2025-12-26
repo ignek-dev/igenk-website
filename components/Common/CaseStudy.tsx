@@ -182,7 +182,7 @@ const CaseStudy: React.FC<CaseStudyCarouselProps> = ({ caseStudies }) => {
                   />
                   <button
                     className="fancy rounded-2xle w-[max-content] cursor-pointer px-12 py-[0.8333vw] transition-all"
-                    onClick={() => router.push(`/case-study/${item.slug}`)}
+                    onClick={() => router.push(`/portfolio/${item.slug}`)}
                   >
                     <span className="relative z-10 flex items-center justify-center gap-3 rounded-full bg-black text-[15px] font-medium text-white">
                       Read case study

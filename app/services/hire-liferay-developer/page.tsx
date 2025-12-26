@@ -5,7 +5,7 @@ import LiferayHireDeveloperContent from "./HireDeveloperContent"
 export const metadata: Metadata = constructMetadata({
   title: "Hire Liferay Developers | Certified Liferay DXP Experts",
   description: "Hire certified Liferay developers for secure, scalable, and cost-efficient Liferay DXP solutions. Get expert consulting, fast onboarding, and reliable delivery.",
-  canonicalUrl: "https://www.ignek.com/services/liferay-hire-developer/",
+  canonicalUrl: "https://www.ignek.com/services/hire-liferay-developer/",
   keywords: ["Hire Liferay Developer", "Certified Liferay Developer", "Liferay Staff Augmentation"],
 })
 
