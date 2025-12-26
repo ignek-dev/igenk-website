@@ -110,9 +110,9 @@ export const footerLegalLinksData = {
   copyright: "©2025 IGNEK. All rights reserved",
 
   links: [
-    { label: "Privacy Policy", href: "/privacy-policy" },
-    { label: "Terms & Conditions", href: "/terms-and-conditions" },
-    { label: "Cookies Policy", href: "/cookies-policy" },
-    { label: "Map", href: "/map" },
+    { label: "Privacy Policy", href: "#" },
+    { label: "Terms & Conditions", href: "#" },
+    { label: "Cookies Policy", href: "#" },
+    { label: "Map", href: "#" },
   ],
 };

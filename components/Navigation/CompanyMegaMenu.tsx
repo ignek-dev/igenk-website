@@ -27,7 +27,7 @@ const IconArrowRight = ({ className }: { className?: string }) => (
 export const IconLinkedIn = () => (
    <Image
     src="/images/mega-menu/linkedin-dark.png"
-    alt="LinkedIn"
+    alt="Ignek LinkedIn"
     width={36}
     height={36}
     className="social-icon"
@@ -36,7 +36,7 @@ export const IconLinkedIn = () => (
 export const IconFacebook = () => (
    <Image
     src="/images/mega-menu/facebook-dark.png"
-    alt="Facebook"
+    alt="Ignek Facebook"
     width={36}
     height={36}
     className="social-icon"
@@ -45,7 +45,7 @@ export const IconFacebook = () => (
 export const IconX = () => (
   <Image
     src="/images/mega-menu/tweeter-dark.png"
-    alt="X"
+    alt="Ignek X (Twitter)"
     width={36}
     height={36}
     className="social-icon"
@@ -55,7 +55,7 @@ export const IconX = () => (
 export const IconInstagram = () => (
    <Image
     src="/images/mega-menu/instagram-dark.png"
-    alt="Instagram"
+    alt="Ignek Instagram"
     width={36}
     height={36}
     className="social-icon"
@@ -106,9 +106,9 @@ export default function CompanyMegaMenu({ onClose }: MegaMenuProps) {
                     <div className="flex items-center gap-1">
                       <h5 className="mr-2 font-medium text-white">{link.title}</h5>
 
-                      {link.subheading && (
+                      {(link as any).subheading && (
                         <span className="inline-flex min-w-[7.688vw] justify-center rounded-full border bg-white/10 px-[0.521vw] py-1 text-[0.833vw] font-medium text-white/70">
-                          {link.subheading}
+                          {(link as any).subheading}
                         </span>
                       )}
                     </div>

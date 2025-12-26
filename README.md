@@ -57,6 +57,48 @@ Ignek.com is a high-performance website built using a hybrid static-dynamic appr
 - **Lighthouse Score:** 95+ on all metrics
 - **Core Web Vitals:** All green scores
 
+## 📈 Analytics & SEO
+
+- **Google Analytics 4 (GA4)** for comprehensive user behavior tracking
+- **Google Search Console** for search performance monitoring and indexing
+- **Bing Webmaster Tools** for Bing search engine optimization
+- **Sitemap.xml** and **robots.txt** for search engine crawling
+- **Structured data (Schema.org)** implementation for rich snippets
+- **Open Graph and Twitter Card** meta tags for social media sharing
+
+
+## 📊 Analytics & SEO
+
+This project uses Google Analytics and Google Search Console for tracking and visibility.
+
+### Configuration
+
+To enable these features, you need to add the following environment variables to your `.env` file:
+
+```bash
+# Google Analytics Measurement ID (e.g., G-XXXXXXXXXX)
+NEXT_PUBLIC_GA_MEASUREMENT_ID=
+
+# Google Search Console Verification String (from the meta tag)
+NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION=
+```
+
+#### How to get the IDs:
+
+1.  **Google Analytics**:
+    - Go to [Google Analytics](https://analytics.google.com/).
+    - Create a property for your website.
+    - Go to **Admin > Data Streams > [Your Stream]**.
+    - Copy the **Measurement ID**.
+
+2.  **Google Search Console**:
+    - Go to [Google Search Console](https://search.google.com/search-console).
+    - Add your domain as a property.
+    - Choose the **HTML tag** verification method.
+    - Copy the `content` attribute value from the provided meta tag (e.g., `<meta name="google-site-verification" content="YOUR_CODE" />`).
+
+---
+
 ## 🚀 Getting Started
 
 ### Prerequisites
