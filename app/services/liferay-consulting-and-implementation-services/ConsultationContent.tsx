@@ -107,62 +107,55 @@ export default function LiferayConsultationPage() {
       </section>
 
       {/* Digital Edge Section */}
-      <section className="bg-[#F9FAFB] py-[64px]">
-        <div className="global-container flex">
-          {/* Left Content */}
-          <div className="flex flex-1 flex-col gap-[12.396vw]">
-            {/* Stats Row */}
-            <div className="flex-no-wrap grid-cols-2 items-center gap-[6.6667vw] [@media(min-width:1440px)]:grid [@media(min-width:1800px)]:flex">
-              {/* Stat 1 */}
-              {liferayDigitalEdgeData.stats.map((stat, index) => (
-                <div key={index} className="flex items-center gap-3">
-                  <p className="text-5xl font-bold text-[#171717]">{stat.value}</p>
-                  <p className="p20 text-gray-600">
-                    {stat.isMultiLine
-                      ? stat.label.split(" ").map((line, i) => (
-                          <React.Fragment key={i}>
-                            {line} <br />
-                          </React.Fragment>
-                        ))
-                      : stat.label}
-                  </p>
-                </div>
-              ))}
+      <section className="bg-[#F9FAFB] py-[64px] pb-0 text-white lg:py-[64px]">
+        <div className="global-container">
+          <div className="flex flex-col gap-12 lg:flex-row lg:gap-16">
+            {/* LEFT CONTENT */}
+            <div className="flex flex-1 flex-col justify-between gap-10 py-[64px]">
+              {/* STATS (DYNAMIC) */}
+              <div className="flex flex-wrap gap-8 md:gap-12 lg:flex-nowrap">
+                {liferayDigitalEdgeData.stats.map((stat, index) => (
+                  <div key={index} className="flex items-center gap-3">
+                    <p className="text-4xl font-bold text-[#171717] md:text-5xl">{stat.value}</p>
+
+                    <p className="text-sm leading-tight text-gray-600 md:text-base">
+                      {stat.isMultiLine
+                        ? stat.label.split(" ").map((word, i) => (
+                            <span key={i} className="block">
+                              {word}
+                            </span>
+                          ))
+                        : stat.label}
+                    </p>
+                  </div>
+                ))}
+              </div>
+
+              {/* HEADING + DESCRIPTION (DYNAMIC) */}
+              <div>
+                <h2 className="text-3xl leading-tight font-semibold text-gray-900 md:text-4xl lg:text-5xl">
+                  {liferayDigitalEdgeData.heading}
+                </h2>
+
+                <p className="mt-4 max-w-xl text-base text-gray-600 md:mt-6 md:text-lg">
+                  {liferayDigitalEdgeData.description}
+                </p>
+              </div>
             </div>
 
-            {/* Heading and Description Block - Positioned below with a top margin */}
-            <div>
-              <h2 className="text-gray-900">{liferayDigitalEdgeData.heading}</h2>
-              <p className="p20 mt-[2.083vw] mb-[3.125vw] max-w-[500px] text-gray-600">
-                {liferayDigitalEdgeData.description}
-              </p>
+            {/* RIGHT IMAGE */}
+            <div className="relative flex flex-1 items-end justify-center">
+              {/* GLOW IMAGE */}
+              <div className="pointer-events-none bottom-0 h-[320px] w-[320px] opacity-80 sm:h-[420px] sm:w-[420px] md:h-[520px] md:w-[520px]">
+                <Image
+                  src={liferayDigitalEdgeData.images.glow.src}
+                  alt={liferayDigitalEdgeData.images.glow.alt}
+                  fill
+                  className="object-contain"
+                  sizes="(max-width: 768px) 100vw, 520px"
+                />
+              </div>
             </div>
-          </div>
-
-          {/* Right Image */}
-          <div className="relative flex flex-1 items-center justify-center">
-            {/* RGB Glow Background */}
-            <div className="absolute bottom-0 h-full w-[600px] opacity-80">
-              <Image
-                src={liferayDigitalEdgeData.images.glow.src}
-                alt={liferayDigitalEdgeData.images.glow.alt}
-                fill
-                objectFit="contain"
-                className="scale-147 [@media(min-width:1440px)]:scale-152 [@media(min-width:1500px)]:scale-147"
-                sizes="600px"
-              />
-            </div>
-
-            {/* Tablet Image*/}
-            <Image
-              src={liferayDigitalEdgeData.images.tablet.src}
-              alt={liferayDigitalEdgeData.images.tablet.alt}
-              width={500}
-              height={500}
-              objectFit="contain"
-              className="relative z-10 h-auto w-[500px] scale-125 [@media(min-width:1440px)]:scale-129 [@media(min-width:1500px)]:scale-125"
-              style={{ minWidth: "650px", marginTop: "-60px", marginBottom: "17px" }}
-            />
           </div>
         </div>
       </section>
@@ -322,76 +315,94 @@ export default function LiferayConsultationPage() {
       {/* Industries We Serve Section */}
       <section className="bg-white py-[64px] text-black">
         <div className="global-container">
-          {/* Section Header */}
-          <div className="mb-16 grid grid-cols-1 items-end gap-8 md:grid-cols-2">
-            <div>
-              <h2 className="text-black">{industriesWeServeSection.heading}</h2>
-            </div>
-            <div className="flex h-full items-end justify-end">
-              <p className="p18 w-full text-right text-gray-600">{industriesWeServeSection.description}</p>
-            </div>
+          {/* SECTION HEADER */}
+          <div className="mb-12 grid grid-cols-1 gap-6 md:mb-16 md:grid-cols-2 md:items-end">
+            <h2 className="text-black">{industriesWeServeSection.heading}</h2>
+
+            <p className="p18 text-gray-600 md:text-right">{industriesWeServeSection.description}</p>
           </div>
 
-          {/* Industries List */}
-          <div>
-            {industriesWeServe.map((industry) => (
-              <div
-                key={industry.id}
-                onMouseEnter={() => setHoveredIndustry(industry.id)}
-                onMouseLeave={() => setHoveredIndustry(null)}
-                className={`group relative flex cursor-pointer items-center border-b border-gray-200 py-10 transition-colors duration-300 hover:bg-[#0B63CE] [@media(min-width:1440px)]:px-4 [@media(min-width:1800px)]:px-10`}
-              >
-                {/* Column 1: Title */}
-                <div className="min-w-[16.8229vw] flex-shrink-0">
-                  <h4 className="text-black transition-colors duration-300 group-hover:text-white">{industry.title}</h4>
-                </div>
+          {/* INDUSTRIES LIST */}
+         <div>
+  {industriesWeServe.map((industry) => (
+    <div
+      key={industry.id}
+      className="
+        group relative
+        flex flex-col items-start gap-4        /* 👈 mobile */
+        border-b border-gray-200 py-6
+        transition-colors duration-300
 
-                {/* Column 2: Description */}
-                <div className="flex-1 pr-8">
-                  <p className="text-rgb(0, 0, 0, 0.85) p20 max-w-[450px] transition-colors duration-300 group-hover:text-white/80">
-                    {industry.description}
-                  </p>
-                  <div
-                    className={`absolute top-1/2 left-[55.875vw] z-10 h-[9.0625vw] w-[10.9896vw] -translate-y-1/2 transform opacity-0 transition-all duration-300 group-hover:translate-x-4 group-hover:opacity-100`}
-                  >
-                    <Image
-                      src={industry.image}
-                      alt={industry.title}
-                      width={190}
-                      height={140}
-                      objectFit="cover"
-                      className="h-[140px] w-full rounded-lg shadow-lg transition-transform duration-300 group-hover:-rotate-10"
-                    />
-                  </div>
-                </div>
+        md:flex-row md:items-center md:gap-8   /* 👈 original */
+        md:px-4 md:hover:bg-[#0B63CE]
+        xl:px-10
+      "
+    >
+      {/* TITLE */}
+      <div className="md:min-w-[220px]">
+        <h4 className="text-black transition-colors duration-300 md:group-hover:text-white">
+          {industry.title}
+        </h4>
+      </div>
 
-                {/* Column 3: Image & Icon Container */}
-                <div className="relative right-3 flex flex-shrink-0 items-center">
-                  {/* Image (conditionally visible) */}
+      {/* DESCRIPTION + ARROW (mobile row) */}
+      <div className="flex w-full items-center gap-4 md:flex-1">
+        <p className="p19 flex-1 max-w-[450px] text-gray-700 transition-colors duration-300 md:group-hover:text-white/80">
+          {industry.description}
+        </p>
 
-                  {/* Arrow Icon */}
-                  <div
-                    className={`flex h-[2.5vw] w-[2.5vw] flex-shrink-0 items-center justify-center rounded-full border transition-colors duration-300 group-hover:border-white group-hover:bg-white`}
-                  >
-                    <svg
-                      width="22"
-                      height="22"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="text-black transition-colors duration-300 group-hover:text-[#0B63CE]"
-                    >
-                      <line x1="7" y1="17" x2="17" y2="7"></line>
-                      <polyline points="7 7 17 7 17 17"></polyline>
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            ))}
+        {/* ARROW */}
+        <div className="flex items-center md:ml-auto">
+          <div className="
+            flex h-9 w-9 items-center justify-center
+            rounded-full border border-gray-400
+            transition-all duration-300
+
+            md:h-10 md:w-10
+            md:group-hover:border-white
+            md:group-hover:bg-white
+          ">
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="text-black md:group-hover:text-[#0B63CE]"
+            >
+              <line x1="7" y1="17" x2="17" y2="7" />
+              <polyline points="7 7 17 7 17 17" />
+            </svg>
           </div>
+        </div>
+      </div>
+
+      {/* HOVER IMAGE (DESKTOP ONLY — untouched) */}
+      <div className="
+        pointer-events-none absolute top-1/2 left-[55%]
+        hidden h-[140px] w-[190px]
+        -translate-y-1/2 opacity-0
+        transition-all duration-300
+
+        md:group-hover:block
+        md:group-hover:translate-x-4
+        md:group-hover:opacity-100
+      ">
+        <Image
+          src={industry.image}
+          alt={industry.title}
+          width={190}
+          height={140}
+          className="rounded-lg shadow-lg transition-transform duration-300 md:group-hover:-rotate-6"
+        />
+      </div>
+    </div>
+  ))}
+</div>
+
         </div>
       </section>
 
