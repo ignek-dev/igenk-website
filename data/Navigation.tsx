@@ -1,8 +1,14 @@
-// comapany data navigation component
+// company data navigation component
 
-import { title } from "process";
+export interface CompanyLink {
+  image: string;
+  title: string;
+  description: string;
+  href: string;
+  subheading?: string;
+}
 
-export const companyLinks = [
+export const companyLinks: CompanyLink[] = [
   {
     image: "/images/mega-menu/AboutUS.png",
     title: "About Us",
