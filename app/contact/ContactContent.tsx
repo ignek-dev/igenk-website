@@ -126,6 +126,23 @@ export default function ContactContent() {
       await response.json()
       if (response.ok) {
         setStatus({ type: "success", message: "Thanks for your message. We will get back to you soon." })
+
+        // Send thank you email
+        try {
+          fetch("/api/send-thank-you", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              name: formData.get("name"),
+              email: formData.get("email"),
+            }),
+          })
+        } catch (emailErr) {
+          console.error("Failed to trigger thank you email:", emailErr)
+        }
+
         form.reset()
         setPhone("")
 
