@@ -73,13 +73,13 @@ export const insightLinks = [
     icon: "/images/icon/case-studies.png",
     title: "Case Studies",
     description: "Take a closer look at the projects we've delivered",
-    href: "/case-study",
+    href: "/portfolio",
   },
   {
     icon: "/images/icon/webinars.png",
     title: "Webinars",
     description: "Watch our latest organized webinar",
-    href: "/webinars",
+    href: "/webinar",
   },
   {
     icon: "/images/mega-menu/marketplace.png",
@@ -94,7 +94,7 @@ export const featuredEvent = {
   // The path starts from the `public` directory
   imageSrc: "/images/mega-menu/upcoming-webinar.svg",
   imageAlt: "Customer Onboarding with Low Code/No-Code Capabilities of Liferay Portal Webinar",
-  href: "/webinars", // Link to the webinar page
+  href: "/webinar", // Link to the webinar page
 }
 
 // Service data navigation component
@@ -117,14 +117,14 @@ export const digitalExperienceLinks = [
 
 export const liferayServicesLinks = [
   { text: "Development & Customization", href: "/services/liferay-development-and-customization" },
-  { text: "Upgradation", href: "/services/liferay-upgrade" },
+  { text: "Upgradation", href: "/services/liferay-dxp-7-4-upgrade" },
   { text: "Migration", href: "/services/liferay-migration" },
   { text: "Architecture", href: "/services/liferay-architecture-design" },
   { text: "Performance Tuning", href: "/services/liferay-performance-tuning" },
   { text: "Ecommerce Development", href: "/services/liferay-ecommerce-development" },
-  { text: "Consulting", href: "/services/liferay-consulting-and-implementation-services" },
+  { text: "Consulting", href: "/services/liferay-consulting" },
   { text: "Support & Maintenance", href: "/services/liferay-support-and-maintenance" },
-  { text: "Proof Of Concept", href: "/services/liferay-proof-of-concept" },
+  { text: "Proof Of Concept", href: "/services/liferay-poc" },
   { text: "Expert Advice", href: "/services/liferay-expert-advice" },
   // { text: "Hire Liferay Devloper", href: "/services/liferay-hire-developer" },
   // { text: "Theme Development", href: "/services/liferay-theme-development" },

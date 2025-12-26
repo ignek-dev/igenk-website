@@ -17,7 +17,7 @@ export const featuredWebinar: WebinarData = {
   id: "featured-1",
   title: "Customer Onboarding with Low Code",
   category: "Webinar",
-  link: "/webinars/customer-onboarding-liferay",
+  link: "/webinar/customer-onboarding-liferay",
   image: "/images/webinar/event-image.jpg",
 };
 
@@ -32,7 +32,7 @@ export const upcomingWebinars: WebinarData[] = [
     date: "13 November 2024",
     time: "7:00 PM IST",
     cost: "FREE",
-    link: "/webinars/customer-onboarding-liferay",
+    link: "/webinar/customer-onboarding-liferay",
     image:
       "/images/webinar/Customer-Onboarding-With-Low-Code-No-Code-Capabilities-Of-Liferay-Portal.webp",
   },

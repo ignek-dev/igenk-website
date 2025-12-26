@@ -177,7 +177,7 @@ export default function ServicesMegaMenu({ onClose }: MegaMenuProps) {
               <div className="mt-6 flex w-full items-center overflow-visible">
                 {/* Hire Liferay Experts Button */}
                 <a
-                  href="/services/liferay-hire-developer"
+                  href="/services/hire-liferay-developer"
                   className="group relative mr-6 flex flex-shrink-0 items-center gap-2 rounded-[1.563vw] border border-[#ffffff33] bg-[#ffffff0d] py-[0.833vw] pr-[1.25vw] pl-[1.458vw] transition-all duration-300 ease-in-out hover:border-[#0B63CE] hover:bg-[#0B63CE] hover:shadow-[0px_2px_30px_0px_#FFD12E80]"
                   onClick={onClose}
                 >

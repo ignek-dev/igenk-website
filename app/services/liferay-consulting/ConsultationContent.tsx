@@ -30,7 +30,7 @@ import {
   liferaySolutions,
   liferaySolutionsSection,
   liferayWhyChooseSection,
-} from "data/liferay-consulting-and-implementation-services"
+} from "data/liferay-consulting"
 import { useInView } from "hooks/useInView"
 
 export default function LiferayConsultationPage() {

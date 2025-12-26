@@ -1,6 +1,6 @@
 // components/Liferay/EngagementModels.tsx
 "use client"
-import { engagementModelsinfo, EngagementModelsProps } from "data/liferay-hire-developer"
+import { engagementModelsinfo, EngagementModelsProps } from "data/hire-liferay-developer"
 import Image from "next/image"
 import { useState } from "react"
 

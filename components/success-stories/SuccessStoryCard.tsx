@@ -46,7 +46,7 @@ const SuccessStoryCard: React.FC<{ story: Story }> = ({ story }) => {
             dangerouslySetInnerHTML={{ __html: story.description }}
           />
           <Link
-            href={`/case-study/${story.slug}`}
+            href={`/portfolio/${story.slug}`}
             className="fancy-white relative mb-5 lg:mb-[1.354vw] inline-flex items-center gap-1 rounded-full 
              border border-transparent bg-white px-5 py-2 text-sm font-semibold 
              text-gray-800 transition-all hover:bg-gray-50"
