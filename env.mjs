@@ -7,7 +7,7 @@ export const env = createEnv({
       .enum(["true", "false"])
       .optional()
       .transform((value) => value === "true"),
-    // Sanity config (optional at runtime; validated when used)
+    // Sanity config (optional at runtime; validated when used
     SANITY_PROJECT_ID: z.string().optional(),
     SANITY_DATASET: z.string().optional(),
     SANITY_API_VERSION: z.string().optional(),
