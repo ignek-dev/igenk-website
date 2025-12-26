@@ -114,9 +114,10 @@ const handleClick = (e: React.MouseEvent) => {
           <div className="col-span-5">
             <div className="flex w-full max-w-[30.625vw] flex-col gap-[1.75rem]">
               {insightLinks.map((link) => (
-                <a
+                <Link
                   href={link.href}
                   key={link.title}
+                  onClick={onClose}
                   className="group flex items-center gap-[0.785vw] rounded-[16px] bg-[#0D0D0D] px-[2rem] py-[1.92rem] transition-all duration-300 hover:bg-[#1a1a1a] [@media(min-width:1440px)]:rounded-[0.937vw] [@media(min-width:1920px)]:rounded-[20px]"
                 >
                   {/* Icon container */}
@@ -138,7 +139,7 @@ const handleClick = (e: React.MouseEvent) => {
 
                   {/* Arrow Icon */}
                   <IconArrowRight className="size-8 text-white/50 transition-transform duration-300 group-hover:translate-x-1 group-hover:text-white" />
-                </a>
+                </Link>
               ))}
             </div>
           </div>

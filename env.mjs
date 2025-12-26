@@ -13,7 +13,10 @@ export const env = createEnv({
     SANITY_API_VERSION: z.string().optional(),
     SANITY_READ_TOKEN: z.string().optional(),
   },
-  client: {},
+  client: {
+    NEXT_PUBLIC_GA_MEASUREMENT_ID: z.string().optional(),
+    NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION: z.string().optional(),
+  },
   runtimeEnv: {
     ANALYZE: process.env.ANALYZE,
     SANITY_PROJECT_ID: process.env.SANITY_PROJECT_ID,

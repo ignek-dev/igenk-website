@@ -15,12 +15,11 @@ export const companyLinks = [
     description: "Join our team and grow your skills through exciting real-world projects.",
     href: "/career",
   },
-  {
+    {
     image: "/images/mega-menu/LifeAtIgnek.png",
     title: "Life#IGNEK",
-    subheading: "Coming soon",
     description: "Experience a collaborative, creative, and energetic work culture at IGNEK.",
-    href: "#",
+    href: "/life-at-ignek",
   },
 ]
 
