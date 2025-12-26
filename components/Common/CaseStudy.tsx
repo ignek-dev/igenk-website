@@ -28,7 +28,7 @@ interface CaseStudyCarouselProps {
 const hardcodedPosts: LocalCaseStudy[] = [
   {
     id: 1,
-    slug: "mri-portal-portfolio",
+    slug: "music-license-management-portal",
     imageSrc: "/images/portfolio/Music-License-Management-Portal-Onboarding-&-Data-Integrity.webp",
     tag: "Corporate",
     title: "Music License Management Portal : Onboarding & Data Integrity",
