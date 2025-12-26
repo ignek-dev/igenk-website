@@ -10,6 +10,7 @@ import InsightsMegaMenu from "components/Navigation/InsightsMegaMenu"
 import ServicesMegaMenu from "components/Navigation/ServicesMegaMenu"
 import SolutionsMegaMenu from "components/Navigation/SolutionsMegaMenu"
 import Tooltip from "components/UI/Tooltip"
+import MobileNavigation from "components/Navigation/MobileNavigation"
 
 const menu = [
   { label: "Company", href: "#" },
@@ -20,6 +21,7 @@ const menu = [
 
 export default function Navigation() {
   const [activeMenu, setActiveMenu] = useState<string | null>(null)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const pathname = usePathname() // Get the current path
   const router = useRouter();
 
@@ -125,12 +127,19 @@ export default function Navigation() {
         ref={navRef}
         className="global-container relative z-20 mx-auto flex w-full items-center bg-inherit px-4 py-6.5 md:px-8"
       >
-        <Link href="/" className="flex items-center gap-3" aria-label="Home">
-          <Image src="/images/logo.svg" alt="Ignek logo" width={182} height={86} priority className="logo-responsive" />
+        <Link href="/" className="flex items-center gap-3 shrink-0" aria-label="Home">
+          <Image 
+            src="/images/logo.svg" 
+            alt="Ignek logo" 
+            width={182} 
+            height={86} 
+            priority 
+            className="w-[120px] md:w-[150px] lg:w-[182px] h-auto object-contain" 
+          />
         </Link>
         <div className="flex-1" />
 
-        <ul className="mr-6 hidden items-center gap-[1.875vw] text-[1.25vw] leading-[1.94vw] font-normal tracking-wide uppercase md:flex">
+        <ul className="mr-6 hidden lg:flex items-center gap-[1.875vw] text-[1.25vw] leading-[1.94vw] font-normal tracking-wide uppercase">
           {menu.map((item) => (
             <li key={item.label} onMouseEnter={() => handleMouseEnter(item.label)} className="relative h-full">
               <a
@@ -159,24 +168,46 @@ export default function Navigation() {
         </ul>
 
         <div className="flex items-center gap-4.5">
-          <CalendlyButton buttonColor={buttonInnerColor} />
-          <Tooltip text="Contact Us">
-            <div className="rounded-full border border-[#00979E] transition-colors hover:bg-white/10">
-              <div className="" style={{ "--button-bg-color": buttonInnerColor } as React.CSSProperties}></div>
-              <button
-                type="button"
-                aria-label="Contact-Us"
-                className="nav-round-btn cursor-pointer"
-                onClick={() => router.push("/contact")}
-              >
-                <div className="nav-round-btn-inner cursor-pointer">
-                  <Image src="/images/icon/arrow-tr.png" alt="arrow-top-right" width={24} height={24} />
-                </div>
-              </button>
-            </div>
-          </Tooltip>
+          <div className="hidden lg:flex items-center gap-4.5">
+            <CalendlyButton buttonColor={buttonInnerColor} />
+            <Tooltip text="Contact Us">
+              <div className="rounded-full border border-[#00979E] transition-colors hover:bg-white/10">
+                <div className="" style={{ "--button-bg-color": buttonInnerColor } as React.CSSProperties}></div>
+                <button
+                  type="button"
+                  aria-label="Contact-Us"
+                  className="nav-round-btn cursor-pointer"
+                  onClick={() => router.push("/contact")}
+                >
+                  <div className="nav-round-btn-inner cursor-pointer">
+                    <Image src="/images/icon/arrow-tr.png" alt="arrow-top-right" width={24} height={24} />
+                  </div>
+                </button>
+              </div>
+            </Tooltip>
+          </div>
+
+          {/* Hamburger Menu Icon */}
+          <button
+            onClick={() => setIsMobileMenuOpen(true)}
+            className="lg:hidden flex flex-col gap-1.5 p-2"
+            aria-label="Open mobile menu"
+          >
+            <span className="w-6 h-0.5 bg-white"></span>
+            <span className="w-6 h-0.5 bg-white"></span>
+            <span className="w-6 h-0.5 bg-white"></span>
+          </button>
         </div>
       </nav>
+
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <MobileNavigation
+            isOpen={isMobileMenuOpen}
+            onClose={() => setIsMobileMenuOpen(false)}
+          />
+        )}
+      </AnimatePresence>
 
       <AnimatePresence>
         {activeMenu && (
