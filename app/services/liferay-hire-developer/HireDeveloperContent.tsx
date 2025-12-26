@@ -40,7 +40,7 @@ export default function LiferayHireDeveloper() {
 
           {/* Main Content with updated padding */}
           <div className="global-container py-12 pt-24 lg:py-[4.688vw]">
-            <div className="mt-8 grid grid-cols-1 items-center gap-10 md:grid-cols-2 lg:mt-13">
+            <div className="mt-8 grid grid-cols-1 items-center gap-10 lg:mt-13 lg:grid-cols-2">
               {/* Left Side: Text Content */}
               <div>
                 {/* <div className="inline-flex mt-[63px] w-fit items-center rounded-full border border-white px-8.5 py-[8.8px] text-lg font-normal">
@@ -51,7 +51,9 @@ export default function LiferayHireDeveloper() {
                   <br />
                   <span className="block">{hireLiferayHeroData.title.line2}</span>
                 </h1>
-                <p className="text-p16 md:text-p18 mt-4.5 max-w-3xl md:mt-10">{hireLiferayHeroData.description}</p>
+                <p className="text-p16 md:text-p18 mt-4.5 w-full md:mt-10 xl:max-w-3xl">
+                  {hireLiferayHeroData.description}
+                </p>
               </div>
 
               {/* Right Side: Image */}
