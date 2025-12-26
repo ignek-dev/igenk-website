@@ -180,9 +180,7 @@ const CompanyTimeline = () => {
             From Startup Spark To Tech Powerhouse
           </h2>
           <p className="text-gray-600 text-lg max-w-2xl">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa
-            mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien
-            fringilla.
+            
           </p>
         </div>
 

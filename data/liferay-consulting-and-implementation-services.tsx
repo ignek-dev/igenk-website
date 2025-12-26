@@ -452,17 +452,17 @@ export const liferayHeroData = {
 export const liferayDigitalEdgeData = {
   stats: [
     {
-      value: "30%",
-      label: "Project Success",
+      value: "30+",
+      label: "Solutions Delivered",
     },
     {
-      value: "20%",
-      label: "Cost Efficiency",
+      value: "50+",
+      label: "Liferay Experts",
       isMultiLine: true, // handles the line break
     },
     {
-      value: "10%",
-      label: "Revenue Growth",
+      value: "10+",
+      label: "Liferay Excellence",
     },
   ],
   heading: "Powering Your Digital Growth with Liferay Expertise",
