@@ -9,6 +9,7 @@ import SchemaInjector from "seo/schemaInjector"
 import { organizationSchema } from "seo/organization.schema"
 import { websiteSchema } from "seo/website.schema"
 import { baseMetadata } from "seo/metadata.config"
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -38,6 +39,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Footer />
         <BottomBar />
       </body>
+      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || ""} />
     </html>
   )
 }

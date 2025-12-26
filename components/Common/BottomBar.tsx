@@ -1,6 +1,7 @@
 // components/BottomBar.tsx
 
 import { footerLegalLinksData } from "data/Footer"
+import Link from "next/link"
 import Image from "next/image"
 import React from "react"
 
@@ -34,27 +35,34 @@ const BottomBar: React.FC = () => {
             <p className="flex-shrink-0">{footerLegalLinksData.copyright}</p>
             <div className="flex flex-wrap justify-center" style={{ columnGap: "0.469vw", rowGap: "0.208vw" }}>
               {footerLegalLinksData.links.map((item, index) => (
-        <div key={index} className="flex items-center">
-          <a href={item.href} className="transition-colors hover:text-white">
-            {item.label}
-          </a>
+                <div key={index} className="flex items-center">
+                  <Link href={item.href} className="transition-colors hover:text-white">
+                    {item.label}
+                  </Link>
 
-          {/* Add separator except after last item */}
-          {index !== footerLegalLinksData.links.length - 1 && (
-            <span className="text-white mx-[0.2vw]">|</span>
-          )}
-        </div>
-      ))}
+                  {/* Add separator except after last item */}
+                  {index !== footerLegalLinksData.links.length - 1 && (
+                    <span className="mx-[0.2vw] text-white">|</span>
+                  )}
+                </div>
+              ))}
             </div>
           </div>
 
           {/* Right Section: Social Media Icons */}
           <div className="flex items-center" style={{ gap: "1.6vw" }}>
             {socialIcons.map((icon, index) => (
-              <a key={index} href={icon.href} aria-label={icon.name} className="flex-shrink-0" target="blank">
+              <a
+                key={index}
+                href={icon.href}
+                aria-label={`Visit our ${icon.name} page`}
+                className="flex-shrink-0"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Image
                   src={icon.path}
-                  alt={icon.alt}
+                  alt={`Ignek on ${icon.name}`}
                   width={36}
                   height={36}
                   className="object-contain transition-transform duration-200 hover:scale-110"

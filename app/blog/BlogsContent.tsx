@@ -129,7 +129,7 @@ export default function BlogsContent() {
         authPic: "/images/blogs/blogAuthor.png",
         desc:
           post.excerpt?.rendered ||
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris.",
+          "Fetching",
       }))
 
       setBlogs(formatted)

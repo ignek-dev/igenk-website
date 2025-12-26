@@ -18,8 +18,8 @@ type BlogItem = {
 
 // Interface for our Cache
 interface CachedBlogSection {
-  data: BlogData[];
-  timestamp: number;
+  data: BlogData[]
+  timestamp: number
 }
 
 const API_URL = "https://insights.ignek.com/wp-json/wp/v2/posts"
@@ -41,9 +41,9 @@ export default function BlogSection() {
         try {
           const parsed = JSON.parse(cachedRaw) as CachedBlogSection
           const now = Date.now()
-          
+
           // If cache is valid (exists and not expired)
-          if (parsed && parsed.data && (now - parsed.timestamp < CACHE_DURATION)) {
+          if (parsed && parsed.data && now - parsed.timestamp < CACHE_DURATION) {
             setBlogs(parsed.data)
             setLoading(false)
             return // STOP HERE - Do not call API
@@ -87,11 +87,13 @@ export default function BlogSection() {
 
       setBlogs(formatted)
       // 3. Save to Cache
-      localStorage.setItem(CACHE_KEY, JSON.stringify({
-        data: formatted,
-        timestamp: Date.now()
-      }))
-
+      localStorage.setItem(
+        CACHE_KEY,
+        JSON.stringify({
+          data: formatted,
+          timestamp: Date.now(),
+        })
+      )
     } catch (err) {
       console.error("Failed to fetch blogs:", err)
       setError(err instanceof Error ? err.message : "Failed to fetch blogs")
@@ -104,25 +106,25 @@ export default function BlogSection() {
     const ids = [40578, 40314, 39874, 39138] // example IDs
     fetchBlogs(ids)
   }, [fetchBlogs])
-  
+
   const router = useRouter()
   const [sectionRef, isInView] = useInView({ threshold: 0.2, triggerOnce: true })
   if (blogs?.length < 1 || loading) {
     return (
-      <section className="bg-white text-black min-h-[600px] flex items-center justify-center">
-         <Loader />
+      <section className="flex min-h-[600px] items-center justify-center bg-white text-black">
+        <Loader />
       </section>
     )
   }
   return (
     <section className="bg-white text-black">
       <div className="global-container p-16">
-        <div className="grid items-center gap-10 lg:grid-cols-2 grid-cols-1">
+        <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2">
           <h2 className={` ${isInView ? "animate-when-visible animate-slide-left animation-delay-200" : "opacity-0"}`}>
             {blogSectionData.title} <br /> {blogSectionData.titleHighlight}
           </h2>
           <p
-            className={`p18 max-w-[100%] justify-self-center text-left lg:text-right leading-relaxed text-[#101012] text-gray-700 ${
+            className={`p18 max-w-[100%] justify-self-center text-left leading-relaxed text-[#101012] text-gray-700 lg:text-right ${
               isInView ? "animate-when-visible animate-slide-right animation-delay-200" : "opacity-0"
             }`}
           >
@@ -143,7 +145,7 @@ export default function BlogSection() {
                 alt={main?.title || "Blog Post"}
                 width={856}
                 height={459}
-                className="min-h-[459px] object-unset"
+                className="h-full w-full object-cover"
               />
             </div>
             <h3 className="line-clamp-2 pt-[1.395vw] text-[#101012]">{blogs[0]?.title || "Blog Post"}</h3>
@@ -158,35 +160,35 @@ export default function BlogSection() {
           <div
             ref={sectionRef}
             className={`transition-all duration-[1500ms] ease-out ${
-              isInView ? "translate-x-0 opacity-100" : "translate-x-20 opacity-0"
+              isInView ? "translate-x-0 opacity-100" : "translate-x-4 opacity-0"
             }`}
           >
             {blogs?.slice(1).map((item, index, arr) => (
               <div
                 key={item.id}
-                className={`} m-0 grid cursor-pointer grid-cols-[260px_1fr] items-center`}
+                className="m-0 grid cursor-pointer grid-cols-1 items-center gap-4 sm:grid-cols-[240px_1fr]"
                 onClick={() => router.push(`/blog/${item?.slug}`)}
               >
-                <div className="overflow-hidden rounded-[1.042vw] bg-gray-100">
+                <div className="overflow-hidden rounded-lg bg-gray-100">
                   <Image
                     src={item.image}
                     alt={item.title}
                     width={240}
                     height={140}
-                    className="h-full min-h-[139px] w-full object-cover"
+                    className="h-full w-full object-cover"
                   />
                 </div>
-                <div className="ml-5">
-                  <div className="line-clamp-2 min-h-[2.5vw] text-p16 font-bold md:text-[2rem] lg:text-p24">{item.title}</div>
+                <div className="ml-0 sm:ml-5">
+                  <h5 className="line-clamp-2 text-[#101012]">{item.title}</h5>
                   <p
-                    className="p16 mt-[10px] line-clamp-2 text-gray-700"
+                    className="mt-2 line-clamp-2 text-sm text-gray-700 sm:text-base"
                     dangerouslySetInnerHTML={{ __html: item.desc ?? "" }}
                   />
                 </div>
                 <div
                   className={
-                    "col-span-2 mt-[2.031vw] w-full border-t border-gray-300 " +
-                    (index === arr.length - 1 ? "" : "mb-[2.448vw]")
+                    "col-span-1 mt-4 w-full border-t border-gray-300 sm:col-span-2 " +
+                    (index === arr.length - 1 ? "" : "mb-6")
                   }
                 />
               </div>

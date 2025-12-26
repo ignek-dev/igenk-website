@@ -39,10 +39,15 @@ export function constructMetadata({
   ogTitle?: string
   ogDescription?: string
 } = {}): Metadata {
+  const googleVerification = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
+
   return {
     title,
     description,
     keywords: keywords.join(', '),
+    verification: {
+      google: googleVerification,
+    },
     openGraph: {
       title: ogTitle || title,
       description: ogDescription || description,

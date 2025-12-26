@@ -142,9 +142,8 @@ export default function Navigation() {
         <ul className="mr-6 hidden lg:flex items-center gap-[1.875vw] text-[1.25vw] leading-[1.94vw] font-normal tracking-wide uppercase">
           {menu.map((item) => (
             <li key={item.label} onMouseEnter={() => handleMouseEnter(item.label)} className="relative h-full">
-              <a
-                href={item.href}
-                className={`block px-[0.5vw] py-[0.4vw] transition-colors ${
+              <div
+                className={`block px-[0.5vw] py-[0.4vw] transition-colors cursor-default ${
                   activeMenu === item.label ? "text-white" : "text-white/90"
                 } hover:text-white`}
               >
@@ -162,7 +161,7 @@ export default function Navigation() {
                     />
                   )}
                 </span>
-              </a>
+              </div>
             </li>
           ))}
         </ul>
