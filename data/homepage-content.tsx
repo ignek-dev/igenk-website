@@ -53,6 +53,46 @@ export const partners = [
     name: "Infogain",
     image: "/images/partner/infogain.svg",
   },
+  {
+    name: "Broadcom",
+    image: "/images/partener-company-logos/Broadcom.webp",
+  },
+  {
+    name: "Canopi",
+    image: "/images/partener-company-logos/Canopi.webp",
+  },
+  {
+    name: "Dubai Chamber",
+    image: "/images/partener-company-logos/Dubai Chamber.webp",
+  },
+  {
+    name: "iFad",
+    image: "/images/partener-company-logos/iFad.webp",
+  },
+  {
+    name: "KWSP",
+    image: "/images/partener-company-logos/KWSP.webp",
+  },
+  {
+    name: "Ooredoo",
+    image: "/images/partener-company-logos/Ooredoo.webp",
+  },
+  {
+    name: "Orbis",
+    image: "/images/partener-company-logos/Orbis.webp",
+  },
+  {
+    name: "SCAD",
+    image: "/images/partener-company-logos/SCAD.webp",
+  },
+  {
+    name: "Torry Harris Private Limited",
+    image: "/images/partener-company-logos/Torry-Harris-Private-Limited.webp",
+  },
+  {
+    name: "UIDAI",
+    image: "/images/partener-company-logos/Uidai.webp",
+  },
 ]
 
 export const EndToEndSectionData = {

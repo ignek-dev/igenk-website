@@ -19,7 +19,7 @@ export default function BlogsContent() {
   const [loading, setLoading] = useState(true)
   const [currentPage, setCurrentPage] = useState(1)
   const [totalPages, setTotalPages] = useState(1)
-  const [selectedCategory, setSelectedCategory] = useState<number | null>(15)
+  const [selectedCategory, setSelectedCategory] = useState<number | null>(0)
   const [currentSlide, setCurrentSlide] = useState(0)
   const [isHovering, setIsHovering] = useState(false)
 
