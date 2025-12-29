@@ -88,7 +88,7 @@ export default function InsightsMobileMegaMenu({ onBack, onClose }: InsightsMobi
       className="absolute inset-0 z-1002 flex flex-col bg-black text-white overflow-y-auto pb-10"
     >
       <div className="flex items-center justify-between px-6 py-6.5 shrink-0">
-        <h2 className="text-[20px] font-semibold uppercase tracking-wide">Insights</h2>
+        <h2 className="text-[20px]! font-semibold tracking-wide">Insights</h2>
 
         <button
           onClick={onBack}
@@ -122,7 +122,7 @@ export default function InsightsMobileMegaMenu({ onBack, onClose }: InsightsMobi
               </div>
 
               <div className="flex-1">
-                <h5 className="text-p18! md:text-p24! font-medium text-white">{link.title}</h5>
+                <h5 className="text-p16! md:text-p24! font-medium text-white">{link.title}</h5>
                 <p className="text-[10px] md:text-p16 font-regular mt-1 text-white/70">{link.description}</p>
               </div>
 
@@ -134,7 +134,7 @@ export default function InsightsMobileMegaMenu({ onBack, onClose }: InsightsMobi
         </div>
 
         {/* Featured Image Section */}
-        <div className="mt-4">
+        {/* <div className="mt-4">
           <p className="text-p16 text-white/80 mb-6 leading-relaxed">
             Explore practical platform insights that help enterprises build resilient, long-lasting digital experiences.
           </p>
@@ -163,16 +163,16 @@ export default function InsightsMobileMegaMenu({ onBack, onClose }: InsightsMobi
             )}
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
             <div className="absolute bottom-4 left-4 right-4">
-                <div className="flex items-center gap-2 text-[12px] text-white/70">
+                <div className="flex items-center gap-2 text-[12px] text-white/70"> */}
                     {/* <span>Explore Blog</span> */}
                     {/* <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <line x1="5" y1="12" x2="19" y2="12"></line>
                         <polyline points="12 5 19 12 12 19"></polyline>
                     </svg> */}
-                </div>
+                {/* </div>
             </div>
           </Link>
-        </div>
+        </div> */}
       </div>
     </motion.div>
   )

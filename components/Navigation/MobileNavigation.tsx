@@ -67,7 +67,7 @@ export default function MobileNavigation({ isOpen, onClose }: MobileNavigationPr
               onClick={() => handleItemClick(item)}
               className="flex items-center justify-between py-2 border-b border-white/10 cursor-pointer"
             >
-              <span className="text-p24 font-medium uppercase">{item.label}</span>
+              <span className="text-p20 font-medium">{item.label}</span>
               <div className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center">
                 <Image src="/images/icon/arrow-tr.png" alt="arrow" width={16} height={16} className={item.hasSubMenu ? "" : "rotate-45"} />
               </div>
@@ -75,8 +75,7 @@ export default function MobileNavigation({ isOpen, onClose }: MobileNavigationPr
           ))}
         </nav>
 
-        <div className="flex flex-col px-6 mt-12 mb-12 space-y-10 text-center">
-          {/* Emails Section */}
+        {/* <div className="flex flex-col px-6 mt-12 mb-12 space-y-10 text-center">
           <div className="space-y-4">
             <h3 className="text-p18 font-semibold uppercase tracking-wider text-white/50">Emails</h3>
             <div className="space-y-2">
@@ -91,7 +90,6 @@ export default function MobileNavigation({ isOpen, onClose }: MobileNavigationPr
             </div>
           </div>
 
-          {/* Call Section */}
           <div className="space-y-4">
             <h3 className="text-p18 font-semibold uppercase tracking-wider text-white/50">Call</h3>
             <div className="space-y-2">
@@ -106,14 +104,13 @@ export default function MobileNavigation({ isOpen, onClose }: MobileNavigationPr
             </div>
           </div>
 
-          {/* Office Section */}
           <div className="space-y-4">
             <h3 className="text-p18 font-semibold uppercase tracking-wider text-white/50">Office</h3>
             <p className="text-p16 leading-relaxed">
               E 910-912, Ganesh Glory 11, Jagatpur Road, SG Highway, Ahmedabad, Gujarat – 382470
             </p>
           </div>
-        </div>
+        </div> */}
       </div>
 
       <AnimatePresence mode="wait">
