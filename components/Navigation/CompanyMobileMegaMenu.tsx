@@ -10,16 +10,16 @@ interface CompanyMobileMegaMenuProps {
 }
 
 const IconLinkedIn = () => (
-  <Image src="/images/mega-menu/linkedin-dark.png" alt="LinkedIn" width={32} height={32} />
+  <Image src="/images/mega-menu/linkedin-dark.png" alt="LinkedIn" width={28} height={28} className="lg:w-12 lg:h-12"/>
 )
 const IconFacebook = () => (
-  <Image src="/images/mega-menu/facebook-dark.png" alt="Facebook" width={32} height={32} />
+  <Image src="/images/mega-menu/facebook-dark.png" alt="Facebook" width={28} height={28} className="lg:w-12 lg:h-12"/>
 )
 const IconX = () => (
-  <Image src="/images/mega-menu/tweeter-dark.png" alt="X" width={32} height={32} />
+  <Image src="/images/mega-menu/tweeter-dark.png" alt="X" width={28} height={28} className="lg:w-12 lg:h-12"/>
 )
 const IconInstagram = () => (
-  <Image src="/images/mega-menu/instagram-dark.png" alt="Instagram" width={32} height={32} />
+  <Image src="/images/mega-menu/instagram-dark.png" alt="Instagram" width={28} height={28} className="lg:w-12 lg:h-12"/>
 )
 
 const socialLinks = [
@@ -39,7 +39,7 @@ export default function CompanyMobileMegaMenu({ onBack, onClose }: CompanyMobile
       className="absolute inset-0 z-1002 flex flex-col bg-black text-white overflow-y-auto pb-10"
     >
       <div className="flex items-center justify-between px-6 py-6.5">
-        <h2 className="text-[20px] font-semibold uppercase tracking-wide">Company</h2>
+        <h2 className="text-[20px]! font-semibold tracking-wide">Company</h2>
 
         <button
           onClick={onBack}
@@ -71,7 +71,7 @@ export default function CompanyMobileMegaMenu({ onBack, onClose }: CompanyMobile
             <div className="flex-1 mt-1">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2 flex-wrap">
-                    <h3 className="text-p18! md:text-p24! font-medium">{link.title}</h3>
+                    <h3 className="text-p16! md:text-p24! font-medium">{link.title}</h3>
                     {link.subheading && (
                         <span className="inline-flex justify-center rounded-full border border-white/20 bg-white/10 px-2 py-0.5 text-[10px] font-medium text-white/70 whitespace-nowrap">
                             {link.subheading}
@@ -89,17 +89,17 @@ export default function CompanyMobileMegaMenu({ onBack, onClose }: CompanyMobile
         ))}
       </div>
 
-      <div className="px-6 mt-12 space-y-8">
+      <div className="px-6 mt-8 space-y-4">
         <div className="space-y-4 text-center">
             <h4 className="text-p18! md:text-p24! font-semibold leading-tight">{aboutDigitalExperienceData.title}</h4>
-            <p className="text-[10px] md:text-p16 text-white/70 leading-relaxed uppercase">{aboutDigitalExperienceData.description}</p>
+            <p className="text-[10px] md:text-p16 text-white/70 leading-relaxed">{aboutDigitalExperienceData.description}</p>
         </div>
 
 
         {/* Contact Sections */}
-        <div className="space-y-10 py-6 border-t border-white/10">
+        {/* <div className="space-y-10 py-6 border-t border-white/10"> */}
             {/* General */}
-            <div className="space-y-4 text-center">
+            {/* <div className="space-y-4 text-center">
                 <h5 className="text-p18! md:text-p24! font-semibold uppercase tracking-widest text-white/50">{aboutDigitalExperienceData.subtitle1}</h5>
                 <div className="space-y-4 flex flex-col items-center">
                     {contactDetails.general.map((item) => (
@@ -109,11 +109,11 @@ export default function CompanyMobileMegaMenu({ onBack, onClose }: CompanyMobile
                         </a>
                     ))}
                 </div>
-            </div>
+            </div> */}
 
 
             {/* Sales */}
-            <div className="space-y-4 text-center">
+            {/* <div className="space-y-4 text-center">
                 <h5 className="text-p18! md:text-p24! font-semibold uppercase tracking-widest text-white/50">{aboutDigitalExperienceData.subtitle2}</h5>
                 <div className="space-y-4 flex flex-col items-center">
                     {contactDetails.sales.map((item) => (
@@ -123,11 +123,11 @@ export default function CompanyMobileMegaMenu({ onBack, onClose }: CompanyMobile
                         </a>
                     ))}
                 </div>
-            </div>
+            </div> */}
 
 
             {/* HR */}
-            <div className="space-y-4 text-center">
+            {/* <div className="space-y-4 text-center">
                 <h5 className="text-p18! md:text-p24! font-semibold uppercase tracking-widest text-white/50">{aboutDigitalExperienceData.subtitle3}</h5>
                 <div className="space-y-4 flex flex-col items-center">
                     {contactDetails.hr.map((item) => (
@@ -137,12 +137,12 @@ export default function CompanyMobileMegaMenu({ onBack, onClose }: CompanyMobile
                         </a>
                     ))}
                 </div>
-            </div>
+            </div> */}
 
-        </div>
+        {/* </div> */}
 
         {/* Office */}
-        <div className="pt-8 border-t border-white/10 flex flex-col items-center md:items-center text-center md:text-center space-y-4">
+        <div className="pt-4 flex flex-col items-center md:items-center text-center md:text-center space-y-4">
             <div 
                 className="flex items-start justify-center md:justify-start gap-3 cursor-pointer"
                 onClick={() => {
@@ -150,8 +150,8 @@ export default function CompanyMobileMegaMenu({ onBack, onClose }: CompanyMobile
                     onClose()
                 }}
             >
-                <Image src="/images/icon/location.png" alt="location" width={24} height={24} className="mt-1" />
-                <p className="text-[10px] md:text-p16 font-medium leading-relaxed max-w-xs md:max-w-md">{aboutDigitalExperienceData.location}</p>
+                <Image src="/images/icon/location.png" alt="location" width={30} height={30} className="" />
+                <p className="text-[16px] md:text-p16 font-medium  leading-relaxed max-w-xs md:max-w-md">{aboutDigitalExperienceData.location}</p>
             </div>
         </div>
 
@@ -165,7 +165,7 @@ export default function CompanyMobileMegaMenu({ onBack, onClose }: CompanyMobile
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={onClose}
-                    className="w-12 h-12 rounded-full bg-white flex items-center justify-center hover:bg-white/90 transition-colors"
+                    className="w-10 h-10 rounded-full bg-white flex items-center justify-center hover:bg-white/90 transition-colors"
                 >
                     {social.icon}
                 </a>

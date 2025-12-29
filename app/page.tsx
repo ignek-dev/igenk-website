@@ -70,7 +70,7 @@ export default function HomePage() {
           {/* Logos row: 7 items with spacing and responsive wrap */}
           <div className="mt-[55px] md:mt-12 overflow-hidden">
             {/* Inner container is the animated flex row */}
-            <div className="animate-marquee-fast flex gap-x-16 whitespace-nowrap">
+            <div className="animate-marquee-custom flex w-max gap-x-16 whitespace-nowrap">
               {/* We map the partners array twice for a seamless loop */}
               {[...partners, ...partners].map((partner, idx) => (
                 <div

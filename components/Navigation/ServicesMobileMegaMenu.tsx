@@ -19,7 +19,7 @@ export default function ServicesMobileMegaMenu({ onBack, onClose }: ServicesMobi
       className="absolute inset-0 z-1002 flex flex-col bg-black text-white overflow-y-auto pb-10"
     >
       <div className="flex items-center justify-between px-6 py-6.5 shrink-0">
-        <h2 className="text-[20px] font-semibold uppercase tracking-wide">Services</h2>
+        <h2 className="text-[20px]! font-semibold tracking-wide">Services</h2>
 
         <button
           onClick={onBack}
@@ -47,7 +47,7 @@ export default function ServicesMobileMegaMenu({ onBack, onClose }: ServicesMobi
                 <div className="w-5 h-5 md:w-8 md:h-8 flex items-center justify-center shrink-0">
                   <Image src={link.iconUrl} alt={link.text} width={32} height={32} className="object-contain opacity-80 group-hover:opacity-100 transition-opacity" />
                 </div>
-                <span className="text-[10px] md:text-p16 font-medium text-white/90 group-hover:text-white transition-colors">{link.text}</span>
+                <span className="text-[16px] md:text-p16 font-medium text-white/90 group-hover:text-white transition-colors">{link.text}</span>
               </a>
             ))}
           </div>
@@ -56,7 +56,7 @@ export default function ServicesMobileMegaMenu({ onBack, onClose }: ServicesMobi
         <div className="w-full h-px bg-white/10" />
 
         {/* Liferay Services Section */}
-        <div className="space-y-6">
+        <div className="space-y-4">
           <h3 className="text-p18! md:text-p24! font-semibold">{serviceTitleData.title2}</h3>
           <div className="grid grid-cols-2 gap-x-10 gap-y-5">
             {liferayServicesLinks.map((link) => (
@@ -64,7 +64,7 @@ export default function ServicesMobileMegaMenu({ onBack, onClose }: ServicesMobi
                 key={link.text}
                 href={link.href}
                 onClick={onClose}
-                className="text-[10px] md:text-p16 font-medium text-white/80 hover:text-white transition-colors py-1"
+                className="text-[16px] md:text-p16 font-medium text-white/80 hover:text-white transition-colors py-1 w-[150px] sm:w-full"
               >
                 {link.text}
               </a>
@@ -73,7 +73,7 @@ export default function ServicesMobileMegaMenu({ onBack, onClose }: ServicesMobi
         </div>
 
         {/* Featured Image Card */}
-        <div className="mt-6">
+        {/* <div className="mt-6">
           <div 
             className="relative overflow-hidden border border-white/20 w-full max-w-[360px] md:max-w-full h-[317px] md:h-[400px] rounded-[9px]"
           >
@@ -83,10 +83,9 @@ export default function ServicesMobileMegaMenu({ onBack, onClose }: ServicesMobi
               fill
               className="object-cover"
             />
-            {/* Gradient Overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
           </div>
-        </div>
+        </div> */}
       </div>
     </motion.div>
   )
