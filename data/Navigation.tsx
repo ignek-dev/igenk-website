@@ -24,8 +24,9 @@ export const companyLinks: CompanyLink[] = [
     {
     image: "/images/mega-menu/LifeAtIgnek.png",
     title: "Life#IGNEK",
+    subheading: "Coming Soon",
     description: "Experience a collaborative, creative, and energetic work culture at IGNEK.",
-    href: "/life-at-ignek",
+    href: "",
   },
 ]
 
