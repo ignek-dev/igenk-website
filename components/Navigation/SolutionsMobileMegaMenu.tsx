@@ -102,7 +102,7 @@ export default function SolutionsMobileMegaMenu({ onBack, onClose }: SolutionsMo
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="rotate-180">
             <polyline points="9 18 15 12 9 6"></polyline>
           </svg>
-          Back To Menu
+          Back to Menu
         </button>
       </div>
 

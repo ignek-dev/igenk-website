@@ -20,37 +20,51 @@ const socialIcons = [
 const BottomBar: React.FC = () => {
   return (
     <div
-      className="global-container mx-auto w-full bg-[#121212]"
-      style={{
-        paddingLeft: "0.833vw", // px-4 →
-        paddingRight: "0.833vw",
-        paddingTop: "1.25vw", // py-6 →
-        paddingBottom: "1.25vw",
-      }}
+      className="global-container mx-auto w-full bg-[#121212] px-4.5 py-7.5 md:px-[0.833vw] md:py-[1.25vw]"
     >
-      <div className="flex flex-col items-center gap-[1.25vw] text-center md:flex-row">
-        {/* Left Section: Copyright and Legal Links */}
-        <div className="flex items-center" style={{ gap: "12.5vw" }}>
-          <div className="p18 flex flex-col gap-[0.833vw] text-white md:flex-row">
-            <p className="flex-shrink-0">{footerLegalLinksData.copyright}</p>
-            <div className="flex flex-wrap justify-center" style={{ columnGap: "0.469vw", rowGap: "0.208vw" }}>
-              {footerLegalLinksData.links.map((item, index) => (
-                <div key={index} className="flex items-center">
-                  <Link href={item.href} className="transition-colors hover:text-white">
-                    {item.label}
-                  </Link>
+      <div className="flex flex-col items-center text-center">
+        {/* Main Section: Copyright, Links and Social */}
+        <div className="flex flex-col items-center gap-6 md:flex-row md:gap-[12.5vw]">
+          {/* Left Section: Copyright and Legal Links */}
+          <div className="flex flex-col items-center gap-4 text-white md:flex-row md:gap-[0.833vw]">
+            <p className="flex-shrink-0 text-p14 md:text-p16 lg:text-p18">
+              {footerLegalLinksData.copyright}
+            </p>
+            <div 
+              className="flex flex-col items-center gap-y-2 md:flex-col lg:flex-row md:gap-x-[0.469vw] md:gap-y-0 text-p14 md:text-p16 lg:text-p18 whitespace-nowrap"
+            >
+              {/* Group 1: Privacy Policy & Terms & Conditions */}
+              <div className="flex items-center gap-x-[2vw] md:gap-x-[0.469vw]">
+                {footerLegalLinksData.links.slice(0, 2).map((item, index) => (
+                  <div key={index} className="flex items-center">
+                    <Link href={item.href} className="transition-colors hover:text-white">
+                      {item.label}
+                    </Link>
+                    <span className="ml-[2vw] text-white md:ml-[0.469vw]">|</span>
+                  </div>
+                ))}
+              </div>
 
-                  {/* Add separator except after last item */}
-                  {index !== footerLegalLinksData.links.length - 1 && (
-                    <span className="mx-[0.2vw] text-white">|</span>
-                  )}
-                </div>
-              ))}
+              {/* Group 2: Cookies Policy & Map */}
+              <div className="flex items-center gap-x-[2vw] md:gap-x-[0.469vw]">
+                {footerLegalLinksData.links.slice(2).map((item, index) => (
+                  <div key={index} className="flex items-center">
+                    <Link href={item.href} className="transition-colors hover:text-white">
+                      {item.label}
+                    </Link>
+
+                    {/* Add separator except after the very last item */}
+                    {index === 0 && (
+                      <span className="ml-[2vw] text-white md:ml-[0.469vw]">|</span>
+                    )}
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 
           {/* Right Section: Social Media Icons */}
-          <div className="flex items-center" style={{ gap: "1.6vw" }}>
+          <div className="flex  items-center gap-6 md:gap-[1.6vw]">
             {socialIcons.map((icon, index) => (
               <a
                 key={index}
@@ -65,11 +79,7 @@ const BottomBar: React.FC = () => {
                   alt={`Ignek on ${icon.name}`}
                   width={36}
                   height={36}
-                  className="object-contain transition-transform duration-200 hover:scale-110"
-                  style={{
-                    width: "1.875vw",
-                    height: "1.875vw",
-                  }}
+                  className="h-8 w-8 object-contain transition-transform duration-200 hover:scale-110 md:h-[1.875vw] md:w-[1.875vw]"
                 />
               </a>
             ))}

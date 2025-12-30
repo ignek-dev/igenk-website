@@ -33,7 +33,7 @@ const hardcodedStories: Story[] = [
   {
     id: 1,
     // UPDATE THIS SLUG to match your actual case study URL
-    slug: "mri-portal-portfolio", 
+    slug: "music-license-management-portal", 
     // UPDATE THIS IMAGE PATH to your actual image
     imageSrc: "/images/portfolio/Music-License-Management-Portal-Onboarding-&-Data-Integrity.webp", 
     tag: "Corporate",
