@@ -53,7 +53,7 @@ export default function Webinar() {
               <h2 className="">
                 {liferayWebinarsPage.pastWebinars.heading} <br/> {liferayWebinarsPage.pastWebinars.headingLine2}
               </h2>
-              <p className="w-full text-[#374151] text-p16 md:text-p18 lg:text-right lg:w-[35.75vw]">
+              <p className="w-full text-[#374151] text-p16 md:text-p18 lg:text-right lg:w-[39.75vw]">
                 {liferayWebinarsPage.pastWebinars.description}
               </p>
             </div>

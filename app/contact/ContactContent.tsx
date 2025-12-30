@@ -256,7 +256,7 @@ export default function ContactContent() {
             </div>
             <div className="h-full items-center justify-center md:flex">
               <p className="text-p18 text-[#374151] lg:text-right">
-                {officeLocationsSection.description} <br /> {officeLocationsSection.description2}
+                {officeLocationsSection.description}
               </p>
             </div>
           </div>

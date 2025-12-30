@@ -30,10 +30,10 @@ export const cardData = [
 ]
 
 export const blogHeroSection = {
-  heading: "Liferay Blog:",
-  heading2: "Insights on DXP, Java & ReactJS",
+  heading: "Blog : Insights on ",
+  heading2: "Liferay DXP, Java & ReactJS",
   description:
-    "Stay updated with expert insights, engineering practices, and hands-on tutorials across Liferay DXP, Java, and ReactJS—crafted to help teams build scalable, high-quality digital experiences. Explore real-world use cases, best practices, and practical guidance drawn from deep enterprise delivery experience.",
+    "Stay updated with expert insights, engineering practices, and hands-on tutorials across Liferay DXP, Java, and ReactJS—crafted to help teams build scalable, high-quality digital experiences.",
 };
 
 export const blogSection = {

@@ -83,14 +83,14 @@ export const jobs = [
 export const careerHeroData = {
   badgeText: "Career at IGNEK",
   description:
-    "At IGNEK, your growth comes first. We empower you with meaningful work, continuous learning, and an environment designed to help you advance—professionally, personally, and with purpose.",
+    "At IGNEK, your growth comes first. We empower you with meaningful work, continuous learning, and an environment designed to help you advance—professionally, personally, and with purpose without any compromise.",
 };
 
 export const careerPerksIntroData = {
   title: "More Than Just a Job",
   title2: "Life at IGNEK",
   description:
-    "At IGNEK, work feels different. We’ve built a culture that inspires learning, celebrates individuality, and supports your well-being at the workplace.",
+    "At IGNEK, work feels different. We’ve built a culture that inspires learning, celebrates individuality, and supports your well-being.",
 };
 
 export const openRolesIntroData = {

@@ -2,7 +2,7 @@ export const liferaySuccessStoriesSection = {
   heading: "Liferay",
   heading2: "Success Stories",
   description:
-    "See how enterprises unlock real value with Liferay DXP through best-practice implementations, scalable architectures, and measurable digital outcomes—delivered the IGNEK way.",
+    "See how enterprises unlock real value with Liferay DXP through best-practice implementations, scalable architectures, and digital outcomes.",
 };
 
 export const caseStudies = [

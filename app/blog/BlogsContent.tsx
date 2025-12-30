@@ -182,8 +182,7 @@ export default function BlogsContent() {
 
               </h1>
             </div>
-            <p className="relative mt-4 text-lg text-gray-300 lg:p18 lg:absolute lg:bottom-0 lg:max-w-[41.646vw] lg:justify-self-end lg:text-right lg:text-white lg:mt-0"></p>
-            <p className="text-p16 lg:text-p18 relative mt-0  lg:absolute lg:bottom-0 lg:max-w-[41.646vw] lg:justify-self-end lg:text-right text-white">
+            <p className="text-p16 lg:text-p18 relative mt-0  lg:absolute lg:bottom-0 lg:max-w-[35.646vw] lg:justify-self-end lg:text-right text-white">
              {blogHeroSection.description}
             </p>
           </div>

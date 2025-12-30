@@ -49,39 +49,39 @@ export const CORE_VALUES: CoreValue[] = [
     number: "01",
     title: "Integrity",
     description:
-      "We commit to honesty, accountability, and transparency — ensuring every partnership is built on trust and long-term credibility.",
+      "We commit to honesty, accountability, and transparency — ensuring every partnership is built on trust.",
     img: "/images/about/integrity-img.png",
   },
   {
     number: "02",
     title: "Collaboration",
     description:
-      "We believe the best outcomes come from shared ownership, open dialogue, and a mindset of solving challenges together.",
+      "We believe the best outcomes come from shared ownership, open dialogue, and a mindset of solving challenges.",
     img: "/images/about/collaboration-img.png",
   },
   {
     number: "03",
     title: "Innovation",
     description:
-      "We don’t chase trends. We engineer meaningful solutions that deliver real value, drive efficiency, and future-proof digital ecosystems.",
+      "We engineer write meaningful solutions that deliver real value, drive efficiency, and future-proof digital ecosystems.",
     img: "/images/about/growth-img.png",
   },
   {
     number: "04",
     title: "Excellence",
-    description: "From design to delivery, we bring precision, discipline, and quality engineering to every project — no shortcuts, no compromises.",
+    description: "From design to delivery, we bring precision, discipline, and quality engineering to every project  no compromises.",
     img: "/images/about/adaptability-img.png",
   },
   {
     number: "05",
     title: "Growth",
-    description: "We continuously evolve, adapt, and embrace new technologies to ensure our clients stay ahead in an ever-changing digital world.",
+    description: "We continuously evolve, adapt, and embrace new technologies to ensure our clients stay ahead.",
     img: "/images/about/adaptability-img.png",
   },
   {
     number: "06",
     title: "Impact",
-    description: "Every solution we build aims to create measurable, sustainable impact — not just for today, but for the long road ahead.",
+    description: "Every solution we build aims to create measurable, sustainable impact not just for today, but for the long road.",
     img: "/images/about/adaptability-img.png",
   },
 ]
@@ -221,9 +221,7 @@ export const teamSectionContent = {
   description:
     "Our passionate team of Managers, Liferay engineers, architects, and innovators ",
   descLine2:
-    "powers IGNEK’s mission, turning complex challenges into performant, scalable, and ",
-  descLine3:
-    "future-ready digital experiences.",
+    "powers IGNEK’s mission, turning complex challenges into future-ready digital experiences.",
 
   members: [
     {
@@ -336,7 +334,7 @@ export const testimonialSectionContent = {
 export const cardsData = [
   {
     title: "Business Acceleration",
-    desc: "We accelerate delivery through optimised architectures, reusable components, and proven Liferay implementation frameworks.",
+    desc: "We accelerate delivery through optimised architectures, reusable components, and proven Liferay implementation.",
   },
   {
     title: "Custom Expertise",
@@ -365,8 +363,8 @@ export const cardsData = [
 ]
 
 export const whatMakesUsStandOutData = {
-  title: "What Sets IGNEK",
-  titleLine2: " Apart?",
+  title: "What Sets IGNEK ",
+  titleLine2: "Apart in Practice?",
 
   description:
     "We combine deep Liferay expertise with a disciplined delivery approach, ",
