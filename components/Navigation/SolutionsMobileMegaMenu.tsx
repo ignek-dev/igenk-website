@@ -92,7 +92,7 @@ export default function SolutionsMobileMegaMenu({ onBack, onClose }: SolutionsMo
       transition={{ type: "tween", duration: 0.3 }}
       className="absolute inset-0 z-1002 flex flex-col bg-black text-white overflow-y-auto pb-10"
     >
-      <div className="flex items-center justify-between px-6 py-6.5 shrink-0">
+      <div className="flex items-center justify-between px-6 pt-6 pb-3 shrink-0">
         <h2 className="text-[20px]! font-semibold tracking-wide">Solutions</h2>
 
         <button
