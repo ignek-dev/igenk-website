@@ -3,7 +3,7 @@ import { title } from "process";
 export const contactContent = {
   title: "Contact Us",
   description:
-    "Get in touch with our team for inquiries about Liferay DXP solutions, technical guidance, or collaboration opportunities. We’re here to provide expert advice, tailored support, and clear direction for your digital initiatives.",
+    "Get in touch with our team for inquiries about Liferay DXP solutions, technical guidance, or collaboration opportunities. We’re here to provide expert direction for your digital initiatives.",
 };
 
 export const contactLeftSection = {
@@ -33,8 +33,7 @@ export const officeLocationsSection = {
   // title2: "and United Arab Emirates",
 
   description:
-    "We operate from India and the United Arab Emirates, enabling responsive ",
-    description2: "regional engagement, dedicated support, and seamless collaboration for clients across the globe.",
+    "We operate from India and the UAE, enabling responsive regional engagement, dedicated support for clients.",
 };
 
 export const officeLocationsData = [
