@@ -231,15 +231,25 @@ export const marketplaceLinks = [
 
 export const aiLinks = [
   {
-    text: "Virtual Assistants for Enterprise Experiences",
+    text: "AI Virtual Assistants (Public & Internal)",
     href: "/contact",
     icon: "/images/mega-menu/solution-mega-icons/liferay-ai-1.svg",
   },
-  { text: "Personalization & Engagement", href: "/contact", icon: "/images/mega-menu/solution-mega-icons/liferay-ai-2.svg" },
-  { text: "Intelligent Search & Knowledge Discovery", href: "/contact", icon: "/images/mega-menu/solution-mega-icons/liferay-ai-3.svg" },
-  { text: "Autonomous Workflow Optimization", href: "/contact", icon: "/images/mega-menu/solution-mega-icons/liferay-ai-4.svg" },
-  { text: "Predictive Business Intelligence", href: "/contact", icon: "/images/mega-menu/solution-mega-icons/liferay-ai-5.svg" },
-  { text: "AI-Enhanced Document Intelligence", href: "/contact", icon: "/images/mega-menu/solution-mega-icons/liferay-ai-6.svg" },
+  {
+    text: "Intelligent Content Creation & Publishing",
+    href: "/contact",
+    icon: "/images/mega-menu/solution-mega-icons/liferay-ai-7.svg",
+  },
+  {
+    text: "AI-Driven Workflow Optimization",
+    href: "/contact",
+    icon: "/images/mega-menu/solution-mega-icons/liferay-ai-8.svg",
+  },
+  // { text: "Personalization & Engagement", href: "/contact", icon: "/images/mega-menu/solution-mega-icons/liferay-ai-2.svg" },
+  // { text: "Intelligent Search & Knowledge Discovery", href: "/contact", icon: "/images/mega-menu/solution-mega-icons/liferay-ai-3.svg" },
+  // { text: "Autonomous Workflow Optimization", href: "/contact", icon: "/images/mega-menu/solution-mega-icons/liferay-ai-4.svg" },
+  // { text: "Predictive Business Intelligence", href: "/contact", icon: "/images/mega-menu/solution-mega-icons/liferay-ai-5.svg" },
+  // { text: "AI-Enhanced Document Intelligence", href: "/contact", icon: "/images/mega-menu/solution-mega-icons/liferay-ai-6.svg" },
 ]
 
 export const solutionTitleData = {
