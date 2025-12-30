@@ -85,7 +85,7 @@ export default function InsightsMobileMegaMenu({ onBack, onClose }: InsightsMobi
       animate={{ x: 0 }}
       exit={{ x: "100%" }}
       transition={{ type: "tween", duration: 0.3 }}
-      className="absolute inset-0 z-1002 flex flex-col bg-black text-white overflow-y-auto pb-10"
+      className="absolute inset-0 z-1002 flex flex-col bg-black text-white overflow-y-auto"
     >
       <div className="flex items-center justify-between px-6 py-6.5 shrink-0">
         <h2 className="text-[20px]! font-semibold tracking-wide">Insights</h2>
@@ -101,9 +101,9 @@ export default function InsightsMobileMegaMenu({ onBack, onClose }: InsightsMobi
         </button>
       </div>
 
-      <div className="flex flex-col px-6 space-y-8 mt-4">
+      <div className="flex flex-col px-6 space-y-8">
         {/* Links Section */}
-        <div className="flex flex-col gap-[18px]">
+        <div className="flex flex-col gap-[24px]">
           {insightLinks.map((link) => (
             <a
               href={link.href}
@@ -126,7 +126,7 @@ export default function InsightsMobileMegaMenu({ onBack, onClose }: InsightsMobi
                 <p className="text-[10px] md:text-p16 font-regular mt-1 text-white/70">{link.description}</p>
               </div>
 
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white/30 group-hover:text-white transition-colors">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white group-hover:text-white transition-colors">
                 <polyline points="9 18 15 12 9 6"></polyline>
               </svg>
             </a>
