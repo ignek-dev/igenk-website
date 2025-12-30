@@ -57,8 +57,6 @@ const Team: React.FC = () => {
             {teamSectionContent.description}
             <br className="hidden lg:block" />
             {teamSectionContent.descLine2}
-            <br className="hidden lg:block" />
-            {teamSectionContent.descLine3}
           </p>
         </div>
       </div>
