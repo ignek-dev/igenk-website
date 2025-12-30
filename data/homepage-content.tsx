@@ -18,48 +18,8 @@ export const homepageData = {
 }
 export const partners = [
   {
-    name: "Youngsoft India",
-    image: "/images/partner/youngsoftIndia.svg",
-  },
-  {
-    name: "United Nations",
-    image: "/images/partner/United-nations.png",
-  },
-  {
-    name: "This",
-    image: "/images/partner/This.png",
-  },
-  {
-    name: "Cognizer AI",
-    image: "/images/partner/cognizerAI.png",
-  },
-  {
-    name: "Mibusoft",
-    image: "/images/partner/mibusoft.png",
-  },
-  {
-    name: "Navvis",
-    image: "/images/partner/navvis.png",
-  },
-  {
-    name: "EduTecks",
-    image: "/images/partner/eduteks.svg",
-  },
-  {
-    name: "Unified Aviation",
-    image: "/images/partner/unified-aviation.svg",
-  },
-  {
-    name: "Infogain",
-    image: "/images/partner/infogain.svg",
-  },
-  {
-    name: "Broadcom",
-    image: "/images/partener-company-logos/Broadcom.webp",
-  },
-  {
-    name: "Canopi",
-    image: "/images/partener-company-logos/Canopi.webp",
+    name: "HP",
+    image: "/images/partener-company-logos/HP.webp",
   },
   {
     name: "Dubai Chamber",
@@ -78,21 +38,65 @@ export const partners = [
     image: "/images/partener-company-logos/Ooredoo.webp",
   },
   {
+    name: "SCAD",
+    image: "/images/partener-company-logos/SCAD.webp",
+  },
+  {
+    name: "United Nations",
+    image: "/images/partner/United-nations.png",
+  },
+  {
+    name: "Broadcom",
+    image: "/images/partener-company-logos/Broadcom.webp",
+  },
+  {
+    name: "UIDAI",
+    image: "/images/partener-company-logos/Uidai.webp",
+  },
+  {
     name: "Orbis",
     image: "/images/partener-company-logos/Orbis.webp",
   },
   {
-    name: "SCAD",
-    image: "/images/partener-company-logos/SCAD.webp",
+    name: "Canopi",
+    image: "/images/partener-company-logos/Canopi.webp",
   },
   {
     name: "Torry Harris Private Limited",
     image: "/images/partener-company-logos/Torry-Harris-Private-Limited.webp",
   },
   {
-    name: "UIDAI",
-    image: "/images/partener-company-logos/Uidai.webp",
+    name: "Infogain",
+    image: "/images/partner/infogain.svg",
   },
+  // {
+  //   name: "Youngsoft India",
+  //   image: "/images/partner/youngsoftIndia.svg",
+  // },
+  // {
+  //   name: "This",
+  //   image: "/images/partner/This.png",
+  // },
+  // {
+  //   name: "Cognizer AI",
+  //   image: "/images/partner/cognizerAI.png",
+  // },
+  // {
+  //   name: "Mibusoft",
+  //   image: "/images/partner/mibusoft.png",
+  // },
+  // {
+  //   name: "Navvis",
+  //   image: "/images/partner/navvis.png",
+  // },
+  // {
+  //   name: "EduTecks",
+  //   image: "/images/partner/eduteks.svg",
+  // },
+  // {
+  //   name: "Unified Aviation",
+  //   image: "/images/partner/unified-aviation.svg",
+  // },
 ]
 
 export const EndToEndSectionData = {

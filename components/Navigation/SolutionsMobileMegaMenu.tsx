@@ -18,6 +18,13 @@ interface WPPost {
 let cachedIntegrations: IntegrationLink[] = [...initialIntegrationsConfig];
 let isDataFetched = false;
 
+interface SolutionLink {
+  text: string
+  href: string
+  icon: string
+  subheading?: string
+}
+
 export default function SolutionsMobileMegaMenu({ onBack, onClose }: SolutionsMobileMegaMenuProps) {
   const [integrations, setIntegrations] = useState<IntegrationLink[]>(cachedIntegrations);
 
@@ -47,10 +54,10 @@ export default function SolutionsMobileMegaMenu({ onBack, onClose }: SolutionsMo
     fetchIntegrationSlugs();
   }, []);
 
-  const renderSection = (title: string, links: any[]) => (
-    <div className="space-y-6">
+  const renderSection = (title: string, links: SolutionLink[], columns: number = 2) => (
+    <div className="space-y-3">
       <h3 className="text-p18! md:text-p24! font-semibold">{title}</h3>
-      <div className="grid grid-cols-2 gap-x-10 gap-y-6">
+      <div className={`grid ${columns === 1 ? "grid-cols-1 gap-y-[18px]" : "grid-cols-2 gap-x-10 gap-y-4.5"}`}>
         {links.map((link, index) => (
           <Link
             key={index}
@@ -58,14 +65,18 @@ export default function SolutionsMobileMegaMenu({ onBack, onClose }: SolutionsMo
             onClick={onClose}
             className="flex items-center gap-3 group"
           >
-            <div className="w-[30px] h-[30px] md:w-[40px] md:h-[40px] flex items-center justify-center shrink-0 rounded-lg bg-white overflow-hidden p-1">
-              <Image src={link.icon} alt={link.text} width={30} height={30} className="object-contain" />
+            <div className="w-[34px] h-[34px] md:w-[40px] md:h-[40px] flex items-center justify-center shrink-0 rounded-lg bg-white overflow-hidden p-1">
+              <Image src={link.icon} alt={link.text} width={34} height={34} className="object-contain" />
             </div>
             <div className="flex flex-col">
-                <span className="text-[10px] md:text-p16 font-medium text-white/90 group-hover:text-white transition-colors leading-tight" dangerouslySetInnerHTML={{ __html: link.text }} />
-                {link.subheading && (
-                    <span className="text-[8px] text-white/50 uppercase font-bold mt-0.5">{link.subheading}</span>
-                )}
+                <div className="flex items-center flex-wrap gap-2">
+                    <span className="text-[16px] md:text-p16 font-medium text-white/90 group-hover:text-white transition-colors leading-tight" dangerouslySetInnerHTML={{ __html: link.text }} />
+                    {link.subheading && (
+                        <span className="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/10 px-2 py-0.5 text-[10px] md:text-p12 font-medium text-white leading-none whitespace-nowrap">
+                            {link.subheading}
+                        </span>
+                    )}
+                </div>
             </div>
           </Link>
         ))}
@@ -81,8 +92,8 @@ export default function SolutionsMobileMegaMenu({ onBack, onClose }: SolutionsMo
       transition={{ type: "tween", duration: 0.3 }}
       className="absolute inset-0 z-1002 flex flex-col bg-black text-white overflow-y-auto pb-10"
     >
-      <div className="flex items-center justify-between px-6 py-6.5 shrink-0">
-        <h2 className="text-[20px] font-semibold uppercase tracking-wide">Solutions</h2>
+      <div className="flex items-center justify-between px-6 pt-6 pb-3 shrink-0">
+        <h2 className="text-[20px]! font-semibold tracking-wide">Solutions</h2>
 
         <button
           onClick={onBack}
@@ -95,14 +106,14 @@ export default function SolutionsMobileMegaMenu({ onBack, onClose }: SolutionsMo
         </button>
       </div>
 
-      <div className="flex flex-col px-6 space-y-6 md:space-y-10 mt-4">
+      <div className="flex flex-col px-6 space-y-4 md:space-y-10">
         {renderSection(solutionTitleData.title1, solutionsLinks)}
         <div className="w-full h-px bg-white/10" />
-        {renderSection(solutionTitleData.title2, integrations)}
+        {renderSection(solutionTitleData.title2, integrations, 1)}
         <div className="w-full h-px bg-white/10" />
-        {renderSection(solutionTitleData.title3, marketplaceLinks)}
+        {renderSection(solutionTitleData.title3, marketplaceLinks, 1)}
         <div className="w-full h-px bg-white/10" />
-        {renderSection(solutionTitleData.title4, aiLinks)}
+        {renderSection(solutionTitleData.title4, aiLinks, 1)}
       </div>
     </motion.div>
   )
