@@ -60,12 +60,12 @@ export default function MobileNavigation({ isOpen, onClose }: MobileNavigationPr
           </button>
         </div>
 
-        <nav className="flex flex-col px-6 mt-8 space-y-6">
+        <nav className="flex flex-col px-6">
           {menuItems.map((item) => (
             <div
               key={item.label}
               onClick={() => handleItemClick(item)}
-              className="flex items-center justify-between py-2 border-b border-white/10 cursor-pointer"
+              className="flex items-center justify-between py-4 border-b border-white/10 last:border-b-0 cursor-pointer"
             >
               <span className="text-p20 font-medium">{item.label}</span>
               <div className="w-7.5 h-7.5 rounded-full border border-white flex items-center justify-center">
