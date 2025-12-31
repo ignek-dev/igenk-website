@@ -154,6 +154,13 @@ select:-webkit-autofill {
     line-height: 1.875rem;
   }
 
+  .text-p24 {
+    font-family: Poppins;
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 2.25rem;
+  }
+
   /* ===== TABLET (md) ===== */
   @media (min-width: 768px) {
     .md\:text-p12 {
