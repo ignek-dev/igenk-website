@@ -118,7 +118,7 @@ export default function BlogSection() {
   }
   return (
     <section className="bg-white text-black">
-      <div className="global-container p-16">
+      <div className="global-container py-7 md:p-16">
         <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2">
           <h2 className={` ${isInView ? "animate-when-visible animate-slide-left animation-delay-200" : "opacity-0"}`}>
             {blogSectionData.title} <br /> {blogSectionData.titleHighlight}

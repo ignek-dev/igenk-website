@@ -4,7 +4,7 @@ import React from "react"
 
 const CEOSection = () => {
   return (
-    <section className="global-container relative isolate overflow-hidden bg-[#000000] py-16 lg:py-[5.625vw]">
+    <section className="global-container relative isolate overflow-hidden bg-[#000000] py-10.5 lg:py-[6.625vw]">
       {/* Outer wrapper: flex-col for mobile (stacks card then image), lg:flex-row for desktop */}
       <div className="flex flex-col lg:flex-row lg:justify-between text-white">
         
@@ -42,7 +42,7 @@ const CEOSection = () => {
 
         {/* CEO Image Container */}
         {/* Mobile: Relative position below card | Desktop: Absolute right-bottom overlay */}
-        <div className="relative mt-8 h-[85vw] w-full top-[-10.271vw] sm:h-[60vw] md:h-[50vw] lg:absolute lg:right-0 lg:bottom-0 lg:mt-0 lg:h-[57.667vw] lg:w-[51.719vw] lg:pointer-events-none">
+        <div className="relative mt-[-10px] h-[125vw] w-full sm:h-[100vw] md:h-[80vw] lg:absolute lg:right-0 lg:bottom-0 lg:top-auto lg:mt-0 lg:h-[57.667vw] lg:w-[51.719vw] lg:pointer-events-none">
           <div
             className="relative h-full w-full lg:top-[-3.271vw]"
             style={{
@@ -57,7 +57,7 @@ const CEOSection = () => {
               alt="CEO"
               fill
               priority
-              className="object-contain  lg:!h-[117%] drop-shadow-[0_1.563vw_4.167vw_rgba(0,0,0,0.7)]"
+              className="object-contain  lg:h-[117%]! drop-shadow-[0_1.563vw_4.167vw_rgba(0,0,0,0.7)]"
             />
           </div>
           

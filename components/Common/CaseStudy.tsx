@@ -60,9 +60,12 @@ const CaseStudy: React.FC<CaseStudyCarouselProps> = ({ caseStudies }) => {
   const [posts, setPosts] = useState<LocalCaseStudy[]>(hardcodedPosts)
   const [loading, setLoading] = useState(false)
   const router = useRouter()
-  const [windowWidth, setWindowWidth] = useState<number>(typeof window !== "undefined" ? window.innerWidth : 1200)
+  const [windowWidth, setWindowWidth] = useState<number>(1200) // Default to desktop
+  const [isMounted, setIsMounted] = useState(false)
  
   useEffect(() => {
+    setIsMounted(true)
+    setWindowWidth(window.innerWidth)
     const handleResize = () => setWindowWidth(window.innerWidth)
     window.addEventListener("resize", handleResize)
     return () => window.removeEventListener("resize", handleResize)
@@ -78,7 +81,7 @@ const CaseStudy: React.FC<CaseStudyCarouselProps> = ({ caseStudies }) => {
   }, [posts])
  
   return (
-    <section className="relative min-h-[600px] overflow-hidden bg-black py-16 text-white">
+    <section className="relative min-h-[600px] overflow-hidden bg-black py-7 md:py-16 text-white">
       <div className="px-4 lg:px-[192px]">
         <p className="mb-6 text-lg font-semibold lg:mb-[1.823vw] lg:text-[1.667vw]">Related Case Studies</p>
  
@@ -87,21 +90,21 @@ const CaseStudy: React.FC<CaseStudyCarouselProps> = ({ caseStudies }) => {
             <Loader />
           </div>
         ) : (
-          <div className="relative flex gap-[34px] transition-transform duration-[1500ms]">
+          <div className="relative flex transition-transform duration-[1500ms]">
             <div
-              className="flex gap-4 transition-transform duration-[1500ms] lg:gap-[34px]"
+              className={`flex transition-transform duration-[1500ms] ${isMounted && windowWidth <= 1024 ? "gap-4" : "lg:gap-[34px]"}`}
               style={{
-                width: `${posts.length * (windowWidth <= 1024 ? 100 : 60)}vw`,
-                transform: `translateX(-${activeIndex * (windowWidth <= 1024 ? 103 : 60)}vw)`,
+                width: isMounted ? (windowWidth <= 1024 ? `${posts.length * 90}vw` : `${posts.length * 60}vw`) : "100%",
+                transform: isMounted ? `translateX(-${activeIndex * (windowWidth <= 1024 ? 92 : 60)}vw)` : "none",
               }}
             >
               {posts.map((item) => (
                 <div key={item.id} className="w-screen flex-shrink-0 px-2 md:w-[61.1458vw]">
-                  <div className="flex flex-col gap-6 rounded-2xl border border-gray-800 bg-[#0f0f0f] p-6 md:max-h-[19.896vw] md:flex-row"
-                   style={{
-                width: `${windowWidth <= 1024 ? 88 : ''}vw`,
-              
-              }}
+                  <div 
+                    className="flex flex-col gap-6 rounded-2xl border border-gray-800 bg-[#0f0f0f] p-6 md:max-h-[19.896vw] md:flex-row"
+                    style={{
+                      width: isMounted && windowWidth <= 1024 ? '88vw' : '',
+                    }}
                   >
                     {/* Image */}
                     <div className="h-auto w-full overflow-hidden rounded-xl md:h-[16.5625vw] md:w-1/2">

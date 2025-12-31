@@ -8,16 +8,16 @@ export default function EngagementModels({ title, description }: EngagementModel
   const [hoveredModel, setHoveredModel] = useState<string | null>(null)
 
   return (
-    <section className="bg-[#F6F6F6] py-16 lg:py-[64px] text-black">
+    <section className="bg-[#F6F6F6] py-7 lg:py-[64px] text-black">
       <div className="mx-auto w-full global-container">
         
         {/* Section Header */}
-        <div className="mb-10 lg:mb-14 grid grid-cols-1 items-end gap-6 md:gap-8 lg:grid-cols-2">
+        <div className="mb-9 lg:mb-14 grid grid-cols-1 items-end gap-2.5 md:gap-8 lg:grid-cols-2">
           <div>
             <h2 className="text-[#000000]">{title}</h2>
           </div>
           <div className="flex h-full items-center lg:justify-end">
-            <p className="text-p16 md:text-p18 w-full lg:max-w-xl text-left lg:text-right text-[#374151]">
+            <p className="text-p16 md:text-p18 w-full lg:max-w-2xl text-left lg:text-right text-[#374151]">
               {description}
             </p>
           </div>
