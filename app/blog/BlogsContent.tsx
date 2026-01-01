@@ -118,10 +118,10 @@ export default function BlogsContent() {
         author: "Bhavin Panchani",
         date: post.date
           ? new Date(post.date).toLocaleDateString("en-US", {
-              month: "short",
-              day: "numeric",
-              year: "numeric",
-            })
+            month: "short",
+            day: "numeric",
+            year: "numeric",
+          })
           : "Unknown date",
         readTime: `${Math.max(2, Math.ceil((post.content?.rendered?.length || 0) / 1200))} min read`,
         category: post._embedded?.["wp:term"]?.[0]?.[0]?.name || "General",
@@ -172,28 +172,27 @@ export default function BlogsContent() {
       {/* Hero */}
       <section className="relative bg-black text-white">
         <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_10%_0%,#0E7BF8_0%,#00979E_40%,transparent_65%)] opacity-25" />
-        <div className="global-container mx-auto w-full px-5 py-12 md:px-10 md:py-16 lg:px-8 lg:pt-12 lg:pb-16">
-          <div className="relative grid items-start gap-6 lg:gap-[0.521vw] lg:grid-cols-2">
+        <div className="global-container mx-auto w-full px-4 py-14.5 md:px-10 md:py-16 lg:px-8 lg:pt-12 lg:pb-16">
+          <div className="relative flex flex-col gap-4 lg:grid lg:grid-cols-2 lg:gap-[0.521vw]">
             <div>
-              <h1 className="mt-9 bg-[linear-gradient(0deg,#FFFFFF,#FFFFFF),linear-gradient(0deg,rgba(0,0,0,0.23),rgba(0,0,0,0.23))] bg-clip-text text-transparent">
+              <h1 className="mt-0 lg:mt-9 bg-[linear-gradient(0deg,#FFFFFF,#FFFFFF),linear-gradient(0deg,rgba(0,0,0,0.23),rgba(0,0,0,0.23))] bg-clip-text text-transparent">
                 {blogHeroSection.heading}
                 <br />
                 {blogHeroSection.heading2}
 
               </h1>
             </div>
-            <p className="relative mt-4 text-lg text-gray-300 lg:p18 lg:absolute lg:bottom-0 lg:max-w-[41.646vw] lg:justify-self-end lg:text-right lg:text-white lg:mt-0"></p>
             <p className="text-p16 lg:text-p18 relative mt-0  lg:absolute lg:bottom-0 lg:max-w-[41.646vw] lg:justify-self-end lg:text-right text-white">
-             {blogHeroSection.description}
+              {blogHeroSection.description}
             </p>
           </div>
         </div>
       </section>
 
-      <section className="bg-[#F9FAF7] py-12 lg:pt-[3.333vw] lg:pb-[3.333vw] text-black">
+      <section className="bg-[#F9FAF7] py-7 lg:pt-[3.333vw] lg:pb-[3.333vw] text-black">
         <div className="global-container mx-auto w-full px-4 md:px-8">
           {/* Header part */}
-          <div className="mb-10 grid grid-cols-1 gap-6 lg:mb-[2.25rem] lg:grid-cols-2 lg:items-end lg:gap-8">
+          <div className="mb-5 grid grid-cols-1 gap-4 lg:mb-[2.25rem] lg:grid-cols-2 lg:items-end lg:gap-8">
             <div>
               <h2 className="tracking-tight text-[#000000]">
                 {blogSection.heading}
@@ -203,7 +202,7 @@ export default function BlogsContent() {
             </div>
 
             <div className="flex h-full items-end">
-              <p className="p18 w-full lg:text-right text-[#374151]">
+              <p className="text-p16 md:text-p18 w-full lg:text-right text-[#374151]">
                 {blogSection.description}
 
               </p>
@@ -215,143 +214,139 @@ export default function BlogsContent() {
             <div className="relative h-[300px] sm:h-[350px] lg:h-[640px] overflow-hidden rounded-[22px] shadow-lg">
               {featuredBlogs.length > 0
                 ? featuredBlogs.map((blog, index) => (
-                    <div
-                      key={blog.id}
-                      className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
-                        index === currentSlide ? "opacity-100" : "pointer-events-none opacity-0"
+                  <div
+                    key={blog.id}
+                    className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${index === currentSlide ? "opacity-100" : "pointer-events-none opacity-0"
                       }`}
-                      onMouseEnter={() => setIsHovering(true)}
-                      onMouseLeave={() => setIsHovering(false)}
+                    onMouseEnter={() => setIsHovering(true)}
+                    onMouseLeave={() => setIsHovering(false)}
+                  >
+                    {/* Background Image */}
+                    <div className="relative h-full w-full">
+                      <Image
+                        src={blog?.image}
+                        alt={blog.title}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        className="object-fill md:object-fill xl:object-cover"
+                        priority={index === 0}
+                      />
+                    </div>
+
+                    {/* Overlay Content */}
+                    <div
+                      className="absolute inset-0 flex cursor-pointer flex-col justify-end px-6 pb-7 md:px-10 lg:px-[4.375rem] lg:pb-[3rem] text-white"
+                      style={{
+                        background: "linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,100) 100%)",
+                      }}
+                      onClick={() => blog.slug && handleBlogClick(blog.slug)}
                     >
-                      {/* Background Image */}
-                      <div className="relative h-full w-full">
+                      <div className="inset-0 mb-4 lg:mb-[4.896vw] flex items-center justify-between">
+                        {featuredBlogs.length > 1 && (
+                          <>
+                            {/* Previous Arrow */}
+                            <button
+                              onClick={(e) => {
+                                e.stopPropagation()
+                                prevSlide()
+                              }}
+                              className={`nav-round-btn relative top-1/2 z-20 flex h-12 w-12 -translate-y-1/2 transform items-center justify-center overflow-hidden transition-all duration-300 hover:bg-black lg:h-16 lg:w-16 ${isHovering ? "opacity-100" : "opacity-0"
+                                } `}
+                              aria-label="Previous slide"
+                            >
+                              <div className="nav-fancy-glow absolute rounded-[42px]"></div>
+                              <div className="absolute inset-0.5 rounded-[40px] bg-black"></div>
+                              <svg
+                                className="relative z-10 h-9 w-9 text-white"
+                                fill="currentColor"
+                                viewBox="0 0 16 16"
+                              >
+                                <path
+                                  fillRule="evenodd"
+                                  d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5"
+                                />
+                              </svg>
+                            </button>
+
+                            {/* Next Arrow */}
+                            <button
+                              onClick={(e) => {
+                                e.stopPropagation()
+                                nextSlide()
+                              }}
+                              className={`nav-round-btn relative top-1/2 z-20 flex h-16 w-16 -translate-y-1/2 transform items-center justify-center overflow-hidden transition-all duration-300 hover:bg-black ${isHovering ? "opacity-100" : "opacity-0"
+                                } `}
+                              aria-label="Next slide"
+                            >
+                              <div className="nav-fancy-glow absolute rounded-[42px]"></div>
+                              <div className="absolute inset-0.5 rounded-[40px] bg-black"></div>
+                              <svg
+                                className="relative z-10 h-8 w-8 text-white"
+                                fill="currentColor"
+                                viewBox="0 0 16 16"
+                              >
+                                <path
+                                  fillRule="evenodd"
+                                  d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"
+                                />
+                              </svg>
+                            </button>
+                          </>
+                        )}
+                      </div>
+
+                      <div className="text-[8px] leading-[9px] md:text-p16 lg:text-p18! mb-1 lg:mb-[0.938vw] flex items-center space-x-2 font-normal text-[#E5E7EB] opacity-90">
+                        <span className=" rounded-full border border-[#D1D5DB] px-3 py-1 lg:w-[9.5vw] lg:px-[1.042vw] lg:py-[0.521vw] text-center text-[#E5E7EB]">
+                          {blog.category}
+                        </span>
+                        <span>• {blog?.readTime}</span>
+                      </div>
+
+                      <h2
+                        className="mb-2 lg:mb-[0.938vw] text-p12! leading-[1.25rem]! md:leading-[1.5rem]! lg:leading-[2.25rem]! md:text-p16! lg:text-[1.563vw]!"
+                        dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(blog.title) }}
+                      />
+                      <div className="flex items-center space-x-2 text-xl font-normal">
                         <Image
-                          src={blog?.image}
-                          alt={blog.title}
-                          fill
-                          sizes="(max-width: 768px) 100vw, 50vw"
-                          className="object-fill md:object-fill xl:object-cover"
-                          priority={index === 0}
+                          src={blog?.authPic}
+                          alt={"Author"}
+                          width={40}
+                          height={40}
+                          className="h-8 w-8 rounded-full object-cover lg:h-[2.083vw] lg:w-[2.083vw]"
                         />
+                        <span className="text-p12 md:text-p14 lg:text-p20 font-medium">{blog?.author}</span>
+                        <span className="text-p12 md:text-p14 lg:text-p18 opacity-80">• {blog.date}</span>
                       </div>
 
-                      {/* Overlay Content */}
+                      {/* Description on Hover */}
                       <div
-                        className="absolute inset-0 flex cursor-pointer flex-col justify-end px-6 pb-7 md:px-10 lg:px-[4.375rem] lg:pb-[3rem] text-white"
-                        style={{
-                          background: "linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,100) 100%)",
-                        }}
-                        onClick={() => blog.slug && handleBlogClick(blog.slug)}
-                      >
-                        <div className="inset-0 mb-4 lg:mb-[4.896vw] flex items-center justify-between">
-                          {featuredBlogs.length > 1 && (
-                            <>
-                              {/* Previous Arrow */}
-                              <button
-                                onClick={(e) => {
-                                  e.stopPropagation()
-                                  prevSlide()
-                                }}
-                                className={`nav-round-btn relative top-1/2 z-20 flex h-12 w-12 -translate-y-1/2 transform items-center justify-center overflow-hidden transition-all duration-300 hover:bg-black lg:h-16 lg:w-16 ${
-                                  isHovering ? "opacity-100" : "opacity-0"
-                                } `}
-                                aria-label="Previous slide"
-                              >
-                                <div className="nav-fancy-glow absolute rounded-[42px]"></div>
-                                <div className="absolute inset-0.5 rounded-[40px] bg-black"></div>
-                                <svg
-                                  className="relative z-10 h-9 w-9 text-white"
-                                  fill="currentColor"
-                                  viewBox="0 0 16 16"
-                                >
-                                  <path
-                                    fillRule="evenodd"
-                                    d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5"
-                                  />
-                                </svg>
-                              </button>
-
-                              {/* Next Arrow */}
-                              <button
-                                onClick={(e) => {
-                                  e.stopPropagation()
-                                  nextSlide()
-                                }}
-                                className={`nav-round-btn relative top-1/2 z-20 flex h-16 w-16 -translate-y-1/2 transform items-center justify-center overflow-hidden transition-all duration-300 hover:bg-black ${
-                                  isHovering ? "opacity-100" : "opacity-0"
-                                } `}
-                                aria-label="Next slide"
-                              >
-                                <div className="nav-fancy-glow absolute rounded-[42px]"></div>
-                                <div className="absolute inset-0.5 rounded-[40px] bg-black"></div>
-                                <svg
-                                  className="relative z-10 h-8 w-8 text-white"
-                                  fill="currentColor"
-                                  viewBox="0 0 16 16"
-                                >
-                                  <path
-                                    fillRule="evenodd"
-                                    d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"
-                                  />
-                                </svg>
-                              </button>
-                            </>
-                          )}
-                        </div>
-
-                        <div className="text-p12 md:text-p16 lg:text-p18 mb-2 lg:mb-[0.938vw] flex items-center space-x-2 font-normal text-[#E5E7EB] opacity-90">
-                          <span className=" rounded-full border border-[#D1D5DB] px-3 py-1 lg:w-[9.5vw] lg:px-[1.042vw] lg:py-[0.521vw] text-center text-[#E5E7EB]">
-                            {blog.category}
-                          </span>
-                          <span>• {blog?.readTime}</span>
-                        </div>
-
-                        <h2
-                          className="mb-2 lg:mb-[0.938vw] text-p12! md:text-p16! lg:text-[1.563vw]!"
-                          dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(blog.title) }}
-                        />
-                        <div className="flex items-center space-x-2 text-xl font-normal">
-                          <Image
-                            src={blog?.authPic}
-                            alt={"Author"}
-                            width={40}
-                            height={40}
-                            className="h-8 w-8 rounded-full object-cover lg:h-[2.083vw] lg:w-[2.083vw]"
-                          />
-                          <span className="text-p12 md:text-p14 lg:text-p20 font-medium">{blog?.author}</span>
-                          <span className="text-p12 md:text-p14 lg:text-p18 opacity-80">• {blog.date}</span>
-                        </div>
-
-                        {/* Description on Hover */}
-                        <div
-                          className={`mt-4 transition-all duration-300 ease-in-out ${
-                            isHovering ? "max-h-20 opacity-100" : "max-h-0 opacity-0"
+                        className={`mt-4 transition-all duration-300 ease-in-out ${isHovering ? "max-h-20 opacity-100" : "max-h-0 opacity-0"
                           } overflow-hidden hidden lg:block`}
-                        >
-                          <p className="line-clamp-2 text-[0.938vw] leading-relaxed text-white/90">
-                            {blog.desc
-                              ? blog.desc.replace(/<[^>]*>/g, "")
-                              : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris."}
-                          </p>
-                        </div>
+                      >
+                        <p className="line-clamp-2 text-[0.938vw] leading-relaxed text-white/90">
+                          {blog.desc
+                            ? blog.desc.replace(/<[^>]*>/g, "")
+                            : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris."}
+                        </p>
                       </div>
                     </div>
-                  ))
+                  </div>
+                ))
                 : !loading && (
-                    <div className="absolute inset-0 flex items-center justify-center rounded-[22px] bg-gray-200">
-                      <p className="text-lg text-gray-500">No featured blogs available</p>
-                    </div>
-                  )}
+                  <div className="absolute inset-0 flex items-center justify-center rounded-[22px] bg-gray-200">
+                    <p className="text-lg text-gray-500">No featured blogs available</p>
+                  </div>
+                )}
             </div>
           </div>
 
           {/* Category Section */}
-          <div className="flex flex-col py-16">
-            <h2 className="mb-9 text-4xl md:text-5xl leading-tight font-semibold tracking-tight text-[#000000]">
+          <div className="flex flex-col py-7 lg:py-[3.333vw]">
+            <h2 className="mb-6 lg:mb-9 text-4xl md:text-5xl leading-tight font-semibold tracking-tight text-[#000000]">
               {blogCategorySection.heading}
             </h2>
 
-            <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:flex lg:justify-between lg:gap-[0.677vw]">
+            <div className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:flex lg:justify-between lg:gap-[0.677vw]">
               {cardData.map((card, index) => {
                 const isSelected = selectedCategory === card.id
                 return (
@@ -371,7 +366,7 @@ export default function BlogsContent() {
 
           {/* Blog Grid Section */}
           <div className="">
-            <h2 className="mb-9 tracking-tight text-[#000000]">{blogCategorySection.heading2}</h2>
+            <h2 className="mb-4.5 lg:mb-9 tracking-tight text-[#000000]">{blogCategorySection.heading2}</h2>
 
             {loading ? (
               <div className="flex w-full min-h-[50vh] items-center justify-center">
@@ -397,9 +392,8 @@ export default function BlogsContent() {
                     <ul className="flex flex-wrap items-center gap-2 font-medium text-p14 lg:text-p20 lg:gap-[0.438vw]">
                       {/* First */}
                       <li
-                        className={`flex cursor-pointer items-center rounded-md border px-4 py-2 text-sm lg:text-base  ${
-                          currentPage === 1 ? "cursor-not-allowed border-gray-300" : "hover:bg-gray-100"
-                        }`}
+                        className={`flex cursor-pointer items-center rounded-md border px-4 py-2 text-sm lg:text-base  ${currentPage === 1 ? "cursor-not-allowed border-gray-300" : "hover:bg-gray-100"
+                          }`}
                         onClick={() => currentPage > 1 && handlePageChange(1)}
                       >
                         <svg
@@ -417,9 +411,8 @@ export default function BlogsContent() {
 
                       {/* Back */}
                       <li
-                        className={`flex cursor-pointer items-center rounded-md border px-4 py-2 text-sm lg:text-base ${
-                          currentPage === 1 ? "cursor-not-allowed border-gray-300" : "hover:bg-gray-100"
-                        }`}
+                        className={`flex cursor-pointer items-center rounded-md border px-4 py-2 text-sm lg:text-base ${currentPage === 1 ? "cursor-not-allowed border-gray-300" : "hover:bg-gray-100"
+                          }`}
                         onClick={() => currentPage > 1 && handlePageChange(Math.max(1, currentPage - 1))}
                       >
                         <svg
@@ -448,9 +441,8 @@ export default function BlogsContent() {
                             <li
                               key={1}
                               onClick={() => handlePageChange(1)}
-                              className={`cursor-pointer rounded-md border px-4 py-2 text-sm lg:text-base hover:bg-gray-100 ${
-                                currentPage === 1 ? "bg-black text-white" : ""
-                              }`}
+                              className={`cursor-pointer rounded-md border px-4 py-2 text-sm lg:text-base hover:bg-gray-100 ${currentPage === 1 ? "bg-black text-white" : ""
+                                }`}
                             >
                               1
                             </li>
@@ -472,9 +464,8 @@ export default function BlogsContent() {
                             <li
                               key={i}
                               onClick={() => handlePageChange(i)}
-                              className={`cursor-pointer rounded-md border px-4 py-2 text-sm lg:text-base transition-all duration-200 ${
-                                currentPage === i ? "border-black bg-black text-white" : "hover:bg-gray-100"
-                              }`}
+                              className={`cursor-pointer rounded-md border px-4 py-2 text-sm lg:text-base transition-all duration-200 ${currentPage === i ? "border-black bg-black text-white" : "hover:bg-gray-100"
+                                }`}
                             >
                               {i}
                             </li>
@@ -492,9 +483,8 @@ export default function BlogsContent() {
                             <li
                               key={totalPages}
                               onClick={() => handlePageChange(totalPages)}
-                              className={`cursor-pointer rounded-md border px-4 py-2 text-sm lg:text-base hover:bg-gray-100 ${
-                                currentPage === totalPages ? "border-black bg-black text-white" : ""
-                              }`}
+                              className={`cursor-pointer rounded-md border px-4 py-2 text-sm lg:text-base hover:bg-gray-100 ${currentPage === totalPages ? "border-black bg-black text-white" : ""
+                                }`}
                             >
                               {totalPages}
                             </li>
@@ -506,11 +496,10 @@ export default function BlogsContent() {
 
                       {/* Next */}
                       <li
-                        className={`flex cursor-pointer items-center rounded-md border px-4 py-2 text-sm lg:text-base ${
-                          currentPage === totalPages
-                            ? "cursor-not-allowed border-gray-300 text-gray-400"
-                            : "hover:bg-gray-100"
-                        }`}
+                        className={`flex cursor-pointer items-center rounded-md border px-4 py-2 text-sm lg:text-base ${currentPage === totalPages
+                          ? "cursor-not-allowed border-gray-300 text-gray-400"
+                          : "hover:bg-gray-100"
+                          }`}
                         onClick={() =>
                           currentPage < totalPages && handlePageChange(Math.min(totalPages, currentPage + 1))
                         }
@@ -530,11 +519,10 @@ export default function BlogsContent() {
 
                       {/* Last */}
                       <li
-                        className={`flex cursor-pointer items-center rounded-md border px-4 py-2 text-sm lg:text-base ${
-                          currentPage === totalPages
-                            ? "cursor-not-allowed border-gray-300 text-gray-400"
-                            : "hover:bg-gray-100"
-                        }`}
+                        className={`flex cursor-pointer items-center rounded-md border px-4 py-2 text-sm lg:text-base ${currentPage === totalPages
+                          ? "cursor-not-allowed border-gray-300 text-gray-400"
+                          : "hover:bg-gray-100"
+                          }`}
                         onClick={() => currentPage < totalPages && handlePageChange(totalPages)}
                       >
                         Last

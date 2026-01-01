@@ -39,7 +39,7 @@ export default function PortfolioList() {
 
     const fetchPosts = useCallback(async (reset: boolean = true, pageNumber: number = currentPage) => {
         try {
-            if (reset) { 
+            if (reset) {
                 setCurrentPage(1);
                 pageNumber = 1;
             }
@@ -130,11 +130,11 @@ export default function PortfolioList() {
                                         return (
                                             <div
                                                 key={item.id}
-                                                className={`py-8 md:py-12 ${index === 0 ? "pt-0" : ""} ${index < posts.length - 1 ? "border-b border-gray-300" : ""
+                                                className={`py-12 ${index === 0 ? "pt-0" : ""} ${index < posts.length - 1 ? "border-b border-gray-300" : ""
                                                     }`}
                                             >
                                                 <div
-                                                    className={`group bg-[#F9FAF7] pb-0 pt-0 flex flex-col md:flex-row gap-6 lg:gap-[2.396vw] overflow-hidden transition-all duration-500 ${!isImageLeft ? "md:flex-row-reverse" : ""
+                                                    className={`group bg-[#F9FAF7] pb-0 pt-0 flex flex-col md:flex-row gap-11.5 lg:gap-[2.396vw] overflow-hidden transition-all duration-500 ${!isImageLeft ? "md:flex-row-reverse" : ""
                                                         }`}
                                                 >
                                                     {/* Image */}
@@ -153,7 +153,7 @@ export default function PortfolioList() {
 
 
                                                     {/* Text */}
-                                                    <div className="relative flex w-full flex-col justify-center gap-3 md:w-1/2 lg:gap-[0.729vw]">
+                                                    <div className="relative flex w-full flex-col justify-center gap-3.5 lg:w-1/2 lg:gap-[0.729vw]">
                                                         <div className="flex flex-wrap mb-2 gap-2 lg:gap-[0.52vw] lg:mb-[0.729vw]">
                                                             {item._embedded?.["wp:term"]?.[0] && item._embedded?.["wp:term"]?.[0]?.length > 0 && (
                                                                 item._embedded?.["wp:term"]?.[0].map((term) => (
@@ -175,7 +175,7 @@ export default function PortfolioList() {
                                                             dangerouslySetInnerHTML={{ __html: item.excerpt.rendered }}
                                                         />
 
-                                                        <div className="transition-all duration-500 transform translate-y-5 opacity-0 group-hover:translate-y-0 group-hover:opacity-100">
+                                                        <div className="transition-all duration-500 transform translate-y-0 opacity-100 lg:translate-y-5 lg:opacity-0 lg:group-hover:translate-y-0 lg:group-hover:opacity-100">
                                                             <button
                                                                 onClick={() => router.push(`/portfolio/${item.slug}`)}
                                                                 className="w-full cursor-pointer rounded-full bg-[#0C64CE] px-6 py-2 text-base text-white shadow-md transition hover:bg-[#0C64CE] lg:px-[1.25vw] lg:py-[0.52vw] lg:text-[1.0417vw]"
