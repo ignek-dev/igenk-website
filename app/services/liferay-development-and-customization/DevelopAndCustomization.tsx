@@ -25,7 +25,7 @@ export default function LiferayDevelopmentAndCustomizationPage() {
       {/* Hero */}
       <section className="relative bg-black text-white">
         <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_10%_0%,#0E7BF8_0%,#00979E_40%,transparent_65%)] opacity-25" />
-        <div className="global-container pt-[4.271vw] pb-[3.854vw]">
+        <div className="global-container pt-8 pb-9 lg:pt-[4.271vw] lg:pb-[3.854vw]">
           <div className="relative block lg:grid items-start gap-10 md:grid-cols-2">
             <div>
               {/* <div className="inline-flex items-center rounded-full border border-white/30 px-[1.51vw] py-[0.521vw] text-[0.938vw] text-white">
@@ -48,7 +48,7 @@ export default function LiferayDevelopmentAndCustomizationPage() {
             {featureTabs.map((label) => (
               <span
                 key={label}
-                className="inline-flex items-center rounded-full border border-white/30 px-[1.458vw] py-[0.833vw] text-p12 md:text-p20 lg:text-p20 text-white transition-colors hover:border-white hover:text-white"
+                className="inline-flex items-center rounded-full border border-white/30 px-3.5 py-2.5 lg:px-[1.458vw] lg:py-[0.833vw] text-p12 md:text-p20 lg:text-p20 text-white transition-colors hover:border-white hover:text-white"
               >
                 {label}
               </span>
@@ -73,11 +73,9 @@ export default function LiferayDevelopmentAndCustomizationPage() {
               {developmentServices.map((txt, index) => (
                 <div
                   key={index}
-                  className={`flex items-center gap-[18px] md:gap-6 lg:gap-[1.25vw] rounded-lg bg-white ${
-                    index === 0 ? "pt-0" : "pt-[26px] md:pt-9 lg:pt-[1.875vw]"
-                  } ${index === developmentServices.length - 1 ? "pb-0" : "pb-[26px] md:pb-9 lg:pb-[1.875vw]"} ${
-                    index !== developmentServices.length - 1 ? "border-b border-b-2 border-[#D1D5DB]" : ""
-                  } `}
+                  className={`flex items-center gap-[18px] md:gap-6 lg:gap-[1.25vw] rounded-lg bg-white ${index === 0 ? "pt-0" : "pt-[26px] md:pt-9 lg:pt-[1.875vw]"
+                    } ${index === developmentServices.length - 1 ? "pb-0" : "pb-[26px] md:pb-9 lg:pb-[1.875vw]"} ${index !== developmentServices.length - 1 ? "border-b border-b-2 border-[#D1D5DB]" : ""
+                    } `}
                 >
                   <span className="flex w-[30px] h-[30px] md:w-[42px] md:h-[42px] lg:h-[2.188vw] lg:w-[2.188vw] items-center justify-center rounded-full bg-black">
                     <svg
@@ -137,7 +135,7 @@ export default function LiferayDevelopmentAndCustomizationPage() {
       <section className="bg-white text-black">
         <div className="global-container py-7 md:py-16 lg:py-[3.333vw]">
           <h2>{liferayIntegrationData.title}</h2>
-          <p className="text-p14 md:text-p18 lg:text-p18 mt-[1.458vw] mb-[28px] md:mb-[2px] lg:mb-[0.729vw] text-[#101012] text-gray-700">
+          <p className="text-p14 md:text-p18 lg:text-p18 mt-2.5 md:mt-4.5 lg:mt-[1.458vw] mb-[6px] md:mb-[2px] lg:mb-[0.729vw] text-[#101012] text-gray-700">
             {liferayIntegrationData.description}
           </p>
           <div>
@@ -146,7 +144,7 @@ export default function LiferayDevelopmentAndCustomizationPage() {
                 {liferayIntegrationServices.map((item, index) => (
                   <div
                     key={index}
-                    className={`flex items-center space-x-6 ${index === liferayIntegrationServices.length - 1 ? "" : " border-0 md:border-b"} border-gray-300 px-6 py-[22px] md:py-[36px] lg:py-[1.875vw] pr-0 pl-0`}
+                    className={`flex items-center space-x-4.5 lg:space-x-6 ${index === liferayIntegrationServices.length - 1 ? "" : " border-0 md:border-b"} border-gray-300 px-6 py-[22px] md:py-[36px] lg:py-[1.875vw] pr-0 pl-0`}
                   >
                     {/* Left Number */}
                     <span className="flex h-[53px] w-[53px] md:h-16 md:w-16 lg:h-[3.333vw] lg:w-[3.333vw] shrink-0 items-center justify-center bg-black text-p16 md:text-p20 lg:text-p20 font-bold! text-white">
