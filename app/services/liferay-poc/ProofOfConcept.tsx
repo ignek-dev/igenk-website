@@ -19,7 +19,7 @@ import {
 export default function LiferayProofOfConceptPage() {
   return (
     <main>
-      <section className="bg-black text-white global-container pt-[7.917vw] pb-[3.802vw]">
+      <section className="bg-black text-white global-container pt-[7.917vw] pb-9 lg:pb-[3.802vw]">
         <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_10%_0%,#0E7BF8_0%,#00979E_40%,transparent_65%)] opacity-25" />
         {/* <div className="inline-flex items-center rounded-full border border-white px-[1.51vw] py-[0.521vw] p18 text-white">
           {liferayPocHeroData.badge}
@@ -35,11 +35,11 @@ export default function LiferayProofOfConceptPage() {
           </p>
         </div>
 
-        <div className="mt-[3.177vw] block lg:flex flex-wrap">
+        <div className="mt-9.5 lg:mt-[3.177vw] block lg:flex flex-wrap">
           {featureTabs.map((label, index) => (
             <div
               key={index}
-              className="lg:inline-flex text-p12 md:text-p20 lg:text-p20 mb-5 md:mb-7 lg:mb-0 mr-[1.458vw] w-fit  justify-center last:mr-0 items-center rounded-full border border-[#374151] px-[1.458vw] py-[1.094vw] text-white"
+              className="lg:inline-flex text-p12 md:text-p20 lg:text-p20 mb-5 md:mb-7 lg:mb-0 mr-[1.458vw] w-fit  justify-center last:mr-0 items-center rounded-full border border-[#374151] px-3.5 py-2.5 lg:px-[1.458vw] lg:py-[1.094vw] text-white"
               style={{
                 boxShadow: '0 4px 10px 0 rgba(0, 151, 158, 0.25)'
               }}
@@ -51,15 +51,15 @@ export default function LiferayProofOfConceptPage() {
       </section>
 
       <section className="bg-[#F6F6F6] text-black">
-        <div className="global-container py-16 lg:py-[3.333vw]">
+        <div className="global-container py-7 md:py-16 lg:py-[3.333vw]">
           <h2 className="">
             {liferayPocWhatWeDoData.title}
           </h2>
-          <p className="mt-[1.458vw] text-p14 md:text-p18 lg:text-p18 text-[#374151]">
+          <p className="mt-2.5 md:mt-[1.458vw] text-p14 md:text-p18 lg:text-p18 text-[#374151]">
             {liferayPocWhatWeDoData.description}
           </p>
           <div className="pt-7 md:pt-9 lg:pt-[2.5vw]">
-            <div className="block lg:grid grid-cols-1 gap-x-[2.917vw] gap-y-[2.708vw] sm:grid-cols-2 md:grid-cols-3">
+            <div className="block lg:grid grid-cols-1 gap-x-[2.917vw]  gap-y-[2.708vw] sm:grid-cols-2 md:grid-cols-3">
               {liferayPOCServices.map((item, index) => {
                 const isLast = index === liferayPOCServices.length - 1
 
