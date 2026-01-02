@@ -77,5 +77,5 @@ export const featuredModulesSection = {
   heading: "Featured Liferay",
   headingSpan: "Marketplace Modules",
   description:
-    "Explore our curated suite of Liferay Marketplace solutions—designed to extend platform capabilities, streamline integrations, and deliver upgrade-safe, enterprise-ready enhancements for your DXP ecosystem.",
+    "Explore our curated suite of Liferay Marketplace solutions—designed to extend platform capabilities, streamline integrations, and deliver enhancements for your DXP ecosystem.",
 };
