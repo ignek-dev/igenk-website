@@ -95,7 +95,7 @@ const CaseStudy: React.FC<CaseStudyCarouselProps> = ({ caseStudies }) => {
               className={`flex transition-transform duration-[1500ms] ${isMounted && windowWidth <= 1024 ? "gap-4" : "lg:gap-[34px]"}`}
               style={{
                 width: isMounted ? (windowWidth <= 1024 ? `${posts.length * 90}vw` : `${posts.length * 60}vw`) : "100%",
-                transform: isMounted ? `translateX(-${activeIndex * (windowWidth <= 1024 ? 92 : 60)}vw)` : "none",
+                transform: isMounted ? `translateX(-${activeIndex * (windowWidth <= 1024 ? 105 : 60)}vw)` : "none",
               }}
             >
               {posts.map((item) => (

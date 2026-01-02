@@ -56,7 +56,7 @@ export default function Filters({
     return (
         <>
             {/* --- MOBILE & TABLET VIEW --- */}
-            <div className="w-full bg-[#F9FAF7] lg:hidden mb-8">
+            <div className="w-full bg-[#F9FAF7] lg:hidden mb-4">
                 <div className="grid grid-cols-2 gap-3 md:flex md:items-center md:gap-4 md:w-full">
                     
                     {/* Industry Dropdown */}

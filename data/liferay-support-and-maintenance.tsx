@@ -104,6 +104,8 @@ export const supportBanner = {
   label: "Liferay Services",
   heading: "Liferay Support",
   heading2: "and Maintenance",
+  heading3: "Liferay Support and",
+  heading4: "Maintenance",
   description:
     "We helps organisations protect platform stability, manage risk, and evolve their Liferay environments with confidence—without compromising performance, security, or upgrade readiness.",
 }

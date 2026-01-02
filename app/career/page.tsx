@@ -17,16 +17,16 @@ export default function CareerPage() {
   return (
     <main className="">
       {/* Hero */}
-      <section className="relative flex min-h-[90vh] lg:h-screen flex-col justify-end overflow-hidden text-white">
-        <div className="absolute inset-0 -z-10  bg-[url('/images/career_bg.jpg')] bg-cover bg-center" />
-        <div className="absolute inset-0 -z-10 bg-black/60" />
+      <section className="relative flex pt-40 lg:h-screen flex-col justify-end overflow-hidden text-white bg-black">
+        <div className="hidden md:block absolute inset-0 z-0 bg-[url('/images/career_bg.jpg')] bg-cover bg-center" />
+        <div className="hidden md:block absolute inset-0 z-0 bg-black/60" />
 
-        <div className="absolute bottom-0 left-0 h-24 w-full bg-gradient-to-t from-black to-transparent" />
+        <div className="hidden md:block absolute bottom-0 left-0 h-24 w-full z-0 bg-gradient-to-t from-black to-transparent" />
 
-        <div className="mx-auto w-full px-4 pt-16 pb-16 md:px-8 global-container">
-          <div className="grid items-end gap-1 lg:grid-cols-2">
+        <div className="relative z-10 mx-auto w-full px-4! pt-[58px] pb-[28px] lg:px-8 lg:pt-16 lg:pb-16 global-container">
+          <div className="grid items-end lg:grid-cols-2">
             <div>
-              <div className="text-p14 md:text-p16 lg:text-p18 banner-tab">
+              <div className="text-p12 md:text-p16 lg:text-p18 banner-tab">
                 {careerHeroData.badgeText}
 
               </div>
@@ -47,7 +47,7 @@ export default function CareerPage() {
                 </video>
               </div>
             </div>
-            <p className="pb-3 lg:pb-12 text-left lg:text-right text-p16! md:text-p18! lg:text-[1.042vw]! font-normal tracking-[0] text-white/80  md:justify-self-end">
+            <p className="mt-5 pb-3 lg:pb-12 text-left lg:text-right text-p16! md:text-p18! lg:text-[1.042vw]! font-normal tracking-[0] text-white/80  md:justify-self-end">
               {careerHeroData.description}
             </p>
           </div>
@@ -56,19 +56,19 @@ export default function CareerPage() {
 
       {/* Perks & Benefits */}
       <section className="border-t border-white/20 bg-black text-white">
-        <div className="mx-auto w-full px-5 py-16 lg:py-[3.333vw] md:px-8 global-container">
-          <div className="grid items-center gap-6 lg:gap-10 md:grid-cols-1 lg:grid-cols-2">
+        <div className="mx-auto w-full px-5 py-7 lg:py-[3.333vw] md:px-8 global-container">
+          <div className="grid items-center gap-2.5 lg:gap-10 md:grid-cols-1 lg:grid-cols-2">
             <h2 className="text-2xl! md:text-5xl! lg:text-[2.5vw]! font-semibold leading-tight lg:leading-[3.125vw]">{careerPerksIntroData.title} <br /> {careerPerksIntroData.title2}</h2>
             <p className="w-full text-left lg:text-right text-p16 md:text-p18 lg:text-[0.938vw] leading-relaxed lg:leading-[1.563vw] font-normal tracking-[0] text-white/80 md:max-w-xl  lg:justify-self-end">
               {careerPerksIntroData.description}
             </p>
           </div>
 
-    <div className="mt-12 lg:mt-[3.646vw] grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-[1px] bg-[#1F2937]  border-[#1F2937]">
+          <div className="mt-6 lg:mt-[3.646vw] grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-[1px] bg-[#1F2937]  border-[#1F2937]">
             {perks.map((p, idx) => (
               <div
                 key={`${p.title[0]}-${idx}`}
-                className="flex flex-col gap-4 lg:gap-[1.875vw] bg-black p-6 lg:p-[2.76vw] text-center"
+                className="flex flex-col gap-5 lg:gap-[1.875vw] bg-black p-7 lg:p-[2.76vw] text-center"
               >
                 <Image
                   src={p.icon || ""}
@@ -85,23 +85,23 @@ export default function CareerPage() {
                 </div>
               </div>
             ))}
-</div>
+          </div>
         </div>
       </section>
 
       {/* Open Roles */}
       <section className="bg-[#F6F6F6] pb-0 text-black">
-        <div className="mx-auto w-full px-5 py-16 lg:py-[3.333vw] md:px-8 global-container">
-          <div className="grid items-start gap-6 lg:gap-10 lg:grid-cols-2">
-            <h2 className="text-4xl! md:text-5xl! lg:text-[2.5vw]!  font-semibold text-balance">
+        <div className="mx-auto w-full px-5 py-7 lg:py-[3.333vw] md:px-8 global-container">
+          <div className="grid items-start gap-2.5 lg:gap-10 lg:grid-cols-2">
+            <h2 className="text-2xl! md:text-5xl! lg:text-[2.5vw]!  font-semibold text-balance">
               <span className="block md:text-5xl">{openRolesIntroData.title}</span>
             </h2>
-            <p className="w-full text-left lg:text-right text-p18 lg:text-[20px] leading-relaxed lg:leading-[30px] font-normal tracking-[0] text-gray-700 md:max-w-3xl lg:justify-self-end">
+            <p className="w-full text-left lg:text-right text-p16 md:text-p18 lg:text-[1.25vw] leading-relaxed lg:leading-[1.667vw] font-normal tracking-[0] text-gray-700 md:max-w-3xl lg:justify-self-end">
               {openRolesIntroData.description}
             </p>
           </div>
 
-          <div className="mt-12 space-y-6">
+          <div className="mt-6 lg:mt-12 space-y-3.5 lg:space-y-6">
             {jobs.map((job) => (
               <JobCard key={job.id} job={job} />
             ))}

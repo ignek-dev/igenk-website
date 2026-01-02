@@ -22,8 +22,8 @@ export default function LiferayMigrationPage() {
       {/* Hero */}
       <section className="relative bg-black text-white">
         <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_10%_0%,#0E7BF8_0%,#00979E_40%,transparent_65%)] opacity-25" />
-        <div className="global-container mx-auto mt-[-1px] w-full pt-24 pb-12 lg:pt-[7.865vw] lg:pb-[3.802vw]">
-          <div className="relative grid grid-cols-1 items-start gap-10 lg:grid-cols-2">
+        <div className="global-container mx-auto w-full pt-8 pb-9 lg:pt-[7.865vw] lg:pb-[3.802vw]">
+          <div className="relative grid grid-cols-1 items-start gap-4.5 lg:grid-cols-2">
             <div>
               <h1 className="text-gradient-liferay">
                 {heroMigration.titlePart1}
@@ -37,11 +37,11 @@ export default function LiferayMigrationPage() {
           </div>
 
           {/* Feature tabs */}
-          <div className="mt-10 flex flex-wrap gap-4 lg:mt-[3.177vw] lg:gap-[1.875vw]">
+          <div className="mt-4.5 flex flex-wrap gap-5 lg:mt-[3.177vw] lg:gap-[1.875vw]">
             {featureTabs.map((label) => (
               <span
                 key={label}
-                className="text-p16 md:text-p20 inline-flex items-center rounded-full border border-[#374151] bg-black px-4 py-2 text-white shadow-[0_4px_10px_0_rgba(0,151,158,0.25)] transition-colors lg:rounded-[2.083vw] lg:px-[1.458vw] lg:py-[0.833vw] lg:shadow-[0_0.208vw_0.521vw_0_rgba(0,151,158,0.25)]"
+                className="text-p16 md:text-p20 inline-flex items-center rounded-full border border-[#374151] bg-black px-4 py-3 text-white shadow-[0_4px_10px_0_rgba(0,151,158,0.25)] transition-colors lg:rounded-[2.083vw] lg:px-[1.458vw] lg:py-[0.833vw] lg:shadow-[0_0.208vw_0.521vw_0_rgba(0,151,158,0.25)]"
               >
                 {label}
               </span>
@@ -133,10 +133,10 @@ export default function LiferayMigrationPage() {
       </section>
 
       {/* Migration Process timeline */}
-      <section className="bg-black py-16 text-white lg:py-0">
+      <section className="bg-black py-7 text-white lg:py-0">
         <div className="global-container mx-auto w-full lg:py-[3.333vw]">
-          <div className="flex flex-col items-start gap-12 lg:flex-row lg:gap-[8.417vw]">
-            <div className="relative flex w-full flex-col gap-6 lg:sticky lg:top-[10.417vw] lg:w-1/2 lg:gap-[1.458vw]">
+          <div className="flex flex-col items-start gap-7.5 md:gap-9 lg:flex-row lg:gap-[8.417vw]">
+            <div className="relative flex w-full flex-col gap-2.5 md:gap-7 lg:sticky lg:top-[10.417vw] lg:w-1/2 lg:gap-[1.458vw]">
               <h2 className="leading-[60px] font-semibold">{liferayMigrationProcess.title}</h2>
               <p className="text-p16 lg:text-p18 text-gray-100">{liferayMigrationProcess.description}</p>
               {/* <ScheduleMeetingButton isFullWidth={false} btnName="Schedule Meeting" /> */}
@@ -148,7 +148,7 @@ export default function LiferayMigrationPage() {
                   {/* Vertical line */}
                   <div
                     className="absolute top-0 left-5 h-[86%] w-[2px] bg-white md:left-7 md:h-[89%] lg:left-[1.999vw] lg:w-[4px]"
-                    // style={{ width: "4px" }}
+                  // style={{ width: "4px" }}
                   ></div>
 
                   {steps.map((step, index) => (

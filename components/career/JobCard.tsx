@@ -36,16 +36,16 @@ const JobCard = ({ job }: JobCardProps) => {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <div className="rounded-2xl border border-gray-100 bg-white p-5 py-8 lg:p-6 lg:py-10 text-black shadow-sm">
+    <div className="rounded-2xl border border-gray-100 bg-white p-5.5 lg:p-6 lg:py-10 text-black shadow-sm">
       {/* Top section: Posted Ago, Title, and View Details Button */}
-      <div className="flex flex-col gap-4 md:grid md:grid-cols-[1fr_auto] md:items-end">
+      <div className="flex flex-col gap-2.5 md:grid md:grid-cols-[1fr_auto] md:items-end">
         <div>
-          <div className="mb-2 inline-flex items-center rounded-[8px] bg-[#309689]/10 px-2 py-1 text-sm font-medium text-[#309689]">
+          <div className="mb-2 inline-flex items-center rounded-[8px] bg-[#309689]/10 px-2 py-1 text-xs lg:text-sm font-medium text-[#309689]">
             {job.postedAgo}
           </div>
-          <h3 className="text-2xl font-semibold lg:text-[1.458vw]!">{job.title}</h3>
+          <h3 className="text-base! md:text-lg! lg:text-[1.458vw]! font-semibold">{job.title}</h3>
         </div>
-        <button onClick={() => setIsOpen(!isOpen)} className="flex items-center gap-2 pr-3 pb-2 text-lg lg:text-xl font-medium w-fit">
+        <button onClick={() => setIsOpen(!isOpen)} className="flex items-center gap-2 md:pr-3 md:pb-1 text-sm md:text-base lg:text-xl font-medium w-fit">
           View Details
           <motion.div animate={{ rotate: isOpen ? 180 : 0 }}>
             <svg
@@ -65,22 +65,22 @@ const JobCard = ({ job }: JobCardProps) => {
       </div>
 
       {/* Bottom section: Info and Apply Button */}
-      <div className="mt-4 lg:mt-2 flex flex-col md:flex-row md:items-center justify-between gap-6 md:gap-4">
-        <div className="flex flex-wrap items-center gap-x-4 gap-y-3 lg:gap-x-6 lg:gap-y-2 text-base lg:text-lg font-medium text-gray-600">
-          <span className="flex items-center gap-2 lg:gap-3">
-            <Image src="/images/icon/briefcase.png" alt="briefcase" width={20} height={20} className="w-5 h-5 lg:w-6 lg:h-6" /> {job.experience}
+      <div className="mt-4 lg:mt-2 flex flex-col md:flex-row md:items-center justify-between gap-5.5 md:gap-4">
+        <div className="flex flex-wrap items-center gap-x-4 gap-y-3 lg:gap-x-6 lg:gap-y-2 text-xs md:text-sm lg:text-lg font-medium text-gray-600">
+          <span className="flex items-center gap-1.5 lg:gap-3">
+            <Image src="/images/icon/briefcase.png" alt="briefcase" width={14} height={14} className="w-3.5 h-3.5 lg:w-6 lg:h-6" /> {job.experience}
           </span>
-          <span className="flex items-center gap-3">
-            <Image src="/images/icon/clock.png" alt="clock" width={20} height={20} className="w-5 h-5 lg:w-6 lg:h-6" /> {job.type}
+          <span className="flex items-center gap-1.5 lg:gap-3">
+            <Image src="/images/icon/clock.png" alt="clock" width={14} height={14} className="w-3.5 h-3.5 lg:w-6 lg:h-6" /> {job.type}
           </span>
-          <span className="flex items-center gap-3">
-            <Image src="/images/icon/wallet.png" alt="salary" width={20} height={20} className="w-5 h-5 lg:w-6 lg:h-6" /> {job.salary}
+          <span className="flex items-center gap-1.5 lg:gap-3">
+            <Image src="/images/icon/wallet.png" alt="salary" width={14} height={14} className="w-3.5 h-3.5 lg:w-6 lg:h-6" /> {job.salary}
           </span>
-          <span className="flex items-center gap-3">
-            <Image src="/images/icon/map-pin.png" alt="location" width={20} height={20} className="w-5 h-5 lg:w-6 lg:h-6" /> {job.location}
+          <span className="flex items-center gap-1.5 lg:gap-3">
+            <Image src="/images/icon/map-pin.png" alt="location" width={14} height={14} className="w-3.5 h-3.5 lg:w-6 lg:h-6" /> {job.location}
           </span>
         </div>
-       <Link
+        <Link
           href="#"
           className="w-full md:w-auto md:whitespace-nowrap text-center rounded-full bg-black px-8 py-3 text-sm lg:px-14 lg:py-3.5 lg:p20 text-white transition-transform duration-300 hover:scale-105"
         >

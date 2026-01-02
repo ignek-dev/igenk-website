@@ -59,14 +59,14 @@ export default function BlogCard({ blog }: BlogCardProps) {
       {/* Title */}
       <h3
         className="line-clamp-2 h-auto text-gray-900 font-bold
-          mt-3 text-xl!
+          mt-4 text-xl!
           lg:loading-[1.875vw] lg:mt-[1.042vw] lg:h-[4.7vw] lg:text-[1.563vw]!"
         dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(blog.title) }}
       />
 
       {/* Author Section fixed at bottom */}
       <div className="flex items-center font-normal text-gray-600
-        mt-4 gap-2 
+        mt-5 gap-2 
         lg:mt-[1.615vw]">
         <Image
           src={blog.authPic}

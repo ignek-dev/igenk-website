@@ -54,8 +54,8 @@ export default function LiferayExpertAdvicePage() {
       {/* Hero */}
       <section className="relative bg-black text-white">
         <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_10%_0%,#0E7BF8_0%,#00979E_40%,transparent_65%)] opacity-25" />
-        <div className="global-container mx-auto w-full pt-32 pb-16 lg:pt-12 lg:pb-[3.802vw]">
-          <div className="relative grid items-start gap-6 lg:grid-cols-2 lg:gap-10">
+        <div className="global-container mx-auto w-full pt-8 pb-9 lg:pt-12 lg:pb-[3.802vw]">
+          <div className="relative grid items-start gap-4.5 lg:grid-cols-2 lg:gap-10">
             <div>
               <h1 className="mt-8 lg:mt-[7.865vw]">
                 {expertAdviceHero.heading}
@@ -69,11 +69,11 @@ export default function LiferayExpertAdvicePage() {
           </div>
 
           {/* Feature tabs */}
-          <div className="mt-10 inline-flex flex-wrap gap-3 lg:mt-[3.177vw] lg:gap-[1.5vw]">
+          <div className="mt-10 inline-flex flex-wrap gap-5 lg:mt-[3.177vw] lg:gap-[1.5vw]">
             {featureTabs.map((label) => (
               <span
                 key={label}
-                className="text-p16! md:text-p18! lg:text-p20-lg! inline-flex items-center rounded-full border border-[#374151] bg-black px-5 py-2 text-white shadow-[0_0.208vw_0.521vw_0_rgba(0,151,158,0.25)] transition-colors lg:rounded-[2.083vw] lg:px-[1.458vw] lg:py-[0.833vw]"
+                className="text-p16! md:text-p18! lg:text-p20-lg! inline-flex items-center rounded-full border border-[#374151] bg-black px-4 py-3 text-white shadow-[0_0.208vw_0.521vw_0_rgba(0,151,158,0.25)] transition-colors lg:rounded-[2.083vw] lg:px-[1.458vw] lg:py-[0.833vw]"
               >
                 {label}
               </span>
@@ -83,21 +83,20 @@ export default function LiferayExpertAdvicePage() {
       </section>
 
       <section className="bg-white text-black">
-        <div className="global-container mx-auto w-full py-16 lg:py-[3.333vw]">
-          <div className="flex flex-col items-start gap-10 lg:flex-row lg:gap-[8.75vw]">
-            <div className="static flex flex-col gap-4 lg:sticky lg:top-[10.417vw] lg:gap-[1.458vw]">
+        <div className="global-container mx-auto w-full py-7 lg:py-[3.333vw]">
+          <div className="flex flex-col items-start gap-7 lg:flex-row lg:gap-[8.75vw]">
+            <div className="static flex flex-col gap-2.5 lg:sticky lg:top-[10.417vw] lg:gap-[1.458vw]">
               <h2 className="">{expertAdviceSection.heading}</h2>
               <p className="text-p16 md:text-p18 w-full text-gray-600 lg:max-w-[44.229vw]">
                 {expertAdviceSection.description}
               </p>
             </div>
-            <div className="w-full space-y-6 pt-2 md:justify-self-end lg:space-y-[1.979vw] lg:pt-[0.417vw]">
+            <div className="w-full space-y-9 pt-0 md:justify-self-end lg:space-y-[1.979vw] lg:pt-[0.417vw]">
               {expoerAdvices.map((txt, index) => (
                 <div
                   key={index}
-                  className={`flex items-center gap-4 lg:gap-[1.458vw] ${
-                    index === expoerAdvices.length - 1 ? "pb-0" : "border-b-2 border-gray-200 pb-6 lg:pb-[1.979vw]"
-                  }`}
+                  className={`flex items-center gap-6 lg:gap-[1.458vw] ${index === expoerAdvices.length - 1 ? "pb-0" : "border-b-2 border-gray-200 pb-9 lg:pb-[1.979vw]"
+                    }`}
                 >
                   <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-md lg:h-[2.5vw] lg:w-[2.5vw]">
                     <svg width="44" height="48" viewBox="0 0 44 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -115,10 +114,10 @@ export default function LiferayExpertAdvicePage() {
         </div>
       </section>
 
-      <section className="global-container bg-black py-16 text-white lg:py-[3.333vw]">
-        <div className="flex w-full flex-col items-start gap-10 lg:flex-row lg:gap-[10.573vw]">
+      <section className="global-container bg-black py-7 text-white lg:py-[3.333vw]">
+        <div className="flex w-full flex-col items-start gap-9 lg:flex-row lg:gap-[10.573vw]">
           {/* Left Column */}
-          <div className="static flex flex-col gap-4 lg:sticky lg:top-[10.417vw] lg:gap-[1.458vw]">
+          <div className="static flex flex-col gap-2.5 lg:sticky lg:top-[10.417vw] lg:gap-[1.458vw]">
             <h2 className="w-full text-white lg:w-[33.073vw]">{expertAdviceSolutions.heading}</h2>
             <p className="text-p16 md:text-p18 text-gray-100">{expertAdviceSolutions.description}</p>
             {/* <div>
@@ -142,13 +141,13 @@ export default function LiferayExpertAdvicePage() {
                   {/* Separator Line: Using border-t is more stable than <hr> for sticky layouts */}
                   <div className={`w-full border-t border-[#6B7280] ${index === 0 ? "border-none" : ""}`}></div>
 
-                  <div className="pt-6 pb-12 lg:pt-[1.5vw] lg:pb-[4vw]">
-                    <div className="flex items-baseline gap-4 lg:gap-[3.438vw]">
+                  <div className={`pt-7 pb-7 md:pt-9 md:pb-9 lg:pt-[1.5vw] lg:pb-[4vw]`}>
+                    <div className="flex flex-col gap-7 md:flex-row md:items-baseline md:gap-9 lg:gap-[3.438vw]">
                       <span className="text-2xl font-normal text-white lg:text-[1.563vw] lg:leading-[3.125vw]">
                         ({item.number})
                       </span>
-                      <div className="flex flex-col gap-3 lg:gap-[1.458vw]">
-                        <h3 className="w-full text-[1.563vw] leading-[1.875vw] font-normal text-white lg:w-[22.76vw]">
+                      <div className="flex flex-col gap-7 md:gap-9 lg:gap-[1.458vw]">
+                        <h3 className="w-full font-semibold text-white md:text-[1.563vw] md:leading-[1.875vw] md:font-normal lg:w-[22.76vw]">
                           {item.title}
                         </h3>
                         <p className="text-p16 md:text-p20 text-gray-100">{item.desc}</p>

@@ -38,18 +38,16 @@ export default function LiferayArchitectureDesignContent() {
       {items.map((item, index) => (
         <div
           key={index}
-          className={`flex-shrink-0 px-[42px]! md:px-16 lg:px-[3.333vw] ${
-            index === 0 ? "ml-0 lg:ml-[7vw] pl-0" : ""
-          } ${index === items.length - 1 ? "mr-[20vw]" : ""} ${
-            index !== items.length - 1 ? "border-r border-[#9CA3AF]" : ""
-          }`}
+          className={`flex-shrink-0 px-[42px]! md:px-16 lg:px-[3.333vw] ${index === 0 ? "ml-0 lg:ml-[7vw] pl-0" : ""
+            } ${index === items.length - 1 ? "mr-[20vw]" : ""} ${index !== items.length - 1 ? "border-r border-[#9CA3AF]" : ""
+            }`}
           style={{ width: cardWidth }}
         >
-          <div className="flex flex-col gap-[2vw]">
-            <h3 className="mt-[3.802vw] h-[88px] max-w-[90%] lg:max-w-[16.51vw] text-gray-600">
+          <div className="flex flex-col gap-13 lg:gap-[2vw]">
+            <h3 className="mt-13.5 lg:mt-[3.802vw] h-[88px] max-w-[87%] md:max-w-[90%] lg:max-w-[14.51vw] text-gray-600">
               {item.text}
             </h3>
-            <p className="text-p12 md:text-p20 lg:text-p20 mt-auto mb-[3.802vw] w-auto lg:max-w-[20.729vw] leading-relaxed text-gray-500">
+            <p className="text-p12 md:text-p20 lg:text-p20 mt-auto mb-13.5 lg:mb-[3.802vw] w-auto lg:max-w-[20.729vw] leading-relaxed text-gray-500">
               {item.description}
             </p>
           </div>
@@ -166,8 +164,8 @@ export default function LiferayArchitectureDesignContent() {
       dragStartScroll.current = container.scrollLeft
       if ((e.target as HTMLElement).setPointerCapture) {
         try {
-          ;(e.target as HTMLElement).setPointerCapture(e.pointerId)
-        } catch {}
+          ; (e.target as HTMLElement).setPointerCapture(e.pointerId)
+        } catch { }
       }
     }
 
@@ -181,8 +179,8 @@ export default function LiferayArchitectureDesignContent() {
       setIsDragging(false)
       if ((e.target as HTMLElement).releasePointerCapture) {
         try {
-          ;(e.target as HTMLElement).releasePointerCapture(e.pointerId)
-        } catch {}
+          ; (e.target as HTMLElement).releasePointerCapture(e.pointerId)
+        } catch { }
       }
     }
 
@@ -235,7 +233,7 @@ export default function LiferayArchitectureDesignContent() {
           ref={ref}
           className="flex overflow-x-auto scroll-smooth [-ms-overflow-style:'none'] [scrollbar-width:'none'] [&::-webkit-scrollbar]:hidden"
         >
-          <ArchitectureCards items={systemArchitecure} cardWidth="50%"/>
+          <ArchitectureCards items={systemArchitecure} cardWidth="70%" />
         </div>
       </section>
     )
@@ -245,7 +243,7 @@ export default function LiferayArchitectureDesignContent() {
     <main>
       <section className="relative bg-black text-white">
         <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_10%_0%,#0E7BF8_0%,#00979E_40%,transparent_65%)] opacity-25" />
-        <div className="global-container mx-auto w-full pt-[3.333vw] lg:pb-[3.802vw] md:pb-[50px] pb-[45px]">
+        <div className="global-container mx-auto w-full pt-8 lg:pt-[3.333vw] pb-9  lg:pb-[3.802vw]">
           <div className="static lg:relative block lg:grid items-start gap-10 text-[3.75vw] md:grid-cols-2">
             <div>
               <h1 className="mt-[2.031vw] leading-tight font-semibold">
@@ -262,11 +260,11 @@ export default function LiferayArchitectureDesignContent() {
             </p>
           </div>
 
-          <div className="mt-[25px] md:mt-[18px] lg:mt-[3.177vw] flex flex-wrap gap-[1.875vw]">
+          <div className="mt-9.5 lg:mt-[3.177vw] flex flex-wrap gap-[1.875vw]">
             {featureTabs.map((label, index) => (
               <span
                 key={index}
-                className="text-p12 md:text-p20 lg:text-p20 inline-flex items-center rounded-full border border-[#374151] px-[1.458vw] py-[0.833vw] text-lg text-white shadow-[0px_4px_10px_0px_#00979E40] transition-colors"
+                className="text-p12 md:text-p20 lg:text-p20 inline-flex items-center rounded-full border border-[#374151] px-4 py-3   lg:px-[1.458vw] lg:py-[0.833vw] text-lg text-white shadow-[0px_4px_10px_0px_#00979E40] transition-colors"
               >
                 {label}
               </span>
@@ -285,7 +283,7 @@ export default function LiferayArchitectureDesignContent() {
             ref={containerRef}
             className={`flex ${isDragging ? "cursor-grabbing" : "cursor-grab"} overflow-x-auto [-ms-overflow-style:'none'] [scrollbar-width:'none'] [&::-webkit-scrollbar]:hidden`}
           >
-            <ArchitectureCards items={systemArchitecure} cardWidth="22%"/>
+            <ArchitectureCards items={systemArchitecure} cardWidth="22%" />
           </div>
         </div>
       </section>
@@ -299,18 +297,18 @@ export default function LiferayArchitectureDesignContent() {
               {liferayArchitectureKeyData.titleLine1}
             </h2>
             <p className="max-w-auto lg:max-w-[31.25vw] self-center text-left lg:text-right text-p14 md:text-p18 lg:text-p18 text-white mt-2.5 md:mt-7 lg:mt-0">
-              {liferayArchitectureKeyData.description} <br className="hidden lg:block"/>
+              {liferayArchitectureKeyData.description} <br className="hidden lg:block" />
               {liferayArchitectureKeyData.description2}
             </p>
           </div>
 
-          <div className="mt-[3.49vw] grid grid-cols-1 gap-[25px] md:gap-9 lg:gap-[1.875vw]">
+          <div className="mt-4 lg:mt-[3.49vw] grid grid-cols-1 gap-[25px] md:gap-9 lg:gap-[1.875vw]">
             {keyActivityArchitecureSystem.map((item, index) => (
               <div key={index} className="top-32 z-10 flex flex-col bg-black justify-between md:flex-row md:items-center">
-                <div className="flex md:w-[16.406vw] w-full min-w-[16.406vw] py-[0.833vw] pr-[1.875vw] text-[1.25rem] md:text-[1.875rem] lg:text-[1.563vw] lg:leading-[1.875vw] font-semibold md:leading-9">
+                <div className="flex md:w-[16.406vw] w-full min-w-[16.406vw] py-3 lg:py-[0.833vw] pr-6 lg:pr-[1.875vw] text-[1.25rem] md:text-[1.875rem] lg:text-[1.563vw] lg:leading-[1.875vw] font-semibold md:leading-9">
                   {item.text}
                 </div>
-                <div className="md:max-w-[28.313rem] lg:max-w-none text-p14 lg:text-p20 flex items-center rounded-lg border border-[#1F2937] mt-2.5 md:mt-0 px-[25px] md:px-9 lg:px-[1.875vw] py-[1.146vw]">
+                <div className="md:max-w-[28.313rem] lg:max-w-none text-p14 lg:text-p20 flex items-center rounded-lg border border-[#1F2937]  md:mt-0 px-[25px] md:px-9 lg:px-[1.875vw] py-2 lg:py-[1.146vw]">
                   {item.description}
                 </div>
               </div>
