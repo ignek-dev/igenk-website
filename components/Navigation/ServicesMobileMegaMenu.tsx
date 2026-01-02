@@ -64,7 +64,7 @@ export default function ServicesMobileMegaMenu({ onBack, onClose }: ServicesMobi
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="rotate-180">
             <polyline points="9 18 15 12 9 6"></polyline>
           </svg>
-          Back To Menu
+          Back to Menu
         </button>
       </div>
 
@@ -151,7 +151,7 @@ export default function ServicesMobileMegaMenu({ onBack, onClose }: ServicesMobi
           </Link>
 
           {/* Slider Section */}
-          <div className="relative flex items-center justify-center overflow-hidden h-[40px] w-full">
+          {/* <div className="relative flex items-center justify-center overflow-hidden h-[40px] w-full">
             <div
               key={"out-" + currentIndex}
               className="absolute flex items-center animate-slide-out"
@@ -170,7 +170,7 @@ export default function ServicesMobileMegaMenu({ onBack, onClose }: ServicesMobi
                 {next.text}
               </span>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </motion.div>

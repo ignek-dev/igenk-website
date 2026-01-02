@@ -454,6 +454,7 @@ export const liferayDigitalEdgeData = {
     {
       value: "30+",
       label: "Solutions Delivered",
+      isMultiLine: true,
     },
     {
       value: "50+",
@@ -463,6 +464,7 @@ export const liferayDigitalEdgeData = {
     {
       value: "10+",
       label: "Liferay Excellence",
+      isMultiLine: true,
     },
   ],
   heading: "Powering Your Digital Growth with Liferay Expertise",

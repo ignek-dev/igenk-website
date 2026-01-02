@@ -41,6 +41,7 @@ export default function LiferayConsultationPage() {
 
   // State for the new End-to-End Liferay Consulting Services section
   const [activePillar, setActivePillar] = useState(0) // 0-indexed for Analysis
+  const [isServiceDropdownOpen, setIsServiceDropdownOpen] = useState(false)
 
   const tabs = liferayConsultingData.map((item) => item.label)
 
@@ -62,7 +63,7 @@ export default function LiferayConsultationPage() {
       <section className="relative bg-[#0B63CE] text-white">
         <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_10%_0%,#0E7BF8_0%,#00979E_40%,transparent_65%)] opacity-25" />
         <div className="global-container pt-32 pb-16 lg:pt-48 lg:pb-20">
-          <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-5">
+          <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-5">
             {/* Left Side: Text Content */}
             <div className="text-left lg:col-span-3">
               {/* <div className="p18 banner-tab">{liferayHeroData.tag}</div> */}
@@ -107,13 +108,13 @@ export default function LiferayConsultationPage() {
       </section>
 
       {/* Digital Edge Section */}
-      <section className="bg-[#F9FAFB] py-[64px] pb-0 text-white lg:py-[64px]">
+      <section className="bg-[#F9FAFB] pb-0 text-white lg:py-[64px]">
         <div className="global-container">
-          <div className="flex flex-col gap-12 lg:flex-row lg:gap-16">
+          <div className="flex flex-col gap-8 lg:flex-row lg:gap-16">
             {/* LEFT CONTENT */}
             <div className="flex flex-1 flex-col justify-between gap-10 py-[64px]">
               {/* STATS (DYNAMIC) */}
-              <div className="flex flex-wrap gap-8 md:gap-12 lg:flex-nowrap">
+              <div className="flex flex-wrap gap-10 md:gap-12 lg:flex-nowrap">
                 {liferayDigitalEdgeData.stats.map((stat, index) => (
                   <div key={index} className="flex items-center gap-3">
                     <p className="text-4xl font-bold text-[#171717] md:text-5xl">{stat.value}</p>
@@ -161,11 +162,11 @@ export default function LiferayConsultationPage() {
       </section>
 
       {/* Consulting Services */}
-      <section className="bg-black py-[64px] text-white lg:py-[64px]">
+      <section className="bg-black py-[28px] text-white lg:py-[64px]">
         <div className="global-container">
-          <div className="flex flex-col gap-16 md:flex-row md:items-start md:justify-between">
+          <div className="flex flex-col gap-15 md:flex-row md:items-start md:justify-between">
             {/* Left Column */}
-            <div className="top-[137px] max-w-[520px] flex-1 space-y-[26px] pt-[4px] md:sticky">
+            <div className="top-[137px] max-w-[520px] flex-1 space-y-[10px] pt-[4px] md:sticky">
               <h2 className="text-white">
                 {heading}
                 <span className="block">{headingSpan}</span>
@@ -185,7 +186,7 @@ export default function LiferayConsultationPage() {
                     <div
                       ref={ref as React.RefObject<HTMLDivElement>}
                       key={index}
-                      className={`sticky mb-16 transition-opacity duration-500 ${
+                      className={`sticky mb-12 md:mb-16 transition-opacity duration-500 ${
                         isInView ? "animate-stack-in" : "opacity-0"
                       }`}
                       style={{ top: `calc(8.5rem + ${index * 4}rem)` }}
@@ -206,10 +207,10 @@ export default function LiferayConsultationPage() {
       </section>
 
       {/* Liferay Solutions */}
-      <section className="relative bg-white py-[64px]">
+      <section className="relative bg-white py-[28px] md:py-[64px]">
         <div className="global-container">
           {/* Section Header */}
-          <div className="grid grid-cols-1 items-start gap-8 md:grid-cols-2">
+          <div className="grid grid-cols-1 items-start gap-2.5 md:grid-cols-2">
             <div>
               <h2 className="text-black">
                 {title}
@@ -217,12 +218,12 @@ export default function LiferayConsultationPage() {
               </h2>
             </div>
             <div className="flex h-full items-center justify-end">
-              <p className="p18 text-right text-gray-500">{descriptions}</p>
+              <p className="text-p16 md:text-p18 text-left lg:text-right text-gray-500">{descriptions}</p>
             </div>
           </div>
 
           {/* Solution Cards Grid */}
-          <div className="mt-[48px] flex flex-col gap-[1.7708vw] lg:flex-row">
+          <div className="mt-[36px] flex flex-col gap-7.5 lg:gap-[1.7708vw] lg:flex-row">
             {liferaySolutions.map((solution) => {
               const isHovered = hoveredCard === solution.id
               const isDefaultPrimary = hoveredCard === null && solution.id === "Liferay DXP"
@@ -233,27 +234,27 @@ export default function LiferayConsultationPage() {
                   key={solution.id}
                   onMouseEnter={() => setHoveredCard(solution.id)}
                   onMouseLeave={() => setHoveredCard(null)}
-                  className={`flex h-[340px] items-center rounded-lg p-10 transition-all duration-300 ease-in-out ${
+                  className={`flex h-auto items-center rounded-lg p-10 transition-all duration-300 ease-in-out md:h-[340px] ${
                     isCurrentPrimary
-                      ? "min-w-[35.8333vw] flex-grow-[2] basis-0 flex-row justify-between gap-[4.1667vw] bg-[#0B63CE] text-white [@media(min-width:1440px)]:flex-grow-[3] [@media(min-width:1800px)]:flex-grow-[2]"
+                      ? "min-w-[35.8333vw] flex-grow-[2] basis-0 flex-col justify-between gap-20 bg-[#0B63CE] text-white md:flex-row md:gap-[4.1667vw] [@media(min-width:1440px)]:flex-grow-[3] [@media(min-width:1800px)]:flex-grow-[2]"
                       : "w-full flex-grow basis-0 flex-col justify-center border border-gray-200 bg-white text-gray-800 shadow-sm"
                   } `}
                 >
                   {isCurrentPrimary ? (
                     // Layout for the active (primary) card
                     <>
-                      <div className="text-left">
-                        <h4>{solution.title}</h4>
-                        <hr className="my-7 border-t border-white/50" />
-                        <p className="p18">{solution.description}</p>
-                      </div>
                       <Image
                         src={solution.iconActive}
                         alt={`${solution.title} icon`}
                         width={112}
                         height={112}
-                        className="h-[8.75vw] w-[8.75vw] flex-shrink-0 object-contain transition-all duration-300 ease-in-out"
+                        className="h-[105px] w-[104px] flex-shrink-0 object-contain transition-all duration-300 ease-in-out md:order-last md:h-[8.75vw] md:w-[8.75vw]"
                       />
+                      <div className="text-left">
+                        <h4>{solution.title}</h4>
+                        <hr className="my-7 border-t border-white/50" />
+                        <p className="p18">{solution.description}</p>
+                      </div>
                     </>
                   ) : (
                     // Layout for inactive cards
@@ -276,19 +277,19 @@ export default function LiferayConsultationPage() {
       </section>
 
       {/* Why Liferay Can Be Best Choice For Your Project ? */}
-      <section className="bg-black py-[64px] text-white">
+      <section className="bg-black py-[28px] md:py-[64px] text-white">
         <div className="global-container">
           {/* Section Header */}
           <div className="w-full">
             <h2>{sectionTitle}</h2>
-            <p className="p18 mt-7 text-white/80">{sectionDescription}</p>
+            <p className="p18 mt-2.5 md:mt-7 text-white/80">{sectionDescription}</p>
           </div>
 
           {/* Features List */}
-          <div className="mt-9.5">
+          <div className="mt-0 md:mt-9.5">
             {liferayProjectFeatures.map((feature) => (
               <div key={feature.title}>
-                <div className="flex flex-col items-start gap-[4.1667vw] py-[57px] md:flex-row md:items-center">
+                <div className="flex flex-col items-start gap-[4.1667vw] py-[36px] md:py-[57px] md:flex-row md:items-center">
                   {/* Icon */}
                   <div className="flex-shrink-0">
                     <Image src={feature.icon} alt="" width={64} height={64} className="h-16 w-16" />
@@ -313,10 +314,10 @@ export default function LiferayConsultationPage() {
       </section>
 
       {/* Industries We Serve Section */}
-      <section className="bg-white py-[64px] text-black">
+      <section className="bg-white py-[28px] md:py-[64px] text-black">
         <div className="global-container">
           {/* SECTION HEADER */}
-          <div className="mb-12 grid grid-cols-1 gap-6 md:mb-16 md:grid-cols-2 md:items-end">
+          <div className="mb-9 grid grid-cols-1 gap-2.5 md:gap-6 md:mb-16 md:grid-cols-2 md:items-end">
             <h2 className="text-black">{industriesWeServeSection.heading}</h2>
 
             <p className="p18 text-gray-600 md:text-right">{industriesWeServeSection.description}</p>
@@ -407,23 +408,23 @@ export default function LiferayConsultationPage() {
       </section>
 
       {/* Our Liferay Consulting Services Section */}
-      <section className="bg-black py-[64px] text-white">
+      <section className="bg-black py-[28px] md:py-[64px] text-white">
         <div className="global-container">
           {/* Section Header */}
-          <div className="grid grid-cols-1 items-end gap-8 pb-16 md:grid-cols-2">
+          <div className="grid grid-cols-1 items-end gap-2.5 md:gap-7 pb-4.5 md:pb-10  lg:grid-cols-2">
             <div>
-              <h2>
+              <h2 className="text-p20 md:text-p24 lg:text-unset">
                 {liferayConsultingServicesHeader.headingLine1}
                 <span className="block">{liferayConsultingServicesHeader.headingLine2}</span>
               </h2>
             </div>
-            <div className="flex h-full items-center justify-end">
-              <p className="p18 w-full text-right text-white/80">{liferayConsultingServicesHeader.description}</p>
+            <div className="flex h-full items-center md:justify-end">
+              <p className="text-p16 md:text-p18 w-full text-left text-white/80 lg:text-right lg:p18">{liferayConsultingServicesHeader.description}</p>
             </div>
           </div>
 
-          {/* Tabs */}
-          <div className="mb-[4.115vw] flex items-center justify-center gap-4">
+          {/* Tabs - Desktop */}
+          <div className="mb-[4.115vw] hidden items-center justify-center gap-4 lg:flex">
             {tabs.map((tab) => (
               <button
                 key={tab}
@@ -439,18 +440,79 @@ export default function LiferayConsultationPage() {
             ))}
           </div>
 
-          <div className="grid grid-cols-1 gap-10 gap-x-[4.375vw] md:grid-cols-3">
+          {/* Tabs - Tablet (2x2 Grid) */}
+          <div className="mb-18 hidden grid-cols-2 gap-4 md:grid lg:hidden">
+            {tabs.map((tab) => (
+              <button
+                key={tab}
+                onClick={() => setActiveServiceTab(tab)}
+                className={`cursor-pointer rounded-full border border-white px-8 py-4 text-center text-p18 font-medium transition-colors duration-300 ${
+                  activeServiceTab === tab
+                    ? "border-blue-600 bg-[#0C63CE] text-white"
+                    : "text-white hover:border-blue-600"
+                }`}
+              >
+                {tab}
+              </button>
+            ))}
+          </div>
+
+          {/* Tabs - Mobile (Dropdown) */}
+          <div className="relative mb-7 md:hidden">
+            <button
+              onClick={() => setIsServiceDropdownOpen(!isServiceDropdownOpen)}
+              className="flex w-full items-center justify-center gap-3 rounded-full bg-[#0C63CE] py-4 text-p18 font-medium text-white"
+            >
+              {activeServiceTab}
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className={`transition-transform duration-300 ${isServiceDropdownOpen ? "rotate-180" : ""}`}
+              >
+                <path d="m6 9 6 6 6-6" />
+              </svg>
+            </button>
+            {isServiceDropdownOpen && (
+              <div className="absolute top-full mt-2 z-10 w-full overflow-hidden rounded-2xl border border-gray-700 bg-black shadow-2xl">
+                {tabs.map((tab) => (
+                  <button
+                    key={tab}
+                    onClick={() => {
+                      setActiveServiceTab(tab)
+                      setIsServiceDropdownOpen(false)
+                    }}
+                    className={`block w-full px-6 py-4 text-left text-p16 transition-colors duration-200 ${
+                      activeServiceTab === tab ? "bg-[#0C63CE] text-white" : "text-white hover:bg-gray-800"
+                    }`}
+                  >
+                    {tab}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 md:gap-x-10 lg:grid-cols-3 lg:gap-x-[4.375vw]">
             {activeServices.map((service, index) => (
-              <div key={index} className="border-b border-[#9CA3AF]">
-                <div className="flex items-start gap-4 pb-[40px]">
+              <div
+                key={index}
+                className="border-[#9CA3AF] border-b last:border-b-0 md:nth-last-[-n+2]:border-b-0 lg:nth-last-[-n+3]:border-b-0"
+              >
+                <div className="flex items-start gap-4 py-8 md:pb-[40px] md:pt-[40px]">
                   <Image
                     src="/images/liferay-pages-image/liferay-consultation-page/checkmark-icon.svg"
                     alt="Checkmark icon"
                     width={40}
                     height={40}
-                    className="h-10 w-10 flex-shrink-0"
+                    className="h-8 w-8 flex-shrink-0 md:h-10 md:w-10"
                   />
-                  <p className="p24">{service}</p>
+                  <p className="text-p16 md:text-p18 lg:text-p24">{service}</p>
                 </div>
               </div>
             ))}
@@ -459,18 +521,18 @@ export default function LiferayConsultationPage() {
       </section>
 
       {/* NEW: End-to-End Liferay Consulting Services Section */}
-      <section className="bg-[#F6F6F6] py-[64px] text-black">
+      <section className="bg-[#F6F6F6] py-[28px] md:py-[64px] text-black">
         <div className="global-container">
           {/* Section Header */}
-          <div className="mb-11">
+          <div className="mb-9">
             <h2 className="text-black">{endToEndLiferayConsultingSection.heading}</h2>
-            <p className="p18 mt-4 text-gray-600">{endToEndLiferayConsultingSection.description}</p>
+            <p className="p18 mt-2.5 text-gray-600">{endToEndLiferayConsultingSection.description}</p>
           </div>
 
           {/* Content Grid */}
           <div className="grid grid-cols-1 items-start gap-8 md:grid-cols-2 lg:grid-cols-[1fr_3fr]">
-            {/* Left Column: Numbered Service List */}
-            <div className="flex flex-col">
+            {/* Left Column: Numbered Service List (Desktop Only) */}
+            <div className="hidden flex-col md:flex">
               {endToEndServices.map((service, index) => (
                 <div key={index} className="pb-12">
                   <div
@@ -488,36 +550,58 @@ export default function LiferayConsultationPage() {
               ))}
             </div>
 
-            {/* Right Column: Interactive Pillars */}
-            <div className="relative flex h-[420px] w-full items-start justify-between gap-5">
+            {/* Right Column: Interactive Pillars (Desktop + Mobile Layouts) */}
+            <div className="relative flex flex-col gap-5 md:h-[420px] md:flex-row md:items-start md:justify-between">
               {endToEndServices.map((service, index) => (
                 <div
                   key={index}
-                  className={`flex h-full flex-col justify-between rounded-lg p-7 transition-all duration-300 ease-in-out ${
+                  onClick={() => {
+                    if (window.innerWidth < 768) {
+                      setActivePillar(index)
+                    }
+                  }}
+                  className={`flex cursor-pointer flex-col overflow-hidden rounded-lg py-6.5 px-5 transition-all duration-500 ease-in-out md:h-full md:cursor-default md:justify-between ${
                     activePillar === index
-                      ? "w-[20.3646vw] min-w-[20.3646vw] flex-grow bg-[#0B63CE] text-white shadow-xl"
-                      : "w-[20%] flex-grow-0 border border-[#E5E7EB] bg-white text-gray-400"
+                      ? "bg-[#0B63CE] text-white shadow-xl md:w-[20.3646vw] md:min-w-[20.3646vw] md:grow"
+                      : "h-[90px] justify-center border border-[#E5E7EB] bg-white py-0! text-gray-400 md:h-full md:w-[20%] md:grow-0 md:py-7!"
                   }`}
                 >
-                  {/* Rotated Number */}
-                  <div className="h-16">
-                    <span
-                      className={`block w-min -rotate-90 transform text-5xl font-medium transition-colors duration-300 ${
-                        activePillar === index ? "text-white" : "text-gray-400"
-                      }`}
-                    >
-                      {service.number}
-                    </span>
+                  {/* Number & Title (Mobile Inactive) / Rotated Number (Desktop + Mobile Active) */}
+                  <div className="flex h-16 shrink-0 items-center md:items-center">
+                    <div className="flex items-center gap-3">
+                      <span
+                        className={`block w-min transform font-medium transition-all duration-300 ${
+                          activePillar === index ? "text-white" : "text-gray-400"
+                        } ${
+                          activePillar === index
+                            ? "text-4xl rotate-0 md:-rotate-90"
+                            : "text-2xl rotate-0 md:text-5xl md:-rotate-90"
+                        }`}
+                      >
+                        {service.number}
+                      </span>
+                      {activePillar !== index && (
+                        <h4 className="text-xl font-medium text-gray-400 md:hidden">
+                          {service.name}
+                        </h4>
+                      )}
+                    </div>
                   </div>
 
-                  {/* Content for Active Pillar */}
-                  {activePillar === index && (
-                    <div className="pt-4">
-                      <h4 className="min-w-[220px]">{service.name}</h4>
-                      <hr className="my-7 w-full border-t-2 border-white/50" />
-                      <p className="p18">{service.description}</p>
+                  {/* Content for Active Pillar (Animated on Mobile) */}
+                  <div
+                    className={`grid transition-all duration-500 ease-in-out ${
+                      activePillar === index ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+                    }`}
+                  >
+                    <div className="overflow-hidden">
+                      <div className="pt-20">
+                        <h4 className="min-w-[220px]">{service.name}</h4>
+                        <hr className="my-7 w-full border-t-2 border-white/50" />
+                        <p className="p18">{service.description}</p>
+                      </div>
                     </div>
-                  )}
+                  </div>
                 </div>
               ))}
             </div>
