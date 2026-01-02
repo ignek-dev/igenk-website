@@ -122,8 +122,8 @@ export default function LiferayEcommerceDevelopmentPage() {
       {/* Hero */}
       <section className="relative bg-black text-white">
         <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_10%_0%,#0E7BF8_0%,#00979E_40%,transparent_65%)] opacity-25" />
-        <div className="global-container mx-auto pt-24 pb-12 lg:pt-[3.281vw] lg:pb-[3.802vw]">
-          <div className="relative flex flex-col gap-9 md:items-start lg:grid lg:grid-cols-2 lg:gap-10">
+        <div className="global-container mx-auto pt-8 pb-9 lg:pt-[3.281vw] lg:pb-[3.802vw]">
+          <div className="relative flex flex-col gap-4.5 md:items-start lg:grid lg:grid-cols-2 lg:gap-10">
             <div>
               <h1 className="mt-[2.031vw]">
                 {ecommerceHero.titleLine1}
@@ -138,11 +138,11 @@ export default function LiferayEcommerceDevelopmentPage() {
           </div>
 
           {/* Feature tabs */}
-          <div className="mt-10 flex flex-wrap gap-4 lg:mt-[3.177vw] lg:flex-row lg:gap-[1.6vw]">
+          <div className="mt-9.5 flex flex-wrap gap-4 lg:mt-[3.177vw] lg:flex-row lg:gap-[1.6vw]">
             {featureTabs.map((label) => (
               <span
                 key={label}
-                className="text-p16 md:text-p20 inline-flex items-center rounded-full border border-[#374151] bg-black px-5 py-2 text-white shadow-[0_4px_10px_0_rgba(0,151,158,0.25)] transition-colors lg:rounded-[2.083vw] lg:px-[1.458vw] lg:py-[0.833vw]"
+                className="text-p16 md:text-p20 inline-flex items-center rounded-full border border-[#374151] bg-black px-4 py-3 text-white shadow-[0_4px_10px_0_rgba(0,151,158,0.25)] transition-colors lg:rounded-[2.083vw] lg:px-[1.458vw] lg:py-[0.833vw]"
               >
                 {label}
               </span>
@@ -152,8 +152,8 @@ export default function LiferayEcommerceDevelopmentPage() {
       </section>
 
       <section className="bg-[#f7f7f7] text-black">
-        <div className="global-container mx-auto flex w-full flex-col gap-10 py-16 lg:gap-[3.021vw] lg:py-[3.333vw]">
-          <div className="flex flex-col gap-4 lg:gap-[1.458vw]">
+        <div className="global-container mx-auto flex w-full flex-col gap-9 py-7 lg:gap-[3.021vw] lg:py-[3.333vw]">
+          <div className="flex flex-col gap-2.5 lg:gap-[1.458vw]">
             <h2 className="">{ecommerceOptimization.heading}</h2>
             <p className="text-p16 md:text-p18 justify-self-center text-gray-600">
               {ecommerceOptimization.description}
@@ -164,12 +164,11 @@ export default function LiferayEcommerceDevelopmentPage() {
               {ecommerceDevelopment.map((item, index) => (
                 <div
                   key={index}
-                  className={`flex flex-col border-gray-300 py-10 lg:flex-row lg:items-center lg:py-[1.458vw] ${
-                    index !== 0 ? "border-t" : "pt-0"
-                  } ${index !== ecommerceDevelopment.length - 1 ? "border-b" : "pb-0"}`}
+                  className={`flex flex-col border-gray-300 py-7 lg:flex-row lg:items-center lg:py-[1.458vw] ${index !== 0 ? "border-t" : "pt-0"
+                    } ${index !== ecommerceDevelopment.length - 1 ? "border-b" : "pb-0"}`}
                 >
-                  {/* Row Number */}
-                  <div className="flex items-center gap-7 md:mb-4 md:gap-3 lg:mb-0">
+                  {/* Row Number and Mobile Title */}
+                  <div className="flex flex-col gap-7 md:flex-row md:items-center md:gap-3 md:mb-7 lg:mb-0">
                     <span className="max-w-[2.76vw] text-2xl font-medium text-black md:text-3xl lg:mr-[5.417vw] lg:text-[2.083vw]">
                       {index + 1 < 10 ? `0${index + 1}` : index + 1}
                     </span>
@@ -184,7 +183,7 @@ export default function LiferayEcommerceDevelopmentPage() {
                   </h4>
 
                   {/* Description */}
-                  <p className="text-p16 md:text-p18 mt-8 w-full text-left font-normal text-gray-600 lg:mt-0 lg:ml-auto lg:max-w-[39.198vw] lg:text-[1.042vw]">
+                  <p className="text-p16 md:text-p18 mt-7 w-full text-left font-normal text-gray-600 lg:mt-0 lg:ml-auto lg:max-w-[39.198vw] lg:text-[1.042vw]">
                     {item.description}
                   </p>
                 </div>
@@ -194,14 +193,14 @@ export default function LiferayEcommerceDevelopmentPage() {
         </div>
       </section>
 
-      <section className="global-container bg-black py-16 lg:py-[3.333vw]">
+      <section className="global-container bg-black py-7 lg:py-[3.333vw]">
         <div className="mx-auto w-full items-start">
-          <div className="flex flex-col gap-4 lg:gap-[1.458vw]">
+          <div className="flex flex-col gap-2.5 lg:gap-[1.458vw]">
             <h2 className="text-white">{ecommerceDevLiferay.heading}</h2>
             <p className="text-p16 md:text-p18 justify-self-center text-gray-100!">{ecommerceDevLiferay.description}</p>
           </div>
 
-          <div className="mt-12 grid grid-cols-1 gap-y-16 md:gap-x-6 md:gap-y-16 lg:grid-cols-2 lg:gap-x-[1.51vw] lg:gap-y-[4.688vw] lg:pt-[4.063vw]">
+          <div className="mt-13 grid grid-cols-1 gap-y-13.5 md:gap-x-6 md:gap-y-16 lg:grid-cols-2 lg:gap-x-[1.51vw] lg:gap-y-[4.688vw] lg:pt-[4.063vw]">
             {ecommerceDevelopmentUsingLiferay.map((item, index) => (
               <div
                 key={index}
@@ -233,8 +232,8 @@ export default function LiferayEcommerceDevelopmentPage() {
         style={
           isMounted
             ? {
-                height: typeof window !== "undefined" && window.innerWidth >= 1024 ? `${containerHeight}px` : "auto",
-              }
+              height: typeof window !== "undefined" && window.innerWidth >= 1024 ? `${containerHeight}px` : "auto",
+            }
             : undefined
         }
       >
@@ -243,9 +242,9 @@ export default function LiferayEcommerceDevelopmentPage() {
           ref={stickyContentRef}
           className="top-0 flex h-auto flex-col overflow-hidden bg-[#f7f7f7] text-black lg:sticky lg:top-[5.75vw]"
         >
-          <div className="mx-auto w-full py-16 lg:py-[3.333vw]">
+          <div className="mx-auto w-full py-7 lg:py-[3.333vw]">
             {/* Heading Row */}
-            <div className="global-container flex flex-col gap-6 md:items-center md:justify-between lg:flex-row lg:gap-10">
+            <div className="global-container flex flex-col gap-2.5 md:items-center md:justify-between lg:flex-row lg:gap-10">
               <h2 className="text-black">{ecommerceProcess.heading}</h2>
               <p className="text-p16 lg:text-p18 w-full text-left leading-relaxed text-[#4B5563] lg:w-[47.875vw] lg:text-right">
                 {ecommerceProcess.description}
@@ -253,7 +252,7 @@ export default function LiferayEcommerceDevelopmentPage() {
             </div>
 
             {/* Horizontal Timeline */}
-            <div className="scrollbar-hide overflow-x-auto pt-16 select-none lg:pt-[4.01vw]">
+            <div className="scrollbar-hide overflow-x-auto pt-5 select-none lg:pt-[4.01vw]">
               <motion.div
                 ref={scrollerRef}
                 className="relative flex min-w-max gap-0 px-[4vw] will-change-transform md:px-[3.6vw] lg:px-[10vw]"
@@ -264,17 +263,17 @@ export default function LiferayEcommerceDevelopmentPage() {
               >
                 <div className="relative flex min-w-max gap-12 pr-[10vw] md:gap-20 lg:gap-[4.833vw]">
                   {/* ✅ Perfectly aligned horizontal line */}
-                  <div className="absolute top-8 left-0 z-0 h-[3px] w-full bg-black md:top-10 md:h-[4px] lg:top-[2.0835vw]"></div>
+                  <div className="absolute top-4.5 left-0 z-0 h-[3px] w-full bg-black md:top-10 md:h-[4px] lg:top-[2.0835vw]"></div>
 
                   {steps.map((step, index) => (
-                    <div key={index} className="flex w-64 flex-col gap-8 md:w-80 lg:w-[24.875vw] lg:gap-[2.188vw]">
-                      <div className="z-10 flex h-16 w-16 items-center justify-center rounded-full bg-black text-xl font-bold text-white md:h-20 md:w-20 md:text-2xl lg:h-[4.167vw] lg:w-[4.167vw] lg:text-[1.667vw]">
+                    <div key={index} className="flex w-64 flex-col gap-5 md:w-80 lg:w-[24.875vw] lg:gap-[2.188vw]">
+                      <div className="z-10 flex h-9.5 w-9.5 items-center justify-center rounded-full bg-black text-sm font-bold text-white md:h-20 md:w-20 md:text-2xl lg:h-[4.167vw] lg:w-[4.167vw] lg:text-[1.667vw]">
                         {index + 1}
                       </div>
 
                       <div className="flex flex-col">
                         {/* ✅ Title */}
-                        <h3 className="h-20 w-full text-left text-xl! font-semibold text-black md:h-24 md:text-2xl! lg:h-[4.583vw] lg:w-[21.354vw] lg:text-[1.875vw]! lg:font-medium">
+                        <h3 className="h-15 w-full text-left text-xl! font-semibold text-black md:h-24 md:text-2xl! lg:h-[4.583vw] lg:w-[21.354vw] lg:text-[1.875vw]! lg:font-medium">
                           {step.title}
                         </h3>
 

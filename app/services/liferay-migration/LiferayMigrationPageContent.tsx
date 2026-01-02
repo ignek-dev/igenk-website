@@ -41,7 +41,7 @@ export default function LiferayMigrationPage() {
             {featureTabs.map((label) => (
               <span
                 key={label}
-                className="text-p16 md:text-p20 inline-flex items-center rounded-full border border-[#374151] bg-black px-4 py-2 text-white shadow-[0_4px_10px_0_rgba(0,151,158,0.25)] transition-colors lg:rounded-[2.083vw] lg:px-[1.458vw] lg:py-[0.833vw] lg:shadow-[0_0.208vw_0.521vw_0_rgba(0,151,158,0.25)]"
+                className="text-p16 md:text-p20 inline-flex items-center rounded-full border border-[#374151] bg-black px-4 py-3 text-white shadow-[0_4px_10px_0_rgba(0,151,158,0.25)] transition-colors lg:rounded-[2.083vw] lg:px-[1.458vw] lg:py-[0.833vw] lg:shadow-[0_0.208vw_0.521vw_0_rgba(0,151,158,0.25)]"
               >
                 {label}
               </span>

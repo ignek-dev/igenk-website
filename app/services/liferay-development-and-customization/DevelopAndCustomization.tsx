@@ -48,7 +48,7 @@ export default function LiferayDevelopmentAndCustomizationPage() {
             {featureTabs.map((label) => (
               <span
                 key={label}
-                className="inline-flex items-center rounded-full border border-white/30 px-3.5 py-2.5 lg:px-[1.458vw] lg:py-[0.833vw] text-p12 md:text-p20 lg:text-p20 text-white transition-colors hover:border-white hover:text-white"
+                className="inline-flex items-center rounded-full border border-white/30 px-4 py-3 lg:px-[1.458vw] lg:py-[0.833vw] text-p12 md:text-p20 lg:text-p20 text-white transition-colors hover:border-white hover:text-white"
               >
                 {label}
               </span>

@@ -75,8 +75,8 @@ export default function LiferayPerformanceTuningPage() {
     <main className="pb-0">
       <section className="relative bg-black text-white">
         <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_10%_0%,#0E7BF8_0%,#00979E_40%,transparent_65%)] opacity-25" />
-        <div className="global-container mx-auto pt-24 pb-12 lg:pt-[3.281vw] lg:pb-[3.802vw]">
-          <div className="relative flex flex-col gap-9 md:items-start lg:grid lg:grid-cols-2 lg:gap-10">
+        <div className="global-container mx-auto pt-8 pb-9 lg:pt-[3.281vw] lg:pb-[3.802vw]">
+          <div className="relative flex flex-col gap-4.5 md:gap-10.5 md:items-start lg:grid lg:grid-cols-2 lg:gap-10">
             <div>
               {/* xl:w-[40.156vw] two liner */}
               <h1 className="mt-[2.031vw]">
@@ -93,11 +93,11 @@ export default function LiferayPerformanceTuningPage() {
           </div>
 
           {/* Feature tabs */}
-          <div className="mt-10 flex flex-wrap gap-4 lg:mt-[3.177vw] lg:gap-[1.875vw]">
+          <div className="mt-4.5 flex flex-wrap gap-5 lg:mt-[3.177vw] lg:gap-[1.875vw]">
             {featureTabs.map((label, index) => (
               <span
                 key={index}
-                className="text-p16 md:text-p20 inline-flex items-center rounded-full border border-[#374151] bg-black px-4 py-2 text-white shadow-[0_4px_10px_0_rgba(0,151,158,0.25)] transition-colors lg:rounded-[2.083vw] lg:px-[1.458vw] lg:py-[0.833vw] lg:shadow-[0_0.208vw_0.521vw_0_rgba(0,151,158,0.25)]"
+                className="text-p16 md:text-p20 inline-flex items-center rounded-full border border-[#374151] bg-black px-4 py-3 text-white shadow-[0_4px_10px_0_rgba(0,151,158,0.25)] transition-colors lg:rounded-[2.083vw] lg:px-[1.458vw] lg:py-[0.833vw] lg:shadow-[0_0.208vw_0.521vw_0_rgba(0,151,158,0.25)]"
               >
                 {label}
               </span>
@@ -107,23 +107,21 @@ export default function LiferayPerformanceTuningPage() {
       </section>
 
       <section className="bg-[#f7f7f7] text-black">
-        <div className="global-container mx-auto w-full py-16 lg:pt-[3.333vw] lg:pb-[3.333vw]">
-          <div className="flex flex-col items-center gap-4 lg:gap-[1.458vw]">
-            <h2 className="text-center text-[#000000]">{liferayPerformanceFeatures.heading}</h2>
-            <p className="text-p16 md:text-p18 text-center text-[#374151]">{liferayPerformanceFeatures.description}</p>
+        <div className="global-container mx-auto w-full py-7 md:py-16 lg:pt-[3.333vw] lg:pb-[3.333vw]">
+          <div className="flex flex-col text-left lg:items-center gap-2.5 md:gap-7 lg:gap-[1.458vw]">
+            <h2 className="text-[#000000] lg:text-center max-w-[96%] lg:max-w-full">{liferayPerformanceFeatures.heading}</h2>
+            <p className="text-p16 md:text-p18 text-[#374151] lg:text-center">{liferayPerformanceFeatures.description}</p>
           </div>
 
-          <div className="mt-9 grid grid-cols-1 divide-y divide-gray-200 lg:mt-[2.604vw] lg:grid-cols-3 lg:divide-x-3 lg:divide-y-0">
+          <div className="mt-2 grid grid-cols-1 divide-y divide-gray-200 lg:mt-[2.604vw] lg:grid-cols-3 lg:divide-x-3 lg:divide-y-0">
             {liferayPerformanceFeatures.features.slice(0, 3).map((feature, index, arr) => (
               <div
                 key={index}
-                className={`flex flex-col items-center gap-2 py-8 text-center lg:gap-[0.417vw] lg:pt-[2.604vw] lg:pb-[3.698vw] ${
-                  index === 0 ? "lg:pr-[2.1vw] lg:pl-0" : ""
-                } ${index === arr.length - 1 ? "lg:pr-0 lg:pl-[2.1vw]" : ""} ${
-                  index !== 0 && index !== arr.length - 1 ? "lg:px-[2.1vw]" : ""
-                } `}
+                className={`flex flex-col items-center gap-2 py-7 text-center lg:gap-[0.417vw] lg:pt-[2.604vw] lg:pb-[3.698vw] ${index === 0 ? "lg:pr-[2.1vw] lg:pl-0" : ""
+                  } ${index === arr.length - 1 ? "lg:pr-0 lg:pl-[2.1vw]" : ""} ${index !== 0 && index !== arr.length - 1 ? "lg:px-[2.1vw]" : ""
+                  } `}
               >
-                <h3 className="text-xl! font-semibold md:text-3xl! lg:h-[4.5vw] lg:w-[19.688vw] lg:text-[1.563vw]!">
+                <h3 className="text-xl! font-semibold max-w-[260px] md:max-w-none md:text-3xl! lg:h-[4.5vw]  lg:w-[19.688vw] lg:text-[1.563vw]!">
                   {feature.title}
                 </h3>
                 <p className="text-p16 md:text-p20 mt-1 text-gray-500 lg:mt-[0.156vw]">{feature.description}</p>
@@ -135,13 +133,11 @@ export default function LiferayPerformanceTuningPage() {
             {liferayPerformanceFeatures.features.slice(3, 6).map((feature, index, arr) => (
               <div
                 key={index}
-                className={`flex flex-col items-center gap-2 py-8 text-center lg:gap-[0.417vw] lg:pt-[2.604vw] lg:pb-[3.698vw] ${
-                  index === 0 ? "lg:pr-[2.1vw] lg:pl-0" : ""
-                } ${index === arr.length - 1 ? "lg:pr-0 lg:pl-[2.1vw]" : ""} ${
-                  index !== 0 && index !== arr.length - 1 ? "lg:px-[2.1vw]" : ""
-                } `}
+                className={`flex flex-col items-center gap-2 py-7 text-center lg:gap-[0.417vw] lg:pt-[2.604vw] lg:pb-[3.698vw] ${index === 0 ? "lg:pr-[2.1vw] lg:pl-0" : ""
+                  } ${index === arr.length - 1 ? "lg:pr-0 lg:pl-[2.1vw]" : ""} ${index !== 0 && index !== arr.length - 1 ? "lg:px-[2.1vw]" : ""
+                  } `}
               >
-                <h3 className="text-xl! font-semibold md:text-3xl! lg:h-[4.5vw] lg:w-[19.688vw] lg:text-[1.563vw]!">
+                <h3 className="text-xl! font-semibold max-w-[260px] md:max-w-none md:text-3xl! lg:h-[4.5vw] lg:w-[19.688vw] lg:text-[1.563vw]!">
                   {feature.title}
                 </h3>
                 <p className="text-p16 md:text-p20 mt-1 text-gray-500 lg:mt-[0.156vw]">{feature.description}</p>
@@ -153,8 +149,8 @@ export default function LiferayPerformanceTuningPage() {
 
       {/* Outcome Of Our Liferay Performance Tuning Services */}
       <section className="bg-black text-white">
-        <div className="global-container mx-auto w-full py-16 lg:px-[0.208vw] lg:py-[3.333vw]">
-          <div className="relative flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between lg:gap-0">
+        <div className="global-container mx-auto w-full py-7 md:py-16 lg:px-[0.208vw] lg:py-[3.333vw]">
+          <div className="relative flex flex-col gap-2.5 md:gap-7 lg:flex-row lg:items-center lg:justify-between lg:gap-0">
             <h2 className=" ">
               {liferayPerformanceOutcome.heading}
               <br />
@@ -165,7 +161,7 @@ export default function LiferayPerformanceTuningPage() {
             </p>
           </div>
 
-          <div className="mt-12 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:mt-[3.021vw] lg:gap-0 xl:grid-cols-3">
+          <div className="mt-12 grid grid-cols-1 gap- sm:grid-cols-2 lg:mt-[3.021vw] lg:gap-0 xl:grid-cols-3">
             {serviceDate?.map((item, index) => {
               const total = serviceDate.length
               const isLastMobile = index === total - 1
@@ -190,9 +186,8 @@ export default function LiferayPerformanceTuningPage() {
                     {item.desc}
                   </p>
                   <hr
-                    className={`mt-[2.292vw] mb-[3.333vw] w-full border-b border-white/20 ${
-                      isLastMobile ? "hidden" : ""
-                    } md:${isLastTwo ? "hidden" : "block"} lg:${isLastTwo ? "hidden" : "block"} `}
+                    className={`mt-5 mb-9 lg:mt-[2.292vw] lg:mb-[3.333vw] w-full border-b border-white/20 ${isLastMobile ? "hidden" : ""
+                      } md:${isLastTwo ? "hidden" : "block"} lg:${isLastTwo ? "hidden" : "block"} `}
                   />
                 </div>
               )
@@ -209,8 +204,8 @@ export default function LiferayPerformanceTuningPage() {
         }}
         ref={sectionRef}
       >
-        <div className="global-container mx-auto w-full px-4 pt-16 lg:pt-[3.333vw]">
-          <div className="relative flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between lg:gap-0">
+        <div className="global-container mx-auto w-full px-4 py-7 lg:pt-[3.333vw]">
+          <div className="relative flex flex-col gap-4.5 lg:flex-row lg:items-center lg:justify-between lg:gap-0">
             <h2 className="text-3xl font-semibold text-[#000000] lg:w-[43.802vw] lg:text-[2.5vw] lg:leading-[3.125vw]">
               {liferayPerformanceWhatWeDo.heading}
               <br /> {liferayPerformanceWhatWeDo.heading2}
@@ -220,7 +215,7 @@ export default function LiferayPerformanceTuningPage() {
             </p>
           </div>
 
-          <section className="py-12 lg:pt-[3.333vw] lg:pb-[3.333vw]">
+          <section className="pt-9 lg:pt-[3.333vw] lg:pb-[3.333vw]">
             {/* =======================================================
                             MOBILE / TABLET LAYOUT (< 1024px)
                             - Vertical Stack (Accordion-ish)
@@ -228,7 +223,7 @@ export default function LiferayPerformanceTuningPage() {
                             - First item active by default
                             - Active border only on the Title/Desc container
                            ======================================================= */}
-            <div className="flex flex-col gap-8 lg:hidden">
+            <div className="flex flex-col gap-7 lg:hidden">
               {item.map((item, index) => {
                 const isActive = activeIndex === index
                 return (
@@ -236,25 +231,24 @@ export default function LiferayPerformanceTuningPage() {
                     {/* Header: Title + Description */}
                     {/* This is the part that gets the border when active */}
                     <div
-                      className={`cursor-pointer border-l-4 py-2 pl-5 transition-all duration-300 ${
-                        isActive ? "border-black" : "border-gray-300"
-                      } `}
+                      className={`cursor-pointer border-l-4  pl-4.5 transition-all duration-300 ${isActive ? "border-black" : "border-gray-300"
+                        } `}
                       onClick={() => setActiveIndex(index)}
                     >
-                      <h3 className={`text-xl font-medium! ${isActive ? "text-black" : "text-gray-900"}`}>
+                      <h3 className={`text-xl! font-medium! ${isActive ? "text-black" : "text-gray-900"}`}>
                         {item.title}
                       </h3>
-                      <p className="text-p16 mt-2 text-gray-700">{item.desc}</p>
+                      <p className="text-p14 mt-2 text-gray-700">{item.desc}</p>
                     </div>
 
                     {/* Details Card: Only visible if active */}
                     {isActive && (
-                      <div className="animate-fade-in mt-6 w-full rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
-                        <h3 className="mb-4 text-xl font-medium!">{item.title}</h3>
+                      <div className="animate-fade-in mt-7 w-full rounded-xl border border-gray-200 bg-white p-4 shadow-sm">
+                        <h3 className="mb-4 text-xl! font-medium!">{item.title}</h3>
                         <ul className="flex flex-col gap-4">
                           {item.details.map((text) => (
                             <li key={text} className="flex items-start gap-3">
-                              <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-black">
+                              <span className="mt-0.5 flex h-5 w-5 md:h-6 md:w-6 shrink-0 items-center justify-center rounded-full bg-black">
                                 <svg
                                   xmlns="http://www.w3.org/2000/svg"
                                   width="12"
@@ -271,7 +265,7 @@ export default function LiferayPerformanceTuningPage() {
                                   />
                                 </svg>
                               </span>
-                              <span className="text-p18 leading-snug text-gray-800">{text}</span>
+                              <span className="text-p14 md:text-p18 leading-snug text-gray-800">{text}</span>
                             </li>
                           ))}
                         </ul>
@@ -295,11 +289,10 @@ export default function LiferayPerformanceTuningPage() {
                     ref={(el) => {
                       if (el) cardRefs.current[index] = el
                     }}
-                    className={`group cursor-pointer border-l-4 pl-[1.667vw] transition-all duration-300 ${
-                      activeIndex === index
-                        ? "border-black text-black"
-                        : "border-gray-300 text-gray-600 hover:border-black hover:text-black"
-                    } ${index !== items.length - 1 ? "mb-[2.917vw]" : "mb-0"} `}
+                    className={`group cursor-pointer border-l-4 pl-[1.667vw] transition-all duration-300 ${activeIndex === index
+                      ? "border-black text-black"
+                      : "border-gray-300 text-gray-600 hover:border-black hover:text-black"
+                      } ${index !== items.length - 1 ? "mb-[2.917vw]" : "mb-0"} `}
                   >
                     <h3 className="text-[1.563vw]! font-semibold! text-black">{item.title}</h3>
                     <p className="p16 mt-[0.417vw] max-w-[27.969vw] text-gray-700">{item.desc}</p>

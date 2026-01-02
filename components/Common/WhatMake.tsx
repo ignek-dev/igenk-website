@@ -20,33 +20,33 @@ const WhatMake: React.FC<WhatMakeProps> = ({ WhatMakeData, titleText1, titleText
 
   const [stuck, setStuck] = useState<Map<number, boolean>>(new Map());
 
-useEffect(() => {
-  const handleScroll = () => {
-    if (window.innerWidth < 1024) return;
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.innerWidth < 1024) return;
 
-    const stickyDivs = document.querySelectorAll(
-      '.card-stack .lg\\:sticky'
-    ) as NodeListOf<HTMLElement>;
+      const stickyDivs = document.querySelectorAll(
+        '.card-stack .lg\\:sticky'
+      ) as NodeListOf<HTMLElement>;
 
-    const newMap = new Map<number, boolean>();
+      const newMap = new Map<number, boolean>();
 
-    stickyDivs.forEach((stickyDiv, index) => {
-      const rect = stickyDiv.getBoundingClientRect();
-      if (rect.top <= 200) {
-        newMap.set(index, true);
-      }
-    });
+      stickyDivs.forEach((stickyDiv, index) => {
+        const rect = stickyDiv.getBoundingClientRect();
+        if (rect.top <= 200) {
+          newMap.set(index, true);
+        }
+      });
 
-    setStuck(newMap);
-  };
+      setStuck(newMap);
+    };
 
-  window.addEventListener('scroll', handleScroll);
-  return () => window.removeEventListener('scroll', handleScroll);
-}, []);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
 
   return (
-    <section className="py-[3.333vw]">
+    <section className="py-7 lg:py-[3.333vw]">
       <div className="mx-auto w-full px-4  global-container">
         <div className="block lg:flex flex-col gap-16 md:flex-row md:items-start md:justify-between">
 
@@ -54,7 +54,7 @@ useEffect(() => {
           <div className="flex-1 space-y-6 pt-1 lg:sticky top-[200px]">
             <h2 className="mb-2.5 md:mb-7 lg:mb-[1.458vw]">
               {titleText1}
-              <br className="hidden lg:block"/>
+              <br className="hidden lg:block" />
               {titleText2}
             </h2>
 
@@ -71,18 +71,18 @@ useEffect(() => {
                 const isLast = index === WhatMakeData.length - 1
 
                 return (
-                    <div
-                      ref={ref as React.RefObject<HTMLDivElement>}
-                      key={index}
-                      className={`
+                  <div
+                    ref={ref as React.RefObject<HTMLDivElement>}
+                    key={index}
+                    className={`
     md:static lg:sticky
     ${stuck?.get(index) ? "stuck" : ""}
     ${!isLast ? "mb-10" : ""}
     transition-opacity duration-300
     ${isInView ? "animate-stack-in" : "opacity-0"}
   `}
-                      style={{ top: "200px" }}
-                    >
+                    style={{ top: "200px" }}
+                  >
                     <div className="whatsmake-card flex w-full flex-col justify-center rounded-[1.563vw] border border-[#E5E7EB] bg-white py-7 md:py-10 lg:py-10 px-[30px] backdrop-blur-md md:min-h-[196px]">
                       <h3 className="mb-[13px] md:mb-5 text-[20px]! md:text-[1.875rem]! lg:text-[1.563vw]!">
                         {item.title}

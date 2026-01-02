@@ -264,7 +264,7 @@ export default function LiferayArchitectureDesignContent() {
             {featureTabs.map((label, index) => (
               <span
                 key={index}
-                className="text-p12 md:text-p20 lg:text-p20 inline-flex items-center rounded-full border border-[#374151] px-3.5 py-2.5   lg:px-[1.458vw] lg:py-[0.833vw] text-lg text-white shadow-[0px_4px_10px_0px_#00979E40] transition-colors"
+                className="text-p12 md:text-p20 lg:text-p20 inline-flex items-center rounded-full border border-[#374151] px-4 py-3   lg:px-[1.458vw] lg:py-[0.833vw] text-lg text-white shadow-[0px_4px_10px_0px_#00979E40] transition-colors"
               >
                 {label}
               </span>

@@ -39,7 +39,7 @@ export default function LiferayProofOfConceptPage() {
           {featureTabs.map((label, index) => (
             <div
               key={index}
-              className="lg:inline-flex text-p12 md:text-p20 lg:text-p20 mb-5 md:mb-7 lg:mb-0 mr-[1.458vw] w-fit  justify-center last:mr-0 items-center rounded-full border border-[#374151] px-3.5 py-2.5 lg:px-[1.458vw] lg:py-[1.094vw] text-white"
+              className="lg:inline-flex text-p12 md:text-p20 lg:text-p20 mb-5 md:mb-7 lg:mb-0 mr-[1.458vw] w-fit  justify-center last:mr-0 items-center rounded-full border border-[#374151] px-4 py-3 lg:px-[1.458vw] lg:py-[1.094vw] text-white"
               style={{
                 boxShadow: '0 4px 10px 0 rgba(0, 151, 158, 0.25)'
               }}

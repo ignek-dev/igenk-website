@@ -123,7 +123,7 @@ export default function LiferayThemeDevelopmentPage() {
                         {featureTabs.map((label) => (
                             <span
                                 key={label}
-                                className="inline-flex items-center rounded-full border border-white/30 px-7 py-5 [@media(min-width:1440px)]:text-base [@media(min-width:1500px)]:text-lg text-lg text-white transition-colors hover:border-white hover:text-white"
+                                className="inline-flex items-center rounded-full border border-white/30 px-4 py-3 [@media(min-width:1440px)]:text-base [@media(min-width:1500px)]:text-lg text-lg text-white transition-colors hover:border-white hover:text-white"
                             >
                                 {label}
                             </span>
